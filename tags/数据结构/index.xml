@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>数据结构 on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Sep 2021 01:00:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据结构学习笔记</title>
+      <link>https://blog.cjlio.com/posts/106/</link>
+      <pubDate>Fri, 17 Sep 2021 01:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/106/</guid>
+      <description>数据结构其实就是带结构的数据元素的集合，结构是数据元素之间的关系
+数据结构（数组，字符串，队列，栈，链表，集合，哈希表（散列表），树（二叉树），图）
+集合：结构中的元素除了同属于一个集合外，没有别的关系
+线性结构：结构中的元素之间存在一对一的关系，一个对应一个
+数性结构：结构中的元素之间存在一对多的关系
+图形结果或者网状结构：结构中的任意元素都可以有关系
+顺序结构：数据元素按照一个排序（规律）顺序存放，例如1，2，3
+链式结构：每一个数据元素都是随机存放
+栈：线性结构的一种特殊的存储方式
+数据存储是按照先进后出的原理，先进入的数据，放在最下面，最后进入的放在最前面
+数据的获取也是才上面往下面获取的
+顺序栈：会在顺序栈中设置一个永远指向顶部元素的变量，当这个变量为-1的时候，说明这个栈没有元素，而存储一个元素就加一，获取就减一</description>
+    </item>
+    
+  </channel>
+</rss>

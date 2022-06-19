@@ -1,0 +1,133 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>TypeScript学习笔记 | 小陈的个人博客</title><meta name=keywords content="TypeScript"><meta name=description content="TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
+TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
+TypeScript实质上就是JavaScript的扩展，JavaScript超集
+TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript
+TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父
+TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样
+全局安装typescript
+yarn global add typescript
+或者
+npm install -g typescript
+检查是否安装成功
+tsc -v
+使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
+创建tsconfig.json
+npx tsc &ndash;init
+编译TypeScript文件（转为正常js文件）
+tsc hallo.ts
+在终端中直接运行ts代码
+npm install ts-node -g
+ts-node hallo.ts
+绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）
+变量声明
+推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）
+基础类型
+TypeScript具有强类型的特点
+boolean，string，number，array，null，undefined，object，tuple，enum，void，never，any
+boolean布尔值，例如：
+let hallo: boolean = true
+number数值，例如：
+let hallo: number = 123;
+二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）
+let hallo: bigint = 100n;
+注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换
+string字符串
+let hallo: string = hallo;
+void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）
+function voiddemo(): void { let a = 10; }"><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/posts/58/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css integrity="sha256-C3OaLixeVlbkvNXwsiaNBjrdr4HYnsOYfWr48E3s3Jc=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="TypeScript学习笔记"><meta property="og:description" content="TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
+TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
+TypeScript实质上就是JavaScript的扩展，JavaScript超集
+TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript
+TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父
+TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样
+全局安装typescript
+yarn global add typescript
+或者
+npm install -g typescript
+检查是否安装成功
+tsc -v
+使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
+创建tsconfig.json
+npx tsc &ndash;init
+编译TypeScript文件（转为正常js文件）
+tsc hallo.ts
+在终端中直接运行ts代码
+npm install ts-node -g
+ts-node hallo.ts
+绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）
+变量声明
+推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）
+基础类型
+TypeScript具有强类型的特点
+boolean，string，number，array，null，undefined，object，tuple，enum，void，never，any
+boolean布尔值，例如：
+let hallo: boolean = true
+number数值，例如：
+let hallo: number = 123;
+二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）
+let hallo: bigint = 100n;
+注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换
+string字符串
+let hallo: string = hallo;
+void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）
+function voiddemo(): void { let a = 10; }"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.cjlio.com/posts/58/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-18T15:50:00+00:00"><meta property="article:modified_time" content="2021-07-18T15:50:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="TypeScript学习笔记"><meta name=twitter:description content="TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
+TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
+TypeScript实质上就是JavaScript的扩展，JavaScript超集
+TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript
+TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父
+TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样
+全局安装typescript
+yarn global add typescript
+或者
+npm install -g typescript
+检查是否安装成功
+tsc -v
+使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
+创建tsconfig.json
+npx tsc &ndash;init
+编译TypeScript文件（转为正常js文件）
+tsc hallo.ts
+在终端中直接运行ts代码
+npm install ts-node -g
+ts-node hallo.ts
+绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）
+变量声明
+推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）
+基础类型
+TypeScript具有强类型的特点
+boolean，string，number，array，null，undefined，object，tuple，enum，void，never，any
+boolean布尔值，例如：
+let hallo: boolean = true
+number数值，例如：
+let hallo: number = 123;
+二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）
+let hallo: bigint = 100n;
+注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换
+string字符串
+let hallo: string = hallo;
+void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）
+function voiddemo(): void { let a = 10; }"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://blog.cjlio.com/posts/"},{"@type":"ListItem","position":3,"name":"TypeScript学习笔记","item":"https://blog.cjlio.com/posts/58/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"TypeScript学习笔记","name":"TypeScript学习笔记","description":"TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上\nTypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript\nTypeScript实质上就是JavaScript的扩展，JavaScript超集\nTypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript\nTypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父\nTypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样\n全局安装typescript\nyarn global add typescript\n或者\nnpm install -g typescript\n检查是否安装成功\ntsc -v\n使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀\n创建tsconfig.json\nnpx tsc \u0026ndash;init\n编译TypeScript文件（转为正常js文件）\ntsc hallo.ts\n在终端中直接运行ts代码\nnpm install ts-node -g\nts-node hallo.ts\n绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）\n变量声明\n推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）\n基础类型\nTypeScript具有强类型的特点\nboolean，string，number，array，null，undefined，object，tuple，enum，void，never，any\nboolean布尔值，例如：\nlet hallo: boolean = true\nnumber数值，例如：\nlet hallo: number = 123;\n二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）\nlet hallo: bigint = 100n;\n注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换\nstring字符串\nlet hallo: string = hallo;\nvoid类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）\nfunction voiddemo(): void { let a = 10; }","keywords":["TypeScript"],"articleBody":"TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上\nTypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript\nTypeScript实质上就是JavaScript的扩展，JavaScript超集\nTypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript\nTypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父\nTypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样\n全局安装typescript\nyarn global add typescript\n或者\nnpm install -g typescript\n检查是否安装成功\ntsc -v\n使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀\n创建tsconfig.json\nnpx tsc –init\n编译TypeScript文件（转为正常js文件）\ntsc hallo.ts\n在终端中直接运行ts代码\nnpm install ts-node -g\nts-node hallo.ts\n绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）\n变量声明\n推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）\n基础类型\nTypeScript具有强类型的特点\nboolean，string，number，array，null，undefined，object，tuple，enum，void，never，any\nboolean布尔值，例如：\nlet hallo: boolean = true\nnumber数值，例如：\nlet hallo: number = 123;\n二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）\nlet hallo: bigint = 100n;\n注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换\nstring字符串\nlet hallo: string = hallo;\nvoid类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）\nfunction voiddemo(): void { let a = 10; }\nvoid类型只有两个值，undefined和null\nundefined类型和null类型是所有类型的子类型\nSymbol\nlet sym: symbol = Symbol(‘hallo’);\nAny（当不清楚类型的变量指定一个类型，有可能这个变量的类型是动态的，想跳过类型检查就可以用这个）\nlet abc: any =123;\nabc = hallo;\n除了any外，还有unknown也可以表示任何类型\nlet abc: unknown =123;\nabc = hallo;\nunknown和any的区别就是，unknown类型的变量只能赋值给unknow和any类型的变量，在处理类型检查（typeof或者instance）或类型断言（as）之前，是不能对 unknown类型的变量进行操作（例如修改对象属性等等），而且any是没有限制的\nvoid（表示没有任何类型，当一个函数没有返回值，那么其返回值类型就是void）\n声明一个void类型的变量，这个变量只能选择两个值undefined和null其中一个\nlet und void = undefined;\nundefined和null和JavaScript中概念是一样的，空，未定义\nobject，就是非基础类型，和JavaScript中概念是一样的\n枚举，数组，元组，对象都是object类型\nlet obj: object;\narray数组\nlet arrs: number[] = [1,2,3];\nlet arrs: Array = [1,2,3];\ntuple元组：元组类型允许一个数组的元素是不同的类型的，但是必须按照要求来定义，例如\nlet x [string, number?]; x = [‘hello’, 10];\nx.push(“hi”);\ntuple元组是固定长度，固定类型，长度不能多不能少，类型必须要一一对应\n元组类型允许在类型后缀一个?来说明该元素是可选的，可选元素必须要在必选元素后面，否则有一个元素后面加了?，那么其后面全部元素都要加?\n注意：元组虽然可以越界添加元素（不推荐），但是不可越界访问\nenum枚举（允许为一组数值赋予名字）\nenum hallo {a, b, c}\nhallo.a === 0 // true\n默认从0开始，当然也可以手动指定数值\nenum hallo {a=6, b, c}\n最强大的一处是，可以根据值来得到它的名字\nlet yes: string = hallo[6];\nconsole.log(yes);\n如果分开声明名称相同的枚举，那么就会自动合并\nbigint类型（可以表示任意大的整数，Number类型能表示的最大整数为2^53 - 1）\n在整数后面加n或者调用BigInt()函数来定义bigint，也可以在BigInt()函数中用字符串，这三种方式表达的出来的值都是一样的\nlet abc: bigint = 8888888888888888888888888n\nlet xyz: bigint = BigInt(8888888888888888888888888)\nabc === xyz // true\nSymbol类型（每个symbol值都是唯一的）\nlet abc: symbol = Symbol(“hallo”)\nlet xyz: symbol = Symbol(“hallo”)\nabc === xyz // false\nnever类型（表示那些永远不存在的值的类型，永不为真）\nnever类型是任何类型的子类型，也可以赋值给任何类型，但是没有类型是never子类型或者赋值给never类型（除了never本身），连any都不能赋值给never\n抛出异常或者不会有返回值的函数，其函数返回值类型为never\nunknown类型是any类型对应的安全类型\nunknown类型只能赋值给any和unknown类型本身\nlet abc: unknown\nlet a: any = abc // yes\nlet b: unknown = abc // yes\nlet c: number = abc // Error\nunknown类型被确认为某个类型之前，不能被进行函数执行，实例化之类的操作\n不写类型声明也是没有关系的，因为ts会从上下文中推导出类型，例如，上文已经使用该类型，但是下文中使用另一个类型，那么就会导致类型检测不通过了\nts会在编译阶段自动执行静态类型检测，检查变量的值是否和注解的类型相同，如果相同则检测通过，否则报错\n类型断言\nas语法\nlet hallo any =hallo;\nlet abc number = (hallo as string).length;\n尖括号语法\nlet hallo any =hallo;\nlet abc number = (stringhallo).length;\n在ts中，字面量不但可以表示值，还可以表示类型，例如：\nlet nums: 1 = 123\n面向对象\n以键值对的方式表示的都是对象，多个键值对用逗号,分隔\nconst obj = {hallo world}\nconsole.log(obj.hallo)\nTypeScript在对象被定义时已经设置了类型，当引用不存在的，会报错\ninterface接口\n限制传入的参数的值\ninterface hallo{ a?: number; b: number; readonly c: string; [Name: string]: any; } function abc(clothes: hallo) { console.log(clothes.a) } let myabc: hallo = { a: 123, b: 666, c: \"hallo\", xyz: \"word\" } abc(myabc) 在属性名前使用readonly指定其为只读属性\n在属性名后使用?指定其为可选的\n使用[]括起来表示这是任意数量的属性，只要不是已经存在（被定义）的属性\n判断数据类型\nlet abc: number = 123;\ntypeof abc === “number”; // tuer\n泛型\n类型变换模块和命名空间\n","wordCount":"321","inLanguage":"en","datePublished":"2021-07-18T15:50:00Z","dateModified":"2021-07-18T15:50:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.cjlio.com/posts/58/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://blog.cjlio.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/posts/>Posts</a></div><h1 class=post-title>TypeScript学习笔记</h1><div class=post-meta><span title='2021-07-18 15:50:00 +0000 UTC'>2021-07-18</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/TypeScript%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上</p><p>TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript</p><p>TypeScript实质上就是JavaScript的扩展，JavaScript超集</p><p>TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript</p><p>TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父</p><p>TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样</p><p>全局安装typescript</p><p>yarn global add typescript</p><p>或者</p><p>npm install -g typescript</p><p>检查是否安装成功</p><p>tsc -v</p><p>使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀</p><p>创建tsconfig.json</p><p>npx tsc &ndash;init</p><p>编译TypeScript文件（转为正常js文件）</p><p>tsc hallo.ts</p><p>在终端中直接运行ts代码</p><p>npm install ts-node -g</p><p>ts-node hallo.ts</p><p>绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）</p><hr><p>变量声明</p><p>推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）</p><p>基础类型</p><p>TypeScript具有强类型的特点</p><p>boolean，string，number，array，null，undefined，object，tuple，enum，void，never，any</p><p>boolean布尔值，例如：</p><p>let hallo: boolean = true</p><p>number数值，例如：</p><p>let hallo: number = 123;</p><p>二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）</p><p>let hallo: bigint = 100n;</p><p>注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换</p><p>string字符串</p><p>let hallo: string = hallo;</p><p>void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）</p><p>function voiddemo(): void {
+let a = 10;
+}</p><p>void类型只有两个值，undefined和null</p><p>undefined类型和null类型是所有类型的子类型</p><p>Symbol</p><p>let sym: symbol = Symbol(&lsquo;hallo&rsquo;);</p><p>Any（当不清楚类型的变量指定一个类型，有可能这个变量的类型是动态的，想跳过类型检查就可以用这个）</p><p>let abc: any =123;</p><p>abc = hallo;</p><p>除了any外，还有unknown也可以表示任何类型</p><p>let abc: unknown =123;</p><p>abc = hallo;</p><p>unknown和any的区别就是，unknown类型的变量只能赋值给unknow和any类型的变量，在处理类型检查（typeof或者instance）或类型断言（as）之前，是不能对 unknown类型的变量进行操作（例如修改对象属性等等），而且any是没有限制的</p><p>void（表示没有任何类型，当一个函数没有返回值，那么其返回值类型就是void）</p><p>声明一个void类型的变量，这个变量只能选择两个值undefined和null其中一个</p><p>let und void = undefined;</p><p>undefined和null和JavaScript中概念是一样的，空，未定义</p><p>object，就是非基础类型，和JavaScript中概念是一样的</p><p>枚举，数组，元组，对象都是object类型</p><p>let obj: object;</p><p>array数组</p><p>let arrs: number[] = [1,2,3];</p><p>let arrs: Array = [1,2,3];</p><p>tuple元组：元组类型允许一个数组的元素是不同的类型的，但是必须按照要求来定义，例如</p><p>let x [string, number?];
+x = [&lsquo;hello&rsquo;, 10];</p><p>x.push(&ldquo;hi&rdquo;);</p><p>tuple元组是固定长度，固定类型，长度不能多不能少，类型必须要一一对应</p><p>元组类型允许在类型后缀一个?来说明该元素是可选的，可选元素必须要在必选元素后面，否则有一个元素后面加了?，那么其后面全部元素都要加?</p><p>注意：元组虽然可以越界添加元素（不推荐），但是不可越界访问</p><p>enum枚举（允许为一组数值赋予名字）</p><p>enum hallo {a, b, c}</p><p>hallo.a === 0 // true</p><p>默认从0开始，当然也可以手动指定数值</p><p>enum hallo {a=6, b, c}</p><p>最强大的一处是，可以根据值来得到它的名字</p><p>let yes: string = hallo[6];</p><p>console.log(yes);</p><p>如果分开声明名称相同的枚举，那么就会自动合并</p><p>bigint类型（可以表示任意大的整数，Number类型能表示的最大整数为2^53 - 1）</p><p>在整数后面加n或者调用BigInt()函数来定义bigint，也可以在BigInt()函数中用字符串，这三种方式表达的出来的值都是一样的</p><p>let abc: bigint = 8888888888888888888888888n</p><p>let xyz: bigint = BigInt(8888888888888888888888888)</p><p>abc === xyz // true</p><p>Symbol类型（每个symbol值都是唯一的）</p><p>let abc: symbol = Symbol(&ldquo;hallo&rdquo;)</p><p>let xyz: symbol = Symbol(&ldquo;hallo&rdquo;)</p><p>abc === xyz // false</p><p>never类型（表示那些永远不存在的值的类型，永不为真）</p><p>never类型是任何类型的子类型，也可以赋值给任何类型，但是没有类型是never子类型或者赋值给never类型（除了never本身），连any都不能赋值给never</p><p>抛出异常或者不会有返回值的函数，其函数返回值类型为never</p><p>unknown类型是any类型对应的安全类型</p><p>unknown类型只能赋值给any和unknown类型本身</p><p>let abc: unknown</p><p>let a: any = abc // yes</p><p>let b: unknown = abc // yes</p><p>let c: number = abc // Error</p><p>unknown类型被确认为某个类型之前，不能被进行函数执行，实例化之类的操作</p><p>不写类型声明也是没有关系的，因为ts会从上下文中推导出类型，例如，上文已经使用该类型，但是下文中使用另一个类型，那么就会导致类型检测不通过了</p><p>ts会在编译阶段自动执行静态类型检测，检查变量的值是否和注解的类型相同，如果相同则检测通过，否则报错</p><p>类型断言</p><p>as语法</p><p>let hallo any =hallo;</p><p>let abc number = (hallo as string).length;</p><p>尖括号语法</p><p>let hallo any =hallo;</p><p>let abc number = (stringhallo).length;</p><p>在ts中，字面量不但可以表示值，还可以表示类型，例如：</p><p><code>let nums: 1 = 123</code></p><p>面向对象</p><p>以键值对的方式表示的都是对象，多个键值对用逗号,分隔</p><p>const obj = {hallo world}</p><p>console.log(obj.hallo)</p><p>TypeScript在对象被定义时已经设置了类型，当引用不存在的，会报错</p><p>interface接口</p><p>限制传入的参数的值</p><pre><code>interface hallo{
+    a?: number;
+    b: number;
+    readonly c: string;
+    [Name: string]: any;
+}
+function abc(clothes: hallo) {
+    console.log(clothes.a)
+}
+let myabc: hallo = {
+    a: 123,
+    b: 666,
+    c: &quot;hallo&quot;,
+    xyz: &quot;word&quot;
+}
+abc(myabc)
+</code></pre><p>在属性名前使用readonly指定其为只读属性</p><p>在属性名后使用?指定其为可选的</p><p>使用[]括起来表示这是任意数量的属性，只要不是已经存在（被定义）的属性</p><p>判断数据类型</p><p>let abc: number = 123;</p><p>typeof abc === &ldquo;number&rdquo;; // tuer</p><hr><p>泛型</p><hr><p>类型变换模块和命名空间</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://blog.cjlio.com/tags/typescript/>TypeScript</a></li></ul><nav class=paginav><a class=prev href=https://blog.cjlio.com/posts/61/><span class=title>« Prev</span><br><span>JavaScript知识扩展</span></a>
+<a class=next href=https://blog.cjlio.com/posts/57/><span class=title>Next »</span><br><span>ES6学习笔记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

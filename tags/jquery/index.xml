@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>jQuery on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/jquery/</link>
+    <description>Recent content in jQuery on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Jun 2021 09:38:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>jQuery基础学习笔记</title>
+      <link>https://blog.cjlio.com/posts/21/</link>
+      <pubDate>Wed, 16 Jun 2021 09:38:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/21/</guid>
+      <description>##第一个jQuery程序
+$(&amp;lsquo;div&amp;rsquo;).html(&amp;ldquo;hello.world&amp;rdquo;);
+##DOM对象和jQuery对象互转化
+jQuery对象和DOM对象是不一样的，但是都能操作DOM
+get()方法（jquery对象转化为DOM对象）
+var $main =$(&amp;rsquo;.main&amp;rsquo;); // jquer对象
+var main = $main.get(0); // 通过get方法，转化成DOM对象
+main.style.color = &amp;lsquo;#c7edcc&amp;rsquo;; // 操作DOM对象属性
+DOM对象转化为jQuery对象
+var main = document.getElementsByClassName(&amp;lsquo;main&amp;rsquo;); // DOM对象
+var $main = $(main); // jQuery对象
+$main.css(&amp;lsquo;color&amp;rsquo;,&amp;rsquo;#c7edcc&amp;rsquo;); // 操作jQuery对象属性
+##jQuery选择器
+元素选择器
+$(&amp;lsquo;div&amp;rsquo;)
+ID选择器
+$(&amp;quot;#main&amp;quot;)
+id是唯一性，只能在页面中使用一次
+类选择器
+$(&amp;rsquo;.main&amp;rsquo;)
+全选择器
+$(&amp;rsquo;*&amp;rsquo;)
+层次选择器
+$(&amp;lsquo;div .main&amp;rsquo;)
+属性选择器
+$(&amp;ldquo;a[href=&amp;ldquo;https://cjlio.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
+可以使用前缀或者后缀来选择 $(&amp;ldquo;div[name^=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes开头的 $(&amp;ldquo;div[name$=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes结尾的
+组合选择器
+$(&amp;ldquo;div[class=divs]&amp;rdquo;)
+组合选择器其实就是用多个选择器组合起来
+多项选择器
+$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://cjlio.com&amp;rdquo;)
+多项选择器就是将多个选择器用逗号组合起来
+层级选择器 $(&amp;ldquo;ul.nev li.active&amp;rdquo;)</description>
+    </item>
+    
+    <item>
+      <title>jQuery-ajax()方法笔记</title>
+      <link>https://blog.cjlio.com/posts/13/</link>
+      <pubDate>Wed, 16 Jun 2021 09:24:37 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/13/</guid>
+      <description>ajax()是jQuery中定义的一个方法，该方法用于执行ajax请求，例如：
+$(document).ready(function(){ $(&amp;quot;button&amp;quot;).click(function(){ $.ajax({ type: &amp;quot;GET&amp;quot;, url: &amp;quot;https://httpbin.org/get&amp;quot;, success: function(getdata){ console.log(getdata) } }) }) }); 参数
+url：指定发送请求的URL，默认是当前页面
+type：指定请求方式（GET或者POST）
+success：当请求成功时执行的函数
+data：指定要发送到服务端的数据
+dataType：预期服务端响应过来的数据类型
+async：指定请求是否异步（布尔值）
+beforeSend：在发送请求之前执行的函数
+cache：指定客户端是否缓存被请求页面，默认是true（布尔值）
+complete：在请求完成时执行的函数（不管是否发送成功）
+contentType：指定要发送到服务端时使用的内容类型
+context：指定所有ajax相关的回调函数规定this值
+dataFilter：指定用于处理ajax返回的原始响应数据的函数
+error：指定请求失败时执行的函数
+global：指定请求是否触发全局ajax事件，默认为true
+ifModified：指定是否在最后一次请求
+jsonp：指定一个jsonp请求中重写回调函数的字符串
+jsonpCallback：指定一个jsonp回调函数的名称
+processData：指定是否将请求发送的数据转换为查询字符串，默认为true
+scriptCharset：指定请求的字符集
+timeout：指定请求超时时间（单位：毫秒）
+traditional：指定是否使用传统的方式来序列化数据
+username：指定响应http访问认证请求的用户名
+password：指定响应http访问认证请求的密码
+xhr：用于重写或者增强XMLHttpRequest对象的函数</description>
+    </item>
+    
+  </channel>
+</rss>

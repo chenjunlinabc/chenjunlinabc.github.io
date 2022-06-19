@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>node.js on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/node.js/</link>
+    <description>Recent content in node.js on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Sep 2021 10:50:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node.js学习笔记</title>
+      <link>https://blog.cjlio.com/posts/108/</link>
+      <pubDate>Mon, 20 Sep 2021 10:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/108/</guid>
+      <description>nodejs是基于Google的V8引擎，使JavaScript不再只能运行与浏览器中了
+npm是跟随nodejs的包管理工具，可以用来更新包，安装包，编写包等等功能
+nodejs也提供了完整的http服务功能（http模块是用c++写的，性能可靠）
+const http = require(&amp;quot;http&amp;quot;) http.createServer(function (_request, response) { response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;}) response.end(&amp;quot;hallo nodejs&amp;quot;) }).listen(8888) console.log(&#39;Server running at http://127.0.0.1:8888/&#39;) 如果在http://127.0.0.1:8888/看到了hallo nodejs，那么就说明运行成功了
+nodejs的模块分为全局模块，系统模块，自定义模块
+全局模块（不需要引入，可以直接使用）
+例如process.env和process.argv
+获取系统环境变量
+console.log(process.env) node自定义参数（process.argv）
+let num1 = parseInt(process.argv[2]) let num2 = parseInt(process.argv[3]) console.log(num1+num2) node hallo.js 6 3
+可以看到输出了9，说明参数被传递进去了
+系统模块（需要引用，不需要安装，nodejs已经封装好的预制的系统模块）
+获取目录
+const path = require(&amp;quot;path&amp;quot;) console.log(path.dirname(&amp;quot;/hallo/index/main.js&amp;quot;)) 获取文件名
+console.log(path.basename(&amp;quot;/hallo/index/main.js&amp;quot;)) 获取文件扩展名
+console.log(path.extname(&amp;quot;/hallo/index/main.js&amp;quot;)) 功能扩展
+console.log(path.resolve(&amp;quot;/hallo/index/main.js&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;index.js&amp;quot;)) 获取文件的绝对路径
+console.log(path.resolve(__dirname,&amp;quot;index.js&amp;quot;)) 文件读写模块（fs）
+读
+const fs = require(&amp;quot;fs&amp;quot;) fs.readFile(&amp;quot;data.txt&amp;quot;,(err,data)=&amp;gt;{ if(err){ console.log(err) }else{ console.log(data.toString()) } }) 写</description>
+    </item>
+    
+    <item>
+      <title>node.js包管理工具npm的简单使用</title>
+      <link>https://blog.cjlio.com/posts/31/</link>
+      <pubDate>Wed, 16 Jun 2021 15:05:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/31/</guid>
+      <description>npm是Node.js的默认包管理工具
+安装npm：安装node.js(一般来说安装nodejs都会安装npm的)
+npm -v 查看npm版本号 node -v 查看node版本号 npm install nmp@latest -g 更新最新nmp，-g全局，没有加-g就是本地安装，或者在@后面加版本号来更新到指定版本的npm npm init -y 初始化 npm i 要安装的依赖 先检查有没有这个东西，有的话就下载下来 npm uninstall 要删除的依赖的名称 npm i 要安装的依赖@版本号 安装指定版本的依赖 npm update 依赖名称 安装最新的依赖或者更新npm npm init -y 使用默认的参数，去掉-y就是手动配置 npm run 对象名 执行脚本,引用package.json中的scripts对象，在对象中添加脚本 npm adduser 注册npm账号 npm publish 发布npm包 npm install 一键安装package.json文件里的所有依赖 npm install &amp;ndash;dependencies 只安装package.json里的dependencies的文件 npm install &amp;ndash;devDependencies 只安装package.json里的devDependencies文件 会自动将package.json中的模块安装到node-modules文件夹
+升级插件 npm-check-updates使用 npm install -g npm-check-updates 安装npm-check-updates插件 ncu 查看package.json中依赖的最新版本 ncu -u 更新依赖到最新版本 ncu -a 更新全部依赖到最新版本 npm update</description>
+    </item>
+    
+  </channel>
+</rss>

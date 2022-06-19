@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>设计模式 on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+    <description>Recent content in 设计模式 on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 30 Nov 2021 15:08:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单了解设计模式</title>
+      <link>https://blog.cjlio.com/posts/121/</link>
+      <pubDate>Tue, 30 Nov 2021 15:08:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/121/</guid>
+      <description>设计模式实质就是一套可以通用，复用的设计方案，设计模式是针对面向对象的，在面向对象出来之前，程序是面向过程的，设计模式就是软件设计的工具
+面向过程：逻辑化过程，以逻辑实现
+面向对象：思考有哪些对象，对象都有什么行为，行为的逻辑化
+设计模式的好处就是通用可复用，跨语言
+设计模式的6大原则：
+单一职责原则：指的是一个类只负责一个职责，职责越单一，越容易复用
+里氏替换原则：子类可以替换自己的父类，通过开闭原则，通过增加子类来实现父类的“修改”，子类可以添加自己的方法和属性，但是不能重写父类的方法
+依赖倒置原则：依赖于接口，而不是实现，面向接口编程，类于类之间不要存在直接依赖，而依赖于接口
+接口隔离原则：不同的功能应该用多种接口实现行为，而不能将接口功能直接概括全部行为，单独实现需要的接口
+迪米特法则：迪米特法则又叫最少知识原则，一个对象对其他对象应该保持最少的了解，降低类与类之间的耦合，避免一个类依赖于另一个类，而导致另一个类的影响
+开闭原则：指的是对扩展进行开放，对修改进行关闭，需要添加新功能，应该添加类，而不是修改原来有的类，保证程序的稳定性
+常见的设计模式有工厂模式，策略模式，单例模式，代理模式，适配器模式，装饰者模式，模版方法模式，观察者模式，抽象工厂模式，门面模式
+创建型模式：对象实例化的模式，创建型模式用于解耦对象的实例化过程 单例模式 工厂模式 抽象工厂 建造者模式 原型模式
+创建型模式就是指创建对象，在创建对象时通过共同的接口来指向这个新创建的对象
+结构型模式：把类或对象结合在一起形成一个更大的结构 适配器模式 组合模式 装饰器模式 代理模式 享元模式 外观模式 桥接模式
+行为型模式：类和对象如何交互，及划分责任和算法 迭代器模式 模板方法模式 策略模式 命令模式 状态模式 责任链模式 备忘录模式 观察者模式 访问者模式 中介者模式 解释器模式</description>
+    </item>
+    
+  </channel>
+</rss>

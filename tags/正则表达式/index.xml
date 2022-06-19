@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>正则表达式 on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+    <description>Recent content in 正则表达式 on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 02 Jul 2021 18:12:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>正则表达式学习笔记</title>
+      <link>https://blog.cjlio.com/posts/52/</link>
+      <pubDate>Fri, 02 Jul 2021 18:12:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/52/</guid>
+      <description>正则表达式（Regular Expression）是用于匹配字符串中字符组合的模式，在JavaScript中，正则表达式也是对象
+JavaScript创建正则表达式
+使用RegExp对象创建
+var hallo = new RegExp(/123/);
+或者
+var hallo = /123/;
+检查是否符合该正则表达式
+使用test方法判断字符串是否符合该规则的要求，返回的值是布尔值
+console.log(hallo.test(123));
+/123/只要包含123就返回true
+正则表达式元字符
+边界符（^和$）
+^表示匹配行首的文本（以谁开始）
+$表示行尾的文本（以谁结束）
+var hallo = ^abc;
+必须要abc开头，如果是aabc的话，返回false
+var hallo = abc$;
+必须要abc结尾，例如aabc，返回true
+var hallo = ^abc$;
+^和$一起使用就是精确匹配，必须是abc，如果是abcabc的话，返回false
+字符类[]
+var hallo = /[abc]/;
+只要包含a，b，c其中一个字符都匹配，返回true，例如axx
+var hallo = /^[abc]$/;
+三选一，只有包含a，b，c其中单独的一个才匹配返回true，例如abc，就返回false
+范围符-
+var hallo = /^[a-z]$/;
+多选一，a到z，包含26个字母任何一个字母都返回true，大小写敏感，A和a不一样
+var hallo = /^[a-zA-Z0-9_-]$/;
+多选一，包含26个字母（包含大小写）任何一个字母和数字（0到9）和下划线其中一个都返回true
+取反
+var hallo = /^[^a-z]$/;
+在方括号内部加^，就是代表取反，不能包含a到z其中的一个字母
+量词符（*，+，?）
+var hallo = /a*/;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,3647 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/posts/</link>
+    <description>Recent content in Posts on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 May 2022 14:00:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>web安全学习笔记</title>
+      <link>https://blog.cjlio.com/posts/116/</link>
+      <pubDate>Sun, 01 May 2022 14:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/116/</guid>
+      <description>常见web工具：
+burpsuite：通过代理渗透，可重放HTTP请求，来分析HTTP响应
+curl：通过url方式传输数据，可用于抓取页面（执行请求），监控网络等等
+postmain
+hackbar quantum
+wappalyzer
+文件上传漏洞：没有足够的安全约束的情况下，允许上传恶意文件，例如恶意脚本，webshell等等
+文件上传漏洞关键点在于绕过
+由于法律限制的原因，禁止对其他网站非法攻击，因此需要在本地或者在自己的服务器上建立靶场渗透环境，这边使用的是bwapp（全称为buggy web Application）
+这边使用的是docker运行bwapp，也可以下载bwapp，来自己搭建（https://sourceforge.net/projects/bwapp/files/）
+docker pull raesene/bwapp
+docker run -d -p 0.0.0.0:80:80 raesene/bwapp
+访问127.0.0.1/install.php
+点击here来初始化，或者直接访问127.0.0.1/install.php?install=yes
+创建账号信息，点击new user，或者直接访问127.0.0.1/user_new.php
+点击login，或者直接访问127.0.0.1/login.php，根据刚才的账号信息进行登录
+简单接触文件上传漏洞
+chose your bug选择unrestricted File Upload（未经严格审记的文件上传），安全级别选择low（set your security level）
+上传一句话木马，创建shell.php文件，添加
+通过curl触发，执行curl -d &amp;rsquo;test=echo getcwd();&amp;rsquo; http://127.0.0.1/images/shell.php
+可以看到成功触发shell.php，并且服务器返回了当前执行的目录
+后缀名绕过
+安全级别选择medium（set your security level）
+常见后缀名验证方式有，黑名单（禁止哪些后缀上传），白名单（只允许哪些后缀上传）
+这里的靶场环境的web server为Apache，因此需要了解Apache解析器模块
+.htaccess绕过，当黑名单没有限制上传.htaccess文件时，并且web sever也支持.htaccess时
+上传.htaccess文件，内容为：AddType application/x-httpd-php jpg
+上传木马，shell.jpg
+AddType application/x-httpd-php jpg的意思是，jpg文件按照php文件的方式解析
+大小写绕过
+大小写用于Windows平台环境下，在Windows中，大小写是不敏感的，而在Linux环境下，大小写是敏感的
+Windows文件流绕过
+利用windows平台的NTFS文件系统的文件流特性，设置文件时，默认使用未命名的文件流，但是也可以创建其他命名的文件流
+例如：
+echo hallo,word &amp;gt; hallo.txt:a.txtecho hallo &amp;gt; hallo.</description>
+    </item>
+    
+    <item>
+      <title>简单使用Pm2---node进程管理工具</title>
+      <link>https://blog.cjlio.com/posts/pm2/</link>
+      <pubDate>Tue, 19 Apr 2022 20:39:27 +0800</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/pm2/</guid>
+      <description>安装pm2
+npm install pm2 -g
+执行app.js文件并且监听app.js的变化，-i为进程数，max表示当前cpu可启动的最大进程
+pm2 start app.js &amp;ndash;watch -i max &amp;ndash;ignore-watch=&amp;ldquo;node_modules&amp;rdquo; &amp;ndash;name demo
+&amp;ndash;ignore-watch=&amp;ldquo;node_modules&amp;quot;为忽略监听指定的目录或者文件，这里忽略的是node_modules文件夹
+&amp;ndash;name为进程名字
+pm2执行npm run dev
+pm2 start npm &amp;ndash;watch &amp;ndash; run dev
+pm2执行npm run start
+pm2 start npm &amp;ndash;name demo &amp;ndash; run start
+查看PM2中的进程信息
+pm2 list
+查看指定进程id的信息
+pm2 show 0
+重启指定进程id的进程
+pm2 restart 0
+重启全部进程
+pm2 restart all
+停止指定进程id的进程
+pm2 stop 0
+删除指定进程id的进程
+pm2 delete 0
+查看全部进程的日志
+pm2 logs
+清空所有日志文件
+pm2 flush</description>
+    </item>
+    
+    <item>
+      <title>简单了解a11y无障碍</title>
+      <link>https://blog.cjlio.com/posts/144/</link>
+      <pubDate>Sat, 09 Apr 2022 13:01:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/144/</guid>
+      <description>a11y全称为Accessibility，A到y之间有11个字母，因此叫a11y，Accessibility中文翻译为可访问性，也就是无障碍
+让网站具备无障碍性，可以让一些视觉障碍人士访问该网站，而且就算是其他人士使用，也会因a11y而受益（不因网络慢，css文件丢失而无法正常浏览页面内容）
+在mdn上有句话：The Web is fundamentally designed to work for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. When the Web meets this goal, it is accessible to people with a diverse range of hearing, movement, sight, and cognitive ability.
+w3c发布了Web内容无障碍指南 (WCAG) https://www.w3.org/Translations/WCAG21-zh/
+妨碍障碍人士访问web页面常见是视觉障碍，一般需要使用放大镜或者屏幕缩放来访问，严重的可能需要使用屏幕阅读器
+常见的屏幕阅读器有：NVDA（windows），ChromeVox（Chrome浏览器内置），Narrator（windows内置，也就是我们说的讲述人），VoiceOver（苹果家的，像MacOS，ios，ipadOS都内置了），TalkBack（安卓内置），以及Orca（Linux内置）
+mdn对于障碍人士可访问性优化提供了建议：
+1.使用多种方式传达内容，比如从文本到语音或是视频； 2.更易理解的内容，例如使用更通俗的语言书写的文本； 3.将注意力集中在重要内容上； 4.尽量减少干扰，例如不必要的内容或广告； 5.一致的网页布局和导航； 6.相似的元素，比如未访问的下划线链接使用蓝色而访问过的使用紫色； 7.将过程划分为更有逻辑的，必要的步骤并附上进度指示器； 8.在不影响安全性的情况下尽可能让网站认证更简单；并且 9.使表单容易完成，例如带有清晰的错误消息和简单的错误恢复。
+而WCAG指南也提供了建议：
+可感知性（Perceivable）：非文本内容有文本替代，对于视频内容应该提供字幕，确保视感和听感都可浏览，不会因为某些原因导致信息或者结构（可以理解为文本顺序）丢失，应该具备可辨别性（颜色不应该作用区别视觉的唯一手段（针对色盲人士））
+可操作性（Operable）：页面可通过键盘来操作，而不是唯一依赖于鼠标，提供足够的时间来阅读和使用内容（比如定时可调整，关闭定时，延长定时等等），防癫痫（不使用会诱发癫痫的设计，例如控制闪光的次数），提供导航，查找以及提供内容位置，允许使用键盘之外的设备输入（例如鼠标或者手写板）
+可理解性（Understandable）：内容应该都是可读，可被理解的（例如设置多种人类语言，比如英文，中文，日文等等，根据操作系统使用语言或者时区设置为默认语言，语言可切换），任何操作都应该具备可预见性（例如关闭一个弹窗，不会导致其他意想不到的情况发生），当输入出现问题应该提示用户哪错了（例如注册时，密码的组合程度等等），当出现用户操作出错时，应该做到操作可逆或者二次确定操作（给予用户检查和纠正的机会）
+鲁棒性（Robust）：应该在发生某一些系统故障或者网络故障时，确保还能正常工作，而不是罢工或者出错，鲁棒性又叫抗干扰性，健壮性</description>
+    </item>
+    
+    <item>
+      <title>Flutter框架学习笔记</title>
+      <link>https://blog.cjlio.com/posts/141/</link>
+      <pubDate>Tue, 22 Mar 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/141/</guid>
+      <description>Flutter是谷歌开源的跨平台UI框架，可以快速在iOS和Android上构建高质量的原生用户界面，可在Windows，Linux，Android，Web，iOS，Mac等6大平台上开发应用
+闲鱼和Now直播，美团，快手都使用了Flutter
+获取Flutter
+https://storage.flutter-io.cn/flutter_infra_release/releases/stable/windows/flutter_windows_2.10.3-stable.zip
+添加path环境变量
+由于Flutter库是在google那，因此需要设置第三方可信镜像库
+设置PUB_HOSTED_URL和FLUTTER_STORAGE_BASE_URL环境变量
+PUB_HOSTED_URL设置为https://pub.flutter-io.cn
+FLUTTER_STORAGE_BASE_URL设置为https://storage.flutter-io.cn
+（flutter-io.cn所提供的镜像由中国的Flutter开发者社区提供和维护）
+其他可信第三方镜像库：
+腾讯云镜像
+PUB_HOSTED_URL（https://mirrors.cloud.tencent.com/dart-pub） FLUTTER_STORAGE_BASE_URL（https://mirrors.cloud.tencent.com/flutter）
+清华大学镜像
+PUB_HOSTED_URL（https://mirrors.tuna.tsinghua.edu.cn/dart-pub） FLUTTER_STORAGE_BASE_URL（https://mirrors.tuna.tsinghua.edu.cn/flutter）
+添加Flutter环境变量path，解压路径\flutter\bin
+执行where.exe flutter dart，如果有反应，说明path环境配置完成
+（如果要开发安卓的话，需要安装jdk，Android Studio，Android Jdk，可执行flutter doctor检查依赖（如果是X表示没依赖，需要安装））
+这里用Visual Studio Code的Flutter插件
+创建第一个demo（项目名必须全小写，可用_下划线）
+flutter create flutterdemo
+启动项目（编译执行）
+flutter run
+Dart是静态类型语言，它会在定义时绑定数据类型（var）
+Dart允许一个类中有多个构造函数，在new初始化时，可选择类的某个构造函数
+Dart库管理（pub.dev）,在pubspec.yaml添加库
+实质上Dart和JavaScript很相似，只是它有抽象和泛型（ts也有泛型，抽象类就是类似于golang的接口，只定义不实现）
+Dart也是单线程执行，主线程外也有宏任务队列和事件队列（可以理解为JavaScript中的宏任务）
+Dart执行过程：执行main()函数，判断是微任务还是事件队列，是微任务则插入微任务队列，是宏任务则插入宏任务队列，执行完成后（主线程），会执行微任务队列和事件队列，以及判断微任务队列和事件队列是否为空，当为空时程序执行结束
+flutter项目下的lib/main.dart，class MyApp类下
+修改为 home: const MyHomePage(title: &amp;lsquo;Hallo word&amp;rsquo;), // 当前title信息
+在return Scaffold下的body: Center下的，修改为children: [const Text(&amp;lsquo;Hallo word&amp;rsquo;,),
+运行后可以看到一个title以及内容都为Hallo word的app
+flutter自带了可视化工具，Dart DevTools
+自己写一个main.dart
+void main() =&amp;gt; runApp(MyApp()); class MyApp extends StatelessWidget{ @override Widget build(BuildContext context){ return MaterialApp( title: &amp;quot;hallo word&amp;quot;, // app的title theme: ThemeData( primarySwatch: Colors.</description>
+    </item>
+    
+    <item>
+      <title>browserslist的简单配置</title>
+      <link>https://blog.cjlio.com/posts/140/</link>
+      <pubDate>Sat, 12 Mar 2022 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/140/</guid>
+      <description>browserslist是查询浏览器列表的工具，browserslisp的配置可写在package.json中，也可以单独写在.browserslistrc配置⽂件中
+browserslist的配置文件会被Autoprefixer，Babel，postcss-preset-env，eslint-plugin-compat，stylelint-no-unsupported-browser-features，postcss-normalize，obsolete-webpack-plugin工具读取，并且对配置的目标浏览器做适配工作
+npx browserslist可查看根据条件输出的浏览器列表
+查看全球用户份额大于0.2%的浏览器
+npx browserslist &amp;ldquo;&amp;gt; 0.2%&amp;rdquo;
+查询Chrome最新1个版本
+npx browserslist &amp;ldquo;last 1 Chrome versions&amp;rdquo;
+查看browserslist的默认配置
+npx browserslist &amp;ldquo;defaults&amp;rdquo;
+browserslist的默认配置为&amp;gt; 0.5% and last 2 versions adn Firefox ESR and not dead
+not dead的意思是不输出官方不再维护的浏览器（例如ie10），dead是不维护，not是不输出
+and就是和，or是或者
+browserslist的配置
+package.json（browserslist官方推荐用这个）
+&amp;quot;browserslist&amp;quot;: [ &#39;&amp;gt; 0.2%&#39;, &#39;last 1 Chrome versions&#39; &#39;not dead&#39; ] 或者写成
+&amp;quot;browserslist&amp;quot;: [ &#39;&amp;gt; 0.2% and last 1 Chrome versions and not dead&#39;, ] .browserslistrc
+&amp;gt; 0.2% and last 1 Chrome versions and not dead browserslist数据的优先级：当前项目的package.</description>
+    </item>
+    
+    <item>
+      <title>Nestjs学习笔记</title>
+      <link>https://blog.cjlio.com/posts/139/</link>
+      <pubDate>Sat, 05 Mar 2022 14:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/139/</guid>
+      <description>NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程
+安装
+npm install -g @nestjs/cli
+创建demo项目
+nest new demo
+选择使用包管理器（支持npm，yarn，pnpm）
+创建完成后可以看到src目录，是典型的MVC架构
+app.controller.ts（应用路由控制器） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件） app.service.ts（应用服务文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap(）））
+从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的
+启动项目
+npm run start
+访问http://localhost:3000/，如果看到Hello World!表示启动成功
+nestjs cli支持对mvc模块的生成
+创建控制器 nest g controller 名称
+创建服务 nest g service 名称
+创建模块 nest g module 名称
+创建异常过滤器 nest g filter 名称
+创建拦截器 nest g interceptor 名称
+创建中间件 nest g middleware 名称
+创建管道 nest g pipe 名称
+创建守卫 nest g gu 名称
+控制器（controller）
+controller负责接收请求和处理响应</description>
+    </item>
+    
+    <item>
+      <title>简单使用Express-Web应用框架</title>
+      <link>https://blog.cjlio.com/posts/138/</link>
+      <pubDate>Mon, 28 Feb 2022 18:04:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/138/</guid>
+      <description>Express是基于nodejs的web应用框架（同时也是node的第三库），同时也是很多web应用框架的底层库
+安装
+npm install express &amp;ndash;save
+或者安装express-generator脚手架
+npm install -g express-generator
+脚手架：
+初始化项目（demo是项目名）
+express demo
+安装依赖
+npm install
+运行
+npm start
+如果不使用脚手架（main.js）
+const express = require(&amp;quot;express&amp;quot;) const app = express() app.get(&#39;/&#39;,function(req,res){ res.end(&amp;quot;hallo world!&amp;quot;) }) app.listen(3000) 运行
+node main.js
+或者（监视nodejs应用中的任何更改并自动重启服务）
+nodemon main.js
+访问localhost:3000
+静态文件管理（必须通过/src才能访问src文件夹的静态文件）
+app.use(&amp;rsquo;/src&amp;rsquo;,express.static(&amp;lsquo;src&amp;rsquo;))
+解决跨域问题（依赖于cors模块）
+app.use(require(&amp;lsquo;cors&amp;rsquo;)())
+Express连接MongoDB（mongoose）
+npm install mongoose
+const mongoose = require(&#39;mongoose&#39;) mongoose.connect(&#39;mongodb://localhost:27014/test&#39;,{useNewUrlParser: true}) const testdb = mongoose.model(&#39;testdb&#39;,new mongoose.Schema({ _id: Number, title: String })) /*testdb.inserMany([ {_id: 1, title: &amp;quot;abc&amp;quot;}, {_id: 2, title: &amp;quot;xyz&amp;quot;} {_id: 3, title: &amp;quot;abcxyz&amp;quot;} ])*/ app.</description>
+    </item>
+    
+    <item>
+      <title>简单使用Hugo搭建网站</title>
+      <link>https://blog.cjlio.com/posts/137/</link>
+      <pubDate>Tue, 22 Feb 2022 05:19:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/137/</guid>
+      <description>Hugo是基于Go语言开发的静态网站生成器，特点就是快
+安装
+二进制文件安装（由官方编译完成的二进制文件来安装，推荐使用，用源码容易出现问题）
+https://github.com/gohugoio/hugo/releases
+源码安装
+git clone https://github.com/gohugoio/hugo.git
+cd hugo
+go install
+检查是否安装完成 hugo -v，如果需要支持SASS/SCSS，请添加&amp;ndash;tags extended参数，不过在这之前需要CGO的依赖（或者使用hugo_extended版本）
+如果没安装CGO，请先安装CGO，这里使用的是mingw64，CGO_ENABLED环境变量为1
+生成站点
+hugo new site ./www
+创建文章（默认自动生成md文件到content文件夹中，可选择目录）
+hugo new post/hallo.md
+如果没有显示文章的话，请将文章的draft字段改为false，因为这个是草稿，草稿是不会显示在页面上的
+安装主题
+git clone https://github.com/miiiku/hugo-theme-kagome.git ./themes/kagome
+修改config.toml文件
+baseURL = &amp;lsquo;https://blog.cjlio.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
+启动Hugo服务器
+hugo server
+访问http://localhost:1313
+如果报错，you need the extended version to build SCSS/SASS的话，请使用extended版本
+部署到github pages
+hugo &amp;ndash;baseUrl=&amp;ldquo;http://chenjunlinabc.github.io/&amp;quot;
+如果该命令执行成功，会将静态页面生成到public文件夹中，只需要push该文件夹到github上就好了</description>
+    </item>
+    
+    <item>
+      <title>简单了解RESTful设计规范</title>
+      <link>https://blog.cjlio.com/posts/136/</link>
+      <pubDate>Wed, 16 Feb 2022 21:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/136/</guid>
+      <description>RESTful是指满足REST的约束条件和原则的应用或者设计，REST全称Representational State Transfer（表现层状态转移），REST出现在2000年Roy Fielding的博士论文中（Roy Fielding是HTTP规范的主要编写者之一），RESTful是目前最流行的API设计规范
+资源(Resources)：REST是基于资源的，不同的资源使用不同且唯一的URI(统一资源标识符（Uniform Resource Identifier），URI格式例如：/img/hallo.jpg，可表示一个资源的路径和资源名称，URI实质上就是URL加URN)表示，获取资源通过访问URI得到，这个资源可以是任何东西（例如txt，exe，iso，mp3，mp4等等）
+表示层(Representation)：表示层指是将资源具体内容以某种方式展现出来的，例如hallo.mp3，那么就会用mp3的格式来展现这个文件的内容
+状态转换(State Transfer)：如果希望客户端通过某种请求方式来让服务端表示层的资源发生改变，这就是状态转换，这请求方式分别为GET（获取资源），POST（新建资源），PUT（更新资源），DELETE（删除资源）
+RESTful设计规范的六个规范：
+1.客户端/服务端(C/S)关注点分离，客户端专注于用户的操作界面，服务端专注于数据存储
+2.无状态，要求客户端的每个请求都要拥有完成请求的全部信息，服务端不用存储任何上下文信息，会话信息存储在客户端上
+3.统一接口（Uniform Interface），要求使用具备REST规范（资源标识符，资源状态的修改，具备描述资源怎么操作处理的信息，客户端应使用超链接的方式来动态访问其他资源）的接口
+4.可缓存（Cache），允许服务端响应可被缓存或者不可缓存（必须明确是否可缓存），如果响应可缓存，客户端可以根据有效缓存时间，来复用响应，减少前后端交互
+5.分层系统，不允许跨层访问（访问不相邻的层）
+6.按需编码（可选，可理解为按需扩展客户端功能），允许服务端提供一些脚本来扩展客户端功能（例如JavaScript）
+api接口统一域名（推荐使用api.cjlio.com这样的格式）
+URI（不使用大写，使用中杆-，资源名字是复数名词，资源实体集合，不能出现动词）
+HTTP请求方式（不同的操作使用不同的请求方式，例如获取资源使用get，post新建资源等等）
+如果资源庞大，可通过get参数的形式获取（例如分页），API的版本号应该放在URI中，更改资源，应该修改资源版本号，原有的URI应该保持继续可用
+需正确设置http状态码，根据http状态码来做出不同的响应，例如200正常返回，404文件不存在等等</description>
+    </item>
+    
+    <item>
+      <title>Gin框架学习笔记</title>
+      <link>https://blog.cjlio.com/posts/135/</link>
+      <pubDate>Tue, 15 Feb 2022 17:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/135/</guid>
+      <description>Gin是一个基于go语言编写的web框架，因为Gin的路由库基于httprouter开发的，性能非常好，支持Restful api规范
+安装
+go get -u github.com/gin-gonic/gin
+第一个demo
+package main import &amp;quot;github.com/gin-gonic/gin&amp;quot; import &amp;quot;net/http&amp;quot; func main() { g := gin.Default() g.GET(&amp;quot;/&amp;quot;, func(c *gin.Context) { c.String(http.StatusOK, &amp;quot;hallo word&amp;quot;) }) g.Run() } go run main.go
+g.Run()是将应用部署到本地服务器上，默认端口为8080，可设置端口，g.Run(&amp;quot;:2333&amp;quot;)
+路由
+r.GET(&amp;quot;/test/:name&amp;quot;, func(c *gin.Context) { name := c.Param(&amp;quot;name&amp;quot;) c.String(http.StatusOK, name) }) g.Run(&amp;quot;:6666&amp;quot;) 127.0.0.1:6666/test/xiaochen
+可以看到Context的Param方法可以获取路由的参数
+通过url传递参数
+r.GET(&amp;quot;/test&amp;quot;, func(c *gin.Context) { name := c.DefaultQuery(&amp;quot;name&amp;quot;, &amp;quot;test&amp;quot;) c.String(http.StatusOK, fmt.Sprintf(&amp;quot;hallo %s&amp;quot;, name)) }) r.Run() 127.0.0.1:6666/test
+如果没有传递参数将会输出DefaultQuery的默认参数test
+传递参数后 127.0.0.1:6666/test?name=word
+POST请求
+index.html main.go</description>
+    </item>
+    
+    <item>
+      <title>beego应用框架的简单使用</title>
+      <link>https://blog.cjlio.com/posts/134/</link>
+      <pubDate>Sat, 12 Feb 2022 16:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/134/</guid>
+      <description>beego是一个基于go语言开发的http框架，beego可用于开发web，api，后端服务等等应用，beego架构为mvc模型，支持RESTful api规范设计，支持热更新
+安装
+go get github.com/beego/beego
+go get github.com/beego/bee
+检查是否安装完成
+bee version
+beego项目可使用bee指令来创建和管理
+创建第一个web应用
+bee new hallo
+beego是基于mvc模型的，因此其构建出来的项目文件也是标准mvc模型文件结构，其中main.go是入口文件
+执行go mod tidy，生成go.sum
+启动项目（bee run指令会自动编译部署）
+bee run
+访问http://127.0.0.1:8080/
+其他常用beeg指令
+创建api应用
+bee api apitest
+打包应用命令（将项目打包压缩）
+bee pack
+自动生成代码
+bee generate
+controller控制器
+简单接收一下get请求的参数
+controllers/default.go，在func (c *MainController) Get() 函数中修改
+name := c.GetString(&amp;quot;name&amp;quot;) c.Data[&amp;quot;Website&amp;quot;] = name 访问http://127.0.0.1:8080/?name=hallo，views\index.tpl的模板中的{{.Website}}被设置为hallo
+在controllers/default.go看到，其定义了一个MainController结构体，该结构体继承了beego.Controller的全部方法（其中方法包括Get，Post等等方法）
+Model模型
+在bee new中并没有Model实例演示，但是bee api有，而且controller控制器可完成一些简单逻辑，只有当逻辑需要复用时才抽象成Model模型
+View视图
+在controllers/default.go看到c.TplName = &amp;ldquo;index.tpl&amp;rdquo;，这个语句就是设置模板文件，该模板支持tpl和html文件，beego使用了golang默认的模板引擎
+在views/index.tpl中可以看到这个
+&amp;lt;div class=&amp;quot;author&amp;quot;&amp;gt; Official website: &amp;lt;a href=&amp;quot;http://{{.Website}}&amp;quot;&amp;gt;{{.Website}}&amp;lt;/a&amp;gt; / Contact me: &amp;lt;a class=&amp;quot;email&amp;quot; href=&amp;quot;mailto:{{.</description>
+    </item>
+    
+    <item>
+      <title>简单使用ESbuild打包工具</title>
+      <link>https://blog.cjlio.com/posts/132/</link>
+      <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/132/</guid>
+      <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包，支持TypeScript和jsx
+安装
+npm install esbuild
+或者
+yarn add esbuild
+打包
+.\node_modules.bin\esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle
+或者package.json
+&amp;ldquo;build&amp;rdquo;: &amp;ldquo;esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle&amp;rdquo;
+npm run build
+例子（app.jsx）
+import React from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; const App = () =&amp;gt; { return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; ) } ReactDOM.render( &amp;lt;App /&amp;gt;, document.getElementById(&amp;quot;app&amp;quot;) ) index.html
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 我本地打包只花64ms就打包好了</description>
+    </item>
+    
+    <item>
+      <title>简单使用GitHub Actions来实现CI/CD</title>
+      <link>https://blog.cjlio.com/posts/131/</link>
+      <pubDate>Tue, 01 Feb 2022 18:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/131/</guid>
+      <description>CI：持续集成 (Continuous Integration) CD：持续交付 (Continuous Delivery) CD：持续部署 (Continuous Deployment)
+GitHub Actions是GitHub提供的持续集成服务
+GitHub Actions官方文档：https://docs.github.com/en/actions
+workflow：工作流程，指一次持续集成的流程，由一个job或者多个job组成 Events：事件，触发流程的钩子（在github中事件为检测仓库特定活动的钩子，例如pull，当事件被触发则自动执行工作流程） Job：任务，任务是工作流程的主体 Steps：步骤，每个Job可以包含一个或多个Step Actions: 行为，每个Step包含一个或多个Action Runners: 执行环境，工作流程运行时的服务端，每一个执行环境可以运行一个任务
+workflow工作流程通过编写workflow文件来描述，workflow文件要使用YAML语言编写，github支持多个workflow（当github发现.github/workflows/目录下有.yml文件时就会执行该文件）
+在仓库的.github/workflows/目录下创建test.yml，其中要配置字段
+name：workflow名称，如果省略默认为当前workflow的文件名
+on：指定触发workflow的条件，一般为事件触发（比如说push）
+jobs：每一项任务都需要定义个job_id，job中的name为该任务的描述，needs为指定当前任务的运行顺序（依赖关系），runs-on为指定运行时需要的虚拟机环境（这个字段必须填）
+目前github支持的虚拟机操作系统有ubuntu，windows，macOS，而且github提供的虚拟机是免费使用的
+这里举个例子（github官方的）
+name: GitHub Actions Demo on: [push] jobs: Explore-GitHub-Actions: runs-on: ubuntu-latest steps: - run: echo &amp;quot; The job was automatically triggered by a ${{ github.event_name }} event.&amp;quot; - run: echo &amp;quot; This job is now running on a ${{ runner.os }} server hosted by GitHub!</description>
+    </item>
+    
+    <item>
+      <title>简单使用TailwindCSS</title>
+      <link>https://blog.cjlio.com/posts/130/</link>
+      <pubDate>Thu, 27 Jan 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/130/</guid>
+      <description>TailwindCSS是一个CSS框架，我个人理解这东西就是根据class来生成css（按需），而不是像bootstrap那样，TailwindCSS是原子化的
+安装
+npm install tailwindcss
+初始化tailwind.config.js
+npx tailwindcss init
+在tailwind.config.js中content属性，表示着项目的html或者js文件
+content: [ &#39;./src/**/*.{html,js}&#39; ], 如果没有配置content属性，会警告
+warn - The content option in your Tailwind CSS configuration is missing or empty. warn - Configure your content sources or your generated CSS will be missing styles. warn - https://tailwindcss.com/docs/content-configuration
+创建一个css文件配置tailwind三大组件（base，components.utilities）
+@tailwind base; @tailwind components; @tailwind utilities; 如果使用的是webpacker或者postcss-import，不能使用@tailwind指令，需要
+@import &amp;quot;tailwindcss/base&amp;quot;; @import &amp;quot;tailwindcss/components&amp;quot;; @import &amp;quot;tailwindcss/utilities&amp;quot;; 也可以将css导入到js中
+import &amp;quot;tailwindcss/tailwind.css&amp;quot; tailwind编译
+npx tailwindcss -i ./src/index.css -o ./dist/main.css</description>
+    </item>
+    
+    <item>
+      <title>PostCSS学习笔记</title>
+      <link>https://blog.cjlio.com/posts/129/</link>
+      <pubDate>Sun, 23 Jan 2022 13:55:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/129/</guid>
+      <description>PostCSS是一个用JS插件转换为css的插件工具（注意：PostCSS不是css预处理器，PostCSS本身是个平台，可以通过一些插件达到css预处理器的效果）
+PostCSS is a tool for transforming CSS with JS plugins. These plugins can support variables and mixins, transpile future CSS syntax, inline images, and more.
+插件查询：https://www.postcss.parts/
+常用插件：https://github.com/postcss/postcss/blob/main/docs/plugins.md
+安装
+npm install postcss postcss-loader
+或者安装到项目中
+npm install postcss postcss-loader &amp;ndash;save-dev
+PostCSS不单独使用，可搭配Gulp或者webpack使用（这里使用的是webpack）
+webpack.config.js
+module.exports = { module: { rules: [ { test: /\.css$/, use: [&amp;quot;style-loader&amp;quot;, &amp;quot;css-loader&amp;quot;, &amp;quot;postcss-loader&amp;quot;] } ] } }; postcss.config.js
+module.exports = { plugins: [插件1,插件2] }; Autopreﬁxer（自动添加浏览器前缀）
+npm install autoprefixer &amp;ndash;save-dev</description>
+    </item>
+    
+    <item>
+      <title>Golang进阶扩展笔记</title>
+      <link>https://blog.cjlio.com/posts/128/</link>
+      <pubDate>Sun, 16 Jan 2022 09:08:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/128/</guid>
+      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://cjlio.com/archives/96.html
+并发
+go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
+内核态：程序执行操作系统层级的程序时
+用户态：程序执行用户自己写的程序时
+常见的并发模型有七种，分别是通讯顺序进程（CSP），数据级并行，函数式编程，线程与锁，Clojure，actor，Lambda架构
+CSP（Communicating Sequential Process，通讯顺序进程）：思想就是将两个并发执行的实体使用channel管道来连接起来，全部信息通过channel管道来传输，而且数据的传输是根据顺序来发送和接收的，CSP理论由托尼·霍尔提出
+小知识：托尼·霍尔（C.A.R.Hoare），图灵奖获得者，快速排序算法（Quick Sort）也出自这位之手
+go的并发编程不需要像java那样维护线程池，go在语言层面内置了调度和上下文切换机制，只需要定义任务，让go运行时来智能合理的调度goroutine的任务给每个CPU，也不需要额外写什么进程，线程，协程，只需要写一个函数，开启一个goroutine就是可以实现并发了
+Go运行时会给main()函数建立一个默认的goroutine，当main()结束时，其他在main()执行的goroutine都会被结束（不管有没有执行完成）
+goroutine的栈开始时为2kb（OS线程一般为2mb），而且栈不是固定的，可以增大和缩小，大小限制可以达到1GB
+GPM调度器是Go对CSP并发模型的实现，是Go自己开发的一套调度系统（GPM分别表示为Goroutine，Processor，Machine）
+Goroutine：go关键字创建的执行体，对应则结构体g，这个结构体存储着goroutine的堆栈信息
+Processor：负责管理goroutine队列，存储则当前goroutine运行的上下文，会给自己管理的goroutine队列进行调度，例如：暂停goroutine，执行goroutine，当自己的队列处理完毕，将去全局队列中获取，全局队列处理完毕，还可以去其他P的队列去获取，用来处理G和M的通信
+Machine：G运行时对操作系统内核线程的虚拟化，映射内核线程（groutine就是被放到这个内核线程的映射虚拟化M中执行）
+简单来说就是P管理一组G在M上执行，当一个G阻塞在一个M时，Go运行时创建一个新的M，负责管理阻塞的那个G的P将其他G挂载在新的M上，G阻塞完成时或者G死掉了，回收旧的M
+P的个数通过runtime.GOMAXPROCS设置（最大256）（1.5版本后默认为计算机物理线程数）
+GPM调度器使用被称为m:n调度的技术（复用或者调度m个goroutine到n个OS线程）（可用runtime.GOMAXPROCS来控制OS线程的数量）
+因为底层OS线程的切换机制是根据时间轮询来切换的，因此goroutine的切换机制也是根据时间轮询来切换
+runtime.Gosched()：让当前任务让出线程占用，给其他任务执行
+runtime.Goexit()：终止当前任务
+通道是可被垃圾回收机制回收的，所以只有在告诉接收数据方，所有数据都已发送完毕了才需要关闭通道
+对已经关闭的管道发送数据，导致触发panic，同样关闭已经关闭的管道也会导致
+对已经关闭并且没有值的管道接收数据，将得到对应类型的零值，接收一个已经被关闭的管道，会一直接收数据，直到管道空了
+无缓冲区管道（阻塞管道）：要求管道的发送方和接收方交互是同步的，管道容量等于0的就是无缓冲管道，如果不能满足同步，将导致阻塞，要接收者准备完毕，发送者才能进行工作
+有缓冲区管道（非阻塞管道）：可以异步发送数据接收数据，只要缓冲区存在没有使用的空间，通信就是无阻塞的，可先发送数据再接收（因为有缓冲区），而且缓冲区管道可以保存数据（不需要取完数据）
+任务池：goroutine池，当goroutine任务完成，不kill该goroutine，而是获取下一个任务，并且继续执行该任务
+注意：go内置的map并不是并发安全的，只有使用channel或者sync.Map才是并发安全的
+锁可以避免并发冲突，但是锁对系统性能影响很大，原子操作可以减少这种消耗
+原子操作：指的是某个操作在执行中，其他协程不会看到没有执行完毕的结果，对于其他协程来说，只有原子操作完成了或者没开始，就好像原子一样，不被分割
+在多核中，某个核心读取某个数据是，会因为CPU缓存的原因，可能读取到的值不是最新的，在Go中，原子操作主要依赖于sync/atomic包
+sync/atomic包将原子操作封装成了Go的函数，sync/atomic包提供了底层的原子级内存操作
+因为Go不支持泛型，所以封装的函数很多（每个类型都有自己的原子操作函数，这里只写int64一个类型）
+增或减（被操作值增大或减少，只适合int和uint类型增减）：func AddInt64(addr *int64, delta int64) (new int64)
+载入（读取，避免读取过程，其他协程进行修改操作）：func LoadInt64(addr *int64) (val int64)
+存储（写入，避免写入过程，其他协程进行读取操作）：func StoreInt64(addr *int64, val int64)
+交换（和CAS不同，交换只赋值old值，不管原来的值）：func SwapInt64(addr *int64, new int64) (old int64)
+比较并且交换（Compare And Swap 简称CAS，类似于乐观锁，只有原来的值和传入的old值一样才修改）：func CompareAndSwapInt64(addr *int64, old, new int64) (swapped bool)</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes学习笔记</title>
+      <link>https://blog.cjlio.com/posts/127/</link>
+      <pubDate>Mon, 10 Jan 2022 12:31:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/127/</guid>
+      <description>Kubernetes（k8s，8是指k到s之间有8个字母），是谷歌在2014年发布并且开源的容器化集群管理系统（已在谷歌生产环境中工作15年），支持自动化部署，应用容器化管理，大规模升级或回滚，应用扩展等等
+k8s的特性：
+自动部署与滚动更新：自动化部署应用容器，k8s采取滚动式更新，可以根据应用的情况进行一次或者批量更新（判断该应用添加是否正常使用），也可以进行历史版本回滚
+自我修复：当某个容器发生故障，会自动重新启动失败的容器，当某个节点（Pod）出现故障进行容器的替换或者重新部署，并且关闭没有通过检查的容器（不进行处理请求，保证服务不中断），直到容器恢复正常
+弹性伸缩：通过命令，UI界面，CPU等资源使用情况，自动对应用容器进行扩容或者缩容，保证在高峰期的高可用性，降低运行成本
+服务发现和负载均衡：k8s为容器对外提供了统一访问入口（api server），并且关联全部容器（负载均衡）
+密钥与配置管理：允许在不重新构建容器（不需要重新集群，热更新）的情况下更新应用程序配置，可以存储和管理密钥，令牌等敏感信息，不需要暴露这些敏感信息（部署和更新密钥）
+存储编排：支持挂载外部存储（网络存储服务，云存储服务）（本地当然是支持），自动完成存储系统的挂载以及应用，保证数据持久化
+批处理：支持一次性任务，定时任务
+k8s的集群架构分为2个组件，分别为master（主控节点）和node（工作节点）
+master组件：api server（集群统一人口，restful），scheduler（节点调度，调度node节点应用部署），controller-manager（处理集群中后台任务，一个资源对应一个控制器，资源控制），etcd（存储系统，用来存储集群的相关数据）
+node组件：kubelet（node节点代理，管理k8s容器），kube-proxy（负责网络代理，负载均衡等操作）
+Pod：k8s管理系统中最小部署单位，一个或者多个容器的集合（共享同一个网络），容器重启将结束该pod的生命（生命周期短）
+Service
+Volume
+Namespace
+Controller：控制器（确保预期pod的数量），状态应用部署（无状态（没有任何限制约定），有状态（有限制条件，依赖需要））负责一次性任务，定时任务，守护进程等等，确保所有node运行同一个pod
+Service Ingress：对外接口（定义pod的访问规则）
+RBAC：安全机制，权限管理
+Helm：包管理器，快速下载，安装软件
+k8s集群搭建
+单master集群：单个master节点，管理多个node节点
+多master集群（高可用集群）：多个master节点，管理多个node节点，中间存在着负载均衡的过程
+kubeadm
+kubeadm是k8s部署工具，用于快速部署k8s集群
+官方文档：https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+创建master节点
+kubeadm init
+将node节点添加到当前集群中
+kubeadm join master节点ip和端口
+这边使用的是ubuntu-20.04-live-server-amd64，虚拟机（网络连接方式为桥接）
+配置方面是4GB内存，2处理器，30GB存储
+master1：192.168.1.102 node1：192.168.1.105 node2：192.168.1.104
+一些初始化操作
+更换系统软件源
+vim /etc/apt/sources.list
+这边用的腾讯源（https://mirrors.cloud.tencent.com/ubuntu/）
+deb https://mirrors.cloud.tencent.com/ubuntu/ focal main restricted universe multiverse deb https://mirrors.cloud.tencent.com/ubuntu/ focal-security main restricted universe multiverse deb https://mirrors.cloud.tencent.com/ubuntu/ focal-updates main restricted universe multiverse deb https://mirrors.cloud.tencent.com/ubuntu/focal-backports main restricted universe multiverse # deb-src https://mirrors.</description>
+    </item>
+    
+    <item>
+      <title>python爬虫学习笔记</title>
+      <link>https://blog.cjlio.com/posts/125/</link>
+      <pubDate>Fri, 31 Dec 2021 01:05:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/125/</guid>
+      <description>urllib，xpath，jsonpath，beautiful，requests，selenium，Scrapy
+python库内置的HTTP请求库 urllib.request 请求模块 urllib.error 异常处理模块 urllib.parse url解析模块 urllib.robotparsef robots.txt解析模块
+urllib.request提供了最基本的http请求方法，主要带有处理授权验证，重定向，浏览器Cookies功能
+模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
+使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(type(response))
+HTTPResposne类型对象
+通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(response.status) print(response.getheaders())
+post发送一个请求，只需要把参数data以bytes类型传入 import urllib.parse import urllib.request data = bytes(urllib.parse.urlencode({&amp;lsquo;hallo&amp;rsquo;:&amp;lsquo;python&amp;rsquo;}),encoding=&amp;lsquo;utf-8&amp;rsquo;) response = urllib.request.urlopen(&amp;lsquo;http://httpbin.org/post&#39;.data = data) print(response.read())
+timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;,timeout=1)
+这里设置超时时间为1秒，如果超了1秒，服务器依然没有响应就抛出URLError异常，可以结合try和except
+import urllib.parse import urllib.request url = &amp;quot;https://cjlio.com/&amp;quot; headers = { &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
+    </item>
+    
+    <item>
+      <title>Pinia---vuejs的轻量级状态管理库</title>
+      <link>https://blog.cjlio.com/posts/124/</link>
+      <pubDate>Sun, 26 Dec 2021 20:22:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/124/</guid>
+      <description>Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3
+Pinia作者也是vuex核心之一
+安装pinia
+npm install pinia@next
+或者
+yarn add pinia@next
+导入pinia并且挂载为vue插件(在Vite脚手架下)
+src/main.js
+import { createApp } from &#39;vue&#39; import App from &#39;./App.vue&#39; const app = createApp(App) import { createPinia } from &#39;pinia&#39; app.use(createPinia()) app.mount(&#39;#app&#39;) src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）
+import { defineStore } from &#39;pinia&#39; export const useDataStore = defineStore(&#39;data&#39;, { state: () =&amp;gt; { return { count: 666 } }, //state: () =&amp;gt; { //name: chen //}, getters:{ // getters计算属性 doubleCount(state){ return state.</description>
+    </item>
+    
+    <item>
+      <title>简单使用vuex状态管理库</title>
+      <link>https://blog.cjlio.com/posts/123/</link>
+      <pubDate>Mon, 13 Dec 2021 06:19:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/123/</guid>
+      <description>vuex是一个专门为vuejs应用程序的设计的状态管理
+集中式存储管理应用的所有组件的状态
+多组件状态共享，不同的组件改变同一个状态
+vuex知识点：state，getter，mutation，action
+安装vuex
+npm install vuex &amp;ndash;save
+或者
+yarn add vuex
+导入vuex包
+import Vuex from &amp;ldquo;vuex&amp;rdquo;
+创建vuex实例
+new Vuex.store()
+将vuex实例挂载在vue对象上
+index.js
+Vue.use(Vuex) const store = new Vue.Store({ state: { count: 0 } }) export default store main.js
+new Vue({ store // 将store对象添加到vue实例上 }) 可以通过this.$store.state.count获取到状态（官方推荐将获取装态的操作放到computed中）
+使用解构获取状态： import { mapState } from &amp;lsquo;vuex&amp;rsquo; export default { mounted() { console.log(this.count) }, computed: { &amp;hellip;mapState([&amp;lsquo;count&amp;rsquo;]) } }
+Getter
+getters: { getCount(state) { return state.</description>
+    </item>
+    
+    <item>
+      <title>简单了解RSS</title>
+      <link>https://blog.cjlio.com/posts/122/</link>
+      <pubDate>Mon, 06 Dec 2021 02:32:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/122/</guid>
+      <description>RSS指 Really Simple Syndication（简易信息聚合），RSS定义了方法来获取网站的标题以及内容，而且RSS可以被自动更新，RSS使用了XML进行编写（xml笔记：https://cjlio.com/archives/17.html）
+一个RSS例子：
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt; &amp;lt;rss version=&amp;quot;2.0&amp;quot;&amp;gt; &amp;lt;channel&amp;gt; &amp;lt;title&amp;gt;小陈的辣鸡屋&amp;lt;/title&amp;gt; &amp;lt;link&amp;gt;https://cjlio.com/&amp;lt;/link&amp;gt; &amp;lt;description&amp;gt;cjlio.com&amp;lt;/description&amp;gt; &amp;lt;item&amp;gt; &amp;lt;title&amp;gt;简单了解设计模式&amp;lt;/title&amp;gt; &amp;lt;link&amp;gt;https://cjlio.com/archives/121.html&amp;lt;/link&amp;gt; &amp;lt;description&amp;gt;&amp;lt;![CDATA[设计模式实质就是一套可以通用，复用的设计方案，设计模式是针对面向对象的，在面向对象出来之前，程序是面向过程的，设计模式就是软件设计的工具面向过程：逻辑化过程，以逻辑实现面向对象：思考有哪些对象，...]]&amp;gt;&amp;lt;/description&amp;gt; &amp;lt;content:encoded xml:lang=&amp;quot;zh-CN&amp;quot;&amp;gt;xxxxxxx&amp;lt;/content:encoded&amp;gt; &amp;lt;/item&amp;gt; &amp;lt;/channel&amp;gt; &amp;lt;/rss&amp;gt; 可以看到是RSS频道的标题，是该频道的超链接，是该频道的描述，是定义该频道的某篇文章的，其中又有，分别表示文章标题，文章的超链接，文章的描述，其中还有表示文章的内容
+RSS注释和HTML的注释一样，
+注意：RSS是基于XML编写，所以全部元素都要有闭合标签，大小写敏感，属性值要带引号
+channel元素除了上面那几个外，还有，， ，等等
+元素还有，，，等等
+RSS阅读器可以更好读取RSSfeed</description>
+    </item>
+    
+    <item>
+      <title>简单了解设计模式</title>
+      <link>https://blog.cjlio.com/posts/121/</link>
+      <pubDate>Tue, 30 Nov 2021 15:08:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/121/</guid>
+      <description>设计模式实质就是一套可以通用，复用的设计方案，设计模式是针对面向对象的，在面向对象出来之前，程序是面向过程的，设计模式就是软件设计的工具
+面向过程：逻辑化过程，以逻辑实现
+面向对象：思考有哪些对象，对象都有什么行为，行为的逻辑化
+设计模式的好处就是通用可复用，跨语言
+设计模式的6大原则：
+单一职责原则：指的是一个类只负责一个职责，职责越单一，越容易复用
+里氏替换原则：子类可以替换自己的父类，通过开闭原则，通过增加子类来实现父类的“修改”，子类可以添加自己的方法和属性，但是不能重写父类的方法
+依赖倒置原则：依赖于接口，而不是实现，面向接口编程，类于类之间不要存在直接依赖，而依赖于接口
+接口隔离原则：不同的功能应该用多种接口实现行为，而不能将接口功能直接概括全部行为，单独实现需要的接口
+迪米特法则：迪米特法则又叫最少知识原则，一个对象对其他对象应该保持最少的了解，降低类与类之间的耦合，避免一个类依赖于另一个类，而导致另一个类的影响
+开闭原则：指的是对扩展进行开放，对修改进行关闭，需要添加新功能，应该添加类，而不是修改原来有的类，保证程序的稳定性
+常见的设计模式有工厂模式，策略模式，单例模式，代理模式，适配器模式，装饰者模式，模版方法模式，观察者模式，抽象工厂模式，门面模式
+创建型模式：对象实例化的模式，创建型模式用于解耦对象的实例化过程 单例模式 工厂模式 抽象工厂 建造者模式 原型模式
+创建型模式就是指创建对象，在创建对象时通过共同的接口来指向这个新创建的对象
+结构型模式：把类或对象结合在一起形成一个更大的结构 适配器模式 组合模式 装饰器模式 代理模式 享元模式 外观模式 桥接模式
+行为型模式：类和对象如何交互，及划分责任和算法 迭代器模式 模板方法模式 策略模式 命令模式 状态模式 责任链模式 备忘录模式 观察者模式 访问者模式 中介者模式 解释器模式</description>
+    </item>
+    
+    <item>
+      <title>shell脚本学习笔记</title>
+      <link>https://blog.cjlio.com/posts/120/</link>
+      <pubDate>Tue, 23 Nov 2021 00:01:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/120/</guid>
+      <description>shell中文意思为壳，shell可以接受使用者的指令，来调用服务，shell的种类很多，而比较常见是Bash，头部声明#!/bin/bash，表示bash是解释脚本的程序
+例如：
+#!/bin/bash echo &amp;quot;hallo word&amp;quot; 执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）
+bash hallo.sh
+也可以直接执行
+./hallo.sh
+变量（首字符必须是字母，而且不能有bash的关键字，大小写敏感）
+data = &amp;ldquo;hallo&amp;rdquo; echo $data data = &amp;ldquo;word&amp;rdquo; echo ${data}
+注意：如果使用单引号，单引号里面有变量的话，是无法生效的，而且还不能出现单引号，而且双引号可以使用变量和转义字符，美元符号（$）只有在使用变量才需要，在定义，更新，删除变量都不需要
+例如：
+name=&amp;ldquo;chenjunlin&amp;rdquo; data=&amp;ldquo;hallo, ${name} !&amp;rdquo; echo $data
+获取字符串的长度
+data=&amp;ldquo;hallo word&amp;rdquo; echo ${#data}
+获取指定位置的字符 data=&amp;ldquo;hallo word&amp;rdquo; echo ${#data:5:8}
+删除变量（不能删除只读变量）
+unset data echo ${data}
+在shell脚本定义的变量只能在当前脚本交互中使用，可以通过export传递变量到子shell中，可以通过env或者export指令来获取当前shell的环境变量
+参数
+echo &amp;ldquo;hallo word&amp;rdquo;; echo &amp;ldquo;要执行的shell脚本：$0&amp;rdquo;; echo &amp;ldquo;参数为：$1&amp;rdquo;;
+./hallo.sh abc
+获取参数的个数：$#
+以单一字符串的方式输出全部参数（要被双引号包裹）：$*
+以独立字符串的方式输出全部参数（要被双引号包裹）：$@
+获取上个命令的状态（是否执行成功，0为成功，非0为失败）：$?
+获取当前脚本shell进程的ID：$$
+获取后台运行的最后一个进程的ID：$!
+配合函数使用（参数也可以通过函数来传递）
+function abc(){ echo &amp;quot;参数1: $1&amp;quot; echo &amp;quot;被执行的脚本为: $0&amp;quot; } abc hallo .</description>
+    </item>
+    
+    <item>
+      <title>简单使用Rollup模块打包工具</title>
+      <link>https://blog.cjlio.com/posts/119/</link>
+      <pubDate>Wed, 10 Nov 2021 16:22:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/119/</guid>
+      <description>根据Rollup官方文档的介绍：Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大块复杂的代码，例如 library 或应用程序。
+Rollup和webpack那种偏向于应用打包不同，Rollup更专注于类库打包，像vue，react都是通过rollup打包的
+注意：webpack支持HMR（热模块更新），而Rollup并不支持，因此在应用打包的时候还是选择webpack比较好，但是如果只是打包类库之类的，并且还是基于ES6模块开发的，那么就可以考虑选择rollup了，因为rollup在Tree-shaking和ES6模块有着算法优势。因为Rollup对模块化是使用新标准，例如 CommonJS，而不是老旧解决方案
+提示：webpack已经支持Tree-shaking，并且在babel-loader的情况下也支持es6 module的打包
+安装rollup
+npm install rollup -g
+打包
+rollup src/demo.js -f cjs -o dist/bundle.js
+注意：-f是&amp;ndash;format的缩写，表示生成代码的格式，例如amd，cjs，esm，umd
+如果想监听文件是否改动，可以使用-w参数，当文件发送改动的时候，重新打包
+配置文件（rollup.config.js）
+export default { input: [&amp;quot;./src/demo.js&amp;quot;], output: { file: &amp;quot;./dist/bundle.js&amp;quot;, format: &amp;quot;cjs&amp;quot;, name: &amp;quot;experience&amp;quot;, }, } 执行命令
+rollup -c
+Rollup常用插件
+@rollup/plugin-babel
+@rollup/plugin-json
+@rollup/plugin-alias
+@rollup/plugin-commonjs
+@rollup/plugin-node-resolve
+@rollup/plugin-typescript
+@rollup/plugin-image
+rollup-plugin-terser
+rollup-plugin-postcss
+rollup-plugin-serve
+rollup-plugin-livereload
+rollup-plugin-copy
+rollup-plugin-visualizer</description>
+    </item>
+    
+    <item>
+      <title>Django学习笔记</title>
+      <link>https://blog.cjlio.com/posts/118/</link>
+      <pubDate>Fri, 22 Oct 2021 18:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/118/</guid>
+      <description>django是一个基于Python编写的Web框架
+Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
+安装django
+pip install django
+检查是否安装成功
+django-admin
+django常用命令
+startproject #创建django项目
+startapp #创建django应用
+check #检查校验项目完整性
+runserver #本地运行django项目
+shell # 进入django项目的shell环境（Python）
+test # 执行django实例测试
+makemigrations # 创建模型变更的迁移文件
+migrate # 执行迁移文件
+dumpdata # 数据库数据导出
+loaddata # 文件数据导入数据库
+创建第一个项目
+django-admin startproject django_demo
+settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件，manage.py是django项目的管理文件
+wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）
+运行django项目
+python .\manage.py runserver
+django应用
+django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包
+django项目下可以包含一组配置和n个django应用
+创建django应用
+python .\manage.py startapp django_app
+admin.py #定义admin模块管理的配置文件
+apps.py # 声明应用的配置文件
+tests.py # 应用测试的配置文化
+models.py #定义应用模型配置文件
+views.py #视图处理配置文件
+urls.py # 管理应用路由的配置文件，因为应用也可以管理路由，不过需要自己创建</description>
+    </item>
+    
+    <item>
+      <title>Web.py学习笔记</title>
+      <link>https://blog.cjlio.com/posts/117/</link>
+      <pubDate>Mon, 18 Oct 2021 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/117/</guid>
+      <description>web.py是一个轻量级Python web框架，是由已故著名计算机黑客Aaron Swartz设计开发（如果你看过互联网之子这个电影，你应该对这位大佬很熟悉）
+安装web.py
+pip install web.py
+导入模块
+import web
+第一个例子
+import web urls = ( &amp;quot;/(.*)&amp;quot;,&amp;quot;hallo&amp;quot; ) app = web.application(urls,globals()) class hallo: def GET(self,name): return &amp;quot;&amp;lt;h1&amp;gt;hallo web.py&amp;lt;/h1&amp;gt;&amp;quot; if __name__==&amp;quot;__main__&amp;quot;: app.run() 可以看到页面内容是return返回的，也可以open读取html文件，来返回回去，都是可以的</description>
+    </item>
+    
+    <item>
+      <title>weex跨平台框架学习笔记</title>
+      <link>https://blog.cjlio.com/posts/116/</link>
+      <pubDate>Sun, 10 Oct 2021 14:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/116/</guid>
+      <description>weex是阿里巴巴在Qcon大会上宣布开源的一套跨平台移动开发工具
+支持ES6，跨平台，体积小，性能优异，编写规范
+官网：http://emas.weex.io/zh/
+weex调试工具：weexplayground（可以用来测试，要同局域网下）
+安装
+npm install -g weex-toolkit
+检查weex
+weex -v
+初始化项目
+weex init demo
+npm install
+或者
+weex create demo
+运行
+npm run dev
+npm run server
+编译js bundle
+weex compile 目录或者文件 打包文件存放的目录或者文件
+压缩编译
+weex compile 目录或者文件 打包文件存放的目录或者文件 -m
+注意：Weex目前只支持像素值，不支持相对单位(em、rem)，也不支持百分比，默认设计标准为750px，当真实像素不是750px的时候，会自动将设计标准映射到真实的尺寸中，这个映射比率叫scale，计算公式为：当前屏幕尺寸/750
+不支持层 z-index，具体层级叠加根据编写顺序显示，不支持使用border创建三角形
+运行流程：weex生成js bundle，然后通过网络等等方式将js bundle传递到客户端，在客户端中，weexSDK会在用户打开一个weex页面的时候执行对应的js bundle，然后命令发送到native端进行处理</description>
+    </item>
+    
+    <item>
+      <title>操作系统学习笔记</title>
+      <link>https://blog.cjlio.com/posts/115/</link>
+      <pubDate>Thu, 07 Oct 2021 09:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/115/</guid>
+      <description>操作系统实质上是一个很复杂的控制软件，可以管理应用，资源管理，管理外设等等
+操作系统的架构的层次是在硬件之上，应用之下
+OS Kernel：可并发（同时存在多个运行的应用）。可共享，可虚拟，可异步
+微内核：尽可能将内核功能移植到用户空间，缺点就是性能低
+外核和内核：一个负责硬件，一个负责软件
+DISK（硬盘存储）：存储OS
+BIOS：基本I/O处理系统（加载外设以及加载软件来运行OS） （basic I/O system)
+BootLoader：加载OS
+POST（加电自检，查找显卡和执行BIOS）
+系统调度：来源于“合法”的应用向系统发出服务请求的（同步或者异布）
+异常：来源于“不良”的应用非法指令（或者应用意想不到的请求，应用无法获得资源需求）（同步）
+中断：来源于外设对于硬件设备和网络中断（异步）
+逻辑化地址空间，独立地址空间，可访问相同内存，更多内存空间（虚拟化）
+物理地址空间：硬件支持的地址空间
+逻辑地址空间：应用程序拥有的内存范围
+操作系统为了运行多个程序，进行了内存地址的隔离（分配独立的虚拟内存地址），虚拟内存地址和物理内存地址是映射关系
+应用逻辑地址映射到物理地址
+CPU需要逻辑地址上的内存内容（ALU），内存管理单元（MMU）寻找逻辑地址和物理地址之间的映射，控制器将从总线发送物理地址的内存内容的请求
+内存发送物理地址内存内容给CPU（告诉CPU，物理地址找到了），建立逻辑地址和物理地址之间的映射（确保应用互不干扰）
+虚拟地址和物理地址的映射关系管理
+内存分段（内存被看成一组不同长度的段）
+内存分段下的虚拟地址分为段选择⼦和段内偏移量
+段选择⼦保存在段寄存器中，段选择⼦其中的段号被用于段表的索引，段表中保存的是这个段的基地址和段界限等等
+而段内偏移量是位于0和段界限之间的，如果段内偏移量合法，那么段内偏移量加段的基地址得到物理内存地址
+分段的内存碎片问题，如果某个程序占用了128mb内存，然后该程序被关闭了，释放128mb内存，如果这个128mb内存不是连续的，而是被分段了，这将导致没有内存空间打开另一个内存占用128mb的程序
+内存分页（将物理内存和虚拟内存切成一段段固定大小的内存空间）
+内存分页解决了内存分段的内存碎片问题，其释放内存是以页为单位释放的，当内存空间不够，会释放其他正在运行的进程的没使用的内存页面
+内存分页下的虚拟地址被分为页号和页内偏移，页好为页表的索引，页表保存着物理页的所在物理内存的基地址，基地址和页内偏移组成物理内存地址
+内存分页的缺点就是在运行多线程时，页表会非常大，所以出现了多级⻚表（将页表分成一级一级的）
+段⻚式内存管理（内存分段和内存分页的结合体）
+先将内存分为多个段，再将每个端分为多个页，地址通过段号，段内⻚号和⻚内位移组成
+连续性内存管理（内存碎片和分区的动态分配）
+外部碎片：在分配单元间的未使用内存
+内部碎片：在分配单元中的未使用内存
+当一个应用被批准运行在内存中时，分配一个连续的区间，来给运行的应用访问数据
+动态分配的策略：当想分配某字节，先从低地址找，找到第一个被某字节大的空闲块，就使用它
+动态分配的缺点就是外部碎片严重
+非连续内存分配
+分段Segmentation：
+逻辑地址空间连续，物理地址离散
+一个段表示一个内存块，一个逻辑地址空间，应用访问内存地址的时候，需要个二维的二元组
+虚拟内存：
+早期内存不够应用消耗，应用的规模比存储器的容器大
+当应用太大，超出内存，可采用手动的覆盖(overlay) 技术，只把需要的指令和数据保存在内存中
+当应用太多，超出内存，可采用自动的交换(swapping) 技术，把暂时不能执行的程序送到外存（磁盘）中
+进程和线程：
+进程状态(state)，线程(thread)，进程间通信(inter-process communication)，进程互斥与同步，死锁(deadlock)
+进程包含正在运行的应用的全部状态信息
+进程可动态化创建，结束进程，可以被独立调度并占用处理，不同的进程互不影响，可访问共享数据或者资源
+进程控制块(process control block, PCB)：进程的数据结构，操作系统管理控制进程运行所用的信息集合，操作系统为每一个进程都维护了一个PCB，用来存储保存和该进程有关的状态信息
+进程、线程 进程 / 线程间通讯方式 进程调度算法 进程 / 线程状态 死锁 内存管理</description>
+    </item>
+    
+    <item>
+      <title>简单使用mocha测试框架</title>
+      <link>https://blog.cjlio.com/posts/114/</link>
+      <pubDate>Sun, 03 Oct 2021 12:55:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/114/</guid>
+      <description>mocha是JavaScript测试框架
+安装
+npm install &amp;ndash;global mocha
+测试，例如：
+demo.js
+function abc(a,b,c){ return a+b+c } module.exports = abc demo.test.js
+const demo = require(&#39;./demo.js&#39;) const expect = require(&#39;chai&#39;).expect describe(&#39;test&#39;, function() { it(&#39;错误&#39;, function() { expect(demo(1,3,7)).to.be.equal(11) }) }) 测试（允许测试多个，默认执行test子目录的测试文件，如果test子目录存在该文件，可以不用加参数）
+mocha demo.test.js
+其中expect(demo(1,3,7)).to.be.equal(11)是断言，当1+3+7的结果不是11的时候，抛出错误
+因为mocha本身没有断言库，需要导入 const expect = require(&amp;lsquo;chai&amp;rsquo;).expect
+查看内置的全部报告格式（默认是spec）
+mocha &amp;ndash;reporters
+使用Dot格式显示
+mocha &amp;ndash;reporter dot
+使用HTML报告
+npm install &amp;ndash;save-dev mochawesome
+mocha其他参数
+&amp;ndash;watch：监听指定测试脚本，只要测试脚本发生改变就自动执行mocha
+搜索测试实例（通过名称）
+mocha &amp;ndash;grep &amp;ldquo;test&amp;rdquo;
+&amp;ndash;invert ：只执行不符合条件的测试脚本，要搭配&amp;ndash;grep使用
+如果要测试ES6，需要转码
+npm install babel-core babel-preset-es2015 &amp;ndash;save-dev
+.babelrc</description>
+    </item>
+    
+    <item>
+      <title>简单使用istanbul代码覆盖率工具</title>
+      <link>https://blog.cjlio.com/posts/113/</link>
+      <pubDate>Thu, 30 Sep 2021 12:22:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/113/</guid>
+      <description>代码覆盖率：是否所有代码都被执行或者调用
+每一行，每个函数，每个语句块，每个if分支是否都被执行或者被调用
+istanbul是JavaScript的覆盖率工具（类似工具还有NYC）（可搭配mocha使用）
+安装
+npm install -g istanbul
+测试覆盖率
+istanbul cover demo.js
+检查程序覆盖率是否达到某个值
+istanbul check-coverage &amp;ndash;statement 60 &amp;ndash;branch -5 &amp;ndash;function 100
+在执行检查测试后，会在目标文件的当前目录下生成个coverage文件夹
+在coverage/lcov-report/index.html，可以查看网页版结果</description>
+    </item>
+    
+    <item>
+      <title>简单使用Lerna多包管理工具</title>
+      <link>https://blog.cjlio.com/posts/112/</link>
+      <pubDate>Sun, 26 Sep 2021 12:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/112/</guid>
+      <description>Lerna是一个基于git和npm来管理多个包工作流的工具（monorepo），解决多个包之间的依赖问题，像React，Vue，Babel都在使用lerna管理多包
+安装Lerna
+npm install &amp;ndash;global lerna
+新建git仓库（初始化）
+git init lerna-demo
+初始化Lerna仓库
+lerna init
+创建新包
+lerna create demoPackage
+显示全部已经安装的包
+lerna list
+依赖处理（通过软链接方式将多个package关联起来）
+lerna bootstrap
+添加包到外层的node_modules
+lerna add axios
+移除所有packages下的node_modules（不会移除根目录的）
+lerna clean
+发布package（不会发布标记为private的包）
+lerna publish
+查看上一次有修改的包的差异
+lerna diff
+注意：全部子包会放在packages/目录下，lerna.json就是lerna的配置文件
+lerna有两个管理模式，分别是固定模式（默认模式）和独立模式
+固定模式将全部包版本绑定在一起，如果只更新一个包，将会更新对应包的版本到新的版本号
+独立模式：init的时候使用&amp;ndash;independent参数，独立模式允许对每个库单独改变版本号，每次发布的时候只需要为每个改动的库指定版本号</description>
+    </item>
+    
+    <item>
+      <title>简单使用ESlint代码风格校验工具</title>
+      <link>https://blog.cjlio.com/posts/111/</link>
+      <pubDate>Thu, 23 Sep 2021 10:06:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/111/</guid>
+      <description>ESlint是用来校验JavaScript代码风格格式的工具，目的是确保每个人的代码风格统一，按照统一的规范编写（规范化、标准化是前端工程化的特点）
+安装ESlint
+npm install eslint &amp;ndash;save-dev
+或者全局安装
+npm install eslint &amp;ndash;global
+修改scripts属性（package.json）&amp;ndash;fix参数是ESlint提供的自动修复基础错误功能（不能修复逻辑性错误），如果不要也可以
+&amp;ldquo;lint&amp;rdquo;: &amp;ldquo;eslint src &amp;ndash;fix&amp;rdquo;, &amp;ldquo;lint:create&amp;rdquo;: &amp;ldquo;eslint &amp;ndash;init&amp;rdquo;
+创建.eslintrc
+npm run lint:create
+会显示显示要求，例如是否校验ES6语法，首行空白是Tab键还是Space等等
+校验程序（根据上面的修改，会检查src目录下的所有.js文件）
+npm run lint
+.eslintrc文件是ESlint校验配置文件，这个配置文件可以自己设置（或者手写手动修改），也可以复制别人的
+&amp;ldquo;off&amp;rdquo; or 0 ：关闭规则
+&amp;ldquo;warn&amp;rdquo; or 1 ：将规则视为一个警告
+&amp;ldquo;error&amp;rdquo; or 2 ：将规则视为一个错误
+可以设置规范，只能使用单引号，tab缩进等等编写规范</description>
+    </item>
+    
+    <item>
+      <title>Umi框架学习笔记</title>
+      <link>https://blog.cjlio.com/posts/110/</link>
+      <pubDate>Mon, 20 Sep 2021 21:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/110/</guid>
+      <description>Umi是一款前端应用框架
+官方文档：https://umijs.org/zh-CN/docs
+根据官方文档要求，node版本&amp;gt;=10.13
+yarn create @umijs/umi-app
+安装依赖
+yarn
+启动项目
+yarn start
+构建项目（默认生成到./dist）
+yarn build
+路由（src\.umi\core\routes.ts）
+&amp;quot;routes&amp;quot;: [ { &amp;quot;path&amp;quot;: &amp;quot;/&amp;quot;, &amp;quot;component&amp;quot;: require(&#39;@/pages/index&#39;).default, &amp;quot;exact&amp;quot;: true },{ &amp;quot;path&amp;quot;: &amp;quot;/admin&amp;quot;, &amp;quot;component&amp;quot;: require(&#39;@/pages/admin&#39;).default, &amp;quot;exact&amp;quot;: true } ] 组件文件放在src\pages下
+path是路径，component是组件路径，绝对和相对都可以用，也可以有require(&amp;rsquo;@/pages/xxx&amp;rsquo;)的方式
+exact表示是否严格匹配，就是path和组件路径是否要完全对应，默认为开启，如果设置为false，表示模糊匹配
+子组件
+&amp;quot;routes&amp;quot;: [ { &amp;quot;path&amp;quot;: &amp;quot;/&amp;quot;, &amp;quot;redirect&amp;quot;: &#39;/admin&#39;, },{ &amp;quot;path&amp;quot;: &amp;quot;/admin&amp;quot;, &amp;quot;component&amp;quot;: require(&#39;@/pages/admin&#39;).default, routes: [ { path: &#39;/admin/archives&#39;, redirect: &#39;/&#39; }, { path: &#39;/admin/category&#39;, component: &#39;category&#39; }, ] } ] redirect是跳转路由，当访问/的时候，跳转到/admin
+文件路由（根据目录和文件名来分析路由）
+如果没有routes路由配置，那么就会触发该文件路由，通过分析src/pages目录
+注意：用.或者_开头的文件，用d.ts结尾的文件，不是 .</description>
+    </item>
+    
+    <item>
+      <title>简单了解并且使用npm script</title>
+      <link>https://blog.cjlio.com/posts/109/</link>
+      <pubDate>Mon, 20 Sep 2021 14:30:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/109/</guid>
+      <description>npm script是package.json中可以定义的脚本命令，可以用来实现自动化构建，例如：
+&amp;quot;scripts&amp;quot;: { &amp;quot;dev&amp;quot;: &amp;quot;node hallo.js&amp;quot; } npm run dev // 等于执行node hallo.js
+查看当前项目的全部npm脚本
+npm run
+注意：当前项目的node_modules/bin下的全部依赖都可以直接访问
+如果要执行多个脚本可以用&amp;amp;&amp;amp;（依次运行），&amp;amp;（并行运行）
+npm script有pre和post两个钩子，这两个钩子可以分别来做准备工作和清理工作等等，例如：
+&amp;quot;scripts&amp;quot;: { &amp;quot;predev&amp;quot;: &amp;quot;echo hallo&amp;quot;, &amp;quot;dev&amp;quot;: &amp;quot;node hallo.js&amp;quot;, &amp;quot;postdev&amp;quot;: &amp;quot;echo yes&amp;quot; } 相对于npm run predev &amp;amp;&amp;amp; npm run dev &amp;amp;&amp;amp; npm run postdev
+像install，uninstall，publish，test，start等等都有pre和post这两个钩子
+查看正在运行的脚本
+const NpmScript = process.env.npm_lifecycle_event console.log(NpmScript)
+可以缩写不用run，例如：npm dev
+npm script可以使用npm内部变量，例如：
+{ &amp;quot;name&amp;quot;: &amp;quot;root&amp;quot;, &amp;quot;scripts&amp;quot;: { &amp;quot;dev&amp;quot;: &amp;quot;node hallo.js $npm_package_name&amp;quot; } } 获取npm内部变量name
+console.log(process.env.npm_package_name)
+脚本错误抛出
+&amp;quot;scripts&amp;quot;: { &amp;quot;test&amp;quot;: &amp;quot;echo \&amp;quot;Error: no test specified\&amp;quot; &amp;amp;&amp;amp; exit 1&amp;quot; } 传递参数</description>
+    </item>
+    
+    <item>
+      <title>Node.js学习笔记</title>
+      <link>https://blog.cjlio.com/posts/108/</link>
+      <pubDate>Mon, 20 Sep 2021 10:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/108/</guid>
+      <description>nodejs是基于Google的V8引擎，使JavaScript不再只能运行与浏览器中了
+npm是跟随nodejs的包管理工具，可以用来更新包，安装包，编写包等等功能
+nodejs也提供了完整的http服务功能（http模块是用c++写的，性能可靠）
+const http = require(&amp;quot;http&amp;quot;) http.createServer(function (_request, response) { response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;}) response.end(&amp;quot;hallo nodejs&amp;quot;) }).listen(8888) console.log(&#39;Server running at http://127.0.0.1:8888/&#39;) 如果在http://127.0.0.1:8888/看到了hallo nodejs，那么就说明运行成功了
+nodejs的模块分为全局模块，系统模块，自定义模块
+全局模块（不需要引入，可以直接使用）
+例如process.env和process.argv
+获取系统环境变量
+console.log(process.env) node自定义参数（process.argv）
+let num1 = parseInt(process.argv[2]) let num2 = parseInt(process.argv[3]) console.log(num1+num2) node hallo.js 6 3
+可以看到输出了9，说明参数被传递进去了
+系统模块（需要引用，不需要安装，nodejs已经封装好的预制的系统模块）
+获取目录
+const path = require(&amp;quot;path&amp;quot;) console.log(path.dirname(&amp;quot;/hallo/index/main.js&amp;quot;)) 获取文件名
+console.log(path.basename(&amp;quot;/hallo/index/main.js&amp;quot;)) 获取文件扩展名
+console.log(path.extname(&amp;quot;/hallo/index/main.js&amp;quot;)) 功能扩展
+console.log(path.resolve(&amp;quot;/hallo/index/main.js&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;index.js&amp;quot;)) 获取文件的绝对路径
+console.log(path.resolve(__dirname,&amp;quot;index.js&amp;quot;)) 文件读写模块（fs）
+读
+const fs = require(&amp;quot;fs&amp;quot;) fs.readFile(&amp;quot;data.txt&amp;quot;,(err,data)=&amp;gt;{ if(err){ console.log(err) }else{ console.log(data.toString()) } }) 写</description>
+    </item>
+    
+    <item>
+      <title>数据结构学习笔记</title>
+      <link>https://blog.cjlio.com/posts/106/</link>
+      <pubDate>Fri, 17 Sep 2021 01:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/106/</guid>
+      <description>数据结构其实就是带结构的数据元素的集合，结构是数据元素之间的关系
+数据结构（数组，字符串，队列，栈，链表，集合，哈希表（散列表），树（二叉树），图）
+集合：结构中的元素除了同属于一个集合外，没有别的关系
+线性结构：结构中的元素之间存在一对一的关系，一个对应一个
+数性结构：结构中的元素之间存在一对多的关系
+图形结果或者网状结构：结构中的任意元素都可以有关系
+顺序结构：数据元素按照一个排序（规律）顺序存放，例如1，2，3
+链式结构：每一个数据元素都是随机存放
+栈：线性结构的一种特殊的存储方式
+数据存储是按照先进后出的原理，先进入的数据，放在最下面，最后进入的放在最前面
+数据的获取也是才上面往下面获取的
+顺序栈：会在顺序栈中设置一个永远指向顶部元素的变量，当这个变量为-1的时候，说明这个栈没有元素，而存储一个元素就加一，获取就减一</description>
+    </item>
+    
+    <item>
+      <title>NodeJS常用工具的简单使用</title>
+      <link>https://blog.cjlio.com/posts/105/</link>
+      <pubDate>Thu, 16 Sep 2021 21:55:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/105/</guid>
+      <description>npm在这里https://cjlio.com/archives/31.html
+Yarn在这里https://cjlio.com/archives/38.html
+nvm全名node.js version management
+用来nodejs多版本管理，可以切换和安装不同版本的nodejs
+安装nvm之前记得把安装过的nodejs都卸载了
+安装完成后，安装目录下会生成一个settings.txt文件
+配置一下（如果要使用淘宝npm源的话）
+root: D:\Software\nvm path: D:\Software\nodejs arch: 64 node_mirror: https://npm.taobao.org/mirrors/node/ npm_mirror: https://npm.taobao.org/mirrors/npm/
+环境变量
+NVM_HOME设置为nvm安装目录
+NVM_SYMLINK设置为nodejs安装目录
+Path：添加%NVM_HOME%和%NVM_SYMLINK%
+注意：安装路径不能出现中文或者空格，否则报错，请使用管理员权限运行use命令，否则可能导致exit status 1:xxx
+安装指定版本nodejs
+nvm install 14.17.3
+查看可以安装的nodejs版本
+nvm ls available
+查看当前全部已经安装的nodejs版本
+nvm ls
+切换nodejs版本
+nvm use 14.17.3
+卸载nodejs
+nvm uninstall 14.17.3
+查看系统位数和node位数
+nvm arch
+另一个nodejs多版本管理工具n
+安装n
+npm install -g n
+安装最新nodejs版本
+n latest
+安装稳定版本nodejs
+n stable
+安装lts版本
+n lts
+安装指定版本的nodejs（如果已安装了这个版本，那么就会选择这个版本，这个命令可以用来安装和选择）
+n 14.17.3
+卸载指定版本
+n rm 14.17.3</description>
+    </item>
+    
+    <item>
+      <title>Angular学习笔记</title>
+      <link>https://blog.cjlio.com/posts/101/</link>
+      <pubDate>Mon, 13 Sep 2021 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/101/</guid>
+      <description>Angular是三大前端框架之一（Angular在国内的热度低，但是在国外热度还是很高的，主要是因为Angular到Angular2的断崖式升级）
+Angular和Vue的区别就是，Angular具备完整的MVVM框架功能（功能高度集成），提供一套完整的解决方案，而Vue是轻量级MVVM框架（渐进式，还需要vue-router之类的扩展功能），Angular和Vue并没有谁好谁坏之分，各有风格
+注意：Angular是AngularJS的重写，AngularJS使用JavaScript编写完成，而Angular采用TypeScript编写完成
+安装
+npm install -g angular-cli
+第一个Angular应用
+&amp;lt;div ng-app ng-init=&amp;quot;name=&#39;default&#39;&amp;quot;&amp;gt; &amp;lt;p&amp;gt;name: &amp;lt;input type=&amp;quot;text&amp;quot; ng-model=&amp;quot;name&amp;quot;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt;hallo，{{name}}&amp;lt;/h1&amp;gt; &amp;lt;p ng-bind=&amp;quot;name&amp;quot;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; ng-app属性将其声明为是一个Angular应用，ng-model将数据绑定到name中，ng-bind将其输出绑定，ng-init是初始化值</description>
+    </item>
+    
+    <item>
+      <title>Koa框架学习笔记</title>
+      <link>https://blog.cjlio.com/posts/100/</link>
+      <pubDate>Sun, 12 Sep 2021 18:30:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/100/</guid>
+      <description>koa是web应用框架，是Express原班人马打造的，致力于成为一个更小、更富有表现力、更健壮的 Web 框架
+个人推荐：个人开发推荐用koa，团队开发推荐用egg
+egg是在koa的基础上进行封装，并且提供了一些，并且添加了约束，更利于工程化的开发
+安装koa
+npm install koa
+新建一个app.js
+const Koa = require(&amp;quot;koa&amp;quot;) const app = new Koa() app.use(async (ctx, next) =&amp;gt; { await next() ctx.response.type = &#39;text/html&#39; ctx.response.body = &#39;&amp;lt;h1&amp;gt;hallo, koa!&amp;lt;/h1&amp;gt;&#39; }) app.listen(3000) node app.js
+get请求参数的接收
+const Koa = require(&#39;koa&#39;) const app = new Koa() app.use(async(ctx)=&amp;gt;{ const url =ctx.url const request =ctx.request const reqQuery = request.query const reqQuerystring = request.querystring ctx.body={ url, reqQuery, reqQuerystring } }) app.listen(3000,()=&amp;gt;{ console.log(&#39;port 3000&#39;) }) http://127.</description>
+    </item>
+    
+    <item>
+      <title>简单了解CSRF攻击和XSS攻击</title>
+      <link>https://blog.cjlio.com/posts/99/</link>
+      <pubDate>Sun, 12 Sep 2021 17:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/99/</guid>
+      <description>CSRF
+CSRF：跨站点请求伪造(Cross—Site Request Forgery)
+CSRF实质上就是盗用身份，来实现发送恶意请求
+在访问某个“可信”站点，生成Cookie，再打开某个恶意网站，而这个恶意网站带有CSRF攻击的脚本，然后通过引诱用户触发该脚本，就会向那个可信站点发送恶意请求
+例如：
+&amp;lt;img src =&amp;ldquo;http://xxx.xxx/test?xxx=666&amp;quot;&amp;gt;
+只要访问就会发生该恶意请求，也可以是某超链接或者按钮等等
+而解决方法就是保证请求来源自当前站点，例如Referer字段，这个字段记录来源站点的地址，通过判断Referer字段上的域名，来判断是否是当前网站自己的请求
+这个方法有个缺点就是由浏览器提供，不能保证浏览器自己有没有安全漏洞，不然还是能够伪造Referer字段，而且如果用户设置不提供Referer字段，那也会默认导致认为是CSRF攻击
+还有一个方法就是通过添加token来处理，请求地址使用一串令牌（加密），来确保是当前站点发送请求，因为哪怕是伪造请求，也不知道令牌是什么，而且还搭配XMLHttpRequest来请求，确保请求信息不被Referer字段收录
+JavaScript简单实现方法
+let referer = document.location.href; if(referer != null &amp;amp;&amp;amp; referer.startsWith(&amp;quot;https://cjlio.com&amp;quot;)){ console.log(&amp;quot;验证成功!!!&amp;quot;) }else{ console.log(&amp;quot;验证失败!!!&amp;quot;) } 防御措施：token身份验证，页面来源验证（referer）等等
+XSS：跨站脚本攻击（Cross Site Scripting），因为避免和层叠样式表混淆，因此叫XSS
+XSS攻击原理就是在页面插入恶意脚本，当页面被访问了，那么这个恶意脚本被执行，从而达到恶意攻击用户的目的
+例如：在某个页面评论上加alert(&amp;lsquo;hack&amp;rsquo;)，那么如果没有做过xss攻击防御的站点，其他用户访问到这个页面，那么就会执行该程序
+做那些标签防御，都可以闭合绕过，都是无用功，例如：通过属性值来输出
+也用通过过滤标签的，但是可以通过大小写绕过（html不区分大小写）
+简单的防御方法：
+通过严格的过滤白名单来过滤，限制输入值的类型
+html实体编码转义，htmlspecialchars()或者htmlentities()
+X-XSS-Protection
+xss和csrf的区别：csrf是利用网站的自动执行的接口，依赖于用户已经登录页面（Cookie），而且xss是在页面插入js，来恶意执行js脚本的内容
+同源策略（Same-origin Policy）：只有协议，域名，端口号都相同才满足同源，否则就是跨域
+同源策略是浏览器提供的安全策略，限制某个脚本的加载范围（隔离潜在恶意脚本的安全机制）
+可以限制脚本无法读取Cookie，LocalStorage和IndexDB，无法操作dom（无法获取dom），请求不能发送等等
+跨域通信的方式：jsonp，hash，postmessage，websocket，cors
+同域可以使用ajax，cors（支持同源通信，也是支持跨域），websocket（不受同源策略限制）进行通信
+内容安全策略（Content Security Policy）：可以一定程度上免疫或者削弱XSS攻击
+内容安全策略实质上就是告诉浏览器，什么东西可以加载执行，什么东西不能加载执行，内容安全策略的实现和操作都由浏览器完成，只需要提供配置就好
+要开启CSP需要服务器返回Content-Security-Policy头部
+html也可以配置该策略，例如：
+其中img-src对应的指定图像或者图标的有效来源
+常用的有img-src，font-src，script-src，style-src等等
+CSRF
+X-Frame-Options：DENY/SAMEORIGIN
+可以利用Cookie的SameSite属性，这个属性有3个值，分别是Strict，Lax，None，主要用的就是Strict属性值
+Strict：完全禁止第三方Cookie，只有当目前网页的url和请求目标一致才会发生Cookie
+中间人攻击可以通过开启https来进行大部分的攻击免疫（https中间人攻击还是存在的）</description>
+    </item>
+    
+    <item>
+      <title>Redis学习笔记</title>
+      <link>https://blog.cjlio.com/posts/97/</link>
+      <pubDate>Fri, 10 Sep 2021 21:10:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/97/</guid>
+      <description>Redis是NoSQL数据库（Not Only SQL），其特点就是基于内存运行，支持分布式，key-value存储
+可以将内存中的数据存储到磁盘中，重启的时候再加载使用，保证数据的持久性，支持备份恢复，常用于缓存数据库（辅助持久化数据库）
+因为其是以内存作为存储介质，因此读写数据的效率极高，读取速度可高达110000次/s，写速度高达81000次/s
+Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合），zset(Sorted Set: 有序集合)
+Redis安装
+编译安装
+下载redis-x.x.x.tar.gz
+解压
+tar xzf redis-x.x.x.tar.gz
+进入解压出来的文件夹中，make
+因为用的是默认配置
+进入src，./redis-server ../redis.conf
+测试客户端
+./redis-cli
+启动服务器
+redis-server
+启动客户端
+redis-cli
+远程连接服务
+redis-cli -h 127.0.0.1 -p 6379 -a &amp;ldquo;root&amp;rdquo;
+redis.conf配置
+默认端口为6379
+port 6379
+要远程访问则设置为0.0.0.0
+bind 127.0.0.1
+以守护进程运行（yes为守护进程），注意如果是以守护进程运行，那么会默认将pid写入到/var/run/redis.pid
+daemonize yes
+指定pid位置
+pidfile /var/run/redis.pid
+数据库文件
+dbfilename xxx.rdb
+当客户端被闲置了多久关闭链接，0为关闭该功能
+timeout 0
+存储到本地数据库的时候是否压缩数据，采用LZP压缩
+rdbcompression yes
+超时
+timeout 300
+密码
+requirepass root
+name键存储字符串root
+SET name &amp;ldquo;root&amp;rdquo;
+查询name
+GET name
+哈希是键值对的集合，是字段和值之间的映射
+HMSET user:1 name pass</description>
+    </item>
+    
+    <item>
+      <title>Golang学习笔记</title>
+      <link>https://blog.cjlio.com/posts/96/</link>
+      <pubDate>Thu, 09 Sep 2021 01:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/96/</guid>
+      <description>Golang又叫go语言，golang是它的全称，是由Google开发的一种静态强类型，编译型，并发型，并具有垃圾回收功能的编程语言
+go语言确保达到静态编译语言的安全和性能的同时，又达到动态语言的开发维护效率
+Go语言天生支持并发，提供自动垃圾回收机制
+go的源文件是xxx.go
+值得一提的是哔哩哔哩网站后端就是用golang开发，这个足以说明golang的并发功能有多强大了
+检查是否安装成功go
+go version
+环境配置
+GOROOT对应着go的安装目录
+GOPATH对应着go的源代码目录（可以放多个目录）
+检查go环境
+go env
+源程序默认为UTF-8编码，;可省略
+第一个go程序
+package main import &amp;quot;fmt&amp;quot; func main(){ fmt.Println(&amp;quot;hallo golang&amp;quot;) } go run hallo.go
+当然作为一个编译型语言，编译成二进制文件是支持的
+go build hallo.go
+作为一个静态强类型语言，如果学过java的话，理解还是很轻松的
+定义包 package : 必须在源程序上声明该文件是属性那个包的
+引入包 import : 导入包，引用外部包开扩展功能
+注释
+// 单行
+/* 多 行 */
+标识符命名规范：第一个字母必须是字母或者下划线，而且不能是关键字，特殊符号只支持下划线
+常用的数据类型有：
+整型：int（有符号），uint（无符号），rune，int/unint(8,16,32,64)
+浮点型：float(32,64)，comple
+布尔型：bool（true，false）（bool默认值为false）
+字符串型：string
+数组：array
+结构体：struct
+变量
+var abc string = &amp;ldquo;hallo&amp;rdquo;
+注意：如果声明变量了，但是没有初始化，那个该变量的值为系统默认设置的值（零值）
+定义多个变量
+var abc xyz string = &amp;ldquo;hallo&amp;rdquo;,&amp;ldquo;word&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>简单使用Jest-JavaScript测试工具</title>
+      <link>https://blog.cjlio.com/posts/95/</link>
+      <pubDate>Mon, 06 Sep 2021 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/95/</guid>
+      <description>Jest是Facebook开源的一套JavaScript测试框架
+安装
+在项目中安装
+yarn add &amp;ndash;dev jest或者npm install &amp;ndash;save-dev jest
+全局安装
+yarn global add jest
+hello.js
+module.exports = function(){ return &amp;quot;hello world&amp;quot; } hello.test.js
+const hello = require(&#39;../hello&#39;) it(&#39;should &#39;, () =&amp;gt; { expect(hello()).toBe(&#39;hello world&#39;) }) package.json
+{ &amp;quot;scripts&amp;quot;: { &amp;quot;test&amp;quot;: &amp;quot;jest&amp;quot; } } 执行测试
+yarn test或者npm run test
+exspect() //运行结果
+toBe() //期待的结果
+not.toBe() //判断不等
+toBeNull() //判断是否为NULL
+toBeUndefined() //判断是否为undefined
+toBeDefined() //判断是否为undefined取反
+toBeTruthy() //判断结果为true
+toBeFalsy() //判断结果为false
+toBeGreaterThan(5) //判断结果是否大于5
+toBeLessThan(5) //判断结果是否小于5
+toBeGreaterThanOrEqual(6) //判断结果是否大于等于6</description>
+    </item>
+    
+    <item>
+      <title>React进阶学习笔记</title>
+      <link>https://blog.cjlio.com/posts/94/</link>
+      <pubDate>Fri, 03 Sep 2021 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/94/</guid>
+      <description>react16是Facebook在2017年发布的react版本，几乎对react底层进行重写，但是对外API不变，因此可以无缝转移到react16
+render返回类型
+除了只能返回单个元素外，react16支持返回字符串和数组（由react元素组成）
+例如：
+render(){ return[ &amp;lt;div&amp;gt;hallo&amp;lt;/div&amp;gt;, &amp;lt;div&amp;gt;word&amp;lt;/div&amp;gt; ] } 或者
+render(){ return &amp;quot;hallo word&amp;quot; } 错误处理
+react16引入了新的错误处理机制，当组件发生错误，将会将其从组件树中卸载，避免引起整个应用的崩溃
+当然也提供了更友好的处理方式，叫错误边界，这个会捕获子组件的错误，并且输出错误日志和出错提示，例如：
+componentDidCatch(error, info){ console.log(error,info) } Portals
+React16的Portals特性可以将组件渲染到当前组件树以外的DOM树上，例如弹框
+ReactDOM.createPortal(child, container)
+第一个参数是可以被渲染的react节点，第二个参数是dom元素，react节点将会被挂载到该DOM元素上
+自定义DOM属性
+在react16之前，会忽略不识别的属性，而在react16之后，会将不识别的属性传递给dom元素
+React AJAX（搭配jQuery）
+通过componentDidMount()调用，通过componentWillUnmount()取消未完成的请求
+Virtual-DOM实质上就是模拟DOM树结构，通过JavaScript对象来描述DOM对象，通过映射成真实的DOM节点来实现
+对于DOM节点数据更新，则通过生成一个新的Virtual-DOM，两个Virtual-DOM通过Diff算法进行差异更新，将更新处理为真实的DOM
+Virtual-DOM的优势：减少操作DOM，处理视图和状态的关系
+没有任何框架能比原生DOM处理快，但是操作原生DOM可能导致浏览器的回流（回流是性能第一杀手），因此在复杂视图下，原生DOM操作就可能没有Virtual-DOM性能好了
+react-markdown是react官方提供的库，专门用来解析md文件或者符合md语法的变量
+安装react-markdown
+yarn add react-markdown
+导入
+import ReactMarkdown from &amp;lsquo;react-markdown&amp;rsquo;
+测试
+let markdown = &amp;quot;**这是加粗的文字**\n\n&amp;quot; + &amp;quot;*这是倾斜的文字*`\n\n&amp;quot; + &amp;quot;***这是斜体加粗的文字***\n\n&amp;quot; + &amp;quot;~~这是加删除线的文字~~ \n\n&amp;quot; + &amp;quot;`console.log(111)` \n\n&amp;quot; + &amp;quot;``` var a=11; ```&amp;quot;; &amp;lt;ReactMarkdown source={markdown} escapeHtml={false} children={markdown}/&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Taro脚手架学习笔记</title>
+      <link>https://blog.cjlio.com/posts/92/</link>
+      <pubDate>Tue, 31 Aug 2021 12:15:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/92/</guid>
+      <description>Taro是京东凹凸实验室推出的一个脚手架，设计目的是多端统一开发解决方案，一次开发，多端运行
+Taro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持
+Taro官方文档：https://taro-docs.jd.com/taro/docs/README
+Taro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等
+安装Taro脚手架
+npm install -g @tarojs/cli
+或者
+yarn global add @tarojs/cli
+升级脚手架工具
+taro update self
+创建项目
+taro init hallo
+创建h5项目
+yarn dev:h5
+创建微信小程序项目
+yarn dev:weapp
+创建完毕会在dist目录下生成小程序程序
+作为一个可以使用react开发的脚手架，React Hooks和jsx也是支持的
+Taro组件化（Taro可以使用react开发，因此也具备react的组件化功能）
+import Taro, { useState } from &#39;@tarojs/taro&#39; import { View, Text } from &#39;@tarojs/components&#39; import &#39;./index.less&#39; function Main(){ const [count ,setUserName] = useState(&amp;quot;hallo word&amp;quot;) return ( &amp;lt;View&amp;gt; &amp;lt;Text&amp;gt;{count}&amp;lt;/Text&amp;gt; &amp;lt;/View&amp;gt; ) } export default Main 子组件
+import { View, Text } from &#39;@tarojs/components&#39; function Data(){ return ( &amp;lt;View&amp;gt;&amp;lt;Text&amp;gt;hallo word&amp;lt;/Text&amp;gt;&amp;lt;/View&amp;gt; ) } export default Data 导入</description>
+    </item>
+    
+    <item>
+      <title>简单利用Electron框架开发桌面端应用</title>
+      <link>https://blog.cjlio.com/posts/91/</link>
+      <pubDate>Wed, 25 Aug 2021 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/91/</guid>
+      <description>Electron是由github开发的开源框架，允许开发者使用web技术构建跨平台的桌面应用
+GUI由Chromium提供，底层通过Nodejs提供，Native API提供桌面端和跨平台的原生功能
+Visual Studio Code和Atom都是使用Electron开发的，可以说技术很成熟
+但是毕竟是基于Chromium的，打包出来的应用非常大，就算是个halloword，也要几百m
+安装Electron
+npm install electron &amp;ndash;save-dev
+全局安装
+npm install -g electron
+新建项目，并且在该目录下建立index.html文件和main.js
+mian.js是Electron应用的配置文件
+导入electron模块
+var electron = require(&amp;rsquo;electron&#39;)
+创建Electron引用
+var app = electron.app
+创建窗口引用
+var BrowserWindow = electron.BrowserWindow
+声明主窗口
+var mainWindow = null
+设置参数
+app.on(&#39;ready&#39;,()=&amp;gt;{ mainWindow = new BrowserWindow({ // 设置窗口大小 width:500, height:500, webPreferences:{ nodeIntegration: true // 是否集成node } }) mainWindow.loadFile(&#39;index.html&#39;) // 指定窗口加载那个页面 mainWindow.on(&#39;closed&#39;,()=&amp;gt;{ mainWindow = null // 监听销毁事件，事件触发关闭主窗口，设置为null }) }) 初始化
+npm init &amp;ndash;yes</description>
+    </item>
+    
+    <item>
+      <title>React Hooks学习笔记</title>
+      <link>https://blog.cjlio.com/posts/90/</link>
+      <pubDate>Fri, 20 Aug 2021 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/90/</guid>
+      <description>React Hooks提供了新特性来给纯函数组件可以管理状态
+学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态
+而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷
+React Hooks的出现，是因为类组件会继承React.Component父类，而React.Component父类拥有大量的方法和属性，在开发一些小型组件时，完全没有必要用到这么多的方法和属性，就好吧杀鸡用屠龙刀一样，可以但是没有必要，而纯函数组件就不存在这些方法和属性，可谓是轻量级
+例如：
+class组件：
+class Hi extends React.Component{ constructor(props) { super(props) this.state = { count:0 } } render(){ console.log(this.state.count) return( &amp;lt;div&amp;gt; &amp;lt;p&amp;gt;数据：{this.state.count}&amp;lt;/p&amp;gt; &amp;lt;button onClick={this.addGo.bind(this)}&amp;gt;GO&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ) } addGo(){ this.setState({count:this.state.count+1}) } } 那么函数组件+React Hooks怎么实现状态更新呢？
+而function组件想更新状态可以通过React Hooks来实现，例如：
+例如：
+import React, { useState } from &#39;react&#39; function Hi(){ const [ count , setCount ] = useState(0) return ( &amp;lt;div&amp;gt; &amp;lt;p&amp;gt; 数据：{count} &amp;lt;/p&amp;gt; &amp;lt;button onClick={()=&amp;gt;{setCount(count+1)}}&amp;gt;GO&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; ) } 没错就是这么简单，看起来函数组件+React Hooks更简洁，更容易理解</description>
+    </item>
+    
+    <item>
+      <title>Markdown基础语法笔记</title>
+      <link>https://blog.cjlio.com/posts/88/</link>
+      <pubDate>Wed, 18 Aug 2021 16:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/88/</guid>
+      <description>Markdown是一个标记语言，常用于编写文档
+标题
+一级标题 二级标题 三级标题 四级标题 五级标题 六级标题 分别对别h1到h6
+段落
+斜体文本
+斜体文本
+粗体文本
+粗体文本
+粗斜体文本
+粗斜体文本
+分割线
+删除线
+hallo
+脚注
+列表
+列表 列表 列表 1.列表
+区块
+xxx 代码
+xxx
+xxx
+链接
+chenjunlin
+图片
+表格
+xxx xxx yyy yyy yyy yyy :-表示左对齐，-:表示右对齐，:-:表示居中对齐
+转义
+*</description>
+    </item>
+    
+    <item>
+      <title>简单使用Vite-前端构建工具</title>
+      <link>https://blog.cjlio.com/posts/87/</link>
+      <pubDate>Wed, 18 Aug 2021 14:20:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/87/</guid>
+      <description>Vite是由 Vue.js 的作者尤雨溪开发完成的一款前端项目构建工具，使用原生ESM文件，支持热重载
+Vite在法语中的意思为快速的（尤大是真喜欢法语啊）
+基于原生 import 的，使用浏览器来解析import，服务端按需编译返回，支持热更新模块
+依赖于Rollup打包，虽然vite设计初衷是为了vue3.x的，但是也是支持其他框架（例如react）
+对于TypeScrip的支持程度相当好，只需要在script元素加lang=&amp;ldquo;ts&amp;quot;就可以使用ts了
+至于less，sass/scss之类的css预处理器以及css原生支持也是很好，Vite支持css样式直接引入（import &amp;lsquo;./app.css&amp;rsquo;）
+sass/scss使用（前提已经安装了sass）
+在style元素中加lang=&amp;ldquo;scss&amp;quot;就可以使用sass了
+json也是可以直接引入，例如：import data from &amp;lsquo;./data.json&amp;rsquo;
+另外对于JSX也是支持的，用.jsx表示jsx，例如：import App from &amp;lsquo;./App.jsx&amp;rsquo;
+vite有一套开发服务功能，基于原生es模块，ESM+HMR，而且还有一套项目构建指令，用rollup打包
+打包：指的是使用工具来抓取和处理源码模块，并且合成可以在浏览器上运行的文件（浏览器本身并不提供模块管理的机制，多模块需要很多的script标签，很繁琐臃肿，而打包就很好的解决了这个问题）
+常见的打包工具例如：webpack，rollup，parcel，gulp
+注意：当冷启动服务的时候，必须要先抓取并且构建应用（当应用越来越大，模块越来越多的时候，会导致服务启动缓慢），才能提供服务，而且进行模块更新的话，也会导致重建应用缓慢
+传统打包，是将多个模块打包成单一的文件，而esm打包，是根据http请求，来获取相应的route，再根据route来获取module（避免一开始就获取全部module）
+vite将模块分为依赖和源码，依赖指的是开发时不会发生改变的，vite将使用esbuild预构建依赖，而且将以原生ESM方式让浏览器接管打包源码
+构建Vite项目
+npm init vite-app demo
+或者
+yarn create vite-app demo
+然后初始化一下
+npm install
+或者
+yarn
+启动服务器
+vite
+或者
+npm run dev，yarn dev
+本地预览
+vite preview
+打包
+vite build
+react
+npm init vite-app &amp;ndash;template react
+npm install</description>
+    </item>
+    
+    <item>
+      <title>简单使用Nginx</title>
+      <link>https://blog.cjlio.com/posts/85/</link>
+      <pubDate>Wed, 18 Aug 2021 12:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/85/</guid>
+      <description>Nginx是目前web服务器占比第一（在https://w3techs.com 中可以看到Nginx占比33.1%）
+安装
+编译安装
+apt install -y gcc gcc-c++ pcre pcre-devel openssl openssl-devel zlib zlib-devel
+wget http://nginx.org/download/nginx-1.18.0.tar.gz
+tar -zxvf nginx-1.18.0.tar.gz
+cd nginx-1.18.0
+make &amp;amp;&amp;amp;make install
+一键安装（不推荐）
+apt install nginx
+检查是否安装完毕
+nginx -v
+nginx配置文件nginx.conf解读，一般在/etc/nginx下
+user root; // nginx运行用户 worker_processes auto; // nginx进程数，一般会设置和CPU核数一致 error_log /www/wwwlogs/nginx_error.log crit; // 错误日志存储位置 pid /www/server/nginx/logs/nginx.pid; // 进程PID存储位置 events{ worker_connections 51200; // 单个后台进程的最大并发数 multi_accept on; // 一个进程可以同时接受所有的新连接，关闭（off）的话一个进程只能接收一个连接，默认值为off关闭 } http{ include mime.types; // 文件扩展和类型的映射表 default_type application/octet-stream; // 默认文件的类型 server_names_hash_bucket_size 512; client_header_buffer_size 32k; large_client_header_buffers 4 32k; client_max_body_size 50m; gzip on; // 开启gzip压缩 gzip_min_length 1k; // 设置允许压缩的最小的字节数，这里设置1k，就是只有超过1k的文件才会被压缩 gzip_buffers 4 16k; // 以16k为单位，以16k的4倍申请存储gzip压缩的数据流内存 gzip_http_version 1.</description>
+    </item>
+    
+    <item>
+      <title>SVN版本控制系统学习笔记</title>
+      <link>https://blog.cjlio.com/posts/84/</link>
+      <pubDate>Wed, 11 Aug 2021 15:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/84/</guid>
+      <description>SVN全名Subversion，即版本控制系统
+和Git不同，Git是分布式，而SVN是集中式
+在commit没有冲突的时候，会合并
+而存在冲突那么就需要先手动处理冲突再commit
+源代码库：源代码统一存放的地方
+获取：到源代码库获取一份源代码
+提交：已经修改了源代码，想提交到源代码库
+更新：更新同步和源代码库一样的源代码
+安装SVN
+dnf install subversion
+创建版本库
+cd /svn/demo
+svnadmin create /svn/demo
+其中conf/svnserve.conf文件是svn服务配置文件
+anon-access = read auth-access = write password-db = passwd authz-db = authz realm = /svn/demo
+passwd文件为账号密码文件
+格式为：账号=密码，例如：abc = root
+authz为权限控制文件
+格式为：账号=rw（r读，w写），例如：abc=rw
+启动版本库
+svnserve -d -r /svn/demo &amp;ndash;listen-port 3690
+&amp;ndash;listen-port是指定svn监听端口，默认是3690，-r是指定版本库
+停止svn服务
+killall svnserve
+检出：从版本库中创建副本，在其修改，再提交到版本库中
+例如：
+svn checkout svn:xxx/demo &amp;ndash;username=root
+因为root有读写权限，因此将会在本地获取到demo的副本
+更新：更新副本，将其同步到版本库最新版本，如果不是当前最新版本，当前本地的副本将无效
+svn update
+默认是更新到最新版本，也可以指定更新到哪个版本
+svn update -r 2 demo
+提交
+svn commit -m &amp;ldquo;hello svn&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Axios网络请求库学习笔记</title>
+      <link>https://blog.cjlio.com/posts/83/</link>
+      <pubDate>Wed, 11 Aug 2021 12:15:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/83/</guid>
+      <description>Axios是一个基于promise的http网络请求库，可以用于浏览器和nodejs，在nodejs中使用http模块，而在浏览器使用XMLHttpRequests
+支持promise api，支持拦截请求和响应，转换请求数据和响应数据，取消请求，自动转换json数据，支持防御XSRF攻击
+安装
+yarn add axios
+实例demo
+import axios from &amp;quot;axios&amp;quot;; axios.get(&amp;quot;https://httpbin.org/get&amp;quot;, { params: { name: &amp;quot;root&amp;quot; } }) .then(function (response) { console.log(response); }) .catch(function (error) { console.log(error); }); axios.post(&amp;quot;https://httpbin.org/post&amp;quot;, { name: &amp;quot;root&amp;quot;, pass: &amp;quot;root&amp;quot; }) .then(function (response) { console.log(response); }) .catch(function (error) { console.log(error); }); 可以看到页面已经发送了get和post请求，.then和.catch分别表示请求成功和请求失败时调用的函数，也可以用箭头函数，其中response参数为请求的数据，error为错误信息
+还可以写成这样
+axios({ method: &#39;post&#39;, url: &#39;https://httpbin.org/post&#39;, data: { name: &amp;quot;root&amp;quot;, pass: &amp;quot;root&amp;quot; } }); FormData方式
+let data = { home: &amp;quot;hallo&amp;quot;, main: &amp;quot;abc&amp;quot; } let formData = new FormData() for(let key in data){ formData.</description>
+    </item>
+    
+    <item>
+      <title>简单使用Ant Design组件库</title>
+      <link>https://blog.cjlio.com/posts/82/</link>
+      <pubDate>Tue, 10 Aug 2021 23:03:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/82/</guid>
+      <description>Ant Design是蚂蚁金服技术沉淀出一套基于React的组件库和前端框架
+官网：https://ant.design/index-cn
+使用create-react-app初始项目
+yarn create react-app antd-demo
+运行
+yarn start
+安装antd组件库
+yarn add antd
+通过import { 组件名 } from &amp;ldquo;antd&amp;quot;方式导入antd组件
+导入antd css样式
+@import &amp;lsquo;~antd/dist/antd.css&amp;rsquo;;
+在typescript上使用
+yarn create react-app antd-demo-ts &amp;ndash;template typescript
+Antd的样式使用了less作为开发语言
+第一个实例demo
+import &#39;antd/dist/antd.css&#39;; import { DatePicker, Space } from &#39;antd&#39;; ReactDOM.render( &amp;lt;Space direction=&amp;quot;vertical&amp;quot;&amp;gt; &amp;lt;DatePicker/&amp;gt; &amp;lt;/Space&amp;gt;, document.getElementById(&#39;root&#39;), ); </description>
+    </item>
+    
+    <item>
+      <title>Svelte学习笔记</title>
+      <link>https://blog.cjlio.com/posts/80/</link>
+      <pubDate>Mon, 09 Aug 2021 22:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/80/</guid>
+      <description>Svelte的核心思想在于通过静态编译减少框架运行时的代码量
+Svelte风格和vue相似，模板用{}来表示
+Svelte的特点就是没有虚拟DOM（像Vue和React都是用虚拟DOM的）
+初始化
+npx degit sveltejs/template demo
+yarn
+yarn dev
+修改src\App.svelte和src\main.js
+&amp;lt;script&amp;gt; let name = &#39;world&#39; &amp;lt;/script&amp;gt; &amp;lt;h1&amp;gt;Hello {name}!&amp;lt;/h1&amp;gt; 导入组件
+import Hallo from &#39;./hallo.svelte&#39; ... &amp;lt;Hallo/&amp;gt; 如果想将HTML渲染到组件中可以使用 let string = &amp;lt;div&amp;gt;hallo word&amp;lt;/div&amp;gt; {@html string}
+事件响应
+function aClick() { count += 1 } ... &amp;lt;button on:click={aClick}&amp;gt;{count}&amp;lt;/button&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>算法学习笔记</title>
+      <link>https://blog.cjlio.com/posts/79/</link>
+      <pubDate>Mon, 09 Aug 2021 20:36:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/79/</guid>
+      <description>虽然学过java和Python，但是还是JavaScript比较熟练，因此算法学习全部用JavaScript来写
+算法不会被程序语言所限制，也不会一个实现只有一个算法
+常见数据结构（数组，列表，映射，堆栈，队列，哈希表，树，图）
+算法(排序,双指针,查找,分治,动态规划,递归,回溯,贪心,位运算,DFS,BFS)
+大O表示法是专门用来表示算法速度有多快的，不同算法所耗时间的时间增速度不同
+一个算法执行的时间和解决问题的规模大小相关
+假设一个列表有n个元素，遍历全部元素，要执行n次，大O表示法为O(n)
+大O表示法不是表示消耗的时间，而是通过操作元素的次数决定的，一个优秀的算法操作元素次数肯定很少
+时间复杂度：
+O(1): Constant Complexity: Constant 常数复杂度 O(log n): Logarithmic Complexity: 对数复杂度 O(n): Linear Complexity: 线性时间复杂度 O(n^2): N square Complexity 平⽅方 O(n^3): N square Complexity ⽴立⽅方 O(2^n): Exponential Growth 指数 O(n!): Factorial 阶乘
+算法的特点：有穷性（必须要在一定的时间内完成，不能无限循环），确定性（每一条指令都有明确的目的，不产生二义性），可行性（可以通过基础运算来实现），输入输出（要有0个或者多个输入，要有1个或者多个输出）
+删除有序数组中的重复项
+保证有序数组中的元素是不重复的，也就是说不存在重复的元素
+有序数组中重复的肯定是挨着的，只需要遍历数组全部的元素，前面和后面进行比较，如果相同则删除后面的
+例如：
+let arr = function(nums) { if(nums == null || nums.length == 0){ return 0 } let b = 0 for(let a=0;a&amp;lt;nums.length;a++){ if(nums[b]!=nums[a]){ nums[++b] = nums[a] } } return ++b } b作为覆盖，a作为查询，当b的值不等于a查询到的值时，b++的值等于a的值，等于的时候b不改变，当不相等再等于到b上</description>
+    </item>
+    
+    <item>
+      <title>Mobx学习笔记</title>
+      <link>https://blog.cjlio.com/posts/78/</link>
+      <pubDate>Sun, 08 Aug 2021 21:35:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/78/</guid>
+      <description>Mobx是一个状态管理库（状态管理实质上就是在管理数据变化）
+Mobx通过透明的函数响应式编程使得状态管理变得简单和可扩展
+Mobx状态管理是基于观察者模式的（Mobx6.0移除了修饰器）
+安装Mobx
+npm install mobx mobx-react --save 或者
+yarn add mobx mobx-react --save 导入
+import {observable, autorun, computed, action, makeObservable,reaction,when} from &amp;quot;mobx&amp;quot; import {observer} from &amp;quot;mobx-react&amp;quot; 注意：在严格模式中，是不允许在action之外改变状态的
+启动严格模式
+import {configure} from &#39;mobx&#39; configure({enforceActions: true}) observable定义可观察的状态 action修改状态（动作） computed计算值
+数据变化可被观察，例如：
+let appdata = observable([1,2,3,4,5]) console.log(appdata[1]) appdata = observable({a:1,b:2,c:3}) console.log(appdata.a) appdata.a += 1 console.log(appdata.a) appdata = observable.box(100) console.log(appdata) 响应式对象
+makeObservable（手动配置observable，action，computed）
+const store = makeObservable({ count: 666, get double(){ return this.count * 2 }, increment(){ this.</description>
+    </item>
+    
+    <item>
+      <title>简单认识HTTP协议</title>
+      <link>https://blog.cjlio.com/posts/77/</link>
+      <pubDate>Sun, 08 Aug 2021 17:02:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/77/</guid>
+      <description>HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的
+HTTP是基于TCP/IP协议来传输数据的
+访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应
+浏览器和web服务器之间通信的架构叫B/S结构（Browser Server），使用的协议是HTTP（https协议其实就是HTTP的基础上，添加了SSL
+http是一种协议，制定了客户端与服务端信息数据的传递的规则
+从传递文本，到传递图片，音频，视频
+HTTP/0.9：于1990年问世，只能用于简单文字的交换 HTTP/1.0：被正式列为www传输的标准，纳入RFC1945 HTTP/1.1：在1.0的基础上加上了连接方式的规约 HTTP/2.0：HTTP2.0更安全，性能更好
+http协议规定了会话是由客户端发起，服务端响应的
+客户端常见请求方式有GET，POST
+OSI七层模型，http协议是最上层的应用层
+应用层，表示层，会话层，传输层，网络层，数据链路层，物理层
+数据发送是从应用层到物理层（数据封装）
+数据接收是从物理层到应用层（数据解包）
+应用层就是为终端提供服务的，例如http，ftp等等
+表示层为数据提供压缩，加密等等功能
+会话层就是通过会话标识来确定是于哪个应用在通讯
+传输层就是定义了数据传输的协议和端口
+网络层就是加工数据，为数据添加一些信息，这一层的数据叫做包
+数据链路层就是定义了在单个链路上如何传输数据，网络中每台设备都有一个唯一的网络标识（MAC地址），这一层的数据叫做帧
+物理层就是物理设备的标准
+TCP/IP五层模型：应用层，传输层，网络层，数据链路层和物理层
+路由寻址：ip，mac，dhcp服务器
+先通过ip实现跨网端通信（如果是本地则直接传输给目标机器，不是则传输给出口路由器，一直到目标路由），然后通过MAC找到目标机器，目标机器获取到数据再根据网络模型向上处理
+DNS
+DNS域名系统是一个记录IP和域名映射的，域名服务器是分布式的，全世界一共有13台根域名服务器，当域名服务器只要自己解析不了，就会交给根域名服务器处理
+解析过程：
+机器通过访问本地域名服务器（一般是本地运营商提供，默认解析服务器）查询
+本地域名服务器检查缓存，没有就是向根域名服务器的其中一台发起查询请求
+根域名服务器根据要查询的结构找到对应的顶级域名服务器（管理全部注册在上面的二级域名服务器）信息发送会本地域名服务器
+本地域名服务器向顶级域名服务器发起查询
+顶级域名服务器根据域名结构查找到对应的二级域名服务器
+反复迭代最终查找到域名和 IP 的对应关系
+如果直接设置个公共域名服务器（例如：114，8之类的）能大大提升解析速度
+DNS解析的记录类型
+A记录
+直接将域名解析为IP
+CNAME记录
+给域名起个cname别名，例如访问了xxx会转发到aaa的域名上
+NS记录
+域名解析服务器记录，一般用来指定不同子域名对应到不同的解析服务器
+MX 记录
+电子邮箱服务，将指向邮件服务器地址
+CDN加速过程：
+用户访问域名地址
+因为域名被cdn接管了，域名解析只能获取到CNAME
+CDN通过CNAME来将地址代理到cdn服务器上，而不是源站
+通过CNAME获取到最近的cdn服务器的Ip地址，然后访问到cdn缓存服务器
+cdn缓存服务器再根据策略来判断是否存在该资源缓存，是否要向源站请求数据，再将数据返回给用户
+HTTPS协议
+通过http通信，经过SSL/TLS来建立安全信道，加密数据，http默认端口为80，https为443
+https就是在http协议基础上加了ssl协议
+一般服务端需要通过ssl证书来证明自己身份，ssl证书不可逆向，不可伪造，一旦发现伪造或者ssl证书不正确，浏览器一般都会拦截提示
+某些需要极其安全的需要客户端也是要证明身份，例如银行网站
+SSL协议：保证数据发送到正确目标，数据加密防止数据中途被拦截获取，保证数据完整性，数据不被串改
+前端中的HTTP
+先进行DNS解析-建立TCP连接（3次握手）-发送HTTP请求获取相关内容-浏览器构建DOM树和CSS树，然后生成渲染树。这个一个渐进式过程，浏览器引擎会力求最快将内容呈现给用户-关闭TCP连接（4次握手）
+http常见状态码
+1xx 信息 2xx 成功 3xx 重定向 4xx 客户端错误 5xx 服务器错误</description>
+    </item>
+    
+    <item>
+      <title>MongoDB学习笔记</title>
+      <link>https://blog.cjlio.com/posts/76/</link>
+      <pubDate>Sun, 08 Aug 2021 14:20:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/76/</guid>
+      <description>MongoDB是一个以键值对存储数据的数据库（基于json描述数据，实质上是一个叫BSON的数据格式，BSON是基于二进制字节流，json基于文本）
+基于json有个好处就是不需要额外对数据进行转换（例如sql，在调用其数据时需要进行数据的转换）
+MongoDB使用了WiredTiger存储引擎（3.2+版本开始为默认引擎），利用可用内存来缓存数据，来提供优秀的读取性能，该引擎使用WiredTiger内部缓存和文件系统缓存这俩种缓存
+WiredTiger提供了内存快照，而且每隔60秒（创建检查点）就将内存快照写入磁盘（数据持久化，而且持久化的数据还可以作为校验，确保数据在最后一个检查点是一致的，而且旧检查点可以作为有效检查点恢复因为写入新检查点时的错误而且重启导致丢失的数据）
+对于60秒内的数据丢失，WiredTiger采用了Journal机制（WAL预写日志）来提供断电保护，Journal每隔100ms刷新日志，数据被存储在Journal文件（发生断电情况，可通过Journal文件根据记录追加数据），Journal机制会保留检查点之间保留所有数据修改
+而且不用担心100ms以内的数据丢失，因为MongoDB提供了其特有的写入安全机制（Write Concern），默认使用Acknowledged安全策略，该策略在每次写入操作时确认状态，这个状态取决于内存的写入（不保证数据不丢失）
+Journaled策略要求每一次写入操作必须在journal落盘后（确保数据不丢失，吞吐和响应会有影响），该策略会确认落盘后等待30ms，将30ms内的全部写入操作统一按照顺序写入盘中
+majority副本集策略要求只有当数据被复制到绝大多数节点（包括主节点）后才应答（适合集群）
+Write Concern用法
+例如：
+db.test.insert({&amp;ldquo;name&amp;rdquo;:&amp;ldquo;hallo&amp;rdquo;},{writeConcern:{w:1}})
+w有这几个常用值，分别为0（非应答式写入），1（应答式写入），&amp;gt;1（设置副本写入节点数量），majority(表示majority副本集策略)
+而且还提供了wtimeout参数来限制节点写入时间（超过该时间，报错，只适用集群环境，单位ms）
+j参数是用来开启写入操作必须在写入journal日志后响应（Journaled策略，参数值为布尔值）
+MongoDB有三种集群部署架构，主从，副本集，分片
+一个副本集架构由一个主节点和多个副本节点组成，个主节点和多个副本节点的数据同步基于oplog，当主节点发生故障，副本节点会自动选择一个新的主节点来继续工作
+在分片架构上，数据均衡分布在每一个节点上（负载均衡），可通过增加或者减少分片来实现按需扩展，
+简单使用MongoDB数据库
+mongod.conf文件是MongoDB数据库配置文件
+启动数据库（没有该数据库则创建数据库）
+mongod &amp;ndash;dbpath D:\mongodb
+默认端口为27017
+启动服务
+net start mongodb
+连接数据库
+mongo &amp;ndash;port 27017
+切换数据库（没有该数据库就会创建）
+use demo
+查看全部数据库
+show dbs
+注意：默认数据库为test，没有创建新数据库，那么就存储在test数据库中
+删除数据库（当前数据库）
+db.dropDatabase()
+创建集合（类似于MySQL中的表）
+db.createCollection(&amp;ldquo;hallo&amp;rdquo;)
+插入数据（插入到test集合中，当该集合不存在时，将自动创建该集合）
+db.test.insert({&amp;ldquo;name&amp;rdquo;:&amp;ldquo;hallo&amp;rdquo;})
+查看当前已有集合
+show collections
+或者
+show tables
+db.createCollection(&amp;ldquo;test&amp;rdquo;, { capped : true, autoIndexId : true, size : 102400, max : 10000 } )
+整个集合空间大小102400B, 文档最大个数为10000个</description>
+    </item>
+    
+    <item>
+      <title>NextJS学习笔记</title>
+      <link>https://blog.cjlio.com/posts/74/</link>
+      <pubDate>Sat, 07 Aug 2021 23:26:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/74/</guid>
+      <description>NextJS是一个用于生产环境的react框架，可以提供服务器端渲染等等功能
+服务端渲染（ssr）：后端调用数据库获取数据后，将数据和页面元素进行组合成完整的DOM结构，再返回给浏览器，提供给用户浏览
+SPA：
+全称single page web application
+单一页面，加载慢，百度目前不支持spa的SEO
+NextJS：
+服务端渲染，服务端和客户端数据同步，插件丰富，搭建轻量，灵活配置
+手动配置：
+yarn add react react-dom next
+yarn init
+修改package.json文件
+在scripts下加添加
+&amp;ldquo;dev&amp;rdquo; : &amp;ldquo;next&amp;rdquo;, &amp;ldquo;build&amp;rdquo;: &amp;ldquo;next build&amp;rdquo;, &amp;ldquo;start&amp;rdquo;: &amp;ldquo;next start&amp;rdquo;
+创建个js文件
+function Hallo(){ return( &amp;lt;div&amp;gt;hallo next.js&amp;lt;/div&amp;gt; ) } export default Hallo yarn dev调试
+如果浏览器输出正确则配置成功
+通过create-next-app脚手架创建项目
+npm install create-next-app -g
+或者
+yarn add create-next-app -g
+创建create-next-app项目
+npx create-next-app demo
+或者
+yarn create-next-app demo
+跑create-next-app项目
+yarn dev
+访问http://localhost:3000/，正常显示网页则配置正常
+编程式跳转
+import Link from &amp;quot;next/link&amp;quot; &amp;lt;Link href=&amp;quot;/&amp;quot;&amp;gt;&amp;lt;a&amp;gt;返回&amp;lt;/a&amp;gt;&amp;lt;/Link&amp;gt; Link不支持直接加兄弟标签，起码要有一个父级标签</description>
+    </item>
+    
+    <item>
+      <title>深入学习vuejs</title>
+      <link>https://blog.cjlio.com/posts/75/</link>
+      <pubDate>Sat, 07 Aug 2021 23:25:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/75/</guid>
+      <description>Vue CLI是vue官方脚手架，可以快速创建vue项目
+安装vue-cli3
+npm install -g @vue/cli
+或者
+yarn global add @vue/cli
+升级
+npm update -g @vue/cli
+或者
+yarn global upgrade &amp;ndash;latest @vue/cli
+创建vue项目
+vue create vue-demo
+如果提示vue : 无法将“vue”项识别为 cmdlet、函数、脚本文件或可运行程序的名称，可以使用npx vue create vue-demo
+default (babel, eslint) // 默认选项，包含babel和eslint
+Manually select features // 自定义创建配置工程
+一般比较常用的有Babel，TypeScript，Router，CSS Pre-processors，Linter / Formatter
+空格为选择，enter为下一步
+跑vue项目
+npm run serve
+或者
+yarn start/yarn run dev
+如果运行报错error Component name &amp;ldquo;Home&amp;rdquo; should always be multi-word vue/multi-word-component-names
+只需要在vue.config.js添加lintOnSave: false配置，例如：
+module.exports = defineConfig({ transpileDependencies: true, lintOnSave: false }) 这个问题的原因在于vue-cli默认开启了ESLint检测，关闭就好了</description>
+    </item>
+    
+    <item>
+      <title>gulp学习笔记</title>
+      <link>https://blog.cjlio.com/posts/73/</link>
+      <pubDate>Fri, 06 Aug 2021 20:52:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/73/</guid>
+      <description>gulp.js是一个基于流(stream)的自动化构建工具，是开源的JavaScript自动化工具，基于node.js和npm的构建工具，可以处理压缩代码，合并代码，压缩图片，编译less等等任务
+全局安装gulp
+npm install &amp;ndash;global gulp-cli
+或者
+yarn add gulp-cli -g
+初始化
+npm init
+作为开发依赖进行安装gulp
+npm install &amp;ndash;save-dev gulp
+或者
+yarn add gulp-cli -d
+安装依赖
+yarn add &amp;ndash;save-dev gulp-sass gulp-autoprefixer browser-sync gulp-notify
+创建gulpfile.js
+执行gulp
+gulp
+修改gulpfile.js
+导入gulp（这里用个变量接收）
+let gulp = require(&amp;ldquo;gulp&amp;rdquo;);
+常用方法
+gulp.task() // 定义任务
+gulp.src() // 指向需要执行任务的文件
+gulp.dest() // 执行完任务的文件最后在哪里
+gulp.watch() // 监测文件是否发生变化
+gulp.task()其中有两个参数，分别是任务名称和一个回调函数
+例如：
+let gulp = require(&amp;quot;gulp&amp;quot;); gulp.task(&amp;quot;test&amp;quot;, function() { return console.log(&amp;quot;hallo gulp&amp;quot;); }); 执行test任务（在终端，应用根目录下）
+gulp test</description>
+    </item>
+    
+    <item>
+      <title>简单利用backdrop-filter属性实现效果</title>
+      <link>https://blog.cjlio.com/posts/65/</link>
+      <pubDate>Fri, 06 Aug 2021 10:18:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/65/</guid>
+      <description>backdrop-filter是css原生的属性
+backdrop-filter的一些方法（用法和filter一样）
+blur：模糊 brightness：亮度 contrast：对比度 invert：反相 opacity：透明度 saturate：饱和度 drop-shadow：投影 grayscale：灰度 hue-rotate：色调变化 sepia：褐色
+简单实现一个毛玻璃背景效果，例如：
+&amp;lt;style&amp;gt; *{ margin: 0; padding: 0; } #app{ width: 100%; height: 50rem; background-image: url(&amp;quot;1.jpg&amp;quot;); } #test{ position: absolute; top: 0; left: 0; right: 0; bottom: 0; backdrop-filter: blur(10px); } .text{ padding-top: 100px; text-align: center; } &amp;lt;/style&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;div id=&amp;quot;test&amp;quot;&amp;gt; &amp;lt;p class=&amp;quot;text&amp;quot;&amp;gt; hallo word &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; backdrop-filter和filter区别：
+filter是作用于当前元素（效果体现在本身，而不是背景），而且后代也会继承该属性
+backdrop-filter是作用于当前元素背后的所有元素，不会影响自己
+backdrop-filter兼容性没有filter优秀（目前低版本浏览器和IE，火狐都不支持该属性）</description>
+    </item>
+    
+    <item>
+      <title>深入学习React</title>
+      <link>https://blog.cjlio.com/posts/63/</link>
+      <pubDate>Sun, 25 Jul 2021 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/63/</guid>
+      <description>setState()
+注意：如果调用多次setState()，但是还是只触发一次重新渲染（性能优化，如果每更新一次状态就渲染一次的话，很影响性能）
+setState()是异步更新数据的，因此setState()不要依赖于前面的setState()，因为其不会立刻更新数据
+如果当前setState()依赖于前面的setState()，解决方法：
+this.setState((state, props) =&amp;gt;{ return{ count: state.count + 1 } }) console.log(this.state.count) this.setState((state, props) =&amp;gt;{ return{ count: state.count + 1 } }) console.log(this.state.count) state和props参数分别获取到最新的state和最新的props，通过回调函数返回值，保证每次都获取到最新的state和props
+如果想在状态更新后（页面完成重新渲染）立刻执行某个操作，那么可以使用setState()的第二个参数，这个参数是一个回调函数
+例如：
+this.setState((state, props) =&amp;gt;{ return{ count: state.count + 1 } },() =&amp;gt; { console.log(this.state.count) }) 可以看出 console.log(this.state.count)会在状态更新后被执行，因此可以获取到更新后的count值
+因此setState()一定会改变状态，但是不会立刻更新，而是当页面渲染完毕了（状态更新完毕之后）才会更新
+jsx语法的转化
+jsx实质上还是createElement()方法的语法糖（简化），因为jsx语法最后还是会编译（@babel/preset-react插件）成createElement()方法
+而createElement()方法也会被转换为js对象（ReactElement），用来描述页面上显示的内容，因此不管是jsx还是createElement()最后都会转换为js对象（ReactElement），ReactElement然后通过虚拟DOM实现DOM创建和更新
+例如：
+const Abc = ( &amp;lt;div&amp;gt;hallo&amp;lt;/div&amp;gt; ) console.log(Abc) 可以看到输出返回的是一个js对象
+React.createElement()接收3个参数，type（表示标签或者组件），config（对象，表示组件的所有属性），children（对象，表示组件之间的嵌套关系）
+组件更新机制
+setState()的作用：修改state，更新组件
+父组件重新更新state，子组件也会更新，不过只会影响到当前组件和其他子组件（后代组件）（组件树），对于该组件的兄弟组件和根组件（父组件）是不会影响
+初次渲染，当页面刷新时就会初次渲染，先渲染根组件，再按顺序渲染更新父组件和后代组件
+更新根组件，那么其下全部的组件树都会更新
+组件性能优化
+state只存储和组件渲染相关的数据，例如列表数据，而不用来渲染的数据不放在state中
+如果需要在多个方法中使用（共享）的数据，应该放在this中
+因为组件更新机制的原因，子组件没有变化也会重新渲染
+解决方法：
+使用钩子函数 shouldComponentUpdate(nextProps, nextState)，该钩子函数是更新阶段的，组件重新渲染前执行</description>
+    </item>
+    
+    <item>
+      <title>JavaScript知识扩展</title>
+      <link>https://blog.cjlio.com/posts/61/</link>
+      <pubDate>Sun, 18 Jul 2021 22:35:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/61/</guid>
+      <description>函数被调用时，浏览器会传递两个参数，this和arguments
+this就是函数的上下文对象，而arguments是一个数组对象（也就是可以通过索引来操作数据），函数调用时传递的参数会在arguments中保存
+callee属性对应着当前的函数
+例如：
+function abc(){ console.log(arguments.length); console.log(arguments[0]); console.log(arguments.callee); console.log(this) } abc(&#39;hallo&#39;); BOM对象 (Browser Object Model) 是指浏览器对象模型
+该对象提供了浏览器行为和浏览器属性方法
+windows表示整个浏览器的窗口，同时也是JavaScript最顶层的对象，其他bom对象都是其的属性
+navigator包含了当前浏览器的全部信息
+console.log(window.navigator) 可以看到输出了很多属性，如userAgent，language等等
+location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
+console.log(window.location) const urlData = &amp;quot;https://cjlio.com/; window.location.href = urlData; 这个也可以实现跳转
+window.location.assign(&amp;quot;https://cjlio.com&amp;quot;) 这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
+window.location.replace(&amp;quot;https://cjlio.com&amp;quot;) reload方法可以重载页面，加上true参数将强制更新
+window.location.reload(true) history表示浏览器的历史记录
+console.log(window.history) length表示本次访问网站的数量
+同时也提供了几个方法
+back()返回上个页面
+window.history.back()
+可以绑定个点击事件，用来返回上个页面
+forward()前进，一般是和back()搭配使用，一个返回上个页面，一个返回到之前的页面
+window.history.forward()
+go()，前进或者后退指定次数，正数为前进，负数为后退
+window.history.go(-1)
+screen代表用户的屏幕的信息, 获取显示器的相关信息
+console.log(window.screen) call 和 apply
+addEventListen()绑定事件函数
+removeEventListen()移除事件函数
+鼠标按下时onmousedown
+鼠标移动时onmousemove
+鼠标松开时onmouseup
+undefined代表定义未赋值
+null定义并赋值了, 只是值为null
+document.execCommand可以操作剪贴板
+document.execCommand(&amp;lsquo;copy&amp;rsquo;) // 复制
+document.execCommand(&amp;lsquo;cut&amp;rsquo;) // 剪切
+document.execCommand(&amp;lsquo;paste&amp;rsquo;) // 粘贴</description>
+    </item>
+    
+    <item>
+      <title>TypeScript学习笔记</title>
+      <link>https://blog.cjlio.com/posts/58/</link>
+      <pubDate>Sun, 18 Jul 2021 15:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/58/</guid>
+      <description>TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
+TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
+TypeScript实质上就是JavaScript的扩展，JavaScript超集
+TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript
+TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父
+TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样
+全局安装typescript
+yarn global add typescript
+或者
+npm install -g typescript
+检查是否安装成功
+tsc -v
+使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
+创建tsconfig.json
+npx tsc &amp;ndash;init
+编译TypeScript文件（转为正常js文件）
+tsc hallo.ts
+在终端中直接运行ts代码
+npm install ts-node -g
+ts-node hallo.ts
+绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）
+变量声明
+推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）
+基础类型
+TypeScript具有强类型的特点
+boolean，string，number，array，null，undefined，object，tuple，enum，void，never，any
+boolean布尔值，例如：
+let hallo: boolean = true
+number数值，例如：
+let hallo: number = 123;
+二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）
+let hallo: bigint = 100n;
+注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换
+string字符串
+let hallo: string = hallo;
+void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）
+function voiddemo(): void { let a = 10; }</description>
+    </item>
+    
+    <item>
+      <title>ES6学习笔记</title>
+      <link>https://blog.cjlio.com/posts/57/</link>
+      <pubDate>Fri, 09 Jul 2021 22:51:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/57/</guid>
+      <description>ECMAScript
+JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
+ECMAScript是规范，JavaScript是实现
+ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
+变量
+let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
+例如：
+if(true){ let a = 666; } console.log(a); // Uncaught ReferenceError: a is not defined 注意：
+使用var声明的变量不具备块级作用域有效的特性
+使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
+const声明一个只读的常量，一声明，常量的值将不能改变
+const abc =123;
+const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区
+ES6的作用域：
+全局作用域 函数作用域 块级作用域
+因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel
+安装babel
+npm install -g babel-cli
+安装转换包
+npm install &amp;ndash;save-dev babel-preset-es2015 babel-cli
+新建.babelrc文件，写入：
+{ &amp;quot;presets&amp;quot;:[ &amp;quot;es2015&amp;quot; ], &amp;quot;plugins&amp;quot;:[] } babel main.js -o src/main.js
+然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
+变量声明方式
+let，声明一个变量
+const，声明一个常量
+在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用
+let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量
+const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误
+变量解构
+ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
+let [a,b,c] = [1,2,3]
+会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined</description>
+    </item>
+    
+    <item>
+      <title>简单了解MVC，MVP和MVVM之间的不同与联系</title>
+      <link>https://blog.cjlio.com/posts/56/</link>
+      <pubDate>Fri, 09 Jul 2021 22:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/56/</guid>
+      <description>MVC（Model-View-Controller）分别为View（视图，用户界面），Model（模型，数据保存），Controller（控制器，逻辑）
+视图层发指令（Dom事件）给控制器，控制器完成逻辑处理，请求模型改变状态，模型将最新的数据发送给视图，得到反馈，各个之间通信是单向的
+也可以Controller接受指令，要求模型改变状态，模型将最新的数据发送给视图
+MVP（Model-View-Presenter）实质是就是将Controller（控制器，逻辑）改为Presenter（从模型中获取数据，并且提供数据给视图）
+各个通信之间是双向的，视图和模型并不联系，通过Presenter进行传递，全部逻辑都在Presenter进行处理
+MVVM（Model-View-ViewModel）实质上就是MVC的改进版，和MVP模式基本一致，不过MVVM采用了双向绑定，视图变化，自动反映在ViewModel中
+在前端中Model是用json表示，将Model和View关联起来的是ViewModel，Mode数据可以显示到View中，也可以将View修改回Mode</description>
+    </item>
+    
+    <item>
+      <title>React学习笔记</title>
+      <link>https://blog.cjlio.com/posts/55/</link>
+      <pubDate>Fri, 09 Jul 2021 22:23:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/55/</guid>
+      <description>React是构造用户界面的JavaScript库，就是负责视图层的，只负责视图的渲染，其特点是声明式，组件化
+安装react
+npm i react react-dom
+必需：react和react-dom
+react包是提供创建元素，组件等功能，是核心（废话）
+react-dom包提供DOM相关的功能
+通常还需要导入babel来解析jsx（注意：在浏览器使用babel编译jsx效率很低，babel内嵌了对于jsx的支持），babel可以将es6语法转化为es5，方便运行在不支持es6的浏览器上
+也可以通过引入src文件的方式引入cdn文件或者本地文件
+第一个例子
+&amp;lt;script type=&amp;quot;text/babel&amp;quot;&amp;gt; ReactDOM.render( &amp;lt;h1&amp;gt;hallo,react!!!&amp;lt;/h1&amp;gt;, document.getElementById(&amp;quot;app&amp;quot;) ); &amp;lt;/script&amp;gt; 使用babel解析jsx，react官方推荐使用jsx，因为使用jsx渲染dom简单明了
+jsx是一种JavaScript语法扩展，例如：
+const hallo = &amp;lt;h1&amp;gt;hallo&amp;lt;/h1&amp;gt;; 像上面这种就是jsx，jsx本身是一个表达式，经过编译（例如babel）后jsx表达式会转换成JavaScript对象（注意：jsx不是标准的ECMAScript语法，是语法的扩展，不进行编译处理，直接使用是会报错的）
+在jsx中插入JavaScript表达式，用大括号包含起来，例如：
+function hallo(yes){ return yes.name; } const yes = { name: &amp;quot;react&amp;quot; }; const hallo = &amp;lt;h1&amp;gt;hallo,{hallo(yes)}&amp;lt;/h1&amp;gt;; ReactDOM.render( hallo, document.getElementById(&amp;quot;app&amp;quot;) ); 当然react并没有强制要求必须使用jsx，例如：
+const hallo = React.createElement(&amp;quot;h1&amp;quot;,{class: &amp;quot;main&amp;quot;},React.createElement(&amp;quot;p&amp;quot;,null,&amp;quot;hallo word!!!&amp;quot;)) /* 上面提供了三个参数，分别是元素名称，元素属性，元素的子节点 */ ReactDOM.render(hallo,document.getElementById(&amp;quot;app&amp;quot;)) /* 上面提供了个两个参数，分别是要渲染的react元素，挂载点*/ react脚手架
+初始化项目
+npx create-react-app app
+启动项目（在项目根目录执行）
+npm start或者yarn start
+模块化导入react</description>
+    </item>
+    
+    <item>
+      <title>Ajax学习笔记</title>
+      <link>https://blog.cjlio.com/posts/54/</link>
+      <pubDate>Sat, 03 Jul 2021 15:30:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/54/</guid>
+      <description>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
+关于XMLHttpRequest对象（构造函数）的用法：https://cjlio.com/archives/14.html
+ajax需要网站环境下生效，需要web服务器，nodemon
+app.js
+// 导入express const express = require(&amp;quot;express&amp;quot;); // 导入path const patg = require(&amp;quot;path&amp;quot;); // 创建web服务器 const app = express(); // 静态资源访问服务 app.use(express.static(path.join(__dirname,&amp;quot;public&amp;quot;))); app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{ res.send(&amp;quot;hallo&amp;quot;); }); // 监听端口 app.listen(3000); console.log(&amp;quot;服务器启动成功&amp;quot;) nodemon app.js
+ajax运行原理
+ajax代理浏览器发送请求和接收响应，达到局部更新页面数据的效果
+创建ajax对象
+var hallo = new XMLHttpRequest();
+请求方式和请求地址
+hallo.open(&amp;ldquo;GET&amp;rdquo;,&amp;ldquo;https://httpbin.org/get&amp;quot;)
+发送请求
+hallo.send();
+获取服务端给予客户端的响应数据，因为请求和获取数据的速度取决于网络速度，应该设置onload事件，当加载完毕了再获取数据
+hallo.onload = function(){ console.log(hallo.responseText) } 服务端大部分情况下用json对象作为响应数据的格式，通过拼接json数据和html，将拼接的结果显示在页面中
+在http请求与响应的过程中，请求参数或者响应内容，如果是对象类型，最后都会转换为对象字符串进行传输，例如：
+app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{ res.send({&amp;quot;name&amp;quot; : &amp;quot;root&amp;quot;}); }); json字符串转换为json对象
+var responseText = JSON.parse(hallo.responseText); console.</description>
+    </item>
+    
+    <item>
+      <title>深入学习vue组件</title>
+      <link>https://blog.cjlio.com/posts/53/</link>
+      <pubDate>Sat, 03 Jul 2021 11:16:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/53/</guid>
+      <description>组件注册
+.component()接收2个参数，其中第一个参数是组件名（数据类型是字符串）
+组件名命名：
+全部小写，多个单词用连字符连接（-减号）
+因为html中是大小写不敏感的，浏览器会将大写解析为小写，因此不要使用驼峰命名法来命名自定义标签，而是使用连字符分隔
+组件被引用时，也必须是相同的名，例如：组件名是img-data，那么被引用时标签为，闭不闭合看组件的定义，如果组件的定义是img之类的，就不需要闭合
+直接暴露在vue实例的组件都是全局组件，可以直接在组件实例中调用
+局部组件是使用一个JavaScript对象进行定义封装，例如：
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;datas-a&amp;gt;&amp;lt;/datas-a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; const datas ={ template: ` &amp;lt;div&amp;gt; hallo &amp;lt;/div&amp;gt; ` } const hallo = Vue.createApp({ components: { &amp;quot;datas-a&amp;quot; : datas } }).mount(&#39;#app&#39;) &amp;lt;/script&amp;gt; components对象，键为自定义元素的名称，值为组件的实质对象
+局部组件的属性是不能直接被调用的，但是可以在另一个组件中指向其为自己的子组件，例如：
+const datab ={ components: { &amp;quot;datas-a&amp;quot; : dataa } } 模块系统
+通过导入模块的方式导入组件，例如：
+import datas from &amp;lsquo;./datas&amp;rsquo;
+那么datas组件就是可以在当前使用了
+Props
+prop类型
+用对象的方式列出prop，并且定义其类型，当传入的prop类型不对就会报错（开发版本），例如：
+const hallo = Vue.createApp({ component: { props:{ abc: String, xyz: Boolean, }, template: `&amp;lt;h1&amp;gt;{{abc.</description>
+    </item>
+    
+    <item>
+      <title>正则表达式学习笔记</title>
+      <link>https://blog.cjlio.com/posts/52/</link>
+      <pubDate>Fri, 02 Jul 2021 18:12:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/52/</guid>
+      <description>正则表达式（Regular Expression）是用于匹配字符串中字符组合的模式，在JavaScript中，正则表达式也是对象
+JavaScript创建正则表达式
+使用RegExp对象创建
+var hallo = new RegExp(/123/);
+或者
+var hallo = /123/;
+检查是否符合该正则表达式
+使用test方法判断字符串是否符合该规则的要求，返回的值是布尔值
+console.log(hallo.test(123));
+/123/只要包含123就返回true
+正则表达式元字符
+边界符（^和$）
+^表示匹配行首的文本（以谁开始）
+$表示行尾的文本（以谁结束）
+var hallo = ^abc;
+必须要abc开头，如果是aabc的话，返回false
+var hallo = abc$;
+必须要abc结尾，例如aabc，返回true
+var hallo = ^abc$;
+^和$一起使用就是精确匹配，必须是abc，如果是abcabc的话，返回false
+字符类[]
+var hallo = /[abc]/;
+只要包含a，b，c其中一个字符都匹配，返回true，例如axx
+var hallo = /^[abc]$/;
+三选一，只有包含a，b，c其中单独的一个才匹配返回true，例如abc，就返回false
+范围符-
+var hallo = /^[a-z]$/;
+多选一，a到z，包含26个字母任何一个字母都返回true，大小写敏感，A和a不一样
+var hallo = /^[a-zA-Z0-9_-]$/;
+多选一，包含26个字母（包含大小写）任何一个字母和数字（0到9）和下划线其中一个都返回true
+取反
+var hallo = /^[^a-z]$/;
+在方括号内部加^，就是代表取反，不能包含a到z其中的一个字母
+量词符（*，+，?）
+var hallo = /a*/;</description>
+    </item>
+    
+    <item>
+      <title>CSS预处理器-Sass学习笔记</title>
+      <link>https://blog.cjlio.com/posts/51/</link>
+      <pubDate>Fri, 02 Jul 2021 08:44:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/51/</guid>
+      <description>sass是一门css扩展语言，css预处理器
+sass是基于ruby语言开发，在前端中可以使用npm安装
+npm install node-sass或者npm install node-sass &amp;ndash;save-dev
+当然也可以安装ruby，通过gem托管服务进行安装sass
+gem install sass
+文件
+hallo.scss
+解析为css文件
+sass hallo.scss hallo.css
+sass提供了4种编译风格
+nested：嵌套缩进的css代码，默认值
+expanded：没有缩进，扩展的css代码
+compact：简洁格式的css代码
+compressed：压缩后的css代码，生产环境一般选择这个
+编译风格使用语法
+sass &amp;ndash;style nested hallo.scss hallo.css
+也可以让sass自动编译
+监听文件
+sass &amp;ndash;watch hallo.scss:hallo.css
+监听目录
+sass &amp;ndash;watch sass/style.scss:css/style.css
+注意：目录不要有中文
+注释
+/* 注释 */
+// 注释
+/*! 注释 */
+第一种注释，会保留到编译后的css文件中
+第二种注释，不会编译到编译后的css文件中
+第三种注释，是表示重要注释，就算就是压缩编译，也会保留这个注释，一般用来声明版权
+变量
+$color: #ccc; #app{ color: $color; } 变量也可以嵌套到属性中
+$right: right; #app{ margin-#{$right}: 50px; } 运算
+允许使用加减乘除运算
+#app{ width: 100px + 20px; height: (300px / 3) * 2; } 嵌套，嵌套一般用在有同一个父元素（祖先元素）下，例如：</description>
+    </item>
+    
+    <item>
+      <title>CSS预处理器-Less学习笔记</title>
+      <link>https://blog.cjlio.com/posts/50/</link>
+      <pubDate>Thu, 01 Jul 2021 15:31:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/50/</guid>
+      <description>less是一门css扩展语言，是css预处理器，扩展了css的动态特性，在css语法基础上引入了变量，混合，运算和函数等功能
+常见的css预处理器有sass，less，stylus
+less开发手册：https://less.bootcss.com/
+安装less
+npm install -g less
+检查是否安装成功
+lessc -v
+或者使用CDN和src导入的方法也都是可以的
+例如：
+https://cdn.jsdelivr.net/npm/less@4.1.1/dist/less.min.js
+less文件
+hallo.less
+注释
+/*块注释*/
+// 行注释
+变量
+变量名命名规范
+必须是以@开头
+不能包含特殊字符
+不能以数字开头
+大小写敏感
+例如：
+@color: #ccc; #app{ background-color: @color; } less编译
+less提供了一个解析器，通过解析器，编译成css文件
+例如：
+npm
+lessc style.less style.css
+将style.less编译成style.css文件
+或者
+vsc插件：Easy LESS（修改保存就自动编译成css文件）
+less嵌套
+子元素嵌套到父元素上（后代选择器）
+#app{ width: 100px; div{ width: 60px; } } 伪类或者伪元素选择之类的，需要加&amp;amp;连接起来，不加则认为是后代
+#app{ width: 100px; a{ color: #000; &amp;amp;:hover{ color: @color; } &amp;amp;::before{ width: 30px; } } } less运算</description>
+    </item>
+    
+    <item>
+      <title>数据结构与算法学习笔记</title>
+      <link>https://blog.cjlio.com/posts/49/</link>
+      <pubDate>Tue, 29 Jun 2021 15:52:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/49/</guid>
+      <description>根据于小甲鱼大佬的数据结构与算法教程而 ~~ 写 ~~ 抄的笔记
+什么是数据结构？
+数据结构是一门研究非数值计算的程序设计问题中的操作对象，以及它们之间的关系和操作等相关问题的学科。
+程序设计 = 数据结构 + 算法
+数据元素相互之间存在的一种或多种特定关系的集合
+数据结构分为逻辑结构和物理结构
+逻辑结构：指的是数据对象中数据元素之间的相互关系
+物理结构：指的是数据的逻辑结构在计算机中的存储形式
+四大逻辑结构：
+集合结构： 集合结构中的数据元素是同属性一个集合的
+线性结构：线性结构中的数据元素之间是一对一的关系
+树型结构：树性结构中数据元素之间存在一种一对多的层次关系
+图形结构：图形结构的数据元素是多对多的关系
+物理结构：实质是研究如何将数据元素存储到计算机的存储器中
+存储器主要是针对于内存，外部存储器（例如：硬盘）的数据组织一般用文件结构来表示
+数据元素的存储结构形式有两种，顺序存储和链式存储
+顺序存储结构：指的是数据元素存放在地址连续的存储单元里，其数据之间的逻辑关系和物理关系是一样的，例如编程语言中的数组
+链式存储结构：经常变化的结构，指的是将数据元素存放在任意的存储单元里，而这组存储单元是可以连续的，也可以是不连续的，数据元素存储关系不能反应其逻辑关系，通过分配一个指针指向一个内存，而这个内存用来存放数据元素的地址，通过内存来寻找相对应的数据元素地址
+算法：算法是解决特定问题求解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令一个或多个的操作，就是一个解决问题的技巧或者方式
+一个问题可以用多个算法解决，但是一个算法不能解决所有问题的能力
+算法五个基本特征：输入，输出，有穷性，确定性和可行性
+输入：算法具有零个或者多个输入
+输出：算法至少有一个或者多个输出
+有穷性：指的是算法在执行有限的步骤之后，自动结束，而不是无限循环，要求每一个步骤在一段时间内完成，而不是永远不会停止的
+确定性：算法的每一个步骤都具有确定的含义，不会出现二义性（二义性指的是一个东西在一个环境下出来两种或者两种以上的含义）
+可行性：算法的每一个步骤必须是可行的，，每一个步骤都可以通过执行有限次数完成
+算法设计的要求：
+正确性：算法必须要具备输入，输出，无歧义，能正确反应问题的要求，能够得到问题的正确答案
+算法没有语法错误，能对合法的输入返回满足要求的输出，对于非法输入能返回满足要求的说明，对于输入的内容要满足其满足要求的输出结果
+可读性：算法的另一目的是方便阅读，理解或者交流其算法的实现原理
+健壮性：当输入数据不合法时，算法也能做出对应的处理，而不是产生异常，崩溃之类的
+时间效率高和存储量低
+算法效率的度量方法
+算法的效率一般指的是算法的执行时间
+事后统计方法：这种方法主要是通过设计好的程序和数据，利用计算机计时器对不同算法的运行时间进行比较，从而达到确定算法效率的高低
+缺点：需要根据算法事先编写好测试程序，需要耗费大量时间和精力，不同的测试环境下的效率差异大
+事前分析估算方法：在编写程序之前，依据统计方法对算法进行估算
+影响算法效率的原因：
+算法采用的策略或者方案
+代码质量
+问题的输入规模
+机器执行指令的速度
+一个算法程序的运行时间依赖于算法的好坏和问题的输入规模（输入量）
+算法的复杂性实际上就是算法因为输入规模扩大而增长量的一个抽象，只关心其实现的算法
+函数的渐近增长
+最高次项相乘的常数并不重要，可以忽略
+所以一个算法存在一个常数，那么这个常数基本上可以忽略
+最高次项的指数大的，函数会随着n的增长，结果也会变得增长特别快。指数！！！ 判断一个算法的效率时间，应该忽略函数中的常数和其他次要项，而关注最高项（主项）的阶数
+算法的时间复杂度
+算法时间复杂度的定义：
+在进行算法分析时，语句总的执行次数T(n)是关于问题规模n的函数，分析T(n)随n的变化情况并确定T(n)的数量级。算法的时间复杂度，也就是算法的时间量度，T(n) = O(f(n))，表示随问题规模n的增大，算法执行时间的增长率和f(n)的增长率相同，称为时间复杂度，f(n)是问题规模n的某个函数。
+像上面的，用大写O（）来体现算法时间复杂度的记法，我们称之为大O记法。
+随着输入规模n的增大，T(n)增长最慢的算法为最优算法
+简称为执行次数等于时间
+分析一个算法的时间复杂度（推导大O阶方法）：
+用常数1取代运行时间中的所有加法常数
+在修改后的运行次数函数中，只保留最高阶项
+如果最高阶项存在且不是1，则去除于这个项相乘的常数</description>
+    </item>
+    
+    <item>
+      <title>微信小程序学习笔记</title>
+      <link>https://blog.cjlio.com/posts/48/</link>
+      <pubDate>Sun, 27 Jun 2021 12:34:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/48/</guid>
+      <description>小程序实质上就是一个基于web基础的应用程序（网页）（但是不支持浏览器的api，小程序的api全部由微信提供，高度依赖微信，因此只能在微信中运行）
+微信小程序要求进行ICP备案，才能发布小程序
+微信小程序开发文档
+https://developers.weixin.qq.com/miniprogram/dev/framework/
+开发工具：微信开发者工具
+小程序产品需求
+发现真实需要
+用户深度访谈，分析竞品，付费意愿
+需求分期：最小化可行产品（MVP）
+不是每个功能都要开发（优先开发最重要和最紧急的功能）
+优化开发顺序，先开发基础可用，然后迭代更新功能，满足用户需求，功能文档
+根据用户体验来优化服务
+原型制作工具：墨刀，Axure
+微信小程序结构
+index.wxml页面结构
+index.wxss页面样式
+index.js页面逻辑
+如果设置了单独的页面样式，那么会覆盖掉app.wxss的样式
+app.json定义了页面和基本配置，采用json格式，必须包含pages属性，说明小程序有哪些页面
+app.json文件结构
+pages是用来定义页面的，是一个数组，每一个项都是代表一个页面，例如：
+&amp;quot;pages&amp;quot;:[ &amp;quot;pages/index/index&amp;quot;, &amp;quot;pages/demo/demo&amp;quot; ], window属性是设置小程序的窗口样式，例如：
+&amp;quot;window&amp;quot;:{ &amp;quot;backgroundTextStyle&amp;quot;:&amp;quot;light&amp;quot;, &amp;quot;navigationBarBackgroundColor&amp;quot;: &amp;quot;#fff&amp;quot;, // 导航栏背景颜色 &amp;quot;navigationBarTitleText&amp;quot;: &amp;quot;Weixin&amp;quot;, // 导航栏文本 &amp;quot;navigationBarTextStyle&amp;quot;:&amp;quot;black&amp;quot; // 导航栏文本颜色 }, 从上面可以看出是一个三层结构，页面是放在pages目录下的，而demo和index都是代表这个页面叫什么
+demo.js，Page()是小程序提供的一个函数，用来初始化页面，参数是一个对象，用来配置当前页面的属性
+demo.wxml，该文件是用来描述页面的，和html类似
+pages文件夹：存放小程序页面，每个页面代表为一个文件夹，文件夹名称为页面名称，在这个页面文件夹下的全部文件都是描述这个页面的
+utils文件夹：用于存放公共的js程序，便于不同的页面进行调用
+imgages文件夹：为方便管理小程序的用到的全部静态图片
+app.js：当前项目的js（全局数据和反应）
+json：全局配置
+wxss：全局样式
+project.config.json：项目配置文件，配置微信开发者工具，例如工具的页面颜色，编译配置等等个性化配置
+page.json: 单独定义每个页面的一些属性，例如：顶部颜色，是否可以下拉刷新等等
+app.json：这是一种数据格式，小程序的静态配置（全局配置），页面的路径，界面的表现，顶部样式，网络超时等等
+pages字段：描述当前小程序所有页面的路径，让微信清楚小程序页面定义在哪个目录
+window字段：定义小程序所有页面的顶部背景颜色，文字颜色等等
+json是包裹在一个括号中，以键值对的方式表达数据，值必须包含在双引号中，在json中无法使用注释
+wxml
+WXML：从html中衍生而来一种专门在小程序页面中使用的语言，组合了基础组件，事件系统，构造出页面的结构
+view元素是表示块级，和div类似
+scroll-view元素是表示可滚动页面区域
+text元素是表示行内文本，和span类似
+image元素是表示图片，和img类似
+swiper元素是用来搞轮播图
+属性
+&amp;lt;view 属性=&amp;ldquo;属性值&amp;rdquo;&amp;gt;
+bindtap属性可绑定事件函数
+hidden属性控制元素是否隐藏，true为隐藏
+wxss样式，采用css样式语法，和写普通的css样式一样，选择器属性样式之类的就不写了，具备css大部分的特性，具体看我写的css笔记，背景，字体，边框，定位，大小之类的，用法是一样的，可以给wxml标签设置class，采用的是W3C标准盒模型，另外小程序官方使用flex布局
+推荐静态样式写入class中，style用来接收动态的样式，避免出样式优先级问题，例如：</description>
+    </item>
+    
+    <item>
+      <title>webpack学习笔记</title>
+      <link>https://blog.cjlio.com/posts/47/</link>
+      <pubDate>Thu, 24 Jun 2021 10:11:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/47/</guid>
+      <description>webpack作为模块加载和打包神器
+安装node就有npm了，用npm安装webpack
+npm i webpack -g 安装全局的webpack
+到项目目录下，npm init -y 初始化模块
+npm i webpack -D 安装项目局部的webpack，-D是&amp;ndash;save-dev的意思
+webpack 入口文件名 最后输出到哪个文件的文件名，例如：
+webpack A.js B.js
+那么就会编译A.js，输出到B.js
+webpack只能处理JavaScript，处理其他类型的文件，需要安装几个包
+npm install css-loader style-loader
+假设有个一个abc.css文件，里面定好了样式
+那么修改A.js
+require(&amp;quot;!style-loader!css-loader!./abc.css&amp;quot;); document.write(require(&amp;quot;./C.js&amp;quot;));
+再打包一次
+webpack A.js B.js
+会出现一个C.js
+配置webpack.config.js
+module.exports = { entry: &#39;入口文件的路径&#39;, output: { path:__dirname, filename: &#39;最后输出到哪个文件的文件名&#39; }, module: { rules: [{ test: &#39;处理什么格式的文件&#39;, use:[ { loader: &#39;依赖包&#39; } ] } ] } }; 模块化
+import $ from &amp;ldquo;jquery&amp;rdquo; // 导入jQuery，只需要src当前js文件就可以导入jQuery依赖</description>
+    </item>
+    
+    <item>
+      <title>JavaScript基础学习笔记</title>
+      <link>https://blog.cjlio.com/posts/46/</link>
+      <pubDate>Thu, 24 Jun 2021 07:57:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/46/</guid>
+      <description>插入js
+在html页面使用js
+引用js文件</description>
+    </item>
+    
+    <item>
+      <title>Grid布局学习笔记</title>
+      <link>https://blog.cjlio.com/posts/45/</link>
+      <pubDate>Wed, 23 Jun 2021 10:29:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/45/</guid>
+      <description>grid 布局
+grid布局和flex布局类似，不过grid是最强大的css布局方式
+grid布局是网格布局
+display: grid; // 定义grid布局，默认为块级元素
+display: inline-grid // 设置为行内元素
+设置为grid布局后，容器的子元素的float（浮动），display: inlne-block（行内块级元素），display: table-cell（表格单元格），vertical-align（垂直对齐方式）之类的全部都会失效
+列宽和行高的设置
+grid-template-columns: 100px; // 列宽
+grid-template-rows: 100px; // 行高
+数值也支持百分比
+grid-template-columns: repeat(3, 100px); // 列宽，重复次数为3，重复的值为100px，和下面效果是一样的
+grid-template-columns: 100px 100px 100px;
+grid-template-rows: repeat(auto-fill, 100px); // 行高，自动填充容器，行高为100px
+grid-template-rows: 1fr 2fr; // 行高，第二个的行高是第一的2倍
+grid-template-rows: minmax(100px, 300px); // 生成一个长度范围，长度在这个范围内，两个参数分别代表最小值和最大值，这里表示的是行高不小于100px，不大于300px
+grid-template-rows: auto; // 由浏览器决定行高
+grid-template-columns: [a1] 100px [a2] 100px [a3] auto; // 方括号[]内的的值是用于指定网格的名称
+grid-template-columns: 20% 60% 20%; // 左栏20%，中间60%，右栏20%，如果是重复的值搭配repeat使用更佳
+grid-row-gap: 10px; // 行间距（行与行的距离）</description>
+    </item>
+    
+    <item>
+      <title>css的一些知识扩展</title>
+      <link>https://blog.cjlio.com/posts/44/</link>
+      <pubDate>Wed, 23 Jun 2021 09:16:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/44/</guid>
+      <description>box-sizing 盒类型
+该属性是告诉浏览器是以什么盒模型展示的
+IE用的是border-box
+计算方式是外边距+内边距+内容=宽度（高度）
+而像谷歌浏览器之类的用的是content-box
+计算方式是容器的宽度或者高度
+box-sizing: content-box; // 告诉浏览器是以content-box方式计算
+border-box // 告诉浏览器是以border-box方式计算
+css样式优先级
+!important &amp;gt; 内联 &amp;gt; id &amp;gt; 类 &amp;gt; 标签 &amp;gt; 通配符 &amp;gt; 默认样式 &amp;gt; 继承样式
+letter-spacing 字间距
+该属性控制字符之间的距离，字符之间的字符间距，默认值为0
+该属性支持三种类型的数值
+px（像素）
+em（相对值，相对于原来设置的值，如果原来的值为16px，那么1em就是16px，可以理解为倍数）
+rem（和em类似，不过它相对的是html元素，而em是相对于它本身）
+例如：
+letter-spacing: 6px;
+columns
+用于指定列宽和列数
+例如：
+columns: 100px 3; // 指的是列宽为100px，列数为3
+column-gap
+用于列与列之间的间隔
+column-gap: 30px;
+column-rule
+用于指定列之间的宽度和样式，以及颜色（列的边线）
+column-rule: 6px dashed #ccc;
+可拆分为
+column-rule-width和column-rule-style和column-rule-color
+column-span
+指定元素应横跨多少列
+column-span: 3;
+all为横跨所有列
+media 媒体查询
+媒体查询常用于响应式布局，为不同屏幕设置不同的样式
+@media(max-width:768px){} // 当屏幕最大宽度只有768px时应用其下的设置</description>
+    </item>
+    
+    <item>
+      <title>一些常用的进制转换方法</title>
+      <link>https://blog.cjlio.com/posts/43/</link>
+      <pubDate>Sun, 20 Jun 2021 20:07:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/43/</guid>
+      <description>除2取余，逆序排列
+十进制（整数）转二进制一般使用&amp;quot;除2取余，逆序排列&amp;quot;法：
+1.先使用2整除2进制，得到商和余数
+2.然后再使用2整除商，得到新的商和余数
+3.如此反复进行，直到商为0时为止
+4.把先得到的余数作为二进制的低位，后得到的余数作为二进制的高位，依次排列
+注意：最左边是高位，最右边是低位
+例子： 100/2 = 50余 0 50/2= 25余 0 25/2=12余 1 12/2=6余 0 6/2 = 3余 0 3/2 =1 余 1 1/2=0余 1
+所以100的二进制为1100100
+小数转二进制
+乘2取整，顺序排列</description>
+    </item>
+    
+    <item>
+      <title>记录一次MIME类型错误</title>
+      <link>https://blog.cjlio.com/posts/39/</link>
+      <pubDate>Thu, 17 Jun 2021 08:25:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/39/</guid>
+      <description>打开网页，发现css没有加载出来，f12一看，content-type: text/plain;，把这个css当文本输出了，浏览器请求到这种类型的文件都不会对其进行处理，而且应该是text/css才对
+先了解一下浏览器是如何处理这些数据的，是怎么区分的
+数据通过http传输协议获取到，然后由web服务器的content-type向浏览器进行指示数据的类型，而mime.types就是用来定义数据文件的类型，用什么格式来进行网页编码（charset=utf-8）
+当web服务器接收到请求时，会依据请求文件的后缀名在服务器的MIME配置文件中找到对应的mime.types，然后根据mime.types来确定content-type，浏览器根据content-type来处理数据
+解决方法：当然是指定mime.types文件，而宝塔的nginx一般是在/www/server/nginx目录下，而mime.types文件一般在nginx目录下的conf目录下，会看到一个叫mime.types的文件和一个叫mime.types.default的文件
+往nginx配置文件上输入 include /www/server/nginx/conf/mime.types; default_type application/octet-stream;
+第一个行指定mime.types，第二行就是默认类型
+然后重启一下nginx服务器，刷新一下网页，看到恢复成content-type: text/css了</description>
+    </item>
+    
+    <item>
+      <title>Yarn包管理工具的简单使用</title>
+      <link>https://blog.cjlio.com/posts/38/</link>
+      <pubDate>Wed, 16 Jun 2021 22:55:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/38/</guid>
+      <description>Yarn 是一款新的 JavaScript 包管理工具，和npm对比就是速度快，保持一致性，安全
+速度快是因为yarn是并行执行任务，而不是npm那样排队列执行package，而且yarn还可以提供缓存，如果安装过一次package，使用yarn再次安装就会从缓存中获取，而不用再下载一次
+保持一致性：yarn提供了一个lockfile文件来记录要安装的package的版本号，锁定其版本不会出现错误，会生成yarn.lock文件来记录其package的版本号，就连依赖包的版本号都会被记录
+安全：yarn会在每个package被执行时校验其完整性
+实质上yarn本身还是从npm中获取的CLI客户端，还是一样可以获取和发布包
+windows不允许禁止运行脚本解决方法，管理员打开powershell
+set-ExecutionPolicy RemoteSigned
+安装yarn（全局）
+npm install yarn -g
+查看全部yarn命令
+yarn help
+检查是否安装成功以及查看版本号
+yarn &amp;ndash;version
+同样也是可以选择升级到yarn2
+yarn版本在v1.22之上 yarn set version berry
+yarn版本在v1.22之下 yarn policies set-version berry
+初始化
+yarn init
+安装一个包
+yarn install
+yarn
+添加一个包到依赖中
+yarn add 包名@版本号
+如果没有写明版本号，默认安装的是最新的，支持一次性填加多个包，多个包用空格分开
+添加一个包到不同的依赖类别中
+开发环境 yarn add 包名 &amp;ndash;dev
+生产环境 yarn add 包名 &amp;ndash;peer
+全局依赖环境 yarn global add 包名
+更新包到指定版本
+yarn upgrade 包名@版本号
+更新包到最新版本
+yarn upgrade &amp;ndash;latest 包名</description>
+    </item>
+    
+    <item>
+      <title>wsl2-windows子系统简单配置</title>
+      <link>https://blog.cjlio.com/posts/35/</link>
+      <pubDate>Wed, 16 Jun 2021 17:43:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/35/</guid>
+      <description>wsl全称Windows Subsystem for Linux
+打开启动或关闭windows功能，选择虚拟机平台，安装完毕功能，重启
+打开Windows Power Shell，输入
+// 启用 wsl
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+// 启用虚拟机功能（请务必确保已经开启了虚拟机平台功能）
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+下载并且安装Linux内核更新包 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+wsl.exe &amp;ndash;install或者wsl -l -v检查是否安装正常
+切换wsl2为默认
+wsl &amp;ndash;set-default-version 2
+Linux子系统切换为wsl
+wsl &amp;ndash;set-version Ubuntu 2 // Ubuntu为子系统名，2为wsl版本，可以输入wsl -l -v查看
+报错 Installing, this may take a few minutes&amp;hellip;
+解决方法：打开启动或关闭windows功能，选择Linux的Windows子系统，就好了
+开启wsl2不需要开启预览版本！！！
+推荐个Visual Studio Code插件
+Remote - WSL
+可以免密登录Linux子系统，操作Linux子系统里面的数据
+重启wsl
+win+r+services.msc
+找到Lxssmanager服务，重新启动</description>
+    </item>
+    
+    <item>
+      <title>Nginx服务器的一些简单配置</title>
+      <link>https://blog.cjlio.com/posts/34/</link>
+      <pubDate>Wed, 16 Jun 2021 15:52:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/34/</guid>
+      <description>配置ssl证书
+前提是已经申请到ssl证书,并且开放443端口
+编辑nginx.conf
+将443那几行的注释去掉（#）,并且修改
+ssl_certificate &amp;ldquo;crt证书的绝对路径&amp;rdquo;; ssl_certificate_key&amp;quot;key证书的绝对路径&amp;quot;;
+如果想访问网站就301重定向到https，那么添加这几行
+server{ listen 80; server_name cjlio.com; rewrite ^(.*) https://$host$1 permanent; } # 当使用80端口访问网站时，将301永久重定向到https://cjlio.com，达到全站https的效果
+然后刷新一下配置nginx -s
+nginx反向代理配置
+将客户端请求转发给内部网络的其他目标服务端，并且将从其他服务端的结果返回到客户端，代理服务端和目标服务端，在外部看起来像是一个整体，只是将请求转发给其他服务端处理，从而达到减轻目标服务端的压力的效果
+配置nginx.conf
+location / { proxy_pass https://test.cjlio.com; # 反向代理服务器地址 proxy_connect_timeout 200; # 设置连接超时 proxy_read_timeout 200; # 设置读响应超时 } 重启Nginx服务：service nginx restart
+请求当前服务器时，当前服务器将请求转发给地址为 https://test.cjlio.com 的服务器处理
+gzip压缩
+gzip on; gzip_comp_level 1; gzip_min_length 10; gzip_http_version 1.1; gzip_types text/html text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript; 解释：
+gzip on // gzip开启，关闭是off</description>
+    </item>
+    
+    <item>
+      <title>Linux环境下简单搭建Minecraft服务器（java版）</title>
+      <link>https://blog.cjlio.com/posts/33/</link>
+      <pubDate>Wed, 16 Jun 2021 15:46:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/33/</guid>
+      <description>服务器可以使用国内的，保证延迟低，服务器配置一定要高一点，不然很容易Killed
+安装java
+dnf install java-openjdk
+检测java是否安装成功
+java -version
+新建一个目录
+mkdir hallomc
+cd hallomc
+下载第三方mc服务器
+wget -c https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/553/downloads/paper-1.16.5-553.jar
+这是1.16.5的版本，服务器版本和客户端版本要一致
+历史版本https://papermc.io/legacy
+运行mc服务器
+java -Xmx1024M -Xms512M -jar paper-1.16.5-553.jar
+Xmx 代表服务器启动所占的最大运行内存，Xms代表服务器正常运行的最大内存
+一般来说第一次运行都是运行不了，因为没有同意协议
+进入mc目录下，nano eula.txt，把eula=false改成eula=true，然后再运行mc服务器
+24小时运行mc服务端
+一般来说退出ssh登录，就会终止运行mc服务端，可以通过简单建立个“虚拟终端”，来24小时运行
+dnf install screen # 安装screen
+screen -S mcserver # 创建一个新“终端”，名称自定义
+screen -R mcserver # 进入这个新“终端”
+如果想退出，可以使用ctrl+a+d
+可以使用screen -ls 命令来查看所有“终端”
+关闭正版验证
+在服务端目录，找到server.properties文件
+修改这个文件，把onlinemode 改为 false
+MCSManager面板
+wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash</description>
+    </item>
+    
+    <item>
+      <title>JavaScript的一些基础知识扩展</title>
+      <link>https://blog.cjlio.com/posts/32/</link>
+      <pubDate>Wed, 16 Jun 2021 15:12:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/32/</guid>
+      <description>JavaScript的变量具有动态性的特性，就决定了变量只是用于保存该特定的值的名字
+JavaScript中有两种，基本类型值和引用类型值
+基本数据类型有数字(Number)，字符串(String)，布尔值(Boolean)，null，undefined，（es6中加入了个symbol）,BigInt(ES2020)
+基本类型是按值访问，可以直接操作保存在变量中的值
+基本类型值是简单的数据段，而引用类型是指由多个值组成的对象
+因为基本类型是按值访问的，所以可以操控保存在变量的值
+引用类型的值是保存在内存中的对象，JavaScript不允许直接访问内存中的位置
+操控对象，其实就是在操控对象的引用，而不是对象本身
+JavaScript的逻辑运算
+JavaScript的任何数据类型都能转换为布尔类型
+&amp;lt; 小于 &amp;gt; 大于 &amp;lt;= 小于或者等于 &amp;gt;= 大于或者等于 == 没错，这个才是等于，=这个是用来赋值的 != 不等于 === 绝对等于（值和数据类型相等） !== 不绝对等于（值和数据类型其中有一个或者都不相等）
+&amp;amp;&amp;amp; 必须都要符合要求
+|| 只有一个符合要求
+! 真为假，假为真（当判断为true时返回false，判断为false时返回true）
+逻辑运算的结果为布尔值
+类型判断
+数据类型有undefined，null，boolean，number，string，object，symbol，BigInt（ES2020）
+undefined，该变量没有被赋值
+null，该变量的值为空的对象指针
+boolean，该变量的值为布尔值
+string，该变量的值为字符串
+number，该变量的值为数值
+object，该变量为对象或者null
+Symbol，生成一个全局独一无二的值
+tyoeof操作符会返回该变量的值或者该值是什么数据类型
+注意：null值表示一个空对象指针，所以使用typeof操作符检测null时会返回object，typeof个函数，会返回function
+typeof判断null之类的不合适，在这种情况可以使用instanceof
+instanceof会检查构造函数的prototype属性是否在某个实例的原型链上
+例如：
+var abc = new testa() if(Object.getPrototypeOf(abc) === testa.prototype){}
+instanceof判断null
+null instanceof Object // false
+返回布尔值,例如
+var arr = [1,1,2,3,4,5]; console.log(arr instanceof Array); // 返回true</description>
+    </item>
+    
+    <item>
+      <title>node.js包管理工具npm的简单使用</title>
+      <link>https://blog.cjlio.com/posts/31/</link>
+      <pubDate>Wed, 16 Jun 2021 15:05:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/31/</guid>
+      <description>npm是Node.js的默认包管理工具
+安装npm：安装node.js(一般来说安装nodejs都会安装npm的)
+npm -v 查看npm版本号 node -v 查看node版本号 npm install nmp@latest -g 更新最新nmp，-g全局，没有加-g就是本地安装，或者在@后面加版本号来更新到指定版本的npm npm init -y 初始化 npm i 要安装的依赖 先检查有没有这个东西，有的话就下载下来 npm uninstall 要删除的依赖的名称 npm i 要安装的依赖@版本号 安装指定版本的依赖 npm update 依赖名称 安装最新的依赖或者更新npm npm init -y 使用默认的参数，去掉-y就是手动配置 npm run 对象名 执行脚本,引用package.json中的scripts对象，在对象中添加脚本 npm adduser 注册npm账号 npm publish 发布npm包 npm install 一键安装package.json文件里的所有依赖 npm install &amp;ndash;dependencies 只安装package.json里的dependencies的文件 npm install &amp;ndash;devDependencies 只安装package.json里的devDependencies文件 会自动将package.json中的模块安装到node-modules文件夹
+升级插件 npm-check-updates使用 npm install -g npm-check-updates 安装npm-check-updates插件 ncu 查看package.json中依赖的最新版本 ncu -u 更新依赖到最新版本 ncu -a 更新全部依赖到最新版本 npm update</description>
+    </item>
+    
+    <item>
+      <title>Git版本管理系统学习笔记</title>
+      <link>https://blog.cjlio.com/posts/30/</link>
+      <pubDate>Wed, 16 Jun 2021 14:51:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/30/</guid>
+      <description>git安装
+Windows和mac
+到git官网下载对应的安装文件，进行安装，下一步
+Linux
+sudo apt install git-all 或者 sudo dnf install git-all
+也可以用源代码编译（Git是开源的，是Linux之父的作品） https://github.com/git/git/releases
+方便git管理，记录每一个修改了Git仓库的人，设置用户名和邮箱
+git config &amp;ndash;global user.name &amp;ldquo;chenjunlin&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;a@cjlio.com&amp;rdquo;
+ssh-keygen -t rsa -C &amp;ldquo;a@cjlio.com&amp;rdquo; # 生成ssh密钥
+mkdir learngit #创建一个空目录
+cd learngit # cd到目录
+pwd #显示当前目录路径
+git init #将当前的目录变成git管理仓库
+ls -ah #将所有目录（包括隐藏目录）显示出来
+git add 文件名 #将文件添加到仓库中
+git commit -m 说明 #告诉git这次添加到仓库的说明，可以是任意内容
+git status #返回仓库的当前状态
+git diff 文件名 #查看当前文件的内容
+git log #查看历史记录，加上&amp;ndash;pretty=oneline 查看commit id（版本号）
+git reset &amp;ndash;hard HEAD^ #回退上一个版本，上上一个版本就是HEAD^^，以此类推，或者使用HEAD~ 就是要回退多少个版本</description>
+    </item>
+    
+    <item>
+      <title>配置树莓派笔记</title>
+      <link>https://blog.cjlio.com/posts/29/</link>
+      <pubDate>Wed, 16 Jun 2021 14:48:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/29/</guid>
+      <description>（树莓派系统）Raspbian是基于Debian GNU/Linux的免费操作系统，所以可以使用debian的操作方法来配置系统和使用系统
+现改名为Raspberry Pi OS
+工具：读卡器，16g内存卡，micro usb充电器，树莓派，一台pc
+修改为国内镜像源
+# 编辑 /etc/apt/sources.list 文件，删除原文件所有内容，用以下内容取代： deb http://mirrors.tuna.tsinghua.edu.cn/raspberry-pi-os/raspbian/ buster main non-free contrib rpi deb-src http://mirrors.tuna.tsinghua.edu.cn/raspberry-pi-os/raspbian/ buster main non-free contrib rpi
+# 编辑 /etc/apt/sources.list.d/raspi.list 文件，删除原文件所有内容，用以下内容取代： deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui
+使用刻录工具刻录树莓派系统（Win32DiskImager）
+使用读卡器读取系统信息，在boot目录新建一个名为ssh的空白文件，用来打开ssh服务，ssh文件不需要存在内容 没有用那么需要手动启动ssh服务：service sshd restart
+在boot目录新建一个wpa_supplicant.conf文件
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1
+network={ ssid=&amp;quot;wifi的名字&amp;quot; psk=&amp;quot;wifi的密码&amp;quot; key_mgmt=WPA-PSK priority=1 } update_config=1，这个用来控制wifi的优先级，只有一个wifi的时候可有可无，没有影响
+插入内存卡，连接电源，开启树莓派
+Windows10开热点会显示连接设备的ip，wifi路由器的就去路由器后台找
+使用ssh工具，连接树莓派，默认用户名：pi，密码：raspberry 修改用户密码：sudo passwd pi pi是要修改密码的用户
+修改用户名： vi /etc/shadow 把用户名修改为新用户名，其他不要动 vi /etc/group 把用户名修改为新用户名，其他不要动！！！ 修改完，保存，重启
+vnc服务
+sudo raspi-config
+依次操作：Interfacing Options -&amp;gt; VNC -&amp;gt; Yes</description>
+    </item>
+    
+    <item>
+      <title>python基础语法笔记</title>
+      <link>https://blog.cjlio.com/posts/28/</link>
+      <pubDate>Wed, 16 Jun 2021 14:40:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/28/</guid>
+      <description>安装python
+推荐安装anaconda3（linux）
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh
+dash Anaconda3-2019.10-Linux-x86_64.sh
+根据提示安装，如果还是系统自带的python
+sudo gedit ~/.bashrc
+export PATH=&amp;quot;/home/pc/anaconda3/bin:$PATH&amp;quot;
+# pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3
+Windows和mac 到官网下载安装包，直接下一步安装
+mac安装了Homebrew，可以使用brew install python3
+Windows设置环境变量，PATH 安装路径
+现在liunx一般都会自带有python3,如果没有可以安装一下
+apt install python3
+yun install python3
+注意一下python2.x和python3.x这两个版本是不兼容的，要区分开
+检查是否安装成功，在命令行或者终端输入python3 回车 没有反应或者报错就说明没有安装成功或者可能出问题了 Windows的一定要注意PATH系统变量
+因为Python语言从规范到解释器都是开源的，所以存在多个解释器
+例如CPython，安装python3.x时就可以直接获取到一个官方版本的解释器：CPython，因为是使用C语言开发的，所以叫CPython
+在命令行或者终端，输入输入python3 回车，如果出现了&amp;raquo;&amp;gt; 那么当前状态是python的交互模式
+在交互模式下输入exit()，退出python的交互模式
+在交互模式下执行第一个程序 print(&amp;ldquo;hello,world&amp;rdquo;)
+回车输出hello，world，这是简单的打印字符串
+除了使用交互模式执行程序，又可以使用.py，在命令行或者终端下 python hello.py，如果报错，请检查程序是否出错或者该文件是否在当前目录下
+交互模式可以直接输出结果，但是使用.py文件却不会，想要输出结果，必须使用print()打印出来
+一个好的开发工具往往可以达到事半功倍的效果，例如pycharm和Visual Studio Code，我使用的是Visual Studio Code
+print()接受多个输出，使用“,”分隔开，也可以输出整数
+当你想让用户输入一点东西的时候，python提供了一个input()，用法如下 name = input() 将输入的值存放到一个变量里
+input()还提供了提示功能，显示一个字符串，例如：input(&amp;ldquo;xxxxx&amp;rdquo;)
+我想知道这个变量的内容咋办，可以在交互模式下直接输入变量名，回车，就可以查看该变量的内容 又可以使用print()打印下来
+那么什么是变量呢？
+在计算机程序中，变量不仅可以为整数或浮点数，还可以是字符串
+输入是Input，输出是Output，输入输出统称为Input/Output，或者简写为IO
+以#开头的语句是注释，注释是给人看的，解释器会忽略掉注释，注释可以是任何内容
+其他每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块
+注意：python区分大小写，搞错了大小写，程序可能会报错。缩进建议使用4个空格
+python能直接处理的有：整型，浮点型，字符串，布尔值，空值，变量，常量
+python可以处理整型任意大小的整数，也可以使用二进制代表整数、
+浮点型就是小数，使用科学记数法表示时，一个浮点数的小数点位置是可变的，所以小数又叫浮点型，表示很大或很小的浮点数，必须用科学计数法表示
+字符串是使用&amp;quot;&amp;ldquo;和&amp;rsquo;&amp;lsquo;括起来的任意文本，&amp;lsquo;&amp;lsquo;或&amp;quot;&amp;ldquo;本身只是一种表示方式，不是字符串的一部分</description>
+    </item>
+    
+    <item>
+      <title>Python的一些神器的简单用法</title>
+      <link>https://blog.cjlio.com/posts/27/</link>
+      <pubDate>Wed, 16 Jun 2021 14:39:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/27/</guid>
+      <description>Virtualenv是一个能创建隔绝的独立的Python虚拟环境工具。它能够建立多个相互独立，互不影响的Python工作环境
+用来创建一套独立于系统Python环境的虚拟环境，在虚拟环境下，使用pip安装的依赖都会安装到当前的虚拟环境中，对系统的python环境没有影响
+当开发多个Python程序时当，程序1要使用3.6环境，但是程序2要使用3.8环境时，Virtualenv可以完美解决这个问题
+Windows pip install virtualenvwrapper-win
+使用pip安装Virtualenv
+pip3 install virtualenv
+然后创建一个Virtualenv虚拟环境
+virtualenv webpy #webpy为虚拟环境目录名，目录名自定义
+virtualenv -p python环境路径 虚拟环境名 #创建指定Python环境路径的虚拟环境
+virtualenv &amp;ndash;no-site-packages 虚拟环境名 #创建一个干净的Python虚拟环境，系统Python环境的所有第三方包不会复制过来
+virtualenv &amp;ndash;no-site-packages &amp;ndash;python=版本名 虚拟环境名 #创建一个指定python版本的虚拟环境
+workon # 输出所有虚拟环境名 Windows
+workon 虚拟环境名 # 进入虚拟环境 Windows
+source 文件夹路径 # 激活当前virtualenv并进入虚拟环境
+或者进入虚拟环境目录的bin目录，输入source activate
+Windows是在虚拟环境目录下的Scripts目录，输入activate
+deactivate # 退出当前环境
+在虚拟环境下，使用pip安装的所有第三方包都会安装到当前的虚拟环境中，不会对系统的Python环境进行&amp;quot;污染&amp;quot;
+想要删除某一个虚拟环境时，只需要将虚拟环境的目录删除
+pip使用国内源
+清华：https://pypi.tuna.tsinghua.edu.cn/simple 豆瓣：http://pypi.douban.com/simple/ 中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+临时使用 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas
+linux下
+配置永久使用
+cd ~ # 进入用户目录 mkdir .pip # 新建一个隐藏文件夹 touch pip.</description>
+    </item>
+    
+    <item>
+      <title>简单搭建一个hexo博客</title>
+      <link>https://blog.cjlio.com/posts/26/</link>
+      <pubDate>Wed, 16 Jun 2021 14:36:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/26/</guid>
+      <description>hexo+github可以实现免费搭建一个博客网站，就是维护起来有点麻烦
+apt install npm
+npm install hexo-cli -g
+hexo init blog
+cd blog
+npm install
+hexo server
+使用NexT
+apt install git
+git clone https://github.com/theme-next/hexo-theme-next.git
+把hexo-theme-next文件夹放到hexo根目录的themes文件夹下
+启动主题
+打开hexo目录下的_config.yml文件，这个文件为站点配置文件
+找到theme，修改值为hexo-theme-next
+调试模式
+hexo s &amp;ndash;debug 查看是否输出有错误，方便修改错误信息
+选择主题
+打开主题的根目录的_config.yml文件，这个文件是主题配置文件
+找到scheme，需要启动的在前面去掉#注释即可，不需要就加注释#
+设置 语言
+打开站点配置文件，修改language为需要的语言zh-CN
+修改菜单
+打开主题配置文件，找到menu，需要用到的菜单就去掉#，不需要就加#
+home 主页 archives 归档页 categories 分类页 tags 标签页 about 关于页面 commonweal公益 404
+修改对应的语言翻译
+主题目录下languages/zh-CN.yml
+设定菜单项的图标，可以使用的是Font Awesome 图标
+设置 侧栏
+打开主题配置文件
+修改sidebar.position的值
+left - 靠左放置 right - 靠右放置
+设置 头像</description>
+    </item>
+    
+    <item>
+      <title>css常见布局</title>
+      <link>https://blog.cjlio.com/posts/24/</link>
+      <pubDate>Wed, 16 Jun 2021 13:23:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/24/</guid>
+      <description>居中布局
+分水平居中和垂直居中，水平+垂直居中
+水平居中：当前元素在父级元素容器中，水平方向是居中显示的
+inline-block+text-algin
+#app{ text-align: center; // 父元素，文本内容居中对齐 } .child{ display: inline-block; // 子元素，行内块级元素 } 优点：浏览器兼容性好（css2）
+缺点：text-align具有继承性，会导致子元素的文本也是居中的
+table+margin
+.child{ display: table; // 也可以为block margin: 0 auto; // 子元素，margin外边距，上下为0，左右为auto（浏览器自动分配） } 优点：只需要对子元素设置，就可以实现效果
+缺点：如果子元素脱离正常流，将会导致margin属性的值无效化
+absolute+transform
+#app{ position: relative; // 父元素相对定位 } .child{ position: absolute; // 子元素绝对定位，如果父元素没有定位，那么该元素是相对于页面定位，父元素定位了，那么该元素是相对于父元素的 left: 50%; // 相对于父元素左边50% transform: translateX(-50%); // 子元素水平平移-50%（左负数，右正数） } 优点：父元素是否脱离正常流，也是不影响子元素的水平居中效果
+缺点：transform属性是css3的新属性，浏览器兼容性比较差
+垂直居中：当前元素在父级元素容器中，垂直方向是居中显示的
+table-cell+vertical-algin
+#app{ // 父元素 display: table-cell; vertical-align: middle; // 设置文本的垂直方向对齐方式 } 优点：浏览器兼容性好
+缺点：vertical-align属性具有继承性
+absolute+transform</description>
+    </item>
+    
+    <item>
+      <title>vuejs基础学习笔记</title>
+      <link>https://blog.cjlio.com/posts/23/</link>
+      <pubDate>Wed, 16 Jun 2021 10:13:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/23/</guid>
+      <description>vuejs的核心层就是只关心视图层的，本笔记使用的是最新版本的vue3
+vue全家桶：Vue+VueRouter+Vuex
+vue名字来源于法语（中文翻译为视图），可以看出其对视图层的重视
+导入一般都是使用cdn导入或者直接下载vuejs进行托管，也可以使用npm安装或者使用官方的CLI来构建一个应用
+https://unpkg.com/vue@next
+cjs版本：完整版，包含编译器
+prod.js都是开发版，代码进行了压缩
+global版本：可以直接通过scripts标签导入，会建立一个全局Vue对象
+browser版本：包含esm,浏览器模块
+bundler版本：该版本不是完整版，min
+vuejs模板支持所有JavaScript表达式
+vuejs本身是用声明式渲染把数据渲染到html dom中，渲染格式为{{&amp;hellip;}}，例如：
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;p&amp;gt;{{ hallovuejs }}&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; const hallo ={ data() { return { hallovuejs: &amp;quot;hallo vuejs!&amp;quot; } } } Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;) &amp;lt;/script&amp;gt; vue本身携带了一些指令，主要特征就是带有v-前缀，用来渲染html dom上的一些行为，例如：
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; const hallo ={ data() { return { url:&amp;quot;https://cjlio.com&amp;quot;, main: &amp;quot;小陈的辣鸡屋&amp;quot; } } } Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;) &amp;lt;/script&amp;gt; 这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
+而vue还提供了可以绑定事件的v-on属性，例如：
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;button v-on:click=&amp;quot;go&amp;quot;&amp;gt;{{ main }}&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; const hallo ={ data() { return { main: &amp;quot;hallo&amp;quot; } }, methods: { go: function(){ console.</description>
+    </item>
+    
+    <item>
+      <title>HTML全局属性笔记</title>
+      <link>https://blog.cjlio.com/posts/22/</link>
+      <pubDate>Wed, 16 Jun 2021 09:38:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/22/</guid>
+      <description>属性
+accesskey
+定义快捷键获取焦点，例如
+&amp;lt;a href=&amp;ldquo;https://cjlio.com&amp;rdquo; accesskey=&amp;ldquo;q&amp;rdquo;&amp;gt;GO&amp;lt;/a&amp;gt;
+按ait+q，就会跳到指定的网页上
+class
+定义元素的类，开头必须是字母，多个类使用空格隔开，例如
+id
+定义一个id，id为唯一性，不能重复，例如
+lang
+定义网页或者元素的语言，例如
+style
+定义元素的行内样式，例如
+tabindex
+指定tab键的焦点控制，例如
+&amp;lt;a href=&amp;ldquo;https://cjlio.com&amp;rdquo; tabindex=&amp;ldquo;1&amp;rdquo;&amp;gt;GO
+使用键盘的tab键盘，触发（不会跳转到网页，只是焦点）
+contenteditable
+指定元素是否为可以编辑的，例如
+dir
+指定元素内文本的方向，例如
+ltr默认值，从左到右
+rtl，从右到左
+title
+指定元素的信息，一般为鼠标移动到元素是停留一段时间，显示信息，例如
+data-xxx
+用于存储一些自定义属性，data-后面必须有一个字符，不包括大写
+JavaScript可以通过getAttribute获取到
+draggable
+指定元素是否可以拖动，默认情况下，只有图片和链接可以拖动
+有3个可选值，true/false/auto，在JavaScript中可以配合拖动事件，例如
+hidden
+指定元素是否隐藏，有两个可选值，hidden/true，例如
+contextmenu
+指定div元素的菜单，目前只有 Firefox 浏览器支持
+dropzone
+指定元素被拖动时，拷贝、移动或链接被拖动数据，目前所有主流浏览器都不支持
+spellcheck
+指定元素是否进行拼写检查，有两个可选值，true/false
+可以对类型为text的非密码的input元素的值，textarea 元素中的值，可编辑元素中的值
+translate
+指定渲染元素时是否要对内容进行翻译，目前所有主流浏览器都不支持</description>
+    </item>
+    
+    <item>
+      <title>jQuery基础学习笔记</title>
+      <link>https://blog.cjlio.com/posts/21/</link>
+      <pubDate>Wed, 16 Jun 2021 09:38:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/21/</guid>
+      <description>##第一个jQuery程序
+$(&amp;lsquo;div&amp;rsquo;).html(&amp;ldquo;hello.world&amp;rdquo;);
+##DOM对象和jQuery对象互转化
+jQuery对象和DOM对象是不一样的，但是都能操作DOM
+get()方法（jquery对象转化为DOM对象）
+var $main =$(&amp;rsquo;.main&amp;rsquo;); // jquer对象
+var main = $main.get(0); // 通过get方法，转化成DOM对象
+main.style.color = &amp;lsquo;#c7edcc&amp;rsquo;; // 操作DOM对象属性
+DOM对象转化为jQuery对象
+var main = document.getElementsByClassName(&amp;lsquo;main&amp;rsquo;); // DOM对象
+var $main = $(main); // jQuery对象
+$main.css(&amp;lsquo;color&amp;rsquo;,&amp;rsquo;#c7edcc&amp;rsquo;); // 操作jQuery对象属性
+##jQuery选择器
+元素选择器
+$(&amp;lsquo;div&amp;rsquo;)
+ID选择器
+$(&amp;quot;#main&amp;quot;)
+id是唯一性，只能在页面中使用一次
+类选择器
+$(&amp;rsquo;.main&amp;rsquo;)
+全选择器
+$(&amp;rsquo;*&amp;rsquo;)
+层次选择器
+$(&amp;lsquo;div .main&amp;rsquo;)
+属性选择器
+$(&amp;ldquo;a[href=&amp;ldquo;https://cjlio.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
+可以使用前缀或者后缀来选择 $(&amp;ldquo;div[name^=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes开头的 $(&amp;ldquo;div[name$=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes结尾的
+组合选择器
+$(&amp;ldquo;div[class=divs]&amp;rdquo;)
+组合选择器其实就是用多个选择器组合起来
+多项选择器
+$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://cjlio.com&amp;rdquo;)
+多项选择器就是将多个选择器用逗号组合起来
+层级选择器 $(&amp;ldquo;ul.nev li.active&amp;rdquo;)</description>
+    </item>
+    
+    <item>
+      <title>MySQL学习笔记</title>
+      <link>https://blog.cjlio.com/posts/20/</link>
+      <pubDate>Wed, 16 Jun 2021 09:37:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/20/</guid>
+      <description>推荐使用mariaDB
+操作数据库
+创建数据库
+CREATE DATABASE xxx;
+删除数据库
+DROP DATABASE xxx;
+查看所有数据库
+SHOW DATABASES;
+查看指定数据库
+SHOW xxx;
+打开指定数据库
+USE xxx;
+查看指定数据库的详细信息
+SHOW CREATE DATABASE xxx;
+修改指定数据库的字符集
+ALTER DATABASE xxx CHARACTER SET gbk COLLATE gbk_bin;
+数据表的校对规则，与于指定数据集如何排序
+COLLATE=utf8_bin
+指定字符集
+CHARSET=utf8
+查看当前mysql所支持的字符集
+SHOW CHARACTER SET;
+新建数据表
+CREATE TABLE xxx( id int(4), email char(20), status int(2), code varchar(10) ​ );
+添加数据
+INSERT INTO xxx VALUES( 1, &amp;quot;hallo&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;xxx&amp;quot; ); 修改数据(根据条件)
+UPDATE xxx SET status=1 WHERE id = 4;</description>
+    </item>
+    
+    <item>
+      <title>java基础学习笔记</title>
+      <link>https://blog.cjlio.com/posts/19/</link>
+      <pubDate>Wed, 16 Jun 2021 09:35:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/19/</guid>
+      <description>java基于java虚拟机（Java Virtual Machine，JVM）和java应用编程接口（Application Programming Interface，API）构成
+java的跨平台得益于java虚拟机，只需要编译一次java程序，就可以在不同系统的java虚拟机上运行
+java分为Java SE、Java EE 和 Java ME。
+类的命名：必须是英文开头，后可字母，数字和下划线
+一般为大写字母开头
+例如：
+public class Abc
+public是访问修饰符，表示该class为公开，如果没有写pulic，也可以正常编译，但是这个class将不能在命令行中执行
+在class内部可以定义方法，例如:
+public static void main(String[] args){}
+这个例子的方法名为main，返回值为void，表示没有返回值，空
+static是一个关键字，同样也是修饰符，表示静态方法
+java入口程序必须是静态方法，方法名也必须为main，参数必须为String数组
+在方法内部，语句才能执行，每一行程序都必须要以分号结束;
+// 单行注释
+/*
+多行注释
+*/
+/** *
+一样是多行注释 java的变量的类型和JavaScript一样，变量分两种，基本类型变量和引用类型变量 java有8种基础类型，分别是整型（4种），字符型（1种），浮点型（2种），布尔型（1种）
+变量必须先定义，后赋值使用，例如：
+int a = 1;
+定义为int整数类型，名称为a，初始值为1
+变量的特点就是可以重新赋值
+int i = 1; // 定义int类型，名称为i，赋值为1
+i = 100; // 重新赋值为100
+int x = i; // 变量x的值为i，因为i的值为100，所以x的值为i
+整型
+整型类型：int，byte，short，long
+整型类型的数就是整数，整数默认为int，在数值后加上L就代表为long，例如：long abc = 123L;
+因为java的整型是有符号类型的，0表示正数，1表示为负数，所以取值范围是从负多少到正多少，不能超过取值范围</description>
+    </item>
+    
+    <item>
+      <title>Docker容器的简单使用</title>
+      <link>https://blog.cjlio.com/posts/18/</link>
+      <pubDate>Wed, 16 Jun 2021 09:34:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/18/</guid>
+      <description>docker是一个应用容器，可以将应用以及该应用的依赖打包到一个可以移植的容器中，应用在这个容器中运行
+可以进行转移，修改，版本管理等操作，不用担心应用转移到别的服务器会出现依赖问题
+将容器文件转移到别的服务器上，不会影响到容器，一次配置，可以在多个服务器上使用相同的环境
+在以前，根本不可能实现或者保障一个服务器是运行多个应用，直到虚拟机的出现，虚拟机可以让空闲的服务器部署新的应用，但是虚拟机依赖于操作系统，操作系统又会占用CPU和内存，以及存储，而且虚拟机的移植性差启动缓慢，直到容器的出现
+运行在相同的宿主机的容器是共享一个操作系统的，而且容器具备启动快，移植性强的特点（不用担心本地运行好好的，到生产环境就出一堆问题）
+docker的多数项目和工具是使用golang编写的
+Docker容器技术高度依赖于Linux内核，不管是在windwos或者Mac OS上都不是真正的容器化（只有在Linux系统上才能实现无虚拟化的真正容器化），都是在虚拟化Linux之后，在Linux虚拟机的基础上实现的
+Docker三大件：镜像，容器，仓库
+镜像被用来创建容器（而且镜像文件是复用，只可读的）
+容器是镜像文件的实例，容器与容器之间是隔离的，容器可被启动，查看，暂停，退出，重启，删除
+仓库是集中存储镜像文件的地方，Docker官方仓库：https://hub.docker.com/
+Docker官网文档：https://docs.docker.com/
+Docker是基于C/S架构（Client-Server）的系统，Docker的守护进程（Docker Daemon）运行在服务端上，客户端通过Docker Client和守护进程建立通信，守护进程可以接收客户端发送的指令并且可以管理服务端的容器
+Docker Engine（引擎）会执行客户端发送的指令，来执行Docker内部的工作，每一项工作以Job的形式存在（一个job表示一个工作任务）
+如果job（工作任务）需要镜像时，会从Docker Registry中下载获取镜像（如果本地存在则从本地获取，如果没有再从远程仓库获取）
+当Docker容器需要创建网络环境时，通过Network driver创建并且配置Docker容器网络环境（通过网桥来暴露对外的端口和ip）
+如果需要限制Docker容器运行资源或者执行用户指令时，通过Exec driver完成
+网络的配置以及Exec driver的实现都是通过Libcontainer来实现的，Libcontainer是用来管理容器的包，该包基于go语言开发的，像创建容器，删除容器等等都可通过Libcontainer完成
+安装docker（环境为ubuntu20.04）
+如果之前安装过docker，需要先卸载
+sudo apt remove docker docker-engine docker.io containerd runc
+docker官方推荐使用docker的存储库来安装或者升级，而不是通过脚本或者通过下载deb软件的方式来安装
+安装依赖
+sudo apt install ca-certificates curl gnupg lsb-release
+配置docker官方的GPG密钥
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+安装docker引擎
+sudo apt install docker-ce docker-ce-cli containerd.io
+或者
+curl -s https://get.docker.com | sh （不推荐使用）
+如果需要安装指定版本的docker，可指定docker-ce和docker-ce-cli的版本</description>
+    </item>
+    
+    <item>
+      <title>XML学习笔记</title>
+      <link>https://blog.cjlio.com/posts/17/</link>
+      <pubDate>Wed, 16 Jun 2021 09:32:49 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/17/</guid>
+      <description>xml中文全称为可扩展标记语言（Extensible Markup Language）
+xml和html类似，但是xml是用来传输和存储数据的，xml大小写敏感，xml的标记是自定义的
+xml声明，该声明位在xml文档的第一行，结尾
+version属性表示xml的版本，encoding属性表示该xml文档的编码方式，standalone属性表示该文档是否为独立，no表示依赖于外部文档
+xml的标记也可以像html一样，认为是元素，一般由开始标签，属性，内容，结束标签组成，例如xml
+和就是xml文档中的标签（元素），和html一样，可以嵌套n个子元素，如果一个元素没有被嵌套到其他元素上，那么这个元素就是根元素
+一般来说一个格式良好的xml文档只有一个根元素，而且根元素是xml文档的第一个元素，如果一个元素没有嵌套子元素也没有内容，那么这个元素为空元素，空元素不需要结束标签，例如
+属性是元素的描述和说明，可以使用多个属性，每个属性都有自己名称和值，值用&amp;quot;&amp;ldquo;或者&amp;rsquo;&amp;lsquo;包起来
+xml的注释方式和html一样，
+DTD约束
+XML是自定义标签，浏览器不知道这个标签是用来干什么的，因此制定的一套约束，遵循一定的语法
+DTD约束写在一个DTD文件里，dtd导入，例如：
+如果导入了本地的DTD文档，那么standalone属性的值不能为yes
+DTD除了导入外，还可以内嵌，例如
+元素内容包括元素的声明，包括数据类型和符号
+PCDATA 中文意思就是被解析的字符数据，会被解析器解析
+子元素 例如
+空元素 一般用来定义空元素
+ANY 表示这个元素没有包含任何字符数据和子元素，例如，在实际开发中，尽量不要使用ANY，除了根元素外，其他使用ANY的元素会失去DTD对XML的约束
+符号
+问号?:表示该对象可以出现0次或者1次 星号*:表示该对象可以出现0次或者多次 加号+:表示该对象可以出现1次或者多次 竖线|:表示在列出的对象中选择一个 逗号,:表现对象必须按照指定的顺序出现 括号():用于给元素进行分组
+DTD除了给定义元素外，也可以为元素定义属性
+属性类型指定该属性是属性哪个类型的，属性说明一般用来说明该属性是否必须出现
+属性类型
+CDTATA // 表示属性类型为字符数据，如果想在属性设置值中出现特殊符号（例如&amp;lt;），那么需要使用其转义字符序列来表示，例如 &amp;ldquo;&amp;lt;&amp;ldquo;来表示&amp;rdquo;&amp;lt;&amp;rdquo;
+Enumerated(枚举类型) // 在声明一个属性时，可以限制该属性的取值只能从一个列表中选择，但是在DTD文档中不会出现Enumerated关键字，用法例如：
+ID // 表示该属性类型为唯一标识，一个元素只能有一个id类型的属性，而且属性说明必须为REQUIRED或者IMPLIED
+IDREF和IDREFS // 一般用来关联元素与元素之间的关系，而且IDREF类型的属性的值必须为一个已经存在的ID类型的属性值，例如：
+1 2
+说明ID为01和02的元素之间，存在关联
+IDREFS就是引用多个ID类型的属性值，例如：
+1
+属性说明
+REQUIRED // 表示这个元素的这个属性是必须的
+IMPLIED // 表示这个元素可以包含这个属性，也可以不包含
+FIXED // 表示这个固定的属性默认值，不能将该属性的值设置为其他值，使用该说明时还需要提供一个默认值，如果XML没有定义该属性，那么其值就被自动设置为DTD定义的默认值
+默认值 // 和FIXED一样，不同的是，这个属性的值可以改变，如果在xml文档中设置了新的值，那么新的值会覆盖DTD定义的默认值</description>
+    </item>
+    
+    <item>
+      <title>JavaScript-IntersectionObserver构造函数笔记</title>
+      <link>https://blog.cjlio.com/posts/16/</link>
+      <pubDate>Wed, 16 Jun 2021 09:29:56 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/16/</guid>
+      <description>IntersectionObserver是浏览器本身提供的构造函数，因此可能有一些老版本浏览器没有效果
+该构造函数提供了一种异步的监测目标对象和祖先对象或者视口相交的方法
+var observe = new IntersectionObserver(callback, options)
+例如上面，该函数可以传入两个参数，callback是当可视性发生改变时执行回调函数，options是配置对象
+使用该构造函数生成的实例中有3个观察器实例，分别是observe（开始监测），unobserve（停止监测），disconnect（关闭监测），其中observe的参数是dom对象
+当监测目标对象的可视性发生改变时调用callback参数中的回调函数
+options参数：主要是设置观测的对象和观测值，该参数中有三个键值对
+root指的是观测对象的根元素，默认是浏览器视口，值要么是根元素，要么就是观测对象的父元素
+rootMargin指的是用于扩大或者缩小视口的大小
+threshold指的是交叉的比例，主要决定什么时候触发回调函数，是数组，默认值为0
+callback参数中的回调函数一般会被调用两次，一次是当监测对象可视性满足了threshold指定的值，还有一次就是监测对象不满足threshold指定的值
+IntersectionObserverEntry对象
+该对象提供了监测对象的信息，有七个属性
+boundingClientRect：返回目标的矩形信息
+intersectionRatio：返回相交时和目标的比例值，不可视时小于等于0
+intersectionRect：返回目标和视口相交的矩形信息
+isIntersecting：返回目标当前是否可视，可视为true（返回值为布尔值）
+rootBounds：返回根元素的矩形信息，没有指定根元素则返回当前视口的矩形信息
+target：返回观测的目标对象，是dom对象
+time：返回一个记录了从观测开始到交叉被触发时间的的时间戳，单位为毫秒
+如果是搞懒加载，那么intersectionRatio和isIntersecting是关键点
+例如：
+const lazyload = new IntersectionObserver((target)=&amp;gt;{ // 实例化 target.forEach((item) =&amp;gt;{ if (item.intersectionRatio){ // 当目标可视 item.target.src = item.target.alt; // 进行属性值覆盖 lazyload.unobserve(item.target) // 停止观测 } }) },{ rootMargin: &amp;quot;100px&amp;quot; // 提前100px }); const imgs = document.querySelectorAll(&amp;quot;img[alt]&amp;quot;); // 选择带有alt属性的img元素 imgs.forEach((item) =&amp;gt; { lazyload.observe(item) // 开始观测 }); </description>
+    </item>
+    
+    <item>
+      <title>简单理解区块链的基本原理</title>
+      <link>https://blog.cjlio.com/posts/15/</link>
+      <pubDate>Wed, 16 Jun 2021 09:27:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/15/</guid>
+      <description>注意：不推荐去玩比特币以及类似的加密货币，那个玩意说涨就涨，说跌就跌，比特币实质上就是一串数字，没有实物，没有信用背书，当这个巨大泡沫破裂之时，大部分人绝对不可能及时套现跑路，了解比特币下的技术可以，但是绝对不能接触或者玩比特币以及类似的加密货币
+1个比特币相当于100000000聪,聪(Satoshi)是比特币目前最小的单位，是为了纪念比特币的创建者中本聪(Satoshi Nakamoto)
+在中国唯一值得信赖的加密货币是数字人民币，有国家在做信用背书，是有法偿能力的法定货币，和现金等值
+区块链技术诞生于比特币，而比特币的诞生又来源于一位叫中本聪的一篇文章（比特币：一种点对点的电子现金系统）
+区块链的一个特点就是去中心化，中心化指的是数据中心化，例如支付宝和微信，那些支付的数据全部集中在数据库中，确保交易用户的余额一增一减
+而区块链技术就是把数据全部公开，区块链中的每一个节点都可以获得一份完整的区块链，而且全部都是相同的数据，如果篡改了其中一份数据，那么这份数据会和其他节点的数据对比，如果不相同，那么这份数据是不被其他节点承认的
+而需要伪造一个区块链需要拥有超过全网51%的（节点）算力
+区块链是一个个区块组成的有序链表，区块中记录着一系列信息，每个区块都指向前一个区块，每个区块都有一个哈希标识（又被称为区块哈希），区块链的不可篡改的特性就是由哈希算法提供的（哈希是单向的，哈希算法可以将一段数据计算出一个哈希值，而哈希值不能反推出加密前的数据，只能暴力穷举）
+如果两份数据的哈希值相同，那么这两个哈希值的数据就是相同的，只要改动了原始数据任意的数据，那怕只修改一个字节，都会改变哈希值
+常见的哈希算法
+MD5：128位，16字节
+SHA-1：160位，20字节
+SHA-256：256位，32子节
+SHA-512：512位，64子节
+RipeMD160：160位，20子节
+哈希函数：Hash(原始数据) = 摘要数据（哈希值）
+比特币使用的哈希算法有两种，一种是双重SHA-256（将数据进行两次SHA-256计算），另一种就是先将数据进行SHA-256计算，再将处理过的数据再进行一次RipeMD160计算
+区块的头部有一个Merkle Hash字段，记录了该区块的全部交易的哈希树（全部交易的数据通过哈希算法处理为一个汇总的哈希值）
+例如：当一个区块中有好几个交易，然后将一对一对的交易数据做差异哈希算法（dhash），得到两个哈希值，将这两个哈希值拼起来，计算出下一层的哈希值，一层一层计算，最后的得到的哈希值就是Merkle Hash
+那么如果每一层是单数，那么将每一层的最后的一个数据复制一份，最后计算出最终值
+区块本身使用Merkle Hash来表示，而区块本身的哈希值是没有记录在区块头部的，需要通过计算区块头部的数据得到
+区块头部的Prev Hash记录了上一个区块的哈希值（不是Merkle Hash，而是区块本身的哈希值），可以通过Prev Hash来追踪到上一个区块，每个区块的Prev Hash都会指向自己的上一个区块，一直反复下去，一直到区块链的第一个区块（创世区块，该区块没有上一个区块）
+从对Merkle Hash的计算方法和对区块头部来追踪到上一个区块的方法得出，只要篡改其中任意一个交易的数据（哪怕是一字节的改动）都会让Merkle Hash验证失败，那么这个区块就是无效的，只能重新计算Merkle Hash，然后这个区块本身的哈希值就改变，因此下一个区块指向该区块的链接也断了
+篡改一个区块，需要重新计算这个区块的本身的哈希值，然后将下一个的所有区块全部计算并且伪造，才能篡改整个区块链，难度极高，因为区块链是不断增长的，修改的难度也会越来越难，而挖矿实质上就是重新计算区块头部的哈希值，直到于哈希值匹配，挖矿本身的要求就已经很高了，更不用说篡改整个区块链了
+比特币交易中使用了一种名叫点对点交易，就是用户对用户，这个交易的特点就是去中心化，整个交易全部依赖于数学加密
+用到一个叫公钥和私钥，地址的概念，公钥是可以根据私钥计算出来的，而私钥就不能通过公钥计算出来，因此私钥很重要，不能泄露
+地址的计算方法
+Hash(Hash(fun(私钥))) = 地址
+而需要不通过泄露私钥的情况下，表明拥有某个私钥，需要用到签名，先将交易信息进行哈希计算，然后签名计算，sign(&amp;lsquo;交易信息的哈希值&amp;rsquo;,&amp;lsquo;私钥&amp;rsquo;)，最后得到一个签名值
+而进行付款时，会向区块链的节点进行广播，广播信息包括，交易信息和签名值，而验证签名信息的确是某个私钥的，验证过程例如：
+verify(&amp;lsquo;签名值&amp;rsquo;,&amp;lsquo;付款方地址&amp;rsquo;)，获得的值为交易的哈希值
+if(verify(&amp;lsquo;签名值&amp;rsquo;,&amp;lsquo;付款方地址&amp;rsquo;) == hash(&amp;rsquo;{交易信息}&amp;rsquo;))
+如果当某一个节点验证通过，那么该节点也会进行再一次的广播
+交易信息中没有包含任何个人的信息，因此区块链具有匿名性
+而比特币的交易是根据私钥来验证的，只要不泄露私钥，那么比特币的账户是安全的，私钥破解，私钥的个数有2的256次方，相当于人类可观测宇宙的原子数，根据当前计算机的计算速度，根本不可能碰撞出来，除非倒霉到碰撞第一次就匹配到了
+挖矿：将交易记录，交易的时间，以及序号等等数据进行哈希打包的节点就是矿工节点，而完成哈希打包任务，并且认为其有效的，就会获得比特币奖励
+一段时间内只能一个矿工节点成功记账，并且被证明为有效的，这个时间一般为10分钟，奖励比特币的机制为每4年减半
+而且需要进行POW工作量证明竞争来获得记账权（也就是传说中的挖矿，因为要进行大量的计算，因此挖矿需要大量的算力，竞争该记账权是具有一定随机性的）
+其他节点复制记账结果（也会获得比特币奖励）
+POW工作量证明
+Hash(上一个Hash值,交易记录集,随机数)= 哈希值
+而比特币中有个机制，哈希值要小于某个目标值，因此需要不断修改随机数的值，比特币因为矿工节点越来越多，挖取比特币的难度也会越来越难，难度越难，那么目标值就越小
+交易记录集：收集广播中还没有被记录账本的交易，交易的有效性验证，添加给自己转账的交易（挖矿奖励）
+目前比特币的共识机制：优先选择工作量最大的区块链，最长的区块链，因此矿工会延长计算，已确保自己是工作量是最大最长的
+如果两条链被广播到其他节点，因为网络具有不确定性，有可能某个节点会先收到某个链，在这个链上挖矿，从而导致链出现分叉，如果两个链都同时收到，那么会优先选择工作量最大的区块链，另一个链为备用链保存
+解决分叉：如果当前链的上一级链更长的话，优先选择，而短一点的链会被抛弃
+分叉分为硬分叉和软分叉
+硬分叉：区块链发生永久性改变，在新共识发布后，那些没有更新的节点无法验证已经升级的节点的所产生的区块，改变挖矿难度
+软分叉：区块链发生改变，但是不会像硬分叉那样影响没有更新的节点，旧节点会兼容新节点，但是新节点不兼容旧节点而已
+解决分叉的方法就是所有矿工都遵从同样的机制（升级机制，保证机制为最新），而且那些没有遵从的就会发生分叉
+最经典的例子就是拜占庭将军问题
+主要讲的是：拜占庭帝国去攻击一个敌人，派了10支军队，要将这个敌人打败需要至少6支军队，而且必须在分散包围状态下同时攻击，需要依靠通信兵来进行传递信息，但是不清楚这些通信兵或者将军中是否有叛徒，而这些叛徒可能会传递假消息来导致进攻失败，而拜占庭将军们需要在这种分布式下进行传递消息</description>
+    </item>
+    
+    <item>
+      <title>JavaScript-XMLHttpRequest对象笔记</title>
+      <link>https://blog.cjlio.com/posts/14/</link>
+      <pubDate>Wed, 16 Jun 2021 09:25:49 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/14/</guid>
+      <description>ajax请求是异步的，因此可以通过回调函数来处理响应
+实现ajax请求大多是使用XMLHttpRequest对象，该对象用于与服务器交互，可以在不刷新页面的情况下请求url，获取数据，从而达到更新页面内容的目的
+初始化XMLHttpRequest()构造函数，可以获得一个XMLHttpReques实例，例如：
+var xmlhttp = new XMLHttpRequest() xmlhttp.onreadystatechange = function(){ if(xmlhttp.readyState == 4 &amp;amp;&amp;amp; xmlhttp.status == 200){ document.getElementById(&amp;quot;app&amp;quot;).innerHTML = xmlhttp.responseText } } console.log(xmlhttp.readyState) // 0 xmlhttp.open(&amp;quot;GET&amp;quot;,&amp;quot;https://httpbin.org/get&amp;quot;,true) console.log(xmlhttp.readyState) // 1 xmlhttp.onprogress =function(){ console.log(xmlhttp.readyState) // 3 } xmlhttp.onload = function(){ console.log(xmlhttp.readyState) // 4 } xmlhttp.send(); XMLHttpReques实例的属性
+XMLHttpRequest.readyState：该属性会返回一个XMLHttpRequest的状态，状态有5种，例如：
+状态0：已被实例化，但是未调用open()方法 状态1：open()方法已被调用（连接） 状态2：send()方法已被调用（请求） 状态3：请求处理中 状态4：请求完毕，且响应已就绪
+XMLHttpReques.onreadystatechange：该属性对应了一个回调函数，当XMLHttpRequest.readyState属性发生改变时，该回调函数就会被调用，例子如上面所示
+XMLHttpRequest.response：该属性会返回一个类型，该类型取决于XMLHttpRequest.responseType的值，类型例如：
+DOMString：当XMLHttpRequest.responseType的值为空字符串，那么就是DOMString类型（是一个utf-16字符串，默认）
+arraybuffer：XMLHttpRequest.responseType的值为存储二进制数据的ArrayBuffer对象（该对象是用于存储二进制数据，不能直接进行操作，只能通过视图来进行操作）
+Blob：XMLHttpRequest.responseType的值为包含二进制数据的Blob对象（该对象是用于表示一个类似文件的对象，可以通过二进制的方式进行读取）
+Document：值是一个Document
+json：值是一个JavaScript对象
+text：值是一个DOMString对象表示的文本（utf-16字符串）
+XMLHttpRequest.responseText：该属性的值是请求被发送到服务端后，从服务端返回的文本，如果值为null，那么就是请求失败，如果为空字符串，那么就是没有send()
+XMLHttpRequest.responseType：该属性会返回一个值，该值和response属性的值一样
+XMLHttpRequest.responseURL：该属性会返回一个序列化url，如果url为空那么就返回空字符串
+XMLHttpRequest.responseXML：该属性返回Document(html/xml)，如果请求没有成功或者获取的数据，无法解析为html或者xml，那么为null
+XMLHttpRequest.status：该属性会返回响应中的http状态码，如果请求没有完成，那么值为0，如果出错也是为0
+XMLHttpRequest.timeout：该属性会返回一个值，该值为请求被自动终止前所消耗的毫秒数（默认为0，则表示没有超时）
+XMLHttpRequest.upload：该属性是用于表示上传的进度，可搭配事件监听器来追踪进度，例如：
+onloadstart：开始获取数据 onprogress：数据正在传输中 onabort：数据获取终止 onerror：数据获取失败 onload：数据获取成功 ontimeout：数据获取操作在规定的时间内未完成 onloadend：数据获取完成（不管是否成功）</description>
+    </item>
+    
+    <item>
+      <title>jQuery-ajax()方法笔记</title>
+      <link>https://blog.cjlio.com/posts/13/</link>
+      <pubDate>Wed, 16 Jun 2021 09:24:37 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/13/</guid>
+      <description>ajax()是jQuery中定义的一个方法，该方法用于执行ajax请求，例如：
+$(document).ready(function(){ $(&amp;quot;button&amp;quot;).click(function(){ $.ajax({ type: &amp;quot;GET&amp;quot;, url: &amp;quot;https://httpbin.org/get&amp;quot;, success: function(getdata){ console.log(getdata) } }) }) }); 参数
+url：指定发送请求的URL，默认是当前页面
+type：指定请求方式（GET或者POST）
+success：当请求成功时执行的函数
+data：指定要发送到服务端的数据
+dataType：预期服务端响应过来的数据类型
+async：指定请求是否异步（布尔值）
+beforeSend：在发送请求之前执行的函数
+cache：指定客户端是否缓存被请求页面，默认是true（布尔值）
+complete：在请求完成时执行的函数（不管是否发送成功）
+contentType：指定要发送到服务端时使用的内容类型
+context：指定所有ajax相关的回调函数规定this值
+dataFilter：指定用于处理ajax返回的原始响应数据的函数
+error：指定请求失败时执行的函数
+global：指定请求是否触发全局ajax事件，默认为true
+ifModified：指定是否在最后一次请求
+jsonp：指定一个jsonp请求中重写回调函数的字符串
+jsonpCallback：指定一个jsonp回调函数的名称
+processData：指定是否将请求发送的数据转换为查询字符串，默认为true
+scriptCharset：指定请求的字符集
+timeout：指定请求超时时间（单位：毫秒）
+traditional：指定是否使用传统的方式来序列化数据
+username：指定响应http访问认证请求的用户名
+password：指定响应http访问认证请求的密码
+xhr：用于重写或者增强XMLHttpRequest对象的函数</description>
+    </item>
+    
+    <item>
+      <title>html5学习笔记</title>
+      <link>https://blog.cjlio.com/posts/12/</link>
+      <pubDate>Wed, 16 Jun 2021 09:22:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/12/</guid>
+      <description>HTML5是HTML标准的第5代标准，主要目的是语义化并且提供多媒体的嵌入
+HTML是什么？HTML全称为HyperTextMarkupLanguage，中文叫超文本标记语言，简称HTML
+而HTML5是一个标准，指的是第五代HTML标准
+HTML5主要的新特性：
+语义特性，本地存储特性，设备兼容特性，连接特性，网页多媒体特性，性能与集成特性，CSS3特性
+HTML的块级与行级
+块级元素的特征：
+独占一行，不和其他元素待在同一行上，能设置宽和高
+默认宽度是该元素的容器的100%，不过可以设置宽度
+常用的块级元素有div，ul，li，dl，dt，h1-h6
+行级元素的特征：
+可以和其他元素待在同一行上，不能设置宽和高
+它的宽度就是它的文字或者图片的宽度
+常用的行级元素有a，span
+行内块级元素的特征：
+可以设置宽和高，可以一行多个
+常见的行内块级元素有input，img
+转换元素为块级或者行内
+display：block //定义元素为块级元素
+display: inline //定义元素为行内元素
+display：inline-block //定义元素为行内块级元素。
+这三个的区别只有三个，排列分式，设置宽高，默认宽度 html语义
+语义化：使得页面可以很好的向浏览器和开发者描述其意义
+语义化的好处：
+方便开发团队的前期开发和后期维护，不只是作用于自己的开发团队，也方便其他国家的开发者能理解网页的结构；
+在css文件丢失的情况下，也能表示出好的内容结构和代码结构，方便用户阅读；
+方便辅助技术能更好的阅读或者转译网页，方便有障碍人士阅读；
+良好的结构和语义，可以提高搜索引擎爬虫的有效爬取；
+重点：用正确的标签做正确的事！！！
+要注意可以改变样式的标签不一定是有居于语义的
+在没有出现语义元素前，几乎都是使用div或者span，加类加id
+没有语义的元素最适合当容器使用了
+常用的非语义元素有和
+常用的语义元素有和
+meta viewport
+viewport 是指 web 页面上的可见区域
+device-width指设备的理想宽度,不同的设备 device-width 是不一样的
+nitial-scale=1.0 是指默认缩放大小是1，也就是默认不缩放
+maximum-scale=1.0 是指最大缩放大小是1
+标签使用&amp;lt;和&amp;gt;括起来，例如
+html标签大多都是成对出现的，分开始标签和结束标签，结束标签比开始标签多了个/
+例如：
+html不区分大小写。所以和作用一样。建议使用小写
+段落
+定义头部区域
+定义底部区域
+定义区段
+定义侧边栏区域
+换行
+文本输入框 select+option 选择列表
+多媒体元素（video和audio）
+例如：
+controls属性是显示控制栏，autoplay属性是自动播放，loop属性是循环播放
+注意：video元素支持的视频格式有mp4，ogg，webm，不过每个格式在不同浏览器内核兼容性不一样
+source标签就完美解决这个问题，例如：</description>
+    </item>
+    
+    <item>
+      <title>css3学习笔记</title>
+      <link>https://blog.cjlio.com/posts/11/</link>
+      <pubDate>Wed, 16 Jun 2021 09:21:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/11/</guid>
+      <description>盒子模型
+盒模型在css中是用来封装html元素的，因为本质上来看像个盒子一样，所以叫盒模型或者盒子模型，术语叫box model
+外边距（margin）：一般用于控制同辈元素之间的间距
+边框（border）：在内边距和内容之外的边框
+内边距（padding）：内边框是用于控制内容的距离
+内容（content）：内容，一般为文本和图像
+例子：建立一个宽度为100px，10px的内边距，10px的外边距，10px的红色边框的盒子
+div{ width: 100px; borde: 10px solid red; padding: 10px; margin: 10px; } top，bottom，left，right分别代表了上，下，左，右
+或者padding: 上，右，下，左，只有一个数字就表示上，下，左，右都是这个数值
+有两个数值就是分别代表上下和左右，有三个数值表示上和左右和下
+这个盒子大小应该是内容的宽度+内边距+边框+外边距
+100+20+20+20=160
+两种盒模型
+IE 盒子模型（box-sizing content-box）（怪异盒模型）
+IE盒模型的width与height是content、padding和border的总和
+调用IE盒模型 box-sizing: border-box;
+W3C标准盒模型（box-sizing content-box）
+标准盒模型的width与height只含content，不包括padding和border
+调用W3C标准盒模型 box-sizing: content-box;
+在IE6，7，8浏览器中不声明DOCTYPE类型，那么在IE6，7，8浏览器中会将盒子模型解释为IE盒子模型
+如果在页面中声明了DOCTYPE类型，那么所有的浏览器都会把盒模型解释为W3C盒模型
+JavaScript获取盒模型的宽和高（这里的DOM不是指整个dom，而是某个元素）
+DOM.style.width和DOM.style.height（只能获取内联样式）
+DOM.currentStyle.width和DOM.currentStyle.height（只支持IE）
+window.getComputedStyle(DOM).width和window.getComputedStyle(DOM).height（兼容性好）
+获取元素相对于视窗的位置(top,right,bottom,left都可以获取)
+let data = DOM.getBoundingClientRect() data.top
+有BFC特性的元素是一个被“隔离”的容器，该容器里面的元素不会在布局上影响到外面的元素
+满足下面其中一个条件就触发BFC特性
+body 根元素
+浮动元素 float除none外的值
+绝对定位元素 position (absolute、fixed)
+display 为 inline-block、table-cells、flex
+overflow 除了 visible 以外的值 (hidden、auto、scroll)
+BFC的特性：</description>
+    </item>
+    
+    <item>
+      <title>原生js实现瀑布流布局</title>
+      <link>https://blog.cjlio.com/posts/10/</link>
+      <pubDate>Wed, 16 Jun 2021 09:14:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/10/</guid>
+      <description>瀑布流的特点就是容器等宽不等高，计算其高度，选择最矮的一个容器的下面将插入第二行的第一个容器，以此类推，因此容器需要设置为绝对定位
+首先需要确定一行有多少列，列数 = 页面的宽度 / 容器的宽度
+获取页面的宽度：window.innerWidth或者document.documentElement.clientWidth或者document.body.clientWidth
+获取页面的高度：window.innerHeight或者document.documentElement.clientHeight或者document.body.clientHeight
+页面宽度：.width，容器宽度：.offsetWidth
+得到了列数后，还需要得到全部容器的高度，因此还需要用到数组，用来存储容器的高度
+遍历全部容器，还需要判断是否到了第二行，i&amp;lt;列数
+而第一行的全部容器，设置头部和左边定位，左边定位设置为容器的宽度*i，保证不会被覆盖或者溢出，同时将arr[i].offsetWidth传入新的数组中
+然后找到上一行最矮的容器，只需要将全部得到的容器的宽度判断一下就可以，首先假释一下第一个容器就是最矮的，当遍历的容器小于该容器时，那么将该容器设置为当前遍历的容器，而当前遍历的i就是最矮的容器索引值
+然后就设置下一行的容器的位置就可以了，头部：最矮的容器的高度，左边：最矮的容器距离页面最左边的宽度
+因为已经设置了下一行的容器，因此还需要重新获取一下当前容器的高度，当前容器高度 = 当前容器高度+间隙 +拼接过来的容器的高度
+为了体验更好，可以将上面操作封装到一个函数中，当网页加载完毕加执行（window.onload），当页面宽度高度发送变化时也执行(window.onresize)
+例如：
+var data = document.getElementsByClassName(&#39;imgs&#39;); function datamain(){ var datawidtha = window.innerWidth; var datawidthb = Math.floor(data[0].offsetWidth); var dataab = Math.floor(datawidtha/datawidthb); var ints = Math.floor((datawidtha - dataab*datawidthb)/(dataab+1)) var arr = []; for(var i=0;i&amp;lt;data.length;i++){ if(i&amp;lt;dataab){ data[i].style.top = 0; data[i].style.left = (datawidthb+ints) * i + &amp;quot;px&amp;quot;; arr.push(data[i].offsetHeight); }else{ var datamin = arr[0]; var index = 0; for(var a = 0; a&amp;lt;arr.</description>
+    </item>
+    
+    <item>
+      <title>linux系统的日常使用</title>
+      <link>https://blog.cjlio.com/posts/8/</link>
+      <pubDate>Wed, 16 Jun 2021 09:12:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/8/</guid>
+      <description>linux发行版有很多，这里使用的是Ubuntu
+个人喜欢使用无界面版本（ubuntu-20.04-live-server-amd64）
+有关于树莓派的看这个
+修改为国内源
+nano /etc/apt/sources.list
+替换内容为
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</description>
+    </item>
+    
+    <item>
+      <title>简单解决文本溢出问题</title>
+      <link>https://blog.cjlio.com/posts/6/</link>
+      <pubDate>Wed, 16 Jun 2021 08:40:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/6/</guid>
+      <description>当文本宽度超过容器的宽度那么将导致溢出
+使用text-overflow属性会修剪文本导致文本显示不全
+这里使用的方法是word-break: break-all+white-space: pre-wrap
+word-break: break-all
+允许在单词内换行（还有个keep-all属性，用来只能在半角空格和连字符处换行，默认值为normal）
+white-space: pre-wrap
+normal：默认，空白被忽略
+nowrap：文本不换行，文本在同一行继续
+pre：保留空格，换行保留，不自动换行
+pre-wrap：保留完整空格，保留换行符，自动换行
+pre-line：保留空格（可能不完整），保留换行
+一个提供换行规则，另一个保证换行的样式还存在（例如换行符，空格等等），而且还提供自动换行功能</description>
+    </item>
+    
+    <item>
+      <title>IndexedDB浏览器数据库学习笔记</title>
+      <link>https://blog.cjlio.com/posts/5/</link>
+      <pubDate>Tue, 15 Jun 2021 19:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/5/</guid>
+      <description>IndexedDB是浏览器提供的本地数据库，允许存储数据，采用键值对存储，允许异步请求，允许索引请求，IndexedDB理论上存储空间没有限制
+打开（新建）indexedDB：
+indexedDB.open()，该方法有俩个值，第一个是数据库名（没有该数据库那么就新建），第二个值为数据库的版本，一般来说默认为1（必须是大于0的自然数），例如：
+var datadb = window.indexedDB.open(&amp;quot;data&amp;quot;,1); datadb.onerror = function(){ console.log(&amp;quot;数据库打开失败&amp;quot;) } datadb.onsuccess = function(){ console.log(&amp;quot;数据库打开成功&amp;quot;); } datadb.onupgradeneeded = function(event){ console.log(&amp;quot;数据库版本升级&amp;quot;); } onerror事件表示打开数据库失败
+onsuccess事件表示打开数据库成功
+onupgradeneeded事件表示数据库升级（当数据库版本低于指定的数据库版本）（另外，新建数据库，操作新的数据库也可以在该事件中处理）
+新建数据对象（数据表）
+datadb.onupgradeneeded = function(event) { console.log(&amp;quot;数据库升级&amp;quot;); var objdb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{keyPath: &amp;quot;id&amp;quot;}); } 表名为abc，主键为id，主键默认为索引
+判断是否存在该表
+if(!event.target.result.objectStoreNames.contains(&#39;abc&#39;)){ var objdb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{keyPath: &amp;quot;id&amp;quot;}); } 递增属性(可以用于作为主键)
+var maindb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{autoIncrement: true}); 唯一属性
+objdb.createIndex(&amp;quot;id&amp;quot;,&amp;quot;id&amp;quot;,{unique: false}) createIndex()，三个参数分别是索引名称，索引的属性，配置对象，用来新建索引
+添加数据
+var datadb = window.indexedDB.open(&amp;quot;data&amp;quot;,1); var db; var objdb; datadb.onupgradeneeded = function(event) { console.log(&amp;quot;数据库升级&amp;quot;); db = event.</description>
+    </item>
+    
+    <item>
+      <title>简单使用Vim编辑器</title>
+      <link>https://blog.cjlio.com/posts/3/</link>
+      <pubDate>Sun, 28 Mar 2021 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/3/</guid>
+      <description>Vim是从vi发展出来的一个文本编辑器。提供代码补完、编译及错误跳转等功能
+vim的三种模式
+正常模式：Esc或Ctrl+[进入 插入模式：按i键进入 可视模式：按v或者V，ctrl-V（或者ctrl-Q）进入
+v 进入字符可视化模式 V 进入行可视化模式 Ctrl+v 进入块可视化模式
+可视模式是用来选取一段文本，光标移到段首，在普通模式下按 v 进入可视模式，然后把光标移到段末
+vim hallo.js
+在vim界面新建文件
+:open hallo.js
+在vim界面打开一个新窗口新建文件
+:split file
+切换到上一个文件
+:bp
+切换到下一个文件
+:bn
+查看vim文件列表
+:args
+打开远程文件
+:e \hallo abc.txt
+/text：按n健查找下一个，按N健查找上一个
+?text：按n健查找上一个，按N健查找下一个
+:wq：保存并且退出，加!表示强制
+:q!：强制退出并且放弃所有更改
+:e!：放弃修改，并且重新打开文件</description>
+    </item>
+    
+    <item>
+      <title>简单了解SEO</title>
+      <link>https://blog.cjlio.com/posts/2/</link>
+      <pubDate>Sat, 20 Mar 2021 11:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/2/</guid>
+      <description>SEO：搜索引擎优化（Search Engine Optimization），是利用搜索引擎的规则来提升网站在该搜索引擎的排名（免费，高回报）
+robots.txt就是robots协议，用来告诉网络蜘蛛，这个网站什么内容是不应该获取的，那些内容可以获取，例如：淘宝就屏蔽了百度的爬虫
+robots.txt文件应该放在网站根目录下
+允许指定蜘蛛获取，*为通配符
+User-agent: *
+允许指定目录可以被获取
+Allow: /
+指定Sitemap文件在哪
+Sitemap: sitemap.xml
+不允许指定目录被获取（注意该方法会模糊匹配，例如/adminxxx，也是会被屏蔽）
+Disallow: /admin
+description（描述）
+keywords（关键词）
+Sitemap（通知搜索引擎，该网站有哪些可以供爬取的，常见的有xml，html）
+HTML标签优化
+语义化标签，例如header，nav，footer
+内部连接优化
+尽量不要使用JavaScript来设置链接，应该使用简单的a href
+友情链接
+友情链接就是在自己网站上放其他网站的链接，友情链接实质上并不能带来多少访问量，而且是用来增强搜索引擎的收录量爬取量
+注意：请不要在友情链接上加rel=&amp;ldquo;nofollow&amp;rdquo;，该属性会告诉搜索引擎爬虫不用抓取目标页，那么这个友情链接就是废了
+而且不要乱加友情链接，应该选择高质量，而且内容相似，更新频率高，而且还要有一定的访问量
+注意：如果没有必要就不要单向链接，爬虫跑过去，就不会回来了，一直到找到你的链接，通过该链接回来，所以没有必要不要单向链接
+尽量避免使用iframe标签，搜索引擎不会抓取iframe标签的内容
+重要信息请勿使用js输出，爬虫不会抓取js的内容
+给图片加alt信息，重要信息请放头部，有部分搜索引擎爬虫会限制抓取的长度</description>
+    </item>
+    
+    <item>
+      <title>欢迎使用 Typecho</title>
+      <link>https://blog.cjlio.com/posts/1/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/1/</guid>
+      <description>如果您看到这篇文章,表示您的 blog 已经安装成功.</description>
+    </item>
+    
+  </channel>
+</rss>

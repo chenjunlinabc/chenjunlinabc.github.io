@@ -1,0 +1,197 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>简单认识HTTP协议 | 小陈的个人博客</title><meta name=keywords content="http"><meta name=description content="HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的
+HTTP是基于TCP/IP协议来传输数据的
+访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应
+浏览器和web服务器之间通信的架构叫B/S结构（Browser Server），使用的协议是HTTP（https协议其实就是HTTP的基础上，添加了SSL
+http是一种协议，制定了客户端与服务端信息数据的传递的规则
+从传递文本，到传递图片，音频，视频
+HTTP/0.9：于1990年问世，只能用于简单文字的交换 HTTP/1.0：被正式列为www传输的标准，纳入RFC1945 HTTP/1.1：在1.0的基础上加上了连接方式的规约 HTTP/2.0：HTTP2.0更安全，性能更好
+http协议规定了会话是由客户端发起，服务端响应的
+客户端常见请求方式有GET，POST
+OSI七层模型，http协议是最上层的应用层
+应用层，表示层，会话层，传输层，网络层，数据链路层，物理层
+数据发送是从应用层到物理层（数据封装）
+数据接收是从物理层到应用层（数据解包）
+应用层就是为终端提供服务的，例如http，ftp等等
+表示层为数据提供压缩，加密等等功能
+会话层就是通过会话标识来确定是于哪个应用在通讯
+传输层就是定义了数据传输的协议和端口
+网络层就是加工数据，为数据添加一些信息，这一层的数据叫做包
+数据链路层就是定义了在单个链路上如何传输数据，网络中每台设备都有一个唯一的网络标识（MAC地址），这一层的数据叫做帧
+物理层就是物理设备的标准
+TCP/IP五层模型：应用层，传输层，网络层，数据链路层和物理层
+路由寻址：ip，mac，dhcp服务器
+先通过ip实现跨网端通信（如果是本地则直接传输给目标机器，不是则传输给出口路由器，一直到目标路由），然后通过MAC找到目标机器，目标机器获取到数据再根据网络模型向上处理
+DNS
+DNS域名系统是一个记录IP和域名映射的，域名服务器是分布式的，全世界一共有13台根域名服务器，当域名服务器只要自己解析不了，就会交给根域名服务器处理
+解析过程：
+机器通过访问本地域名服务器（一般是本地运营商提供，默认解析服务器）查询
+本地域名服务器检查缓存，没有就是向根域名服务器的其中一台发起查询请求
+根域名服务器根据要查询的结构找到对应的顶级域名服务器（管理全部注册在上面的二级域名服务器）信息发送会本地域名服务器
+本地域名服务器向顶级域名服务器发起查询
+顶级域名服务器根据域名结构查找到对应的二级域名服务器
+反复迭代最终查找到域名和 IP 的对应关系
+如果直接设置个公共域名服务器（例如：114，8之类的）能大大提升解析速度
+DNS解析的记录类型
+A记录
+直接将域名解析为IP
+CNAME记录
+给域名起个cname别名，例如访问了xxx会转发到aaa的域名上
+NS记录
+域名解析服务器记录，一般用来指定不同子域名对应到不同的解析服务器
+MX 记录
+电子邮箱服务，将指向邮件服务器地址
+CDN加速过程：
+用户访问域名地址
+因为域名被cdn接管了，域名解析只能获取到CNAME
+CDN通过CNAME来将地址代理到cdn服务器上，而不是源站
+通过CNAME获取到最近的cdn服务器的Ip地址，然后访问到cdn缓存服务器
+cdn缓存服务器再根据策略来判断是否存在该资源缓存，是否要向源站请求数据，再将数据返回给用户
+HTTPS协议
+通过http通信，经过SSL/TLS来建立安全信道，加密数据，http默认端口为80，https为443
+https就是在http协议基础上加了ssl协议
+一般服务端需要通过ssl证书来证明自己身份，ssl证书不可逆向，不可伪造，一旦发现伪造或者ssl证书不正确，浏览器一般都会拦截提示
+某些需要极其安全的需要客户端也是要证明身份，例如银行网站
+SSL协议：保证数据发送到正确目标，数据加密防止数据中途被拦截获取，保证数据完整性，数据不被串改
+前端中的HTTP
+先进行DNS解析-建立TCP连接（3次握手）-发送HTTP请求获取相关内容-浏览器构建DOM树和CSS树，然后生成渲染树。这个一个渐进式过程，浏览器引擎会力求最快将内容呈现给用户-关闭TCP连接（4次握手）
+http常见状态码
+1xx 信息 2xx 成功 3xx 重定向 4xx 客户端错误 5xx 服务器错误"><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/posts/77/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css integrity="sha256-C3OaLixeVlbkvNXwsiaNBjrdr4HYnsOYfWr48E3s3Jc=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="简单认识HTTP协议"><meta property="og:description" content="HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的
+HTTP是基于TCP/IP协议来传输数据的
+访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应
+浏览器和web服务器之间通信的架构叫B/S结构（Browser Server），使用的协议是HTTP（https协议其实就是HTTP的基础上，添加了SSL
+http是一种协议，制定了客户端与服务端信息数据的传递的规则
+从传递文本，到传递图片，音频，视频
+HTTP/0.9：于1990年问世，只能用于简单文字的交换 HTTP/1.0：被正式列为www传输的标准，纳入RFC1945 HTTP/1.1：在1.0的基础上加上了连接方式的规约 HTTP/2.0：HTTP2.0更安全，性能更好
+http协议规定了会话是由客户端发起，服务端响应的
+客户端常见请求方式有GET，POST
+OSI七层模型，http协议是最上层的应用层
+应用层，表示层，会话层，传输层，网络层，数据链路层，物理层
+数据发送是从应用层到物理层（数据封装）
+数据接收是从物理层到应用层（数据解包）
+应用层就是为终端提供服务的，例如http，ftp等等
+表示层为数据提供压缩，加密等等功能
+会话层就是通过会话标识来确定是于哪个应用在通讯
+传输层就是定义了数据传输的协议和端口
+网络层就是加工数据，为数据添加一些信息，这一层的数据叫做包
+数据链路层就是定义了在单个链路上如何传输数据，网络中每台设备都有一个唯一的网络标识（MAC地址），这一层的数据叫做帧
+物理层就是物理设备的标准
+TCP/IP五层模型：应用层，传输层，网络层，数据链路层和物理层
+路由寻址：ip，mac，dhcp服务器
+先通过ip实现跨网端通信（如果是本地则直接传输给目标机器，不是则传输给出口路由器，一直到目标路由），然后通过MAC找到目标机器，目标机器获取到数据再根据网络模型向上处理
+DNS
+DNS域名系统是一个记录IP和域名映射的，域名服务器是分布式的，全世界一共有13台根域名服务器，当域名服务器只要自己解析不了，就会交给根域名服务器处理
+解析过程：
+机器通过访问本地域名服务器（一般是本地运营商提供，默认解析服务器）查询
+本地域名服务器检查缓存，没有就是向根域名服务器的其中一台发起查询请求
+根域名服务器根据要查询的结构找到对应的顶级域名服务器（管理全部注册在上面的二级域名服务器）信息发送会本地域名服务器
+本地域名服务器向顶级域名服务器发起查询
+顶级域名服务器根据域名结构查找到对应的二级域名服务器
+反复迭代最终查找到域名和 IP 的对应关系
+如果直接设置个公共域名服务器（例如：114，8之类的）能大大提升解析速度
+DNS解析的记录类型
+A记录
+直接将域名解析为IP
+CNAME记录
+给域名起个cname别名，例如访问了xxx会转发到aaa的域名上
+NS记录
+域名解析服务器记录，一般用来指定不同子域名对应到不同的解析服务器
+MX 记录
+电子邮箱服务，将指向邮件服务器地址
+CDN加速过程：
+用户访问域名地址
+因为域名被cdn接管了，域名解析只能获取到CNAME
+CDN通过CNAME来将地址代理到cdn服务器上，而不是源站
+通过CNAME获取到最近的cdn服务器的Ip地址，然后访问到cdn缓存服务器
+cdn缓存服务器再根据策略来判断是否存在该资源缓存，是否要向源站请求数据，再将数据返回给用户
+HTTPS协议
+通过http通信，经过SSL/TLS来建立安全信道，加密数据，http默认端口为80，https为443
+https就是在http协议基础上加了ssl协议
+一般服务端需要通过ssl证书来证明自己身份，ssl证书不可逆向，不可伪造，一旦发现伪造或者ssl证书不正确，浏览器一般都会拦截提示
+某些需要极其安全的需要客户端也是要证明身份，例如银行网站
+SSL协议：保证数据发送到正确目标，数据加密防止数据中途被拦截获取，保证数据完整性，数据不被串改
+前端中的HTTP
+先进行DNS解析-建立TCP连接（3次握手）-发送HTTP请求获取相关内容-浏览器构建DOM树和CSS树，然后生成渲染树。这个一个渐进式过程，浏览器引擎会力求最快将内容呈现给用户-关闭TCP连接（4次握手）
+http常见状态码
+1xx 信息 2xx 成功 3xx 重定向 4xx 客户端错误 5xx 服务器错误"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.cjlio.com/posts/77/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-08-08T17:02:00+00:00"><meta property="article:modified_time" content="2021-08-08T17:02:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="简单认识HTTP协议"><meta name=twitter:description content="HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的
+HTTP是基于TCP/IP协议来传输数据的
+访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应
+浏览器和web服务器之间通信的架构叫B/S结构（Browser Server），使用的协议是HTTP（https协议其实就是HTTP的基础上，添加了SSL
+http是一种协议，制定了客户端与服务端信息数据的传递的规则
+从传递文本，到传递图片，音频，视频
+HTTP/0.9：于1990年问世，只能用于简单文字的交换 HTTP/1.0：被正式列为www传输的标准，纳入RFC1945 HTTP/1.1：在1.0的基础上加上了连接方式的规约 HTTP/2.0：HTTP2.0更安全，性能更好
+http协议规定了会话是由客户端发起，服务端响应的
+客户端常见请求方式有GET，POST
+OSI七层模型，http协议是最上层的应用层
+应用层，表示层，会话层，传输层，网络层，数据链路层，物理层
+数据发送是从应用层到物理层（数据封装）
+数据接收是从物理层到应用层（数据解包）
+应用层就是为终端提供服务的，例如http，ftp等等
+表示层为数据提供压缩，加密等等功能
+会话层就是通过会话标识来确定是于哪个应用在通讯
+传输层就是定义了数据传输的协议和端口
+网络层就是加工数据，为数据添加一些信息，这一层的数据叫做包
+数据链路层就是定义了在单个链路上如何传输数据，网络中每台设备都有一个唯一的网络标识（MAC地址），这一层的数据叫做帧
+物理层就是物理设备的标准
+TCP/IP五层模型：应用层，传输层，网络层，数据链路层和物理层
+路由寻址：ip，mac，dhcp服务器
+先通过ip实现跨网端通信（如果是本地则直接传输给目标机器，不是则传输给出口路由器，一直到目标路由），然后通过MAC找到目标机器，目标机器获取到数据再根据网络模型向上处理
+DNS
+DNS域名系统是一个记录IP和域名映射的，域名服务器是分布式的，全世界一共有13台根域名服务器，当域名服务器只要自己解析不了，就会交给根域名服务器处理
+解析过程：
+机器通过访问本地域名服务器（一般是本地运营商提供，默认解析服务器）查询
+本地域名服务器检查缓存，没有就是向根域名服务器的其中一台发起查询请求
+根域名服务器根据要查询的结构找到对应的顶级域名服务器（管理全部注册在上面的二级域名服务器）信息发送会本地域名服务器
+本地域名服务器向顶级域名服务器发起查询
+顶级域名服务器根据域名结构查找到对应的二级域名服务器
+反复迭代最终查找到域名和 IP 的对应关系
+如果直接设置个公共域名服务器（例如：114，8之类的）能大大提升解析速度
+DNS解析的记录类型
+A记录
+直接将域名解析为IP
+CNAME记录
+给域名起个cname别名，例如访问了xxx会转发到aaa的域名上
+NS记录
+域名解析服务器记录，一般用来指定不同子域名对应到不同的解析服务器
+MX 记录
+电子邮箱服务，将指向邮件服务器地址
+CDN加速过程：
+用户访问域名地址
+因为域名被cdn接管了，域名解析只能获取到CNAME
+CDN通过CNAME来将地址代理到cdn服务器上，而不是源站
+通过CNAME获取到最近的cdn服务器的Ip地址，然后访问到cdn缓存服务器
+cdn缓存服务器再根据策略来判断是否存在该资源缓存，是否要向源站请求数据，再将数据返回给用户
+HTTPS协议
+通过http通信，经过SSL/TLS来建立安全信道，加密数据，http默认端口为80，https为443
+https就是在http协议基础上加了ssl协议
+一般服务端需要通过ssl证书来证明自己身份，ssl证书不可逆向，不可伪造，一旦发现伪造或者ssl证书不正确，浏览器一般都会拦截提示
+某些需要极其安全的需要客户端也是要证明身份，例如银行网站
+SSL协议：保证数据发送到正确目标，数据加密防止数据中途被拦截获取，保证数据完整性，数据不被串改
+前端中的HTTP
+先进行DNS解析-建立TCP连接（3次握手）-发送HTTP请求获取相关内容-浏览器构建DOM树和CSS树，然后生成渲染树。这个一个渐进式过程，浏览器引擎会力求最快将内容呈现给用户-关闭TCP连接（4次握手）
+http常见状态码
+1xx 信息 2xx 成功 3xx 重定向 4xx 客户端错误 5xx 服务器错误"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://blog.cjlio.com/posts/"},{"@type":"ListItem","position":3,"name":"简单认识HTTP协议","item":"https://blog.cjlio.com/posts/77/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"简单认识HTTP协议","name":"简单认识HTTP协议","description":"HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的\nHTTP是基于TCP/IP协议来传输数据的\n访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应\n浏览器和web服务器之间通信的架构叫B/S结构（Browser Server），使用的协议是HTTP（https协议其实就是HTTP的基础上，添加了SSL\nhttp是一种协议，制定了客户端与服务端信息数据的传递的规则\n从传递文本，到传递图片，音频，视频\nHTTP/0.9：于1990年问世，只能用于简单文字的交换 HTTP/1.0：被正式列为www传输的标准，纳入RFC1945 HTTP/1.1：在1.0的基础上加上了连接方式的规约 HTTP/2.0：HTTP2.0更安全，性能更好\nhttp协议规定了会话是由客户端发起，服务端响应的\n客户端常见请求方式有GET，POST\nOSI七层模型，http协议是最上层的应用层\n应用层，表示层，会话层，传输层，网络层，数据链路层，物理层\n数据发送是从应用层到物理层（数据封装）\n数据接收是从物理层到应用层（数据解包）\n应用层就是为终端提供服务的，例如http，ftp等等\n表示层为数据提供压缩，加密等等功能\n会话层就是通过会话标识来确定是于哪个应用在通讯\n传输层就是定义了数据传输的协议和端口\n网络层就是加工数据，为数据添加一些信息，这一层的数据叫做包\n数据链路层就是定义了在单个链路上如何传输数据，网络中每台设备都有一个唯一的网络标识（MAC地址），这一层的数据叫做帧\n物理层就是物理设备的标准\nTCP/IP五层模型：应用层，传输层，网络层，数据链路层和物理层\n路由寻址：ip，mac，dhcp服务器\n先通过ip实现跨网端通信（如果是本地则直接传输给目标机器，不是则传输给出口路由器，一直到目标路由），然后通过MAC找到目标机器，目标机器获取到数据再根据网络模型向上处理\nDNS\nDNS域名系统是一个记录IP和域名映射的，域名服务器是分布式的，全世界一共有13台根域名服务器，当域名服务器只要自己解析不了，就会交给根域名服务器处理\n解析过程：\n机器通过访问本地域名服务器（一般是本地运营商提供，默认解析服务器）查询\n本地域名服务器检查缓存，没有就是向根域名服务器的其中一台发起查询请求\n根域名服务器根据要查询的结构找到对应的顶级域名服务器（管理全部注册在上面的二级域名服务器）信息发送会本地域名服务器\n本地域名服务器向顶级域名服务器发起查询\n顶级域名服务器根据域名结构查找到对应的二级域名服务器\n反复迭代最终查找到域名和 IP 的对应关系\n如果直接设置个公共域名服务器（例如：114，8之类的）能大大提升解析速度\nDNS解析的记录类型\nA记录\n直接将域名解析为IP\nCNAME记录\n给域名起个cname别名，例如访问了xxx会转发到aaa的域名上\nNS记录\n域名解析服务器记录，一般用来指定不同子域名对应到不同的解析服务器\nMX 记录\n电子邮箱服务，将指向邮件服务器地址\nCDN加速过程：\n用户访问域名地址\n因为域名被cdn接管了，域名解析只能获取到CNAME\nCDN通过CNAME来将地址代理到cdn服务器上，而不是源站\n通过CNAME获取到最近的cdn服务器的Ip地址，然后访问到cdn缓存服务器\ncdn缓存服务器再根据策略来判断是否存在该资源缓存，是否要向源站请求数据，再将数据返回给用户\nHTTPS协议\n通过http通信，经过SSL/TLS来建立安全信道，加密数据，http默认端口为80，https为443\nhttps就是在http协议基础上加了ssl协议\n一般服务端需要通过ssl证书来证明自己身份，ssl证书不可逆向，不可伪造，一旦发现伪造或者ssl证书不正确，浏览器一般都会拦截提示\n某些需要极其安全的需要客户端也是要证明身份，例如银行网站\nSSL协议：保证数据发送到正确目标，数据加密防止数据中途被拦截获取，保证数据完整性，数据不被串改\n前端中的HTTP\n先进行DNS解析-建立TCP连接（3次握手）-发送HTTP请求获取相关内容-浏览器构建DOM树和CSS树，然后生成渲染树。这个一个渐进式过程，浏览器引擎会力求最快将内容呈现给用户-关闭TCP连接（4次握手）\nhttp常见状态码\n1xx 信息 2xx 成功 3xx 重定向 4xx 客户端错误 5xx 服务器错误","keywords":["http"],"articleBody":"HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的\nHTTP是基于TCP/IP协议来传输数据的\n访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应\n浏览器和web服务器之间通信的架构叫B/S结构（Browser Server），使用的协议是HTTP（https协议其实就是HTTP的基础上，添加了SSL\nhttp是一种协议，制定了客户端与服务端信息数据的传递的规则\n从传递文本，到传递图片，音频，视频\nHTTP/0.9：于1990年问世，只能用于简单文字的交换 HTTP/1.0：被正式列为www传输的标准，纳入RFC1945 HTTP/1.1：在1.0的基础上加上了连接方式的规约 HTTP/2.0：HTTP2.0更安全，性能更好\nhttp协议规定了会话是由客户端发起，服务端响应的\n客户端常见请求方式有GET，POST\nOSI七层模型，http协议是最上层的应用层\n应用层，表示层，会话层，传输层，网络层，数据链路层，物理层\n数据发送是从应用层到物理层（数据封装）\n数据接收是从物理层到应用层（数据解包）\n应用层就是为终端提供服务的，例如http，ftp等等\n表示层为数据提供压缩，加密等等功能\n会话层就是通过会话标识来确定是于哪个应用在通讯\n传输层就是定义了数据传输的协议和端口\n网络层就是加工数据，为数据添加一些信息，这一层的数据叫做包\n数据链路层就是定义了在单个链路上如何传输数据，网络中每台设备都有一个唯一的网络标识（MAC地址），这一层的数据叫做帧\n物理层就是物理设备的标准\nTCP/IP五层模型：应用层，传输层，网络层，数据链路层和物理层\n路由寻址：ip，mac，dhcp服务器\n先通过ip实现跨网端通信（如果是本地则直接传输给目标机器，不是则传输给出口路由器，一直到目标路由），然后通过MAC找到目标机器，目标机器获取到数据再根据网络模型向上处理\nDNS\nDNS域名系统是一个记录IP和域名映射的，域名服务器是分布式的，全世界一共有13台根域名服务器，当域名服务器只要自己解析不了，就会交给根域名服务器处理\n解析过程：\n机器通过访问本地域名服务器（一般是本地运营商提供，默认解析服务器）查询\n本地域名服务器检查缓存，没有就是向根域名服务器的其中一台发起查询请求\n根域名服务器根据要查询的结构找到对应的顶级域名服务器（管理全部注册在上面的二级域名服务器）信息发送会本地域名服务器\n本地域名服务器向顶级域名服务器发起查询\n顶级域名服务器根据域名结构查找到对应的二级域名服务器\n反复迭代最终查找到域名和 IP 的对应关系\n如果直接设置个公共域名服务器（例如：114，8之类的）能大大提升解析速度\nDNS解析的记录类型\nA记录\n直接将域名解析为IP\nCNAME记录\n给域名起个cname别名，例如访问了xxx会转发到aaa的域名上\nNS记录\n域名解析服务器记录，一般用来指定不同子域名对应到不同的解析服务器\nMX 记录\n电子邮箱服务，将指向邮件服务器地址\nCDN加速过程：\n用户访问域名地址\n因为域名被cdn接管了，域名解析只能获取到CNAME\nCDN通过CNAME来将地址代理到cdn服务器上，而不是源站\n通过CNAME获取到最近的cdn服务器的Ip地址，然后访问到cdn缓存服务器\ncdn缓存服务器再根据策略来判断是否存在该资源缓存，是否要向源站请求数据，再将数据返回给用户\nHTTPS协议\n通过http通信，经过SSL/TLS来建立安全信道，加密数据，http默认端口为80，https为443\nhttps就是在http协议基础上加了ssl协议\n一般服务端需要通过ssl证书来证明自己身份，ssl证书不可逆向，不可伪造，一旦发现伪造或者ssl证书不正确，浏览器一般都会拦截提示\n某些需要极其安全的需要客户端也是要证明身份，例如银行网站\nSSL协议：保证数据发送到正确目标，数据加密防止数据中途被拦截获取，保证数据完整性，数据不被串改\n前端中的HTTP\n先进行DNS解析-建立TCP连接（3次握手）-发送HTTP请求获取相关内容-浏览器构建DOM树和CSS树，然后生成渲染树。这个一个渐进式过程，浏览器引擎会力求最快将内容呈现给用户-关闭TCP连接（4次握手）\nhttp常见状态码\n1xx 信息 2xx 成功 3xx 重定向 4xx 客户端错误 5xx 服务器错误\n域名dns解析，发起TCP的3次握手，建立TCP连接发起http请求，服务器响应http请求，发送资源，浏览器得到资源后进行解析渲染\nTCP的三次握手：\n握手的目的是进行信息的同步，tcp是一种可靠连接，客户端和服务端会经历建立连接的阶段，而这个建立TCP连接的过程就是所谓的握手（握手实质是发送TCP报文）\n第一次握手客户端向服务器发送一个SYN段为1的TCP/IP数据包（客户端进入SYN_SENT状态，已发送同步数据）\n第二次握手服务器返回客户端SYN和ACK（都为1）的TCP/IP数据包（服务端进入SYN_RECVD状态，表示同步数据已收到）\n第三次握手客户端返回一个ACK段为1的的TCP/IP数据包给服务器（客户端接收到ACK为1的确认报文，正式进入连接状态）\nACK实质上确定服务器和客户端都可以正常响应的（响应没有丢失），只有三次握手完成才能建立HTTP连接\nTCP四次挥手\nTCP四次挥手是指关闭TCP连接的过程（断开TCP连接）\n第一次：当客户端的某个数据传输完毕后需要断开连接，向TCP发送FIN=1（报文段），要求停止再发送数据，关闭TCP连接（客户端进入FIN_WAIT_1状态，终止等待）\n第二次：服务端收到报文段并且发送确认报文段（ACK=1），进入等待关闭的状态（服务端进入CLOSE_WAIT状态（关闭等待））\n第三次：当服务端的数据传输完毕后，服务端发送连接断开的报文段（FIN = 1,ACK=1），进入最后的等待状态（服务端进入LAST_ACK状态，最后的确定）\n第四次：当客户端收到服务端的断开的报文段（FIN = 1），并且发送确认的报文段（ACK = 1），进入等待状态（CLOSe状态）\n实质上完成四次挥手也是没有断开的，需要经过等待定时器2MSL，才会关闭，保证下一次新连接中不会出现以前连接遗留的报文段\n2MSL即两倍的MSL，TCP的TIME_WAIT状态也称为2MSL等待状态\nTIME_WAIT状态是为了避免网络问题，导致ACK报文无法被对方接收到，而利用这个时间来重发可能丢失的报文\nHTTP 1.1可以在一次连接中处理多个请求，请求排队处理，而不像1.0那样每一次请求都要建立单独的TCP连接，每一次请求完毕后，自动释放\n设置请求优先级，在一次连接中处理多个请求，必定会出现请求堵塞，因此，给请求设置优先级，重要的请求先得到响应\n请求头压缩，基于https的加密协议传输\nHTTP 2.0性能提升，可以在一次连接中处理多个请求，而且还是并行进行的，不会出现堵塞问题\nconst errorMessage = [ { code: 400, msg: '请求错误' }, { code: 401, msg: '未授权，请登录' }, { code: 403, msg: '拒绝访问' }, { code: 404, msg: '请求地址出错' }, { code: 408, msg: '请求超时' }, { code: 500, msg: '服务器内部错误' }, { code: 501, msg: '服务未实现' }, { code: 502, msg: '网关错误' }, { code: 503, msg: '服务不可用' }, { code: 504, msg: '网关超时' }, { code: 505, msg: 'HTTP版本不受支持' } ] http的特点：可以根据协议头的head的数据类型，来完成不同的数据类型的传输，而且能保持连接（http1.0是非长时间连接，这里的保持连接指的是HTTP1.1的KeepAlive），不区分连接者的身份（无法分辨该客户是否访问过）\nhttp请求报文：由请求行（HTTP协议版本，URL字段，方法字段），请求头（向服务端请求要什么类型的什么数据），空行（提示服务端，请求头已经发送，不会再有请求头），请求体（数据）组成\nKeepAlive模式（持久连接/连接复用）：可以在发送响应后的一段时间内保持连接，并且允许在同一个连接中存在多次数据请求和响应，而非KeepAlive模式就是会在响应后立刻断开连接，再新建一个连接来请求和响应，只有HTTP1.1支持KeepAlive模式\n管线化：在持久连接下，会将请求一起打包发送（多请求），然后服务端也是打包响应（多响应），管线化必须在持久连接下完成，而且只有GET和HEAD请求支持管线化，POST有所限制，首次连接不会使用管线化机制（避免服务端不支持HTTP1.1）,而且管线化不会影响响应返回的顺序\nTCP和UDP区别：tcp在发送之前需要连接，udp在发送之前不需要连接，tcp协议保证发送的数据不丢失（并且按照顺序接收），而udp并不能保证数据可靠，数据不丢失，不重复。tcp是字节流，udp是报文流，UDP没有堵塞系统（在网络堵塞的情况，不会影响源的发送量），tcp连接是点对点，udp的连接是可以一对一，一对多，多对一，多对多的，TCP首部开销为20字节，udp为8字节，tcp为可靠信道，udp为不可靠信道\n(TCP可靠在会记录那些数据发送了，又有那些数据被接收了，那些数据没有被接收，数据包按序到达，不允许出现半点差错，tcp连接需要三次握手，四次挥手来建立连接和结束连接)\nudp确保传输可靠：传输层已经不可靠，只能在应用层添加可靠传输的机制，例如超时重新发送，添加序号（根据序号有序发送/请求），时间戳等等，或者UDT（UDP-based Data Transfer Protocol）\n(TCP在高速长距离网络上性能很差)\nudt基于udp协议，引入拥塞控制和数据可靠性控制机制。UDT是面向连接的双向的应用层协议。并且同时支持可靠的数据流传输和部分可靠的数据报传输，支持点对点(p2p)\ntcp第三次握手可以携带数据发送（客户端处在ESTABLISHED状态）\nhttp和https\nhttp是无状态协议（无状态指客户端和服务端之间无需建立持久连接，当客户端发送请求，服务端返回响应后将关闭连接，服务端不保留任何有关连接的信息）\nhttps是指基于http协议加上了ssl层，https默认端口为443\n对称加密技术：加密和解密使用同一密钥，意味着数据传输过程中需要将密钥也一同传输（这个过程很危险）\n非对称加密：加密使用公钥，解密使用私钥（也可反过来），反正加密和解密是分别使用不同的密钥，这个过程是服务端将公钥分发到网络上，客户端获取到该公钥，客户端的数据使用公钥进行加密（无法使用公钥来解密），服务端获取到加密的数据后，通过服务端的私钥进行解密，来获取正文\n流量控制和拥塞控制\n流量控制指的是限制（控制）发送者的发送速度，避免发送数据过快，接收者来不及接收，流量控制通过滑动窗口协议（连续ARQ协议）实现，通过接收方返回的ACK包（包含接受窗口大小），利用接受窗口大小来限制（控制）发送方的数据发送\n拥塞控制\n拥塞控制目的是防止网络负载过大，TCP的4大拥塞控制算法的，慢开始算法，拥塞控制算法，快重传算法，快恢复算法\n慢开始算法：通过cwnd（congestion window）值来控制（如果cwnd为1，那么只能发送1个数据报文段）\n慢开始算法的思路就是一开始不发送大量的数据，先测一下网络的拥塞的大小，从小到大逐渐增长拥塞窗口，慢开始门限初始值为16，cwnd初始化为一个报文段（慢开始算法只在TCP连接建立时和网络超时才使用）\n拥塞控制算法：控制拥塞窗口缓慢增长，思路是每经过一次RTT往返后，拥塞窗口（cwnd）加1，线性缓慢增长，当cwnd=16（慢开始门限），改执行拥塞控制算法，线性增长（当cwnd\u003e=ssthresh时，执行拥塞控制算法），ssthresh指的是慢开始门限\n例如：当网络出现拥塞时，将下降慢开始门限（ssthresh）到cwnd/2的值，cwnd设置为1，执行慢开始算法，当cwnd=ssthresh，执行拥塞控制算法\n快重传算法：需要接收方收到失序的报文段时立刻发出重复确认（接收连续收到3次同一个重复确认，执行快重传算法，立刻重新发送丢失的数据，不等待超时时间过期），例如某个报文段被超时期限内没有收到确认信息，则认定为网络拥塞了，这时cwnd设置为1，慢开始门限（ssthresh）下降（下降一半）\n快恢复算法：快恢复算法是搭配快重传算法使用的，必须发送方接收到3个重复确认，执行快重传算法后才执行快恢复算法，（但是考虑网络出现拥塞可能收不到重复确认，所以发送方会认为网络没有拥塞，设置swnd等于ssthresh/2，执行拥塞控制算法，让cwnd线性增长）\n题外扩展1：socket是计算机之间进行通信的一种约定或一种方式，翻译为中文叫套接字，socket起源于unix的进程通信机制，可通过socket来向网络发送请求或者回复网络请求，socket是应用层和TCP/IP协议族通信的抽象层\n题外扩展2：webSocket是在单个TCP连接上进行全双工通信(full-duplex)的协议，允许服务端主动向客户端发送数据，在webSocket中，客户端和服务端只需要完成一次握手就是可以建立持久性连接，并且进行双向数据传输\n","wordCount":"206","inLanguage":"en","datePublished":"2021-08-08T17:02:00Z","dateModified":"2021-08-08T17:02:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.cjlio.com/posts/77/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://blog.cjlio.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/posts/>Posts</a></div><h1 class=post-title>简单认识HTTP协议</h1><div class=post-meta><span title='2021-08-08 17:02:00 +0000 UTC'>2021-08-08</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/%e7%ae%80%e5%8d%95%e8%ae%a4%e8%af%86HTTP%e5%8d%8f%e8%ae%ae.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的</p><p>HTTP是基于TCP/IP协议来传输数据的</p><p>访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应</p><p>浏览器和web服务器之间通信的架构叫B/S结构（Browser Server），使用的协议是HTTP（https协议其实就是HTTP的基础上，添加了SSL</p><p>http是一种协议，制定了客户端与服务端信息数据的传递的规则</p><p>从传递文本，到传递图片，音频，视频</p><p>HTTP/0.9：于1990年问世，只能用于简单文字的交换
+HTTP/1.0：被正式列为www传输的标准，纳入RFC1945
+HTTP/1.1：在1.0的基础上加上了连接方式的规约
+HTTP/2.0：HTTP2.0更安全，性能更好</p><p>http协议规定了会话是由客户端发起，服务端响应的</p><p>客户端常见请求方式有GET，POST</p><p>OSI七层模型，http协议是最上层的应用层</p><p>应用层，表示层，会话层，传输层，网络层，数据链路层，物理层</p><p>数据发送是从应用层到物理层（数据封装）</p><p>数据接收是从物理层到应用层（数据解包）</p><p>应用层就是为终端提供服务的，例如http，ftp等等</p><p>表示层为数据提供压缩，加密等等功能</p><p>会话层就是通过会话标识来确定是于哪个应用在通讯</p><p>传输层就是定义了数据传输的协议和端口</p><p>网络层就是加工数据，为数据添加一些信息，这一层的数据叫做包</p><p>数据链路层就是定义了在单个链路上如何传输数据，网络中每台设备都有一个唯一的网络标识（MAC地址），这一层的数据叫做帧</p><p>物理层就是物理设备的标准</p><p>TCP/IP五层模型：应用层，传输层，网络层，数据链路层和物理层</p><p>路由寻址：ip，mac，dhcp服务器</p><p>先通过ip实现跨网端通信（如果是本地则直接传输给目标机器，不是则传输给出口路由器，一直到目标路由），然后通过MAC找到目标机器，目标机器获取到数据再根据网络模型向上处理</p><p>DNS</p><p>DNS域名系统是一个记录IP和域名映射的，域名服务器是分布式的，全世界一共有13台根域名服务器，当域名服务器只要自己解析不了，就会交给根域名服务器处理</p><p>解析过程：</p><p>机器通过访问本地域名服务器（一般是本地运营商提供，默认解析服务器）查询</p><p>本地域名服务器检查缓存，没有就是向根域名服务器的其中一台发起查询请求</p><p>根域名服务器根据要查询的结构找到对应的顶级域名服务器（管理全部注册在上面的二级域名服务器）信息发送会本地域名服务器</p><p>本地域名服务器向顶级域名服务器发起查询</p><p>顶级域名服务器根据域名结构查找到对应的二级域名服务器</p><p>反复迭代最终查找到域名和 IP 的对应关系</p><p>如果直接设置个公共域名服务器（例如：114，8之类的）能大大提升解析速度</p><p>DNS解析的记录类型</p><p>A记录</p><p>直接将域名解析为IP</p><p>CNAME记录</p><p>给域名起个cname别名，例如访问了xxx会转发到aaa的域名上</p><p>NS记录</p><p>域名解析服务器记录，一般用来指定不同子域名对应到不同的解析服务器</p><p>MX 记录</p><p>电子邮箱服务，将指向邮件服务器地址</p><p>CDN加速过程：</p><p>用户访问域名地址</p><p>因为域名被cdn接管了，域名解析只能获取到CNAME</p><p>CDN通过CNAME来将地址代理到cdn服务器上，而不是源站</p><p>通过CNAME获取到最近的cdn服务器的Ip地址，然后访问到cdn缓存服务器</p><p>cdn缓存服务器再根据策略来判断是否存在该资源缓存，是否要向源站请求数据，再将数据返回给用户</p><p>HTTPS协议</p><p>通过http通信，经过SSL/TLS来建立安全信道，加密数据，http默认端口为80，https为443</p><p>https就是在http协议基础上加了ssl协议</p><p>一般服务端需要通过ssl证书来证明自己身份，ssl证书不可逆向，不可伪造，一旦发现伪造或者ssl证书不正确，浏览器一般都会拦截提示</p><p>某些需要极其安全的需要客户端也是要证明身份，例如银行网站</p><p>SSL协议：保证数据发送到正确目标，数据加密防止数据中途被拦截获取，保证数据完整性，数据不被串改</p><hr><p>前端中的HTTP</p><p>先进行DNS解析-建立TCP连接（3次握手）-发送HTTP请求获取相关内容-浏览器构建DOM树和CSS树，然后生成渲染树。这个一个渐进式过程，浏览器引擎会力求最快将内容呈现给用户-关闭TCP连接（4次握手）</p><hr><p>http常见状态码</p><p>1xx 信息
+2xx 成功
+3xx 重定向
+4xx 客户端错误
+5xx 服务器错误</p><hr><p>域名dns解析，发起TCP的3次握手，建立TCP连接发起http请求，服务器响应http请求，发送资源，浏览器得到资源后进行解析渲染</p><p>TCP的三次握手：</p><p>握手的目的是进行信息的同步，tcp是一种可靠连接，客户端和服务端会经历建立连接的阶段，而这个建立TCP连接的过程就是所谓的握手（握手实质是发送TCP报文）</p><p>第一次握手客户端向服务器发送一个SYN段为1的TCP/IP数据包（客户端进入SYN_SENT状态，已发送同步数据）</p><p>第二次握手服务器返回客户端SYN和ACK（都为1）的TCP/IP数据包（服务端进入SYN_RECVD状态，表示同步数据已收到）</p><p>第三次握手客户端返回一个ACK段为1的的TCP/IP数据包给服务器（客户端接收到ACK为1的确认报文，正式进入连接状态）</p><p>ACK实质上确定服务器和客户端都可以正常响应的（响应没有丢失），只有三次握手完成才能建立HTTP连接</p><hr><p>TCP四次挥手</p><p>TCP四次挥手是指关闭TCP连接的过程（断开TCP连接）</p><p>第一次：当客户端的某个数据传输完毕后需要断开连接，向TCP发送FIN=1（报文段），要求停止再发送数据，关闭TCP连接（客户端进入FIN_WAIT_1状态，终止等待）</p><p>第二次：服务端收到报文段并且发送确认报文段（ACK=1），进入等待关闭的状态（服务端进入CLOSE_WAIT状态（关闭等待））</p><p>第三次：当服务端的数据传输完毕后，服务端发送连接断开的报文段（FIN = 1,ACK=1），进入最后的等待状态（服务端进入LAST_ACK状态，最后的确定）</p><p>第四次：当客户端收到服务端的断开的报文段（FIN = 1），并且发送确认的报文段（ACK = 1），进入等待状态（CLOSe状态）</p><p>实质上完成四次挥手也是没有断开的，需要经过等待定时器2MSL，才会关闭，保证下一次新连接中不会出现以前连接遗留的报文段</p><p>2MSL即两倍的MSL，TCP的TIME_WAIT状态也称为2MSL等待状态</p><p>TIME_WAIT状态是为了避免网络问题，导致ACK报文无法被对方接收到，而利用这个时间来重发可能丢失的报文</p><hr><p>HTTP 1.1可以在一次连接中处理多个请求，请求排队处理，而不像1.0那样每一次请求都要建立单独的TCP连接，每一次请求完毕后，自动释放</p><p>设置请求优先级，在一次连接中处理多个请求，必定会出现请求堵塞，因此，给请求设置优先级，重要的请求先得到响应</p><p>请求头压缩，基于https的加密协议传输</p><p>HTTP 2.0性能提升，可以在一次连接中处理多个请求，而且还是并行进行的，不会出现堵塞问题</p><hr><pre><code>const errorMessage = [
+    { code: 400, msg: '请求错误' },
+    { code: 401, msg: '未授权，请登录' },
+    { code: 403, msg: '拒绝访问' },
+    { code: 404, msg: '请求地址出错' },
+    { code: 408, msg: '请求超时' },
+    { code: 500, msg: '服务器内部错误' },
+    { code: 501, msg: '服务未实现' },
+    { code: 502, msg: '网关错误' },
+    { code: 503, msg: '服务不可用' },
+    { code: 504, msg: '网关超时' },
+    { code: 505, msg: 'HTTP版本不受支持' }
+]
+</code></pre><hr><p>http的特点：可以根据协议头的head的数据类型，来完成不同的数据类型的传输，而且能保持连接（http1.0是非长时间连接，这里的保持连接指的是HTTP1.1的KeepAlive），不区分连接者的身份（无法分辨该客户是否访问过）</p><p>http请求报文：由请求行（HTTP协议版本，URL字段，方法字段），请求头（向服务端请求要什么类型的什么数据），空行（提示服务端，请求头已经发送，不会再有请求头），请求体（数据）组成</p><p>KeepAlive模式（持久连接/连接复用）：可以在发送响应后的一段时间内保持连接，并且允许在同一个连接中存在多次数据请求和响应，而非KeepAlive模式就是会在响应后立刻断开连接，再新建一个连接来请求和响应，只有HTTP1.1支持KeepAlive模式</p><p>管线化：在持久连接下，会将请求一起打包发送（多请求），然后服务端也是打包响应（多响应），管线化必须在持久连接下完成，而且只有GET和HEAD请求支持管线化，POST有所限制，首次连接不会使用管线化机制（避免服务端不支持HTTP1.1）,而且管线化不会影响响应返回的顺序</p><hr><p>TCP和UDP区别：tcp在发送之前需要连接，udp在发送之前不需要连接，tcp协议保证发送的数据不丢失（并且按照顺序接收），而udp并不能保证数据可靠，数据不丢失，不重复。tcp是字节流，udp是报文流，UDP没有堵塞系统（在网络堵塞的情况，不会影响源的发送量），tcp连接是点对点，udp的连接是可以一对一，一对多，多对一，多对多的，TCP首部开销为20字节，udp为8字节，tcp为可靠信道，udp为不可靠信道</p><p>(TCP可靠在会记录那些数据发送了，又有那些数据被接收了，那些数据没有被接收，数据包按序到达，不允许出现半点差错，tcp连接需要三次握手，四次挥手来建立连接和结束连接)</p><p>udp确保传输可靠：传输层已经不可靠，只能在应用层添加可靠传输的机制，例如超时重新发送，添加序号（根据序号有序发送/请求），时间戳等等，或者UDT（UDP-based Data Transfer Protocol）</p><p>(TCP在高速长距离网络上性能很差)</p><p>udt基于udp协议，引入拥塞控制和数据可靠性控制机制。UDT是面向连接的双向的应用层协议。并且同时支持可靠的数据流传输和部分可靠的数据报传输，支持点对点(p2p)</p><p>tcp第三次握手可以携带数据发送（客户端处在ESTABLISHED状态）</p><hr><p>http和https</p><p>http是无状态协议（无状态指客户端和服务端之间无需建立持久连接，当客户端发送请求，服务端返回响应后将关闭连接，服务端不保留任何有关连接的信息）</p><p>https是指基于http协议加上了ssl层，https默认端口为443</p><p>对称加密技术：加密和解密使用同一密钥，意味着数据传输过程中需要将密钥也一同传输（这个过程很危险）</p><p>非对称加密：加密使用公钥，解密使用私钥（也可反过来），反正加密和解密是分别使用不同的密钥，这个过程是服务端将公钥分发到网络上，客户端获取到该公钥，客户端的数据使用公钥进行加密（无法使用公钥来解密），服务端获取到加密的数据后，通过服务端的私钥进行解密，来获取正文</p><hr><p>流量控制和拥塞控制</p><p>流量控制指的是限制（控制）发送者的发送速度，避免发送数据过快，接收者来不及接收，流量控制通过滑动窗口协议（连续ARQ协议）实现，通过接收方返回的ACK包（包含接受窗口大小），利用接受窗口大小来限制（控制）发送方的数据发送</p><p>拥塞控制</p><p>拥塞控制目的是防止网络负载过大，TCP的4大拥塞控制算法的，慢开始算法，拥塞控制算法，快重传算法，快恢复算法</p><p>慢开始算法：通过cwnd（congestion window）值来控制（如果cwnd为1，那么只能发送1个数据报文段）</p><p>慢开始算法的思路就是一开始不发送大量的数据，先测一下网络的拥塞的大小，从小到大逐渐增长拥塞窗口，慢开始门限初始值为16，cwnd初始化为一个报文段（慢开始算法只在TCP连接建立时和网络超时才使用）</p><p>拥塞控制算法：控制拥塞窗口缓慢增长，思路是每经过一次RTT往返后，拥塞窗口（cwnd）加1，线性缓慢增长，当cwnd=16（慢开始门限），改执行拥塞控制算法，线性增长（当cwnd>=ssthresh时，执行拥塞控制算法），ssthresh指的是慢开始门限</p><p>例如：当网络出现拥塞时，将下降慢开始门限（ssthresh）到cwnd/2的值，cwnd设置为1，执行慢开始算法，当cwnd=ssthresh，执行拥塞控制算法</p><p>快重传算法：需要接收方收到失序的报文段时立刻发出重复确认（接收连续收到3次同一个重复确认，执行快重传算法，立刻重新发送丢失的数据，不等待超时时间过期），例如某个报文段被超时期限内没有收到确认信息，则认定为网络拥塞了，这时cwnd设置为1，慢开始门限（ssthresh）下降（下降一半）</p><p>快恢复算法：快恢复算法是搭配快重传算法使用的，必须发送方接收到3个重复确认，执行快重传算法后才执行快恢复算法，（但是考虑网络出现拥塞可能收不到重复确认，所以发送方会认为网络没有拥塞，设置swnd等于ssthresh/2，执行拥塞控制算法，让cwnd线性增长）</p><p>题外扩展1：socket是计算机之间进行通信的一种约定或一种方式，翻译为中文叫套接字，socket起源于unix的进程通信机制，可通过socket来向网络发送请求或者回复网络请求，socket是应用层和TCP/IP协议族通信的抽象层</p><p>题外扩展2：webSocket是在单个TCP连接上进行全双工通信(full-duplex)的协议，允许服务端主动向客户端发送数据，在webSocket中，客户端和服务端只需要完成一次握手就是可以建立持久性连接，并且进行双向数据传输</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://blog.cjlio.com/tags/http/>http</a></li></ul><nav class=paginav><a class=prev href=https://blog.cjlio.com/posts/78/><span class=title>« Prev</span><br><span>Mobx学习笔记</span></a>
+<a class=next href=https://blog.cjlio.com/posts/76/><span class=title>Next »</span><br><span>MongoDB学习笔记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>golang on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/golang/</link>
+    <description>Recent content in golang on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 22 Feb 2022 05:19:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用Hugo搭建网站</title>
+      <link>https://blog.cjlio.com/posts/137/</link>
+      <pubDate>Tue, 22 Feb 2022 05:19:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/137/</guid>
+      <description>Hugo是基于Go语言开发的静态网站生成器，特点就是快
+安装
+二进制文件安装（由官方编译完成的二进制文件来安装，推荐使用，用源码容易出现问题）
+https://github.com/gohugoio/hugo/releases
+源码安装
+git clone https://github.com/gohugoio/hugo.git
+cd hugo
+go install
+检查是否安装完成 hugo -v，如果需要支持SASS/SCSS，请添加&amp;ndash;tags extended参数，不过在这之前需要CGO的依赖（或者使用hugo_extended版本）
+如果没安装CGO，请先安装CGO，这里使用的是mingw64，CGO_ENABLED环境变量为1
+生成站点
+hugo new site ./www
+创建文章（默认自动生成md文件到content文件夹中，可选择目录）
+hugo new post/hallo.md
+如果没有显示文章的话，请将文章的draft字段改为false，因为这个是草稿，草稿是不会显示在页面上的
+安装主题
+git clone https://github.com/miiiku/hugo-theme-kagome.git ./themes/kagome
+修改config.toml文件
+baseURL = &amp;lsquo;https://blog.cjlio.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
+启动Hugo服务器
+hugo server
+访问http://localhost:1313
+如果报错，you need the extended version to build SCSS/SASS的话，请使用extended版本
+部署到github pages
+hugo &amp;ndash;baseUrl=&amp;ldquo;http://chenjunlinabc.github.io/&amp;quot;
+如果该命令执行成功，会将静态页面生成到public文件夹中，只需要push该文件夹到github上就好了</description>
+    </item>
+    
+    <item>
+      <title>Gin框架学习笔记</title>
+      <link>https://blog.cjlio.com/posts/135/</link>
+      <pubDate>Tue, 15 Feb 2022 17:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/135/</guid>
+      <description>Gin是一个基于go语言编写的web框架，因为Gin的路由库基于httprouter开发的，性能非常好，支持Restful api规范
+安装
+go get -u github.com/gin-gonic/gin
+第一个demo
+package main import &amp;quot;github.com/gin-gonic/gin&amp;quot; import &amp;quot;net/http&amp;quot; func main() { g := gin.Default() g.GET(&amp;quot;/&amp;quot;, func(c *gin.Context) { c.String(http.StatusOK, &amp;quot;hallo word&amp;quot;) }) g.Run() } go run main.go
+g.Run()是将应用部署到本地服务器上，默认端口为8080，可设置端口，g.Run(&amp;quot;:2333&amp;quot;)
+路由
+r.GET(&amp;quot;/test/:name&amp;quot;, func(c *gin.Context) { name := c.Param(&amp;quot;name&amp;quot;) c.String(http.StatusOK, name) }) g.Run(&amp;quot;:6666&amp;quot;) 127.0.0.1:6666/test/xiaochen
+可以看到Context的Param方法可以获取路由的参数
+通过url传递参数
+r.GET(&amp;quot;/test&amp;quot;, func(c *gin.Context) { name := c.DefaultQuery(&amp;quot;name&amp;quot;, &amp;quot;test&amp;quot;) c.String(http.StatusOK, fmt.Sprintf(&amp;quot;hallo %s&amp;quot;, name)) }) r.Run() 127.0.0.1:6666/test
+如果没有传递参数将会输出DefaultQuery的默认参数test
+传递参数后 127.0.0.1:6666/test?name=word
+POST请求
+index.html main.go</description>
+    </item>
+    
+    <item>
+      <title>beego应用框架的简单使用</title>
+      <link>https://blog.cjlio.com/posts/134/</link>
+      <pubDate>Sat, 12 Feb 2022 16:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/134/</guid>
+      <description>beego是一个基于go语言开发的http框架，beego可用于开发web，api，后端服务等等应用，beego架构为mvc模型，支持RESTful api规范设计，支持热更新
+安装
+go get github.com/beego/beego
+go get github.com/beego/bee
+检查是否安装完成
+bee version
+beego项目可使用bee指令来创建和管理
+创建第一个web应用
+bee new hallo
+beego是基于mvc模型的，因此其构建出来的项目文件也是标准mvc模型文件结构，其中main.go是入口文件
+执行go mod tidy，生成go.sum
+启动项目（bee run指令会自动编译部署）
+bee run
+访问http://127.0.0.1:8080/
+其他常用beeg指令
+创建api应用
+bee api apitest
+打包应用命令（将项目打包压缩）
+bee pack
+自动生成代码
+bee generate
+controller控制器
+简单接收一下get请求的参数
+controllers/default.go，在func (c *MainController) Get() 函数中修改
+name := c.GetString(&amp;quot;name&amp;quot;) c.Data[&amp;quot;Website&amp;quot;] = name 访问http://127.0.0.1:8080/?name=hallo，views\index.tpl的模板中的{{.Website}}被设置为hallo
+在controllers/default.go看到，其定义了一个MainController结构体，该结构体继承了beego.Controller的全部方法（其中方法包括Get，Post等等方法）
+Model模型
+在bee new中并没有Model实例演示，但是bee api有，而且controller控制器可完成一些简单逻辑，只有当逻辑需要复用时才抽象成Model模型
+View视图
+在controllers/default.go看到c.TplName = &amp;ldquo;index.tpl&amp;rdquo;，这个语句就是设置模板文件，该模板支持tpl和html文件，beego使用了golang默认的模板引擎
+在views/index.tpl中可以看到这个
+&amp;lt;div class=&amp;quot;author&amp;quot;&amp;gt; Official website: &amp;lt;a href=&amp;quot;http://{{.Website}}&amp;quot;&amp;gt;{{.Website}}&amp;lt;/a&amp;gt; / Contact me: &amp;lt;a class=&amp;quot;email&amp;quot; href=&amp;quot;mailto:{{.</description>
+    </item>
+    
+    <item>
+      <title>简单使用ESbuild打包工具</title>
+      <link>https://blog.cjlio.com/posts/132/</link>
+      <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/132/</guid>
+      <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包，支持TypeScript和jsx
+安装
+npm install esbuild
+或者
+yarn add esbuild
+打包
+.\node_modules.bin\esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle
+或者package.json
+&amp;ldquo;build&amp;rdquo;: &amp;ldquo;esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle&amp;rdquo;
+npm run build
+例子（app.jsx）
+import React from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; const App = () =&amp;gt; { return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; ) } ReactDOM.render( &amp;lt;App /&amp;gt;, document.getElementById(&amp;quot;app&amp;quot;) ) index.html
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 我本地打包只花64ms就打包好了</description>
+    </item>
+    
+    <item>
+      <title>Golang进阶扩展笔记</title>
+      <link>https://blog.cjlio.com/posts/128/</link>
+      <pubDate>Sun, 16 Jan 2022 09:08:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/128/</guid>
+      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://cjlio.com/archives/96.html
+并发
+go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
+内核态：程序执行操作系统层级的程序时
+用户态：程序执行用户自己写的程序时
+常见的并发模型有七种，分别是通讯顺序进程（CSP），数据级并行，函数式编程，线程与锁，Clojure，actor，Lambda架构
+CSP（Communicating Sequential Process，通讯顺序进程）：思想就是将两个并发执行的实体使用channel管道来连接起来，全部信息通过channel管道来传输，而且数据的传输是根据顺序来发送和接收的，CSP理论由托尼·霍尔提出
+小知识：托尼·霍尔（C.A.R.Hoare），图灵奖获得者，快速排序算法（Quick Sort）也出自这位之手
+go的并发编程不需要像java那样维护线程池，go在语言层面内置了调度和上下文切换机制，只需要定义任务，让go运行时来智能合理的调度goroutine的任务给每个CPU，也不需要额外写什么进程，线程，协程，只需要写一个函数，开启一个goroutine就是可以实现并发了
+Go运行时会给main()函数建立一个默认的goroutine，当main()结束时，其他在main()执行的goroutine都会被结束（不管有没有执行完成）
+goroutine的栈开始时为2kb（OS线程一般为2mb），而且栈不是固定的，可以增大和缩小，大小限制可以达到1GB
+GPM调度器是Go对CSP并发模型的实现，是Go自己开发的一套调度系统（GPM分别表示为Goroutine，Processor，Machine）
+Goroutine：go关键字创建的执行体，对应则结构体g，这个结构体存储着goroutine的堆栈信息
+Processor：负责管理goroutine队列，存储则当前goroutine运行的上下文，会给自己管理的goroutine队列进行调度，例如：暂停goroutine，执行goroutine，当自己的队列处理完毕，将去全局队列中获取，全局队列处理完毕，还可以去其他P的队列去获取，用来处理G和M的通信
+Machine：G运行时对操作系统内核线程的虚拟化，映射内核线程（groutine就是被放到这个内核线程的映射虚拟化M中执行）
+简单来说就是P管理一组G在M上执行，当一个G阻塞在一个M时，Go运行时创建一个新的M，负责管理阻塞的那个G的P将其他G挂载在新的M上，G阻塞完成时或者G死掉了，回收旧的M
+P的个数通过runtime.GOMAXPROCS设置（最大256）（1.5版本后默认为计算机物理线程数）
+GPM调度器使用被称为m:n调度的技术（复用或者调度m个goroutine到n个OS线程）（可用runtime.GOMAXPROCS来控制OS线程的数量）
+因为底层OS线程的切换机制是根据时间轮询来切换的，因此goroutine的切换机制也是根据时间轮询来切换
+runtime.Gosched()：让当前任务让出线程占用，给其他任务执行
+runtime.Goexit()：终止当前任务
+通道是可被垃圾回收机制回收的，所以只有在告诉接收数据方，所有数据都已发送完毕了才需要关闭通道
+对已经关闭的管道发送数据，导致触发panic，同样关闭已经关闭的管道也会导致
+对已经关闭并且没有值的管道接收数据，将得到对应类型的零值，接收一个已经被关闭的管道，会一直接收数据，直到管道空了
+无缓冲区管道（阻塞管道）：要求管道的发送方和接收方交互是同步的，管道容量等于0的就是无缓冲管道，如果不能满足同步，将导致阻塞，要接收者准备完毕，发送者才能进行工作
+有缓冲区管道（非阻塞管道）：可以异步发送数据接收数据，只要缓冲区存在没有使用的空间，通信就是无阻塞的，可先发送数据再接收（因为有缓冲区），而且缓冲区管道可以保存数据（不需要取完数据）
+任务池：goroutine池，当goroutine任务完成，不kill该goroutine，而是获取下一个任务，并且继续执行该任务
+注意：go内置的map并不是并发安全的，只有使用channel或者sync.Map才是并发安全的
+锁可以避免并发冲突，但是锁对系统性能影响很大，原子操作可以减少这种消耗
+原子操作：指的是某个操作在执行中，其他协程不会看到没有执行完毕的结果，对于其他协程来说，只有原子操作完成了或者没开始，就好像原子一样，不被分割
+在多核中，某个核心读取某个数据是，会因为CPU缓存的原因，可能读取到的值不是最新的，在Go中，原子操作主要依赖于sync/atomic包
+sync/atomic包将原子操作封装成了Go的函数，sync/atomic包提供了底层的原子级内存操作
+因为Go不支持泛型，所以封装的函数很多（每个类型都有自己的原子操作函数，这里只写int64一个类型）
+增或减（被操作值增大或减少，只适合int和uint类型增减）：func AddInt64(addr *int64, delta int64) (new int64)
+载入（读取，避免读取过程，其他协程进行修改操作）：func LoadInt64(addr *int64) (val int64)
+存储（写入，避免写入过程，其他协程进行读取操作）：func StoreInt64(addr *int64, val int64)
+交换（和CAS不同，交换只赋值old值，不管原来的值）：func SwapInt64(addr *int64, new int64) (old int64)
+比较并且交换（Compare And Swap 简称CAS，类似于乐观锁，只有原来的值和传入的old值一样才修改）：func CompareAndSwapInt64(addr *int64, old, new int64) (swapped bool)</description>
+    </item>
+    
+    <item>
+      <title>Golang学习笔记</title>
+      <link>https://blog.cjlio.com/posts/96/</link>
+      <pubDate>Thu, 09 Sep 2021 01:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/96/</guid>
+      <description>Golang又叫go语言，golang是它的全称，是由Google开发的一种静态强类型，编译型，并发型，并具有垃圾回收功能的编程语言
+go语言确保达到静态编译语言的安全和性能的同时，又达到动态语言的开发维护效率
+Go语言天生支持并发，提供自动垃圾回收机制
+go的源文件是xxx.go
+值得一提的是哔哩哔哩网站后端就是用golang开发，这个足以说明golang的并发功能有多强大了
+检查是否安装成功go
+go version
+环境配置
+GOROOT对应着go的安装目录
+GOPATH对应着go的源代码目录（可以放多个目录）
+检查go环境
+go env
+源程序默认为UTF-8编码，;可省略
+第一个go程序
+package main import &amp;quot;fmt&amp;quot; func main(){ fmt.Println(&amp;quot;hallo golang&amp;quot;) } go run hallo.go
+当然作为一个编译型语言，编译成二进制文件是支持的
+go build hallo.go
+作为一个静态强类型语言，如果学过java的话，理解还是很轻松的
+定义包 package : 必须在源程序上声明该文件是属性那个包的
+引入包 import : 导入包，引用外部包开扩展功能
+注释
+// 单行
+/* 多 行 */
+标识符命名规范：第一个字母必须是字母或者下划线，而且不能是关键字，特殊符号只支持下划线
+常用的数据类型有：
+整型：int（有符号），uint（无符号），rune，int/unint(8,16,32,64)
+浮点型：float(32,64)，comple
+布尔型：bool（true，false）（bool默认值为false）
+字符串型：string
+数组：array
+结构体：struct
+变量
+var abc string = &amp;ldquo;hallo&amp;rdquo;
+注意：如果声明变量了，但是没有初始化，那个该变量的值为系统默认设置的值（零值）
+定义多个变量
+var abc xyz string = &amp;ldquo;hallo&amp;rdquo;,&amp;ldquo;word&amp;rdquo;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,635 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>React学习笔记 | 小陈的个人博客</title><meta name=keywords content="React"><meta name=description content="React是构造用户界面的JavaScript库，就是负责视图层的，只负责视图的渲染，其特点是声明式，组件化
+安装react
+npm i react react-dom
+必需：react和react-dom
+react包是提供创建元素，组件等功能，是核心（废话）
+react-dom包提供DOM相关的功能
+通常还需要导入babel来解析jsx（注意：在浏览器使用babel编译jsx效率很低，babel内嵌了对于jsx的支持），babel可以将es6语法转化为es5，方便运行在不支持es6的浏览器上
+也可以通过引入src文件的方式引入cdn文件或者本地文件
+第一个例子
+<script type=&#34;text/babel&#34;> ReactDOM.render( <h1>hallo,react!!!</h1>, document.getElementById(&#34;app&#34;) ); </script> 使用babel解析jsx，react官方推荐使用jsx，因为使用jsx渲染dom简单明了
+jsx是一种JavaScript语法扩展，例如：
+const hallo = <h1>hallo</h1>; 像上面这种就是jsx，jsx本身是一个表达式，经过编译（例如babel）后jsx表达式会转换成JavaScript对象（注意：jsx不是标准的ECMAScript语法，是语法的扩展，不进行编译处理，直接使用是会报错的）
+在jsx中插入JavaScript表达式，用大括号包含起来，例如：
+function hallo(yes){ return yes.name; } const yes = { name: &#34;react&#34; }; const hallo = <h1>hallo,{hallo(yes)}</h1>; ReactDOM.render( hallo, document.getElementById(&#34;app&#34;) ); 当然react并没有强制要求必须使用jsx，例如：
+const hallo = React.createElement(&#34;h1&#34;,{class: &#34;main&#34;},React.createElement(&#34;p&#34;,null,&#34;hallo word!!!&#34;)) /* 上面提供了三个参数，分别是元素名称，元素属性，元素的子节点 */ ReactDOM.render(hallo,document.getElementById(&#34;app&#34;)) /* 上面提供了个两个参数，分别是要渲染的react元素，挂载点*/ react脚手架
+初始化项目
+npx create-react-app app
+启动项目（在项目根目录执行）
+npm start或者yarn start
+模块化导入react"><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/posts/55/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css integrity="sha256-C3OaLixeVlbkvNXwsiaNBjrdr4HYnsOYfWr48E3s3Jc=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="React学习笔记"><meta property="og:description" content="React是构造用户界面的JavaScript库，就是负责视图层的，只负责视图的渲染，其特点是声明式，组件化
+安装react
+npm i react react-dom
+必需：react和react-dom
+react包是提供创建元素，组件等功能，是核心（废话）
+react-dom包提供DOM相关的功能
+通常还需要导入babel来解析jsx（注意：在浏览器使用babel编译jsx效率很低，babel内嵌了对于jsx的支持），babel可以将es6语法转化为es5，方便运行在不支持es6的浏览器上
+也可以通过引入src文件的方式引入cdn文件或者本地文件
+第一个例子
+<script type=&#34;text/babel&#34;> ReactDOM.render( <h1>hallo,react!!!</h1>, document.getElementById(&#34;app&#34;) ); </script> 使用babel解析jsx，react官方推荐使用jsx，因为使用jsx渲染dom简单明了
+jsx是一种JavaScript语法扩展，例如：
+const hallo = <h1>hallo</h1>; 像上面这种就是jsx，jsx本身是一个表达式，经过编译（例如babel）后jsx表达式会转换成JavaScript对象（注意：jsx不是标准的ECMAScript语法，是语法的扩展，不进行编译处理，直接使用是会报错的）
+在jsx中插入JavaScript表达式，用大括号包含起来，例如：
+function hallo(yes){ return yes.name; } const yes = { name: &#34;react&#34; }; const hallo = <h1>hallo,{hallo(yes)}</h1>; ReactDOM.render( hallo, document.getElementById(&#34;app&#34;) ); 当然react并没有强制要求必须使用jsx，例如：
+const hallo = React.createElement(&#34;h1&#34;,{class: &#34;main&#34;},React.createElement(&#34;p&#34;,null,&#34;hallo word!!!&#34;)) /* 上面提供了三个参数，分别是元素名称，元素属性，元素的子节点 */ ReactDOM.render(hallo,document.getElementById(&#34;app&#34;)) /* 上面提供了个两个参数，分别是要渲染的react元素，挂载点*/ react脚手架
+初始化项目
+npx create-react-app app
+启动项目（在项目根目录执行）
+npm start或者yarn start
+模块化导入react"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.cjlio.com/posts/55/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-09T22:23:00+00:00"><meta property="article:modified_time" content="2021-07-09T22:23:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="React学习笔记"><meta name=twitter:description content="React是构造用户界面的JavaScript库，就是负责视图层的，只负责视图的渲染，其特点是声明式，组件化
+安装react
+npm i react react-dom
+必需：react和react-dom
+react包是提供创建元素，组件等功能，是核心（废话）
+react-dom包提供DOM相关的功能
+通常还需要导入babel来解析jsx（注意：在浏览器使用babel编译jsx效率很低，babel内嵌了对于jsx的支持），babel可以将es6语法转化为es5，方便运行在不支持es6的浏览器上
+也可以通过引入src文件的方式引入cdn文件或者本地文件
+第一个例子
+<script type=&#34;text/babel&#34;> ReactDOM.render( <h1>hallo,react!!!</h1>, document.getElementById(&#34;app&#34;) ); </script> 使用babel解析jsx，react官方推荐使用jsx，因为使用jsx渲染dom简单明了
+jsx是一种JavaScript语法扩展，例如：
+const hallo = <h1>hallo</h1>; 像上面这种就是jsx，jsx本身是一个表达式，经过编译（例如babel）后jsx表达式会转换成JavaScript对象（注意：jsx不是标准的ECMAScript语法，是语法的扩展，不进行编译处理，直接使用是会报错的）
+在jsx中插入JavaScript表达式，用大括号包含起来，例如：
+function hallo(yes){ return yes.name; } const yes = { name: &#34;react&#34; }; const hallo = <h1>hallo,{hallo(yes)}</h1>; ReactDOM.render( hallo, document.getElementById(&#34;app&#34;) ); 当然react并没有强制要求必须使用jsx，例如：
+const hallo = React.createElement(&#34;h1&#34;,{class: &#34;main&#34;},React.createElement(&#34;p&#34;,null,&#34;hallo word!!!&#34;)) /* 上面提供了三个参数，分别是元素名称，元素属性，元素的子节点 */ ReactDOM.render(hallo,document.getElementById(&#34;app&#34;)) /* 上面提供了个两个参数，分别是要渲染的react元素，挂载点*/ react脚手架
+初始化项目
+npx create-react-app app
+启动项目（在项目根目录执行）
+npm start或者yarn start
+模块化导入react"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://blog.cjlio.com/posts/"},{"@type":"ListItem","position":3,"name":"React学习笔记","item":"https://blog.cjlio.com/posts/55/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"React学习笔记","name":"React学习笔记","description":"React是构造用户界面的JavaScript库，就是负责视图层的，只负责视图的渲染，其特点是声明式，组件化\n安装react\nnpm i react react-dom\n必需：react和react-dom\nreact包是提供创建元素，组件等功能，是核心（废话）\nreact-dom包提供DOM相关的功能\n通常还需要导入babel来解析jsx（注意：在浏览器使用babel编译jsx效率很低，babel内嵌了对于jsx的支持），babel可以将es6语法转化为es5，方便运行在不支持es6的浏览器上\n也可以通过引入src文件的方式引入cdn文件或者本地文件\n第一个例子\n\u0026lt;script type=\u0026quot;text/babel\u0026quot;\u0026gt; ReactDOM.render( \u0026lt;h1\u0026gt;hallo,react!!!\u0026lt;/h1\u0026gt;, document.getElementById(\u0026quot;app\u0026quot;) ); \u0026lt;/script\u0026gt; 使用babel解析jsx，react官方推荐使用jsx，因为使用jsx渲染dom简单明了\njsx是一种JavaScript语法扩展，例如：\nconst hallo = \u0026lt;h1\u0026gt;hallo\u0026lt;/h1\u0026gt;; 像上面这种就是jsx，jsx本身是一个表达式，经过编译（例如babel）后jsx表达式会转换成JavaScript对象（注意：jsx不是标准的ECMAScript语法，是语法的扩展，不进行编译处理，直接使用是会报错的）\n在jsx中插入JavaScript表达式，用大括号包含起来，例如：\nfunction hallo(yes){ return yes.name; } const yes = { name: \u0026quot;react\u0026quot; }; const hallo = \u0026lt;h1\u0026gt;hallo,{hallo(yes)}\u0026lt;/h1\u0026gt;; ReactDOM.render( hallo, document.getElementById(\u0026quot;app\u0026quot;) ); 当然react并没有强制要求必须使用jsx，例如：\nconst hallo = React.createElement(\u0026quot;h1\u0026quot;,{class: \u0026quot;main\u0026quot;},React.createElement(\u0026quot;p\u0026quot;,null,\u0026quot;hallo word!!!\u0026quot;)) /* 上面提供了三个参数，分别是元素名称，元素属性，元素的子节点 */ ReactDOM.render(hallo,document.getElementById(\u0026quot;app\u0026quot;)) /* 上面提供了个两个参数，分别是要渲染的react元素，挂载点*/ react脚手架\n初始化项目\nnpx create-react-app app\n启动项目（在项目根目录执行）\nnpm start或者yarn start\n模块化导入react","keywords":["React"],"articleBody":"React是构造用户界面的JavaScript库，就是负责视图层的，只负责视图的渲染，其特点是声明式，组件化\n安装react\nnpm i react react-dom\n必需：react和react-dom\nreact包是提供创建元素，组件等功能，是核心（废话）\nreact-dom包提供DOM相关的功能\n通常还需要导入babel来解析jsx（注意：在浏览器使用babel编译jsx效率很低，babel内嵌了对于jsx的支持），babel可以将es6语法转化为es5，方便运行在不支持es6的浏览器上\n也可以通过引入src文件的方式引入cdn文件或者本地文件\n第一个例子\n使用babel解析jsx，react官方推荐使用jsx，因为使用jsx渲染dom简单明了\njsx是一种JavaScript语法扩展，例如：\nconst hallo = hallo; 像上面这种就是jsx，jsx本身是一个表达式，经过编译（例如babel）后jsx表达式会转换成JavaScript对象（注意：jsx不是标准的ECMAScript语法，是语法的扩展，不进行编译处理，直接使用是会报错的）\n在jsx中插入JavaScript表达式，用大括号包含起来，例如：\nfunction hallo(yes){ return yes.name; } const yes = { name: \"react\" }; const hallo = hallo,{hallo(yes)}; ReactDOM.render( hallo, document.getElementById(\"app\") ); 当然react并没有强制要求必须使用jsx，例如：\nconst hallo = React.createElement(\"h1\",{class: \"main\"},React.createElement(\"p\",null,\"hallo word!!!\")) /* 上面提供了三个参数，分别是元素名称，元素属性，元素的子节点 */ ReactDOM.render(hallo,document.getElementById(\"app\")) /* 上面提供了个两个参数，分别是要渲染的react元素，挂载点*/ react脚手架\n初始化项目\nnpx create-react-app app\n启动项目（在项目根目录执行）\nnpm start或者yarn start\n模块化导入react\nimport React from “react” import ReactDOM from “react-dom”\nReact元素的属性名采用驼峰命名法\nclass就需要改为className，for要改为htmlFor等等，例如：\nconst app = (hallo) 如果一个元素中没有子节点可以直接写为\n推荐使用小括号包裹jsx，避免陷入自动插入分号陷阱\nJavaScript表达式可使用大括号{}来包裹，直接使用，例如：\nconst app = (hallo，{3 \u003c 8 ? \"react\" : \"word\"}) 任何数据类型和函数调用都可以（对象除外），表示式的特点就是有值就可以，jsx本身也是个JavaScript表达式\n因为if或者for之类的语句不能出现在大括号中\n条件渲染（根据条件进行渲染指定jsx结构）\nimport React from \"react\" import ReactDOM from \"react-dom\" const datamain = true; const hallo = () =\u003e { if(datamain){ return hallo word; } return 数据加载完成; } const app =( {hallo()} ) ReactDOM.render(app,document.getElementById(\"app\")) 当然也是支持三元表达式的，例如：\nconst Data = () =\u003e { return datamain ? (yes) : (no) } 列表渲染\nconst arrs = [ {id: 1,name: \"root\"}, {id: 2,name: \"admin\"}, {id:3,name: \"user\"} ] const lists = ( {arrs.map(item =\u003e {item.name})} ) ReactDOM.render(lists,document.getElementById(\"app\")) jsx样式\n行内样式style，类className，例如：\nconst app = (","wordCount":"1221","inLanguage":"en","datePublished":"2021-07-09T22:23:00Z","dateModified":"2021-07-09T22:23:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.cjlio.com/posts/55/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://blog.cjlio.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/posts/>Posts</a></div><h1 class=post-title>React学习笔记</h1><div class=post-meta><span title='2021-07-09 22:23:00 +0000 UTC'>2021-07-09</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/React%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>React是构造用户界面的JavaScript库，就是负责视图层的，只负责视图的渲染，其特点是声明式，组件化</p><p>安装react</p><p>npm i react react-dom</p><p>必需：react和react-dom</p><p>react包是提供创建元素，组件等功能，是核心（废话）</p><p>react-dom包提供DOM相关的功能</p><p>通常还需要导入babel来解析jsx（注意：在浏览器使用babel编译jsx效率很低，babel内嵌了对于jsx的支持），babel可以将es6语法转化为es5，方便运行在不支持es6的浏览器上</p><p>也可以通过引入src文件的方式引入cdn文件或者本地文件</p><p>第一个例子</p><pre><code>&lt;script type=&quot;text/babel&quot;&gt;
+     ReactDOM.render(
+          &lt;h1&gt;hallo,react!!!&lt;/h1&gt;,
+          document.getElementById(&quot;app&quot;)
+     );
+&lt;/script&gt;
+</code></pre><p>使用babel解析jsx，react官方推荐使用jsx，因为使用jsx渲染dom简单明了</p><p>jsx是一种JavaScript语法扩展，例如：</p><pre><code>const hallo = &lt;h1&gt;hallo&lt;/h1&gt;;
+</code></pre><p>像上面这种就是jsx，jsx本身是一个表达式，经过编译（例如babel）后jsx表达式会转换成JavaScript对象（注意：jsx不是标准的ECMAScript语法，是语法的扩展，不进行编译处理，直接使用是会报错的）</p><p>在jsx中插入JavaScript表达式，用大括号包含起来，例如：</p><pre><code>function hallo(yes){
+    return yes.name;
+}
+const yes = {
+   name: &quot;react&quot;
+};
+const hallo = &lt;h1&gt;hallo,{hallo(yes)}&lt;/h1&gt;;
+ReactDOM.render(
+    hallo,
+    document.getElementById(&quot;app&quot;)
+);
+</code></pre><p>当然react并没有强制要求必须使用jsx，例如：</p><pre><code>const hallo = React.createElement(&quot;h1&quot;,{class: &quot;main&quot;},React.createElement(&quot;p&quot;,null,&quot;hallo word!!!&quot;))
+/* 上面提供了三个参数，分别是元素名称，元素属性，元素的子节点 */
+ReactDOM.render(hallo,document.getElementById(&quot;app&quot;))
+/* 上面提供了个两个参数，分别是要渲染的react元素，挂载点*/
+</code></pre><hr><p>react脚手架</p><p>初始化项目</p><p>npx create-react-app app</p><p>启动项目（在项目根目录执行）</p><p>npm start或者yarn start</p><p>模块化导入react</p><p>import React from &ldquo;react&rdquo;
+import ReactDOM from &ldquo;react-dom&rdquo;</p><hr><p>React元素的属性名采用驼峰命名法</p><p>class就需要改为className，for要改为htmlFor等等，例如：</p><pre><code>const app = (&lt;div className=&quot;app&quot;&gt;hallo&lt;/div&gt;)
+</code></pre><p>如果一个元素中没有子节点可以直接写为</p><p>推荐使用小括号包裹jsx，避免陷入自动插入分号陷阱</p><p>JavaScript表达式可使用大括号{}来包裹，直接使用，例如：</p><pre><code>const app = (&lt;div&gt;hallo，{3 &lt; 8 ? &quot;react&quot; : &quot;word&quot;}&lt;/div&gt;)
+</code></pre><p>任何数据类型和函数调用都可以（对象除外），表示式的特点就是有值就可以，jsx本身也是个JavaScript表达式</p><p>因为if或者for之类的语句不能出现在大括号中</p><p>条件渲染（根据条件进行渲染指定jsx结构）</p><pre><code>import React from &quot;react&quot;
+import ReactDOM from &quot;react-dom&quot;
+const datamain = true;
+const hallo = () =&gt; {
+    if(datamain){
+        return &lt;div&gt;hallo word&lt;/div&gt;;
+    }
+    return &lt;div&gt;数据加载完成&lt;/div&gt;;
+}
+const app =(
+    &lt;div&gt;
+        {hallo()}
+    &lt;/div&gt;
+)
+ReactDOM.render(app,document.getElementById(&quot;app&quot;))
+</code></pre><p>当然也是支持三元表达式的，例如：</p><pre><code>const Data = () =&gt; {
+    return datamain ? (&lt;div&gt;yes&lt;/div&gt;) : (&lt;div&gt;no&lt;/div&gt;)
+}
+</code></pre><p>列表渲染</p><pre><code>const arrs = [
+  {id: 1,name: &quot;root&quot;},
+  {id: 2,name: &quot;admin&quot;},
+  {id:3,name: &quot;user&quot;}
+]
+const lists = (
+  &lt;ul&gt;
+    {arrs.map(item =&gt; &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;)}
+  &lt;/ul&gt;
+)
+ReactDOM.render(lists,document.getElementById(&quot;app&quot;))
+</code></pre><p>jsx样式</p><p>行内样式style，类className，例如：</p><pre><code>const app = (&lt;div style={{color: &quot;#ccc&quot;}}&gt;hallo&lt;/div&gt;)
+</code></pre><hr><p>react组件的概念和vue组件一样，拼装积木，重复性，独立性</p><p>函数创建组件</p><p>函数名开头必须大写（否则报错），函数组件必须要有返回值（否则报错），如果返回值为null，就不渲染任何内容，例如：</p><pre><code>function Hello(){
+  return(
+    &lt;div&gt;hallo,react&lt;/div&gt;
+  )
+}
+ReactDOM.render(&lt;Hello /&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>或者</p><pre><code>const Hello = () =&gt; (&lt;div&gt;hallo,react&lt;/div&gt;)
+</code></pre><p>类创建组件</p><p>同样类名开头也要是大写，而且类组件要继承React.Component父类，使用父类中的方法和属性，而且还要提供render()方法，render()还要有返回值</p><pre><code>class Hello extends React.Component{
+  render(){
+    return (&lt;div&gt;hallo,react&lt;/div&gt;)
+  }
+}
+ReactDOM.render(&lt;Hello /&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>如果组件很多，应该放到单独的js文件，独立化个体，导入react，导出组件（export），用到该组件就导入</p><hr><p>事件绑定</p><p>react事件采用了驼峰命名法，比如onClick，onMouseEnter，onFocus，例如：</p><pre><code>class Hello extends React.Component{
+  mainClick(){
+    console.log(&quot;被点击了&quot;)
+  }
+  render(){
+    return (&lt;div onClick={this.mainClick}&gt;hallo,react&lt;/div&gt;)
+  }
+}
+</code></pre><p>注意：如果是函数组件，就不需要加this，直接return (hallo,react)</p><p>事件对象</p><p>可以通过事件处理程序的参数来获取到事件对象，在react中事件对象又叫为合成事件，兼容所有浏览器，无需担心浏览器兼容问题</p><p>阻止浏览器的默认行为</p><pre><code>class Hello extends React.Component{
+  mainClick(e){
+    e.preventDefault();
+    console.log(&quot;被点击了&quot;)
+  }
+  render(){
+    return (&lt;a onClick={this.mainClick} href=&quot;https://cjlio.com&quot;&gt;hallo,react&lt;/a&gt;)
+  }
+}
+</code></pre><p>状态组件（状态即数据的更新）</p><p>函数组件为无状态组件，类组件为有状态组件</p><p>如果数据不需要变化就用函数组件，否则就类组件</p><p>状态（state）是组件内部的私有数据，只能在组件内部使用，state的值是一个对象，表示组件可以存在多个数据</p><p>第一种存储state方法</p><pre><code>  constructor(){
+    super()
+    this.state ={
+      count :0
+    }
+  }
+</code></pre><p>第二种存储state方法（推荐）</p><pre><code>  state = {
+    count: 0
+  }
+</code></pre><p>获取state值</p><pre><code>  render(){
+    return (&lt;div&gt;{this.state.count}&lt;/div&gt;)
+  }
+</code></pre><p>修改状态（状态可变）</p><p>this.setState({要修改的数据})</p><pre><code>  render(){
+    return (&lt;div onClick={()=&gt;{
+      this.setState({
+        count: this.state.count + 1
+      })
+      }}&gt;{this.state.count}&lt;/div&gt;)
+    }
+  }
+</code></pre><p>注意：不要直接修改state的值，setState的作用是先更新state，然后更新视图</p><p>state抽离出逻辑</p><p>注意：箭头函数自身并不绑定this，箭头函数中this取决于外部环境</p><pre><code>class Hello extends React.Component{
+  state = {
+    count: 0
+  }
+  mainClick(){
+    this.setState({
+      count: this.state.count + 1
+    })
+  }
+  render(){
+    return (
+        &lt;div&gt;
+          &lt;div onClick={()=&gt; this.mainClick()}&gt;+1&lt;/div&gt;
+          &lt;div&gt;{this.state.count}&lt;/div&gt;
+        &lt;/div&gt;
+      )
+    }
+  }
+ReactDOM.render(&lt;Hello /&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>解决绑定事件的this指向问题</p><p>如果不想利用指向函数（也可以给事件函数定义为指向函数），也可以利用bind()方法，例如：</p><pre><code>this.mainClick = this.mainClick.bind(this)
+</code></pre><hr><p>受控组件（其值受到react所控制），例如：</p><pre><code>  state = {
+    txt: &quot;&quot;
+  }
+  &lt;div&gt;
+      &lt;input type=&quot;text&quot; value={this.state.txt}
+      onChange ={ e =&gt; this.setState({
+        txt: e.target.value
+      })}
+      /&gt;
+      &lt;div&gt;
+      {this.state.txt}
+      &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre><p>input（text），textarea，select都是用value控制，而input（CheckBox）就用checked控制</p><p>需要根据表单元素来判断其使用不同的类型控制（可以使用三元表达式来指示）</p><p>如果是非受控组件，想获取属性值，通过使用React.createRef()创建ref对象，使用ref来获取，例如：</p><pre><code>  mainClick = () =&gt;{
+    console.log(this.Ref.current.value)
+  }
+  constructor(){
+    super()
+    this.Ref = React.createRef()
+  }
+  &lt;div&gt;
+      &lt;input type=&quot;text&quot; ref={this.Ref}/&gt;
+      &lt;div onClick={this.mainClick}&gt;
+          hallo
+      &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre><hr><p>深入学习React组件</p><p>组件通讯（组件是独立并且封闭的，需要共享组件的数据，就需要组件通讯了）</p><p>接收传递给组件的数据需要通过props，函数组件通过props参数接收，类组件通过this.props接收，例如：</p><pre><code>const Hallo = props =&gt;{
+    console.log(props)
+    return (
+        &lt;div&gt;数据：{props.name}&lt;/div&gt;
+    )
+}
+ReactDOM.render(&lt;Hallo name=&quot;root&quot;/&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>从上面返回的props中可以看出是一个对象，也就是说可以传递多个数据</p><pre><code>class Hi extends React.Component{
+  render(){
+    return(
+      &lt;div&gt;数据：{this.props.name}&lt;/div&gt;
+    )
+  }
+}
+ReactDOM.render(&lt;Hi name=&quot;root&quot; pass={123}/&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>props可以传递任意类型的数据，props是只读的对象，只能读取属性的值，不能修改该对象，使用类组件，如果有构造函数，需要将其props传递给super()，通过props参数，否则无法在构造函数获取props（super(props)）</p><p>组件的通讯有三种，分别是父对子，子对父，兄弟</p><p>父组件传递数据给子组件：只需要在父组件中定义子组件的属性，例如：</p><pre><code>const Hallo = props =&gt;{
+  console.log(props)
+  return (
+    &lt;span&gt;{props.name}&lt;/span&gt;
+    
+  )
+}
+class Hi extends React.Component{
+  state = {
+    Name: &quot;root&quot;
+  }
+  render(){
+    console.log(this.props)
+    return(
+      &lt;div&gt;数据：
+        &lt;Hallo name={this.state.Name}/&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+ReactDOM.render(&lt;Hi/&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>子组件传递数据给父组件</p><p>通过回调函数，父组件提供回调，子组件调用，将数据通过回调函数的参数传递，例如：</p><pre><code>class Abc extends React.Component{
+  state = {name: &quot;root&quot;}
+  DataClick = () =&gt;{
+    this.props.getMsg(this.state.name)
+  }
+  render(){
+    return (
+      &lt;div onClick={this.DataClick}&gt;yes&lt;/div&gt;
+    )
+  }
+}
+class Hi extends React.Component{
+  state = {
+    Name: &quot;默认值&quot;
+  }
+  getDate = data =&gt;{
+    console.log(data)
+    this.setState({
+      Name: data
+    })
+  }
+  render(){
+    return(
+      &lt;div&gt;数据：{this.state.Name}
+        &lt;Abc getMsg = {this.getDate}/&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+ReactDOM.render(&lt;Hi/&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><hr><p>兄弟组件通讯</p><p>将共享状态提升到最近的公共父组件中，由公共父组件管理这个状态（状态提升）</p><p>公共父组件：提供共享状态，提供操作共享状态的方法</p><p>A组件修改共享状态，公共父组件收到新的状态，B组件通过props接收到新的状态，从而达到兄弟组件之间的通讯</p><p>例如：</p><pre><code>class Hallo extends React.Component{
+    state = {
+        count: 0
+    }
+    onMax = () =&gt;{
+        this.setState({
+            count: this.state.count +1
+        })
+    }
+    render(){
+        return (
+            &lt;div&gt;
+                &lt;Abc count={this.state.count}/&gt;
+                &lt;Xyz onMax = {this.onMax}/&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+const Abc = (props) =&gt; {
+    return (
+        &lt;div&gt;
+            hallo,{props.count}
+        &lt;/div&gt;
+    )
+}
+const Xyz = (props) =&gt; {
+    return (
+        &lt;div onClick = {() =&gt; props.onMax()}&gt;
+            xyz
+        &lt;/div&gt;
+    )
+}
+ReactDOM.render(&lt;Hallo /&gt;,document.getElementById(&quot;root&quot;))
+</code></pre><hr><p>Context（跨组件传递数据）</p><p>Context实质上就是生产者-消费者模式</p><p>调用React.createContext()，创建provide（提供数据）和consumer（获取数据）这两个组件</p><p>const {Provide,Consumer} = React.createContext()</p><p>通过value属性提供数据，然后通过回调函数来获取到value的数据</p><p>例如：</p><pre><code>const {Provider,Consumer} = React.createContext()
+class Hallo extends React.Component{
+    state = {
+        count: 0
+    }
+    onMax = () =&gt;{
+        this.setState({
+            count: this.state.count +1
+        })
+    }
+    render(){
+        return (
+            &lt;div&gt;
+                &lt;Provider value = &quot;react&quot;&gt;
+                    &lt;Abc /&gt;
+                &lt;/Provider&gt;
+                
+            &lt;/div&gt;
+        )
+    }
+}
+
+const Abc = (props) =&gt; {
+    return (
+        &lt;div&gt;
+            &lt;Consumer&gt;
+                {
+                   data =&gt; &lt;div&gt;hallo,{data}&lt;/div&gt;
+                }
+            &lt;/Consumer&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre><hr><p>props深入学习</p><p>children属性：表示组件标签的子节点，当组件标签有子节点时，props就会拥有该属性</p><p>children属性值可以是任意值（文本，jsx，组件，函数等等）</p><p>children属性指向到当前子节点的数据，{props.children}，例如：</p><pre><code>const Button = () =&gt; (
+    &lt;button&gt;
+        我是一个button组件
+    &lt;/button&gt;
+)
+
+const Yes = (props) =&gt;{
+    return(
+        &lt;div&gt;
+            组件的子节点：{props.children}
+        &lt;/div&gt;
+    )
+}
+ReactDOM.render(&lt;Yes&gt;&lt;Button/&gt;&lt;/Yes&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><hr><p>props校验（保证组件传入指定合法格式的数据）</p><p>安装prop-types</p><p>yarn add prop-types</p><p>导入prop-types包并且建立个props校验实例</p><pre><code>import propTypes from &quot;prop-types&quot;
+class Noabc extends React.Component{
+    render(){
+        return(
+            &lt;div&gt;hallo,{this.props.name}&lt;/div&gt;
+        )
+    }
+}
+Noabc.propTypes = {
+    name: propTypes.string
+}
+
+ReactDOM.render(&lt;Noabc name=&quot;react&quot;/&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>当传入的值的类型不对，将抛出错误</p><hr><p>props默认值</p><p>给props设置默认值，在未传入props时生效</p><pre><code>class Defaultabc extends React.Component{
+    render(){
+        return(
+            &lt;div&gt;props的默认值：{this.props.Defaultdata}&lt;/div&gt;
+        )
+    }
+}
+Defaultabc.defaultProps = {
+    Defaultdata: 999
+}
+ReactDOM.render(&lt;Defaultabc/&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><hr><p>单向数据流：指的是当前组件的state以props的形式流动时，只能流向组件树中比自己层级低的组件，不能向上流，也就是说可父传子，祖先传后辈，但是不能子传父</p><p>父传子通信，基于数据流单向的特性，父组件可以直接将this.props传入子组件中</p><p>子传父通信，因为数据流单向的特性，不能直接将数据传递给父组件，而是通过父组件传递子组件一个携带了上下文的函数，子组件得到这个函数后，传递给父组件的数据将以函数参数的形式发送回去</p><p>兄弟通信，利用父传子通信的特性，可以在两个兄弟组件之上创建一个父组件，来当中间件，实质上还是父传子通信</p><p>消息订阅与发布机制是组件通信的万金油，这边使用的是PubSubjs</p><p>安装</p><p>npm i pubsub-js</p><p>引入</p><p>import PubSub from &lsquo;pubsub-js&rsquo;</p><p>只需要在父组件（祖先组件）中发布，然后在子组件（后辈组件）中订阅，就可以实现了</p><p>发布</p><p>PubSub.publish(&rsquo;test&rsquo;,&lsquo;hallo word&rsquo;)</p><p>发布信息实质是就是发送数据</p><p>订阅</p><p>const DataMain = PubSub.subscribe(&rsquo;test&rsquo;,data)</p><p>其中data就是&rsquo;hallo word&rsquo;的数据，订阅是获取发布的数据</p><p>取消订阅</p><p>PubSub.unsubscribe(DataMain)</p><hr><p>组件的生命周期</p><p>组件的生命周期有利于掌握组件的运行方式，实现更复杂的组件功能，分析组件错误原因</p><p>生命周期：被创建，到挂载页面，卸载组件的过程</p><p>生命周期的每个阶段都可以伴随一些方法来调用，而这些方法就是生命周期的钩子函数（和vue的生命周期概念是一样的）</p><p>注意：只有类组件才有生命周期，函数组件没有</p><p>创建时：当组件被创建时（页面加载时），constructor() -> render() -> componentDidMount()</p><p>例如：</p><pre><code>class Defaultabc extends React.Component{
+    constructor(props){
+        super(props)
+        console.log(&quot;constructor钩子被触发&quot;)
+    }
+    componentDidMount(){
+        console.log(&quot;componentDidMount钩子被触发&quot;)
+    }
+    render(){
+        console.log(&quot;render钩子被触发&quot;)
+        return(
+            &lt;div&gt;hallo react&lt;/div&gt;
+        )
+    }
+}
+</code></pre><p>constructor钩子在创建组件时触发，初始化state，为事件程序绑定this</p><p>render钩子在组件渲染时触发，渲染视图，注意：不要在render下使用setState方法</p><p>componentDidMount钩子在组件被挂载后触发（完成DOM渲染），发送网络请求，DOM操作</p><p>更新时：</p><p>当一个组件接收到新属性（new props）时，使用setState()，强制更新forceUpdate()都会触发重新渲染</p><p>例如：</p><pre><code>class Maxabc extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            count: 0
+        }
+    }
+    goClick = () =&gt;{
+        this.setState({
+            count: this.state.count + 1
+        })
+    }
+    componentDidUpdate(){
+        console.log(&quot;componentDidUpdate钩子触发&quot;)
+    }
+    render(){
+        console.log(&quot;reder钩子被触发&quot;)
+        return(
+            &lt;div&gt;
+                &lt;div&gt;hallo,{this.state.count}&lt;/div&gt;
+                &lt;button onClick={this.goClick}&gt;go&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+ReactDOM.render(&lt;Maxabc/&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>在这个实例可以看出，只要使用setState方法改变了数据，就会重新渲染组件，同时如果没有更新，就不触发componentDidUpdate钩子，当发生更新才会触发</p><p>componentDidUpdate钩子：发生网络请求，DOM操作，注意：如果需要setState()，需要放在一个if条件中，传入prevProp参数，获取上一次更新的props，this.props可以获取到当前的props</p><p>例如：</p><pre><code>    componentDidUpdate(prevProp){
+        console.log(&quot;componentDidUpdate钩子触发&quot;)
+        if(prevProp.count !== this.props.count){
+            this.setState({})
+        }
+    }
+</code></pre><p>判断条件为更新前的props是否和当前的props不相等</p><p>卸载时：当组件从页面中卸载时</p><p>componentWillUnmount钩子：当组件被卸载时触发，可以用来执行清理工作等等</p><p>例如：</p><pre><code>class Maxabc extends React.Component{
+    componentDidUpdate(prevProp){
+        console.log(&quot;componentDidUpdate钩子触发&quot;)
+        if(prevProp.count !== this.props.count){
+            this.setState({})
+        }
+    }
+    constructor(props){
+        super(props)
+        this.state = {
+            count: 0
+        }
+    }
+    goClick = () =&gt;{
+        this.setState({
+            count: this.state.count + 1
+        })
+    }
+    render(){
+        console.log(&quot;reder钩子被触发&quot;)
+        return(
+            &lt;div&gt;
+                &lt;p&gt;
+                    点击数：{this.state.count}
+                &lt;/p&gt;
+                {
+                    this.state.count &gt;= 10 ? &lt;p&gt;已经点击了10次&lt;/p&gt; : &lt;Gabc/&gt;
+                }
+                &lt;button onClick={this.goClick}&gt;go&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+class Gabc extends React.Component{
+    render(){
+        return(
+            &lt;div&gt;hallo,react&lt;/div&gt;
+        )
+    }
+    componentWillUnmount(){
+        console.log(&quot;componentWillUnmount钩子被触发&quot;)
+    }
+}
+ReactDOM.render(&lt;Maxabc/&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>清理（例如定时器），例如：</p><pre><code>class Gabc extends React.Component{
+    componentDidMount(){
+        this.timeId = setInterval(()=&gt;{
+            console.log(&quot;定时器执行中&quot;)
+        },1000)
+    }
+    render(){
+        return(
+            &lt;div&gt;hallo,react&lt;/div&gt;
+        )
+    }
+    componentWillUnmount(){
+        console.log(&quot;componentWillUnmount钩子被触发&quot;)
+        clearInterval(this.timeId)
+    }
+}
+</code></pre><p>当卸载事件发生，就执行清除定时器，使用clearInterval()方法清除</p><p>注意：如果创建了一些不是组件本身的事件（例如定时器），一定要在组件被卸载的时候清除，避免一些奇怪的问题发生</p><hr><p>render-props和高阶组件（HOC）</p><p>复用相似功能（复用状态state，组件状态的逻辑）</p><p>render-props模式</p><p>将复用状态state，组件状态的逻辑封装到一个组件中</p><p>添加一个值为函数的prop，通过函数参数来获取，通过该函数的返回值作为要渲染的内容</p><p>将复用的状态作为props.render(state)方法的参数，暴露到组件的外部</p><p>例如：</p><pre><code>class Hello extends React.Component{
+    state = {
+        x: 0,
+        y: 0
+    }
+    yesClick = (e) =&gt;{
+        this.setState({
+            x: e.clientX,
+            y: e.clientY
+        })
+    }
+    componentDidMount(){
+        window.addEventListener(&quot;mousemove&quot;,this.yesClick)
+    }
+    render(){
+        return this.props.render(this.state)
+    }
+}
+class App extends React.Component{
+    render(){
+        return(
+            &lt;div&gt;
+                &lt;div&gt;hallo,react&lt;/div&gt;
+                &lt;Hello render = {(mouse) =&gt;{
+                    return(
+                        &lt;p&gt;
+                            鼠标坐标：{mouse.x},{mouse.y}
+                        &lt;/p&gt;
+                    )
+                }}/&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre><p>也可以使用children代替render属性，例如：</p><pre><code>class Hello extends React.Component{
+    state = {
+        x: 0,
+        y: 0
+    }
+    yesClick = (e) =&gt;{
+        this.setState({
+            x: e.clientX,
+            y: e.clientY
+        })
+    }
+    componentDidMount(){
+        window.addEventListener(&quot;mousemove&quot;,this.yesClick)
+    }
+    render(){
+        return this.props.children(this.state)
+    }
+}
+class App extends React.Component{
+    render(){
+        return(
+            &lt;div&gt;
+                &lt;div&gt;hallo,react&lt;/div&gt;
+                &lt;Hello&gt;
+                    {
+                        mouse =&gt;{
+                            return(
+                                &lt;p&gt;
+                                    鼠标坐标：{mouse.x},{mouse.y}
+                                &lt;/p&gt;
+                            )
+                        }
+                    }
+                &lt;/Hello&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+ReactDOM.render(&lt;App/&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>可以给render props模式加props校验</p><p>应该在组件卸载时解除mousemove事件绑定（只要不是react的事件，都应该进行清除其他事件，例如window事件）</p><pre><code>componentWillUnmount(){
+    window.removeEventListener(&quot;mousemove&quot;,this.handleMouseMove)
+}
+</code></pre><hr><p>高阶组件</p><p>高阶组件（HOC，Higher-Order Component），实质上就是一个函数，接收要包装的组件，返回增强后的组件</p><p>高阶组件实质上就是给组件进行“包装”，通过“包装”来增强组件的功能</p><p>高阶组件内部会创建一个类组件，在这个类组件中提供状态逻辑程序，通过prop将复用状态传递给被包装组件</p><p>创建函数，函数名一般是with开头，函数参数是要渲染的组件，因此参数是大写字母开头</p><p>在该函数中创建个类组件，提供复用的状态逻辑程序，状态通过prop传递给参数组件</p><p>例如：</p><pre><code>const withHallo = (DemoAbc) =&gt;{
+    return class App extends React.Component{
+        state = {
+            x: 0,
+            y: 0
+        }
+        onAbc = (e) =&gt;{
+            this.setState({
+                x: e.clientX,
+                y: e.clientY
+            })
+        }
+        render() {
+            return (
+                &lt;div onMouseMove= {this.onAbc}&gt;
+                    &lt;DemoAbc {...this.props} mouse={this.state}/&gt;
+                &lt;/div&gt;
+            )
+        }
+        componentDidMount(){
+            window.addEventListener(&quot;mousemove&quot;,this.onAbc)
+        }
+        // eslint-disable-next-line react/no-typos
+        componentWillunmount(){
+            window.removeEventListener(&quot;mousemove&quot;,this.onAbc)
+        }
+        
+    }
+}
+const PostMax = (props) =&gt;{
+    const { x, y } = props.mouse
+    return (
+      &lt;div &gt;
+        &lt;p&gt;(x:{x}, y:{y})&lt;/p&gt;
+      &lt;/div&gt;
+    ) 
+}
+const Demoyes = withHallo(PostMax)
+ReactDOM.render(&lt;Demoyes /&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>可以从上面的实例看出，实质上就是通过函数参数方式接收一个组件，再返回一个新的组件，达到“包装”更多的功能给组件</p><hr><p>使用高阶组件会导致获得的组件名称相同，名称取自于高阶组件中的类组件名称</p><p>通过设置displayName，来区分不同的组件，displayName是用来设置调试信息（react developer tools消息）的</p><p>可以通过react developer tools浏览器插件查看效果</p><p>通过给高阶组件中的类组件设置displayName，例如：</p><pre><code>const withHallo = (DemoAbc) =&gt;{
+    class App extends React.Component{
+        ......
+    }
+    App.displayName = `WithHallo${ADisplayName(DemoAbc)}`
+    return App
+}
+function ADisplayName(DemoAbc){
+    return DemoAbc.displayName || DemoAbc.name || &quot;Component&quot;
+}
+</code></pre><hr><p>传递props（避免props丢失）</p><p>通过高阶组件返回的组件中，是获取不到props的，因为数据都传递给高阶组件中的类组件了（高阶组件没有往下传递props）</p><p>只需要将state和this.props一起传递就可以解决，例如：</p><pre><code>render() {
+    return (
+        &lt;div onMouseMove= {this.onAbc}&gt;
+            &lt;DemoAbc  {...this.state} {...this.props} mouse={this.state}&gt;&lt;/DemoAbc&gt;
+        &lt;/div&gt;
+    )
+}
+const PostMax = (props) =&gt;{
+    const { x, y } = props.mouse
+    // eslint-disable-next-line no-undef
+    console.log(props)
+    return (
+      &lt;div &gt;
+        &lt;p&gt;(x:{x}, y:{y})&lt;/p&gt;
+      &lt;/div&gt;
+    ) 
+}
+const Demoyes = withHallo(PostMax)
+ReactDOM.render(&lt;Demoyes a=&quot;hallo&quot;/&gt;,document.getElementById(&quot;app&quot;))
+</code></pre><p>通过上面的方法向下传递props就能获取到a的值了， {&mldr;this.state} {&mldr;this.props}</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://blog.cjlio.com/tags/react/>React</a></li></ul><nav class=paginav><a class=prev href=https://blog.cjlio.com/posts/56/><span class=title>« Prev</span><br><span>简单了解MVC，MVP和MVVM之间的不同与联系</span></a>
+<a class=next href=https://blog.cjlio.com/posts/54/><span class=title>Next »</span><br><span>Ajax学习笔记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

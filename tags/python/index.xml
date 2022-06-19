@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/python/</link>
+    <description>Recent content in Python on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 31 Dec 2021 01:05:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python爬虫学习笔记</title>
+      <link>https://blog.cjlio.com/posts/125/</link>
+      <pubDate>Fri, 31 Dec 2021 01:05:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/125/</guid>
+      <description>urllib，xpath，jsonpath，beautiful，requests，selenium，Scrapy
+python库内置的HTTP请求库 urllib.request 请求模块 urllib.error 异常处理模块 urllib.parse url解析模块 urllib.robotparsef robots.txt解析模块
+urllib.request提供了最基本的http请求方法，主要带有处理授权验证，重定向，浏览器Cookies功能
+模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
+使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(type(response))
+HTTPResposne类型对象
+通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(response.status) print(response.getheaders())
+post发送一个请求，只需要把参数data以bytes类型传入 import urllib.parse import urllib.request data = bytes(urllib.parse.urlencode({&amp;lsquo;hallo&amp;rsquo;:&amp;lsquo;python&amp;rsquo;}),encoding=&amp;lsquo;utf-8&amp;rsquo;) response = urllib.request.urlopen(&amp;lsquo;http://httpbin.org/post&#39;.data = data) print(response.read())
+timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;,timeout=1)
+这里设置超时时间为1秒，如果超了1秒，服务器依然没有响应就抛出URLError异常，可以结合try和except
+import urllib.parse import urllib.request url = &amp;quot;https://cjlio.com/&amp;quot; headers = { &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
+    </item>
+    
+    <item>
+      <title>Django学习笔记</title>
+      <link>https://blog.cjlio.com/posts/118/</link>
+      <pubDate>Fri, 22 Oct 2021 18:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/118/</guid>
+      <description>django是一个基于Python编写的Web框架
+Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
+安装django
+pip install django
+检查是否安装成功
+django-admin
+django常用命令
+startproject #创建django项目
+startapp #创建django应用
+check #检查校验项目完整性
+runserver #本地运行django项目
+shell # 进入django项目的shell环境（Python）
+test # 执行django实例测试
+makemigrations # 创建模型变更的迁移文件
+migrate # 执行迁移文件
+dumpdata # 数据库数据导出
+loaddata # 文件数据导入数据库
+创建第一个项目
+django-admin startproject django_demo
+settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件，manage.py是django项目的管理文件
+wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）
+运行django项目
+python .\manage.py runserver
+django应用
+django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包
+django项目下可以包含一组配置和n个django应用
+创建django应用
+python .\manage.py startapp django_app
+admin.py #定义admin模块管理的配置文件
+apps.py # 声明应用的配置文件
+tests.py # 应用测试的配置文化
+models.py #定义应用模型配置文件
+views.py #视图处理配置文件
+urls.py # 管理应用路由的配置文件，因为应用也可以管理路由，不过需要自己创建</description>
+    </item>
+    
+    <item>
+      <title>Web.py学习笔记</title>
+      <link>https://blog.cjlio.com/posts/117/</link>
+      <pubDate>Mon, 18 Oct 2021 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/117/</guid>
+      <description>web.py是一个轻量级Python web框架，是由已故著名计算机黑客Aaron Swartz设计开发（如果你看过互联网之子这个电影，你应该对这位大佬很熟悉）
+安装web.py
+pip install web.py
+导入模块
+import web
+第一个例子
+import web urls = ( &amp;quot;/(.*)&amp;quot;,&amp;quot;hallo&amp;quot; ) app = web.application(urls,globals()) class hallo: def GET(self,name): return &amp;quot;&amp;lt;h1&amp;gt;hallo web.py&amp;lt;/h1&amp;gt;&amp;quot; if __name__==&amp;quot;__main__&amp;quot;: app.run() 可以看到页面内容是return返回的，也可以open读取html文件，来返回回去，都是可以的</description>
+    </item>
+    
+    <item>
+      <title>python基础语法笔记</title>
+      <link>https://blog.cjlio.com/posts/28/</link>
+      <pubDate>Wed, 16 Jun 2021 14:40:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/28/</guid>
+      <description>安装python
+推荐安装anaconda3（linux）
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh
+dash Anaconda3-2019.10-Linux-x86_64.sh
+根据提示安装，如果还是系统自带的python
+sudo gedit ~/.bashrc
+export PATH=&amp;quot;/home/pc/anaconda3/bin:$PATH&amp;quot;
+# pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3
+Windows和mac 到官网下载安装包，直接下一步安装
+mac安装了Homebrew，可以使用brew install python3
+Windows设置环境变量，PATH 安装路径
+现在liunx一般都会自带有python3,如果没有可以安装一下
+apt install python3
+yun install python3
+注意一下python2.x和python3.x这两个版本是不兼容的，要区分开
+检查是否安装成功，在命令行或者终端输入python3 回车 没有反应或者报错就说明没有安装成功或者可能出问题了 Windows的一定要注意PATH系统变量
+因为Python语言从规范到解释器都是开源的，所以存在多个解释器
+例如CPython，安装python3.x时就可以直接获取到一个官方版本的解释器：CPython，因为是使用C语言开发的，所以叫CPython
+在命令行或者终端，输入输入python3 回车，如果出现了&amp;raquo;&amp;gt; 那么当前状态是python的交互模式
+在交互模式下输入exit()，退出python的交互模式
+在交互模式下执行第一个程序 print(&amp;ldquo;hello,world&amp;rdquo;)
+回车输出hello，world，这是简单的打印字符串
+除了使用交互模式执行程序，又可以使用.py，在命令行或者终端下 python hello.py，如果报错，请检查程序是否出错或者该文件是否在当前目录下
+交互模式可以直接输出结果，但是使用.py文件却不会，想要输出结果，必须使用print()打印出来
+一个好的开发工具往往可以达到事半功倍的效果，例如pycharm和Visual Studio Code，我使用的是Visual Studio Code
+print()接受多个输出，使用“,”分隔开，也可以输出整数
+当你想让用户输入一点东西的时候，python提供了一个input()，用法如下 name = input() 将输入的值存放到一个变量里
+input()还提供了提示功能，显示一个字符串，例如：input(&amp;ldquo;xxxxx&amp;rdquo;)
+我想知道这个变量的内容咋办，可以在交互模式下直接输入变量名，回车，就可以查看该变量的内容 又可以使用print()打印下来
+那么什么是变量呢？
+在计算机程序中，变量不仅可以为整数或浮点数，还可以是字符串
+输入是Input，输出是Output，输入输出统称为Input/Output，或者简写为IO
+以#开头的语句是注释，注释是给人看的，解释器会忽略掉注释，注释可以是任何内容
+其他每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块
+注意：python区分大小写，搞错了大小写，程序可能会报错。缩进建议使用4个空格
+python能直接处理的有：整型，浮点型，字符串，布尔值，空值，变量，常量
+python可以处理整型任意大小的整数，也可以使用二进制代表整数、
+浮点型就是小数，使用科学记数法表示时，一个浮点数的小数点位置是可变的，所以小数又叫浮点型，表示很大或很小的浮点数，必须用科学计数法表示
+字符串是使用&amp;quot;&amp;ldquo;和&amp;rsquo;&amp;lsquo;括起来的任意文本，&amp;lsquo;&amp;lsquo;或&amp;quot;&amp;ldquo;本身只是一种表示方式，不是字符串的一部分</description>
+    </item>
+    
+    <item>
+      <title>Python的一些神器的简单用法</title>
+      <link>https://blog.cjlio.com/posts/27/</link>
+      <pubDate>Wed, 16 Jun 2021 14:39:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/27/</guid>
+      <description>Virtualenv是一个能创建隔绝的独立的Python虚拟环境工具。它能够建立多个相互独立，互不影响的Python工作环境
+用来创建一套独立于系统Python环境的虚拟环境，在虚拟环境下，使用pip安装的依赖都会安装到当前的虚拟环境中，对系统的python环境没有影响
+当开发多个Python程序时当，程序1要使用3.6环境，但是程序2要使用3.8环境时，Virtualenv可以完美解决这个问题
+Windows pip install virtualenvwrapper-win
+使用pip安装Virtualenv
+pip3 install virtualenv
+然后创建一个Virtualenv虚拟环境
+virtualenv webpy #webpy为虚拟环境目录名，目录名自定义
+virtualenv -p python环境路径 虚拟环境名 #创建指定Python环境路径的虚拟环境
+virtualenv &amp;ndash;no-site-packages 虚拟环境名 #创建一个干净的Python虚拟环境，系统Python环境的所有第三方包不会复制过来
+virtualenv &amp;ndash;no-site-packages &amp;ndash;python=版本名 虚拟环境名 #创建一个指定python版本的虚拟环境
+workon # 输出所有虚拟环境名 Windows
+workon 虚拟环境名 # 进入虚拟环境 Windows
+source 文件夹路径 # 激活当前virtualenv并进入虚拟环境
+或者进入虚拟环境目录的bin目录，输入source activate
+Windows是在虚拟环境目录下的Scripts目录，输入activate
+deactivate # 退出当前环境
+在虚拟环境下，使用pip安装的所有第三方包都会安装到当前的虚拟环境中，不会对系统的Python环境进行&amp;quot;污染&amp;quot;
+想要删除某一个虚拟环境时，只需要将虚拟环境的目录删除
+pip使用国内源
+清华：https://pypi.tuna.tsinghua.edu.cn/simple 豆瓣：http://pypi.douban.com/simple/ 中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+临时使用 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas
+linux下
+配置永久使用
+cd ~ # 进入用户目录 mkdir .pip # 新建一个隐藏文件夹 touch pip.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Flutter on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/flutter/</link>
+    <description>Recent content in Flutter on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 22 Mar 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter框架学习笔记</title>
+      <link>https://blog.cjlio.com/posts/141/</link>
+      <pubDate>Tue, 22 Mar 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/141/</guid>
+      <description>Flutter是谷歌开源的跨平台UI框架，可以快速在iOS和Android上构建高质量的原生用户界面，可在Windows，Linux，Android，Web，iOS，Mac等6大平台上开发应用
+闲鱼和Now直播，美团，快手都使用了Flutter
+获取Flutter
+https://storage.flutter-io.cn/flutter_infra_release/releases/stable/windows/flutter_windows_2.10.3-stable.zip
+添加path环境变量
+由于Flutter库是在google那，因此需要设置第三方可信镜像库
+设置PUB_HOSTED_URL和FLUTTER_STORAGE_BASE_URL环境变量
+PUB_HOSTED_URL设置为https://pub.flutter-io.cn
+FLUTTER_STORAGE_BASE_URL设置为https://storage.flutter-io.cn
+（flutter-io.cn所提供的镜像由中国的Flutter开发者社区提供和维护）
+其他可信第三方镜像库：
+腾讯云镜像
+PUB_HOSTED_URL（https://mirrors.cloud.tencent.com/dart-pub） FLUTTER_STORAGE_BASE_URL（https://mirrors.cloud.tencent.com/flutter）
+清华大学镜像
+PUB_HOSTED_URL（https://mirrors.tuna.tsinghua.edu.cn/dart-pub） FLUTTER_STORAGE_BASE_URL（https://mirrors.tuna.tsinghua.edu.cn/flutter）
+添加Flutter环境变量path，解压路径\flutter\bin
+执行where.exe flutter dart，如果有反应，说明path环境配置完成
+（如果要开发安卓的话，需要安装jdk，Android Studio，Android Jdk，可执行flutter doctor检查依赖（如果是X表示没依赖，需要安装））
+这里用Visual Studio Code的Flutter插件
+创建第一个demo（项目名必须全小写，可用_下划线）
+flutter create flutterdemo
+启动项目（编译执行）
+flutter run
+Dart是静态类型语言，它会在定义时绑定数据类型（var）
+Dart允许一个类中有多个构造函数，在new初始化时，可选择类的某个构造函数
+Dart库管理（pub.dev）,在pubspec.yaml添加库
+实质上Dart和JavaScript很相似，只是它有抽象和泛型（ts也有泛型，抽象类就是类似于golang的接口，只定义不实现）
+Dart也是单线程执行，主线程外也有宏任务队列和事件队列（可以理解为JavaScript中的宏任务）
+Dart执行过程：执行main()函数，判断是微任务还是事件队列，是微任务则插入微任务队列，是宏任务则插入宏任务队列，执行完成后（主线程），会执行微任务队列和事件队列，以及判断微任务队列和事件队列是否为空，当为空时程序执行结束
+flutter项目下的lib/main.dart，class MyApp类下
+修改为 home: const MyHomePage(title: &amp;lsquo;Hallo word&amp;rsquo;), // 当前title信息
+在return Scaffold下的body: Center下的，修改为children: [const Text(&amp;lsquo;Hallo word&amp;rsquo;,),
+运行后可以看到一个title以及内容都为Hallo word的app
+flutter自带了可视化工具，Dart DevTools
+自己写一个main.dart
+void main() =&amp;gt; runApp(MyApp()); class MyApp extends StatelessWidget{ @override Widget build(BuildContext context){ return MaterialApp( title: &amp;quot;hallo word&amp;quot;, // app的title theme: ThemeData( primarySwatch: Colors.</description>
+    </item>
+    
+  </channel>
+</rss>

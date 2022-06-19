@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Taro on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/taro/</link>
+    <description>Recent content in Taro on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 31 Aug 2021 12:15:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/taro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taro脚手架学习笔记</title>
+      <link>https://blog.cjlio.com/posts/92/</link>
+      <pubDate>Tue, 31 Aug 2021 12:15:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/92/</guid>
+      <description>Taro是京东凹凸实验室推出的一个脚手架，设计目的是多端统一开发解决方案，一次开发，多端运行
+Taro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持
+Taro官方文档：https://taro-docs.jd.com/taro/docs/README
+Taro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等
+安装Taro脚手架
+npm install -g @tarojs/cli
+或者
+yarn global add @tarojs/cli
+升级脚手架工具
+taro update self
+创建项目
+taro init hallo
+创建h5项目
+yarn dev:h5
+创建微信小程序项目
+yarn dev:weapp
+创建完毕会在dist目录下生成小程序程序
+作为一个可以使用react开发的脚手架，React Hooks和jsx也是支持的
+Taro组件化（Taro可以使用react开发，因此也具备react的组件化功能）
+import Taro, { useState } from &#39;@tarojs/taro&#39; import { View, Text } from &#39;@tarojs/components&#39; import &#39;./index.less&#39; function Main(){ const [count ,setUserName] = useState(&amp;quot;hallo word&amp;quot;) return ( &amp;lt;View&amp;gt; &amp;lt;Text&amp;gt;{count}&amp;lt;/Text&amp;gt; &amp;lt;/View&amp;gt; ) } export default Main 子组件
+import { View, Text } from &#39;@tarojs/components&#39; function Data(){ return ( &amp;lt;View&amp;gt;&amp;lt;Text&amp;gt;hallo word&amp;lt;/Text&amp;gt;&amp;lt;/View&amp;gt; ) } export default Data 导入</description>
+    </item>
+    
+  </channel>
+</rss>

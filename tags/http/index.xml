@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>http on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/http/</link>
+    <description>Recent content in http on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 Aug 2021 17:02:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单认识HTTP协议</title>
+      <link>https://blog.cjlio.com/posts/77/</link>
+      <pubDate>Sun, 08 Aug 2021 17:02:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/77/</guid>
+      <description>HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的
+HTTP是基于TCP/IP协议来传输数据的
+访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应
+浏览器和web服务器之间通信的架构叫B/S结构（Browser Server），使用的协议是HTTP（https协议其实就是HTTP的基础上，添加了SSL
+http是一种协议，制定了客户端与服务端信息数据的传递的规则
+从传递文本，到传递图片，音频，视频
+HTTP/0.9：于1990年问世，只能用于简单文字的交换 HTTP/1.0：被正式列为www传输的标准，纳入RFC1945 HTTP/1.1：在1.0的基础上加上了连接方式的规约 HTTP/2.0：HTTP2.0更安全，性能更好
+http协议规定了会话是由客户端发起，服务端响应的
+客户端常见请求方式有GET，POST
+OSI七层模型，http协议是最上层的应用层
+应用层，表示层，会话层，传输层，网络层，数据链路层，物理层
+数据发送是从应用层到物理层（数据封装）
+数据接收是从物理层到应用层（数据解包）
+应用层就是为终端提供服务的，例如http，ftp等等
+表示层为数据提供压缩，加密等等功能
+会话层就是通过会话标识来确定是于哪个应用在通讯
+传输层就是定义了数据传输的协议和端口
+网络层就是加工数据，为数据添加一些信息，这一层的数据叫做包
+数据链路层就是定义了在单个链路上如何传输数据，网络中每台设备都有一个唯一的网络标识（MAC地址），这一层的数据叫做帧
+物理层就是物理设备的标准
+TCP/IP五层模型：应用层，传输层，网络层，数据链路层和物理层
+路由寻址：ip，mac，dhcp服务器
+先通过ip实现跨网端通信（如果是本地则直接传输给目标机器，不是则传输给出口路由器，一直到目标路由），然后通过MAC找到目标机器，目标机器获取到数据再根据网络模型向上处理
+DNS
+DNS域名系统是一个记录IP和域名映射的，域名服务器是分布式的，全世界一共有13台根域名服务器，当域名服务器只要自己解析不了，就会交给根域名服务器处理
+解析过程：
+机器通过访问本地域名服务器（一般是本地运营商提供，默认解析服务器）查询
+本地域名服务器检查缓存，没有就是向根域名服务器的其中一台发起查询请求
+根域名服务器根据要查询的结构找到对应的顶级域名服务器（管理全部注册在上面的二级域名服务器）信息发送会本地域名服务器
+本地域名服务器向顶级域名服务器发起查询
+顶级域名服务器根据域名结构查找到对应的二级域名服务器
+反复迭代最终查找到域名和 IP 的对应关系
+如果直接设置个公共域名服务器（例如：114，8之类的）能大大提升解析速度
+DNS解析的记录类型
+A记录
+直接将域名解析为IP
+CNAME记录
+给域名起个cname别名，例如访问了xxx会转发到aaa的域名上
+NS记录
+域名解析服务器记录，一般用来指定不同子域名对应到不同的解析服务器
+MX 记录
+电子邮箱服务，将指向邮件服务器地址
+CDN加速过程：
+用户访问域名地址
+因为域名被cdn接管了，域名解析只能获取到CNAME
+CDN通过CNAME来将地址代理到cdn服务器上，而不是源站
+通过CNAME获取到最近的cdn服务器的Ip地址，然后访问到cdn缓存服务器
+cdn缓存服务器再根据策略来判断是否存在该资源缓存，是否要向源站请求数据，再将数据返回给用户
+HTTPS协议
+通过http通信，经过SSL/TLS来建立安全信道，加密数据，http默认端口为80，https为443
+https就是在http协议基础上加了ssl协议
+一般服务端需要通过ssl证书来证明自己身份，ssl证书不可逆向，不可伪造，一旦发现伪造或者ssl证书不正确，浏览器一般都会拦截提示
+某些需要极其安全的需要客户端也是要证明身份，例如银行网站
+SSL协议：保证数据发送到正确目标，数据加密防止数据中途被拦截获取，保证数据完整性，数据不被串改
+前端中的HTTP
+先进行DNS解析-建立TCP连接（3次握手）-发送HTTP请求获取相关内容-浏览器构建DOM树和CSS树，然后生成渲染树。这个一个渐进式过程，浏览器引擎会力求最快将内容呈现给用户-关闭TCP连接（4次握手）
+http常见状态码
+1xx 信息 2xx 成功 3xx 重定向 4xx 客户端错误 5xx 服务器错误</description>
+    </item>
+    
+  </channel>
+</rss>

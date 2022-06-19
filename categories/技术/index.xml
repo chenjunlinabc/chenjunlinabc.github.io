@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>技术 on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 09 Apr 2022 13:01:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单了解a11y无障碍</title>
+      <link>https://blog.cjlio.com/posts/144/</link>
+      <pubDate>Sat, 09 Apr 2022 13:01:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/144/</guid>
+      <description>a11y全称为Accessibility，A到y之间有11个字母，因此叫a11y，Accessibility中文翻译为可访问性，也就是无障碍
+让网站具备无障碍性，可以让一些视觉障碍人士访问该网站，而且就算是其他人士使用，也会因a11y而受益（不因网络慢，css文件丢失而无法正常浏览页面内容）
+在mdn上有句话：The Web is fundamentally designed to work for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. When the Web meets this goal, it is accessible to people with a diverse range of hearing, movement, sight, and cognitive ability.
+w3c发布了Web内容无障碍指南 (WCAG) https://www.w3.org/Translations/WCAG21-zh/
+妨碍障碍人士访问web页面常见是视觉障碍，一般需要使用放大镜或者屏幕缩放来访问，严重的可能需要使用屏幕阅读器
+常见的屏幕阅读器有：NVDA（windows），ChromeVox（Chrome浏览器内置），Narrator（windows内置，也就是我们说的讲述人），VoiceOver（苹果家的，像MacOS，ios，ipadOS都内置了），TalkBack（安卓内置），以及Orca（Linux内置）
+mdn对于障碍人士可访问性优化提供了建议：
+1.使用多种方式传达内容，比如从文本到语音或是视频； 2.更易理解的内容，例如使用更通俗的语言书写的文本； 3.将注意力集中在重要内容上； 4.尽量减少干扰，例如不必要的内容或广告； 5.一致的网页布局和导航； 6.相似的元素，比如未访问的下划线链接使用蓝色而访问过的使用紫色； 7.将过程划分为更有逻辑的，必要的步骤并附上进度指示器； 8.在不影响安全性的情况下尽可能让网站认证更简单；并且 9.使表单容易完成，例如带有清晰的错误消息和简单的错误恢复。
+而WCAG指南也提供了建议：
+可感知性（Perceivable）：非文本内容有文本替代，对于视频内容应该提供字幕，确保视感和听感都可浏览，不会因为某些原因导致信息或者结构（可以理解为文本顺序）丢失，应该具备可辨别性（颜色不应该作用区别视觉的唯一手段（针对色盲人士））
+可操作性（Operable）：页面可通过键盘来操作，而不是唯一依赖于鼠标，提供足够的时间来阅读和使用内容（比如定时可调整，关闭定时，延长定时等等），防癫痫（不使用会诱发癫痫的设计，例如控制闪光的次数），提供导航，查找以及提供内容位置，允许使用键盘之外的设备输入（例如鼠标或者手写板）
+可理解性（Understandable）：内容应该都是可读，可被理解的（例如设置多种人类语言，比如英文，中文，日文等等，根据操作系统使用语言或者时区设置为默认语言，语言可切换），任何操作都应该具备可预见性（例如关闭一个弹窗，不会导致其他意想不到的情况发生），当输入出现问题应该提示用户哪错了（例如注册时，密码的组合程度等等），当出现用户操作出错时，应该做到操作可逆或者二次确定操作（给予用户检查和纠正的机会）
+鲁棒性（Robust）：应该在发生某一些系统故障或者网络故障时，确保还能正常工作，而不是罢工或者出错，鲁棒性又叫抗干扰性，健壮性</description>
+    </item>
+    
+    <item>
+      <title>简单了解RESTful设计规范</title>
+      <link>https://blog.cjlio.com/posts/136/</link>
+      <pubDate>Wed, 16 Feb 2022 21:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/136/</guid>
+      <description>RESTful是指满足REST的约束条件和原则的应用或者设计，REST全称Representational State Transfer（表现层状态转移），REST出现在2000年Roy Fielding的博士论文中（Roy Fielding是HTTP规范的主要编写者之一），RESTful是目前最流行的API设计规范
+资源(Resources)：REST是基于资源的，不同的资源使用不同且唯一的URI(统一资源标识符（Uniform Resource Identifier），URI格式例如：/img/hallo.jpg，可表示一个资源的路径和资源名称，URI实质上就是URL加URN)表示，获取资源通过访问URI得到，这个资源可以是任何东西（例如txt，exe，iso，mp3，mp4等等）
+表示层(Representation)：表示层指是将资源具体内容以某种方式展现出来的，例如hallo.mp3，那么就会用mp3的格式来展现这个文件的内容
+状态转换(State Transfer)：如果希望客户端通过某种请求方式来让服务端表示层的资源发生改变，这就是状态转换，这请求方式分别为GET（获取资源），POST（新建资源），PUT（更新资源），DELETE（删除资源）
+RESTful设计规范的六个规范：
+1.客户端/服务端(C/S)关注点分离，客户端专注于用户的操作界面，服务端专注于数据存储
+2.无状态，要求客户端的每个请求都要拥有完成请求的全部信息，服务端不用存储任何上下文信息，会话信息存储在客户端上
+3.统一接口（Uniform Interface），要求使用具备REST规范（资源标识符，资源状态的修改，具备描述资源怎么操作处理的信息，客户端应使用超链接的方式来动态访问其他资源）的接口
+4.可缓存（Cache），允许服务端响应可被缓存或者不可缓存（必须明确是否可缓存），如果响应可缓存，客户端可以根据有效缓存时间，来复用响应，减少前后端交互
+5.分层系统，不允许跨层访问（访问不相邻的层）
+6.按需编码（可选，可理解为按需扩展客户端功能），允许服务端提供一些脚本来扩展客户端功能（例如JavaScript）
+api接口统一域名（推荐使用api.cjlio.com这样的格式）
+URI（不使用大写，使用中杆-，资源名字是复数名词，资源实体集合，不能出现动词）
+HTTP请求方式（不同的操作使用不同的请求方式，例如获取资源使用get，post新建资源等等）
+如果资源庞大，可通过get参数的形式获取（例如分页），API的版本号应该放在URI中，更改资源，应该修改资源版本号，原有的URI应该保持继续可用
+需正确设置http状态码，根据http状态码来做出不同的响应，例如200正常返回，404文件不存在等等</description>
+    </item>
+    
+    <item>
+      <title>简单使用ESbuild打包工具</title>
+      <link>https://blog.cjlio.com/posts/132/</link>
+      <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/132/</guid>
+      <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包，支持TypeScript和jsx
+安装
+npm install esbuild
+或者
+yarn add esbuild
+打包
+.\node_modules.bin\esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle
+或者package.json
+&amp;ldquo;build&amp;rdquo;: &amp;ldquo;esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle&amp;rdquo;
+npm run build
+例子（app.jsx）
+import React from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; const App = () =&amp;gt; { return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; ) } ReactDOM.render( &amp;lt;App /&amp;gt;, document.getElementById(&amp;quot;app&amp;quot;) ) index.html
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 我本地打包只花64ms就打包好了</description>
+    </item>
+    
+    <item>
+      <title>简单使用vuex状态管理库</title>
+      <link>https://blog.cjlio.com/posts/123/</link>
+      <pubDate>Mon, 13 Dec 2021 06:19:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/123/</guid>
+      <description>vuex是一个专门为vuejs应用程序的设计的状态管理
+集中式存储管理应用的所有组件的状态
+多组件状态共享，不同的组件改变同一个状态
+vuex知识点：state，getter，mutation，action
+安装vuex
+npm install vuex &amp;ndash;save
+或者
+yarn add vuex
+导入vuex包
+import Vuex from &amp;ldquo;vuex&amp;rdquo;
+创建vuex实例
+new Vuex.store()
+将vuex实例挂载在vue对象上
+index.js
+Vue.use(Vuex) const store = new Vue.Store({ state: { count: 0 } }) export default store main.js
+new Vue({ store // 将store对象添加到vue实例上 }) 可以通过this.$store.state.count获取到状态（官方推荐将获取装态的操作放到computed中）
+使用解构获取状态： import { mapState } from &amp;lsquo;vuex&amp;rsquo; export default { mounted() { console.log(this.count) }, computed: { &amp;hellip;mapState([&amp;lsquo;count&amp;rsquo;]) } }
+Getter
+getters: { getCount(state) { return state.</description>
+    </item>
+    
+    <item>
+      <title>简单利用backdrop-filter属性实现效果</title>
+      <link>https://blog.cjlio.com/posts/65/</link>
+      <pubDate>Fri, 06 Aug 2021 10:18:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/65/</guid>
+      <description>backdrop-filter是css原生的属性
+backdrop-filter的一些方法（用法和filter一样）
+blur：模糊 brightness：亮度 contrast：对比度 invert：反相 opacity：透明度 saturate：饱和度 drop-shadow：投影 grayscale：灰度 hue-rotate：色调变化 sepia：褐色
+简单实现一个毛玻璃背景效果，例如：
+&amp;lt;style&amp;gt; *{ margin: 0; padding: 0; } #app{ width: 100%; height: 50rem; background-image: url(&amp;quot;1.jpg&amp;quot;); } #test{ position: absolute; top: 0; left: 0; right: 0; bottom: 0; backdrop-filter: blur(10px); } .text{ padding-top: 100px; text-align: center; } &amp;lt;/style&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;div id=&amp;quot;test&amp;quot;&amp;gt; &amp;lt;p class=&amp;quot;text&amp;quot;&amp;gt; hallo word &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; backdrop-filter和filter区别：
+filter是作用于当前元素（效果体现在本身，而不是背景），而且后代也会继承该属性
+backdrop-filter是作用于当前元素背后的所有元素，不会影响自己
+backdrop-filter兼容性没有filter优秀（目前低版本浏览器和IE，火狐都不支持该属性）</description>
+    </item>
+    
+    <item>
+      <title>JavaScript知识扩展</title>
+      <link>https://blog.cjlio.com/posts/61/</link>
+      <pubDate>Sun, 18 Jul 2021 22:35:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/61/</guid>
+      <description>函数被调用时，浏览器会传递两个参数，this和arguments
+this就是函数的上下文对象，而arguments是一个数组对象（也就是可以通过索引来操作数据），函数调用时传递的参数会在arguments中保存
+callee属性对应着当前的函数
+例如：
+function abc(){ console.log(arguments.length); console.log(arguments[0]); console.log(arguments.callee); console.log(this) } abc(&#39;hallo&#39;); BOM对象 (Browser Object Model) 是指浏览器对象模型
+该对象提供了浏览器行为和浏览器属性方法
+windows表示整个浏览器的窗口，同时也是JavaScript最顶层的对象，其他bom对象都是其的属性
+navigator包含了当前浏览器的全部信息
+console.log(window.navigator) 可以看到输出了很多属性，如userAgent，language等等
+location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
+console.log(window.location) const urlData = &amp;quot;https://cjlio.com/; window.location.href = urlData; 这个也可以实现跳转
+window.location.assign(&amp;quot;https://cjlio.com&amp;quot;) 这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
+window.location.replace(&amp;quot;https://cjlio.com&amp;quot;) reload方法可以重载页面，加上true参数将强制更新
+window.location.reload(true) history表示浏览器的历史记录
+console.log(window.history) length表示本次访问网站的数量
+同时也提供了几个方法
+back()返回上个页面
+window.history.back()
+可以绑定个点击事件，用来返回上个页面
+forward()前进，一般是和back()搭配使用，一个返回上个页面，一个返回到之前的页面
+window.history.forward()
+go()，前进或者后退指定次数，正数为前进，负数为后退
+window.history.go(-1)
+screen代表用户的屏幕的信息, 获取显示器的相关信息
+console.log(window.screen) call 和 apply
+addEventListen()绑定事件函数
+removeEventListen()移除事件函数
+鼠标按下时onmousedown
+鼠标移动时onmousemove
+鼠标松开时onmouseup
+undefined代表定义未赋值
+null定义并赋值了, 只是值为null
+document.execCommand可以操作剪贴板
+document.execCommand(&amp;lsquo;copy&amp;rsquo;) // 复制
+document.execCommand(&amp;lsquo;cut&amp;rsquo;) // 剪切
+document.execCommand(&amp;lsquo;paste&amp;rsquo;) // 粘贴</description>
+    </item>
+    
+    <item>
+      <title>简单了解MVC，MVP和MVVM之间的不同与联系</title>
+      <link>https://blog.cjlio.com/posts/56/</link>
+      <pubDate>Fri, 09 Jul 2021 22:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/56/</guid>
+      <description>MVC（Model-View-Controller）分别为View（视图，用户界面），Model（模型，数据保存），Controller（控制器，逻辑）
+视图层发指令（Dom事件）给控制器，控制器完成逻辑处理，请求模型改变状态，模型将最新的数据发送给视图，得到反馈，各个之间通信是单向的
+也可以Controller接受指令，要求模型改变状态，模型将最新的数据发送给视图
+MVP（Model-View-Presenter）实质是就是将Controller（控制器，逻辑）改为Presenter（从模型中获取数据，并且提供数据给视图）
+各个通信之间是双向的，视图和模型并不联系，通过Presenter进行传递，全部逻辑都在Presenter进行处理
+MVVM（Model-View-ViewModel）实质上就是MVC的改进版，和MVP模式基本一致，不过MVVM采用了双向绑定，视图变化，自动反映在ViewModel中
+在前端中Model是用json表示，将Model和View关联起来的是ViewModel，Mode数据可以显示到View中，也可以将View修改回Mode</description>
+    </item>
+    
+    <item>
+      <title>css的一些知识扩展</title>
+      <link>https://blog.cjlio.com/posts/44/</link>
+      <pubDate>Wed, 23 Jun 2021 09:16:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/44/</guid>
+      <description>box-sizing 盒类型
+该属性是告诉浏览器是以什么盒模型展示的
+IE用的是border-box
+计算方式是外边距+内边距+内容=宽度（高度）
+而像谷歌浏览器之类的用的是content-box
+计算方式是容器的宽度或者高度
+box-sizing: content-box; // 告诉浏览器是以content-box方式计算
+border-box // 告诉浏览器是以border-box方式计算
+css样式优先级
+!important &amp;gt; 内联 &amp;gt; id &amp;gt; 类 &amp;gt; 标签 &amp;gt; 通配符 &amp;gt; 默认样式 &amp;gt; 继承样式
+letter-spacing 字间距
+该属性控制字符之间的距离，字符之间的字符间距，默认值为0
+该属性支持三种类型的数值
+px（像素）
+em（相对值，相对于原来设置的值，如果原来的值为16px，那么1em就是16px，可以理解为倍数）
+rem（和em类似，不过它相对的是html元素，而em是相对于它本身）
+例如：
+letter-spacing: 6px;
+columns
+用于指定列宽和列数
+例如：
+columns: 100px 3; // 指的是列宽为100px，列数为3
+column-gap
+用于列与列之间的间隔
+column-gap: 30px;
+column-rule
+用于指定列之间的宽度和样式，以及颜色（列的边线）
+column-rule: 6px dashed #ccc;
+可拆分为
+column-rule-width和column-rule-style和column-rule-color
+column-span
+指定元素应横跨多少列
+column-span: 3;
+all为横跨所有列
+media 媒体查询
+媒体查询常用于响应式布局，为不同屏幕设置不同的样式
+@media(max-width:768px){} // 当屏幕最大宽度只有768px时应用其下的设置</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>k8s on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/k8s/</link>
+    <description>Recent content in k8s on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 10 Jan 2022 12:31:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes学习笔记</title>
+      <link>https://blog.cjlio.com/posts/127/</link>
+      <pubDate>Mon, 10 Jan 2022 12:31:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/127/</guid>
+      <description>Kubernetes（k8s，8是指k到s之间有8个字母），是谷歌在2014年发布并且开源的容器化集群管理系统（已在谷歌生产环境中工作15年），支持自动化部署，应用容器化管理，大规模升级或回滚，应用扩展等等
+k8s的特性：
+自动部署与滚动更新：自动化部署应用容器，k8s采取滚动式更新，可以根据应用的情况进行一次或者批量更新（判断该应用添加是否正常使用），也可以进行历史版本回滚
+自我修复：当某个容器发生故障，会自动重新启动失败的容器，当某个节点（Pod）出现故障进行容器的替换或者重新部署，并且关闭没有通过检查的容器（不进行处理请求，保证服务不中断），直到容器恢复正常
+弹性伸缩：通过命令，UI界面，CPU等资源使用情况，自动对应用容器进行扩容或者缩容，保证在高峰期的高可用性，降低运行成本
+服务发现和负载均衡：k8s为容器对外提供了统一访问入口（api server），并且关联全部容器（负载均衡）
+密钥与配置管理：允许在不重新构建容器（不需要重新集群，热更新）的情况下更新应用程序配置，可以存储和管理密钥，令牌等敏感信息，不需要暴露这些敏感信息（部署和更新密钥）
+存储编排：支持挂载外部存储（网络存储服务，云存储服务）（本地当然是支持），自动完成存储系统的挂载以及应用，保证数据持久化
+批处理：支持一次性任务，定时任务
+k8s的集群架构分为2个组件，分别为master（主控节点）和node（工作节点）
+master组件：api server（集群统一人口，restful），scheduler（节点调度，调度node节点应用部署），controller-manager（处理集群中后台任务，一个资源对应一个控制器，资源控制），etcd（存储系统，用来存储集群的相关数据）
+node组件：kubelet（node节点代理，管理k8s容器），kube-proxy（负责网络代理，负载均衡等操作）
+Pod：k8s管理系统中最小部署单位，一个或者多个容器的集合（共享同一个网络），容器重启将结束该pod的生命（生命周期短）
+Service
+Volume
+Namespace
+Controller：控制器（确保预期pod的数量），状态应用部署（无状态（没有任何限制约定），有状态（有限制条件，依赖需要））负责一次性任务，定时任务，守护进程等等，确保所有node运行同一个pod
+Service Ingress：对外接口（定义pod的访问规则）
+RBAC：安全机制，权限管理
+Helm：包管理器，快速下载，安装软件
+k8s集群搭建
+单master集群：单个master节点，管理多个node节点
+多master集群（高可用集群）：多个master节点，管理多个node节点，中间存在着负载均衡的过程
+kubeadm
+kubeadm是k8s部署工具，用于快速部署k8s集群
+官方文档：https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+创建master节点
+kubeadm init
+将node节点添加到当前集群中
+kubeadm join master节点ip和端口
+这边使用的是ubuntu-20.04-live-server-amd64，虚拟机（网络连接方式为桥接）
+配置方面是4GB内存，2处理器，30GB存储
+master1：192.168.1.102 node1：192.168.1.105 node2：192.168.1.104
+一些初始化操作
+更换系统软件源
+vim /etc/apt/sources.list
+这边用的腾讯源（https://mirrors.cloud.tencent.com/ubuntu/）
+deb https://mirrors.cloud.tencent.com/ubuntu/ focal main restricted universe multiverse deb https://mirrors.cloud.tencent.com/ubuntu/ focal-security main restricted universe multiverse deb https://mirrors.cloud.tencent.com/ubuntu/ focal-updates main restricted universe multiverse deb https://mirrors.cloud.tencent.com/ubuntu/focal-backports main restricted universe multiverse # deb-src https://mirrors.</description>
+    </item>
+    
+  </channel>
+</rss>

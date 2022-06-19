@@ -1,0 +1,280 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>python基础语法笔记 | 小陈的个人博客</title><meta name=keywords content="Python"><meta name=description content="安装python
+推荐安装anaconda3（linux）
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh
+dash Anaconda3-2019.10-Linux-x86_64.sh
+根据提示安装，如果还是系统自带的python
+sudo gedit ~/.bashrc
+export PATH=&#34;/home/pc/anaconda3/bin:$PATH&#34;
+# pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3
+Windows和mac 到官网下载安装包，直接下一步安装
+mac安装了Homebrew，可以使用brew install python3
+Windows设置环境变量，PATH 安装路径
+现在liunx一般都会自带有python3,如果没有可以安装一下
+apt install python3
+yun install python3
+注意一下python2.x和python3.x这两个版本是不兼容的，要区分开
+检查是否安装成功，在命令行或者终端输入python3 回车 没有反应或者报错就说明没有安装成功或者可能出问题了 Windows的一定要注意PATH系统变量
+因为Python语言从规范到解释器都是开源的，所以存在多个解释器
+例如CPython，安装python3.x时就可以直接获取到一个官方版本的解释器：CPython，因为是使用C语言开发的，所以叫CPython
+在命令行或者终端，输入输入python3 回车，如果出现了&#187;> 那么当前状态是python的交互模式
+在交互模式下输入exit()，退出python的交互模式
+在交互模式下执行第一个程序 print(&ldquo;hello,world&rdquo;)
+回车输出hello，world，这是简单的打印字符串
+除了使用交互模式执行程序，又可以使用.py，在命令行或者终端下 python hello.py，如果报错，请检查程序是否出错或者该文件是否在当前目录下
+交互模式可以直接输出结果，但是使用.py文件却不会，想要输出结果，必须使用print()打印出来
+一个好的开发工具往往可以达到事半功倍的效果，例如pycharm和Visual Studio Code，我使用的是Visual Studio Code
+print()接受多个输出，使用“,”分隔开，也可以输出整数
+当你想让用户输入一点东西的时候，python提供了一个input()，用法如下 name = input() 将输入的值存放到一个变量里
+input()还提供了提示功能，显示一个字符串，例如：input(&ldquo;xxxxx&rdquo;)
+我想知道这个变量的内容咋办，可以在交互模式下直接输入变量名，回车，就可以查看该变量的内容 又可以使用print()打印下来
+那么什么是变量呢？
+在计算机程序中，变量不仅可以为整数或浮点数，还可以是字符串
+输入是Input，输出是Output，输入输出统称为Input/Output，或者简写为IO
+以#开头的语句是注释，注释是给人看的，解释器会忽略掉注释，注释可以是任何内容
+其他每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块
+注意：python区分大小写，搞错了大小写，程序可能会报错。缩进建议使用4个空格
+python能直接处理的有：整型，浮点型，字符串，布尔值，空值，变量，常量
+python可以处理整型任意大小的整数，也可以使用二进制代表整数、
+浮点型就是小数，使用科学记数法表示时，一个浮点数的小数点位置是可变的，所以小数又叫浮点型，表示很大或很小的浮点数，必须用科学计数法表示
+字符串是使用&#34;&ldquo;和&rsquo;&lsquo;括起来的任意文本，&lsquo;&lsquo;或&#34;&ldquo;本身只是一种表示方式，不是字符串的一部分"><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/posts/28/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css integrity="sha256-C3OaLixeVlbkvNXwsiaNBjrdr4HYnsOYfWr48E3s3Jc=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="python基础语法笔记"><meta property="og:description" content="安装python
+推荐安装anaconda3（linux）
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh
+dash Anaconda3-2019.10-Linux-x86_64.sh
+根据提示安装，如果还是系统自带的python
+sudo gedit ~/.bashrc
+export PATH=&#34;/home/pc/anaconda3/bin:$PATH&#34;
+# pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3
+Windows和mac 到官网下载安装包，直接下一步安装
+mac安装了Homebrew，可以使用brew install python3
+Windows设置环境变量，PATH 安装路径
+现在liunx一般都会自带有python3,如果没有可以安装一下
+apt install python3
+yun install python3
+注意一下python2.x和python3.x这两个版本是不兼容的，要区分开
+检查是否安装成功，在命令行或者终端输入python3 回车 没有反应或者报错就说明没有安装成功或者可能出问题了 Windows的一定要注意PATH系统变量
+因为Python语言从规范到解释器都是开源的，所以存在多个解释器
+例如CPython，安装python3.x时就可以直接获取到一个官方版本的解释器：CPython，因为是使用C语言开发的，所以叫CPython
+在命令行或者终端，输入输入python3 回车，如果出现了&#187;> 那么当前状态是python的交互模式
+在交互模式下输入exit()，退出python的交互模式
+在交互模式下执行第一个程序 print(&ldquo;hello,world&rdquo;)
+回车输出hello，world，这是简单的打印字符串
+除了使用交互模式执行程序，又可以使用.py，在命令行或者终端下 python hello.py，如果报错，请检查程序是否出错或者该文件是否在当前目录下
+交互模式可以直接输出结果，但是使用.py文件却不会，想要输出结果，必须使用print()打印出来
+一个好的开发工具往往可以达到事半功倍的效果，例如pycharm和Visual Studio Code，我使用的是Visual Studio Code
+print()接受多个输出，使用“,”分隔开，也可以输出整数
+当你想让用户输入一点东西的时候，python提供了一个input()，用法如下 name = input() 将输入的值存放到一个变量里
+input()还提供了提示功能，显示一个字符串，例如：input(&ldquo;xxxxx&rdquo;)
+我想知道这个变量的内容咋办，可以在交互模式下直接输入变量名，回车，就可以查看该变量的内容 又可以使用print()打印下来
+那么什么是变量呢？
+在计算机程序中，变量不仅可以为整数或浮点数，还可以是字符串
+输入是Input，输出是Output，输入输出统称为Input/Output，或者简写为IO
+以#开头的语句是注释，注释是给人看的，解释器会忽略掉注释，注释可以是任何内容
+其他每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块
+注意：python区分大小写，搞错了大小写，程序可能会报错。缩进建议使用4个空格
+python能直接处理的有：整型，浮点型，字符串，布尔值，空值，变量，常量
+python可以处理整型任意大小的整数，也可以使用二进制代表整数、
+浮点型就是小数，使用科学记数法表示时，一个浮点数的小数点位置是可变的，所以小数又叫浮点型，表示很大或很小的浮点数，必须用科学计数法表示
+字符串是使用&#34;&ldquo;和&rsquo;&lsquo;括起来的任意文本，&lsquo;&lsquo;或&#34;&ldquo;本身只是一种表示方式，不是字符串的一部分"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.cjlio.com/posts/28/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-06-16T14:40:00+00:00"><meta property="article:modified_time" content="2021-06-16T14:40:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="python基础语法笔记"><meta name=twitter:description content="安装python
+推荐安装anaconda3（linux）
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh
+dash Anaconda3-2019.10-Linux-x86_64.sh
+根据提示安装，如果还是系统自带的python
+sudo gedit ~/.bashrc
+export PATH=&#34;/home/pc/anaconda3/bin:$PATH&#34;
+# pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3
+Windows和mac 到官网下载安装包，直接下一步安装
+mac安装了Homebrew，可以使用brew install python3
+Windows设置环境变量，PATH 安装路径
+现在liunx一般都会自带有python3,如果没有可以安装一下
+apt install python3
+yun install python3
+注意一下python2.x和python3.x这两个版本是不兼容的，要区分开
+检查是否安装成功，在命令行或者终端输入python3 回车 没有反应或者报错就说明没有安装成功或者可能出问题了 Windows的一定要注意PATH系统变量
+因为Python语言从规范到解释器都是开源的，所以存在多个解释器
+例如CPython，安装python3.x时就可以直接获取到一个官方版本的解释器：CPython，因为是使用C语言开发的，所以叫CPython
+在命令行或者终端，输入输入python3 回车，如果出现了&#187;> 那么当前状态是python的交互模式
+在交互模式下输入exit()，退出python的交互模式
+在交互模式下执行第一个程序 print(&ldquo;hello,world&rdquo;)
+回车输出hello，world，这是简单的打印字符串
+除了使用交互模式执行程序，又可以使用.py，在命令行或者终端下 python hello.py，如果报错，请检查程序是否出错或者该文件是否在当前目录下
+交互模式可以直接输出结果，但是使用.py文件却不会，想要输出结果，必须使用print()打印出来
+一个好的开发工具往往可以达到事半功倍的效果，例如pycharm和Visual Studio Code，我使用的是Visual Studio Code
+print()接受多个输出，使用“,”分隔开，也可以输出整数
+当你想让用户输入一点东西的时候，python提供了一个input()，用法如下 name = input() 将输入的值存放到一个变量里
+input()还提供了提示功能，显示一个字符串，例如：input(&ldquo;xxxxx&rdquo;)
+我想知道这个变量的内容咋办，可以在交互模式下直接输入变量名，回车，就可以查看该变量的内容 又可以使用print()打印下来
+那么什么是变量呢？
+在计算机程序中，变量不仅可以为整数或浮点数，还可以是字符串
+输入是Input，输出是Output，输入输出统称为Input/Output，或者简写为IO
+以#开头的语句是注释，注释是给人看的，解释器会忽略掉注释，注释可以是任何内容
+其他每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块
+注意：python区分大小写，搞错了大小写，程序可能会报错。缩进建议使用4个空格
+python能直接处理的有：整型，浮点型，字符串，布尔值，空值，变量，常量
+python可以处理整型任意大小的整数，也可以使用二进制代表整数、
+浮点型就是小数，使用科学记数法表示时，一个浮点数的小数点位置是可变的，所以小数又叫浮点型，表示很大或很小的浮点数，必须用科学计数法表示
+字符串是使用&#34;&ldquo;和&rsquo;&lsquo;括起来的任意文本，&lsquo;&lsquo;或&#34;&ldquo;本身只是一种表示方式，不是字符串的一部分"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://blog.cjlio.com/posts/"},{"@type":"ListItem","position":3,"name":"python基础语法笔记","item":"https://blog.cjlio.com/posts/28/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"python基础语法笔记","name":"python基础语法笔记","description":"安装python\n推荐安装anaconda3（linux）\nwget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh\ndash Anaconda3-2019.10-Linux-x86_64.sh\n根据提示安装，如果还是系统自带的python\nsudo gedit ~/.bashrc\nexport PATH=\u0026quot;/home/pc/anaconda3/bin:$PATH\u0026quot;\n# pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3\nWindows和mac 到官网下载安装包，直接下一步安装\nmac安装了Homebrew，可以使用brew install python3\nWindows设置环境变量，PATH 安装路径\n现在liunx一般都会自带有python3,如果没有可以安装一下\napt install python3\nyun install python3\n注意一下python2.x和python3.x这两个版本是不兼容的，要区分开\n检查是否安装成功，在命令行或者终端输入python3 回车 没有反应或者报错就说明没有安装成功或者可能出问题了 Windows的一定要注意PATH系统变量\n因为Python语言从规范到解释器都是开源的，所以存在多个解释器\n例如CPython，安装python3.x时就可以直接获取到一个官方版本的解释器：CPython，因为是使用C语言开发的，所以叫CPython\n在命令行或者终端，输入输入python3 回车，如果出现了\u0026raquo;\u0026gt; 那么当前状态是python的交互模式\n在交互模式下输入exit()，退出python的交互模式\n在交互模式下执行第一个程序 print(\u0026ldquo;hello,world\u0026rdquo;)\n回车输出hello，world，这是简单的打印字符串\n除了使用交互模式执行程序，又可以使用.py，在命令行或者终端下 python hello.py，如果报错，请检查程序是否出错或者该文件是否在当前目录下\n交互模式可以直接输出结果，但是使用.py文件却不会，想要输出结果，必须使用print()打印出来\n一个好的开发工具往往可以达到事半功倍的效果，例如pycharm和Visual Studio Code，我使用的是Visual Studio Code\nprint()接受多个输出，使用“,”分隔开，也可以输出整数\n当你想让用户输入一点东西的时候，python提供了一个input()，用法如下 name = input() 将输入的值存放到一个变量里\ninput()还提供了提示功能，显示一个字符串，例如：input(\u0026ldquo;xxxxx\u0026rdquo;)\n我想知道这个变量的内容咋办，可以在交互模式下直接输入变量名，回车，就可以查看该变量的内容 又可以使用print()打印下来\n那么什么是变量呢？\n在计算机程序中，变量不仅可以为整数或浮点数，还可以是字符串\n输入是Input，输出是Output，输入输出统称为Input/Output，或者简写为IO\n以#开头的语句是注释，注释是给人看的，解释器会忽略掉注释，注释可以是任何内容\n其他每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块\n注意：python区分大小写，搞错了大小写，程序可能会报错。缩进建议使用4个空格\npython能直接处理的有：整型，浮点型，字符串，布尔值，空值，变量，常量\npython可以处理整型任意大小的整数，也可以使用二进制代表整数、\n浮点型就是小数，使用科学记数法表示时，一个浮点数的小数点位置是可变的，所以小数又叫浮点型，表示很大或很小的浮点数，必须用科学计数法表示\n字符串是使用\u0026quot;\u0026ldquo;和\u0026rsquo;\u0026lsquo;括起来的任意文本，\u0026lsquo;\u0026lsquo;或\u0026quot;\u0026ldquo;本身只是一种表示方式，不是字符串的一部分","keywords":["Python"],"articleBody":"安装python\n推荐安装anaconda3（linux）\nwget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh\ndash Anaconda3-2019.10-Linux-x86_64.sh\n根据提示安装，如果还是系统自带的python\nsudo gedit ~/.bashrc\nexport PATH=\"/home/pc/anaconda3/bin:$PATH\"\n# pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3\nWindows和mac 到官网下载安装包，直接下一步安装\nmac安装了Homebrew，可以使用brew install python3\nWindows设置环境变量，PATH 安装路径\n现在liunx一般都会自带有python3,如果没有可以安装一下\napt install python3\nyun install python3\n注意一下python2.x和python3.x这两个版本是不兼容的，要区分开\n检查是否安装成功，在命令行或者终端输入python3 回车 没有反应或者报错就说明没有安装成功或者可能出问题了 Windows的一定要注意PATH系统变量\n因为Python语言从规范到解释器都是开源的，所以存在多个解释器\n例如CPython，安装python3.x时就可以直接获取到一个官方版本的解释器：CPython，因为是使用C语言开发的，所以叫CPython\n在命令行或者终端，输入输入python3 回车，如果出现了»\u003e 那么当前状态是python的交互模式\n在交互模式下输入exit()，退出python的交互模式\n在交互模式下执行第一个程序 print(“hello,world”)\n回车输出hello，world，这是简单的打印字符串\n除了使用交互模式执行程序，又可以使用.py，在命令行或者终端下 python hello.py，如果报错，请检查程序是否出错或者该文件是否在当前目录下\n交互模式可以直接输出结果，但是使用.py文件却不会，想要输出结果，必须使用print()打印出来\n一个好的开发工具往往可以达到事半功倍的效果，例如pycharm和Visual Studio Code，我使用的是Visual Studio Code\nprint()接受多个输出，使用“,”分隔开，也可以输出整数\n当你想让用户输入一点东西的时候，python提供了一个input()，用法如下 name = input() 将输入的值存放到一个变量里\ninput()还提供了提示功能，显示一个字符串，例如：input(“xxxxx”)\n我想知道这个变量的内容咋办，可以在交互模式下直接输入变量名，回车，就可以查看该变量的内容 又可以使用print()打印下来\n那么什么是变量呢？\n在计算机程序中，变量不仅可以为整数或浮点数，还可以是字符串\n输入是Input，输出是Output，输入输出统称为Input/Output，或者简写为IO\n以#开头的语句是注释，注释是给人看的，解释器会忽略掉注释，注释可以是任何内容\n其他每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块\n注意：python区分大小写，搞错了大小写，程序可能会报错。缩进建议使用4个空格\npython能直接处理的有：整型，浮点型，字符串，布尔值，空值，变量，常量\npython可以处理整型任意大小的整数，也可以使用二进制代表整数、\n浮点型就是小数，使用科学记数法表示时，一个浮点数的小数点位置是可变的，所以小数又叫浮点型，表示很大或很小的浮点数，必须用科学计数法表示\n字符串是使用\"“和’‘括起来的任意文本，‘‘或\"“本身只是一种表示方式，不是字符串的一部分\n字符串内部包含’又包含\"怎么办？使用转义字符来标识，转义字符可以转义很多字符，比如n表示换行，t表示制表符，字符本身也是可以转义的，所以\\表示的字符就是\\\n为了简化，Python还允许用r’’，用来表示’‘内部的字符串默认不转义\n在交互式命令行内输入，在输入多行内容时，提示符由»\u003e变为…，提示可以接着上一行输入，注意…是提示符，不是代码的一部分\n多行字符串’‘‘xxx’’’，可以在前面加上r使用\n布尔值只有两种值，分别是True和False，在计算机中布尔值要么是True，要么是False，在python中可以直接使用True、False表示布尔值，注意大小写\nand是与运算，只有所有值都为True时，and运算结果才是True\nor运算是或运算，只要其中有一个为True，那么or运算结果就是True\nnot运算是非运算，它是一个单目运算符，专门把True变成False，False变成True\n空值，使用None表示空值，这个空值不是0，因为0是有意义的，代表什么都没有\n在计算机程序中，变量不仅可以是数字，还可以是任意数据类型。\n变量在程序中用一个变量名表示，变量名必须是大小写英文、数字和_的组合，且不能用数字开头，\n变量名 = 任意数据类型，这个过程叫变量赋值，变量可以反复赋值\n这种变量本身类型不固定的语言称之为动态语言，与之对应的是静态语言。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错。\n例如golang就是一个静态语言，不能跨数据类型来赋值\nx = 1\nx = x+1\n这个是计算新的值，并且重新赋值给该变量\na = “hello”\n这时Python解释器干了两件事情：\n在内存中创建了一个’hello’的字符串；\n在内存中创建了一个名为a的变量，并把它指向’hallo’。\n可以把一个变量a赋值给另一个变量b，这个操作实际上是把变量b指向变量a所指向的数据\n因为程序是从上往下执行的，一定要理清逻辑\n常量就是不能变的变量，在python中使用大写表示一个常量，例如： ABC =123\n但这个常量还是可以被修改，因为Python没有任何机制可以保证该常量不会被改变，这个很奇怪\n/除法计算结果是浮点数，即使是两个整数恰好整除，结果也是浮点数\n当使用//除法时，两个整数的相除就可以是整数\n想要做精确的除法，就必须使用/了\n// 除，永远是整数\n字符编码 python提供了字符转编码函数ord()和编码转字符函数chr()\nPython可以使用编码来输出内容\nPython的字符串类型是str，在内存中以Unicode表示，一个字符对应若干个字节，可以转成bytes类型，方便传输和保存数据\n在Python中bytes类型的数据用带b前缀的单引号或双引号表示：a = b\"hallo word”\nstr和bytes类型内容显示没有差别，但是bytes的每个字符都只占用一个字节\n在Python中，可以使用encode()方法来指定编码，例如： ‘hallo’.encode(‘ascii’) b’hallo’\n注意：纯英文的str可以使用ASCII编码为bytes，显示内容一样，但是包含了其他语言（比如中文）的str不能使用ASCII编码，Python会报错，含有其他语言的str请使用UTF-8编码\n如果想把bytes转为str，可以使用decode()方法\n注意：如果bytes中包含无法解码的字节，decode()方法会报错\n如果bytes中只有一小部分无效的字节，可以传入errors=‘ignore’忽略错误的字节\n计算str包含多少个字符，可以用len()函数\nlen()函数计算的是str的字符数，如果换成bytes，len()函数就计算字节数 为了让Python按UTF-8编码读取，一般都会在文件开头声明一下： # !/usr/bin/python3 # – coding: utf-8 –\n第一行是告诉计算机系统这是一个Python可执行程序，注意Windows会忽视这个\n第二行是告诉Python，请按照UTF-8编码读取源代码\n注意：声明并不代表文件是UTF-8编码的，请确保文本编辑器使用UTF-8 without BOM编码\n如果想一些内容可以根据变量变化，那么就用到格式化字符串\n在Python中，采用的格式化方式和C语言是一致的，用%实现\n‘Hello, %s $%d ’ % (‘world’)\n常见的占位符有：\n%d – 整数 %f – 浮点数 %s – 字符串 %x – 十六进制整数\n注意：%s永远起作用，它会把任何数据类型转换为字符串！！！\n如果字符串里面的%只是普通字符，那么使用%%来代表一个%（转义）\n还有一个格式化字符串方法：format()\n它会用传入的参数依次替换字符串内的占位符{0}、{1}……..\n例如：\n‘hello,{0}’.format(‘world’)\nPython 3的字符串使用Unicode，直接支持多语言\n当str和bytes互相转换时，需要指定编码\n列表（list），一种有序的集合，可以随时添加和删除其中的元素，使用[]来表示，例如： abc = [‘a’,‘b’,‘c’]\n可以使用索引来访问列表的每一个元素，索引是从0开始，例如：\nabc[0] ‘a’\n注意：索引超出范围时，Python会抛出一个IndexError错误，记得最后一个元素的索引是len(classmates) - 1\n如果想获取最后一个元素，不知道索引，又怕抛出错误，可以使用-1方法，例如：\nabc[-1] c\n以此类推，可以获取倒数第2个、倒数第3个，-2，-3\n因为这个列表是可变的有序的列表，所以可以在列表中追加元素到末尾，例如：\nabc.append(’d’) abc [‘a’,‘b’,‘c’,’d’]\n当然也可以添加元素到指定的位置，例如：\nabc.insert(1,‘1’) abc [‘a’,‘1’,‘b’,‘c’,’d’]\n删除列表末尾元素，使用pop()方法，例如：\nabc.pop() ’d’ abc [‘a’,‘1’,‘b’,‘c’]\n删除指定位置的元素，使用pop()，括号中填写索引位置\nabc.pop(1) ‘1’ abc [‘a’,‘b’,‘c’]\n如果想把某个元素换成其他元素，可以直接赋值给对应的索引位置，例如：\nabc[0]=‘abc’ abc [‘abc’,‘b’,‘c’]\n列表里面的元素数据类型可以不同，例如：\na = [‘hallo’,666,False]\n列表里面可以包含其他列表，反复嵌套，例如：\na = [‘hallo’,‘word’,[‘123’.‘abc’]]\n注意：这个a列表只有3个元素，其中的a[2]又是一个列表，可以拆开理解，例如：\n123 = [‘hallo’,‘word’]\nabc = [‘666’,123,‘abc’]\n想拿到’hallo’,可以写成123[1]或者abc1\n这个可以看成一个二维数组\n注意：当一个列表中一个元素也没有，那么就是一个空的列表，长度为0，a=[] len(a) 0\n还有一个有序列表叫元组（tuple），和list很相似，不过这个一但初始化就不能修改\n没有添加元素和删除元素的方法，但是可以正常使用获取元素的方法，获取方法和list一样，就是不能赋值成另外的元素\n那么这个列表不能改变，那么有什么意义？因为tuple不可变，所以程序更安全\n当定义一个tuple时，在定义的时候，tuple的元素就必须被确定下来\n如果要定义一个空的tuple，可以写成()\n正确定义只有一个元素的tuple，例如：\na = (1,) a 1\n为啥这样呢？因为括号()可以表示tuple，又可以表示数学公式中的小括号，防止Python按照小括号来计算，避免歧义\n关于可以’改变’的tuple：实际上改变的是list，因为tuple里面可以有list列表，所以可以’改变'01\n全局变量和局部变量\n一般在函数内部定义的变量，为局部变量，在函数外部定义的变量为全局变量\n因为作用域的问题，一般在函数内部不能真正修改到全局变量\n可以使用关键字global来处理\nabc = None def xyz(): global abc abc=\"hallo\" return a print(abc) // 观察这个变量和下面的变量的区别 print(xyz()) print(abc) // 观察这个变量和上面的变量的区别 nonlocal 可以用于在函数或者其他作用域中使用上层（非全局）的变量，例如：\ndef xyz(): abc=\"hallo\" def go(): nonlocal abc return abc return go() print(xyz()) 函数\n调用函数 函数名()\npython中内置了大量的函数，可以直接调用，例如：\nint(“666”) // 666\n因为函数本身可以理解为是一个引用类型，所以函数是可以赋值给变量，例如：\na = int a(“123”) // 123\n定义函数\ndef为定义一个函数的关键字，定义一个函数例如： def abc(i): print(i)\n如果有一个函数定义在另一个文件里，可以在当前文件的当前目录下，使用from abstest import导入函数\n空函数： def no(): pass\npass语句用于什么都不干，可以用于占位\n检查函数传入的参数\n检查数据类型可以使用isinstance()\nisinstance(1,int) // 返回布尔值，可以搭配if判断语句使用\n如果想要手动设置异常，可以使用raise语句，例如：\ndef no(i): if not isinstance(i,(int)): raise ValueError(\"no函数的传参必须为整数\") no('1') 函数内部可以使用return来返回函数结果\n使用return返回不了值，主要是没有把值取出来，例如\ndef a(x): return x b = a(1) print(b) // 1 python的函数参数灵活度很高\ndef a(x,i=1) // 默认i为1\n必选参数在前，默认参数在后，当不需要默认参数可以直接覆盖掉，灵活性很高\n当参数的个数不明确时，可以把参数当成list或tuple传进来，例如：\ndef a(x): abc = 0 for a in x: abc=abc+a return abc a = a([1,2,3]) print(a) // 6 如果已经有一个list或tuple，想传进来：\ndef xyz(*x): abc = 0 for a in x: abc=abc+a return abc b = [1,3,5] a = xyz(*b) print(a) 关键字参数可以传入0或者任意个参数，而这些参数会变成一个tuple\ndef abc(i,**n): print(‘i:’, i, ’n:’, n)\nabc(“abc”)\n如果已经有一个tuple，想传入： b = {1,3,5} abc(**b)\n如果想限制关键字参数，例如：\ndef xyz(i,n,*,name,age): print(i,n,name,age) xyz(1,2,name=\"hallo\",age=18) // 1 2 hallo 18 *后面的参数被认为是命名关键字参数，限制只能使用该参数名\n如果参数中已经有了可变参数，后面跟着的命名关键字参数就不需要*来分隔了\n命名关键字参数必须要传入参数名，否则报错，如果命名关键字参数已经有默认值，可以不用传入\n递归函数\n递归函数就是这个函数反复调用它本身，例如：\n从1加到100，1+2+3+…+100\ndef xyz(n): if n == 1: return 1 return n+xyz(n-1) a = xyz(100) print(a) // 5050 尾递归优化\n递归调用次数过多，会导致堆栈溢出，溢出就是超出了最大上限的堆栈\n而解决因为递归而导致的溢出的方法就是尾递归优化\n但是Python解释器目前不支持尾递归优化，就算使用尾递归方式，也还是会导致堆栈溢出\ndef abc(n): return xyz(n,1) def xyz(n,go): if n == 1: return go return xyz(n-1,n+go) a = abc(100) print(a) 切片，顾名思义，就是取部分值，例如：\na = [1,2,3,4,5]\na[0:3] // [1,2,3]\n索引从0开始，到3为止\n支持倒数切片\na[:-1] // [1,2,3,4]\n如果开头为0，可以省略不写，倒数第一个为-1\na[::2] // [1, 3, 5] 每两个取一个\na[:] // 复制一个一样的list\ntupel也可以使用切片，但是操作结果还是tuple\na = (0,1,2,3)\na[:3] // (0,1,2)\n甚至连字符串都可以切片，结果还是字符串\na = “hallo”\na[:2] // hallo\n迭代\n读写文件\nabc = open(‘1.txt’,‘r’) go = abc.read(6) # 可以指定读取的数量，如果为空则读取全部 print(go) abc.clsoe() # 这个用来关闭文件\nr为只读，w为写入，a为追加，rb为以二进制方式只读，wb为以二进制方式写入，ab为以二进制方式追加\nabc = open(‘1.txt’,‘w’) abc.write(“hallo word!!” * 6) # 写入6条数据 abc.close()\nabc = open(‘1.txt’,‘r’) data = abc.readline() print(“3:%s” % data) # 读取指定行数的数据，这里为读取3行数据 abc.close()\n如果想多钱全部数据，并且返回的是一个列表，列表的每一个元素为都为每一行数据，可以： abc = open(‘1.txt’, ‘r’) data = data.readlines() print(type(data)) for a in data: print(a) data.close()\nif判断\ndata = 10 if data \u003e=18: print(\"成年了!\") elif data\u003e=6: print(\"义务教育\") else: print(\"未成年!!!\") 输入输出\ndata = int(input(\"请输入数据\")) print(data) 类型转换（Python是弱类型语言，弱类型指不能对变量声明类型，只能声明数据的类型）\nint()整数,str()字符串,float()浮点数,bool()布尔数，list()列表，tuple()元组，chr()字符，unichr()Unicode字符等等\n例如：\ndata1 = \"123\" data2 = 123 print(isinstance(data1,str)) print(isinstance(data2,int)) data3 = int(data1) data4 = str(data2) print(isinstance(data3,int)) print(isinstance(data4,str)) 运算符\n+加，-减，*乘，/除，//取整除，%取余，**指数\n优先级和普通的算数规则一样，指数大于乘和除,取余,取整除大于加和减\n字符串不能和整数相加，必须将字符串或者整数转换，字符串为拼接，整数为算数\n赋值运算符\n=，将右边赋值给左边的变量，可以给多个变量赋值，例如：a = b = c = 666或者a,b,c = 666,123,100\na+=1 ：a=a+1，a-=1：a=a-1，a*=1：：a=a*1，a/=1：：a=a/1,a//=1: ：a=a//1,a%=1：a=a%1 ,a**=1：a=a**1\n==比较是否相等，!=比较不相等，\u003e大于，\u003c小于，\u003e=大于等于，\u003c=小于等于\nand和运算符（只有当比较全部为true才为true，否则都为false），or或运算符（只有当比较有一个为true才为true，全部为false才为false），not取反运算符（只有当比较为true才为false，当比较为false才为true）\nfor循环和while循环\nfor循环可以遍历任何以序列排序的东东，比如列表和字符串\nfor a in \"hallo word\": print(a) 或者\nfot a in range(1,100): print(a) range支持3个参数，分别是起始，结束，以及步长\nwhile循环,在某个条件下为true下才会执行里面的语句\ndata = 0 while data \u003c 10: print(data) data+=1 获取字符串或者列表的长度，len(data)\n查找某些内容是否在字符串的某些地方中存在（如果不存在，返回-1）,find(str,beg=0,end=len(strdata))\nstr为要查找的字符串，beg开始查找的位置，end结束查找的位置\n错误处理\n读取文件错误（当文件不存在时） try: abc = open(‘data.txt’, ‘r’) print(abc.read()) except FileNotFoundError: print(‘文件没有找到,请检查文件名称是否正确’)\ntry…except语句可以处理程序运行过程中可能出现的异常\n","wordCount":"625","inLanguage":"en","datePublished":"2021-06-16T14:40:00Z","dateModified":"2021-06-16T14:40:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.cjlio.com/posts/28/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://blog.cjlio.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/posts/>Posts</a></div><h1 class=post-title>python基础语法笔记</h1><div class=post-meta><span title='2021-06-16 14:40:00 +0000 UTC'>2021-06-16</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/python%e5%9f%ba%e7%a1%80%e8%af%ad%e6%b3%95%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>安装python</p><p>推荐安装anaconda3（linux）</p><p>wget <a href=https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh>https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh</a></p><p>dash Anaconda3-2019.10-Linux-x86_64.sh</p><p>根据提示安装，如果还是系统自带的python</p><p>sudo gedit ~/.bashrc</p><p>export PATH="/home/pc/anaconda3/bin:$PATH"</p><p># pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3</p><p>Windows和mac 到官网下载安装包，直接下一步安装</p><p>mac安装了Homebrew，可以使用brew install python3</p><p>Windows设置环境变量，PATH 安装路径</p><p>现在liunx一般都会自带有python3,如果没有可以安装一下</p><p>apt install python3</p><p>yun install python3</p><p>注意一下python2.x和python3.x这两个版本是不兼容的，要区分开</p><p>检查是否安装成功，在命令行或者终端输入python3 回车 没有反应或者报错就说明没有安装成功或者可能出问题了
+Windows的一定要注意PATH系统变量</p><p>因为Python语言从规范到解释器都是开源的，所以存在多个解释器</p><p>例如CPython，安装python3.x时就可以直接获取到一个官方版本的解释器：CPython，因为是使用C语言开发的，所以叫CPython</p><p>在命令行或者终端，输入输入python3 回车，如果出现了&#187;> 那么当前状态是python的交互模式</p><p>在交互模式下输入exit()，退出python的交互模式</p><p>在交互模式下执行第一个程序
+print(&ldquo;hello,world&rdquo;)</p><p>回车输出hello，world，这是简单的打印字符串</p><p>除了使用交互模式执行程序，又可以使用.py，在命令行或者终端下 python hello.py，如果报错，请检查程序是否出错或者该文件是否在当前目录下</p><p>交互模式可以直接输出结果，但是使用.py文件却不会，想要输出结果，必须使用print()打印出来</p><p>一个好的开发工具往往可以达到事半功倍的效果，例如pycharm和Visual Studio Code，我使用的是Visual Studio Code</p><p>print()接受多个输出，使用“,”分隔开，也可以输出整数</p><p>当你想让用户输入一点东西的时候，python提供了一个input()，用法如下
+name = input()
+将输入的值存放到一个变量里</p><p>input()还提供了提示功能，显示一个字符串，例如：input(&ldquo;xxxxx&rdquo;)</p><p>我想知道这个变量的内容咋办，可以在交互模式下直接输入变量名，回车，就可以查看该变量的内容
+又可以使用print()打印下来</p><p>那么什么是变量呢？</p><p>在计算机程序中，变量不仅可以为整数或浮点数，还可以是字符串</p><p>输入是Input，输出是Output，输入输出统称为Input/Output，或者简写为IO</p><p>以#开头的语句是注释，注释是给人看的，解释器会忽略掉注释，注释可以是任何内容</p><p>其他每一行都是一个语句，当语句以冒号:结尾时，缩进的语句视为代码块</p><p>注意：python区分大小写，搞错了大小写，程序可能会报错。缩进建议使用4个空格</p><p>python能直接处理的有：整型，浮点型，字符串，布尔值，空值，变量，常量</p><p>python可以处理整型任意大小的整数，也可以使用二进制代表整数、</p><p>浮点型就是小数，使用科学记数法表示时，一个浮点数的小数点位置是可变的，所以小数又叫浮点型，表示很大或很小的浮点数，必须用科学计数法表示</p><p>字符串是使用"&ldquo;和&rsquo;&lsquo;括起来的任意文本，&lsquo;&lsquo;或"&ldquo;本身只是一种表示方式，不是字符串的一部分</p><p>字符串内部包含&rsquo;又包含"怎么办？使用转义字符来标识，转义字符可以转义很多字符，比如n表示换行，t表示制表符，字符本身也是可以转义的，所以\表示的字符就是\</p><p>为了简化，Python还允许用r&rsquo;&rsquo;，用来表示&rsquo;&lsquo;内部的字符串默认不转义</p><p>在交互式命令行内输入，在输入多行内容时，提示符由&#187;>变为&mldr;，提示可以接着上一行输入，注意&mldr;是提示符，不是代码的一部分</p><p>多行字符串&rsquo;&lsquo;&lsquo;xxx&rsquo;&rsquo;&rsquo;，可以在前面加上r使用</p><p>布尔值只有两种值，分别是True和False，在计算机中布尔值要么是True，要么是False，在python中可以直接使用True、False表示布尔值，注意大小写</p><p>and是与运算，只有所有值都为True时，and运算结果才是True</p><p>or运算是或运算，只要其中有一个为True，那么or运算结果就是True</p><p>not运算是非运算，它是一个单目运算符，专门把True变成False，False变成True</p><p>空值，使用None表示空值，这个空值不是0，因为0是有意义的，代表什么都没有</p><p>在计算机程序中，变量不仅可以是数字，还可以是任意数据类型。</p><p>变量在程序中用一个变量名表示，变量名必须是大小写英文、数字和_的组合，且不能用数字开头，</p><p>变量名 = 任意数据类型，这个过程叫变量赋值，变量可以反复赋值</p><p>这种变量本身类型不固定的语言称之为动态语言，与之对应的是静态语言。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错。</p><p>例如golang就是一个静态语言，不能跨数据类型来赋值</p><p>x = 1</p><p>x = x+1</p><p>这个是计算新的值，并且重新赋值给该变量</p><p>a = &ldquo;hello&rdquo;</p><p>这时Python解释器干了两件事情：</p><p>在内存中创建了一个&rsquo;hello&rsquo;的字符串；</p><p>在内存中创建了一个名为a的变量，并把它指向&rsquo;hallo&rsquo;。</p><p>可以把一个变量a赋值给另一个变量b，这个操作实际上是把变量b指向变量a所指向的数据</p><p>因为程序是从上往下执行的，一定要理清逻辑</p><p>常量就是不能变的变量，在python中使用大写表示一个常量，例如：
+ABC =123</p><p>但这个常量还是可以被修改，因为Python没有任何机制可以保证该常量不会被改变，这个很奇怪</p><p>/除法计算结果是浮点数，即使是两个整数恰好整除，结果也是浮点数</p><p>当使用//除法时，两个整数的相除就可以是整数</p><p>想要做精确的除法，就必须使用/了</p><p>// 除，永远是整数</p><p>字符编码
+python提供了字符转编码函数ord()和编码转字符函数chr()</p><p>Python可以使用编码来输出内容</p><p>Python的字符串类型是str，在内存中以Unicode表示，一个字符对应若干个字节，可以转成bytes类型，方便传输和保存数据</p><p>在Python中bytes类型的数据用带b前缀的单引号或双引号表示：a = b"hallo word&rdquo;</p><p>str和bytes类型内容显示没有差别，但是bytes的每个字符都只占用一个字节</p><p>在Python中，可以使用encode()方法来指定编码，例如：
+&lsquo;hallo&rsquo;.encode(&lsquo;ascii&rsquo;)
+b&rsquo;hallo&rsquo;</p><p>注意：纯英文的str可以使用ASCII编码为bytes，显示内容一样，但是包含了其他语言（比如中文）的str不能使用ASCII编码，Python会报错，含有其他语言的str请使用UTF-8编码</p><p>如果想把bytes转为str，可以使用decode()方法</p><p>注意：如果bytes中包含无法解码的字节，decode()方法会报错</p><p>如果bytes中只有一小部分无效的字节，可以传入errors=&lsquo;ignore&rsquo;忽略错误的字节</p><p>计算str包含多少个字符，可以用len()函数</p><p>len()函数计算的是str的字符数，如果换成bytes，len()函数就计算字节数
+为了让Python按UTF-8编码读取，一般都会在文件开头声明一下：
+# !/usr/bin/python3
+# &ndash; coding: utf-8 &ndash;</p><p>第一行是告诉计算机系统这是一个Python可执行程序，注意Windows会忽视这个</p><p>第二行是告诉Python，请按照UTF-8编码读取源代码</p><p>注意：声明并不代表文件是UTF-8编码的，请确保文本编辑器使用UTF-8 without BOM编码</p><p>如果想一些内容可以根据变量变化，那么就用到格式化字符串</p><p>在Python中，采用的格式化方式和C语言是一致的，用%实现</p><p>&lsquo;Hello, %s $%d &rsquo; % (&lsquo;world&rsquo;)</p><p>常见的占位符有：</p><p>%d &ndash; 整数
+%f &ndash; 浮点数
+%s &ndash; 字符串
+%x &ndash; 十六进制整数</p><p>注意：%s永远起作用，它会把任何数据类型转换为字符串！！！</p><p>如果字符串里面的%只是普通字符，那么使用%%来代表一个%（转义）</p><p>还有一个格式化字符串方法：format()</p><p>它会用传入的参数依次替换字符串内的占位符{0}、{1}&mldr;&mldr;..</p><p>例如：</p><p>&lsquo;hello,{0}&rsquo;.format(&lsquo;world&rsquo;)</p><p>Python 3的字符串使用Unicode，直接支持多语言</p><p>当str和bytes互相转换时，需要指定编码</p><p>列表（list），一种有序的集合，可以随时添加和删除其中的元素，使用[]来表示，例如：
+abc = [&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;]</p><p>可以使用索引来访问列表的每一个元素，索引是从0开始，例如：</p><p>abc[0]
+&lsquo;a&rsquo;</p><p>注意：索引超出范围时，Python会抛出一个IndexError错误，记得最后一个元素的索引是len(classmates) - 1</p><p>如果想获取最后一个元素，不知道索引，又怕抛出错误，可以使用-1方法，例如：</p><p>abc[-1]
+c</p><p>以此类推，可以获取倒数第2个、倒数第3个，-2，-3</p><p>因为这个列表是可变的有序的列表，所以可以在列表中追加元素到末尾，例如：</p><p>abc.append(&rsquo;d&rsquo;)
+abc
+[&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;]</p><p>当然也可以添加元素到指定的位置，例如：</p><p>abc.insert(1,&lsquo;1&rsquo;)
+abc
+[&lsquo;a&rsquo;,&lsquo;1&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;]</p><p>删除列表末尾元素，使用pop()方法，例如：</p><p>abc.pop()
+&rsquo;d&rsquo;
+abc
+[&lsquo;a&rsquo;,&lsquo;1&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;]</p><p>删除指定位置的元素，使用pop()，括号中填写索引位置</p><p>abc.pop(1)
+&lsquo;1&rsquo;
+abc
+[&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;]</p><p>如果想把某个元素换成其他元素，可以直接赋值给对应的索引位置，例如：</p><p>abc[0]=&lsquo;abc&rsquo;
+abc
+[&lsquo;abc&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;]</p><p>列表里面的元素数据类型可以不同，例如：</p><p>a = [&lsquo;hallo&rsquo;,666,False]</p><p>列表里面可以包含其他列表，反复嵌套，例如：</p><p>a = [&lsquo;hallo&rsquo;,&lsquo;word&rsquo;,[&lsquo;123&rsquo;.&lsquo;abc&rsquo;]]</p><p>注意：这个a列表只有3个元素，其中的a[2]又是一个列表，可以拆开理解，例如：</p><p>123 = [&lsquo;hallo&rsquo;,&lsquo;word&rsquo;]</p><p>abc = [&lsquo;666&rsquo;,123,&lsquo;abc&rsquo;]</p><p>想拿到&rsquo;hallo&rsquo;,可以写成123[1]或者abc1</p><p>这个可以看成一个二维数组</p><p>注意：当一个列表中一个元素也没有，那么就是一个空的列表，长度为0，a=[] len(a) 0</p><p>还有一个有序列表叫元组（tuple），和list很相似，不过这个一但初始化就不能修改</p><p>没有添加元素和删除元素的方法，但是可以正常使用获取元素的方法，获取方法和list一样，就是不能赋值成另外的元素</p><p>那么这个列表不能改变，那么有什么意义？因为tuple不可变，所以程序更安全</p><p>当定义一个tuple时，在定义的时候，tuple的元素就必须被确定下来</p><p>如果要定义一个空的tuple，可以写成()</p><p>正确定义只有一个元素的tuple，例如：</p><p>a = (1,)
+a
+1</p><p>为啥这样呢？因为括号()可以表示tuple，又可以表示数学公式中的小括号，防止Python按照小括号来计算，避免歧义</p><p>关于可以&rsquo;改变&rsquo;的tuple：实际上改变的是list，因为tuple里面可以有list列表，所以可以&rsquo;改变'01</p><hr><p>全局变量和局部变量</p><p>一般在函数内部定义的变量，为局部变量，在函数外部定义的变量为全局变量</p><p>因为作用域的问题，一般在函数内部不能真正修改到全局变量</p><p>可以使用关键字global来处理</p><pre><code>abc = None
+
+def xyz():
+
+    global abc
+
+    abc=&quot;hallo&quot;
+
+    return a
+
+print(abc)  // 观察这个变量和下面的变量的区别
+
+print(xyz())
+
+print(abc)  // 观察这个变量和上面的变量的区别
+</code></pre><p>nonlocal 可以用于在函数或者其他作用域中使用上层（非全局）的变量，例如：</p><pre><code>def xyz():
+    abc=&quot;hallo&quot;
+
+    def go():
+        nonlocal abc
+        return abc
+
+    return go()
+
+print(xyz())
+</code></pre><p>函数</p><p>调用函数 函数名()</p><p>python中内置了大量的函数，可以直接调用，例如：</p><p>int(&ldquo;666&rdquo;) // 666</p><p>因为函数本身可以理解为是一个引用类型，所以函数是可以赋值给变量，例如：</p><p>a = int
+a(&ldquo;123&rdquo;) // 123</p><p>定义函数</p><p>def为定义一个函数的关键字，定义一个函数例如：
+def abc(i):
+print(i)</p><p>如果有一个函数定义在另一个文件里，可以在当前文件的当前目录下，使用from abstest import导入函数</p><p>空函数：
+def no():
+pass</p><p>pass语句用于什么都不干，可以用于占位</p><p>检查函数传入的参数</p><p>检查数据类型可以使用isinstance()</p><p>isinstance(1,int) // 返回布尔值，可以搭配if判断语句使用</p><p>如果想要手动设置异常，可以使用raise语句，例如：</p><pre><code>def no(i):
+    if not isinstance(i,(int)):
+        raise ValueError(&quot;no函数的传参必须为整数&quot;)
+
+no('1')
+</code></pre><p>函数内部可以使用return来返回函数结果</p><p>使用return返回不了值，主要是没有把值取出来，例如</p><pre><code>def a(x):
+    return x
+
+b = a(1)
+print(b) // 1
+</code></pre><p>python的函数参数灵活度很高</p><p>def a(x,i=1) // 默认i为1</p><p>必选参数在前，默认参数在后，当不需要默认参数可以直接覆盖掉，灵活性很高</p><p>当参数的个数不明确时，可以把参数当成list或tuple传进来，例如：</p><pre><code>def a(x):
+    abc = 0
+    for a in x:
+        abc=abc+a
+    return abc
+a = a([1,2,3])
+
+print(a) // 6
+</code></pre><p>如果已经有一个list或tuple，想传进来：</p><pre><code>def xyz(*x):
+    abc = 0
+    for a in x:
+        abc=abc+a
+    return abc
+
+b = [1,3,5]
+a = xyz(*b)
+
+print(a)
+</code></pre><p>关键字参数可以传入0或者任意个参数，而这些参数会变成一个tuple</p><p>def abc(i,**n):
+print(&lsquo;i:&rsquo;, i, &rsquo;n:&rsquo;, n)</p><p>abc(&ldquo;abc&rdquo;)</p><p>如果已经有一个tuple，想传入：
+b = {1,3,5}
+abc(**b)</p><p>如果想限制关键字参数，例如：</p><pre><code>def xyz(i,n,*,name,age):
+    print(i,n,name,age)
+xyz(1,2,name=&quot;hallo&quot;,age=18)  // 1 2 hallo 18
+</code></pre><p>*后面的参数被认为是命名关键字参数，限制只能使用该参数名</p><p>如果参数中已经有了可变参数，后面跟着的命名关键字参数就不需要*来分隔了</p><p>命名关键字参数必须要传入参数名，否则报错，如果命名关键字参数已经有默认值，可以不用传入</p><p>递归函数</p><p>递归函数就是这个函数反复调用它本身，例如：</p><p>从1加到100，1+2+3+&mldr;+100</p><pre><code>def xyz(n):
+    if n == 1:
+    return 1
+
+    return n+xyz(n-1)
+
+a = xyz(100)
+
+print(a) // 5050
+</code></pre><p>尾递归优化</p><p>递归调用次数过多，会导致堆栈溢出，溢出就是超出了最大上限的堆栈</p><p>而解决因为递归而导致的溢出的方法就是尾递归优化</p><p>但是Python解释器目前不支持尾递归优化，就算使用尾递归方式，也还是会导致堆栈溢出</p><pre><code>def abc(n):
+    return xyz(n,1)
+
+def xyz(n,go):
+    if n == 1:
+        return go
+
+    return xyz(n-1,n+go)
+
+a = abc(100)
+
+print(a)
+</code></pre><p>切片，顾名思义，就是取部分值，例如：</p><p>a = [1,2,3,4,5]</p><p>a[0:3] // [1,2,3]</p><p>索引从0开始，到3为止</p><p>支持倒数切片</p><p>a[:-1] // [1,2,3,4]</p><p>如果开头为0，可以省略不写，倒数第一个为-1</p><p>a[::2] // [1, 3, 5] 每两个取一个</p><p>a[:] // 复制一个一样的list</p><p>tupel也可以使用切片，但是操作结果还是tuple</p><p>a = (0,1,2,3)</p><p>a[:3] // (0,1,2)</p><p>甚至连字符串都可以切片，结果还是字符串</p><p>a = &ldquo;hallo&rdquo;</p><p>a[:2] // hallo</p><p>迭代</p><p>读写文件</p><p>abc = open(&lsquo;1.txt&rsquo;,&lsquo;r&rsquo;)
+go = abc.read(6) # 可以指定读取的数量，如果为空则读取全部
+print(go)
+abc.clsoe() # 这个用来关闭文件</p><p>r为只读，w为写入，a为追加，rb为以二进制方式只读，wb为以二进制方式写入，ab为以二进制方式追加</p><p>abc = open(&lsquo;1.txt&rsquo;,&lsquo;w&rsquo;)
+abc.write(&ldquo;hallo word!!&rdquo; * 6) # 写入6条数据
+abc.close()</p><p>abc = open(&lsquo;1.txt&rsquo;,&lsquo;r&rsquo;)
+data = abc.readline()
+print(&ldquo;3:%s&rdquo; % data) # 读取指定行数的数据，这里为读取3行数据
+abc.close()</p><p>如果想多钱全部数据，并且返回的是一个列表，列表的每一个元素为都为每一行数据，可以：
+abc = open(&lsquo;1.txt&rsquo;, &lsquo;r&rsquo;)
+data = data.readlines()<br>print(type(data))
+for a in data:
+print(a)
+data.close()</p><hr><p>if判断</p><pre><code>data = 10
+if data &gt;=18:
+    print(&quot;成年了!&quot;)
+elif data&gt;=6:
+    print(&quot;义务教育&quot;)
+else:
+    print(&quot;未成年!!!&quot;)
+</code></pre><hr><p>输入输出</p><pre><code>data = int(input(&quot;请输入数据&quot;))
+print(data)
+</code></pre><hr><p>类型转换（Python是弱类型语言，弱类型指不能对变量声明类型，只能声明数据的类型）</p><p>int()整数,str()字符串,float()浮点数,bool()布尔数，list()列表，tuple()元组，chr()字符，unichr()Unicode字符等等</p><p>例如：</p><pre><code>data1 = &quot;123&quot;
+data2 = 123
+print(isinstance(data1,str))
+print(isinstance(data2,int))
+data3 = int(data1)
+data4 = str(data2)
+print(isinstance(data3,int))
+print(isinstance(data4,str))
+</code></pre><hr><p>运算符</p><p>+加，-减，*乘，/除，//取整除，%取余，**指数</p><p>优先级和普通的算数规则一样，指数大于乘和除,取余,取整除大于加和减</p><p>字符串不能和整数相加，必须将字符串或者整数转换，字符串为拼接，整数为算数</p><p>赋值运算符</p><p>=，将右边赋值给左边的变量，可以给多个变量赋值，例如：a = b = c = 666或者a,b,c = 666,123,100</p><p>a+=1 ：a=a+1，a-=1：a=a-1，a*=1：：a=a*1，a/=1：：a=a/1,a//=1: ：a=a//1,a%=1：a=a%1 ,a**=1：a=a**1</p><p>==比较是否相等，!=比较不相等，>大于，&lt;小于，>=大于等于，&lt;=小于等于</p><p>and和运算符（只有当比较全部为true才为true，否则都为false），or或运算符（只有当比较有一个为true才为true，全部为false才为false），not取反运算符（只有当比较为true才为false，当比较为false才为true）</p><hr><p>for循环和while循环</p><p>for循环可以遍历任何以序列排序的东东，比如列表和字符串</p><pre><code>for a in &quot;hallo word&quot;:
+    print(a)
+</code></pre><p>或者</p><pre><code>fot a in range(1,100):
+    print(a)
+</code></pre><p>range支持3个参数，分别是起始，结束，以及步长</p><p>while循环,在某个条件下为true下才会执行里面的语句</p><pre><code>data = 0
+while data &lt; 10:
+    print(data)
+    data+=1
+</code></pre><hr><p>获取字符串或者列表的长度，len(data)</p><p>查找某些内容是否在字符串的某些地方中存在（如果不存在，返回-1）,find(str,beg=0,end=len(strdata))</p><p>str为要查找的字符串，beg开始查找的位置，end结束查找的位置</p><hr><p>错误处理</p><p>读取文件错误（当文件不存在时）
+try:
+abc = open(&lsquo;data.txt&rsquo;, &lsquo;r&rsquo;)
+print(abc.read())
+except FileNotFoundError:
+print(&lsquo;文件没有找到,请检查文件名称是否正确&rsquo;)</p><p>try&mldr;except语句可以处理程序运行过程中可能出现的异常</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://blog.cjlio.com/tags/python/>Python</a></li></ul><nav class=paginav><a class=prev href=https://blog.cjlio.com/posts/29/><span class=title>« Prev</span><br><span>配置树莓派笔记</span></a>
+<a class=next href=https://blog.cjlio.com/posts/27/><span class=title>Next »</span><br><span>Python的一些神器的简单用法</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

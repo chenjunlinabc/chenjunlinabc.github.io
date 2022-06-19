@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>TailwindCSS on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/tailwindcss/</link>
+    <description>Recent content in TailwindCSS on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 27 Jan 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/tailwindcss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用TailwindCSS</title>
+      <link>https://blog.cjlio.com/posts/130/</link>
+      <pubDate>Thu, 27 Jan 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/130/</guid>
+      <description>TailwindCSS是一个CSS框架，我个人理解这东西就是根据class来生成css（按需），而不是像bootstrap那样，TailwindCSS是原子化的
+安装
+npm install tailwindcss
+初始化tailwind.config.js
+npx tailwindcss init
+在tailwind.config.js中content属性，表示着项目的html或者js文件
+content: [ &#39;./src/**/*.{html,js}&#39; ], 如果没有配置content属性，会警告
+warn - The content option in your Tailwind CSS configuration is missing or empty. warn - Configure your content sources or your generated CSS will be missing styles. warn - https://tailwindcss.com/docs/content-configuration
+创建一个css文件配置tailwind三大组件（base，components.utilities）
+@tailwind base; @tailwind components; @tailwind utilities; 如果使用的是webpacker或者postcss-import，不能使用@tailwind指令，需要
+@import &amp;quot;tailwindcss/base&amp;quot;; @import &amp;quot;tailwindcss/components&amp;quot;; @import &amp;quot;tailwindcss/utilities&amp;quot;; 也可以将css导入到js中
+import &amp;quot;tailwindcss/tailwind.css&amp;quot; tailwind编译
+npx tailwindcss -i ./src/index.css -o ./dist/main.css</description>
+    </item>
+    
+  </channel>
+</rss>

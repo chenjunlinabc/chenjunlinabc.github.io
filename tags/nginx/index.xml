@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>nginx on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/nginx/</link>
+    <description>Recent content in nginx on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 18 Aug 2021 12:50:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用Nginx</title>
+      <link>https://blog.cjlio.com/posts/85/</link>
+      <pubDate>Wed, 18 Aug 2021 12:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/85/</guid>
+      <description>Nginx是目前web服务器占比第一（在https://w3techs.com 中可以看到Nginx占比33.1%）
+安装
+编译安装
+apt install -y gcc gcc-c++ pcre pcre-devel openssl openssl-devel zlib zlib-devel
+wget http://nginx.org/download/nginx-1.18.0.tar.gz
+tar -zxvf nginx-1.18.0.tar.gz
+cd nginx-1.18.0
+make &amp;amp;&amp;amp;make install
+一键安装（不推荐）
+apt install nginx
+检查是否安装完毕
+nginx -v
+nginx配置文件nginx.conf解读，一般在/etc/nginx下
+user root; // nginx运行用户 worker_processes auto; // nginx进程数，一般会设置和CPU核数一致 error_log /www/wwwlogs/nginx_error.log crit; // 错误日志存储位置 pid /www/server/nginx/logs/nginx.pid; // 进程PID存储位置 events{ worker_connections 51200; // 单个后台进程的最大并发数 multi_accept on; // 一个进程可以同时接受所有的新连接，关闭（off）的话一个进程只能接收一个连接，默认值为off关闭 } http{ include mime.types; // 文件扩展和类型的映射表 default_type application/octet-stream; // 默认文件的类型 server_names_hash_bucket_size 512; client_header_buffer_size 32k; large_client_header_buffers 4 32k; client_max_body_size 50m; gzip on; // 开启gzip压缩 gzip_min_length 1k; // 设置允许压缩的最小的字节数，这里设置1k，就是只有超过1k的文件才会被压缩 gzip_buffers 4 16k; // 以16k为单位，以16k的4倍申请存储gzip压缩的数据流内存 gzip_http_version 1.</description>
+    </item>
+    
+    <item>
+      <title>记录一次MIME类型错误</title>
+      <link>https://blog.cjlio.com/posts/39/</link>
+      <pubDate>Thu, 17 Jun 2021 08:25:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/39/</guid>
+      <description>打开网页，发现css没有加载出来，f12一看，content-type: text/plain;，把这个css当文本输出了，浏览器请求到这种类型的文件都不会对其进行处理，而且应该是text/css才对
+先了解一下浏览器是如何处理这些数据的，是怎么区分的
+数据通过http传输协议获取到，然后由web服务器的content-type向浏览器进行指示数据的类型，而mime.types就是用来定义数据文件的类型，用什么格式来进行网页编码（charset=utf-8）
+当web服务器接收到请求时，会依据请求文件的后缀名在服务器的MIME配置文件中找到对应的mime.types，然后根据mime.types来确定content-type，浏览器根据content-type来处理数据
+解决方法：当然是指定mime.types文件，而宝塔的nginx一般是在/www/server/nginx目录下，而mime.types文件一般在nginx目录下的conf目录下，会看到一个叫mime.types的文件和一个叫mime.types.default的文件
+往nginx配置文件上输入 include /www/server/nginx/conf/mime.types; default_type application/octet-stream;
+第一个行指定mime.types，第二行就是默认类型
+然后重启一下nginx服务器，刷新一下网页，看到恢复成content-type: text/css了</description>
+    </item>
+    
+  </channel>
+</rss>

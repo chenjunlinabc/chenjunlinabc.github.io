@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>JavaScript on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/javascript/</link>
+    <description>Recent content in JavaScript on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 07 Feb 2022 13:37:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用ESbuild打包工具</title>
+      <link>https://blog.cjlio.com/posts/132/</link>
+      <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/132/</guid>
+      <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包，支持TypeScript和jsx
+安装
+npm install esbuild
+或者
+yarn add esbuild
+打包
+.\node_modules.bin\esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle
+或者package.json
+&amp;ldquo;build&amp;rdquo;: &amp;ldquo;esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle&amp;rdquo;
+npm run build
+例子（app.jsx）
+import React from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; const App = () =&amp;gt; { return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; ) } ReactDOM.render( &amp;lt;App /&amp;gt;, document.getElementById(&amp;quot;app&amp;quot;) ) index.html
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 我本地打包只花64ms就打包好了</description>
+    </item>
+    
+    <item>
+      <title>JavaScript知识扩展</title>
+      <link>https://blog.cjlio.com/posts/61/</link>
+      <pubDate>Sun, 18 Jul 2021 22:35:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/61/</guid>
+      <description>函数被调用时，浏览器会传递两个参数，this和arguments
+this就是函数的上下文对象，而arguments是一个数组对象（也就是可以通过索引来操作数据），函数调用时传递的参数会在arguments中保存
+callee属性对应着当前的函数
+例如：
+function abc(){ console.log(arguments.length); console.log(arguments[0]); console.log(arguments.callee); console.log(this) } abc(&#39;hallo&#39;); BOM对象 (Browser Object Model) 是指浏览器对象模型
+该对象提供了浏览器行为和浏览器属性方法
+windows表示整个浏览器的窗口，同时也是JavaScript最顶层的对象，其他bom对象都是其的属性
+navigator包含了当前浏览器的全部信息
+console.log(window.navigator) 可以看到输出了很多属性，如userAgent，language等等
+location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
+console.log(window.location) const urlData = &amp;quot;https://cjlio.com/; window.location.href = urlData; 这个也可以实现跳转
+window.location.assign(&amp;quot;https://cjlio.com&amp;quot;) 这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
+window.location.replace(&amp;quot;https://cjlio.com&amp;quot;) reload方法可以重载页面，加上true参数将强制更新
+window.location.reload(true) history表示浏览器的历史记录
+console.log(window.history) length表示本次访问网站的数量
+同时也提供了几个方法
+back()返回上个页面
+window.history.back()
+可以绑定个点击事件，用来返回上个页面
+forward()前进，一般是和back()搭配使用，一个返回上个页面，一个返回到之前的页面
+window.history.forward()
+go()，前进或者后退指定次数，正数为前进，负数为后退
+window.history.go(-1)
+screen代表用户的屏幕的信息, 获取显示器的相关信息
+console.log(window.screen) call 和 apply
+addEventListen()绑定事件函数
+removeEventListen()移除事件函数
+鼠标按下时onmousedown
+鼠标移动时onmousemove
+鼠标松开时onmouseup
+undefined代表定义未赋值
+null定义并赋值了, 只是值为null
+document.execCommand可以操作剪贴板
+document.execCommand(&amp;lsquo;copy&amp;rsquo;) // 复制
+document.execCommand(&amp;lsquo;cut&amp;rsquo;) // 剪切
+document.execCommand(&amp;lsquo;paste&amp;rsquo;) // 粘贴</description>
+    </item>
+    
+    <item>
+      <title>ES6学习笔记</title>
+      <link>https://blog.cjlio.com/posts/57/</link>
+      <pubDate>Fri, 09 Jul 2021 22:51:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/57/</guid>
+      <description>ECMAScript
+JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
+ECMAScript是规范，JavaScript是实现
+ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
+变量
+let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
+例如：
+if(true){ let a = 666; } console.log(a); // Uncaught ReferenceError: a is not defined 注意：
+使用var声明的变量不具备块级作用域有效的特性
+使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
+const声明一个只读的常量，一声明，常量的值将不能改变
+const abc =123;
+const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区
+ES6的作用域：
+全局作用域 函数作用域 块级作用域
+因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel
+安装babel
+npm install -g babel-cli
+安装转换包
+npm install &amp;ndash;save-dev babel-preset-es2015 babel-cli
+新建.babelrc文件，写入：
+{ &amp;quot;presets&amp;quot;:[ &amp;quot;es2015&amp;quot; ], &amp;quot;plugins&amp;quot;:[] } babel main.js -o src/main.js
+然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
+变量声明方式
+let，声明一个变量
+const，声明一个常量
+在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用
+let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量
+const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误
+变量解构
+ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
+let [a,b,c] = [1,2,3]
+会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined</description>
+    </item>
+    
+    <item>
+      <title>Ajax学习笔记</title>
+      <link>https://blog.cjlio.com/posts/54/</link>
+      <pubDate>Sat, 03 Jul 2021 15:30:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/54/</guid>
+      <description>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
+关于XMLHttpRequest对象（构造函数）的用法：https://cjlio.com/archives/14.html
+ajax需要网站环境下生效，需要web服务器，nodemon
+app.js
+// 导入express const express = require(&amp;quot;express&amp;quot;); // 导入path const patg = require(&amp;quot;path&amp;quot;); // 创建web服务器 const app = express(); // 静态资源访问服务 app.use(express.static(path.join(__dirname,&amp;quot;public&amp;quot;))); app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{ res.send(&amp;quot;hallo&amp;quot;); }); // 监听端口 app.listen(3000); console.log(&amp;quot;服务器启动成功&amp;quot;) nodemon app.js
+ajax运行原理
+ajax代理浏览器发送请求和接收响应，达到局部更新页面数据的效果
+创建ajax对象
+var hallo = new XMLHttpRequest();
+请求方式和请求地址
+hallo.open(&amp;ldquo;GET&amp;rdquo;,&amp;ldquo;https://httpbin.org/get&amp;quot;)
+发送请求
+hallo.send();
+获取服务端给予客户端的响应数据，因为请求和获取数据的速度取决于网络速度，应该设置onload事件，当加载完毕了再获取数据
+hallo.onload = function(){ console.log(hallo.responseText) } 服务端大部分情况下用json对象作为响应数据的格式，通过拼接json数据和html，将拼接的结果显示在页面中
+在http请求与响应的过程中，请求参数或者响应内容，如果是对象类型，最后都会转换为对象字符串进行传输，例如：
+app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{ res.send({&amp;quot;name&amp;quot; : &amp;quot;root&amp;quot;}); }); json字符串转换为json对象
+var responseText = JSON.parse(hallo.responseText); console.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript基础学习笔记</title>
+      <link>https://blog.cjlio.com/posts/46/</link>
+      <pubDate>Thu, 24 Jun 2021 07:57:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/46/</guid>
+      <description>插入js
+在html页面使用js
+引用js文件</description>
+    </item>
+    
+    <item>
+      <title>JavaScript的一些基础知识扩展</title>
+      <link>https://blog.cjlio.com/posts/32/</link>
+      <pubDate>Wed, 16 Jun 2021 15:12:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/32/</guid>
+      <description>JavaScript的变量具有动态性的特性，就决定了变量只是用于保存该特定的值的名字
+JavaScript中有两种，基本类型值和引用类型值
+基本数据类型有数字(Number)，字符串(String)，布尔值(Boolean)，null，undefined，（es6中加入了个symbol）,BigInt(ES2020)
+基本类型是按值访问，可以直接操作保存在变量中的值
+基本类型值是简单的数据段，而引用类型是指由多个值组成的对象
+因为基本类型是按值访问的，所以可以操控保存在变量的值
+引用类型的值是保存在内存中的对象，JavaScript不允许直接访问内存中的位置
+操控对象，其实就是在操控对象的引用，而不是对象本身
+JavaScript的逻辑运算
+JavaScript的任何数据类型都能转换为布尔类型
+&amp;lt; 小于 &amp;gt; 大于 &amp;lt;= 小于或者等于 &amp;gt;= 大于或者等于 == 没错，这个才是等于，=这个是用来赋值的 != 不等于 === 绝对等于（值和数据类型相等） !== 不绝对等于（值和数据类型其中有一个或者都不相等）
+&amp;amp;&amp;amp; 必须都要符合要求
+|| 只有一个符合要求
+! 真为假，假为真（当判断为true时返回false，判断为false时返回true）
+逻辑运算的结果为布尔值
+类型判断
+数据类型有undefined，null，boolean，number，string，object，symbol，BigInt（ES2020）
+undefined，该变量没有被赋值
+null，该变量的值为空的对象指针
+boolean，该变量的值为布尔值
+string，该变量的值为字符串
+number，该变量的值为数值
+object，该变量为对象或者null
+Symbol，生成一个全局独一无二的值
+tyoeof操作符会返回该变量的值或者该值是什么数据类型
+注意：null值表示一个空对象指针，所以使用typeof操作符检测null时会返回object，typeof个函数，会返回function
+typeof判断null之类的不合适，在这种情况可以使用instanceof
+instanceof会检查构造函数的prototype属性是否在某个实例的原型链上
+例如：
+var abc = new testa() if(Object.getPrototypeOf(abc) === testa.prototype){}
+instanceof判断null
+null instanceof Object // false
+返回布尔值,例如
+var arr = [1,1,2,3,4,5]; console.log(arr instanceof Array); // 返回true</description>
+    </item>
+    
+    <item>
+      <title>JavaScript-IntersectionObserver构造函数笔记</title>
+      <link>https://blog.cjlio.com/posts/16/</link>
+      <pubDate>Wed, 16 Jun 2021 09:29:56 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/16/</guid>
+      <description>IntersectionObserver是浏览器本身提供的构造函数，因此可能有一些老版本浏览器没有效果
+该构造函数提供了一种异步的监测目标对象和祖先对象或者视口相交的方法
+var observe = new IntersectionObserver(callback, options)
+例如上面，该函数可以传入两个参数，callback是当可视性发生改变时执行回调函数，options是配置对象
+使用该构造函数生成的实例中有3个观察器实例，分别是observe（开始监测），unobserve（停止监测），disconnect（关闭监测），其中observe的参数是dom对象
+当监测目标对象的可视性发生改变时调用callback参数中的回调函数
+options参数：主要是设置观测的对象和观测值，该参数中有三个键值对
+root指的是观测对象的根元素，默认是浏览器视口，值要么是根元素，要么就是观测对象的父元素
+rootMargin指的是用于扩大或者缩小视口的大小
+threshold指的是交叉的比例，主要决定什么时候触发回调函数，是数组，默认值为0
+callback参数中的回调函数一般会被调用两次，一次是当监测对象可视性满足了threshold指定的值，还有一次就是监测对象不满足threshold指定的值
+IntersectionObserverEntry对象
+该对象提供了监测对象的信息，有七个属性
+boundingClientRect：返回目标的矩形信息
+intersectionRatio：返回相交时和目标的比例值，不可视时小于等于0
+intersectionRect：返回目标和视口相交的矩形信息
+isIntersecting：返回目标当前是否可视，可视为true（返回值为布尔值）
+rootBounds：返回根元素的矩形信息，没有指定根元素则返回当前视口的矩形信息
+target：返回观测的目标对象，是dom对象
+time：返回一个记录了从观测开始到交叉被触发时间的的时间戳，单位为毫秒
+如果是搞懒加载，那么intersectionRatio和isIntersecting是关键点
+例如：
+const lazyload = new IntersectionObserver((target)=&amp;gt;{ // 实例化 target.forEach((item) =&amp;gt;{ if (item.intersectionRatio){ // 当目标可视 item.target.src = item.target.alt; // 进行属性值覆盖 lazyload.unobserve(item.target) // 停止观测 } }) },{ rootMargin: &amp;quot;100px&amp;quot; // 提前100px }); const imgs = document.querySelectorAll(&amp;quot;img[alt]&amp;quot;); // 选择带有alt属性的img元素 imgs.forEach((item) =&amp;gt; { lazyload.observe(item) // 开始观测 }); </description>
+    </item>
+    
+    <item>
+      <title>JavaScript-XMLHttpRequest对象笔记</title>
+      <link>https://blog.cjlio.com/posts/14/</link>
+      <pubDate>Wed, 16 Jun 2021 09:25:49 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/14/</guid>
+      <description>ajax请求是异步的，因此可以通过回调函数来处理响应
+实现ajax请求大多是使用XMLHttpRequest对象，该对象用于与服务器交互，可以在不刷新页面的情况下请求url，获取数据，从而达到更新页面内容的目的
+初始化XMLHttpRequest()构造函数，可以获得一个XMLHttpReques实例，例如：
+var xmlhttp = new XMLHttpRequest() xmlhttp.onreadystatechange = function(){ if(xmlhttp.readyState == 4 &amp;amp;&amp;amp; xmlhttp.status == 200){ document.getElementById(&amp;quot;app&amp;quot;).innerHTML = xmlhttp.responseText } } console.log(xmlhttp.readyState) // 0 xmlhttp.open(&amp;quot;GET&amp;quot;,&amp;quot;https://httpbin.org/get&amp;quot;,true) console.log(xmlhttp.readyState) // 1 xmlhttp.onprogress =function(){ console.log(xmlhttp.readyState) // 3 } xmlhttp.onload = function(){ console.log(xmlhttp.readyState) // 4 } xmlhttp.send(); XMLHttpReques实例的属性
+XMLHttpRequest.readyState：该属性会返回一个XMLHttpRequest的状态，状态有5种，例如：
+状态0：已被实例化，但是未调用open()方法 状态1：open()方法已被调用（连接） 状态2：send()方法已被调用（请求） 状态3：请求处理中 状态4：请求完毕，且响应已就绪
+XMLHttpReques.onreadystatechange：该属性对应了一个回调函数，当XMLHttpRequest.readyState属性发生改变时，该回调函数就会被调用，例子如上面所示
+XMLHttpRequest.response：该属性会返回一个类型，该类型取决于XMLHttpRequest.responseType的值，类型例如：
+DOMString：当XMLHttpRequest.responseType的值为空字符串，那么就是DOMString类型（是一个utf-16字符串，默认）
+arraybuffer：XMLHttpRequest.responseType的值为存储二进制数据的ArrayBuffer对象（该对象是用于存储二进制数据，不能直接进行操作，只能通过视图来进行操作）
+Blob：XMLHttpRequest.responseType的值为包含二进制数据的Blob对象（该对象是用于表示一个类似文件的对象，可以通过二进制的方式进行读取）
+Document：值是一个Document
+json：值是一个JavaScript对象
+text：值是一个DOMString对象表示的文本（utf-16字符串）
+XMLHttpRequest.responseText：该属性的值是请求被发送到服务端后，从服务端返回的文本，如果值为null，那么就是请求失败，如果为空字符串，那么就是没有send()
+XMLHttpRequest.responseType：该属性会返回一个值，该值和response属性的值一样
+XMLHttpRequest.responseURL：该属性会返回一个序列化url，如果url为空那么就返回空字符串
+XMLHttpRequest.responseXML：该属性返回Document(html/xml)，如果请求没有成功或者获取的数据，无法解析为html或者xml，那么为null
+XMLHttpRequest.status：该属性会返回响应中的http状态码，如果请求没有完成，那么值为0，如果出错也是为0
+XMLHttpRequest.timeout：该属性会返回一个值，该值为请求被自动终止前所消耗的毫秒数（默认为0，则表示没有超时）
+XMLHttpRequest.upload：该属性是用于表示上传的进度，可搭配事件监听器来追踪进度，例如：
+onloadstart：开始获取数据 onprogress：数据正在传输中 onabort：数据获取终止 onerror：数据获取失败 onload：数据获取成功 ontimeout：数据获取操作在规定的时间内未完成 onloadend：数据获取完成（不管是否成功）</description>
+    </item>
+    
+    <item>
+      <title>jQuery-ajax()方法笔记</title>
+      <link>https://blog.cjlio.com/posts/13/</link>
+      <pubDate>Wed, 16 Jun 2021 09:24:37 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/13/</guid>
+      <description>ajax()是jQuery中定义的一个方法，该方法用于执行ajax请求，例如：
+$(document).ready(function(){ $(&amp;quot;button&amp;quot;).click(function(){ $.ajax({ type: &amp;quot;GET&amp;quot;, url: &amp;quot;https://httpbin.org/get&amp;quot;, success: function(getdata){ console.log(getdata) } }) }) }); 参数
+url：指定发送请求的URL，默认是当前页面
+type：指定请求方式（GET或者POST）
+success：当请求成功时执行的函数
+data：指定要发送到服务端的数据
+dataType：预期服务端响应过来的数据类型
+async：指定请求是否异步（布尔值）
+beforeSend：在发送请求之前执行的函数
+cache：指定客户端是否缓存被请求页面，默认是true（布尔值）
+complete：在请求完成时执行的函数（不管是否发送成功）
+contentType：指定要发送到服务端时使用的内容类型
+context：指定所有ajax相关的回调函数规定this值
+dataFilter：指定用于处理ajax返回的原始响应数据的函数
+error：指定请求失败时执行的函数
+global：指定请求是否触发全局ajax事件，默认为true
+ifModified：指定是否在最后一次请求
+jsonp：指定一个jsonp请求中重写回调函数的字符串
+jsonpCallback：指定一个jsonp回调函数的名称
+processData：指定是否将请求发送的数据转换为查询字符串，默认为true
+scriptCharset：指定请求的字符集
+timeout：指定请求超时时间（单位：毫秒）
+traditional：指定是否使用传统的方式来序列化数据
+username：指定响应http访问认证请求的用户名
+password：指定响应http访问认证请求的密码
+xhr：用于重写或者增强XMLHttpRequest对象的函数</description>
+    </item>
+    
+    <item>
+      <title>原生js实现瀑布流布局</title>
+      <link>https://blog.cjlio.com/posts/10/</link>
+      <pubDate>Wed, 16 Jun 2021 09:14:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/10/</guid>
+      <description>瀑布流的特点就是容器等宽不等高，计算其高度，选择最矮的一个容器的下面将插入第二行的第一个容器，以此类推，因此容器需要设置为绝对定位
+首先需要确定一行有多少列，列数 = 页面的宽度 / 容器的宽度
+获取页面的宽度：window.innerWidth或者document.documentElement.clientWidth或者document.body.clientWidth
+获取页面的高度：window.innerHeight或者document.documentElement.clientHeight或者document.body.clientHeight
+页面宽度：.width，容器宽度：.offsetWidth
+得到了列数后，还需要得到全部容器的高度，因此还需要用到数组，用来存储容器的高度
+遍历全部容器，还需要判断是否到了第二行，i&amp;lt;列数
+而第一行的全部容器，设置头部和左边定位，左边定位设置为容器的宽度*i，保证不会被覆盖或者溢出，同时将arr[i].offsetWidth传入新的数组中
+然后找到上一行最矮的容器，只需要将全部得到的容器的宽度判断一下就可以，首先假释一下第一个容器就是最矮的，当遍历的容器小于该容器时，那么将该容器设置为当前遍历的容器，而当前遍历的i就是最矮的容器索引值
+然后就设置下一行的容器的位置就可以了，头部：最矮的容器的高度，左边：最矮的容器距离页面最左边的宽度
+因为已经设置了下一行的容器，因此还需要重新获取一下当前容器的高度，当前容器高度 = 当前容器高度+间隙 +拼接过来的容器的高度
+为了体验更好，可以将上面操作封装到一个函数中，当网页加载完毕加执行（window.onload），当页面宽度高度发送变化时也执行(window.onresize)
+例如：
+var data = document.getElementsByClassName(&#39;imgs&#39;); function datamain(){ var datawidtha = window.innerWidth; var datawidthb = Math.floor(data[0].offsetWidth); var dataab = Math.floor(datawidtha/datawidthb); var ints = Math.floor((datawidtha - dataab*datawidthb)/(dataab+1)) var arr = []; for(var i=0;i&amp;lt;data.length;i++){ if(i&amp;lt;dataab){ data[i].style.top = 0; data[i].style.left = (datawidthb+ints) * i + &amp;quot;px&amp;quot;; arr.push(data[i].offsetHeight); }else{ var datamin = arr[0]; var index = 0; for(var a = 0; a&amp;lt;arr.</description>
+    </item>
+    
+    <item>
+      <title>IndexedDB浏览器数据库学习笔记</title>
+      <link>https://blog.cjlio.com/posts/5/</link>
+      <pubDate>Tue, 15 Jun 2021 19:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/5/</guid>
+      <description>IndexedDB是浏览器提供的本地数据库，允许存储数据，采用键值对存储，允许异步请求，允许索引请求，IndexedDB理论上存储空间没有限制
+打开（新建）indexedDB：
+indexedDB.open()，该方法有俩个值，第一个是数据库名（没有该数据库那么就新建），第二个值为数据库的版本，一般来说默认为1（必须是大于0的自然数），例如：
+var datadb = window.indexedDB.open(&amp;quot;data&amp;quot;,1); datadb.onerror = function(){ console.log(&amp;quot;数据库打开失败&amp;quot;) } datadb.onsuccess = function(){ console.log(&amp;quot;数据库打开成功&amp;quot;); } datadb.onupgradeneeded = function(event){ console.log(&amp;quot;数据库版本升级&amp;quot;); } onerror事件表示打开数据库失败
+onsuccess事件表示打开数据库成功
+onupgradeneeded事件表示数据库升级（当数据库版本低于指定的数据库版本）（另外，新建数据库，操作新的数据库也可以在该事件中处理）
+新建数据对象（数据表）
+datadb.onupgradeneeded = function(event) { console.log(&amp;quot;数据库升级&amp;quot;); var objdb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{keyPath: &amp;quot;id&amp;quot;}); } 表名为abc，主键为id，主键默认为索引
+判断是否存在该表
+if(!event.target.result.objectStoreNames.contains(&#39;abc&#39;)){ var objdb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{keyPath: &amp;quot;id&amp;quot;}); } 递增属性(可以用于作为主键)
+var maindb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{autoIncrement: true}); 唯一属性
+objdb.createIndex(&amp;quot;id&amp;quot;,&amp;quot;id&amp;quot;,{unique: false}) createIndex()，三个参数分别是索引名称，索引的属性，配置对象，用来新建索引
+添加数据
+var datadb = window.indexedDB.open(&amp;quot;data&amp;quot;,1); var db; var objdb; datadb.onupgradeneeded = function(event) { console.log(&amp;quot;数据库升级&amp;quot;); db = event.</description>
+    </item>
+    
+  </channel>
+</rss>

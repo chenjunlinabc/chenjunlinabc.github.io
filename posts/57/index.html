@@ -1,0 +1,274 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>ES6学习笔记 | 小陈的个人博客</title><meta name=keywords content="JavaScript"><meta name=description content="ECMAScript
+JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
+ECMAScript是规范，JavaScript是实现
+ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
+变量
+let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
+例如：
+if(true){ let a = 666; } console.log(a); // Uncaught ReferenceError: a is not defined 注意：
+使用var声明的变量不具备块级作用域有效的特性
+使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
+const声明一个只读的常量，一声明，常量的值将不能改变
+const abc =123;
+const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区
+ES6的作用域：
+全局作用域 函数作用域 块级作用域
+因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel
+安装babel
+npm install -g babel-cli
+安装转换包
+npm install &ndash;save-dev babel-preset-es2015 babel-cli
+新建.babelrc文件，写入：
+{ &#34;presets&#34;:[ &#34;es2015&#34; ], &#34;plugins&#34;:[] } babel main.js -o src/main.js
+然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
+变量声明方式
+let，声明一个变量
+const，声明一个常量
+在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用
+let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量
+const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误
+变量解构
+ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
+let [a,b,c] = [1,2,3]
+会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined"><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/posts/57/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css integrity="sha256-C3OaLixeVlbkvNXwsiaNBjrdr4HYnsOYfWr48E3s3Jc=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="ES6学习笔记"><meta property="og:description" content="ECMAScript
+JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
+ECMAScript是规范，JavaScript是实现
+ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
+变量
+let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
+例如：
+if(true){ let a = 666; } console.log(a); // Uncaught ReferenceError: a is not defined 注意：
+使用var声明的变量不具备块级作用域有效的特性
+使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
+const声明一个只读的常量，一声明，常量的值将不能改变
+const abc =123;
+const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区
+ES6的作用域：
+全局作用域 函数作用域 块级作用域
+因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel
+安装babel
+npm install -g babel-cli
+安装转换包
+npm install &ndash;save-dev babel-preset-es2015 babel-cli
+新建.babelrc文件，写入：
+{ &#34;presets&#34;:[ &#34;es2015&#34; ], &#34;plugins&#34;:[] } babel main.js -o src/main.js
+然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
+变量声明方式
+let，声明一个变量
+const，声明一个常量
+在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用
+let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量
+const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误
+变量解构
+ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
+let [a,b,c] = [1,2,3]
+会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.cjlio.com/posts/57/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-09T22:51:00+00:00"><meta property="article:modified_time" content="2021-07-09T22:51:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="ES6学习笔记"><meta name=twitter:description content="ECMAScript
+JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
+ECMAScript是规范，JavaScript是实现
+ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
+变量
+let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
+例如：
+if(true){ let a = 666; } console.log(a); // Uncaught ReferenceError: a is not defined 注意：
+使用var声明的变量不具备块级作用域有效的特性
+使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
+const声明一个只读的常量，一声明，常量的值将不能改变
+const abc =123;
+const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区
+ES6的作用域：
+全局作用域 函数作用域 块级作用域
+因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel
+安装babel
+npm install -g babel-cli
+安装转换包
+npm install &ndash;save-dev babel-preset-es2015 babel-cli
+新建.babelrc文件，写入：
+{ &#34;presets&#34;:[ &#34;es2015&#34; ], &#34;plugins&#34;:[] } babel main.js -o src/main.js
+然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
+变量声明方式
+let，声明一个变量
+const，声明一个常量
+在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用
+let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量
+const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误
+变量解构
+ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
+let [a,b,c] = [1,2,3]
+会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://blog.cjlio.com/posts/"},{"@type":"ListItem","position":3,"name":"ES6学习笔记","item":"https://blog.cjlio.com/posts/57/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"ES6学习笔记","name":"ES6学习笔记","description":"ECMAScript\nJavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript\nECMAScript是规范，JavaScript是实现\nES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了\n变量\nlet关键字声明变量，使用let声明的变量具有块级作用域有效的特性\n例如：\nif(true){ let a = 666; } console.log(a); // Uncaught ReferenceError: a is not defined 注意：\n使用var声明的变量不具备块级作用域有效的特性\n使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量\nconst声明一个只读的常量，一声明，常量的值将不能改变\nconst abc =123;\nconst一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区\nES6的作用域：\n全局作用域 函数作用域 块级作用域\n因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel\n安装babel\nnpm install -g babel-cli\n安装转换包\nnpm install \u0026ndash;save-dev babel-preset-es2015 babel-cli\n新建.babelrc文件，写入：\n{ \u0026quot;presets\u0026quot;:[ \u0026quot;es2015\u0026quot; ], \u0026quot;plugins\u0026quot;:[] } babel main.js -o src/main.js\n然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性\n变量声明方式\nlet，声明一个变量\nconst，声明一个常量\n在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用\nlet实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量\nconst实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误\n变量解构\nES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：\nlet [a,b,c] = [1,2,3]\n会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined","keywords":["JavaScript"],"articleBody":"ECMAScript\nJavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript\nECMAScript是规范，JavaScript是实现\nES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了\n变量\nlet关键字声明变量，使用let声明的变量具有块级作用域有效的特性\n例如：\nif(true){ let a = 666; } console.log(a); // Uncaught ReferenceError: a is not defined 注意：\n使用var声明的变量不具备块级作用域有效的特性\n使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量\nconst声明一个只读的常量，一声明，常量的值将不能改变\nconst abc =123;\nconst一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区\nES6的作用域：\n全局作用域 函数作用域 块级作用域\n因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel\n安装babel\nnpm install -g babel-cli\n安装转换包\nnpm install –save-dev babel-preset-es2015 babel-cli\n新建.babelrc文件，写入：\n{ \"presets\":[ \"es2015\" ], \"plugins\":[] } babel main.js -o src/main.js\n然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性\n变量声明方式\nlet，声明一个变量\nconst，声明一个常量\n在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用\nlet实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量\nconst实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误\n变量解构\nES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：\nlet [a,b,c] = [1,2,3]\n会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined\n当然，解构赋值也允许使用默认值（在没有进行赋值时，会使用该默认值来代替，当进行赋值时，会该默认值），例如：\nlet [a,b=“hello”] = [“word”]\nconsole.log(b+a) // helloword\n对象解构\nlet {name,pass} = {name:“root”,pass:“123”}\nconsole.log(name+pass)\n注意：如果变量已经声明了，直接进行解构会抛出错误\n解决方式：在解构语句块外部使用圆括号()包裹起来就好了\n字符串解构\nlet [a,b,c] =“abc”\nconsole.log(a+b+c)\n扩展运算符\n当某个函数或者方法中，传入的参数个数是不确定的时候，就可以使用该来作为参数，例如：\nfunction abc(...name){ console.log(name[0]) console.log(name[1]) } abc(\"hallo\",\"word\") rest运算符（和扩展运算符相反，合并为一个数组）\nfunction abc(a,...name){ console.log(a); console.log(name); } abc(\"hallo\",\"word\",\"yes\") 字符串模板\nlet name = “root”\nlet data = `hallo ${name} 来到`\nconsole.log(data)\n当然也支持插入htm标签，例如：\nlet data = `hallo ${name} 来到`\ndocument.write(data)\n也可以在模板中进行运算\nlet [a,b,c] = [1,2,3]\nlet abc = `${a+b+c}`\nconsole.log(abc)\n判断字符串是否存在\nlet name = “root”\nlet data = “hallo root”\nconsole.log(data.includes(name)) // true\n判断开头是否存在\ndata.startsWith(name)\n判断结尾是否存在\ndata.endsWith(name)\n箭头函数\nlet abc = (a,b,c) =\u003e{ console.log(a+b+c) } abc(1,2,3) 注意：箭头函数不能作为构造函数使用\n对象的函数解构\nlet obj = { a: \"hallo\", b: \"word\" } function abc({a,b}){ console.log(a,b) } abc(obj) // hallo word 数组的函数结构\nlet arr = [\"hallo\",\"word\"] function abc(a,b){ console.log(a,b) } abc(...arr) 判断对象或者数组中是否存在某个值\nlet obj = { a: \"hallo\" } console.log(\"a\" in obj) 对象\nES6允许将已经声明的变量直接赋值给对象，例如：\nlet abc = “hallo” let xyz = “word” let obj = {abc,xyz} console.log(obj)\n对象键值\nlet data = “name” let obj = {[data]: “root”} console.log(obj)\n允许通过变量来传递对象值\nlet name = “root” let pass = “123” let obj= {name,pass} console.log(obj)\n自定义对象方法\nlet obj={ add:function(a,b){ return a+b } } console.log(obj.add(1,2)) Object.is：严格模式相等\nconsole.log(Object.is(NaN,NaN)) console.log(NaN === NaN)\n===只是值相等，但是is是绝对相等，不只是值，连数据类型也是\n合并对象Object.assign()\nlet a={a:‘hallo’} let b={b:‘hahaha’} let c={c:‘wowowo’} let abc=Object.assign(a,b,c) console.log(abc)\njson转为数组（json需要提供length属性）\nlet json = { '0': 'a', '1': 'b', '2': 'c', length:3 } let arr=Array.from(json) console.log(arr) 转换数组（Array.of）\nlet arr =Array.of(1,2,3) console.log(arr) toString()数组转字符串\nlet arr=['hallo','abc','xyz'] console.log(arr.toString()) arr.find（可以查找一个数组是否存在某个值或者可以查找某个索引值的元素是什么）\nlet arr=[1,2,3,4,5,6,7,8,9] let data=arr.find(function(value,index,arr){ return value == 6 }) console.log(data) value是当前要查找的值，index是当前要查找的索引值，arr是当前数组\n填充数组\nlet arr=[0,1,2,3,4,5,6,7,8,9] arr.fill('hallo',3,5) console.log(arr) for…of\n这个方法比普通的for循环好用，因为它不需要提供判断区域，会遍历全部的元素\nlet arr=['abc','xyz','hallo'] for (let item of arr){ console.log(item) } 如果想遍历数组的索引值，可以用arr.keys()\n迭代化数组（迭代对象中数组的索引值作为 key，数组元素作为 value，例如：[0, ‘abc’]）\nlet arr=['abc','xyz','hallo'] let list=arr.entries() console.log(list.next().value) console.log(list.next().value) console.log(list.next().value) 主动抛出错误\nfunction add(a,b){ if(a == 0){ throw new Error('This is error') } return a+b } console.log(add(0,1)) 除了外部程序外可以使用严谨模式，函数体内也可以使用’use strict’，可以用来针对函数体内部\nforEach()遍历数组（可以获取索引值和元素值）\nlet arr=['abc','xyz','hallo'] arr.forEach((val,index)=\u003econsole.log(index,val)) filter遍历数组\nlet arr=['abc','xyz','hallo'] arr.filter(i=\u003econsole.log(i)) 判断某个数组里面的值是否符合某个条件（返回布尔值）\nlet arr = [1,2,3] let data = (a) =\u003e a \u003e 1 console.log(arr.some(data)) 因为arr.some()会遍历元素，当找到一个符合条件的就结束遍历，返回值，因此也可以用来遍历数组，例如：\nlet arr = [1,2,3] arr.some(a=\u003econsole.log(a)) 但是这个方法有个不好的点就是，会一直遍历，当索引不到值的时候会结束遍历，并且返回false\nmap()\nlet arr = [1,2,3] let arrs = arr.map(a =\u003e \"hallo\") let data = arr.map(Math.sqrt) console.log(arrs) console.log(data) map()可以索引全部元素并且通过覆盖或者科学计算来修改数组的元素深拷贝到另一个变量中，当然也可以进行普通的遍历\njoin()可以在数组元素后面添加字符串（间隔）\nlet arr=['abc','xyz','hallo'] console.log(arr.join(',')) Generator函数，该函数和普通函数不同，其是可以暂停执行，例如：\nfunction* add(x){ let y = yield x + 1 return y } let a = add(1) let abc = a.next() console.log(\"值\"+\":\" + abc.value) console.log(abc.done === true ? \"没有执行完毕\" : \"执行完毕\" ) Generator函数实质上就是一个被封装的异步容器，需要暂停的地方，可以使用yield语句标注\nGenerator函数执行后不会返回结果，而是返回指针，调用指针a的next来移动内部的指针\nnext方法作用就是分段执行Generator函数，每调用一次next，都返回一个对象，该对象有value属性和done属性，value属性是值，done属性是布尔值，表示是否执行完毕\nSymbol是一个新的数据类型\nlet sym = Symbol(‘abc’) console.log(sym) console.log(sym.toString()) console.log(typeof(sym))\nSymbol特点就是一个值和另一个值是不相等的，例如：\nlet sym1 = Symbol(‘abc’) let sym2 = Symbol(‘abc’) console.log(sym1 === sym2)\nSet数据结构\nlet setArr = new Set(['abc','xyz','hallo']) setArr.add('abc') setArr.add('123') setArr.delete(\"xyz\") console.log(setArr.has(\"xyz\")) console.log(setArr) for (let item of setArr){ console.log(item) } console.log(setArr.size) setArr.clear() Set的特点就是内部元素不能出现重复值的，可以理解为去重\n使用Set实例化的，可以通过add()方法来添加元素\ndelete()方法为删除某个元素\nhas查找（返回布尔值）\nclear()清空全部元素\nsetArr.size可以获取元素个数\nMap数据结构\nlet json = { name:'root', pass:'123' } let map=new Map() map.set(json,'hallo') console.log(map) 存值\nmap.set(‘abc’, “xyz”)\n获取值（获取json对应的值）\nconsole.log(map.get(json))\n删除指定值\nmap.delete(json) console.log(map)\n获取\nconsole.log(map.size)\nhas查找\nconsole.log(map.has(‘abc’))\n清空元素\nmap.clear()\nPromise\nPromise有三个状态，pending: 初始，fulfilled: 成功，rejected: 失败\nPromise可以将异步以同步方式来操作，例如：\nlet abc = new Promise((resolve, reject) =\u003e { setTimeout(() =\u003e { console.log('hallo') resolve('yes') console.log('执行完成') }, 1000) }) abc.then((data) =\u003e { console.log('resolved',data) }).catch((err) =\u003e { console.log('rejected',err) } ) async/await\n在async中，await执行异步操作只能一个个执行，用同步的方式来执行异步操作，例如：\nfunction req(i){ return new Promise(resolve =\u003e{ setTimeout(() =\u003e { resolve(i * 3) }, 1000) }) } async function abc(){ const a = await req(2) const b = await req(a) console.log(b) } abc() 需要在Promise异步的情况下使用，否则会同时输出的\nasync返回的是一个状态为fuifilled的Promise对象，具体要看return返回值\nProxy\n","wordCount":"578","inLanguage":"en","datePublished":"2021-07-09T22:51:00Z","dateModified":"2021-07-09T22:51:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.cjlio.com/posts/57/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://blog.cjlio.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/posts/>Posts</a></div><h1 class=post-title>ES6学习笔记</h1><div class=post-meta><span title='2021-07-09 22:51:00 +0000 UTC'>2021-07-09</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/ES6%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>ECMAScript</p><p>JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript</p><p>ECMAScript是规范，JavaScript是实现</p><p>ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了</p><p>变量</p><p>let关键字声明变量，使用let声明的变量具有块级作用域有效的特性</p><p>例如：</p><pre><code>if(true){
+    let a = 666;
+}
+console.log(a); // Uncaught ReferenceError: a is not defined
+</code></pre><p>注意：</p><p>使用var声明的变量不具备块级作用域有效的特性</p><p>使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量</p><p>const声明一个只读的常量，一声明，常量的值将不能改变</p><p>const abc =123;</p><p>const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区</p><p>ES6的作用域：</p><p>全局作用域
+函数作用域
+块级作用域</p><hr><p>因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel</p><p>安装babel</p><p>npm install -g babel-cli</p><p>安装转换包</p><p>npm install &ndash;save-dev babel-preset-es2015 babel-cli</p><p>新建.babelrc文件，写入：</p><pre><code>{
+    &quot;presets&quot;:[
+        &quot;es2015&quot;
+    ],
+    &quot;plugins&quot;:[]
+}
+</code></pre><p>babel main.js -o src/main.js</p><p>然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性</p><hr><p>变量声明方式</p><p>let，声明一个变量</p><p>const，声明一个常量</p><p>在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用</p><p>let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量</p><p>const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误</p><p>变量解构</p><p>ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：</p><p>let [a,b,c] = [1,2,3]</p><p>会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined</p><p>当然，解构赋值也允许使用默认值（在没有进行赋值时，会使用该默认值来代替，当进行赋值时，会该默认值），例如：</p><p>let [a,b=&ldquo;hello&rdquo;] = [&ldquo;word&rdquo;]</p><p>console.log(b+a) // helloword</p><p>对象解构</p><p>let {name,pass} = {name:&ldquo;root&rdquo;,pass:&ldquo;123&rdquo;}</p><p>console.log(name+pass)</p><p>注意：如果变量已经声明了，直接进行解构会抛出错误</p><p>解决方式：在解构语句块外部使用圆括号()包裹起来就好了</p><p>字符串解构</p><p>let [a,b,c] =&ldquo;abc&rdquo;</p><p>console.log(a+b+c)</p><p>扩展运算符</p><p>当某个函数或者方法中，传入的参数个数是不确定的时候，就可以使用该来作为参数，例如：</p><pre><code>function abc(...name){
+    console.log(name[0])
+    console.log(name[1])
+}
+abc(&quot;hallo&quot;,&quot;word&quot;)
+</code></pre><p>rest运算符（和扩展运算符相反，合并为一个数组）</p><pre><code>function abc(a,...name){
+    console.log(a);
+    console.log(name);
+}
+abc(&quot;hallo&quot;,&quot;word&quot;,&quot;yes&quot;)
+</code></pre><p>字符串模板</p><p>let name = &ldquo;root&rdquo;</p><p>let data = `hallo ${name} 来到`</p><p>console.log(data)</p><p>当然也支持插入htm标签，例如：</p><p>let data = `hallo ${name} 来到`</p><p>document.write(data)</p><p>也可以在模板中进行运算</p><p>let [a,b,c] = [1,2,3]</p><p>let abc = `${a+b+c}`</p><p>console.log(abc)</p><p>判断字符串是否存在</p><p>let name = &ldquo;root&rdquo;</p><p>let data = &ldquo;hallo root&rdquo;</p><p>console.log(data.includes(name)) // true</p><p>判断开头是否存在</p><p>data.startsWith(name)</p><p>判断结尾是否存在</p><p>data.endsWith(name)</p><hr><p>箭头函数</p><pre><code>let abc = (a,b,c) =&gt;{
+    console.log(a+b+c)
+}
+abc(1,2,3)
+</code></pre><p>注意：箭头函数不能作为构造函数使用</p><p>对象的函数解构</p><pre><code>let obj = {
+    a: &quot;hallo&quot;,
+    b: &quot;word&quot;
+}
+function abc({a,b}){
+    console.log(a,b)
+}
+abc(obj) // hallo word
+</code></pre><p>数组的函数结构</p><pre><code>let arr = [&quot;hallo&quot;,&quot;word&quot;]
+function abc(a,b){
+    console.log(a,b)
+}
+abc(...arr)
+</code></pre><p>判断对象或者数组中是否存在某个值</p><pre><code>let obj = {
+    a: &quot;hallo&quot;
+}
+console.log(&quot;a&quot; in obj)
+</code></pre><hr><p>对象</p><p>ES6允许将已经声明的变量直接赋值给对象，例如：</p><p>let abc = &ldquo;hallo&rdquo;
+let xyz = &ldquo;word&rdquo;
+let obj = {abc,xyz}
+console.log(obj)</p><p>对象键值</p><p>let data = &ldquo;name&rdquo;
+let obj = {[data]: &ldquo;root&rdquo;}
+console.log(obj)</p><p>允许通过变量来传递对象值</p><p>let name = &ldquo;root&rdquo;
+let pass = &ldquo;123&rdquo;
+let obj= {name,pass}
+console.log(obj)</p><p>自定义对象方法</p><pre><code>let obj={
+    add:function(a,b){
+        return a+b
+    }
+}
+console.log(obj.add(1,2))
+</code></pre><p>Object.is：严格模式相等</p><p>console.log(Object.is(NaN,NaN))
+console.log(NaN === NaN)</p><p>===只是值相等，但是is是绝对相等，不只是值，连数据类型也是</p><p>合并对象Object.assign()</p><p>let a={a:&lsquo;hallo&rsquo;}
+let b={b:&lsquo;hahaha&rsquo;}
+let c={c:&lsquo;wowowo&rsquo;}
+let abc=Object.assign(a,b,c)
+console.log(abc)</p><hr><p>json转为数组（json需要提供length属性）</p><pre><code>let json = {
+    '0': 'a',
+    '1': 'b',
+    '2': 'c',
+    length:3
+}
+let arr=Array.from(json)
+console.log(arr)
+</code></pre><p>转换数组（Array.of）</p><pre><code>let arr =Array.of(1,2,3)
+console.log(arr)
+</code></pre><p>toString()数组转字符串</p><pre><code>let arr=['hallo','abc','xyz']
+console.log(arr.toString())
+</code></pre><p>arr.find（可以查找一个数组是否存在某个值或者可以查找某个索引值的元素是什么）</p><pre><code>let arr=[1,2,3,4,5,6,7,8,9]
+let data=arr.find(function(value,index,arr){
+    return value == 6
+})
+console.log(data)
+</code></pre><p>value是当前要查找的值，index是当前要查找的索引值，arr是当前数组</p><p>填充数组</p><pre><code>let arr=[0,1,2,3,4,5,6,7,8,9]
+arr.fill('hallo',3,5)
+console.log(arr)
+</code></pre><p>for&mldr;of</p><p>这个方法比普通的for循环好用，因为它不需要提供判断区域，会遍历全部的元素</p><pre><code>let arr=['abc','xyz','hallo']
+for (let item of arr){
+    console.log(item)
+}
+</code></pre><p>如果想遍历数组的索引值，可以用arr.keys()</p><p>迭代化数组（迭代对象中数组的索引值作为 key，数组元素作为 value，例如：[0, &lsquo;abc&rsquo;]）</p><pre><code>let arr=['abc','xyz','hallo']
+let list=arr.entries()
+console.log(list.next().value)
+console.log(list.next().value)
+console.log(list.next().value)
+</code></pre><p>主动抛出错误</p><pre><code>function add(a,b){
+    if(a == 0){
+        throw new Error('This is error')
+    }
+    return a+b
+}
+console.log(add(0,1))
+</code></pre><p>除了外部程序外可以使用严谨模式，函数体内也可以使用&rsquo;use strict&rsquo;，可以用来针对函数体内部</p><p>forEach()遍历数组（可以获取索引值和元素值）</p><pre><code>let arr=['abc','xyz','hallo']
+arr.forEach((val,index)=&gt;console.log(index,val))
+</code></pre><p>filter遍历数组</p><pre><code>let arr=['abc','xyz','hallo']
+arr.filter(i=&gt;console.log(i))
+</code></pre><p>判断某个数组里面的值是否符合某个条件（返回布尔值）</p><pre><code>let arr = [1,2,3]
+let data = (a) =&gt; a &gt; 1
+console.log(arr.some(data))
+</code></pre><p>因为arr.some()会遍历元素，当找到一个符合条件的就结束遍历，返回值，因此也可以用来遍历数组，例如：</p><pre><code>let arr = [1,2,3]
+arr.some(a=&gt;console.log(a))
+</code></pre><p>但是这个方法有个不好的点就是，会一直遍历，当索引不到值的时候会结束遍历，并且返回false</p><p>map()</p><pre><code>let arr = [1,2,3]
+let arrs = arr.map(a =&gt; &quot;hallo&quot;)
+let data = arr.map(Math.sqrt)
+console.log(arrs)
+console.log(data)
+</code></pre><p>map()可以索引全部元素并且通过覆盖或者科学计算来修改数组的元素深拷贝到另一个变量中，当然也可以进行普通的遍历</p><p>join()可以在数组元素后面添加字符串（间隔）</p><pre><code>let arr=['abc','xyz','hallo']
+console.log(arr.join(','))
+</code></pre><hr><p>Generator函数，该函数和普通函数不同，其是可以暂停执行，例如：</p><pre><code>function* add(x){
+    let y = yield x + 1
+    return y
+}
+let a = add(1)
+let abc = a.next()
+console.log(&quot;值&quot;+&quot;:&quot; + abc.value)
+console.log(abc.done === true ? &quot;没有执行完毕&quot; : &quot;执行完毕&quot; )
+</code></pre><p>Generator函数实质上就是一个被封装的异步容器，需要暂停的地方，可以使用yield语句标注</p><p>Generator函数执行后不会返回结果，而是返回指针，调用指针a的next来移动内部的指针</p><p>next方法作用就是分段执行Generator函数，每调用一次next，都返回一个对象，该对象有value属性和done属性，value属性是值，done属性是布尔值，表示是否执行完毕</p><hr><p>Symbol是一个新的数据类型</p><p>let sym = Symbol(&lsquo;abc&rsquo;)
+console.log(sym)
+console.log(sym.toString())
+console.log(typeof(sym))</p><p>Symbol特点就是一个值和另一个值是不相等的，例如：</p><p>let sym1 = Symbol(&lsquo;abc&rsquo;)
+let sym2 = Symbol(&lsquo;abc&rsquo;)
+console.log(sym1 === sym2)</p><hr><p>Set数据结构</p><pre><code>let setArr = new Set(['abc','xyz','hallo'])
+setArr.add('abc')
+setArr.add('123')
+setArr.delete(&quot;xyz&quot;)
+console.log(setArr.has(&quot;xyz&quot;))
+console.log(setArr)
+for (let item of setArr){
+    console.log(item)
+}
+console.log(setArr.size)
+setArr.clear()
+</code></pre><p>Set的特点就是内部元素不能出现重复值的，可以理解为去重</p><p>使用Set实例化的，可以通过add()方法来添加元素</p><p>delete()方法为删除某个元素</p><p>has查找（返回布尔值）</p><p>clear()清空全部元素</p><p>setArr.size可以获取元素个数</p><hr><p>Map数据结构</p><pre><code>let json = {
+    name:'root',
+    pass:'123'
+}
+let map=new Map()
+map.set(json,'hallo')
+console.log(map)
+</code></pre><p>存值</p><p>map.set(&lsquo;abc&rsquo;, &ldquo;xyz&rdquo;)</p><p>获取值（获取json对应的值）</p><p>console.log(map.get(json))</p><p>删除指定值</p><p>map.delete(json)
+console.log(map)</p><p>获取</p><p>console.log(map.size)</p><p>has查找</p><p>console.log(map.has(&lsquo;abc&rsquo;))</p><p>清空元素</p><p>map.clear()</p><hr><p>Promise</p><p>Promise有三个状态，pending: 初始，fulfilled: 成功，rejected: 失败</p><p>Promise可以将异步以同步方式来操作，例如：</p><pre><code>let abc = new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+        console.log('hallo')
+        resolve('yes')
+        console.log('执行完成')
+    }, 1000)
+})
+abc.then((data) =&gt; {
+        console.log('resolved',data)
+    }).catch((err) =&gt; {
+        console.log('rejected',err)
+    }
+)
+</code></pre><p>async/await</p><p>在async中，await执行异步操作只能一个个执行，用同步的方式来执行异步操作，例如：</p><pre><code>function req(i){
+    return new Promise(resolve =&gt;{
+        setTimeout(() =&gt; {
+            resolve(i * 3)
+        }, 1000)
+    })
+}
+async function abc(){
+    const a = await req(2)
+    const b = await req(a)
+    console.log(b)
+}
+abc()
+</code></pre><p>需要在Promise异步的情况下使用，否则会同时输出的</p><p>async返回的是一个状态为fuifilled的Promise对象，具体要看return返回值</p><p>Proxy</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://blog.cjlio.com/tags/javascript/>JavaScript</a></li></ul><nav class=paginav><a class=prev href=https://blog.cjlio.com/posts/58/><span class=title>« Prev</span><br><span>TypeScript学习笔记</span></a>
+<a class=next href=https://blog.cjlio.com/posts/56/><span class=title>Next »</span><br><span>简单了解MVC，MVP和MVVM之间的不同与联系</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

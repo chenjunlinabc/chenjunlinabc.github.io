@@ -1,0 +1,102 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Pinia---vuejs的轻量级状态管理库 | 小陈的个人博客</title><meta name=keywords content="vuejs,Pinia"><meta name=description content="Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3
+Pinia作者也是vuex核心之一
+安装pinia
+npm install pinia@next
+或者
+yarn add pinia@next
+导入pinia并且挂载为vue插件(在Vite脚手架下)
+src/main.js
+import { createApp } from 'vue' import App from './App.vue' const app = createApp(App) import { createPinia } from 'pinia' app.use(createPinia()) app.mount('#app') src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）
+import { defineStore } from 'pinia' export const useDataStore = defineStore('data', { state: () => { return { count: 666 } }, //state: () => { //name: chen //}, getters:{ // getters计算属性 doubleCount(state){ return state."><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/posts/124/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css integrity="sha256-C3OaLixeVlbkvNXwsiaNBjrdr4HYnsOYfWr48E3s3Jc=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="Pinia---vuejs的轻量级状态管理库"><meta property="og:description" content="Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3
+Pinia作者也是vuex核心之一
+安装pinia
+npm install pinia@next
+或者
+yarn add pinia@next
+导入pinia并且挂载为vue插件(在Vite脚手架下)
+src/main.js
+import { createApp } from 'vue' import App from './App.vue' const app = createApp(App) import { createPinia } from 'pinia' app.use(createPinia()) app.mount('#app') src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）
+import { defineStore } from 'pinia' export const useDataStore = defineStore('data', { state: () => { return { count: 666 } }, //state: () => { //name: chen //}, getters:{ // getters计算属性 doubleCount(state){ return state."><meta property="og:type" content="article"><meta property="og:url" content="https://blog.cjlio.com/posts/124/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-12-26T20:22:00+00:00"><meta property="article:modified_time" content="2021-12-26T20:22:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Pinia---vuejs的轻量级状态管理库"><meta name=twitter:description content="Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3
+Pinia作者也是vuex核心之一
+安装pinia
+npm install pinia@next
+或者
+yarn add pinia@next
+导入pinia并且挂载为vue插件(在Vite脚手架下)
+src/main.js
+import { createApp } from 'vue' import App from './App.vue' const app = createApp(App) import { createPinia } from 'pinia' app.use(createPinia()) app.mount('#app') src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）
+import { defineStore } from 'pinia' export const useDataStore = defineStore('data', { state: () => { return { count: 666 } }, //state: () => { //name: chen //}, getters:{ // getters计算属性 doubleCount(state){ return state."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://blog.cjlio.com/posts/"},{"@type":"ListItem","position":3,"name":"Pinia---vuejs的轻量级状态管理库","item":"https://blog.cjlio.com/posts/124/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Pinia---vuejs的轻量级状态管理库","name":"Pinia---vuejs的轻量级状态管理库","description":"Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3\nPinia作者也是vuex核心之一\n安装pinia\nnpm install pinia@next\n或者\nyarn add pinia@next\n导入pinia并且挂载为vue插件(在Vite脚手架下)\nsrc/main.js\nimport { createApp } from 'vue' import App from './App.vue' const app = createApp(App) import { createPinia } from 'pinia' app.use(createPinia()) app.mount('#app') src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）\nimport { defineStore } from 'pinia' export const useDataStore = defineStore('data', { state: () =\u0026gt; { return { count: 666 } }, //state: () =\u0026gt; { //name: chen //}, getters:{ // getters计算属性 doubleCount(state){ return state.","keywords":["vuejs","Pinia"],"articleBody":"Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3\nPinia作者也是vuex核心之一\n安装pinia\nnpm install pinia@next\n或者\nyarn add pinia@next\n导入pinia并且挂载为vue插件(在Vite脚手架下)\nsrc/main.js\nimport { createApp } from 'vue' import App from './App.vue' const app = createApp(App) import { createPinia } from 'pinia' app.use(createPinia()) app.mount('#app') src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）\nimport { defineStore } from 'pinia' export const useDataStore = defineStore('data', { state: () =\u003e { return { count: 666 } }, //state: () =\u003e { //name: chen //}, getters:{ // getters计算属性 doubleCount(state){ return state.count * 2 } doublePlusOne(){ // 在getters中调用其他getters，只需要this访问一下就可以 // return this.doubleCount + 123 // 通过箭头函数参数，来动态计算 return (a)=\u003e{ this.doubleCount + a } } }, actions: { increment() { this.count++ } } }) src/app.vue（在组件引入useDataStore，并且获取state状态）\nimport { useDataStore } from \"./stores/main.js\" const store = useDataStore() console.log(store.count) ... {{ store }} {{ store.count }} 使用storeToRefs函数解构状态（storeToRefs解构，可以响应式状态）\nsrc/app.vue\nimport { storeToRefs } from \"pinia\" import { useDataStore } from \"./stores/main.js\" const { count , doubleCount , doublePlusOne} = storeToRefs(useDataStore()) ... {{ count }} {{ doubleCount }} {{ doublePlusOne(6) }} 调用其他state的getters（假如在其他地方定义了一个getters，想使用）\naddData(state){ // 获取另一个通过defineStore创建state的实例 const store = useAddStore() return state.count + store.intData } Actions操作state（同步异步都可以使用Actions）\nexport const useStore = defineStore('main', { state: () =\u003e ({ counter: 0, }), actions: { countPlusOne() { this.counter++ }, countPlus(a) { this.counter += a } } }) ","wordCount":"197","inLanguage":"en","datePublished":"2021-12-26T20:22:00Z","dateModified":"2021-12-26T20:22:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.cjlio.com/posts/124/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://blog.cjlio.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/posts/>Posts</a></div><h1 class=post-title>Pinia---vuejs的轻量级状态管理库</h1><div class=post-meta><span title='2021-12-26 20:22:00 +0000 UTC'>2021-12-26</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/Pinia---vuejs%e7%9a%84%e8%bd%bb%e9%87%8f%e7%ba%a7%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86%e5%ba%93.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3</p><p>Pinia作者也是vuex核心之一</p><p>安装pinia</p><p>npm install pinia@next</p><p>或者</p><p>yarn add pinia@next</p><p>导入pinia并且挂载为vue插件(在Vite脚手架下)</p><p>src/main.js</p><pre><code>import { createApp } from 'vue'
+import App from './App.vue'
+const app = createApp(App)
+import { createPinia } from 'pinia'
+app.use(createPinia())
+app.mount('#app')
+</code></pre><p>src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）</p><pre><code>import { defineStore } from 'pinia'
+export const useDataStore = defineStore('data', {
+    state: () =&gt; {
+        return { count: 666 }
+    },
+    //state: () =&gt; {
+        //name: chen
+    //},
+    getters:{ 
+        // getters计算属性
+        doubleCount(state){
+            return state.count * 2
+        }
+        doublePlusOne(){
+            // 在getters中调用其他getters，只需要this访问一下就可以
+            // return this.doubleCount + 123
+            // 通过箭头函数参数，来动态计算
+            return (a)=&gt;{
+                this.doubleCount + a
+            }
+        }
+    },
+    actions: {
+        increment() {
+            this.count++
+        }
+    }
+})
+</code></pre><p>src/app.vue（在组件引入useDataStore，并且获取state状态）</p><pre><code>import { useDataStore } from &quot;./stores/main.js&quot;
+const store = useDataStore()
+console.log(store.count)
+...
+&lt;template&gt;
+    &lt;h2&gt;{{ store }}&lt;/h2&gt;
+    &lt;h2&gt;{{ store.count }}&lt;/h2&gt;
+&lt;/template&gt;
+</code></pre><p>使用storeToRefs函数解构状态（storeToRefs解构，可以响应式状态）</p><p>src/app.vue</p><pre><code>import { storeToRefs } from &quot;pinia&quot;
+import { useDataStore } from &quot;./stores/main.js&quot;
+const { count , doubleCount , doublePlusOne} = storeToRefs(useDataStore())
+...
+&lt;template&gt;
+    &lt;h2&gt;{{ count }}&lt;/h2&gt;
+    &lt;h2&gt;{{ doubleCount }}&lt;/h2&gt;
+    &lt;h2&gt;{{ doublePlusOne(6) }}&lt;/h2&gt;
+&lt;/template&gt;
+</code></pre><hr><p>调用其他state的getters（假如在其他地方定义了一个getters，想使用）</p><pre><code>addData(state){
+    // 获取另一个通过defineStore创建state的实例
+    const store = useAddStore()
+    return state.count + store.intData
+}
+</code></pre><hr><p>Actions操作state（同步异步都可以使用Actions）</p><pre><code>export const useStore = defineStore('main', {
+    state: () =&gt; ({
+        counter: 0,
+    }),
+    actions: {
+        countPlusOne() {
+            this.counter++
+        },
+        countPlus(a) {
+            this.counter += a
+        }
+    }
+})
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://blog.cjlio.com/tags/vuejs/>vuejs</a></li><li><a href=https://blog.cjlio.com/tags/pinia/>Pinia</a></li></ul><nav class=paginav><a class=prev href=https://blog.cjlio.com/posts/125/><span class=title>« Prev</span><br><span>python爬虫学习笔记</span></a>
+<a class=next href=https://blog.cjlio.com/posts/123/><span class=title>Next »</span><br><span>简单使用vuex状态管理库</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

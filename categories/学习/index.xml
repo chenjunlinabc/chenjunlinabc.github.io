@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>学习 on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/categories/%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 学习 on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 16 Jan 2022 09:08:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang进阶扩展笔记</title>
+      <link>https://blog.cjlio.com/posts/128/</link>
+      <pubDate>Sun, 16 Jan 2022 09:08:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/128/</guid>
+      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://cjlio.com/archives/96.html
+并发
+go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
+内核态：程序执行操作系统层级的程序时
+用户态：程序执行用户自己写的程序时
+常见的并发模型有七种，分别是通讯顺序进程（CSP），数据级并行，函数式编程，线程与锁，Clojure，actor，Lambda架构
+CSP（Communicating Sequential Process，通讯顺序进程）：思想就是将两个并发执行的实体使用channel管道来连接起来，全部信息通过channel管道来传输，而且数据的传输是根据顺序来发送和接收的，CSP理论由托尼·霍尔提出
+小知识：托尼·霍尔（C.A.R.Hoare），图灵奖获得者，快速排序算法（Quick Sort）也出自这位之手
+go的并发编程不需要像java那样维护线程池，go在语言层面内置了调度和上下文切换机制，只需要定义任务，让go运行时来智能合理的调度goroutine的任务给每个CPU，也不需要额外写什么进程，线程，协程，只需要写一个函数，开启一个goroutine就是可以实现并发了
+Go运行时会给main()函数建立一个默认的goroutine，当main()结束时，其他在main()执行的goroutine都会被结束（不管有没有执行完成）
+goroutine的栈开始时为2kb（OS线程一般为2mb），而且栈不是固定的，可以增大和缩小，大小限制可以达到1GB
+GPM调度器是Go对CSP并发模型的实现，是Go自己开发的一套调度系统（GPM分别表示为Goroutine，Processor，Machine）
+Goroutine：go关键字创建的执行体，对应则结构体g，这个结构体存储着goroutine的堆栈信息
+Processor：负责管理goroutine队列，存储则当前goroutine运行的上下文，会给自己管理的goroutine队列进行调度，例如：暂停goroutine，执行goroutine，当自己的队列处理完毕，将去全局队列中获取，全局队列处理完毕，还可以去其他P的队列去获取，用来处理G和M的通信
+Machine：G运行时对操作系统内核线程的虚拟化，映射内核线程（groutine就是被放到这个内核线程的映射虚拟化M中执行）
+简单来说就是P管理一组G在M上执行，当一个G阻塞在一个M时，Go运行时创建一个新的M，负责管理阻塞的那个G的P将其他G挂载在新的M上，G阻塞完成时或者G死掉了，回收旧的M
+P的个数通过runtime.GOMAXPROCS设置（最大256）（1.5版本后默认为计算机物理线程数）
+GPM调度器使用被称为m:n调度的技术（复用或者调度m个goroutine到n个OS线程）（可用runtime.GOMAXPROCS来控制OS线程的数量）
+因为底层OS线程的切换机制是根据时间轮询来切换的，因此goroutine的切换机制也是根据时间轮询来切换
+runtime.Gosched()：让当前任务让出线程占用，给其他任务执行
+runtime.Goexit()：终止当前任务
+通道是可被垃圾回收机制回收的，所以只有在告诉接收数据方，所有数据都已发送完毕了才需要关闭通道
+对已经关闭的管道发送数据，导致触发panic，同样关闭已经关闭的管道也会导致
+对已经关闭并且没有值的管道接收数据，将得到对应类型的零值，接收一个已经被关闭的管道，会一直接收数据，直到管道空了
+无缓冲区管道（阻塞管道）：要求管道的发送方和接收方交互是同步的，管道容量等于0的就是无缓冲管道，如果不能满足同步，将导致阻塞，要接收者准备完毕，发送者才能进行工作
+有缓冲区管道（非阻塞管道）：可以异步发送数据接收数据，只要缓冲区存在没有使用的空间，通信就是无阻塞的，可先发送数据再接收（因为有缓冲区），而且缓冲区管道可以保存数据（不需要取完数据）
+任务池：goroutine池，当goroutine任务完成，不kill该goroutine，而是获取下一个任务，并且继续执行该任务
+注意：go内置的map并不是并发安全的，只有使用channel或者sync.Map才是并发安全的
+锁可以避免并发冲突，但是锁对系统性能影响很大，原子操作可以减少这种消耗
+原子操作：指的是某个操作在执行中，其他协程不会看到没有执行完毕的结果，对于其他协程来说，只有原子操作完成了或者没开始，就好像原子一样，不被分割
+在多核中，某个核心读取某个数据是，会因为CPU缓存的原因，可能读取到的值不是最新的，在Go中，原子操作主要依赖于sync/atomic包
+sync/atomic包将原子操作封装成了Go的函数，sync/atomic包提供了底层的原子级内存操作
+因为Go不支持泛型，所以封装的函数很多（每个类型都有自己的原子操作函数，这里只写int64一个类型）
+增或减（被操作值增大或减少，只适合int和uint类型增减）：func AddInt64(addr *int64, delta int64) (new int64)
+载入（读取，避免读取过程，其他协程进行修改操作）：func LoadInt64(addr *int64) (val int64)
+存储（写入，避免写入过程，其他协程进行读取操作）：func StoreInt64(addr *int64, val int64)
+交换（和CAS不同，交换只赋值old值，不管原来的值）：func SwapInt64(addr *int64, new int64) (old int64)
+比较并且交换（Compare And Swap 简称CAS，类似于乐观锁，只有原来的值和传入的old值一样才修改）：func CompareAndSwapInt64(addr *int64, old, new int64) (swapped bool)</description>
+    </item>
+    
+    <item>
+      <title>python爬虫学习笔记</title>
+      <link>https://blog.cjlio.com/posts/125/</link>
+      <pubDate>Fri, 31 Dec 2021 01:05:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/125/</guid>
+      <description>urllib，xpath，jsonpath，beautiful，requests，selenium，Scrapy
+python库内置的HTTP请求库 urllib.request 请求模块 urllib.error 异常处理模块 urllib.parse url解析模块 urllib.robotparsef robots.txt解析模块
+urllib.request提供了最基本的http请求方法，主要带有处理授权验证，重定向，浏览器Cookies功能
+模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
+使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(type(response))
+HTTPResposne类型对象
+通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(response.status) print(response.getheaders())
+post发送一个请求，只需要把参数data以bytes类型传入 import urllib.parse import urllib.request data = bytes(urllib.parse.urlencode({&amp;lsquo;hallo&amp;rsquo;:&amp;lsquo;python&amp;rsquo;}),encoding=&amp;lsquo;utf-8&amp;rsquo;) response = urllib.request.urlopen(&amp;lsquo;http://httpbin.org/post&#39;.data = data) print(response.read())
+timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;,timeout=1)
+这里设置超时时间为1秒，如果超了1秒，服务器依然没有响应就抛出URLError异常，可以结合try和except
+import urllib.parse import urllib.request url = &amp;quot;https://cjlio.com/&amp;quot; headers = { &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
+    </item>
+    
+    <item>
+      <title>React进阶学习笔记</title>
+      <link>https://blog.cjlio.com/posts/94/</link>
+      <pubDate>Fri, 03 Sep 2021 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/94/</guid>
+      <description>react16是Facebook在2017年发布的react版本，几乎对react底层进行重写，但是对外API不变，因此可以无缝转移到react16
+render返回类型
+除了只能返回单个元素外，react16支持返回字符串和数组（由react元素组成）
+例如：
+render(){ return[ &amp;lt;div&amp;gt;hallo&amp;lt;/div&amp;gt;, &amp;lt;div&amp;gt;word&amp;lt;/div&amp;gt; ] } 或者
+render(){ return &amp;quot;hallo word&amp;quot; } 错误处理
+react16引入了新的错误处理机制，当组件发生错误，将会将其从组件树中卸载，避免引起整个应用的崩溃
+当然也提供了更友好的处理方式，叫错误边界，这个会捕获子组件的错误，并且输出错误日志和出错提示，例如：
+componentDidCatch(error, info){ console.log(error,info) } Portals
+React16的Portals特性可以将组件渲染到当前组件树以外的DOM树上，例如弹框
+ReactDOM.createPortal(child, container)
+第一个参数是可以被渲染的react节点，第二个参数是dom元素，react节点将会被挂载到该DOM元素上
+自定义DOM属性
+在react16之前，会忽略不识别的属性，而在react16之后，会将不识别的属性传递给dom元素
+React AJAX（搭配jQuery）
+通过componentDidMount()调用，通过componentWillUnmount()取消未完成的请求
+Virtual-DOM实质上就是模拟DOM树结构，通过JavaScript对象来描述DOM对象，通过映射成真实的DOM节点来实现
+对于DOM节点数据更新，则通过生成一个新的Virtual-DOM，两个Virtual-DOM通过Diff算法进行差异更新，将更新处理为真实的DOM
+Virtual-DOM的优势：减少操作DOM，处理视图和状态的关系
+没有任何框架能比原生DOM处理快，但是操作原生DOM可能导致浏览器的回流（回流是性能第一杀手），因此在复杂视图下，原生DOM操作就可能没有Virtual-DOM性能好了
+react-markdown是react官方提供的库，专门用来解析md文件或者符合md语法的变量
+安装react-markdown
+yarn add react-markdown
+导入
+import ReactMarkdown from &amp;lsquo;react-markdown&amp;rsquo;
+测试
+let markdown = &amp;quot;**这是加粗的文字**\n\n&amp;quot; + &amp;quot;*这是倾斜的文字*`\n\n&amp;quot; + &amp;quot;***这是斜体加粗的文字***\n\n&amp;quot; + &amp;quot;~~这是加删除线的文字~~ \n\n&amp;quot; + &amp;quot;`console.log(111)` \n\n&amp;quot; + &amp;quot;``` var a=11; ```&amp;quot;; &amp;lt;ReactMarkdown source={markdown} escapeHtml={false} children={markdown}/&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>算法学习笔记</title>
+      <link>https://blog.cjlio.com/posts/79/</link>
+      <pubDate>Mon, 09 Aug 2021 20:36:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/79/</guid>
+      <description>虽然学过java和Python，但是还是JavaScript比较熟练，因此算法学习全部用JavaScript来写
+算法不会被程序语言所限制，也不会一个实现只有一个算法
+常见数据结构（数组，列表，映射，堆栈，队列，哈希表，树，图）
+算法(排序,双指针,查找,分治,动态规划,递归,回溯,贪心,位运算,DFS,BFS)
+大O表示法是专门用来表示算法速度有多快的，不同算法所耗时间的时间增速度不同
+一个算法执行的时间和解决问题的规模大小相关
+假设一个列表有n个元素，遍历全部元素，要执行n次，大O表示法为O(n)
+大O表示法不是表示消耗的时间，而是通过操作元素的次数决定的，一个优秀的算法操作元素次数肯定很少
+时间复杂度：
+O(1): Constant Complexity: Constant 常数复杂度 O(log n): Logarithmic Complexity: 对数复杂度 O(n): Linear Complexity: 线性时间复杂度 O(n^2): N square Complexity 平⽅方 O(n^3): N square Complexity ⽴立⽅方 O(2^n): Exponential Growth 指数 O(n!): Factorial 阶乘
+算法的特点：有穷性（必须要在一定的时间内完成，不能无限循环），确定性（每一条指令都有明确的目的，不产生二义性），可行性（可以通过基础运算来实现），输入输出（要有0个或者多个输入，要有1个或者多个输出）
+删除有序数组中的重复项
+保证有序数组中的元素是不重复的，也就是说不存在重复的元素
+有序数组中重复的肯定是挨着的，只需要遍历数组全部的元素，前面和后面进行比较，如果相同则删除后面的
+例如：
+let arr = function(nums) { if(nums == null || nums.length == 0){ return 0 } let b = 0 for(let a=0;a&amp;lt;nums.length;a++){ if(nums[b]!=nums[a]){ nums[++b] = nums[a] } } return ++b } b作为覆盖，a作为查询，当b的值不等于a查询到的值时，b++的值等于a的值，等于的时候b不改变，当不相等再等于到b上</description>
+    </item>
+    
+    <item>
+      <title>深入学习vuejs</title>
+      <link>https://blog.cjlio.com/posts/75/</link>
+      <pubDate>Sat, 07 Aug 2021 23:25:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/75/</guid>
+      <description>Vue CLI是vue官方脚手架，可以快速创建vue项目
+安装vue-cli3
+npm install -g @vue/cli
+或者
+yarn global add @vue/cli
+升级
+npm update -g @vue/cli
+或者
+yarn global upgrade &amp;ndash;latest @vue/cli
+创建vue项目
+vue create vue-demo
+如果提示vue : 无法将“vue”项识别为 cmdlet、函数、脚本文件或可运行程序的名称，可以使用npx vue create vue-demo
+default (babel, eslint) // 默认选项，包含babel和eslint
+Manually select features // 自定义创建配置工程
+一般比较常用的有Babel，TypeScript，Router，CSS Pre-processors，Linter / Formatter
+空格为选择，enter为下一步
+跑vue项目
+npm run serve
+或者
+yarn start/yarn run dev
+如果运行报错error Component name &amp;ldquo;Home&amp;rdquo; should always be multi-word vue/multi-word-component-names
+只需要在vue.config.js添加lintOnSave: false配置，例如：
+module.exports = defineConfig({ transpileDependencies: true, lintOnSave: false }) 这个问题的原因在于vue-cli默认开启了ESLint检测，关闭就好了</description>
+    </item>
+    
+    <item>
+      <title>深入学习React</title>
+      <link>https://blog.cjlio.com/posts/63/</link>
+      <pubDate>Sun, 25 Jul 2021 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/63/</guid>
+      <description>setState()
+注意：如果调用多次setState()，但是还是只触发一次重新渲染（性能优化，如果每更新一次状态就渲染一次的话，很影响性能）
+setState()是异步更新数据的，因此setState()不要依赖于前面的setState()，因为其不会立刻更新数据
+如果当前setState()依赖于前面的setState()，解决方法：
+this.setState((state, props) =&amp;gt;{ return{ count: state.count + 1 } }) console.log(this.state.count) this.setState((state, props) =&amp;gt;{ return{ count: state.count + 1 } }) console.log(this.state.count) state和props参数分别获取到最新的state和最新的props，通过回调函数返回值，保证每次都获取到最新的state和props
+如果想在状态更新后（页面完成重新渲染）立刻执行某个操作，那么可以使用setState()的第二个参数，这个参数是一个回调函数
+例如：
+this.setState((state, props) =&amp;gt;{ return{ count: state.count + 1 } },() =&amp;gt; { console.log(this.state.count) }) 可以看出 console.log(this.state.count)会在状态更新后被执行，因此可以获取到更新后的count值
+因此setState()一定会改变状态，但是不会立刻更新，而是当页面渲染完毕了（状态更新完毕之后）才会更新
+jsx语法的转化
+jsx实质上还是createElement()方法的语法糖（简化），因为jsx语法最后还是会编译（@babel/preset-react插件）成createElement()方法
+而createElement()方法也会被转换为js对象（ReactElement），用来描述页面上显示的内容，因此不管是jsx还是createElement()最后都会转换为js对象（ReactElement），ReactElement然后通过虚拟DOM实现DOM创建和更新
+例如：
+const Abc = ( &amp;lt;div&amp;gt;hallo&amp;lt;/div&amp;gt; ) console.log(Abc) 可以看到输出返回的是一个js对象
+React.createElement()接收3个参数，type（表示标签或者组件），config（对象，表示组件的所有属性），children（对象，表示组件之间的嵌套关系）
+组件更新机制
+setState()的作用：修改state，更新组件
+父组件重新更新state，子组件也会更新，不过只会影响到当前组件和其他子组件（后代组件）（组件树），对于该组件的兄弟组件和根组件（父组件）是不会影响
+初次渲染，当页面刷新时就会初次渲染，先渲染根组件，再按顺序渲染更新父组件和后代组件
+更新根组件，那么其下全部的组件树都会更新
+组件性能优化
+state只存储和组件渲染相关的数据，例如列表数据，而不用来渲染的数据不放在state中
+如果需要在多个方法中使用（共享）的数据，应该放在this中
+因为组件更新机制的原因，子组件没有变化也会重新渲染
+解决方法：
+使用钩子函数 shouldComponentUpdate(nextProps, nextState)，该钩子函数是更新阶段的，组件重新渲染前执行</description>
+    </item>
+    
+    <item>
+      <title>TypeScript学习笔记</title>
+      <link>https://blog.cjlio.com/posts/58/</link>
+      <pubDate>Sun, 18 Jul 2021 15:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/58/</guid>
+      <description>TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
+TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
+TypeScript实质上就是JavaScript的扩展，JavaScript超集
+TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript
+TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父
+TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样
+全局安装typescript
+yarn global add typescript
+或者
+npm install -g typescript
+检查是否安装成功
+tsc -v
+使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
+创建tsconfig.json
+npx tsc &amp;ndash;init
+编译TypeScript文件（转为正常js文件）
+tsc hallo.ts
+在终端中直接运行ts代码
+npm install ts-node -g
+ts-node hallo.ts
+绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）
+变量声明
+推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）
+基础类型
+TypeScript具有强类型的特点
+boolean，string，number，array，null，undefined，object，tuple，enum，void，never，any
+boolean布尔值，例如：
+let hallo: boolean = true
+number数值，例如：
+let hallo: number = 123;
+二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）
+let hallo: bigint = 100n;
+注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换
+string字符串
+let hallo: string = hallo;
+void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）
+function voiddemo(): void { let a = 10; }</description>
+    </item>
+    
+    <item>
+      <title>ES6学习笔记</title>
+      <link>https://blog.cjlio.com/posts/57/</link>
+      <pubDate>Fri, 09 Jul 2021 22:51:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/57/</guid>
+      <description>ECMAScript
+JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
+ECMAScript是规范，JavaScript是实现
+ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
+变量
+let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
+例如：
+if(true){ let a = 666; } console.log(a); // Uncaught ReferenceError: a is not defined 注意：
+使用var声明的变量不具备块级作用域有效的特性
+使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
+const声明一个只读的常量，一声明，常量的值将不能改变
+const abc =123;
+const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区
+ES6的作用域：
+全局作用域 函数作用域 块级作用域
+因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel
+安装babel
+npm install -g babel-cli
+安装转换包
+npm install &amp;ndash;save-dev babel-preset-es2015 babel-cli
+新建.babelrc文件，写入：
+{ &amp;quot;presets&amp;quot;:[ &amp;quot;es2015&amp;quot; ], &amp;quot;plugins&amp;quot;:[] } babel main.js -o src/main.js
+然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
+变量声明方式
+let，声明一个变量
+const，声明一个常量
+在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用
+let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量
+const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误
+变量解构
+ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
+let [a,b,c] = [1,2,3]
+会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined</description>
+    </item>
+    
+    <item>
+      <title>深入学习vue组件</title>
+      <link>https://blog.cjlio.com/posts/53/</link>
+      <pubDate>Sat, 03 Jul 2021 11:16:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/53/</guid>
+      <description>组件注册
+.component()接收2个参数，其中第一个参数是组件名（数据类型是字符串）
+组件名命名：
+全部小写，多个单词用连字符连接（-减号）
+因为html中是大小写不敏感的，浏览器会将大写解析为小写，因此不要使用驼峰命名法来命名自定义标签，而是使用连字符分隔
+组件被引用时，也必须是相同的名，例如：组件名是img-data，那么被引用时标签为，闭不闭合看组件的定义，如果组件的定义是img之类的，就不需要闭合
+直接暴露在vue实例的组件都是全局组件，可以直接在组件实例中调用
+局部组件是使用一个JavaScript对象进行定义封装，例如：
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;datas-a&amp;gt;&amp;lt;/datas-a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; const datas ={ template: ` &amp;lt;div&amp;gt; hallo &amp;lt;/div&amp;gt; ` } const hallo = Vue.createApp({ components: { &amp;quot;datas-a&amp;quot; : datas } }).mount(&#39;#app&#39;) &amp;lt;/script&amp;gt; components对象，键为自定义元素的名称，值为组件的实质对象
+局部组件的属性是不能直接被调用的，但是可以在另一个组件中指向其为自己的子组件，例如：
+const datab ={ components: { &amp;quot;datas-a&amp;quot; : dataa } } 模块系统
+通过导入模块的方式导入组件，例如：
+import datas from &amp;lsquo;./datas&amp;rsquo;
+那么datas组件就是可以在当前使用了
+Props
+prop类型
+用对象的方式列出prop，并且定义其类型，当传入的prop类型不对就会报错（开发版本），例如：
+const hallo = Vue.createApp({ component: { props:{ abc: String, xyz: Boolean, }, template: `&amp;lt;h1&amp;gt;{{abc.</description>
+    </item>
+    
+    <item>
+      <title>正则表达式学习笔记</title>
+      <link>https://blog.cjlio.com/posts/52/</link>
+      <pubDate>Fri, 02 Jul 2021 18:12:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/52/</guid>
+      <description>正则表达式（Regular Expression）是用于匹配字符串中字符组合的模式，在JavaScript中，正则表达式也是对象
+JavaScript创建正则表达式
+使用RegExp对象创建
+var hallo = new RegExp(/123/);
+或者
+var hallo = /123/;
+检查是否符合该正则表达式
+使用test方法判断字符串是否符合该规则的要求，返回的值是布尔值
+console.log(hallo.test(123));
+/123/只要包含123就返回true
+正则表达式元字符
+边界符（^和$）
+^表示匹配行首的文本（以谁开始）
+$表示行尾的文本（以谁结束）
+var hallo = ^abc;
+必须要abc开头，如果是aabc的话，返回false
+var hallo = abc$;
+必须要abc结尾，例如aabc，返回true
+var hallo = ^abc$;
+^和$一起使用就是精确匹配，必须是abc，如果是abcabc的话，返回false
+字符类[]
+var hallo = /[abc]/;
+只要包含a，b，c其中一个字符都匹配，返回true，例如axx
+var hallo = /^[abc]$/;
+三选一，只有包含a，b，c其中单独的一个才匹配返回true，例如abc，就返回false
+范围符-
+var hallo = /^[a-z]$/;
+多选一，a到z，包含26个字母任何一个字母都返回true，大小写敏感，A和a不一样
+var hallo = /^[a-zA-Z0-9_-]$/;
+多选一，包含26个字母（包含大小写）任何一个字母和数字（0到9）和下划线其中一个都返回true
+取反
+var hallo = /^[^a-z]$/;
+在方括号内部加^，就是代表取反，不能包含a到z其中的一个字母
+量词符（*，+，?）
+var hallo = /a*/;</description>
+    </item>
+    
+    <item>
+      <title>微信小程序学习笔记</title>
+      <link>https://blog.cjlio.com/posts/48/</link>
+      <pubDate>Sun, 27 Jun 2021 12:34:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/48/</guid>
+      <description>小程序实质上就是一个基于web基础的应用程序（网页）（但是不支持浏览器的api，小程序的api全部由微信提供，高度依赖微信，因此只能在微信中运行）
+微信小程序要求进行ICP备案，才能发布小程序
+微信小程序开发文档
+https://developers.weixin.qq.com/miniprogram/dev/framework/
+开发工具：微信开发者工具
+小程序产品需求
+发现真实需要
+用户深度访谈，分析竞品，付费意愿
+需求分期：最小化可行产品（MVP）
+不是每个功能都要开发（优先开发最重要和最紧急的功能）
+优化开发顺序，先开发基础可用，然后迭代更新功能，满足用户需求，功能文档
+根据用户体验来优化服务
+原型制作工具：墨刀，Axure
+微信小程序结构
+index.wxml页面结构
+index.wxss页面样式
+index.js页面逻辑
+如果设置了单独的页面样式，那么会覆盖掉app.wxss的样式
+app.json定义了页面和基本配置，采用json格式，必须包含pages属性，说明小程序有哪些页面
+app.json文件结构
+pages是用来定义页面的，是一个数组，每一个项都是代表一个页面，例如：
+&amp;quot;pages&amp;quot;:[ &amp;quot;pages/index/index&amp;quot;, &amp;quot;pages/demo/demo&amp;quot; ], window属性是设置小程序的窗口样式，例如：
+&amp;quot;window&amp;quot;:{ &amp;quot;backgroundTextStyle&amp;quot;:&amp;quot;light&amp;quot;, &amp;quot;navigationBarBackgroundColor&amp;quot;: &amp;quot;#fff&amp;quot;, // 导航栏背景颜色 &amp;quot;navigationBarTitleText&amp;quot;: &amp;quot;Weixin&amp;quot;, // 导航栏文本 &amp;quot;navigationBarTextStyle&amp;quot;:&amp;quot;black&amp;quot; // 导航栏文本颜色 }, 从上面可以看出是一个三层结构，页面是放在pages目录下的，而demo和index都是代表这个页面叫什么
+demo.js，Page()是小程序提供的一个函数，用来初始化页面，参数是一个对象，用来配置当前页面的属性
+demo.wxml，该文件是用来描述页面的，和html类似
+pages文件夹：存放小程序页面，每个页面代表为一个文件夹，文件夹名称为页面名称，在这个页面文件夹下的全部文件都是描述这个页面的
+utils文件夹：用于存放公共的js程序，便于不同的页面进行调用
+imgages文件夹：为方便管理小程序的用到的全部静态图片
+app.js：当前项目的js（全局数据和反应）
+json：全局配置
+wxss：全局样式
+project.config.json：项目配置文件，配置微信开发者工具，例如工具的页面颜色，编译配置等等个性化配置
+page.json: 单独定义每个页面的一些属性，例如：顶部颜色，是否可以下拉刷新等等
+app.json：这是一种数据格式，小程序的静态配置（全局配置），页面的路径，界面的表现，顶部样式，网络超时等等
+pages字段：描述当前小程序所有页面的路径，让微信清楚小程序页面定义在哪个目录
+window字段：定义小程序所有页面的顶部背景颜色，文字颜色等等
+json是包裹在一个括号中，以键值对的方式表达数据，值必须包含在双引号中，在json中无法使用注释
+wxml
+WXML：从html中衍生而来一种专门在小程序页面中使用的语言，组合了基础组件，事件系统，构造出页面的结构
+view元素是表示块级，和div类似
+scroll-view元素是表示可滚动页面区域
+text元素是表示行内文本，和span类似
+image元素是表示图片，和img类似
+swiper元素是用来搞轮播图
+属性
+&amp;lt;view 属性=&amp;ldquo;属性值&amp;rdquo;&amp;gt;
+bindtap属性可绑定事件函数
+hidden属性控制元素是否隐藏，true为隐藏
+wxss样式，采用css样式语法，和写普通的css样式一样，选择器属性样式之类的就不写了，具备css大部分的特性，具体看我写的css笔记，背景，字体，边框，定位，大小之类的，用法是一样的，可以给wxml标签设置class，采用的是W3C标准盒模型，另外小程序官方使用flex布局
+推荐静态样式写入class中，style用来接收动态的样式，避免出样式优先级问题，例如：</description>
+    </item>
+    
+    <item>
+      <title>webpack学习笔记</title>
+      <link>https://blog.cjlio.com/posts/47/</link>
+      <pubDate>Thu, 24 Jun 2021 10:11:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/47/</guid>
+      <description>webpack作为模块加载和打包神器
+安装node就有npm了，用npm安装webpack
+npm i webpack -g 安装全局的webpack
+到项目目录下，npm init -y 初始化模块
+npm i webpack -D 安装项目局部的webpack，-D是&amp;ndash;save-dev的意思
+webpack 入口文件名 最后输出到哪个文件的文件名，例如：
+webpack A.js B.js
+那么就会编译A.js，输出到B.js
+webpack只能处理JavaScript，处理其他类型的文件，需要安装几个包
+npm install css-loader style-loader
+假设有个一个abc.css文件，里面定好了样式
+那么修改A.js
+require(&amp;quot;!style-loader!css-loader!./abc.css&amp;quot;); document.write(require(&amp;quot;./C.js&amp;quot;));
+再打包一次
+webpack A.js B.js
+会出现一个C.js
+配置webpack.config.js
+module.exports = { entry: &#39;入口文件的路径&#39;, output: { path:__dirname, filename: &#39;最后输出到哪个文件的文件名&#39; }, module: { rules: [{ test: &#39;处理什么格式的文件&#39;, use:[ { loader: &#39;依赖包&#39; } ] } ] } }; 模块化
+import $ from &amp;ldquo;jquery&amp;rdquo; // 导入jQuery，只需要src当前js文件就可以导入jQuery依赖</description>
+    </item>
+    
+  </channel>
+</rss>

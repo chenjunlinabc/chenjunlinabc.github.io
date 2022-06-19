@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Jest on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/jest/</link>
+    <description>Recent content in Jest on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 06 Sep 2021 23:00:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/jest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用Jest-JavaScript测试工具</title>
+      <link>https://blog.cjlio.com/posts/95/</link>
+      <pubDate>Mon, 06 Sep 2021 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/95/</guid>
+      <description>Jest是Facebook开源的一套JavaScript测试框架
+安装
+在项目中安装
+yarn add &amp;ndash;dev jest或者npm install &amp;ndash;save-dev jest
+全局安装
+yarn global add jest
+hello.js
+module.exports = function(){ return &amp;quot;hello world&amp;quot; } hello.test.js
+const hello = require(&#39;../hello&#39;) it(&#39;should &#39;, () =&amp;gt; { expect(hello()).toBe(&#39;hello world&#39;) }) package.json
+{ &amp;quot;scripts&amp;quot;: { &amp;quot;test&amp;quot;: &amp;quot;jest&amp;quot; } } 执行测试
+yarn test或者npm run test
+exspect() //运行结果
+toBe() //期待的结果
+not.toBe() //判断不等
+toBeNull() //判断是否为NULL
+toBeUndefined() //判断是否为undefined
+toBeDefined() //判断是否为undefined取反
+toBeTruthy() //判断结果为true
+toBeFalsy() //判断结果为false
+toBeGreaterThan(5) //判断结果是否大于5
+toBeLessThan(5) //判断结果是否小于5
+toBeGreaterThanOrEqual(6) //判断结果是否大于等于6</description>
+    </item>
+    
+  </channel>
+</rss>

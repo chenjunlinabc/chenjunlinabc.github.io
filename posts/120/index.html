@@ -1,0 +1,232 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>shell脚本学习笔记 | 小陈的个人博客</title><meta name=keywords content="shell"><meta name=description content="shell中文意思为壳，shell可以接受使用者的指令，来调用服务，shell的种类很多，而比较常见是Bash，头部声明#!/bin/bash，表示bash是解释脚本的程序
+例如：
+#!/bin/bash echo &#34;hallo word&#34; 执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）
+bash hallo.sh
+也可以直接执行
+./hallo.sh
+变量（首字符必须是字母，而且不能有bash的关键字，大小写敏感）
+data = &ldquo;hallo&rdquo; echo $data data = &ldquo;word&rdquo; echo ${data}
+注意：如果使用单引号，单引号里面有变量的话，是无法生效的，而且还不能出现单引号，而且双引号可以使用变量和转义字符，美元符号（$）只有在使用变量才需要，在定义，更新，删除变量都不需要
+例如：
+name=&ldquo;chenjunlin&rdquo; data=&ldquo;hallo, ${name} !&rdquo; echo $data
+获取字符串的长度
+data=&ldquo;hallo word&rdquo; echo ${#data}
+获取指定位置的字符 data=&ldquo;hallo word&rdquo; echo ${#data:5:8}
+删除变量（不能删除只读变量）
+unset data echo ${data}
+在shell脚本定义的变量只能在当前脚本交互中使用，可以通过export传递变量到子shell中，可以通过env或者export指令来获取当前shell的环境变量
+参数
+echo &ldquo;hallo word&rdquo;; echo &ldquo;要执行的shell脚本：$0&rdquo;; echo &ldquo;参数为：$1&rdquo;;
+./hallo.sh abc
+获取参数的个数：$#
+以单一字符串的方式输出全部参数（要被双引号包裹）：$*
+以独立字符串的方式输出全部参数（要被双引号包裹）：$@
+获取上个命令的状态（是否执行成功，0为成功，非0为失败）：$?
+获取当前脚本shell进程的ID：$$
+获取后台运行的最后一个进程的ID：$!
+配合函数使用（参数也可以通过函数来传递）
+function abc(){ echo &#34;参数1: $1&#34; echo &#34;被执行的脚本为: $0&#34; } abc hallo ."><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/posts/120/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css integrity="sha256-C3OaLixeVlbkvNXwsiaNBjrdr4HYnsOYfWr48E3s3Jc=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="shell脚本学习笔记"><meta property="og:description" content="shell中文意思为壳，shell可以接受使用者的指令，来调用服务，shell的种类很多，而比较常见是Bash，头部声明#!/bin/bash，表示bash是解释脚本的程序
+例如：
+#!/bin/bash echo &#34;hallo word&#34; 执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）
+bash hallo.sh
+也可以直接执行
+./hallo.sh
+变量（首字符必须是字母，而且不能有bash的关键字，大小写敏感）
+data = &ldquo;hallo&rdquo; echo $data data = &ldquo;word&rdquo; echo ${data}
+注意：如果使用单引号，单引号里面有变量的话，是无法生效的，而且还不能出现单引号，而且双引号可以使用变量和转义字符，美元符号（$）只有在使用变量才需要，在定义，更新，删除变量都不需要
+例如：
+name=&ldquo;chenjunlin&rdquo; data=&ldquo;hallo, ${name} !&rdquo; echo $data
+获取字符串的长度
+data=&ldquo;hallo word&rdquo; echo ${#data}
+获取指定位置的字符 data=&ldquo;hallo word&rdquo; echo ${#data:5:8}
+删除变量（不能删除只读变量）
+unset data echo ${data}
+在shell脚本定义的变量只能在当前脚本交互中使用，可以通过export传递变量到子shell中，可以通过env或者export指令来获取当前shell的环境变量
+参数
+echo &ldquo;hallo word&rdquo;; echo &ldquo;要执行的shell脚本：$0&rdquo;; echo &ldquo;参数为：$1&rdquo;;
+./hallo.sh abc
+获取参数的个数：$#
+以单一字符串的方式输出全部参数（要被双引号包裹）：$*
+以独立字符串的方式输出全部参数（要被双引号包裹）：$@
+获取上个命令的状态（是否执行成功，0为成功，非0为失败）：$?
+获取当前脚本shell进程的ID：$$
+获取后台运行的最后一个进程的ID：$!
+配合函数使用（参数也可以通过函数来传递）
+function abc(){ echo &#34;参数1: $1&#34; echo &#34;被执行的脚本为: $0&#34; } abc hallo ."><meta property="og:type" content="article"><meta property="og:url" content="https://blog.cjlio.com/posts/120/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-11-23T00:01:00+00:00"><meta property="article:modified_time" content="2021-11-23T00:01:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="shell脚本学习笔记"><meta name=twitter:description content="shell中文意思为壳，shell可以接受使用者的指令，来调用服务，shell的种类很多，而比较常见是Bash，头部声明#!/bin/bash，表示bash是解释脚本的程序
+例如：
+#!/bin/bash echo &#34;hallo word&#34; 执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）
+bash hallo.sh
+也可以直接执行
+./hallo.sh
+变量（首字符必须是字母，而且不能有bash的关键字，大小写敏感）
+data = &ldquo;hallo&rdquo; echo $data data = &ldquo;word&rdquo; echo ${data}
+注意：如果使用单引号，单引号里面有变量的话，是无法生效的，而且还不能出现单引号，而且双引号可以使用变量和转义字符，美元符号（$）只有在使用变量才需要，在定义，更新，删除变量都不需要
+例如：
+name=&ldquo;chenjunlin&rdquo; data=&ldquo;hallo, ${name} !&rdquo; echo $data
+获取字符串的长度
+data=&ldquo;hallo word&rdquo; echo ${#data}
+获取指定位置的字符 data=&ldquo;hallo word&rdquo; echo ${#data:5:8}
+删除变量（不能删除只读变量）
+unset data echo ${data}
+在shell脚本定义的变量只能在当前脚本交互中使用，可以通过export传递变量到子shell中，可以通过env或者export指令来获取当前shell的环境变量
+参数
+echo &ldquo;hallo word&rdquo;; echo &ldquo;要执行的shell脚本：$0&rdquo;; echo &ldquo;参数为：$1&rdquo;;
+./hallo.sh abc
+获取参数的个数：$#
+以单一字符串的方式输出全部参数（要被双引号包裹）：$*
+以独立字符串的方式输出全部参数（要被双引号包裹）：$@
+获取上个命令的状态（是否执行成功，0为成功，非0为失败）：$?
+获取当前脚本shell进程的ID：$$
+获取后台运行的最后一个进程的ID：$!
+配合函数使用（参数也可以通过函数来传递）
+function abc(){ echo &#34;参数1: $1&#34; echo &#34;被执行的脚本为: $0&#34; } abc hallo ."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://blog.cjlio.com/posts/"},{"@type":"ListItem","position":3,"name":"shell脚本学习笔记","item":"https://blog.cjlio.com/posts/120/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"shell脚本学习笔记","name":"shell脚本学习笔记","description":"shell中文意思为壳，shell可以接受使用者的指令，来调用服务，shell的种类很多，而比较常见是Bash，头部声明#!/bin/bash，表示bash是解释脚本的程序\n例如：\n#!/bin/bash echo \u0026quot;hallo word\u0026quot; 执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）\nbash hallo.sh\n也可以直接执行\n./hallo.sh\n变量（首字符必须是字母，而且不能有bash的关键字，大小写敏感）\ndata = \u0026ldquo;hallo\u0026rdquo; echo $data data = \u0026ldquo;word\u0026rdquo; echo ${data}\n注意：如果使用单引号，单引号里面有变量的话，是无法生效的，而且还不能出现单引号，而且双引号可以使用变量和转义字符，美元符号（$）只有在使用变量才需要，在定义，更新，删除变量都不需要\n例如：\nname=\u0026ldquo;chenjunlin\u0026rdquo; data=\u0026ldquo;hallo, ${name} !\u0026rdquo; echo $data\n获取字符串的长度\ndata=\u0026ldquo;hallo word\u0026rdquo; echo ${#data}\n获取指定位置的字符 data=\u0026ldquo;hallo word\u0026rdquo; echo ${#data:5:8}\n删除变量（不能删除只读变量）\nunset data echo ${data}\n在shell脚本定义的变量只能在当前脚本交互中使用，可以通过export传递变量到子shell中，可以通过env或者export指令来获取当前shell的环境变量\n参数\necho \u0026ldquo;hallo word\u0026rdquo;; echo \u0026ldquo;要执行的shell脚本：$0\u0026rdquo;; echo \u0026ldquo;参数为：$1\u0026rdquo;;\n./hallo.sh abc\n获取参数的个数：$#\n以单一字符串的方式输出全部参数（要被双引号包裹）：$*\n以独立字符串的方式输出全部参数（要被双引号包裹）：$@\n获取上个命令的状态（是否执行成功，0为成功，非0为失败）：$?\n获取当前脚本shell进程的ID：$$\n获取后台运行的最后一个进程的ID：$!\n配合函数使用（参数也可以通过函数来传递）\nfunction abc(){ echo \u0026quot;参数1: $1\u0026quot; echo \u0026quot;被执行的脚本为: $0\u0026quot; } abc hallo .","keywords":["shell"],"articleBody":"shell中文意思为壳，shell可以接受使用者的指令，来调用服务，shell的种类很多，而比较常见是Bash，头部声明#!/bin/bash，表示bash是解释脚本的程序\n例如：\n#!/bin/bash echo \"hallo word\" 执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）\nbash hallo.sh\n也可以直接执行\n./hallo.sh\n变量（首字符必须是字母，而且不能有bash的关键字，大小写敏感）\ndata = “hallo” echo $data data = “word” echo ${data}\n注意：如果使用单引号，单引号里面有变量的话，是无法生效的，而且还不能出现单引号，而且双引号可以使用变量和转义字符，美元符号（$）只有在使用变量才需要，在定义，更新，删除变量都不需要\n例如：\nname=“chenjunlin” data=“hallo, ${name} !” echo $data\n获取字符串的长度\ndata=“hallo word” echo ${#data}\n获取指定位置的字符 data=“hallo word” echo ${#data:5:8}\n删除变量（不能删除只读变量）\nunset data echo ${data}\n在shell脚本定义的变量只能在当前脚本交互中使用，可以通过export传递变量到子shell中，可以通过env或者export指令来获取当前shell的环境变量\n参数\necho “hallo word”; echo “要执行的shell脚本：$0”; echo “参数为：$1”;\n./hallo.sh abc\n获取参数的个数：$#\n以单一字符串的方式输出全部参数（要被双引号包裹）：$*\n以独立字符串的方式输出全部参数（要被双引号包裹）：$@\n获取上个命令的状态（是否执行成功，0为成功，非0为失败）：$?\n获取当前脚本shell进程的ID：$$\n获取后台运行的最后一个进程的ID：$!\n配合函数使用（参数也可以通过函数来传递）\nfunction abc(){ echo \"参数1: $1\" echo \"被执行的脚本为: $0\" } abc hallo ./hallo.sh\n参数1: hallo 被执行的脚本为: hallo.sh\n数组（不需要逗号分开，使用的是空格）\ndata = (1 2 3 4 5 “hallo word”) data[6] = “shell 666” echo “${data[6]}”\n获取数组的长度\n${#data[*]}或者${#data[@]}\"\n删除数组或者元素（如果不带索引则删除全部元素）\nunset data[5]\n数组切片\necho “${data[@]:2:4}”\n数组元素更新\necho “${data[@]/2/100}”\n数学运算（bash并不支持运算，需要利用第三方工具）\nabc = 123 xyz =666 let data = ${abc} + ${xyz} echo $data\n或者\ndata = `expr $abc + $xyz` echo $data\ndata = $[$abc + $xyz] echo $data\ndata = $(($abc + $xyz)) echo $data\n注意：shell的关系运算符不支持字符串，只支持数字\n判断是否相等：-eq 判断是否不相等：-ne 判断是否大于：-gt 判断是否小于：-lt 判断是否相等或者大于：-ge 判断是否相等或者小于：-le\n例如：\nabc = 123 xyz =666 if [ $abc -eq $xyz ] then echo\"相等\" else echo\"不相等\" fi if [ $abc -gt $xyz ] then echo\"大于\" else echo\"不大于\" 布尔运算符\n\u0026\u0026和||\n或：-o\n与：-a\n非：!\n例如：\nabc = 123 xyz = 666 if [ $abc -eq $xyz -o $abc -lt $xyz] then echo\"相等或者小于\" else echo\"不相等或者小于\" fi 字符串运算符\nabc = \"hallo\" xyz = \"hi\" if [$abc = $xyz];then echo\"相等\" else echo\"不相等\" 判断字符串长度是否为0：-z（为0返回true） 判断字符串长度是否不为0：-n（不为0返回true） 判断字符串是否不为空：$（不为空返回true）\n例如：\na = \"hallo word\" b = \"abchhh\" if [ -z $a];then echo \"$a :字符串长度为0\" else echo \"$a :字符串长度不为0\" fi if [ ${b}];then echo \"$b :字符串不为空\" else echo \"$b :字符串为空\" fi 文件运算符\n检查文件是否为目录（是返回true）：-d 检查文件是否为块设备文件：-b 检查文件是否为字符设备文件：-c 检查文件是否为普通文件（不是目录，也不能设备文件）：-f 检查文件是否可读：-r 检查文件是否可写：-w 检查文件是否可执行：-x 检查文件大小是否大于0（大于返回true）：-s 检查文件（目录）是否存在：-e 检查文件是否设置了SGID位：-g 检查文件是否设置了SUID位：-u 检查文件是否是有名管道：-p 检查文件是否设置粘着位(Sticky Bit)：-k\n例如：\ndata = \"/etc/hallo\" if [-r $data] then echo \"文件可读\" else echo \"文件不可读\" fi if [-e $data] then echo \"文件存在\" else echo \"文件不存在\" fi echo和printf\necho可以输出普通字符串，转义，变量\n开启转义功能：echo -e “hallo!!! \\n”\n使用单引号可以原封不动的输出字符串\n将执行结果指向到文件中\necho “hallo word” \u003e data\nprintf比较高级点，可以定义字符串的对齐方式，宽度等等，而且printf默认不自动添加换行符（echo自动添加），可以手动\\n\nprintf “%-8s %-5s %-6.3s\\n” root data main 6.12345\n上面这句脚本的%s表示输出字符串（类似的还有$c(整型输出),$d（字符输出）,$f（小数输出））\n%-8s表示一个宽度为8个字符，如果有-表示左对齐，没有就是右对齐，全部字符都被输出到8个字符宽的字符中，如果不足8个字符，则自动以空格填充，超出的话，也会全部显示（不会忽略）\n%-6.3s表示将其格式化为小数，.3表示保留3位小数\ntest命令用来判断条件是否成立，数值，字符，文件都可以判断\ntest命令使用的是关系运算符，例如：\ndata1 = 300 data2 = 200 if test $[data1] -gt $[data2] then echo \"data1大于data2\" else echo \"data1小于data2\" fi if判断（注意：如果else分支没有语句要执行，就不要写else了）\nif then elif else fi\nfor循环\nfor data in 1 2 3 do echo \"data : $data\" done while循环\ndata = 1 while(( $data \u003c= 10)) do echo $data let \"data++\" done until循环\ndata=1 until [ ! $data -lt 10 ] do echo $data data=`expr $data + 1` done case … esac语句（替代switch语句）\necho '请输入1到3之间的数字:' echo '输入的数字为:' read data case $data in 1) echo '1' ;; 2) echo '2' ;; 3) echo '3' ;; *) echo '没有输入1到3之间的数字' ;; esac 跳出循环\nbreak（终止执行后面的循环，一般搭配判断使用）\ncontinue（只终止当前循环，不会终止执行后面的循环）\n函数\ndemo(){ echo \"hallo word\" return $(($1+2)) } demo 100 300 echo \" $? \" ","wordCount":"435","inLanguage":"en","datePublished":"2021-11-23T00:01:00Z","dateModified":"2021-11-23T00:01:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.cjlio.com/posts/120/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://blog.cjlio.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/posts/>Posts</a></div><h1 class=post-title>shell脚本学习笔记</h1><div class=post-meta><span title='2021-11-23 00:01:00 +0000 UTC'>2021-11-23</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/shell%e8%84%9a%e6%9c%ac%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>shell中文意思为壳，shell可以接受使用者的指令，来调用服务，shell的种类很多，而比较常见是Bash，头部声明#!/bin/bash，表示bash是解释脚本的程序</p><p>例如：</p><pre><code>#!/bin/bash
+echo &quot;hallo word&quot;
+</code></pre><p>执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）</p><p>bash hallo.sh</p><p>也可以直接执行</p><p>./hallo.sh</p><p>变量（首字符必须是字母，而且不能有bash的关键字，大小写敏感）</p><p>data = &ldquo;hallo&rdquo;
+echo $data
+data = &ldquo;word&rdquo;
+echo ${data}</p><p>注意：如果使用单引号，单引号里面有变量的话，是无法生效的，而且还不能出现单引号，而且双引号可以使用变量和转义字符，美元符号（$）只有在使用变量才需要，在定义，更新，删除变量都不需要</p><p>例如：</p><p>name=&ldquo;chenjunlin&rdquo;
+data=&ldquo;hallo, ${name} !&rdquo;
+echo $data</p><p>获取字符串的长度</p><p>data=&ldquo;hallo word&rdquo;
+echo ${#data}</p><p>获取指定位置的字符
+data=&ldquo;hallo word&rdquo;
+echo ${#data:5:8}</p><p>删除变量（不能删除只读变量）</p><p>unset data
+echo ${data}</p><p>在shell脚本定义的变量只能在当前脚本交互中使用，可以通过export传递变量到子shell中，可以通过env或者export指令来获取当前shell的环境变量</p><p>参数</p><p>echo &ldquo;hallo word&rdquo;;
+echo &ldquo;要执行的shell脚本：$0&rdquo;;
+echo &ldquo;参数为：$1&rdquo;;</p><p>./hallo.sh abc</p><p>获取参数的个数：$#</p><p>以单一字符串的方式输出全部参数（要被双引号包裹）：$*</p><p>以独立字符串的方式输出全部参数（要被双引号包裹）：$@</p><p>获取上个命令的状态（是否执行成功，0为成功，非0为失败）：$?</p><p>获取当前脚本shell进程的ID：$$</p><p>获取后台运行的最后一个进程的ID：$!</p><p>配合函数使用（参数也可以通过函数来传递）</p><pre><code>function abc(){
+    echo &quot;参数1: $1&quot;
+    echo &quot;被执行的脚本为: $0&quot;
+}
+abc hallo
+</code></pre><p>./hallo.sh</p><p>参数1: hallo
+被执行的脚本为: hallo.sh</p><p>数组（不需要逗号分开，使用的是空格）</p><p>data = (1 2 3 4 5 &ldquo;hallo word&rdquo;)
+data[6] = &ldquo;shell 666&rdquo;
+echo &ldquo;${data[6]}&rdquo;</p><p>获取数组的长度</p><p>${#data[*]}或者${#data[@]}"</p><p>删除数组或者元素（如果不带索引则删除全部元素）</p><p>unset data[5]</p><p>数组切片</p><p>echo &ldquo;${data[@]:2:4}&rdquo;</p><p>数组元素更新</p><p>echo &ldquo;${data[@]/2/100}&rdquo;</p><p>数学运算（bash并不支持运算，需要利用第三方工具）</p><p>abc = 123
+xyz =666
+let data = ${abc} + ${xyz}
+echo $data</p><p>或者</p><p>data = `expr $abc + $xyz`
+echo $data</p><p>data = $[$abc + $xyz]
+echo $data</p><p>data = $(($abc + $xyz))
+echo $data</p><p>注意：shell的关系运算符不支持字符串，只支持数字</p><p>判断是否相等：-eq
+判断是否不相等：-ne
+判断是否大于：-gt
+判断是否小于：-lt
+判断是否相等或者大于：-ge
+判断是否相等或者小于：-le</p><p>例如：</p><pre><code>abc = 123
+xyz =666
+if [ $abc -eq $xyz ]
+then
+    echo&quot;相等&quot;
+else
+    echo&quot;不相等&quot;
+fi
+if [ $abc -gt $xyz ]
+then
+    echo&quot;大于&quot;
+else
+    echo&quot;不大于&quot;
+</code></pre><p>布尔运算符</p><p>&&和||</p><p>或：-o</p><p>与：-a</p><p>非：!</p><p>例如：</p><pre><code>abc = 123
+xyz = 666
+if [ $abc -eq $xyz -o $abc -lt $xyz]
+then
+    echo&quot;相等或者小于&quot;
+else
+    echo&quot;不相等或者小于&quot;
+fi
+</code></pre><p>字符串运算符</p><pre><code>abc = &quot;hallo&quot;
+xyz = &quot;hi&quot;
+if [$abc = $xyz];then
+    echo&quot;相等&quot;
+else
+    echo&quot;不相等&quot;
+</code></pre><p>判断字符串长度是否为0：-z（为0返回true）
+判断字符串长度是否不为0：-n（不为0返回true）
+判断字符串是否不为空：$（不为空返回true）</p><p>例如：</p><pre><code>a = &quot;hallo word&quot;
+b = &quot;abchhh&quot;
+if [ -z $a];then
+    echo &quot;$a :字符串长度为0&quot;
+else
+    echo &quot;$a :字符串长度不为0&quot;
+fi
+if [ ${b}];then
+    echo &quot;$b :字符串不为空&quot;
+else
+    echo &quot;$b :字符串为空&quot;
+fi
+</code></pre><p>文件运算符</p><p>检查文件是否为目录（是返回true）：-d
+检查文件是否为块设备文件：-b
+检查文件是否为字符设备文件：-c
+检查文件是否为普通文件（不是目录，也不能设备文件）：-f
+检查文件是否可读：-r
+检查文件是否可写：-w
+检查文件是否可执行：-x
+检查文件大小是否大于0（大于返回true）：-s
+检查文件（目录）是否存在：-e
+检查文件是否设置了SGID位：-g
+检查文件是否设置了SUID位：-u
+检查文件是否是有名管道：-p
+检查文件是否设置粘着位(Sticky Bit)：-k</p><p>例如：</p><pre><code>data = &quot;/etc/hallo&quot;
+if [-r $data]
+then
+    echo &quot;文件可读&quot;
+else
+    echo &quot;文件不可读&quot;
+fi
+if [-e $data]
+then
+    echo &quot;文件存在&quot;
+else
+    echo &quot;文件不存在&quot;
+fi
+</code></pre><p>echo和printf</p><p>echo可以输出普通字符串，转义，变量</p><p>开启转义功能：echo -e &ldquo;hallo!!! \n&rdquo;</p><p>使用单引号可以原封不动的输出字符串</p><p>将执行结果指向到文件中</p><p>echo &ldquo;hallo word&rdquo; > data</p><p>printf比较高级点，可以定义字符串的对齐方式，宽度等等，而且printf默认不自动添加换行符（echo自动添加），可以手动\n</p><p>printf &ldquo;%-8s %-5s %-6.3s\n&rdquo; root data main 6.12345</p><p>上面这句脚本的%s表示输出字符串（类似的还有$c(整型输出),$d（字符输出）,$f（小数输出））</p><p>%-8s表示一个宽度为8个字符，如果有-表示左对齐，没有就是右对齐，全部字符都被输出到8个字符宽的字符中，如果不足8个字符，则自动以空格填充，超出的话，也会全部显示（不会忽略）</p><p>%-6.3s表示将其格式化为小数，.3表示保留3位小数</p><p>test命令用来判断条件是否成立，数值，字符，文件都可以判断</p><p>test命令使用的是关系运算符，例如：</p><pre><code>data1 = 300
+data2 = 200
+if test $[data1] -gt $[data2]
+then
+    echo &quot;data1大于data2&quot;
+else
+    echo &quot;data1小于data2&quot;
+fi
+</code></pre><p>if判断（注意：如果else分支没有语句要执行，就不要写else了）</p><p>if
+then
+elif
+else
+fi</p><p>for循环</p><pre><code>for data in 1 2 3
+do
+    echo &quot;data : $data&quot;
+done
+</code></pre><p>while循环</p><pre><code>data = 1
+while(( $data &lt;= 10))
+do
+    echo $data
+    let &quot;data++&quot;
+done
+</code></pre><p>until循环</p><pre><code>data=1
+until [ ! $data -lt 10 ]
+do
+   echo $data
+   data=`expr $data + 1`
+done
+</code></pre><p>case &mldr; esac语句（替代switch语句）</p><pre><code>echo '请输入1到3之间的数字:'
+echo '输入的数字为:'
+read data
+case $data in
+    1)  echo '1'
+    ;;
+    2)  echo '2'
+    ;;
+    3)  echo '3'
+    ;;
+    *)  echo '没有输入1到3之间的数字'
+    ;;
+esac
+</code></pre><p>跳出循环</p><p>break（终止执行后面的循环，一般搭配判断使用）</p><p>continue（只终止当前循环，不会终止执行后面的循环）</p><p>函数</p><pre><code>demo(){
+    echo &quot;hallo word&quot;
+    return $(($1+2))
+}
+demo 100 300
+echo &quot; $? &quot;
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://blog.cjlio.com/tags/shell/>shell</a></li></ul><nav class=paginav><a class=prev href=https://blog.cjlio.com/posts/121/><span class=title>« Prev</span><br><span>简单了解设计模式</span></a>
+<a class=next href=https://blog.cjlio.com/posts/119/><span class=title>Next »</span><br><span>简单使用Rollup模块打包工具</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

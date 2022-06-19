@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SVN on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/svn/</link>
+    <description>Recent content in SVN on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 11 Aug 2021 15:00:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/svn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SVN版本控制系统学习笔记</title>
+      <link>https://blog.cjlio.com/posts/84/</link>
+      <pubDate>Wed, 11 Aug 2021 15:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/84/</guid>
+      <description>SVN全名Subversion，即版本控制系统
+和Git不同，Git是分布式，而SVN是集中式
+在commit没有冲突的时候，会合并
+而存在冲突那么就需要先手动处理冲突再commit
+源代码库：源代码统一存放的地方
+获取：到源代码库获取一份源代码
+提交：已经修改了源代码，想提交到源代码库
+更新：更新同步和源代码库一样的源代码
+安装SVN
+dnf install subversion
+创建版本库
+cd /svn/demo
+svnadmin create /svn/demo
+其中conf/svnserve.conf文件是svn服务配置文件
+anon-access = read auth-access = write password-db = passwd authz-db = authz realm = /svn/demo
+passwd文件为账号密码文件
+格式为：账号=密码，例如：abc = root
+authz为权限控制文件
+格式为：账号=rw（r读，w写），例如：abc=rw
+启动版本库
+svnserve -d -r /svn/demo &amp;ndash;listen-port 3690
+&amp;ndash;listen-port是指定svn监听端口，默认是3690，-r是指定版本库
+停止svn服务
+killall svnserve
+检出：从版本库中创建副本，在其修改，再提交到版本库中
+例如：
+svn checkout svn:xxx/demo &amp;ndash;username=root
+因为root有读写权限，因此将会在本地获取到demo的副本
+更新：更新副本，将其同步到版本库最新版本，如果不是当前最新版本，当前本地的副本将无效
+svn update
+默认是更新到最新版本，也可以指定更新到哪个版本
+svn update -r 2 demo
+提交
+svn commit -m &amp;ldquo;hello svn&amp;rdquo;</description>
+    </item>
+    
+  </channel>
+</rss>

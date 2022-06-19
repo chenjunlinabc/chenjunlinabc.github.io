@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>docker on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/docker/</link>
+    <description>Recent content in docker on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Jun 2021 09:34:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker容器的简单使用</title>
+      <link>https://blog.cjlio.com/posts/18/</link>
+      <pubDate>Wed, 16 Jun 2021 09:34:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/18/</guid>
+      <description>docker是一个应用容器，可以将应用以及该应用的依赖打包到一个可以移植的容器中，应用在这个容器中运行
+可以进行转移，修改，版本管理等操作，不用担心应用转移到别的服务器会出现依赖问题
+将容器文件转移到别的服务器上，不会影响到容器，一次配置，可以在多个服务器上使用相同的环境
+在以前，根本不可能实现或者保障一个服务器是运行多个应用，直到虚拟机的出现，虚拟机可以让空闲的服务器部署新的应用，但是虚拟机依赖于操作系统，操作系统又会占用CPU和内存，以及存储，而且虚拟机的移植性差启动缓慢，直到容器的出现
+运行在相同的宿主机的容器是共享一个操作系统的，而且容器具备启动快，移植性强的特点（不用担心本地运行好好的，到生产环境就出一堆问题）
+docker的多数项目和工具是使用golang编写的
+Docker容器技术高度依赖于Linux内核，不管是在windwos或者Mac OS上都不是真正的容器化（只有在Linux系统上才能实现无虚拟化的真正容器化），都是在虚拟化Linux之后，在Linux虚拟机的基础上实现的
+Docker三大件：镜像，容器，仓库
+镜像被用来创建容器（而且镜像文件是复用，只可读的）
+容器是镜像文件的实例，容器与容器之间是隔离的，容器可被启动，查看，暂停，退出，重启，删除
+仓库是集中存储镜像文件的地方，Docker官方仓库：https://hub.docker.com/
+Docker官网文档：https://docs.docker.com/
+Docker是基于C/S架构（Client-Server）的系统，Docker的守护进程（Docker Daemon）运行在服务端上，客户端通过Docker Client和守护进程建立通信，守护进程可以接收客户端发送的指令并且可以管理服务端的容器
+Docker Engine（引擎）会执行客户端发送的指令，来执行Docker内部的工作，每一项工作以Job的形式存在（一个job表示一个工作任务）
+如果job（工作任务）需要镜像时，会从Docker Registry中下载获取镜像（如果本地存在则从本地获取，如果没有再从远程仓库获取）
+当Docker容器需要创建网络环境时，通过Network driver创建并且配置Docker容器网络环境（通过网桥来暴露对外的端口和ip）
+如果需要限制Docker容器运行资源或者执行用户指令时，通过Exec driver完成
+网络的配置以及Exec driver的实现都是通过Libcontainer来实现的，Libcontainer是用来管理容器的包，该包基于go语言开发的，像创建容器，删除容器等等都可通过Libcontainer完成
+安装docker（环境为ubuntu20.04）
+如果之前安装过docker，需要先卸载
+sudo apt remove docker docker-engine docker.io containerd runc
+docker官方推荐使用docker的存储库来安装或者升级，而不是通过脚本或者通过下载deb软件的方式来安装
+安装依赖
+sudo apt install ca-certificates curl gnupg lsb-release
+配置docker官方的GPG密钥
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+安装docker引擎
+sudo apt install docker-ce docker-ce-cli containerd.io
+或者
+curl -s https://get.docker.com | sh （不推荐使用）
+如果需要安装指定版本的docker，可指定docker-ce和docker-ce-cli的版本</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,178 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>微信小程序学习笔记 | 小陈的个人博客</title><meta name=keywords content="微信小程序"><meta name=description content="小程序实质上就是一个基于web基础的应用程序（网页）（但是不支持浏览器的api，小程序的api全部由微信提供，高度依赖微信，因此只能在微信中运行）
+微信小程序要求进行ICP备案，才能发布小程序
+微信小程序开发文档
+https://developers.weixin.qq.com/miniprogram/dev/framework/
+开发工具：微信开发者工具
+小程序产品需求
+发现真实需要
+用户深度访谈，分析竞品，付费意愿
+需求分期：最小化可行产品（MVP）
+不是每个功能都要开发（优先开发最重要和最紧急的功能）
+优化开发顺序，先开发基础可用，然后迭代更新功能，满足用户需求，功能文档
+根据用户体验来优化服务
+原型制作工具：墨刀，Axure
+微信小程序结构
+index.wxml页面结构
+index.wxss页面样式
+index.js页面逻辑
+如果设置了单独的页面样式，那么会覆盖掉app.wxss的样式
+app.json定义了页面和基本配置，采用json格式，必须包含pages属性，说明小程序有哪些页面
+app.json文件结构
+pages是用来定义页面的，是一个数组，每一个项都是代表一个页面，例如：
+&#34;pages&#34;:[ &#34;pages/index/index&#34;, &#34;pages/demo/demo&#34; ], window属性是设置小程序的窗口样式，例如：
+&#34;window&#34;:{ &#34;backgroundTextStyle&#34;:&#34;light&#34;, &#34;navigationBarBackgroundColor&#34;: &#34;#fff&#34;, // 导航栏背景颜色 &#34;navigationBarTitleText&#34;: &#34;Weixin&#34;, // 导航栏文本 &#34;navigationBarTextStyle&#34;:&#34;black&#34; // 导航栏文本颜色 }, 从上面可以看出是一个三层结构，页面是放在pages目录下的，而demo和index都是代表这个页面叫什么
+demo.js，Page()是小程序提供的一个函数，用来初始化页面，参数是一个对象，用来配置当前页面的属性
+demo.wxml，该文件是用来描述页面的，和html类似
+pages文件夹：存放小程序页面，每个页面代表为一个文件夹，文件夹名称为页面名称，在这个页面文件夹下的全部文件都是描述这个页面的
+utils文件夹：用于存放公共的js程序，便于不同的页面进行调用
+imgages文件夹：为方便管理小程序的用到的全部静态图片
+app.js：当前项目的js（全局数据和反应）
+json：全局配置
+wxss：全局样式
+project.config.json：项目配置文件，配置微信开发者工具，例如工具的页面颜色，编译配置等等个性化配置
+page.json: 单独定义每个页面的一些属性，例如：顶部颜色，是否可以下拉刷新等等
+app.json：这是一种数据格式，小程序的静态配置（全局配置），页面的路径，界面的表现，顶部样式，网络超时等等
+pages字段：描述当前小程序所有页面的路径，让微信清楚小程序页面定义在哪个目录
+window字段：定义小程序所有页面的顶部背景颜色，文字颜色等等
+json是包裹在一个括号中，以键值对的方式表达数据，值必须包含在双引号中，在json中无法使用注释
+wxml
+WXML：从html中衍生而来一种专门在小程序页面中使用的语言，组合了基础组件，事件系统，构造出页面的结构
+view元素是表示块级，和div类似
+scroll-view元素是表示可滚动页面区域
+text元素是表示行内文本，和span类似
+image元素是表示图片，和img类似
+swiper元素是用来搞轮播图
+属性
+<view 属性=&ldquo;属性值&rdquo;>
+bindtap属性可绑定事件函数
+hidden属性控制元素是否隐藏，true为隐藏
+wxss样式，采用css样式语法，和写普通的css样式一样，选择器属性样式之类的就不写了，具备css大部分的特性，具体看我写的css笔记，背景，字体，边框，定位，大小之类的，用法是一样的，可以给wxml标签设置class，采用的是W3C标准盒模型，另外小程序官方使用flex布局
+推荐静态样式写入class中，style用来接收动态的样式，避免出样式优先级问题，例如："><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/posts/48/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css integrity="sha256-C3OaLixeVlbkvNXwsiaNBjrdr4HYnsOYfWr48E3s3Jc=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="微信小程序学习笔记"><meta property="og:description" content="小程序实质上就是一个基于web基础的应用程序（网页）（但是不支持浏览器的api，小程序的api全部由微信提供，高度依赖微信，因此只能在微信中运行）
+微信小程序要求进行ICP备案，才能发布小程序
+微信小程序开发文档
+https://developers.weixin.qq.com/miniprogram/dev/framework/
+开发工具：微信开发者工具
+小程序产品需求
+发现真实需要
+用户深度访谈，分析竞品，付费意愿
+需求分期：最小化可行产品（MVP）
+不是每个功能都要开发（优先开发最重要和最紧急的功能）
+优化开发顺序，先开发基础可用，然后迭代更新功能，满足用户需求，功能文档
+根据用户体验来优化服务
+原型制作工具：墨刀，Axure
+微信小程序结构
+index.wxml页面结构
+index.wxss页面样式
+index.js页面逻辑
+如果设置了单独的页面样式，那么会覆盖掉app.wxss的样式
+app.json定义了页面和基本配置，采用json格式，必须包含pages属性，说明小程序有哪些页面
+app.json文件结构
+pages是用来定义页面的，是一个数组，每一个项都是代表一个页面，例如：
+&#34;pages&#34;:[ &#34;pages/index/index&#34;, &#34;pages/demo/demo&#34; ], window属性是设置小程序的窗口样式，例如：
+&#34;window&#34;:{ &#34;backgroundTextStyle&#34;:&#34;light&#34;, &#34;navigationBarBackgroundColor&#34;: &#34;#fff&#34;, // 导航栏背景颜色 &#34;navigationBarTitleText&#34;: &#34;Weixin&#34;, // 导航栏文本 &#34;navigationBarTextStyle&#34;:&#34;black&#34; // 导航栏文本颜色 }, 从上面可以看出是一个三层结构，页面是放在pages目录下的，而demo和index都是代表这个页面叫什么
+demo.js，Page()是小程序提供的一个函数，用来初始化页面，参数是一个对象，用来配置当前页面的属性
+demo.wxml，该文件是用来描述页面的，和html类似
+pages文件夹：存放小程序页面，每个页面代表为一个文件夹，文件夹名称为页面名称，在这个页面文件夹下的全部文件都是描述这个页面的
+utils文件夹：用于存放公共的js程序，便于不同的页面进行调用
+imgages文件夹：为方便管理小程序的用到的全部静态图片
+app.js：当前项目的js（全局数据和反应）
+json：全局配置
+wxss：全局样式
+project.config.json：项目配置文件，配置微信开发者工具，例如工具的页面颜色，编译配置等等个性化配置
+page.json: 单独定义每个页面的一些属性，例如：顶部颜色，是否可以下拉刷新等等
+app.json：这是一种数据格式，小程序的静态配置（全局配置），页面的路径，界面的表现，顶部样式，网络超时等等
+pages字段：描述当前小程序所有页面的路径，让微信清楚小程序页面定义在哪个目录
+window字段：定义小程序所有页面的顶部背景颜色，文字颜色等等
+json是包裹在一个括号中，以键值对的方式表达数据，值必须包含在双引号中，在json中无法使用注释
+wxml
+WXML：从html中衍生而来一种专门在小程序页面中使用的语言，组合了基础组件，事件系统，构造出页面的结构
+view元素是表示块级，和div类似
+scroll-view元素是表示可滚动页面区域
+text元素是表示行内文本，和span类似
+image元素是表示图片，和img类似
+swiper元素是用来搞轮播图
+属性
+<view 属性=&ldquo;属性值&rdquo;>
+bindtap属性可绑定事件函数
+hidden属性控制元素是否隐藏，true为隐藏
+wxss样式，采用css样式语法，和写普通的css样式一样，选择器属性样式之类的就不写了，具备css大部分的特性，具体看我写的css笔记，背景，字体，边框，定位，大小之类的，用法是一样的，可以给wxml标签设置class，采用的是W3C标准盒模型，另外小程序官方使用flex布局
+推荐静态样式写入class中，style用来接收动态的样式，避免出样式优先级问题，例如："><meta property="og:type" content="article"><meta property="og:url" content="https://blog.cjlio.com/posts/48/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-06-27T12:34:00+00:00"><meta property="article:modified_time" content="2021-06-27T12:34:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="微信小程序学习笔记"><meta name=twitter:description content="小程序实质上就是一个基于web基础的应用程序（网页）（但是不支持浏览器的api，小程序的api全部由微信提供，高度依赖微信，因此只能在微信中运行）
+微信小程序要求进行ICP备案，才能发布小程序
+微信小程序开发文档
+https://developers.weixin.qq.com/miniprogram/dev/framework/
+开发工具：微信开发者工具
+小程序产品需求
+发现真实需要
+用户深度访谈，分析竞品，付费意愿
+需求分期：最小化可行产品（MVP）
+不是每个功能都要开发（优先开发最重要和最紧急的功能）
+优化开发顺序，先开发基础可用，然后迭代更新功能，满足用户需求，功能文档
+根据用户体验来优化服务
+原型制作工具：墨刀，Axure
+微信小程序结构
+index.wxml页面结构
+index.wxss页面样式
+index.js页面逻辑
+如果设置了单独的页面样式，那么会覆盖掉app.wxss的样式
+app.json定义了页面和基本配置，采用json格式，必须包含pages属性，说明小程序有哪些页面
+app.json文件结构
+pages是用来定义页面的，是一个数组，每一个项都是代表一个页面，例如：
+&#34;pages&#34;:[ &#34;pages/index/index&#34;, &#34;pages/demo/demo&#34; ], window属性是设置小程序的窗口样式，例如：
+&#34;window&#34;:{ &#34;backgroundTextStyle&#34;:&#34;light&#34;, &#34;navigationBarBackgroundColor&#34;: &#34;#fff&#34;, // 导航栏背景颜色 &#34;navigationBarTitleText&#34;: &#34;Weixin&#34;, // 导航栏文本 &#34;navigationBarTextStyle&#34;:&#34;black&#34; // 导航栏文本颜色 }, 从上面可以看出是一个三层结构，页面是放在pages目录下的，而demo和index都是代表这个页面叫什么
+demo.js，Page()是小程序提供的一个函数，用来初始化页面，参数是一个对象，用来配置当前页面的属性
+demo.wxml，该文件是用来描述页面的，和html类似
+pages文件夹：存放小程序页面，每个页面代表为一个文件夹，文件夹名称为页面名称，在这个页面文件夹下的全部文件都是描述这个页面的
+utils文件夹：用于存放公共的js程序，便于不同的页面进行调用
+imgages文件夹：为方便管理小程序的用到的全部静态图片
+app.js：当前项目的js（全局数据和反应）
+json：全局配置
+wxss：全局样式
+project.config.json：项目配置文件，配置微信开发者工具，例如工具的页面颜色，编译配置等等个性化配置
+page.json: 单独定义每个页面的一些属性，例如：顶部颜色，是否可以下拉刷新等等
+app.json：这是一种数据格式，小程序的静态配置（全局配置），页面的路径，界面的表现，顶部样式，网络超时等等
+pages字段：描述当前小程序所有页面的路径，让微信清楚小程序页面定义在哪个目录
+window字段：定义小程序所有页面的顶部背景颜色，文字颜色等等
+json是包裹在一个括号中，以键值对的方式表达数据，值必须包含在双引号中，在json中无法使用注释
+wxml
+WXML：从html中衍生而来一种专门在小程序页面中使用的语言，组合了基础组件，事件系统，构造出页面的结构
+view元素是表示块级，和div类似
+scroll-view元素是表示可滚动页面区域
+text元素是表示行内文本，和span类似
+image元素是表示图片，和img类似
+swiper元素是用来搞轮播图
+属性
+<view 属性=&ldquo;属性值&rdquo;>
+bindtap属性可绑定事件函数
+hidden属性控制元素是否隐藏，true为隐藏
+wxss样式，采用css样式语法，和写普通的css样式一样，选择器属性样式之类的就不写了，具备css大部分的特性，具体看我写的css笔记，背景，字体，边框，定位，大小之类的，用法是一样的，可以给wxml标签设置class，采用的是W3C标准盒模型，另外小程序官方使用flex布局
+推荐静态样式写入class中，style用来接收动态的样式，避免出样式优先级问题，例如："><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://blog.cjlio.com/posts/"},{"@type":"ListItem","position":3,"name":"微信小程序学习笔记","item":"https://blog.cjlio.com/posts/48/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"微信小程序学习笔记","name":"微信小程序学习笔记","description":"小程序实质上就是一个基于web基础的应用程序（网页）（但是不支持浏览器的api，小程序的api全部由微信提供，高度依赖微信，因此只能在微信中运行）\n微信小程序要求进行ICP备案，才能发布小程序\n微信小程序开发文档\nhttps://developers.weixin.qq.com/miniprogram/dev/framework/\n开发工具：微信开发者工具\n小程序产品需求\n发现真实需要\n用户深度访谈，分析竞品，付费意愿\n需求分期：最小化可行产品（MVP）\n不是每个功能都要开发（优先开发最重要和最紧急的功能）\n优化开发顺序，先开发基础可用，然后迭代更新功能，满足用户需求，功能文档\n根据用户体验来优化服务\n原型制作工具：墨刀，Axure\n微信小程序结构\nindex.wxml页面结构\nindex.wxss页面样式\nindex.js页面逻辑\n如果设置了单独的页面样式，那么会覆盖掉app.wxss的样式\napp.json定义了页面和基本配置，采用json格式，必须包含pages属性，说明小程序有哪些页面\napp.json文件结构\npages是用来定义页面的，是一个数组，每一个项都是代表一个页面，例如：\n\u0026quot;pages\u0026quot;:[ \u0026quot;pages/index/index\u0026quot;, \u0026quot;pages/demo/demo\u0026quot; ], window属性是设置小程序的窗口样式，例如：\n\u0026quot;window\u0026quot;:{ \u0026quot;backgroundTextStyle\u0026quot;:\u0026quot;light\u0026quot;, \u0026quot;navigationBarBackgroundColor\u0026quot;: \u0026quot;#fff\u0026quot;, // 导航栏背景颜色 \u0026quot;navigationBarTitleText\u0026quot;: \u0026quot;Weixin\u0026quot;, // 导航栏文本 \u0026quot;navigationBarTextStyle\u0026quot;:\u0026quot;black\u0026quot; // 导航栏文本颜色 }, 从上面可以看出是一个三层结构，页面是放在pages目录下的，而demo和index都是代表这个页面叫什么\ndemo.js，Page()是小程序提供的一个函数，用来初始化页面，参数是一个对象，用来配置当前页面的属性\ndemo.wxml，该文件是用来描述页面的，和html类似\npages文件夹：存放小程序页面，每个页面代表为一个文件夹，文件夹名称为页面名称，在这个页面文件夹下的全部文件都是描述这个页面的\nutils文件夹：用于存放公共的js程序，便于不同的页面进行调用\nimgages文件夹：为方便管理小程序的用到的全部静态图片\napp.js：当前项目的js（全局数据和反应）\njson：全局配置\nwxss：全局样式\nproject.config.json：项目配置文件，配置微信开发者工具，例如工具的页面颜色，编译配置等等个性化配置\npage.json: 单独定义每个页面的一些属性，例如：顶部颜色，是否可以下拉刷新等等\napp.json：这是一种数据格式，小程序的静态配置（全局配置），页面的路径，界面的表现，顶部样式，网络超时等等\npages字段：描述当前小程序所有页面的路径，让微信清楚小程序页面定义在哪个目录\nwindow字段：定义小程序所有页面的顶部背景颜色，文字颜色等等\njson是包裹在一个括号中，以键值对的方式表达数据，值必须包含在双引号中，在json中无法使用注释\nwxml\nWXML：从html中衍生而来一种专门在小程序页面中使用的语言，组合了基础组件，事件系统，构造出页面的结构\nview元素是表示块级，和div类似\nscroll-view元素是表示可滚动页面区域\ntext元素是表示行内文本，和span类似\nimage元素是表示图片，和img类似\nswiper元素是用来搞轮播图\n属性\n\u0026lt;view 属性=\u0026ldquo;属性值\u0026rdquo;\u0026gt;\nbindtap属性可绑定事件函数\nhidden属性控制元素是否隐藏，true为隐藏\nwxss样式，采用css样式语法，和写普通的css样式一样，选择器属性样式之类的就不写了，具备css大部分的特性，具体看我写的css笔记，背景，字体，边框，定位，大小之类的，用法是一样的，可以给wxml标签设置class，采用的是W3C标准盒模型，另外小程序官方使用flex布局\n推荐静态样式写入class中，style用来接收动态的样式，避免出样式优先级问题，例如：","keywords":["微信小程序"],"articleBody":"小程序实质上就是一个基于web基础的应用程序（网页）（但是不支持浏览器的api，小程序的api全部由微信提供，高度依赖微信，因此只能在微信中运行）\n微信小程序要求进行ICP备案，才能发布小程序\n微信小程序开发文档\nhttps://developers.weixin.qq.com/miniprogram/dev/framework/\n开发工具：微信开发者工具\n小程序产品需求\n发现真实需要\n用户深度访谈，分析竞品，付费意愿\n需求分期：最小化可行产品（MVP）\n不是每个功能都要开发（优先开发最重要和最紧急的功能）\n优化开发顺序，先开发基础可用，然后迭代更新功能，满足用户需求，功能文档\n根据用户体验来优化服务\n原型制作工具：墨刀，Axure\n微信小程序结构\nindex.wxml页面结构\nindex.wxss页面样式\nindex.js页面逻辑\n如果设置了单独的页面样式，那么会覆盖掉app.wxss的样式\napp.json定义了页面和基本配置，采用json格式，必须包含pages属性，说明小程序有哪些页面\napp.json文件结构\npages是用来定义页面的，是一个数组，每一个项都是代表一个页面，例如：\n\"pages\":[ \"pages/index/index\", \"pages/demo/demo\" ], window属性是设置小程序的窗口样式，例如：\n\"window\":{ \"backgroundTextStyle\":\"light\", \"navigationBarBackgroundColor\": \"#fff\", // 导航栏背景颜色 \"navigationBarTitleText\": \"Weixin\", // 导航栏文本 \"navigationBarTextStyle\":\"black\" // 导航栏文本颜色 }, 从上面可以看出是一个三层结构，页面是放在pages目录下的，而demo和index都是代表这个页面叫什么\ndemo.js，Page()是小程序提供的一个函数，用来初始化页面，参数是一个对象，用来配置当前页面的属性\ndemo.wxml，该文件是用来描述页面的，和html类似\npages文件夹：存放小程序页面，每个页面代表为一个文件夹，文件夹名称为页面名称，在这个页面文件夹下的全部文件都是描述这个页面的\nutils文件夹：用于存放公共的js程序，便于不同的页面进行调用\nimgages文件夹：为方便管理小程序的用到的全部静态图片\napp.js：当前项目的js（全局数据和反应）\njson：全局配置\nwxss：全局样式\nproject.config.json：项目配置文件，配置微信开发者工具，例如工具的页面颜色，编译配置等等个性化配置\npage.json: 单独定义每个页面的一些属性，例如：顶部颜色，是否可以下拉刷新等等\napp.json：这是一种数据格式，小程序的静态配置（全局配置），页面的路径，界面的表现，顶部样式，网络超时等等\npages字段：描述当前小程序所有页面的路径，让微信清楚小程序页面定义在哪个目录\nwindow字段：定义小程序所有页面的顶部背景颜色，文字颜色等等\njson是包裹在一个括号中，以键值对的方式表达数据，值必须包含在双引号中，在json中无法使用注释\nwxml\nWXML：从html中衍生而来一种专门在小程序页面中使用的语言，组合了基础组件，事件系统，构造出页面的结构\nview元素是表示块级，和div类似\nscroll-view元素是表示可滚动页面区域\ntext元素是表示行内文本，和span类似\nimage元素是表示图片，和img类似\nswiper元素是用来搞轮播图\n属性\nbindtap属性可绑定事件函数\nhidden属性控制元素是否隐藏，true为隐藏\nwxss样式，采用css样式语法，和写普通的css样式一样，选择器属性样式之类的就不写了，具备css大部分的特性，具体看我写的css笔记，背景，字体，边框，定位，大小之类的，用法是一样的，可以给wxml标签设置class，采用的是W3C标准盒模型，另外小程序官方使用flex布局\n推荐静态样式写入class中，style用来接收动态的样式，避免出样式优先级问题，例如：\nAlt+shift+f：自动格式化代码\n注意：微信小程序的基本单位是rpx，而不是px，不管是什么页面（无论多大或者多小），页面100%就是750rpx，因此页面的1%等于7.5rpx\n另外微信官方提供了一套UI框架，https://weui.io/，github库地址：https://github.com/Tencent/weui-wxss/\n用法，直接引用weui.wxss，然后像用bootstrap一样，给标签加类\n项目目录结构\napp.js：必需，小程序的逻辑所在\napp.json：必需，小程序的公共配置\napp.wxss：不必需，小程序的公共样式\n页面组成\njs：必需，页面逻辑\nwxml：必需，页面结构\njson：不必需，页面的配置\nwxss：不必需，页面的样式\n小程序支持的文件：\nwxs，png，jpg，jpeg，gif，svg，json，cer，mp3，aac，m4a，mp4，wav，ogg，silk，wasm，br\n全局配置：app.json是用于小程序进行的全局配置，决定页面文件路径，窗口表现，网络超时等等\npages配置：定义页面的路径，优先显示第一个设置的页面\nwindow配置：定义所有页面的顶部样式\ntabBar配置：底部tab栏的表现\n页面配置：每个页面都可以使用.json来配置当前页面的窗口表现，注意：会覆盖掉app.json相同的配置项\nstiemap配置：通过配置sitemap.json或者后台页面收录开关来确定小程序页面是否允许被微信索引，当被允许时，微信会通过爬虫的形式，对小程序的页面内容进行索引\n生命周期\n应用生命周期\nonLaunch：小程序初始化，当页面第一次加载时触发，跳转页面返回不触发\nonShow：小程序显示（前台），当页面显示或者从后台返回小程序显示该页面时触发，从跳转页面返回时触发\nonError：小程序页面异常触发\nonPageNotFound：页面不存在\n页面生命周期\nonLoad：页面加载触发\nonShow：页面显示触发\nonReady：页面初次渲染完成触发\nonHide：页面隐藏触发\nonUnload：小程序页面卸载，例如： 重定向一个页面，原页面被关闭\nonPullDownRefresh：用户下拉触发\nonReachBottom：页面上拉触底触发\nonPageScroll：页面被滚动触发\nonResize：页面尺寸发生改变时输出\n小程序组件生命周期\ncreated：当组件实例被初始化时触发该生命周期钩子（在该钩子触发时，并不能使用setData，this.data等于Component.data）\nattached：当组件实例初始化完毕，进入页面节点树后触发该生命周期钩子（this.data被初始化为组件的当前值）\nready：当组件实例在视图层布局完成后触发该生命周期钩子\nmoved：当组件实例被移动到节点树另一个位置时触发该生命周期钩子\ndetached：当组件实例被销毁时触发该生命周期钩子（退出当前组件的页面树，也会触发该生命周期钩子）\nerror：当组件方法抛出错误时触发该生命周期钩子\n数据绑定和vue类似，不过小程序的数据绑定是单向的\n{{message}} Page({ data: { message: 'hallo word' } }) 列表渲染\n{{abc}} Page({ data: { arrs: [1,2,3,4,5] } }) 条件渲染\nTrue 允许使用wx:if，wx:elif和wx:else使用\nwx:if是控制属性，可以判断组件是否是否显示，多个组件使用block元素包裹\n小程序事件\n事件是视图层到逻辑层的通讯方式，监听用户的行为，通过事件的方式反映到逻辑层进行处理\n点击事件（tap），长按事件（longtaop），触摸事件（例如：开始触摸，结束触摸，终止触摸）等等\n小程序需求\n发现真实需要\n用户深度访谈，分析竞品，付费意愿\n需求分期：最小化可行产品（MVP）\n不是每个功能都要开发（优先开发最重要和最紧急的功能）\n优化开发顺序，先开发基础可用，然后迭代更新功能，满足用户需求，功能文档\n根据用户体验来优化服务\n原型制作工具：墨刀，Axure\nHTTP-PROMLSE\n","wordCount":"158","inLanguage":"en","datePublished":"2021-06-27T12:34:00Z","dateModified":"2021-06-27T12:34:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.cjlio.com/posts/48/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://blog.cjlio.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/posts/>Posts</a></div><h1 class=post-title>微信小程序学习笔记</h1><div class=post-meta><span title='2021-06-27 12:34:00 +0000 UTC'>2021-06-27</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>小程序实质上就是一个基于web基础的应用程序（网页）（但是不支持浏览器的api，小程序的api全部由微信提供，高度依赖微信，因此只能在微信中运行）</p><p>微信小程序要求进行ICP备案，才能发布小程序</p><p>微信小程序开发文档</p><p><a href=https://developers.weixin.qq.com/miniprogram/dev/framework/>https://developers.weixin.qq.com/miniprogram/dev/framework/</a></p><p>开发工具：微信开发者工具</p><hr><p>小程序产品需求</p><p>发现真实需要</p><p>用户深度访谈，分析竞品，付费意愿</p><p>需求分期：最小化可行产品（MVP）</p><p>不是每个功能都要开发（优先开发最重要和最紧急的功能）</p><p>优化开发顺序，先开发基础可用，然后迭代更新功能，满足用户需求，功能文档</p><p>根据用户体验来优化服务</p><p>原型制作工具：墨刀，Axure</p><hr><p>微信小程序结构</p><p>index.wxml页面结构</p><p>index.wxss页面样式</p><p>index.js页面逻辑</p><p>如果设置了单独的页面样式，那么会覆盖掉app.wxss的样式</p><p>app.json定义了页面和基本配置，采用json格式，必须包含pages属性，说明小程序有哪些页面</p><p>app.json文件结构</p><p>pages是用来定义页面的，是一个数组，每一个项都是代表一个页面，例如：</p><pre><code>&quot;pages&quot;:[
+    &quot;pages/index/index&quot;,
+    &quot;pages/demo/demo&quot;
+  ],
+</code></pre><p>window属性是设置小程序的窗口样式，例如：</p><pre><code>&quot;window&quot;:{
+    &quot;backgroundTextStyle&quot;:&quot;light&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#fff&quot;,  // 导航栏背景颜色
+    &quot;navigationBarTitleText&quot;: &quot;Weixin&quot;,  // 导航栏文本
+    &quot;navigationBarTextStyle&quot;:&quot;black&quot;  // 导航栏文本颜色
+},
+</code></pre><p>从上面可以看出是一个三层结构，页面是放在pages目录下的，而demo和index都是代表这个页面叫什么</p><p>demo.js，Page()是小程序提供的一个函数，用来初始化页面，参数是一个对象，用来配置当前页面的属性</p><p>demo.wxml，该文件是用来描述页面的，和html类似</p><p>pages文件夹：存放小程序页面，每个页面代表为一个文件夹，文件夹名称为页面名称，在这个页面文件夹下的全部文件都是描述这个页面的</p><p>utils文件夹：用于存放公共的js程序，便于不同的页面进行调用</p><p>imgages文件夹：为方便管理小程序的用到的全部静态图片</p><p>app.js：当前项目的js（全局数据和反应）</p><p>json：全局配置</p><p>wxss：全局样式</p><p>project.config.json：项目配置文件，配置微信开发者工具，例如工具的页面颜色，编译配置等等个性化配置</p><p>page.json: 单独定义每个页面的一些属性，例如：顶部颜色，是否可以下拉刷新等等</p><hr><p>app.json：这是一种数据格式，小程序的静态配置（全局配置），页面的路径，界面的表现，顶部样式，网络超时等等</p><p>pages字段：描述当前小程序所有页面的路径，让微信清楚小程序页面定义在哪个目录</p><p>window字段：定义小程序所有页面的顶部背景颜色，文字颜色等等</p><p>json是包裹在一个括号中，以键值对的方式表达数据，值必须包含在双引号中，在json中无法使用注释</p><hr><p>wxml</p><p>WXML：从html中衍生而来一种专门在小程序页面中使用的语言，组合了基础组件，事件系统，构造出页面的结构</p><p>view元素是表示块级，和div类似</p><p>scroll-view元素是表示可滚动页面区域</p><p>text元素是表示行内文本，和span类似</p><p>image元素是表示图片，和img类似</p><p>swiper元素是用来搞轮播图</p><p>属性</p><p>&lt;view 属性=&ldquo;属性值&rdquo;></p><p>bindtap属性可绑定事件函数</p><p>hidden属性控制元素是否隐藏，true为隐藏</p><hr><p>wxss样式，采用css样式语法，和写普通的css样式一样，选择器属性样式之类的就不写了，具备css大部分的特性，具体看我写的css笔记，背景，字体，边框，定位，大小之类的，用法是一样的，可以给wxml标签设置class，采用的是W3C标准盒模型，另外小程序官方使用flex布局</p><p>推荐静态样式写入class中，style用来接收动态的样式，避免出样式优先级问题，例如：</p><p></p><p>Alt+shift+f：自动格式化代码</p><p>注意：微信小程序的基本单位是rpx，而不是px，不管是什么页面（无论多大或者多小），页面100%就是750rpx，因此页面的1%等于7.5rpx</p><p>另外微信官方提供了一套UI框架，https://weui.io/，github库地址：https://github.com/Tencent/weui-wxss/</p><p>用法，直接引用weui.wxss，然后像用bootstrap一样，给标签加类</p><hr><p>项目目录结构</p><p>app.js：必需，小程序的逻辑所在</p><p>app.json：必需，小程序的公共配置</p><p>app.wxss：不必需，小程序的公共样式</p><hr><p>页面组成</p><p>js：必需，页面逻辑</p><p>wxml：必需，页面结构</p><p>json：不必需，页面的配置</p><p>wxss：不必需，页面的样式</p><p>小程序支持的文件：</p><p>wxs，png，jpg，jpeg，gif，svg，json，cer，mp3，aac，m4a，mp4，wav，ogg，silk，wasm，br</p><hr><p>全局配置：app.json是用于小程序进行的全局配置，决定页面文件路径，窗口表现，网络超时等等</p><p>pages配置：定义页面的路径，优先显示第一个设置的页面</p><p>window配置：定义所有页面的顶部样式</p><p>tabBar配置：底部tab栏的表现</p><p>页面配置：每个页面都可以使用.json来配置当前页面的窗口表现，注意：会覆盖掉app.json相同的配置项</p><p>stiemap配置：通过配置sitemap.json或者后台页面收录开关来确定小程序页面是否允许被微信索引，当被允许时，微信会通过爬虫的形式，对小程序的页面内容进行索引</p><p>生命周期</p><p>应用生命周期</p><p>onLaunch：小程序初始化，当页面第一次加载时触发，跳转页面返回不触发</p><p>onShow：小程序显示（前台），当页面显示或者从后台返回小程序显示该页面时触发，从跳转页面返回时触发</p><p>onError：小程序页面异常触发</p><p>onPageNotFound：页面不存在</p><p>页面生命周期</p><p>onLoad：页面加载触发</p><p>onShow：页面显示触发</p><p>onReady：页面初次渲染完成触发</p><p>onHide：页面隐藏触发</p><p>onUnload：小程序页面卸载，例如： 重定向一个页面，原页面被关闭</p><p>onPullDownRefresh：用户下拉触发</p><p>onReachBottom：页面上拉触底触发</p><p>onPageScroll：页面被滚动触发</p><p>onResize：页面尺寸发生改变时输出</p><hr><p>小程序组件生命周期</p><p>created：当组件实例被初始化时触发该生命周期钩子（在该钩子触发时，并不能使用setData，this.data等于Component.data）</p><p>attached：当组件实例初始化完毕，进入页面节点树后触发该生命周期钩子（this.data被初始化为组件的当前值）</p><p>ready：当组件实例在视图层布局完成后触发该生命周期钩子</p><p>moved：当组件实例被移动到节点树另一个位置时触发该生命周期钩子</p><p>detached：当组件实例被销毁时触发该生命周期钩子（退出当前组件的页面树，也会触发该生命周期钩子）</p><p>error：当组件方法抛出错误时触发该生命周期钩子</p><hr><p>数据绑定和vue类似，不过小程序的数据绑定是单向的</p><pre><code>&lt;view&gt; {{message}} &lt;/view&gt;
+
+Page({
+    data: {
+        message: 'hallo word'
+     }
+})
+</code></pre><p>列表渲染</p><pre><code>&lt;view wx:for=&quot;{{arrs}}&quot;&gt; {{abc}} &lt;/view&gt;
+
+Page({
+    data: {
+        arrs: [1,2,3,4,5]
+     }
+})
+</code></pre><p>条件渲染</p><pre><code>&lt;view wx:if=&quot;{{hallo}}&quot;&gt; True &lt;/view&gt;
+</code></pre><p>允许使用wx:if，wx:elif和wx:else使用</p><p>wx:if是控制属性，可以判断组件是否是否显示，多个组件使用block元素包裹</p><hr><p>小程序事件</p><p>事件是视图层到逻辑层的通讯方式，监听用户的行为，通过事件的方式反映到逻辑层进行处理</p><p>点击事件（tap），长按事件（longtaop），触摸事件（例如：开始触摸，结束触摸，终止触摸）等等</p><hr><p>小程序需求</p><p>发现真实需要</p><p>用户深度访谈，分析竞品，付费意愿</p><p>需求分期：最小化可行产品（MVP）</p><p>不是每个功能都要开发（优先开发最重要和最紧急的功能）</p><p>优化开发顺序，先开发基础可用，然后迭代更新功能，满足用户需求，功能文档</p><p>根据用户体验来优化服务</p><p>原型制作工具：墨刀，Axure</p><hr><p>HTTP-PROMLSE</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://blog.cjlio.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/>微信小程序</a></li></ul><nav class=paginav><a class=prev href=https://blog.cjlio.com/posts/49/><span class=title>« Prev</span><br><span>数据结构与算法学习笔记</span></a>
+<a class=next href=https://blog.cjlio.com/posts/47/><span class=title>Next »</span><br><span>webpack学习笔记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Sass on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/sass/</link>
+    <description>Recent content in Sass on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 02 Jul 2021 08:44:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/sass/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS预处理器-Sass学习笔记</title>
+      <link>https://blog.cjlio.com/posts/51/</link>
+      <pubDate>Fri, 02 Jul 2021 08:44:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/51/</guid>
+      <description>sass是一门css扩展语言，css预处理器
+sass是基于ruby语言开发，在前端中可以使用npm安装
+npm install node-sass或者npm install node-sass &amp;ndash;save-dev
+当然也可以安装ruby，通过gem托管服务进行安装sass
+gem install sass
+文件
+hallo.scss
+解析为css文件
+sass hallo.scss hallo.css
+sass提供了4种编译风格
+nested：嵌套缩进的css代码，默认值
+expanded：没有缩进，扩展的css代码
+compact：简洁格式的css代码
+compressed：压缩后的css代码，生产环境一般选择这个
+编译风格使用语法
+sass &amp;ndash;style nested hallo.scss hallo.css
+也可以让sass自动编译
+监听文件
+sass &amp;ndash;watch hallo.scss:hallo.css
+监听目录
+sass &amp;ndash;watch sass/style.scss:css/style.css
+注意：目录不要有中文
+注释
+/* 注释 */
+// 注释
+/*! 注释 */
+第一种注释，会保留到编译后的css文件中
+第二种注释，不会编译到编译后的css文件中
+第三种注释，是表示重要注释，就算就是压缩编译，也会保留这个注释，一般用来声明版权
+变量
+$color: #ccc; #app{ color: $color; } 变量也可以嵌套到属性中
+$right: right; #app{ margin-#{$right}: 50px; } 运算
+允许使用加减乘除运算
+#app{ width: 100px + 20px; height: (300px / 3) * 2; } 嵌套，嵌套一般用在有同一个父元素（祖先元素）下，例如：</description>
+    </item>
+    
+  </channel>
+</rss>

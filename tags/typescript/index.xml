@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>TypeScript on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/typescript/</link>
+    <description>Recent content in TypeScript on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 18 Jul 2021 15:50:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript学习笔记</title>
+      <link>https://blog.cjlio.com/posts/58/</link>
+      <pubDate>Sun, 18 Jul 2021 15:50:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/58/</guid>
+      <description>TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
+TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
+TypeScript实质上就是JavaScript的扩展，JavaScript超集
+TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript
+TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父
+TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样
+全局安装typescript
+yarn global add typescript
+或者
+npm install -g typescript
+检查是否安装成功
+tsc -v
+使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
+创建tsconfig.json
+npx tsc &amp;ndash;init
+编译TypeScript文件（转为正常js文件）
+tsc hallo.ts
+在终端中直接运行ts代码
+npm install ts-node -g
+ts-node hallo.ts
+绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）
+变量声明
+推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）
+基础类型
+TypeScript具有强类型的特点
+boolean，string，number，array，null，undefined，object，tuple，enum，void，never，any
+boolean布尔值，例如：
+let hallo: boolean = true
+number数值，例如：
+let hallo: number = 123;
+二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）
+let hallo: bigint = 100n;
+注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换
+string字符串
+let hallo: string = hallo;
+void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）
+function voiddemo(): void { let a = 10; }</description>
+    </item>
+    
+  </channel>
+</rss>

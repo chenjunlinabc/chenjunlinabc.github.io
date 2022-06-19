@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>web安全 on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/web%E5%AE%89%E5%85%A8/</link>
+    <description>Recent content in web安全 on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 May 2022 14:00:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>web安全学习笔记</title>
+      <link>https://blog.cjlio.com/posts/116/</link>
+      <pubDate>Sun, 01 May 2022 14:00:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/116/</guid>
+      <description>常见web工具：
+burpsuite：通过代理渗透，可重放HTTP请求，来分析HTTP响应
+curl：通过url方式传输数据，可用于抓取页面（执行请求），监控网络等等
+postmain
+hackbar quantum
+wappalyzer
+文件上传漏洞：没有足够的安全约束的情况下，允许上传恶意文件，例如恶意脚本，webshell等等
+文件上传漏洞关键点在于绕过
+由于法律限制的原因，禁止对其他网站非法攻击，因此需要在本地或者在自己的服务器上建立靶场渗透环境，这边使用的是bwapp（全称为buggy web Application）
+这边使用的是docker运行bwapp，也可以下载bwapp，来自己搭建（https://sourceforge.net/projects/bwapp/files/）
+docker pull raesene/bwapp
+docker run -d -p 0.0.0.0:80:80 raesene/bwapp
+访问127.0.0.1/install.php
+点击here来初始化，或者直接访问127.0.0.1/install.php?install=yes
+创建账号信息，点击new user，或者直接访问127.0.0.1/user_new.php
+点击login，或者直接访问127.0.0.1/login.php，根据刚才的账号信息进行登录
+简单接触文件上传漏洞
+chose your bug选择unrestricted File Upload（未经严格审记的文件上传），安全级别选择low（set your security level）
+上传一句话木马，创建shell.php文件，添加
+通过curl触发，执行curl -d &amp;rsquo;test=echo getcwd();&amp;rsquo; http://127.0.0.1/images/shell.php
+可以看到成功触发shell.php，并且服务器返回了当前执行的目录
+后缀名绕过
+安全级别选择medium（set your security level）
+常见后缀名验证方式有，黑名单（禁止哪些后缀上传），白名单（只允许哪些后缀上传）
+这里的靶场环境的web server为Apache，因此需要了解Apache解析器模块
+.htaccess绕过，当黑名单没有限制上传.htaccess文件时，并且web sever也支持.htaccess时
+上传.htaccess文件，内容为：AddType application/x-httpd-php jpg
+上传木马，shell.jpg
+AddType application/x-httpd-php jpg的意思是，jpg文件按照php文件的方式解析
+大小写绕过
+大小写用于Windows平台环境下，在Windows中，大小写是不敏感的，而在Linux环境下，大小写是敏感的
+Windows文件流绕过
+利用windows平台的NTFS文件系统的文件流特性，设置文件时，默认使用未命名的文件流，但是也可以创建其他命名的文件流
+例如：
+echo hallo,word &amp;gt; hallo.txt:a.txtecho hallo &amp;gt; hallo.</description>
+    </item>
+    
+  </channel>
+</rss>

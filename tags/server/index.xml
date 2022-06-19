@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>server on 小陈的个人博客</title>
+    <link>https://blog.cjlio.com/tags/server/</link>
+    <description>Recent content in server on 小陈的个人博客</description>
+    <image>
+      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Jun 2021 15:52:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx服务器的一些简单配置</title>
+      <link>https://blog.cjlio.com/posts/34/</link>
+      <pubDate>Wed, 16 Jun 2021 15:52:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/34/</guid>
+      <description>配置ssl证书
+前提是已经申请到ssl证书,并且开放443端口
+编辑nginx.conf
+将443那几行的注释去掉（#）,并且修改
+ssl_certificate &amp;ldquo;crt证书的绝对路径&amp;rdquo;; ssl_certificate_key&amp;quot;key证书的绝对路径&amp;quot;;
+如果想访问网站就301重定向到https，那么添加这几行
+server{ listen 80; server_name cjlio.com; rewrite ^(.*) https://$host$1 permanent; } # 当使用80端口访问网站时，将301永久重定向到https://cjlio.com，达到全站https的效果
+然后刷新一下配置nginx -s
+nginx反向代理配置
+将客户端请求转发给内部网络的其他目标服务端，并且将从其他服务端的结果返回到客户端，代理服务端和目标服务端，在外部看起来像是一个整体，只是将请求转发给其他服务端处理，从而达到减轻目标服务端的压力的效果
+配置nginx.conf
+location / { proxy_pass https://test.cjlio.com; # 反向代理服务器地址 proxy_connect_timeout 200; # 设置连接超时 proxy_read_timeout 200; # 设置读响应超时 } 重启Nginx服务：service nginx restart
+请求当前服务器时，当前服务器将请求转发给地址为 https://test.cjlio.com 的服务器处理
+gzip压缩
+gzip on; gzip_comp_level 1; gzip_min_length 10; gzip_http_version 1.1; gzip_types text/html text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript; 解释：
+gzip on // gzip开启，关闭是off</description>
+    </item>
+    
+    <item>
+      <title>Linux环境下简单搭建Minecraft服务器（java版）</title>
+      <link>https://blog.cjlio.com/posts/33/</link>
+      <pubDate>Wed, 16 Jun 2021 15:46:00 +0000</pubDate>
+      
+      <guid>https://blog.cjlio.com/posts/33/</guid>
+      <description>服务器可以使用国内的，保证延迟低，服务器配置一定要高一点，不然很容易Killed
+安装java
+dnf install java-openjdk
+检测java是否安装成功
+java -version
+新建一个目录
+mkdir hallomc
+cd hallomc
+下载第三方mc服务器
+wget -c https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/553/downloads/paper-1.16.5-553.jar
+这是1.16.5的版本，服务器版本和客户端版本要一致
+历史版本https://papermc.io/legacy
+运行mc服务器
+java -Xmx1024M -Xms512M -jar paper-1.16.5-553.jar
+Xmx 代表服务器启动所占的最大运行内存，Xms代表服务器正常运行的最大内存
+一般来说第一次运行都是运行不了，因为没有同意协议
+进入mc目录下，nano eula.txt，把eula=false改成eula=true，然后再运行mc服务器
+24小时运行mc服务端
+一般来说退出ssh登录，就会终止运行mc服务端，可以通过简单建立个“虚拟终端”，来24小时运行
+dnf install screen # 安装screen
+screen -S mcserver # 创建一个新“终端”，名称自定义
+screen -R mcserver # 进入这个新“终端”
+如果想退出，可以使用ctrl+a+d
+可以使用screen -ls 命令来查看所有“终端”
+关闭正版验证
+在服务端目录，找到server.properties文件
+修改这个文件，把onlinemode 改为 false
+MCSManager面板
+wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash</description>
+    </item>
+    
+  </channel>
+</rss>
