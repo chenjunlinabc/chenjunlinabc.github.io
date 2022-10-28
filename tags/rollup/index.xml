@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Rollup on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/rollup/</link>
+    <link>http://chenjunlinabc.github.io/tags/rollup/</link>
     <description>Recent content in Rollup on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 10 Nov 2021 16:22:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/rollup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Nov 2021 16:22:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/rollup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Rollup模块打包工具</title>
-      <link>https://blog.cjlio.com/posts/119/</link>
+      <link>http://chenjunlinabc.github.io/posts/119/</link>
       <pubDate>Wed, 10 Nov 2021 16:22:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/119/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/119/</guid>
       <description>根据Rollup官方文档的介绍：Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大块复杂的代码，例如 library 或应用程序。
 Rollup和webpack那种偏向于应用打包不同，Rollup更专注于类库打包，像vue，react都是通过rollup打包的
 注意：webpack支持HMR（热模块更新），而Rollup并不支持，因此在应用打包的时候还是选择webpack比较好，但是如果只是打包类库之类的，并且还是基于ES6模块开发的，那么就可以考虑选择rollup了，因为rollup在Tree-shaking和ES6模块有着算法优势。因为Rollup对模块化是使用新标准，例如 CommonJS，而不是老旧解决方案
@@ -28,7 +28,7 @@ rollup src/demo.js -f cjs -o dist/bundle.js
 注意：-f是&amp;ndash;format的缩写，表示生成代码的格式，例如amd，cjs，esm，umd
 如果想监听文件是否改动，可以使用-w参数，当文件发送改动的时候，重新打包
 配置文件（rollup.config.js）
-export default { input: [&amp;quot;./src/demo.js&amp;quot;], output: { file: &amp;quot;./dist/bundle.js&amp;quot;, format: &amp;quot;cjs&amp;quot;, name: &amp;quot;experience&amp;quot;, }, } 执行命令
+export default {input: [&amp;quot;./src/demo.js&amp;quot;],output: {file: &amp;quot;./dist/bundle.js&amp;quot;,format: &amp;quot;cjs&amp;quot;,name: &amp;quot;experience&amp;quot;,},}执行命令
 rollup -c
 Rollup常用插件
 @rollup/plugin-babel

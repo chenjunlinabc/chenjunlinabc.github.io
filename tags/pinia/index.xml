@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Pinia on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/pinia/</link>
+    <link>http://chenjunlinabc.github.io/tags/pinia/</link>
     <description>Recent content in Pinia on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 26 Dec 2021 20:22:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/pinia/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 20:22:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/pinia/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pinia---vuejs的轻量级状态管理库</title>
-      <link>https://blog.cjlio.com/posts/124/</link>
+      <link>http://chenjunlinabc.github.io/posts/124/</link>
       <pubDate>Sun, 26 Dec 2021 20:22:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/124/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/124/</guid>
       <description>Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3
 Pinia作者也是vuex核心之一
 安装pinia
@@ -25,8 +25,8 @@ npm install pinia@next
 yarn add pinia@next
 导入pinia并且挂载为vue插件(在Vite脚手架下)
 src/main.js
-import { createApp } from &#39;vue&#39; import App from &#39;./App.vue&#39; const app = createApp(App) import { createPinia } from &#39;pinia&#39; app.use(createPinia()) app.mount(&#39;#app&#39;) src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）
-import { defineStore } from &#39;pinia&#39; export const useDataStore = defineStore(&#39;data&#39;, { state: () =&amp;gt; { return { count: 666 } }, //state: () =&amp;gt; { //name: chen //}, getters:{ // getters计算属性 doubleCount(state){ return state.</description>
+import { createApp } from &#39;vue&#39;import App from &#39;./App.vue&#39;const app = createApp(App)import { createPinia } from &#39;pinia&#39;app.use(createPinia())app.mount(&#39;#app&#39;)src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）
+import { defineStore } from &#39;pinia&#39;export const useDataStore = defineStore(&#39;data&#39;, {state: () =&amp;gt; {return { count: 666 }},//state: () =&amp;gt; {//name: chen//},getters:{ // getters计算属性doubleCount(state){return state.</description>
     </item>
     
   </channel>

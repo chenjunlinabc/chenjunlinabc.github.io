@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: https://blog.cjlio.com/sitemap.xml
+Sitemap: http://chenjunlinabc.github.io/sitemap.xml

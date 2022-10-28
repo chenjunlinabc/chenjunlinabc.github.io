@@ -2,22 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>MongoDB on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/mongodb/</link>
+    <link>http://chenjunlinabc.github.io/tags/mongodb/</link>
     <description>Recent content in MongoDB on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Aug 2021 14:20:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Aug 2021 14:20:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MongoDB学习笔记</title>
-      <link>https://blog.cjlio.com/posts/76/</link>
+      <link>http://chenjunlinabc.github.io/posts/76/</link>
       <pubDate>Sun, 08 Aug 2021 14:20:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/76/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/76/</guid>
       <description>MongoDB是一个以键值对存储数据的数据库（基于json描述数据，实质上是一个叫BSON的数据格式，BSON是基于二进制字节流，json基于文本）
+MongoDB是No SQL家族的成员之一，No SQL一般指的是非关系型数据库（Not only SQL）
+关系型数据库和Excel表格类似，表与表之间存在着复杂的关联关系，例如MySQL，sql server
+而非关系型数据库不使用SQL作为查询，不需要遵循ACID（Atomicity Consistency Insolation Durability）
 基于json有个好处就是不需要额外对数据进行转换（例如sql，在调用其数据时需要进行数据的转换）
 MongoDB使用了WiredTiger存储引擎（3.2+版本开始为默认引擎），利用可用内存来缓存数据，来提供优秀的读取性能，该引擎使用WiredTiger内部缓存和文件系统缓存这俩种缓存
 WiredTiger提供了内存快照，而且每隔60秒（创建检查点）就将内存快照写入磁盘（数据持久化，而且持久化的数据还可以作为校验，确保数据在最后一个检查点是一致的，而且旧检查点可以作为有效检查点恢复因为写入新检查点时的错误而且重启导致丢失的数据）
@@ -58,8 +61,7 @@ db.test.insert({&amp;ldquo;name&amp;rdquo;:&amp;ldquo;hallo&amp;rdquo;})
 show collections
 或者
 show tables
-db.createCollection(&amp;ldquo;test&amp;rdquo;, { capped : true, autoIndexId : true, size : 102400, max : 10000 } )
-整个集合空间大小102400B, 文档最大个数为10000个</description>
+db.createCollection(&amp;ldquo;test&amp;rdquo;, { capped : true, autoIndexId : true, size : 102400, max : 10000 } )</description>
     </item>
     
   </channel>

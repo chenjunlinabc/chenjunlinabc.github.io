@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>docker on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/docker/</link>
+    <link>http://chenjunlinabc.github.io/tags/docker/</link>
     <description>Recent content in docker on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jun 2021 09:34:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 09:34:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker容器的简单使用</title>
-      <link>https://blog.cjlio.com/posts/18/</link>
+      <link>http://chenjunlinabc.github.io/posts/18/</link>
       <pubDate>Wed, 16 Jun 2021 09:34:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/18/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/18/</guid>
       <description>docker是一个应用容器，可以将应用以及该应用的依赖打包到一个可以移植的容器中，应用在这个容器中运行
 可以进行转移，修改，版本管理等操作，不用担心应用转移到别的服务器会出现依赖问题
 将容器文件转移到别的服务器上，不会影响到容器，一次配置，可以在多个服务器上使用相同的环境
@@ -43,11 +43,10 @@ docker官方推荐使用docker的存储库来安装或者升级，而不是通�
 sudo apt install ca-certificates curl gnupg lsb-release
 配置docker官方的GPG密钥
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+配置稳定Docker CE源
+sudo add-apt-repository &amp;ldquo;deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(lsb_release -cs) stable&amp;rdquo;
 安装docker引擎
-sudo apt install docker-ce docker-ce-cli containerd.io
-或者
-curl -s https://get.docker.com | sh （不推荐使用）
-如果需要安装指定版本的docker，可指定docker-ce和docker-ce-cli的版本</description>
+sudo apt install docker-ce docker-ce-cli containerd.</description>
     </item>
     
   </channel>

@@ -1,48 +1,47 @@
-<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Redis | 小陈的个人博客</title><meta name=keywords content><meta name=description content="小陈的个人博客"><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/tags/redis/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css rel="preload stylesheet" as=style><link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://blog.cjlio.com/tags/redis/index.xml><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="Redis"><meta property="og:description" content="小陈的个人博客"><meta property="og:type" content="website"><meta property="og:url" content="https://blog.cjlio.com/tags/redis/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Redis"><meta name=twitter:description content="小陈的个人博客"></head><body class=list id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/tags/>Tags</a></div><h1>Redis</h1></header><article class="post-entry tag-entry"><header class=entry-header><h2>Redis学习笔记</h2></header><div class=entry-content><p>Redis是NoSQL数据库（Not Only SQL），其特点就是基于内存运行，支持分布式，key-value存储
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Redis | 小陈的个人博客</title><meta name=keywords content><meta name=description content="小陈的个人博客"><meta name=author content="Me"><link rel=canonical href=http://chenjunlinabc.github.io/tags/redis/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style><link rel=icon href=http://chenjunlinabc.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://chenjunlinabc.github.io/favicon.ico><link rel=icon type=image/png sizes=32x32 href=http://chenjunlinabc.github.io/favicon.ico><link rel=apple-touch-icon href=http://chenjunlinabc.github.io/favicon.ico><link rel=mask-icon href=http://chenjunlinabc.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=http://chenjunlinabc.github.io/tags/redis/index.xml><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="Redis"><meta property="og:description" content="小陈的个人博客"><meta property="og:type" content="website"><meta property="og:url" content="http://chenjunlinabc.github.io/tags/redis/"><meta property="og:image" content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Redis"><meta name=twitter:description content="小陈的个人博客"></head><body class=list id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=http://chenjunlinabc.github.io/ accesskey=h title="小陈的个人博客 (Alt + H)"><img src=http://chenjunlinabc.github.io/favicon.ico alt aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://chenjunlinabc.github.io/ title=首页><span>首页</span></a></li><li><a href=http://chenjunlinabc.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=http://chenjunlinabc.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=http://chenjunlinabc.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=http://chenjunlinabc.github.io/links/ title=链接><span>链接</span></a></li><li><a href=http://chenjunlinabc.github.io/about/ title=关于><span>关于</span></a></li><li><a href=http://chenjunlinabc.github.io/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://chenjunlinabc.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://chenjunlinabc.github.io/tags/>Tags</a></div><h1>Redis</h1></header><article class="post-entry tag-entry"><header class=entry-header><h2>Redis学习笔记</h2></header><div class=entry-content><p>Redis是NoSQL数据库（Not Only SQL）家族的代表之一，其特点就是基于内存运行，支持分布式，key-value存储
+Redis具备速度快，支持多种数据结构，可持久化，支持主从复制，具备高可用，分布式等特点
 可以将内存中的数据存储到磁盘中，重启的时候再加载使用，保证数据的持久性，支持备份恢复，常用于缓存数据库（辅助持久化数据库）
-因为其是以内存作为存储介质，因此读写数据的效率极高，读取速度可高达110000次/s，写速度高达81000次/s
-Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合），zset(Sorted Set: 有序集合)
+因为其是以内存作为存储介质，因此读写数据的效率极高，读取速度可高达110000次/s（也就说可达到10W QPS，QPS（Queries Per Second）:每秒查询率），写速度高达81000次/s
+Redis将数据存储于内存中，Redis会将数据的更新异步存储到磁盘中来持久化，Redis数据持久化有2种方式，分别是RDB（Redis DataBase）和AOF（append only file）
+Redis支持多种数据结构，例如：string（字符串），hash（哈希），list（列表），set（集合），zset(Sorted Set: 有序集合)，BitMaps（位图），HyperLogLog（超小内存唯一值计数），GEO（地理信息定位）
+Redis支持分布订阅，Lua脚本，事务，pipeline等功能，支持主从复制，确保高可用
+Redis可以用来当做缓存系统，用户访问app应用服务时，一般来说会优先从缓存中读取，如果缓存没有再到存储介质中读取，并且将该数据会在存储在缓存中，这个缓存就是Redis
 Redis安装
-编译安装
+编译安装（linux）
 下载redis-x.x.x.tar.gz
 解压
 tar xzf redis-x.x.x.tar.gz
-进入解压出来的文件夹中，make
+进入解压出来的文件夹中，执行make&&make install命令
 因为用的是默认配置
 进入src，./redis-server ../redis.conf
 测试客户端
 ./redis-cli
-启动服务器
+src目录下可看到6个可执行文件，作用如下：
+redis-server可执行文件用于启动redis服务器
+redis-cli可执行文件用于redis命令行客户端，用于连接redis服务器
+redis-benchmark可执行文件用于redis性能测试，基准测试
+redis-check-aof可执行文件用于修复AOF可持久化文件
+redis-check-dump可执行文件用于RDB可持久化文件的检查工作
+redis-sentinel可执行文件用于启动高可用的sentinel模式（该模式又叫哨兵）
+使用redis并不推荐使用windows，虽然微软官方提供了redis补丁，但是redis版本太低了，建议使用Linux虚拟机或者docker容器来跑
+redis有3种启动服务器方式
+默认配置启动
 redis-server
-启动客户端
-redis-cli
-远程连接服务
+动态参数启动
+redis-server –port 6380
+配置文件启动（推荐，通过redis.conf文件来进行配置）
+redis-server configPath
+客户端连接服务（6379是redis默认端口）
 redis-cli -h 127.0.0.1 -p 6379 -a “root”
 redis.conf配置
 默认端口为6379
 port 6379
 要远程访问则设置为0.0.0.0
 bind 127.0.0.1
+logfile，redis日志名
+dir，redis工作目录（日志文件和持久化文件存储在哪个文件）
 以守护进程运行（yes为守护进程），注意如果是以守护进程运行，那么会默认将pid写入到/var/run/redis.pid
-daemonize yes
-指定pid位置
-pidfile /var/run/redis.pid
-数据库文件
-dbfilename xxx.rdb
-当客户端被闲置了多久关闭链接，0为关闭该功能
-timeout 0
-存储到本地数据库的时候是否压缩数据，采用LZP压缩
-rdbcompression yes
-超时
-timeout 300
-密码
-requirepass root
-name键存储字符串root
-SET name “root”
-查询name
-GET name
-哈希是键值对的集合，是字段和值之间的映射
-HMSET user:1 name pass...</p></div><footer class=entry-footer><span title='2021-09-10 21:10:00 +0000 UTC'>2021-09-10</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Redis学习笔记" href=https://blog.cjlio.com/posts/97/></a></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+daemonize yes...</p></div><footer class=entry-footer><span title='2021-09-10 21:10:00 +0000 UTC'>2021-09-10</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Redis学习笔记" href=http://chenjunlinabc.github.io/posts/97/></a></article></main><footer class=footer><span>&copy; 2022 <a href=http://chenjunlinabc.github.io/>小陈的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

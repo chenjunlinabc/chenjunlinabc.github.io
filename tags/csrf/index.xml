@@ -2,38 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>CSRF on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/csrf/</link>
+    <link>http://chenjunlinabc.github.io/tags/csrf/</link>
     <description>Recent content in CSRF on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Sep 2021 17:00:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/csrf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Sep 2021 17:00:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/csrf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单了解CSRF攻击和XSS攻击</title>
-      <link>https://blog.cjlio.com/posts/99/</link>
+      <link>http://chenjunlinabc.github.io/posts/99/</link>
       <pubDate>Sun, 12 Sep 2021 17:00:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/99/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/99/</guid>
       <description>CSRF
 CSRF：跨站点请求伪造(Cross—Site Request Forgery)
 CSRF实质上就是盗用身份，来实现发送恶意请求
 在访问某个“可信”站点，生成Cookie，再打开某个恶意网站，而这个恶意网站带有CSRF攻击的脚本，然后通过引诱用户触发该脚本，就会向那个可信站点发送恶意请求
 例如：
-&amp;lt;img src =&amp;ldquo;http://xxx.xxx/test?xxx=666&amp;quot;&amp;gt;
-只要访问就会发生该恶意请求，也可以是某超链接或者按钮等等
+&amp;lt;img src =&amp;quot;http://xxx.xxx/test?xxx=666&amp;quot;&amp;gt;只要访问就会发生该恶意请求，也可以是某超链接或者按钮等等
 而解决方法就是保证请求来源自当前站点，例如Referer字段，这个字段记录来源站点的地址，通过判断Referer字段上的域名，来判断是否是当前网站自己的请求
 这个方法有个缺点就是由浏览器提供，不能保证浏览器自己有没有安全漏洞，不然还是能够伪造Referer字段，而且如果用户设置不提供Referer字段，那也会默认导致认为是CSRF攻击
 还有一个方法就是通过添加token来处理，请求地址使用一串令牌（加密），来确保是当前站点发送请求，因为哪怕是伪造请求，也不知道令牌是什么，而且还搭配XMLHttpRequest来请求，确保请求信息不被Referer字段收录
 JavaScript简单实现方法
-let referer = document.location.href; if(referer != null &amp;amp;&amp;amp; referer.startsWith(&amp;quot;https://cjlio.com&amp;quot;)){ console.log(&amp;quot;验证成功!!!&amp;quot;) }else{ console.log(&amp;quot;验证失败!!!&amp;quot;) } 防御措施：token身份验证，页面来源验证（referer）等等
+let referer = document.location.href;if(referer != null &amp;amp;&amp;amp; referer.startsWith(&amp;quot;https://cjlio.com&amp;quot;)){console.log(&amp;quot;验证成功!!!&amp;quot;)}else{console.log(&amp;quot;验证失败!!!&amp;quot;)}防御措施：token身份验证，页面来源验证（referer）等等
 XSS：跨站脚本攻击（Cross Site Scripting），因为避免和层叠样式表混淆，因此叫XSS
 XSS攻击原理就是在页面插入恶意脚本，当页面被访问了，那么这个恶意脚本被执行，从而达到恶意攻击用户的目的
-例如：在某个页面评论上加alert(&amp;lsquo;hack&amp;rsquo;)，那么如果没有做过xss攻击防御的站点，其他用户访问到这个页面，那么就会执行该程序
+例如：在某个页面评论上加&amp;lt;script&amp;gt;alert(&amp;lsquo;hack&amp;rsquo;)&amp;lt;/script&amp;gt;，那么如果没有做过xss攻击防御的站点，其他用户访问到这个页面，那么就会执行该程序
 做那些标签防御，都可以闭合绕过，都是无用功，例如：通过属性值来输出
-也用通过过滤标签的，但是可以通过大小写绕过（html不区分大小写）
+也用通过过滤&amp;lt;script&amp;gt;标签的，但是可以通过大小写绕过（html不区分大小写）
 简单的防御方法：
 通过严格的过滤白名单来过滤，限制输入值的类型
 html实体编码转义，htmlspecialchars()或者htmlentities()
@@ -48,7 +47,7 @@ xss和csrf的区别：csrf是利用网站的自动执行的接口，依赖于用
 内容安全策略实质上就是告诉浏览器，什么东西可以加载执行，什么东西不能加载执行，内容安全策略的实现和操作都由浏览器完成，只需要提供配置就好
 要开启CSP需要服务器返回Content-Security-Policy头部
 html也可以配置该策略，例如：
-其中img-src对应的指定图像或者图标的有效来源
+&amp;lt;meta http-equiv=&amp;quot;Content-Security-Policy&amp;quot; content=&amp;quot;default-src &#39;self&#39;; img-src https://*;&amp;quot;&amp;gt;其中img-src对应的指定图像或者图标的有效来源
 常用的有img-src，font-src，script-src，style-src等等
 CSRF
 X-Frame-Options：DENY/SAMEORIGIN

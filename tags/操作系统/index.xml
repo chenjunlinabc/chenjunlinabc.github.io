@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>操作系统 on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+    <link>http://chenjunlinabc.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
     <description>Recent content in 操作系统 on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 07 Oct 2021 09:00:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Oct 2021 09:00:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>操作系统学习笔记</title>
-      <link>https://blog.cjlio.com/posts/115/</link>
+      <link>http://chenjunlinabc.github.io/posts/115/</link>
       <pubDate>Thu, 07 Oct 2021 09:00:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/115/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/115/</guid>
       <description>操作系统实质上是一个很复杂的控制软件，可以管理应用，资源管理，管理外设等等
 操作系统的架构的层次是在硬件之上，应用之下
 OS Kernel：可并发（同时存在多个运行的应用）。可共享，可虚拟，可异步
@@ -67,7 +67,16 @@ CPU需要逻辑地址上的内存内容（ALU），内存管理单元（MMU）�
 进程包含正在运行的应用的全部状态信息
 进程可动态化创建，结束进程，可以被独立调度并占用处理，不同的进程互不影响，可访问共享数据或者资源
 进程控制块(process control block, PCB)：进程的数据结构，操作系统管理控制进程运行所用的信息集合，操作系统为每一个进程都维护了一个PCB，用来存储保存和该进程有关的状态信息
-进程、线程 进程 / 线程间通讯方式 进程调度算法 进程 / 线程状态 死锁 内存管理</description>
+进程是操作系统最小可调度的资源单位
+多个程序运行在单核心CPU服务器上，实质就是在共享时间片（时间片，操作系统将某个程序分配到某段CPU时间上，单核是无法同时运行多个程序的，只能共享时间片，而进程就是因此而生）
+进程状态有3种，分别是运行，阻塞以及就绪
+运行和就绪可互相转换，运行状态就是CPU指令在读取运行进程中的程序段，而就绪就是该进程在等待调用
+运行可切换到阻塞状态
+阻塞就是进程在等待信号（依赖的资源没有就位），阻塞状态结束后会切换到就绪状态
+进程状态的切换可理解为接力赛跑，运行状态就是正在跑的运动员，而就绪状态就是在等待接力棒的运动员，而阻塞状态就是运动员需要补充休息，暂时不跑了
+进程发生阻塞时，该进程将放弃CPU使用权，CPU会执行下一个就绪状态的进程
+中断和中断向量
+当程序发生中断（CPU暂时中断当前正在运行的程序），CPU转去处理其他的程序（也可能是处理内存的数据），当CPU处理完毕，CPU可恢复到之前被暂时中断当前正在运行的程序的状态，这个过程叫中断</description>
     </item>
     
   </channel>

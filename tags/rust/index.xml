@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rust on 小陈的个人博客</title>
+    <link>http://chenjunlinabc.github.io/tags/rust/</link>
+    <description>Recent content in Rust on 小陈的个人博客</description>
+    <image>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 28 Mar 2022 13:22:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust学习笔记</title>
+      <link>http://chenjunlinabc.github.io/posts/142/</link>
+      <pubDate>Mon, 28 Mar 2022 13:22:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/142/</guid>
+      <description>Rust由非盈利组织Mozilla基金会开发，像著名的Mozilla Firefox浏览器和MDN Web Docs都出自该基金会
+安装
+官方推荐使用Rustup来安装（Rustup是rust的安装器和版本管理工具）
+通过rustup-init来安装Rust
+https://www.rust-lang.org/zh-CN/tools/install
+windows直接安装pustup-init.exe来安装（需联网）,默认通过vc安装，建议选择2自定义安装
+Linux或者macOS则直接执行以下命令
+curl &amp;ndash;proto &amp;lsquo;=https&amp;rsquo; &amp;ndash;tlsv1.2 -sSf https://sh.rustup.rs | sh
+注意：Rust的一些包，可能还依赖C编译器，因此最好安装一下GCC
+检查是否安装完成
+rustc &amp;ndash;version
+如果喜欢用Visual Studio Code开发，可搭配rust-analyzer插件来使用
+更新rust
+rustup update
+卸载rust和rustup
+rustup self uninstall
+在安装rustup的同时也会安装Cargo
+Cargo是rust的项目构建工具和包管理器
+检查是否安装成功
+cargo &amp;ndash;version
+创建第一个rust项目
+cargo new halloword
+其中Cargo.toml文件是项目的依赖库文件
+通过编辑Cargo.toml文件来添加依赖
+rust依赖可通过https://crates.io/查找
+[package]name = &amp;quot;hallo_word&amp;quot;version = &amp;quot;0.0.1&amp;quot;edition = &amp;quot;2021&amp;quot;[dependencies]hyper = &amp;quot;0.14.20&amp;quot; # 来自https://crates.io/# hyper = { git = &amp;quot;https://github.com/hyperium/hyper&amp;quot; } # 来自第三方社区# hyper = { path = &amp;quot;.</description>
+    </item>
+    
+  </channel>
+</rss>

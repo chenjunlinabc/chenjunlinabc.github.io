@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>编译原理 on 小陈的个人博客</title>
+    <link>http://chenjunlinabc.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
+    <description>Recent content in 编译原理 on 小陈的个人博客</description>
+    <image>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 May 2022 03:00:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>编译原理学习笔记</title>
+      <link>http://chenjunlinabc.github.io/posts/148/</link>
+      <pubDate>Sun, 08 May 2022 03:00:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/148/</guid>
+      <description>编译就是翻译，将机器语言翻译成另一个机器语言（例如高级语言翻译成低级语言（例如汇编），低级语言翻译成机器语言（二进制））
+编译让计算机理解高级语言并且执行，编译让计算机更理解人，编译提供了人类新的思考方式
+编译的翻译只能作用于形式语言
+编译器和解释器
+编译器将源程序编译成目标的程序
+解释器接收源程序与输入，执行并且返回输出
+混合编译器通常需要2次编译，第一次编译将源程序翻译成目标程序，第二次编译时，将目标程序与输入一起放到虚拟机来处理执行（虚拟机用于跨平台，来处理复杂的执行环境）
+即时编译器，将源程序编译成机器码后再执行
+交叉编译：在一个平台上编译产生多个平台的可执行程序
+编译的过程
+关注度分离
+词法分析（分词，分析词法）
+语法分析（将词分析的结果分析成抽象语法树的过程，也就是AST（Abstract Syntax Tree）），语法分析器被叫为parser
+语义分析：分析抽象语法的语法是否合法
+根据抽象语法树生成的三地址码进行存储，传输，优化
+根据三地址码生成机器码（有一些还需要把机器码编译成可执行应用）
+词法分析：将程序的字符流转换为符号流，分析符号，并且给予描述
+例如：let a = 1
+词法分析后得到
+let: Keyword a: Variable =: Operator 1: Integer
+词法分析器会将关键字抽离，并且对每个字符作描述
+词法分析器得到返回值是符号元组，符号又叫词法单元（Token）
+词法：构造语句的方法（哪些是具备词性（根据词的特点来区分的语法分类，例如动词，名词等等），哪些是具备词语（具有意义的词，关键字）），通常使用正则表达式来描述词法，使用状态机来实现正则表达式
+字母表（alphabet）：某个编程语言中允许的全部字符
+串（string）是某个编程语言中的字母序列
+词法分析器将源程序的字符流进行分析，通正则文法过来找到这些词汇，并且给予词性，如果存在不支持的词汇，则报错（也就是分词）
+词法分析器使用了一种叫有限自动机（有限状态机，deterministic finite automaton, DFA）的算法，在分析字符串时，当遇到了关键字时，会改变状态
+有限自动机和图灵机很相似，不过有限自动机只能读取，无法进行计算
+例如：a == 1
+当识别扫描到a时，会处于标识符状态，直到遇到了==，就会切换到比较运算符状态，然后再识别1，知道该值是数值字面量
+语法分析
+语法分析的过程就是在词法分析的基础上分析程序的语法结构，这个语法结构是树状的，这个树叫抽象语法树（Abstract Syntax Tree，AST），树节点是语法单元，可通过递归下降算法或者自底向上算法来构造该树状
+语法制导翻译</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Axios on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/axios/</link>
+    <link>http://chenjunlinabc.github.io/tags/axios/</link>
     <description>Recent content in Axios on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 11 Aug 2021 12:15:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/axios/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Aug 2021 12:15:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/axios/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Axios网络请求库学习笔记</title>
-      <link>https://blog.cjlio.com/posts/83/</link>
+      <link>http://chenjunlinabc.github.io/posts/83/</link>
       <pubDate>Wed, 11 Aug 2021 12:15:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/83/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/83/</guid>
       <description>Axios是一个基于promise的http网络请求库，可以用于浏览器和nodejs，在nodejs中使用http模块，而在浏览器使用XMLHttpRequests
 支持promise api，支持拦截请求和响应，转换请求数据和响应数据，取消请求，自动转换json数据，支持防御XSRF攻击
 安装
 yarn add axios
 实例demo
-import axios from &amp;quot;axios&amp;quot;; axios.get(&amp;quot;https://httpbin.org/get&amp;quot;, { params: { name: &amp;quot;root&amp;quot; } }) .then(function (response) { console.log(response); }) .catch(function (error) { console.log(error); }); axios.post(&amp;quot;https://httpbin.org/post&amp;quot;, { name: &amp;quot;root&amp;quot;, pass: &amp;quot;root&amp;quot; }) .then(function (response) { console.log(response); }) .catch(function (error) { console.log(error); }); 可以看到页面已经发送了get和post请求，.then和.catch分别表示请求成功和请求失败时调用的函数，也可以用箭头函数，其中response参数为请求的数据，error为错误信息
+import axios from &amp;quot;axios&amp;quot;;axios.get(&amp;quot;https://httpbin.org/get&amp;quot;, {params: {name: &amp;quot;root&amp;quot;}}).then(function (response) {console.log(response);}).catch(function (error) {console.log(error);});axios.post(&amp;quot;https://httpbin.org/post&amp;quot;, {name: &amp;quot;root&amp;quot;,pass: &amp;quot;root&amp;quot;}).then(function (response) {console.log(response);}).catch(function (error) {console.log(error);});可以看到页面已经发送了get和post请求，.then和.catch分别表示请求成功和请求失败时调用的函数，也可以用箭头函数，其中response参数为请求的数据，error为错误信息
 还可以写成这样
-axios({ method: &#39;post&#39;, url: &#39;https://httpbin.org/post&#39;, data: { name: &amp;quot;root&amp;quot;, pass: &amp;quot;root&amp;quot; } }); FormData方式
-let data = { home: &amp;quot;hallo&amp;quot;, main: &amp;quot;abc&amp;quot; } let formData = new FormData() for(let key in data){ formData.</description>
+axios({method: &#39;post&#39;,url: &#39;https://httpbin.org/post&#39;,data: {name: &amp;quot;root&amp;quot;,pass: &amp;quot;root&amp;quot;}});FormData方式
+let data = {home: &amp;quot;hallo&amp;quot;,main: &amp;quot;abc&amp;quot;}let formData = new FormData()for(let key in data){formData.</description>
     </item>
     
   </channel>

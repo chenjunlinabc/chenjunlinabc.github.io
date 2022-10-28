@@ -2,21 +2,55 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>vuejs on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/vuejs/</link>
+    <link>http://chenjunlinabc.github.io/tags/vuejs/</link>
     <description>Recent content in vuejs on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 26 Dec 2021 20:22:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/vuejs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Jun 2022 21:36:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/vuejs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nuxt.js学习笔记</title>
+      <link>http://chenjunlinabc.github.io/posts/152/</link>
+      <pubDate>Sun, 05 Jun 2022 21:36:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/152/</guid>
+      <description>nuxt是一个基于vue的应用框架，用于创建服务端渲染应用，使用vite作为打包器，使用webpack作为构建工具
+创建项目
+yarn create nuxt-app nuxtTest
+需要做一些选择，例如：选择TypeScript，选择Yarn，选择UI框架等等
+安装依赖
+yarn
+启动项目
+yarn dev
+构建打包
+yarn build
+yarn start
+启动测试环境 yarn test</description>
+    </item>
+    
+    <item>
+      <title>vuejs底层原理学习笔记</title>
+      <link>http://chenjunlinabc.github.io/posts/147/</link>
+      <pubDate>Tue, 26 Apr 2022 20:00:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/147/</guid>
+      <description>组件的渲染，更新
+组件的渲染：通过组件的模板创建vnode，渲染vnode，生成DOM
+vue应用的初始化
+import { createApp } from &#39;vue&#39;import App from &#39;./app&#39;const app = createApp(App)app.mount(&#39;#app&#39;)通过上面例子看到vue将app应用挂载到根组件上（一般是id为app的dom节点），通过createApp()函数，对外暴露vue，createApp()方法主要作用是创建app应用，以及重写mount方法，最后返回app应用
+通过createApp()源码，可以看到createApp()接收一个参数，这个参数也就是app应用（根组件），createApp()创建app应用是通过ensureRenderer()的createApp()创建的
+ensureRenderer()用于创建一个惰性渲染器对象（延时创建，这样的好处是当只使用响应式包时，不需要打包渲染器等渲染逻辑相关的代码）</description>
+    </item>
+    
     <item>
       <title>Pinia---vuejs的轻量级状态管理库</title>
-      <link>https://blog.cjlio.com/posts/124/</link>
+      <link>http://chenjunlinabc.github.io/posts/124/</link>
       <pubDate>Sun, 26 Dec 2021 20:22:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/124/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/124/</guid>
       <description>Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3
 Pinia作者也是vuex核心之一
 安装pinia
@@ -25,16 +59,16 @@ npm install pinia@next
 yarn add pinia@next
 导入pinia并且挂载为vue插件(在Vite脚手架下)
 src/main.js
-import { createApp } from &#39;vue&#39; import App from &#39;./App.vue&#39; const app = createApp(App) import { createPinia } from &#39;pinia&#39; app.use(createPinia()) app.mount(&#39;#app&#39;) src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）
-import { defineStore } from &#39;pinia&#39; export const useDataStore = defineStore(&#39;data&#39;, { state: () =&amp;gt; { return { count: 666 } }, //state: () =&amp;gt; { //name: chen //}, getters:{ // getters计算属性 doubleCount(state){ return state.</description>
+import { createApp } from &#39;vue&#39;import App from &#39;./App.vue&#39;const app = createApp(App)import { createPinia } from &#39;pinia&#39;app.use(createPinia())app.mount(&#39;#app&#39;)src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）
+import { defineStore } from &#39;pinia&#39;export const useDataStore = defineStore(&#39;data&#39;, {state: () =&amp;gt; {return { count: 666 }},//state: () =&amp;gt; {//name: chen//},getters:{ // getters计算属性doubleCount(state){return state.</description>
     </item>
     
     <item>
       <title>简单使用vuex状态管理库</title>
-      <link>https://blog.cjlio.com/posts/123/</link>
+      <link>http://chenjunlinabc.github.io/posts/123/</link>
       <pubDate>Mon, 13 Dec 2021 06:19:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/123/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/123/</guid>
       <description>vuex是一个专门为vuejs应用程序的设计的状态管理
 集中式存储管理应用的所有组件的状态
 多组件状态共享，不同的组件改变同一个状态
@@ -49,19 +83,19 @@ import Vuex from &amp;ldquo;vuex&amp;rdquo;
 new Vuex.store()
 将vuex实例挂载在vue对象上
 index.js
-Vue.use(Vuex) const store = new Vue.Store({ state: { count: 0 } }) export default store main.js
-new Vue({ store // 将store对象添加到vue实例上 }) 可以通过this.$store.state.count获取到状态（官方推荐将获取装态的操作放到computed中）
+Vue.use(Vuex)const store = new Vuex.Store({state: {count: 0}})export default storemain.js
+new Vue({store // 将store对象添加到vue实例上})可以通过this.$store.state.count获取到状态（官方推荐将获取装态的操作放到computed中）
 使用解构获取状态： import { mapState } from &amp;lsquo;vuex&amp;rsquo; export default { mounted() { console.log(this.count) }, computed: { &amp;hellip;mapState([&amp;lsquo;count&amp;rsquo;]) } }
 Getter
-getters: { getCount(state) { return state.</description>
+getters: {getCount(state) {return state.</description>
     </item>
     
     <item>
       <title>深入学习vuejs</title>
-      <link>https://blog.cjlio.com/posts/75/</link>
+      <link>http://chenjunlinabc.github.io/posts/75/</link>
       <pubDate>Sat, 07 Aug 2021 23:25:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/75/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/75/</guid>
       <description>Vue CLI是vue官方脚手架，可以快速创建vue项目
 安装vue-cli3
 npm install -g @vue/cli
@@ -84,15 +118,15 @@ npm run serve
 yarn start/yarn run dev
 如果运行报错error Component name &amp;ldquo;Home&amp;rdquo; should always be multi-word vue/multi-word-component-names
 只需要在vue.config.js添加lintOnSave: false配置，例如：
-module.exports = defineConfig({ transpileDependencies: true, lintOnSave: false }) 这个问题的原因在于vue-cli默认开启了ESLint检测，关闭就好了</description>
+module.exports = defineConfig({transpileDependencies: true,lintOnSave: false})这个问题的原因在于vue-cli默认开启了ESLint检测，关闭就好了</description>
     </item>
     
     <item>
       <title>深入学习vue组件</title>
-      <link>https://blog.cjlio.com/posts/53/</link>
+      <link>http://chenjunlinabc.github.io/posts/53/</link>
       <pubDate>Sat, 03 Jul 2021 11:16:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/53/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/53/</guid>
       <description>组件注册
 .component()接收2个参数，其中第一个参数是组件名（数据类型是字符串）
 组件名命名：
@@ -101,24 +135,24 @@ module.exports = defineConfig({ transpileDependencies: true, lintOnSave: false }
 组件被引用时，也必须是相同的名，例如：组件名是img-data，那么被引用时标签为，闭不闭合看组件的定义，如果组件的定义是img之类的，就不需要闭合
 直接暴露在vue实例的组件都是全局组件，可以直接在组件实例中调用
 局部组件是使用一个JavaScript对象进行定义封装，例如：
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;datas-a&amp;gt;&amp;lt;/datas-a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; const datas ={ template: ` &amp;lt;div&amp;gt; hallo &amp;lt;/div&amp;gt; ` } const hallo = Vue.createApp({ components: { &amp;quot;datas-a&amp;quot; : datas } }).mount(&#39;#app&#39;) &amp;lt;/script&amp;gt; components对象，键为自定义元素的名称，值为组件的实质对象
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;datas-a&amp;gt;&amp;lt;/datas-a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const datas ={template: `&amp;lt;div&amp;gt;hallo&amp;lt;/div&amp;gt;`}const hallo = Vue.createApp({components: {&amp;quot;datas-a&amp;quot; : datas}}).mount(&#39;#app&#39;)&amp;lt;/script&amp;gt;components对象，键为自定义元素的名称，值为组件的实质对象
 局部组件的属性是不能直接被调用的，但是可以在另一个组件中指向其为自己的子组件，例如：
-const datab ={ components: { &amp;quot;datas-a&amp;quot; : dataa } } 模块系统
+const datab ={components: {&amp;quot;datas-a&amp;quot; : dataa}}模块系统
 通过导入模块的方式导入组件，例如：
 import datas from &amp;lsquo;./datas&amp;rsquo;
 那么datas组件就是可以在当前使用了
 Props
 prop类型
 用对象的方式列出prop，并且定义其类型，当传入的prop类型不对就会报错（开发版本），例如：
-const hallo = Vue.createApp({ component: { props:{ abc: String, xyz: Boolean, }, template: `&amp;lt;h1&amp;gt;{{abc.</description>
+const hallo = Vue.createApp({component: {props:{abc: String,xyz: Boolean,},template: `&amp;lt;h1&amp;gt;{{abc.</description>
     </item>
     
     <item>
       <title>vuejs基础学习笔记</title>
-      <link>https://blog.cjlio.com/posts/23/</link>
+      <link>http://chenjunlinabc.github.io/posts/23/</link>
       <pubDate>Wed, 16 Jun 2021 10:13:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/23/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/23/</guid>
       <description>vuejs的核心层就是只关心视图层的，本笔记使用的是最新版本的vue3
 vue全家桶：Vue+VueRouter+Vuex
 vue名字来源于法语（中文翻译为视图），可以看出其对视图层的重视
@@ -131,10 +165,10 @@ browser版本：包含esm,浏览器模块
 bundler版本：该版本不是完整版，min
 vuejs模板支持所有JavaScript表达式
 vuejs本身是用声明式渲染把数据渲染到html dom中，渲染格式为{{&amp;hellip;}}，例如：
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;p&amp;gt;{{ hallovuejs }}&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; const hallo ={ data() { return { hallovuejs: &amp;quot;hallo vuejs!&amp;quot; } } } Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;) &amp;lt;/script&amp;gt; vue本身携带了一些指令，主要特征就是带有v-前缀，用来渲染html dom上的一些行为，例如：
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; const hallo ={ data() { return { url:&amp;quot;https://cjlio.com&amp;quot;, main: &amp;quot;小陈的辣鸡屋&amp;quot; } } } Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;) &amp;lt;/script&amp;gt; 这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;p&amp;gt;{{ hallovuejs }}&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {hallovuejs: &amp;quot;hallo vuejs!&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;vue本身携带了一些指令，主要特征就是带有v-前缀，用来渲染html dom上的一些行为，例如：
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://cjlio.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
 而vue还提供了可以绑定事件的v-on属性，例如：
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;button v-on:click=&amp;quot;go&amp;quot;&amp;gt;{{ main }}&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; const hallo ={ data() { return { main: &amp;quot;hallo&amp;quot; } }, methods: { go: function(){ console.</description>
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;button v-on:click=&amp;quot;go&amp;quot;&amp;gt;{{ main }}&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {main: &amp;quot;hallo&amp;quot;}},methods: {go: function(){console.</description>
     </item>
     
   </channel>

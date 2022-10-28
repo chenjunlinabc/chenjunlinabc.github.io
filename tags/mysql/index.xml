@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>mysql on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/mysql/</link>
+    <link>http://chenjunlinabc.github.io/tags/mysql/</link>
     <description>Recent content in mysql on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jun 2021 09:37:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 09:37:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL学习笔记</title>
-      <link>https://blog.cjlio.com/posts/20/</link>
+      <link>http://chenjunlinabc.github.io/posts/20/</link>
       <pubDate>Wed, 16 Jun 2021 09:37:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/20/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/20/</guid>
       <description>推荐使用mariaDB
 操作数据库
 创建数据库
@@ -40,9 +40,9 @@ CHARSET=utf8
 查看当前mysql所支持的字符集
 SHOW CHARACTER SET;
 新建数据表
-CREATE TABLE xxx( id int(4), email char(20), status int(2), code varchar(10) ​ );
+CREATE TABLE xxx(id int(4),email char(20),status int(2),code varchar(10)​ );
 添加数据
-INSERT INTO xxx VALUES( 1, &amp;quot;hallo&amp;quot;, &amp;quot;1&amp;quot;, &amp;quot;xxx&amp;quot; ); 修改数据(根据条件)
+INSERT INTO xxx VALUES(1,&amp;quot;hallo&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;xxx&amp;quot;);修改数据(根据条件)
 UPDATE xxx SET status=1 WHERE id = 4;</description>
     </item>
     

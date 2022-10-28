@@ -1,24 +1,29 @@
 <!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>TypeScript学习笔记 | 小陈的个人博客</title><meta name=keywords content="TypeScript"><meta name=description content="TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
 TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
 TypeScript实质上就是JavaScript的扩展，JavaScript超集
-TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript
-TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父
-TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样
+TypeScript本身并不能在浏览器运行，需要进行编译成JavaScript
 全局安装typescript
 yarn global add typescript
 或者
 npm install -g typescript
+安装ts-node
+npm install -g ts-node
+ts-node运行（不需要编译成js文件，直接运行ts）
+ts-node hallo.ts
 检查是否安装成功
 tsc -v
 使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
 创建tsconfig.json
 npx tsc &ndash;init
-编译TypeScript文件（转为正常js文件）
+编译阶段去除注释：找到removeComments，设置为true
+执行（不加任何参数，这样才能使用tsconfig.json配置文件，tsc默认对当前根目录的ts文件进行编译）
+tsc
+编译指定ts文件（在compilerOptions同级）
+&ldquo;include&rdquo;:[&#34;./test1.ts&#34;] // 指定编译哪个ts文件 &ldquo;excclude&rdquo;:[&#34;./test.ts&#34;] // 指定不编译哪个ts文件
+其他配置
+rootDir（指定输入目录） outDir（指定输出目录） allowJs（是否处理js文件） checkjs（是否检查js文件的语法）
+编译TypeScript文件
 tsc hallo.ts
-在终端中直接运行ts代码
-npm install ts-node -g
-ts-node hallo.ts
-绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）
 变量声明
 推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）
 基础类型
@@ -28,34 +33,35 @@ boolean布尔值，例如：
 let hallo: boolean = true
 number数值，例如：
 let hallo: number = 123;
-二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）
-let hallo: bigint = 100n;
-注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换
+二进制和八进制，十进制，十六进制都可以用number类型来表示
 string字符串
-let hallo: string = hallo;
-void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）
-function voiddemo(): void { let a = 10; }"><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/posts/58/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="TypeScript学习笔记"><meta property="og:description" content="TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
+let hallo: string = hallo;"><meta name=author content="Me"><link rel=canonical href=http://chenjunlinabc.github.io/posts/58/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=http://chenjunlinabc.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://chenjunlinabc.github.io/favicon.ico><link rel=icon type=image/png sizes=32x32 href=http://chenjunlinabc.github.io/favicon.ico><link rel=apple-touch-icon href=http://chenjunlinabc.github.io/favicon.ico><link rel=mask-icon href=http://chenjunlinabc.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="TypeScript学习笔记"><meta property="og:description" content="TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
 TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
 TypeScript实质上就是JavaScript的扩展，JavaScript超集
-TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript
-TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父
-TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样
+TypeScript本身并不能在浏览器运行，需要进行编译成JavaScript
 全局安装typescript
 yarn global add typescript
 或者
 npm install -g typescript
+安装ts-node
+npm install -g ts-node
+ts-node运行（不需要编译成js文件，直接运行ts）
+ts-node hallo.ts
 检查是否安装成功
 tsc -v
 使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
 创建tsconfig.json
 npx tsc &ndash;init
-编译TypeScript文件（转为正常js文件）
+编译阶段去除注释：找到removeComments，设置为true
+执行（不加任何参数，这样才能使用tsconfig.json配置文件，tsc默认对当前根目录的ts文件进行编译）
+tsc
+编译指定ts文件（在compilerOptions同级）
+&ldquo;include&rdquo;:[&#34;./test1.ts&#34;] // 指定编译哪个ts文件 &ldquo;excclude&rdquo;:[&#34;./test.ts&#34;] // 指定不编译哪个ts文件
+其他配置
+rootDir（指定输入目录） outDir（指定输出目录） allowJs（是否处理js文件） checkjs（是否检查js文件的语法）
+编译TypeScript文件
 tsc hallo.ts
-在终端中直接运行ts代码
-npm install ts-node -g
-ts-node hallo.ts
-绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）
 变量声明
 推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）
 基础类型
@@ -65,33 +71,34 @@ boolean布尔值，例如：
 let hallo: boolean = true
 number数值，例如：
 let hallo: number = 123;
-二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）
-let hallo: bigint = 100n;
-注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换
+二进制和八进制，十进制，十六进制都可以用number类型来表示
 string字符串
-let hallo: string = hallo;
-void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）
-function voiddemo(): void { let a = 10; }"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.cjlio.com/posts/58/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-18T15:50:00+00:00"><meta property="article:modified_time" content="2021-07-18T15:50:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="TypeScript学习笔记"><meta name=twitter:description content="TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
+let hallo: string = hallo;"><meta property="og:type" content="article"><meta property="og:url" content="http://chenjunlinabc.github.io/posts/58/"><meta property="og:image" content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-18T15:50:00+00:00"><meta property="article:modified_time" content="2021-07-18T15:50:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="TypeScript学习笔记"><meta name=twitter:description content="TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
 TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
 TypeScript实质上就是JavaScript的扩展，JavaScript超集
-TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript
-TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父
-TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样
+TypeScript本身并不能在浏览器运行，需要进行编译成JavaScript
 全局安装typescript
 yarn global add typescript
 或者
 npm install -g typescript
+安装ts-node
+npm install -g ts-node
+ts-node运行（不需要编译成js文件，直接运行ts）
+ts-node hallo.ts
 检查是否安装成功
 tsc -v
 使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
 创建tsconfig.json
 npx tsc &ndash;init
-编译TypeScript文件（转为正常js文件）
+编译阶段去除注释：找到removeComments，设置为true
+执行（不加任何参数，这样才能使用tsconfig.json配置文件，tsc默认对当前根目录的ts文件进行编译）
+tsc
+编译指定ts文件（在compilerOptions同级）
+&ldquo;include&rdquo;:[&#34;./test1.ts&#34;] // 指定编译哪个ts文件 &ldquo;excclude&rdquo;:[&#34;./test.ts&#34;] // 指定不编译哪个ts文件
+其他配置
+rootDir（指定输入目录） outDir（指定输出目录） allowJs（是否处理js文件） checkjs（是否检查js文件的语法）
+编译TypeScript文件
 tsc hallo.ts
-在终端中直接运行ts代码
-npm install ts-node -g
-ts-node hallo.ts
-绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）
 变量声明
 推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）
 基础类型
@@ -101,33 +108,353 @@ boolean布尔值，例如：
 let hallo: boolean = true
 number数值，例如：
 let hallo: number = 123;
-二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）
-let hallo: bigint = 100n;
-注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换
+二进制和八进制，十进制，十六进制都可以用number类型来表示
 string字符串
-let hallo: string = hallo;
-void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）
-function voiddemo(): void { let a = 10; }"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://blog.cjlio.com/posts/"},{"@type":"ListItem","position":3,"name":"TypeScript学习笔记","item":"https://blog.cjlio.com/posts/58/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"TypeScript学习笔记","name":"TypeScript学习笔记","description":"TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上\nTypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript\nTypeScript实质上就是JavaScript的扩展，JavaScript超集\nTypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript\nTypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父\nTypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样\n全局安装typescript\nyarn global add typescript\n或者\nnpm install -g typescript\n检查是否安装成功\ntsc -v\n使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀\n创建tsconfig.json\nnpx tsc \u0026ndash;init\n编译TypeScript文件（转为正常js文件）\ntsc hallo.ts\n在终端中直接运行ts代码\nnpm install ts-node -g\nts-node hallo.ts\n绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）\n变量声明\n推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）\n基础类型\nTypeScript具有强类型的特点\nboolean，string，number，array，null，undefined，object，tuple，enum，void，never，any\nboolean布尔值，例如：\nlet hallo: boolean = true\nnumber数值，例如：\nlet hallo: number = 123;\n二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）\nlet hallo: bigint = 100n;\n注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换\nstring字符串\nlet hallo: string = hallo;\nvoid类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）\nfunction voiddemo(): void { let a = 10; }","keywords":["TypeScript"],"articleBody":"TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上\nTypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript\nTypeScript实质上就是JavaScript的扩展，JavaScript超集\nTypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript\nTypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父\nTypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样\n全局安装typescript\nyarn global add typescript\n或者\nnpm install -g typescript\n检查是否安装成功\ntsc -v\n使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀\n创建tsconfig.json\nnpx tsc –init\n编译TypeScript文件（转为正常js文件）\ntsc hallo.ts\n在终端中直接运行ts代码\nnpm install ts-node -g\nts-node hallo.ts\n绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）\n变量声明\n推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）\n基础类型\nTypeScript具有强类型的特点\nboolean，string，number，array，null，undefined，object，tuple，enum，void，never，any\nboolean布尔值，例如：\nlet hallo: boolean = true\nnumber数值，例如：\nlet hallo: number = 123;\n二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）\nlet hallo: bigint = 100n;\n注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换\nstring字符串\nlet hallo: string = hallo;\nvoid类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）\nfunction voiddemo(): void { let a = 10; }\nvoid类型只有两个值，undefined和null\nundefined类型和null类型是所有类型的子类型\nSymbol\nlet sym: symbol = Symbol(‘hallo’);\nAny（当不清楚类型的变量指定一个类型，有可能这个变量的类型是动态的，想跳过类型检查就可以用这个）\nlet abc: any =123;\nabc = hallo;\n除了any外，还有unknown也可以表示任何类型\nlet abc: unknown =123;\nabc = hallo;\nunknown和any的区别就是，unknown类型的变量只能赋值给unknow和any类型的变量，在处理类型检查（typeof或者instance）或类型断言（as）之前，是不能对 unknown类型的变量进行操作（例如修改对象属性等等），而且any是没有限制的\nvoid（表示没有任何类型，当一个函数没有返回值，那么其返回值类型就是void）\n声明一个void类型的变量，这个变量只能选择两个值undefined和null其中一个\nlet und void = undefined;\nundefined和null和JavaScript中概念是一样的，空，未定义\nobject，就是非基础类型，和JavaScript中概念是一样的\n枚举，数组，元组，对象都是object类型\nlet obj: object;\narray数组\nlet arrs: number[] = [1,2,3];\nlet arrs: Array = [1,2,3];\ntuple元组：元组类型允许一个数组的元素是不同的类型的，但是必须按照要求来定义，例如\nlet x [string, number?]; x = [‘hello’, 10];\nx.push(“hi”);\ntuple元组是固定长度，固定类型，长度不能多不能少，类型必须要一一对应\n元组类型允许在类型后缀一个?来说明该元素是可选的，可选元素必须要在必选元素后面，否则有一个元素后面加了?，那么其后面全部元素都要加?\n注意：元组虽然可以越界添加元素（不推荐），但是不可越界访问\nenum枚举（允许为一组数值赋予名字）\nenum hallo {a, b, c}\nhallo.a === 0 // true\n默认从0开始，当然也可以手动指定数值\nenum hallo {a=6, b, c}\n最强大的一处是，可以根据值来得到它的名字\nlet yes: string = hallo[6];\nconsole.log(yes);\n如果分开声明名称相同的枚举，那么就会自动合并\nbigint类型（可以表示任意大的整数，Number类型能表示的最大整数为2^53 - 1）\n在整数后面加n或者调用BigInt()函数来定义bigint，也可以在BigInt()函数中用字符串，这三种方式表达的出来的值都是一样的\nlet abc: bigint = 8888888888888888888888888n\nlet xyz: bigint = BigInt(8888888888888888888888888)\nabc === xyz // true\nSymbol类型（每个symbol值都是唯一的）\nlet abc: symbol = Symbol(“hallo”)\nlet xyz: symbol = Symbol(“hallo”)\nabc === xyz // false\nnever类型（表示那些永远不存在的值的类型，永不为真）\nnever类型是任何类型的子类型，也可以赋值给任何类型，但是没有类型是never子类型或者赋值给never类型（除了never本身），连any都不能赋值给never\n抛出异常或者不会有返回值的函数，其函数返回值类型为never\nunknown类型是any类型对应的安全类型\nunknown类型只能赋值给any和unknown类型本身\nlet abc: unknown\nlet a: any = abc // yes\nlet b: unknown = abc // yes\nlet c: number = abc // Error\nunknown类型被确认为某个类型之前，不能被进行函数执行，实例化之类的操作\n不写类型声明也是没有关系的，因为ts会从上下文中推导出类型，例如，上文已经使用该类型，但是下文中使用另一个类型，那么就会导致类型检测不通过了\nts会在编译阶段自动执行静态类型检测，检查变量的值是否和注解的类型相同，如果相同则检测通过，否则报错\n类型断言\nas语法\nlet hallo any =hallo;\nlet abc number = (hallo as string).length;\n尖括号语法\nlet hallo any =hallo;\nlet abc number = (stringhallo).length;\n在ts中，字面量不但可以表示值，还可以表示类型，例如：\nlet nums: 1 = 123\n面向对象\n以键值对的方式表示的都是对象，多个键值对用逗号,分隔\nconst obj = {hallo world}\nconsole.log(obj.hallo)\nTypeScript在对象被定义时已经设置了类型，当引用不存在的，会报错\ninterface接口\n限制传入的参数的值\ninterface hallo{ a?: number; b: number; readonly c: string; [Name: string]: any; } function abc(clothes: hallo) { console.log(clothes.a) } let myabc: hallo = { a: 123, b: 666, c: \"hallo\", xyz: \"word\" } abc(myabc) 在属性名前使用readonly指定其为只读属性\n在属性名后使用?指定其为可选的\n使用[]括起来表示这是任意数量的属性，只要不是已经存在（被定义）的属性\n判断数据类型\nlet abc: number = 123;\ntypeof abc === “number”; // tuer\n泛型\n类型变换模块和命名空间\n","wordCount":"321","inLanguage":"en","datePublished":"2021-07-18T15:50:00Z","dateModified":"2021-07-18T15:50:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.cjlio.com/posts/58/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://blog.cjlio.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/posts/>Posts</a></div><h1 class=post-title>TypeScript学习笔记</h1><div class=post-meta><span title='2021-07-18 15:50:00 +0000 UTC'>2021-07-18</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/TypeScript%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上</p><p>TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript</p><p>TypeScript实质上就是JavaScript的扩展，JavaScript超集</p><p>TypeScript本身并不能直接在浏览器运行，需要进行编译成JavaScript</p><p>TypeScript实质上就是具备静态类型化的JavaScript，TypeScript之父同时也是C#之父</p><p>TypeScript默认对变量做静态类型检测工作，来确保变量的类型按照所希望的那样</p><p>全局安装typescript</p><p>yarn global add typescript</p><p>或者</p><p>npm install -g typescript</p><p>检查是否安装成功</p><p>tsc -v</p><p>使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀</p><p>创建tsconfig.json</p><p>npx tsc &ndash;init</p><p>编译TypeScript文件（转为正常js文件）</p><p>tsc hallo.ts</p><p>在终端中直接运行ts代码</p><p>npm install ts-node -g</p><p>ts-node hallo.ts</p><p>绝大多数的现代IDE都内置支持TypeScript，例如vscode，它就内置了，而且它内置不会影响到手动安装的（隔离）</p><hr><p>变量声明</p><p>推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）</p><p>基础类型</p><p>TypeScript具有强类型的特点</p><p>boolean，string，number，array，null，undefined，object，tuple，enum，void，never，any</p><p>boolean布尔值，例如：</p><p>let hallo: boolean = true</p><p>number数值，例如：</p><p>let hallo: number = 123;</p><p>二进制和八进制，十进制，十六进制都可以用number类型来表示，除了number表示数值外，还有bigint（用来表示更大的数值）</p><p>let hallo: bigint = 100n;</p><p>注意：number类型和bigint类型不兼容，number类型和bigint类型不能互相转换</p><p>string字符串</p><p>let hallo: string = hallo;</p><p>void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）</p><p>function voiddemo(): void {
-let a = 10;
-}</p><p>void类型只有两个值，undefined和null</p><p>undefined类型和null类型是所有类型的子类型</p><p>Symbol</p><p>let sym: symbol = Symbol(&lsquo;hallo&rsquo;);</p><p>Any（当不清楚类型的变量指定一个类型，有可能这个变量的类型是动态的，想跳过类型检查就可以用这个）</p><p>let abc: any =123;</p><p>abc = hallo;</p><p>除了any外，还有unknown也可以表示任何类型</p><p>let abc: unknown =123;</p><p>abc = hallo;</p><p>unknown和any的区别就是，unknown类型的变量只能赋值给unknow和any类型的变量，在处理类型检查（typeof或者instance）或类型断言（as）之前，是不能对 unknown类型的变量进行操作（例如修改对象属性等等），而且any是没有限制的</p><p>void（表示没有任何类型，当一个函数没有返回值，那么其返回值类型就是void）</p><p>声明一个void类型的变量，这个变量只能选择两个值undefined和null其中一个</p><p>let und void = undefined;</p><p>undefined和null和JavaScript中概念是一样的，空，未定义</p><p>object，就是非基础类型，和JavaScript中概念是一样的</p><p>枚举，数组，元组，对象都是object类型</p><p>let obj: object;</p><p>array数组</p><p>let arrs: number[] = [1,2,3];</p><p>let arrs: Array = [1,2,3];</p><p>tuple元组：元组类型允许一个数组的元素是不同的类型的，但是必须按照要求来定义，例如</p><p>let x [string, number?];
-x = [&lsquo;hello&rsquo;, 10];</p><p>x.push(&ldquo;hi&rdquo;);</p><p>tuple元组是固定长度，固定类型，长度不能多不能少，类型必须要一一对应</p><p>元组类型允许在类型后缀一个?来说明该元素是可选的，可选元素必须要在必选元素后面，否则有一个元素后面加了?，那么其后面全部元素都要加?</p><p>注意：元组虽然可以越界添加元素（不推荐），但是不可越界访问</p><p>enum枚举（允许为一组数值赋予名字）</p><p>enum hallo {a, b, c}</p><p>hallo.a === 0 // true</p><p>默认从0开始，当然也可以手动指定数值</p><p>enum hallo {a=6, b, c}</p><p>最强大的一处是，可以根据值来得到它的名字</p><p>let yes: string = hallo[6];</p><p>console.log(yes);</p><p>如果分开声明名称相同的枚举，那么就会自动合并</p><p>bigint类型（可以表示任意大的整数，Number类型能表示的最大整数为2^53 - 1）</p><p>在整数后面加n或者调用BigInt()函数来定义bigint，也可以在BigInt()函数中用字符串，这三种方式表达的出来的值都是一样的</p><p>let abc: bigint = 8888888888888888888888888n</p><p>let xyz: bigint = BigInt(8888888888888888888888888)</p><p>abc === xyz // true</p><p>Symbol类型（每个symbol值都是唯一的）</p><p>let abc: symbol = Symbol(&ldquo;hallo&rdquo;)</p><p>let xyz: symbol = Symbol(&ldquo;hallo&rdquo;)</p><p>abc === xyz // false</p><p>never类型（表示那些永远不存在的值的类型，永不为真）</p><p>never类型是任何类型的子类型，也可以赋值给任何类型，但是没有类型是never子类型或者赋值给never类型（除了never本身），连any都不能赋值给never</p><p>抛出异常或者不会有返回值的函数，其函数返回值类型为never</p><p>unknown类型是any类型对应的安全类型</p><p>unknown类型只能赋值给any和unknown类型本身</p><p>let abc: unknown</p><p>let a: any = abc // yes</p><p>let b: unknown = abc // yes</p><p>let c: number = abc // Error</p><p>unknown类型被确认为某个类型之前，不能被进行函数执行，实例化之类的操作</p><p>不写类型声明也是没有关系的，因为ts会从上下文中推导出类型，例如，上文已经使用该类型，但是下文中使用另一个类型，那么就会导致类型检测不通过了</p><p>ts会在编译阶段自动执行静态类型检测，检查变量的值是否和注解的类型相同，如果相同则检测通过，否则报错</p><p>类型断言</p><p>as语法</p><p>let hallo any =hallo;</p><p>let abc number = (hallo as string).length;</p><p>尖括号语法</p><p>let hallo any =hallo;</p><p>let abc number = (stringhallo).length;</p><p>在ts中，字面量不但可以表示值，还可以表示类型，例如：</p><p><code>let nums: 1 = 123</code></p><p>面向对象</p><p>以键值对的方式表示的都是对象，多个键值对用逗号,分隔</p><p>const obj = {hallo world}</p><p>console.log(obj.hallo)</p><p>TypeScript在对象被定义时已经设置了类型，当引用不存在的，会报错</p><p>interface接口</p><p>限制传入的参数的值</p><pre><code>interface hallo{
+let hallo: string = hallo;"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://chenjunlinabc.github.io/posts/"},{"@type":"ListItem","position":2,"name":"TypeScript学习笔记","item":"http://chenjunlinabc.github.io/posts/58/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"TypeScript学习笔记","name":"TypeScript学习笔记","description":"TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上\nTypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript\nTypeScript实质上就是JavaScript的扩展，JavaScript超集\nTypeScript本身并不能在浏览器运行，需要进行编译成JavaScript\n全局安装typescript\nyarn global add typescript\n或者\nnpm install -g typescript\n安装ts-node\nnpm install -g ts-node\nts-node运行（不需要编译成js文件，直接运行ts）\nts-node hallo.ts\n检查是否安装成功\ntsc -v\n使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀\n创建tsconfig.json\nnpx tsc \u0026ndash;init\n编译阶段去除注释：找到removeComments，设置为true\n执行（不加任何参数，这样才能使用tsconfig.json配置文件，tsc默认对当前根目录的ts文件进行编译）\ntsc\n编译指定ts文件（在compilerOptions同级）\n\u0026ldquo;include\u0026rdquo;:[\u0026quot;./test1.ts\u0026quot;] // 指定编译哪个ts文件 \u0026ldquo;excclude\u0026rdquo;:[\u0026quot;./test.ts\u0026quot;] // 指定不编译哪个ts文件\n其他配置\nrootDir（指定输入目录） outDir（指定输出目录） allowJs（是否处理js文件） checkjs（是否检查js文件的语法）\n编译TypeScript文件\ntsc hallo.ts\n变量声明\n推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）\n基础类型\nTypeScript具有强类型的特点\nboolean，string，number，array，null，undefined，object，tuple，enum，void，never，any\nboolean布尔值，例如：\nlet hallo: boolean = true\nnumber数值，例如：\nlet hallo: number = 123;\n二进制和八进制，十进制，十六进制都可以用number类型来表示\nstring字符串\nlet hallo: string = hallo;","keywords":["TypeScript"],"articleBody":"TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上\nTypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript\nTypeScript实质上就是JavaScript的扩展，JavaScript超集\nTypeScript本身并不能在浏览器运行，需要进行编译成JavaScript\n全局安装typescript\nyarn global add typescript\n或者\nnpm install -g typescript\n安装ts-node\nnpm install -g ts-node\nts-node运行（不需要编译成js文件，直接运行ts）\nts-node hallo.ts\n检查是否安装成功\ntsc -v\n使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀\n创建tsconfig.json\nnpx tsc –init\n编译阶段去除注释：找到removeComments，设置为true\n执行（不加任何参数，这样才能使用tsconfig.json配置文件，tsc默认对当前根目录的ts文件进行编译）\ntsc\n编译指定ts文件（在compilerOptions同级）\n“include”:[\"./test1.ts\"] // 指定编译哪个ts文件 “excclude”:[\"./test.ts\"] // 指定不编译哪个ts文件\n其他配置\nrootDir（指定输入目录） outDir（指定输出目录） allowJs（是否处理js文件） checkjs（是否检查js文件的语法）\n编译TypeScript文件\ntsc hallo.ts\n变量声明\n推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）\n基础类型\nTypeScript具有强类型的特点\nboolean，string，number，array，null，undefined，object，tuple，enum，void，never，any\nboolean布尔值，例如：\nlet hallo: boolean = true\nnumber数值，例如：\nlet hallo: number = 123;\n二进制和八进制，十进制，十六进制都可以用number类型来表示\nstring字符串\nlet hallo: string = hallo;\nvoid类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）\nfunction voiddemo(): void {\rlet a = 10;\r}\rvoid类型只有两个值，undefined和null\nundefined类型和null类型是所有类型的子类型\nAny（当不清楚类型的变量指定一个类型，有可能这个变量的类型是动态的，想跳过类型检查就可以用这个）\nlet abc: any =123;\nabc = hallo;\nvoid（表示没有任何类型，当一个函数没有返回值，那么其返回值类型就是void）\n声明一个void类型的变量，这个变量只能选择两个值undefined和null其中一个\nlet und void = undefined;\nundefined和null和JavaScript中概念是一样的，空，未定义\nobject，就是非基础类型，和JavaScript中概念是一样的\n枚举，数组，元组，对象都是object类型\nlet obj: object;\narray数组\nlet arrs: number[] = [1,2,3];\nlet arrs: Array = [1,2,3];\ntuple元组：元组类型允许一个数组的元素是不同的类型的，但是必须按照要求来定义，例如\nlet x [string, number?]; x = [‘hello’, 10];\nx.push(“hi”);\ntuple元组是固定长度，固定类型，长度不能多不能少，类型必须要一一对应\n元组类型允许在类型后缀一个?来说明该元素是可选的，可选元素必须要在必选元素后面，否则有一个元素后面加了?，那么其后面全部元素都要加?\n注意：元组虽然可以越界添加元素（不推荐），但是不可越界访问\nenum枚举（允许为一组数值赋予名字）\nenum hallo {a, b, c}\nhallo.a === 0 // true\n默认从0开始，当然也可以手动指定数值\nenum hallo {a=6, b, c}\n最强大的一处是，可以根据值来得到它的名字\nlet yes: string = hallo[6];\nconsole.log(yes);\n如果分开声明名称相同的枚举，那么就会自动合并\nbigint类型（可以表示任意大的整数，Number类型能表示的最大整数为2^53 - 1）\n在整数后面加n或者调用BigInt()函数来定义bigint，也可以在BigInt()函数中用字符串，这三种方式表达的出来的值都是一样的\nlet abc: bigint = 8888888888888888888888888n\nlet xyz: bigint = BigInt(8888888888888888888888888)\nabc === xyz // true\nSymbol类型（每个symbol值都是唯一的）\nlet abc: symbol = Symbol(“hallo”)\nlet xyz: symbol = Symbol(“hallo”)\nabc === xyz // false\nnever类型（表示那些永远不存在的值的类型，永不为真）\nnever类型是任何类型的子类型，也可以赋值给任何类型，但是没有类型是never子类型或者赋值给never类型（除了never本身），连any都不能赋值给never\n抛出异常或者不会有返回值的函数，其函数返回值类型为never\nunknown类型是any类型对应的安全类型\nunknown类型只能赋值给any和unknown类型本身\nlet abc: unknown\nlet a: any = abc // yes\nlet b: unknown = abc // yes\nlet c: number = abc // Error\nunknown类型被确认为某个类型之前，不能被进行函数执行，实例化之类的操作\n类型断言\nas语法\nlet hallo any =hallo;\nlet abc number = (hallo as string).length;\n尖括号语法\nlet hallo any =hallo;\nlet abc number = (stringhallo).length;\n面向对象\n以键值对的方式表示的都是对象，多个键值对用逗号,分隔\nconst obj = {hallo: ‘123world’}\nconsole.log(obj.hallo)\nTypeScript在对象被定义时已经设置了类型，当引用不存在的，会报错\ninterface接口\n限制传入的参数的值\ninterface hallo{\ra?: number;\rb: number;\rreadonly c: string;\r[Name: string]: any;\r}\rfunction abc(as: hallo) {\rconsole.log(as.a)\r}\rlet myabc: hallo = {\ra: 123,\rb: 666,\rc: \"hallo\",\rxyz(){\rreturn 'hallo word';\r}\r}\rabc(myabc)\r在属性名前使用readonly指定其为只读属性\ninterface和type的区别：interface表示一个对象的属性类型，而type被作为类型别名使用，例如：\ntype testa = sting\rtesta就是sting类型的别名，而interface不能\n在属性名后使用?指定其为可选的\n接口用于类上\nclass Test implements hallo{\ra: 1,\rb: 2,\rc: \"abchhh\",\rxyz(){\rreturn 'hallo ts';\r}\r}\r不要把接口来当type用，这是错误的用法，是用来定义一个对象中有哪些属性，有哪些方法，方法里面有哪些属性，参数等等，接口本身就是为了规范一个对象的行为，使用implements关键字就表示该对象就是这个接口的实现\n接口的继承\ninterface hallo{\ra?: number;\rb: number;\rreadonly c: string;\r[Name: string]: any;\r}\rinterface Test extends hallo{\rabcxyz(): string; // 这里继承了hallo接口，并且还给自己定义了个返回值为string类型的abcxyz()方法\r}\rfunction abc(as: Test) {\rconsole.log(as.a)\r}\rlet myabc: Test = {\ra: 123,\rb: 666,\rc: \"hallo\",\rxyz(){\rreturn 'hallo word';\r}\rabcxyz(){\rreturn 1+2;\r}\r}\rabc(myabc)\r函数的接口定义\ninterface abc1{\r(test: string): string;\r}\rlet abc: abc1 = (a: string) =\u003e {\rreturn a; }\rlet a = abc('hallo word')\rconsole(a)\r使用[]括起来表示这是任意数量的属性，只要不是已经存在（被定义）的属性\nlet abc: {\rname: string;\rpass: string;\r} = {\rname: 'root',\rpass: '123456'\r};\rlet xyz : number[] = [1,2,3,4,5,6];\rclass Tabcxyz{}\rlet a1: Tabcxyz = new Tabcxyz();\rlet a2: () =\u003e string = () =\u003e {\rreturn 'hallo word'; // 函数返回值类型\r}\r判断数据类型\nlet abc: number = 123;\ntypeof abc === “number”; // tuer\nts具备自动分析变量类型功能，当无法分析时，才需要使用类型注解\nlet domeTest = 123 // number，自动分析变量类型功\nlet abc: number; // 类型注解\nnumber = 123\n函数\nfunction abc(): number{\rreturn 123; // 这个number表示函数返回值的类型\r}\r函数参数类型\nfunction abc(a:number,b:number): number{\rreturn a+b; // 这个number表示函数返回值的类型\r}\rlet xyz = abc(1+2)\r函数解构参数类型\nfunction abc({a,b}: {a: number,b: number}): number{\rreturn a+b; // 这个number表示函数返回值的类型\r}\rlet xyz = abc(1+2)\r数组与元组（tuple）\n当数组元素存在不同类型时\nlet arr:(number | string | boolean)[] = [1,'hallo', true, 123, 'hhh']; // 表示数组元素可以是number和string和boolean\r数组对象类型\nlet objarr:{name: string, age: number, pass: string}[] = [{\rname: 'root',\rage: 18,\rpass: '123456'\r}]\r或者\ntype objclass = {name: string, age: number, pass: string}\rlet abc : objclass[] = [{\rname: 'root',\rage: 18,\rpass: '123456'\r}]\r或者\nclass Abctest{\rname: string, age: number, pass: string }\rlet abc : Abctest[] = [\rnew Abctest(),\r{\rname: 'root',\rage: 18,\rpass: '123456'\r}\r]\r元组（元组的长度和类型是固定的，数组每一项都必须对于类型的每一项）\nlet abc: [sting, number, sting] = [\r'root',\r18,\r'123456'\r]\r多维元组\nlet abc: [sting, number, sting][] = [\r['root',18,'123456'],\r['admin',16,'123456789'],\r['test',20,'test123'],\r]\r类的定义与继承\nclass Demo{\rname = 'root';\rTest(){\rreturn this.name;\r}\r}\rclass Demo1 extends Demo{\rname = 'admin'; // 重写 name属性\rTest1(){\rreturn 'hallo ts'; // 继承Demo类的同时，自己还具备Demo不存在的Test1()方法\r}\rTest(){\rreturn 'hallo' + super.Test() // 如果在重写父类的方法时，还想调用父类的方法时，可使用super调用\r}\r}\rlet demo1 = new Demo1();\rconsole.log(demo1.Test());\rconsole.log(demo1.Test1());\r类的访问类型（private，protected，public）和构造器（construction）\nclass Test(){\rpublic name: string; // 类外可被调用\rprotected pass: string; // 类内以及被继承到的子类调用\rprivate Testa(){\rconsole.log('hallo word') // 类内可被调用，类外不可调用\r}\r}\rlet test1 = new Test();\rtets1.name = 'hallo';\rconsole.log(tets1.name);\rclass Test1 extends Test{\rpublic Testaa(){\rcosole.log(this.pass);\r}\r}\rconstruction构造器（construction方法是类内部提供的，当一个类被new了，那么该类construction方法就会触发）\nclass Test(){\rpublic name: string;\rprotected pass: string;\rconstruction(name: string){\rthis.name = name;\r}\r}\rlet test1 = new Test('admin');\rcosole.log(test1.name);\r注意：当父类存在construction时，子类也有construction时，需要手动调用父类的construction（调用super()）\n静态类型，setter和getter（暴露私有属性并且保护私有属性）\nclass Test(){\rprivate _name: string; // name属性是私有属性，无法被类外调用\rconstruction(name: string){\rthis._name = name;\r}\rget getName(){\rreturn this._name; // 通过getName方法对外暴露name属性\r}\rset setName(name: string){\rlet Tname = name.split('')[0]; // // 通过setName方法对外暴露name属性\rthis._name = name\r}\r}\rlet test1 = new Test('admin');\rcosole.log(test1.getName);\r单例模式\nclass Test(){\rprivate static Testabc: Test;\rprivate construction(){} // 禁止通过new创建实例\rpublic getTest(){\rif (!this.Testabc) {\rthis.Testabc = new Test(); // 判断如果Testabc不存在时，Testabc等于Test实例\rreturn this.Testabc; // 返回存储了Test实例的属性\r}\rreturn this.Testabc; // 对外暴露这个存储了Test实例的属性\r}\r}\rlet test1 = Test.getTest() // 存储了Test实例的属性赋值给了test1变量\rlet test2 = Test.getTest() // 存储了Test实例的属性赋值给了test2变量\rconsole.log(test1 === test2); // true 这两个存储了Test实例的变量实质上还是同一个\r抽象类（抽象类只能被继承，类的抽象进行封装，复用）\nabstract class Abc{\rname: string;\rabstract getTest1(): string;\r}\rclass Test extends Abc(){\rconstructor(){\rsuper();\r}\rgetTest1(){\rreturn 'hallo word';\r}\r}\rclass Test1 extends Abc(){\rconstructor(){\rsuper();\r}\rgetTest1(){\rreturn 'hallo hhh';\r}\r}\rlet test1 = new Test();\rconsole.log(test1.getTest1);\r联合类型和类型保护\n联合类型就是给一些类型出来，只要满足其中一种类型就可以，例如：\nlet a : number | string = 'hallo word'\ra = 66 // a变量需要满足number或者string其中一种类型就可以了\r类型保护就是通过类型断言，class或者instanceof来保护类型\nenum枚举类型\n枚举通过enum关键字创建，并且枚举元素一被定义将无法改变，格式和对象类似\nenum a{\rname,\rage,\rpass\r}\rconsole.log(a.age) // 1\rconsole.log(a[1]) // age\r枚举元素默认第一个值从0开始递增，另外key和value是能互相访问的（这些规则只能用于数值枚举元素，其他类型无效）\nenum a{\rname = 'root',\rage = 18,\rpass = '123456'\r}\r上面这个例子为异构枚举，允许数值枚举和字符串枚举混合使用\n注意：当然枚举存在字符串枚举成员时，是不能存在计算的\n函数泛型（泛型：generic，表示泛指的类型）\nfunction abc(a: XYZ,b: XYZ){\rreturn a + b; }\rabc('hallo','root');\r类泛型和泛型类型\nclass Demo{\rages: XYZ[]\rgetDemo(a:number): XYZ{\rreturn this.ages[a]\r}\r}\rlet demo = new Demo([1])\rdemo.getDemo(0)\r命名空间namespace（在命名空间内部定义的变量，类只能在该命名空间内部金额访问到，如果需要外部访问需要export导出）\nnamespace Test{\rlet a = \"hallo word\";\rfunction b(i: number)\rreturn i;\r}\r命名空间的实现原理就是立即执行函数搭配闭包，闭包可以减少全局变量的诞生，而如果进行导出export了，那么该被导出的变量会暴露到全局环境下\n合并命名空间\n如果是同名的命名空间，会自动合并成一个（注意：合并只针对导出的成员，而且不能重名）\n如果是不同文件下命名空间，例如：\na.ts\nnamespace Test{\rlet a = \"hallo word\";\rfunction b(i: number)\rreturn i;\r}\rb.ts /// // 会在编译b.ts之前编译a.ts namespace Test{ import a = Test.a console.log(a) }\n类型注解文件（.d.ts）\n类型注解声明需使用declare或export关键字，declare是定义全局，可直接引用，而export需要使用import导出\n注意：当定义interface接口或者type类型的时候，不需要加declare或export关键字\n定义全局变量abc，它的类型是string（除了var关键字可以定义外，还有let，const都可以定义）\ndeclare var abc: string;\r定义全局函数abc()，该函数的参数为string类型，返回值也是对象，并且定义该对象中存在一个data方法，该方法接收一个string类型的参数，该方法的返回值是string类型\ndeclare function abc(param:string): {\rdata: (data: string) =\u003e string;\r};\rabc('test').data('hallo word');\r定义接口 Abc，该接口被用于函数abc()上，表示abc()函数的返回值类型\ninterface Abc{\rtest: (str: string) =\u003e{};\r}\rdeclare function abc(): Abc;\r函数重载：类型注解是允许多次定义函数的类型注解声明\n声明对象Abc，该对象下存在着Test对象，Test对象下存在Data()构造函数\ndeclare namespace Abc {\rnamespace Test {\rclass Data {}\r}\r}\rnew Abc.Test.Data()\r模块化的类型注解\n定义一个Test模块的类型注解，该模块存在一个Abc方法，该方法也存在一个test方法，test方法的返回值为对象\ndeclare module 'Test' {\rinterface Abc{\rtest: (str: string) =\u003e{};\r}\rexport = Abc;\r}\rimport Abc form 'Test'\rAbc.test('hallo word')\r泛型的keyof关键字\ninterface Test{\rname: string;\rpass: string;\rage: number;\r}\rclass Abc{\rconstructor(private data: Test)\rgetData(key: T): Test[T] {\rrenturn this.data[key]\r}\r}\rconst TestData = new Abc({\rname: 'root',\rpass: '123456',\rage: 20\r})\rconst test = TestData.getData('name');\rconsole.log(test)\r从上面例子中的，可以看到keyof的作用就是遍历类型的属性，keyof的返回值类型其实是个联合类型（key也是可以用来搞class）\n上面例子输入的key参数不为Test接口定义属性时会提示错误\n装饰器：装饰器本身是函数，装饰器通过@来调用，通过装饰器来扩展目标的功能\n注意：装饰器目前是实验功能，需要手动开启实验功能，在tsconfig.json找到experimentalDecorators和emitDecoratorMetadata设置为true\n类的装饰器（会在类创建完毕后立即执行装饰器，注意：对类装饰，并不对实例装饰，类装饰器的参数是构造函数）\nfunction Abc(constructor: any){\rconsole.log('hallo word');\r}\r@Abc\rclass Test{}\rlet test = new Test();\r方法的装饰器（方法装饰器有3个参数，分别是类的构造方法，方法名，方法的属性描述符）\n属性的装饰器（属性装饰器有2个参数，分别是类的原型，属性名）\n参数的装饰器（函数的参数装饰器有3个参数，分别是类的构造函数，参数名，参数在参数列表中的索引）\n协变和逆变\nTypeScript允许子类型赋值给父类型，也允许父类型赋值给子类型，因为这是类型安全的，是完全允许的，例如：\ntype Test = {\rname: string;\r}\rtype Abc = {\rname: string;\rpass: string;\r}\rlet a: Test = {\rname: 'root'\r}\rlet b: Abc = {\rname: 'root'\rpass: '123456'\r}\rb = a\r子类型可以赋值给父类型，而这个就叫协变，允许赋值时给一个更全面的类型或者相同的类型（父类是子类的超类）\nTypeScript不需要通过extends继承来确定，而是通过类型结构（structual type）来确定父子关系的\n逆变\n父类型可以赋值给子类型，函数参数具有逆变的特性，例如：\ntype Test = {\rname: string;\r}\rtype Abc = {\rname: string;\rpass: string;\r}\rlet hallo = (a: Abc) =\u003e{\rconsole.log(a)\r}\rlet hi = (b: Test) =\u003e{\rconsole.log(b)\r}\rhallo = hi\r注意：协变和逆变作用只生效于父子类型，非父子类型不会发生\n","wordCount":"1184","inLanguage":"en","datePublished":"2021-07-18T15:50:00Z","dateModified":"2021-07-18T15:50:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://chenjunlinabc.github.io/posts/58/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"http://chenjunlinabc.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=http://chenjunlinabc.github.io/ accesskey=h title="小陈的个人博客 (Alt + H)"><img src=http://chenjunlinabc.github.io/favicon.ico alt aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://chenjunlinabc.github.io/ title=首页><span>首页</span></a></li><li><a href=http://chenjunlinabc.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=http://chenjunlinabc.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=http://chenjunlinabc.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=http://chenjunlinabc.github.io/links/ title=链接><span>链接</span></a></li><li><a href=http://chenjunlinabc.github.io/about/ title=关于><span>关于</span></a></li><li><a href=http://chenjunlinabc.github.io/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://chenjunlinabc.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://chenjunlinabc.github.io/posts/>Posts</a></div><h1 class=post-title>TypeScript学习笔记</h1><div class=post-meta><span title='2021-07-18 15:50:00 +0000 UTC'>2021-07-18</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/TypeScript%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上</p><p>TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript</p><p>TypeScript实质上就是JavaScript的扩展，JavaScript超集</p><p>TypeScript本身并不能在浏览器运行，需要进行编译成JavaScript</p><p>全局安装typescript</p><p>yarn global add typescript</p><p>或者</p><p>npm install -g typescript</p><p>安装ts-node</p><p>npm install -g ts-node</p><p>ts-node运行（不需要编译成js文件，直接运行ts）</p><p>ts-node hallo.ts</p><p>检查是否安装成功</p><p>tsc -v</p><p>使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀</p><p>创建tsconfig.json</p><p>npx tsc &ndash;init</p><p>编译阶段去除注释：找到removeComments，设置为true</p><p>执行（不加任何参数，这样才能使用tsconfig.json配置文件，tsc默认对当前根目录的ts文件进行编译）</p><p>tsc</p><p>编译指定ts文件（在compilerOptions同级）</p><p>&ldquo;include&rdquo;:["./test1.ts"] // 指定编译哪个ts文件
+&ldquo;excclude&rdquo;:["./test.ts"] // 指定不编译哪个ts文件</p><p>其他配置</p><p>rootDir（指定输入目录）
+outDir（指定输出目录）
+allowJs（是否处理js文件）
+checkjs（是否检查js文件的语法）</p><p>编译TypeScript文件</p><p>tsc hallo.ts</p><hr><p>变量声明</p><p>推荐使用const和let声明变量，而不要使用var声明（因为var具有变量提升和重定义）</p><p>基础类型</p><p>TypeScript具有强类型的特点</p><p>boolean，string，number，array，null，undefined，object，tuple，enum，void，never，any</p><p>boolean布尔值，例如：</p><p>let hallo: boolean = true</p><p>number数值，例如：</p><p>let hallo: number = 123;</p><p>二进制和八进制，十进制，十六进制都可以用number类型来表示</p><p>string字符串</p><p>let hallo: string = hallo;</p><p>void类型（当一个函数没有返回值时，那么其返回值类型就可以定义为void）</p><pre><code>function voiddemo(): void {
+    let a  = 10;
+}
+</code></pre><p>void类型只有两个值，undefined和null</p><p>undefined类型和null类型是所有类型的子类型</p><p>Any（当不清楚类型的变量指定一个类型，有可能这个变量的类型是动态的，想跳过类型检查就可以用这个）</p><p>let abc: any =123;</p><p>abc = hallo;</p><p>void（表示没有任何类型，当一个函数没有返回值，那么其返回值类型就是void）</p><p>声明一个void类型的变量，这个变量只能选择两个值undefined和null其中一个</p><p>let und void = undefined;</p><p>undefined和null和JavaScript中概念是一样的，空，未定义</p><p>object，就是非基础类型，和JavaScript中概念是一样的</p><p>枚举，数组，元组，对象都是object类型</p><p>let obj: object;</p><p>array数组</p><p>let arrs: number[] = [1,2,3];</p><p>let arrs: Array = [1,2,3];</p><p>tuple元组：元组类型允许一个数组的元素是不同的类型的，但是必须按照要求来定义，例如</p><p>let x [string, number?];
+x = [&lsquo;hello&rsquo;, 10];</p><p>x.push(&ldquo;hi&rdquo;);</p><p>tuple元组是固定长度，固定类型，长度不能多不能少，类型必须要一一对应</p><p>元组类型允许在类型后缀一个?来说明该元素是可选的，可选元素必须要在必选元素后面，否则有一个元素后面加了?，那么其后面全部元素都要加?</p><p>注意：元组虽然可以越界添加元素（不推荐），但是不可越界访问</p><p>enum枚举（允许为一组数值赋予名字）</p><p>enum hallo {a, b, c}</p><p>hallo.a === 0 // true</p><p>默认从0开始，当然也可以手动指定数值</p><p>enum hallo {a=6, b, c}</p><p>最强大的一处是，可以根据值来得到它的名字</p><p>let yes: string = hallo[6];</p><p>console.log(yes);</p><p>如果分开声明名称相同的枚举，那么就会自动合并</p><p>bigint类型（可以表示任意大的整数，Number类型能表示的最大整数为2^53 - 1）</p><p>在整数后面加n或者调用BigInt()函数来定义bigint，也可以在BigInt()函数中用字符串，这三种方式表达的出来的值都是一样的</p><p>let abc: bigint = 8888888888888888888888888n</p><p>let xyz: bigint = BigInt(8888888888888888888888888)</p><p>abc === xyz // true</p><p>Symbol类型（每个symbol值都是唯一的）</p><p>let abc: symbol = Symbol(&ldquo;hallo&rdquo;)</p><p>let xyz: symbol = Symbol(&ldquo;hallo&rdquo;)</p><p>abc === xyz // false</p><p>never类型（表示那些永远不存在的值的类型，永不为真）</p><p>never类型是任何类型的子类型，也可以赋值给任何类型，但是没有类型是never子类型或者赋值给never类型（除了never本身），连any都不能赋值给never</p><p>抛出异常或者不会有返回值的函数，其函数返回值类型为never</p><p>unknown类型是any类型对应的安全类型</p><p>unknown类型只能赋值给any和unknown类型本身</p><p>let abc: unknown</p><p>let a: any = abc // yes</p><p>let b: unknown = abc // yes</p><p>let c: number = abc // Error</p><p>unknown类型被确认为某个类型之前，不能被进行函数执行，实例化之类的操作</p><p>类型断言</p><p>as语法</p><p>let hallo any =hallo;</p><p>let abc number = (hallo as string).length;</p><p>尖括号语法</p><p>let hallo any =hallo;</p><p>let abc number = (stringhallo).length;</p><p>面向对象</p><p>以键值对的方式表示的都是对象，多个键值对用逗号,分隔</p><p>const obj = {hallo: &lsquo;123world&rsquo;}</p><p>console.log(obj.hallo)</p><p>TypeScript在对象被定义时已经设置了类型，当引用不存在的，会报错</p><p>interface接口</p><p>限制传入的参数的值</p><pre><code>interface hallo{
     a?: number;
     b: number;
     readonly c: string;
     [Name: string]: any;
 }
-function abc(clothes: hallo) {
-    console.log(clothes.a)
+function abc(as: hallo) {
+    console.log(as.a)
 }
 let myabc: hallo = {
     a: 123,
     b: 666,
     c: &quot;hallo&quot;,
-    xyz: &quot;word&quot;
+    xyz(){
+        return 'hallo word';
+    }
 }
 abc(myabc)
-</code></pre><p>在属性名前使用readonly指定其为只读属性</p><p>在属性名后使用?指定其为可选的</p><p>使用[]括起来表示这是任意数量的属性，只要不是已经存在（被定义）的属性</p><p>判断数据类型</p><p>let abc: number = 123;</p><p>typeof abc === &ldquo;number&rdquo;; // tuer</p><hr><p>泛型</p><hr><p>类型变换模块和命名空间</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://blog.cjlio.com/tags/typescript/>TypeScript</a></li></ul><nav class=paginav><a class=prev href=https://blog.cjlio.com/posts/61/><span class=title>« Prev</span><br><span>JavaScript知识扩展</span></a>
-<a class=next href=https://blog.cjlio.com/posts/57/><span class=title>Next »</span><br><span>ES6学习笔记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+</code></pre><p>在属性名前使用readonly指定其为只读属性</p><p>interface和type的区别：interface表示一个对象的属性类型，而type被作为类型别名使用，例如：</p><pre><code>type testa = sting
+</code></pre><p>testa就是sting类型的别名，而interface不能</p><p>在属性名后使用?指定其为可选的</p><p>接口用于类上</p><pre><code> class Test implements hallo{
+    a: 1,
+    b: 2,
+    c: &quot;abchhh&quot;,
+    xyz(){
+        return 'hallo ts';
+    }
+}
+</code></pre><p>不要把接口来当type用，这是错误的用法，是用来定义一个对象中有哪些属性，有哪些方法，方法里面有哪些属性，参数等等，接口本身就是为了规范一个对象的行为，使用implements关键字就表示该对象就是这个接口的实现</p><p>接口的继承</p><pre><code>interface hallo{
+    a?: number;
+    b: number;
+    readonly c: string;
+    [Name: string]: any;
+}
+interface Test extends hallo{
+    abcxyz(): string; // 这里继承了hallo接口，并且还给自己定义了个返回值为string类型的abcxyz()方法
+}
+function abc(as: Test) {
+    console.log(as.a)
+}
+let myabc: Test = {
+    a: 123,
+    b: 666,
+    c: &quot;hallo&quot;,
+    xyz(){
+        return 'hallo word';
+    }
+    abcxyz(){
+        return 1+2;
+    }
+}
+abc(myabc)
+</code></pre><p>函数的接口定义</p><pre><code>interface abc1{
+    (test: string): string;
+}
+let abc: abc1 = (a: string) =&gt; {
+    return a; 
+}
+let a = abc('hallo word')
+console(a)
+</code></pre><p>使用[]括起来表示这是任意数量的属性，只要不是已经存在（被定义）的属性</p><pre><code>let abc: {
+    name: string;
+    pass: string;
+} = {
+    name: 'root',
+    pass: '123456'
+};
+
+let xyz : number[] = [1,2,3,4,5,6];
+
+class Tabcxyz{}
+let a1: Tabcxyz = new Tabcxyz();
+
+let a2: () =&gt; string = () =&gt; {
+    return 'hallo word'; // 函数返回值类型
+}
+</code></pre><p>判断数据类型</p><p>let abc: number = 123;</p><p>typeof abc === &ldquo;number&rdquo;; // tuer</p><p>ts具备自动分析变量类型功能，当无法分析时，才需要使用类型注解</p><p>let domeTest = 123 // number，自动分析变量类型功</p><p>let abc: number; // 类型注解</p><p>number = 123</p><p>函数</p><pre><code>function abc(): number{
+    return 123; // 这个number表示函数返回值的类型
+}
+</code></pre><p>函数参数类型</p><pre><code>function abc(a:number,b:number): number{
+    return a+b; // 这个number表示函数返回值的类型
+}
+let xyz = abc(1+2)
+</code></pre><p>函数解构参数类型</p><pre><code>function abc({a,b}: {a: number,b: number}): number{
+    return a+b; // 这个number表示函数返回值的类型
+}
+let xyz = abc(1+2)
+</code></pre><hr><p>数组与元组（tuple）</p><p>当数组元素存在不同类型时</p><pre><code>let arr:(number | string | boolean)[] = [1,'hallo', true, 123, 'hhh']; // 表示数组元素可以是number和string和boolean
+</code></pre><p>数组对象类型</p><pre><code>let objarr:{name: string, age: number, pass: string}[] = [{
+    name: 'root',
+    age: 18,
+    pass: '123456'
+}]
+</code></pre><p>或者</p><pre><code>type objclass = {name: string, age: number, pass: string}
+let abc : objclass[] = [{
+    name: 'root',
+    age: 18,
+    pass: '123456'
+}]
+</code></pre><p>或者</p><pre><code>class Abctest{
+    name: string, 
+    age: number, 
+    pass: string 
+}
+let abc : Abctest[] = [
+    new Abctest(),
+    {
+        name: 'root',
+        age: 18,
+        pass: '123456'
+    }
+]
+</code></pre><p>元组（元组的长度和类型是固定的，数组每一项都必须对于类型的每一项）</p><pre><code>let abc: [sting, number, sting] = [
+    'root',
+    18,
+    '123456'
+]
+</code></pre><p>多维元组</p><pre><code>let abc: [sting, number, sting][] = [
+    ['root',18,'123456'],
+    ['admin',16,'123456789'],
+    ['test',20,'test123'],
+]
+</code></pre><hr><p>类的定义与继承</p><pre><code>class Demo{
+    name = 'root';
+    Test(){
+        return this.name;
+    }
+}
+class Demo1 extends Demo{
+    name = 'admin'; // 重写 name属性
+    Test1(){
+        return 'hallo ts'; // 继承Demo类的同时，自己还具备Demo不存在的Test1()方法
+    }
+    Test(){
+        return 'hallo' + super.Test() // 如果在重写父类的方法时，还想调用父类的方法时，可使用super调用
+    }
+}
+let demo1 = new Demo1();
+console.log(demo1.Test());
+console.log(demo1.Test1());
+</code></pre><hr><p>类的访问类型（private，protected，public）和构造器（construction）</p><pre><code>class Test(){
+    public name: string;  // 类外可被调用
+    protected pass: string; // 类内以及被继承到的子类调用
+    private Testa(){
+        console.log('hallo word') // 类内可被调用，类外不可调用
+    }
+}
+let test1 = new Test();
+tets1.name = 'hallo';
+console.log(tets1.name);
+class Test1 extends Test{
+    public Testaa(){
+        cosole.log(this.pass);
+    }
+}
+</code></pre><p>construction构造器（construction方法是类内部提供的，当一个类被new了，那么该类construction方法就会触发）</p><pre><code>class Test(){
+    public name: string;
+    protected pass: string;
+    construction(name: string){
+        this.name = name;
+    }
+}
+let test1 = new Test('admin');
+cosole.log(test1.name);
+</code></pre><p>注意：当父类存在construction时，子类也有construction时，需要手动调用父类的construction（调用super()）</p><hr><p>静态类型，setter和getter（暴露私有属性并且保护私有属性）</p><pre><code>class Test(){
+    private _name: string; // name属性是私有属性，无法被类外调用
+    construction(name: string){
+        this._name = name;
+    }
+    get getName(){
+        return this._name; // 通过getName方法对外暴露name属性
+    }
+    set setName(name: string){
+        let Tname = name.split('')[0]; // // 通过setName方法对外暴露name属性
+        this._name = name
+    }
+}
+let test1 = new Test('admin');
+cosole.log(test1.getName);
+</code></pre><p>单例模式</p><pre><code>class Test(){
+    private static Testabc: Test;
+    private construction(){} // 禁止通过new创建实例
+    public getTest(){
+        if (!this.Testabc) {
+            this.Testabc = new Test(); // 判断如果Testabc不存在时，Testabc等于Test实例
+            return this.Testabc; // 返回存储了Test实例的属性
+        }
+        return this.Testabc; // 对外暴露这个存储了Test实例的属性
+    }
+}
+let test1 = Test.getTest() // 存储了Test实例的属性赋值给了test1变量
+let test2 = Test.getTest() // 存储了Test实例的属性赋值给了test2变量
+console.log(test1 === test2); // true 这两个存储了Test实例的变量实质上还是同一个
+</code></pre><hr><p>抽象类（抽象类只能被继承，类的抽象进行封装，复用）</p><pre><code>abstract class Abc{
+    name: string;
+    abstract getTest1(): string;
+}
+
+class Test extends Abc(){
+    constructor(){
+        super();
+    }
+    getTest1(){
+        return 'hallo word';
+    }
+}
+class Test1 extends Abc(){
+    constructor(){
+        super();
+    }
+    getTest1(){
+        return 'hallo hhh';
+    }
+}
+let test1 = new Test();
+console.log(test1.getTest1);
+</code></pre><hr><p>联合类型和类型保护</p><p>联合类型就是给一些类型出来，只要满足其中一种类型就可以，例如：</p><pre><code>let a : number | string = 'hallo word'
+a = 66 // a变量需要满足number或者string其中一种类型就可以了
+</code></pre><p>类型保护就是通过类型断言，class或者instanceof来保护类型</p><p>enum枚举类型</p><p>枚举通过enum关键字创建，并且枚举元素一被定义将无法改变，格式和对象类似</p><pre><code>enum a{
+    name,
+    age,
+    pass
+}
+console.log(a.age) // 1
+console.log(a[1]) // age
+</code></pre><p>枚举元素默认第一个值从0开始递增，另外key和value是能互相访问的（这些规则只能用于数值枚举元素，其他类型无效）</p><pre><code>enum a{
+    name = 'root',
+    age = 18,
+    pass = '123456'
+}
+</code></pre><p>上面这个例子为异构枚举，允许数值枚举和字符串枚举混合使用</p><p>注意：当然枚举存在字符串枚举成员时，是不能存在计算的</p><p>函数泛型（泛型：generic，表示泛指的类型）</p><pre><code>function abc&lt;XYZ&gt;(a: XYZ,b: XYZ){
+    return a + b;    
+}
+abc&lt;string&gt;('hallo','root');
+</code></pre><p>类泛型和泛型类型</p><pre><code>class Demo&lt;XYZ&gt;{
+    ages: XYZ[]
+    getDemo(a:number): XYZ{
+        return this.ages[a]
+    }
+}
+let demo = new Demo&lt;number&gt;([1])
+demo.getDemo(0)
+</code></pre><p>命名空间namespace（在命名空间内部定义的变量，类只能在该命名空间内部金额访问到，如果需要外部访问需要export导出）</p><pre><code>namespace Test{
+    let a = &quot;hallo word&quot;;
+    function b(i: number)
+        return i;
+}
+</code></pre><p>命名空间的实现原理就是立即执行函数搭配闭包，闭包可以减少全局变量的诞生，而如果进行导出export了，那么该被导出的变量会暴露到全局环境下</p><p>合并命名空间</p><p>如果是同名的命名空间，会自动合并成一个（注意：合并只针对导出的成员，而且不能重名）</p><p>如果是不同文件下命名空间，例如：</p><p>a.ts</p><pre><code>namespace Test{
+    let a = &quot;hallo word&quot;;
+    function b(i: number)
+        return i;
+}
+</code></pre><p>b.ts
+/// // 会在编译b.ts之前编译a.ts
+namespace Test{
+import a = Test.a
+console.log(a)
+}</p><hr><p>类型注解文件（.d.ts）</p><p>类型注解声明需使用declare或export关键字，declare是定义全局，可直接引用，而export需要使用import导出</p><p>注意：当定义interface接口或者type类型的时候，不需要加declare或export关键字</p><p>定义全局变量abc，它的类型是string（除了var关键字可以定义外，还有let，const都可以定义）</p><pre><code>declare var abc: string;
+</code></pre><p>定义全局函数abc()，该函数的参数为string类型，返回值也是对象，并且定义该对象中存在一个data方法，该方法接收一个string类型的参数，该方法的返回值是string类型</p><pre><code>declare function abc(param:string): {
+    data: (data: string) =&gt; string;
+};
+ 
+ abc('test').data('hallo word');
+</code></pre><p>定义接口 Abc，该接口被用于函数abc()上，表示abc()函数的返回值类型</p><pre><code>interface Abc{
+    test: (str: string) =&gt;{};
+}
+declare function abc(): Abc;
+</code></pre><p>函数重载：类型注解是允许多次定义函数的类型注解声明</p><p>声明对象Abc，该对象下存在着Test对象，Test对象下存在Data()构造函数</p><pre><code> declare namespace Abc {
+      namespace Test {
+           class Data {}
+      }
+ }
+ 
+ new Abc.Test.Data()
+</code></pre><p>模块化的类型注解</p><p>定义一个Test模块的类型注解，该模块存在一个Abc方法，该方法也存在一个test方法，test方法的返回值为对象</p><pre><code> declare module 'Test' {
+      interface Abc{
+           test: (str: string) =&gt;{};
+      }
+      export = Abc;
+ }
+
+ import Abc form 'Test'
+ Abc.test('hallo word')
+</code></pre><hr><p>泛型的keyof关键字</p><pre><code>interface Test{
+    name: string;
+    pass: string;
+    age: number;
+}
+class Abc{
+    constructor(private data: Test)
+    getData&lt;T extends keyof Test&gt;(key: T): Test[T] {
+        renturn this.data[key]
+    }
+}
+const TestData = new Abc({
+    name: 'root',
+    pass: '123456',
+    age: 20
+})
+const test = TestData.getData('name');
+console.log(test)
+</code></pre><p>从上面例子中的，可以看到keyof的作用就是遍历类型的属性，keyof的返回值类型其实是个联合类型（key也是可以用来搞class）</p><p>上面例子输入的key参数不为Test接口定义属性时会提示错误</p><hr><p>装饰器：装饰器本身是函数，装饰器通过@来调用，通过装饰器来扩展目标的功能</p><p>注意：装饰器目前是实验功能，需要手动开启实验功能，在tsconfig.json找到experimentalDecorators和emitDecoratorMetadata设置为true</p><p>类的装饰器（会在类创建完毕后立即执行装饰器，注意：对类装饰，并不对实例装饰，类装饰器的参数是构造函数）</p><pre><code>function Abc(constructor: any){
+    console.log('hallo word');
+}
+@Abc
+class Test{}
+let test = new Test();
+</code></pre><p>方法的装饰器（方法装饰器有3个参数，分别是类的构造方法，方法名，方法的属性描述符）</p><p>属性的装饰器（属性装饰器有2个参数，分别是类的原型，属性名）</p><p>参数的装饰器（函数的参数装饰器有3个参数，分别是类的构造函数，参数名，参数在参数列表中的索引）</p><hr><p>协变和逆变</p><p>TypeScript允许子类型赋值给父类型，也允许父类型赋值给子类型，因为这是类型安全的，是完全允许的，例如：</p><pre><code>type Test = {
+    name: string;
+}
+type Abc = {
+    name: string;
+    pass: string;
+}
+let a: Test = {
+    name: 'root'
+}
+let b: Abc = {
+    name: 'root'
+    pass: '123456'
+}
+b = a
+</code></pre><p>子类型可以赋值给父类型，而这个就叫协变，允许赋值时给一个更全面的类型或者相同的类型（父类是子类的超类）</p><p>TypeScript不需要通过extends继承来确定，而是通过类型结构（structual type）来确定父子关系的</p><p>逆变</p><p>父类型可以赋值给子类型，函数参数具有逆变的特性，例如：</p><pre><code>type Test = {
+    name: string;
+}
+type Abc = {
+    name: string;
+    pass: string;
+}
+let hallo = (a: Abc) =&gt;{
+    console.log(a)
+}
+let hi = (b: Test) =&gt;{
+    console.log(b)
+}
+hallo = hi
+</code></pre><p>注意：协变和逆变作用只生效于父子类型，非父子类型不会发生</p></div><footer class=post-footer><ul class=post-tags><li><a href=http://chenjunlinabc.github.io/tags/typescript/>TypeScript</a></li></ul><nav class=paginav><a class=prev href=http://chenjunlinabc.github.io/posts/61/><span class=title>« Prev</span><br><span>JavaScript知识扩展</span></a>
+<a class=next href=http://chenjunlinabc.github.io/posts/57/><span class=title>Next »</span><br><span>ES6学习笔记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=http://chenjunlinabc.github.io/>小陈的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

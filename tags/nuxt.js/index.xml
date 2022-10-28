@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nuxt.js on 小陈的个人博客</title>
+    <link>http://chenjunlinabc.github.io/tags/nuxt.js/</link>
+    <description>Recent content in Nuxt.js on 小陈的个人博客</description>
+    <image>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 05 Jun 2022 21:36:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/nuxt.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nuxt.js学习笔记</title>
+      <link>http://chenjunlinabc.github.io/posts/152/</link>
+      <pubDate>Sun, 05 Jun 2022 21:36:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/152/</guid>
+      <description>nuxt是一个基于vue的应用框架，用于创建服务端渲染应用，使用vite作为打包器，使用webpack作为构建工具
+创建项目
+yarn create nuxt-app nuxtTest
+需要做一些选择，例如：选择TypeScript，选择Yarn，选择UI框架等等
+安装依赖
+yarn
+启动项目
+yarn dev
+构建打包
+yarn build
+yarn start
+启动测试环境 yarn test</description>
+    </item>
+    
+  </channel>
+</rss>

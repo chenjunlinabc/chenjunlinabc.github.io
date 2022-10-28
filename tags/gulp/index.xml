@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Gulp on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/gulp/</link>
+    <link>http://chenjunlinabc.github.io/tags/gulp/</link>
     <description>Recent content in Gulp on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 06 Aug 2021 20:52:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/gulp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Aug 2021 20:52:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/gulp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>gulp学习笔记</title>
-      <link>https://blog.cjlio.com/posts/73/</link>
+      <link>http://chenjunlinabc.github.io/posts/73/</link>
       <pubDate>Fri, 06 Aug 2021 20:52:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/73/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/73/</guid>
       <description>gulp.js是一个基于流(stream)的自动化构建工具，是开源的JavaScript自动化工具，基于node.js和npm的构建工具，可以处理压缩代码，合并代码，压缩图片，编译less等等任务
 全局安装gulp
 npm install &amp;ndash;global gulp-cli
@@ -43,7 +43,7 @@ gulp.dest() // 执行完任务的文件最后在哪里
 gulp.watch() // 监测文件是否发生变化
 gulp.task()其中有两个参数，分别是任务名称和一个回调函数
 例如：
-let gulp = require(&amp;quot;gulp&amp;quot;); gulp.task(&amp;quot;test&amp;quot;, function() { return console.log(&amp;quot;hallo gulp&amp;quot;); }); 执行test任务（在终端，应用根目录下）
+let gulp = require(&amp;quot;gulp&amp;quot;);gulp.task(&amp;quot;test&amp;quot;, function() {return console.log(&amp;quot;hallo gulp&amp;quot;);});执行test任务（在终端，应用根目录下）
 gulp test</description>
     </item>
     

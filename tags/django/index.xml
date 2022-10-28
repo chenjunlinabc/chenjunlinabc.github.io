@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>django on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/django/</link>
+    <link>http://chenjunlinabc.github.io/tags/django/</link>
     <description>Recent content in django on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 22 Oct 2021 18:50:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Oct 2021 18:50:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Django学习笔记</title>
-      <link>https://blog.cjlio.com/posts/118/</link>
+      <link>http://chenjunlinabc.github.io/posts/118/</link>
       <pubDate>Fri, 22 Oct 2021 18:50:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/118/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/118/</guid>
       <description>django是一个基于Python编写的Web框架
 Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
 安装django
@@ -36,10 +36,11 @@ dumpdata # 数据库数据导出
 loaddata # 文件数据导入数据库
 创建第一个项目
 django-admin startproject django_demo
-settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件，manage.py是django项目的管理文件
+settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，init.py是Django项目的包初始化文件
 wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）
 运行django项目
-python .\manage.py runserver
+python .\manage.py runserver 0.0.0.0:8000
+访问127.0.0.1:8000
 django应用
 django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包
 django项目下可以包含一组配置和n个django应用
@@ -47,10 +48,7 @@ django项目下可以包含一组配置和n个django应用
 python .\manage.py startapp django_app
 admin.py #定义admin模块管理的配置文件
 apps.py # 声明应用的配置文件
-tests.py # 应用测试的配置文化
-models.py #定义应用模型配置文件
-views.py #视图处理配置文件
-urls.py # 管理应用路由的配置文件，因为应用也可以管理路由，不过需要自己创建</description>
+tests.py # 应用测试的配置文化</description>
     </item>
     
   </channel>

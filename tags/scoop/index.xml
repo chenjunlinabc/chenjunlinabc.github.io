@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>scoop on 小陈的个人博客</title>
+    <link>http://chenjunlinabc.github.io/tags/scoop/</link>
+    <description>Recent content in scoop on 小陈的个人博客</description>
+    <image>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 20 May 2022 22:10:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/scoop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用Scoop包管理器</title>
+      <link>http://chenjunlinabc.github.io/posts/150/</link>
+      <pubDate>Fri, 20 May 2022 22:10:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/150/</guid>
+      <description>Scoop是windows平台下开源的命令行软件包管理器，类似于ubuntu的apt或者macOS的brew
+scoop仓库里面全部都是通过审核的绿色软件包（前提是不要乱用来路不明的scoop源）
+允许执行本地脚本权限
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+修改Scoop安装目录（用户级）
+$env:SCOOP=&amp;lsquo;D:\Software\Scoop&amp;rsquo; [Environment]::SetEnvironmentVariable(&amp;lsquo;SCOOP&amp;rsquo;, $env:SCOOP, &amp;lsquo;User&amp;rsquo;)
+修改Scoop安装目录（全局）
+$env:SCOOP_GLOBAL=&amp;lsquo;D:\Software\Scoop\Global&amp;rsquo; [Environment]::SetEnvironmentVariable(&amp;lsquo;SCOOP_GLOBAL&amp;rsquo;, $env:SCOOP_GLOBAL, &amp;lsquo;Machine&amp;rsquo;)
+目录介绍： apps：通过scoop安装的软件存储的目录
+buckets：管理软件的仓库目录（记录了哪些仓库有哪些软件）
+chache：软件安装包目录
+persit：存储用户数据，与软件分离
+shims；软链接
+安装scoop
+iwr -useb get.scoop.sh | iex
+或者
+iex (new-object net.webclient).downloadstring(&amp;lsquo;https://get.scoop.sh&amp;rsquo;)
+安装软件
+scoop install sudo
+查看环境存在的问题
+scoop checkup
+将一些scoop环境必须的软件安装一下
+搜索软件
+scoop search git
+安装软件
+scoop install git
+查看软件信息
+scoop info git
+查看已经安装的软件
+scoop list
+卸载软件（-p删除配置）
+scoop uninstall git -p
+更新软件
+scoop update git
+更新全部已安装软件
+scoop update *</description>
+    </item>
+    
+  </channel>
+</rss>

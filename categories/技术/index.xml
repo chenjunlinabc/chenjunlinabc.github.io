@@ -2,21 +2,103 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>技术 on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/categories/%E6%8A%80%E6%9C%AF/</link>
+    <link>http://chenjunlinabc.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
     <description>Recent content in 技术 on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 09 Apr 2022 13:01:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jun 2022 00:12:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ECharts数据可视化图表库简单使用</title>
+      <link>http://chenjunlinabc.github.io/posts/153/</link>
+      <pubDate>Sat, 18 Jun 2022 00:12:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/153/</guid>
+      <description>ECharts是基于JavaScript的数据可视化图表库
+安装
+npm install echarts --save第一个实例
+import * as echarts from &#39;echarts&#39;let app = echarts.init(document.getElementById(&#39;app&#39;), null, {width: 800,height: 500})let data = {title: {text: &#39;用户管理&#39;},tooltip:{},legend: {data: [&#39;用户&#39;]},xAxis: {data: [&#39;root&#39;,&#39;admin&#39;,&#39;user1&#39;,&#39;user2&#39;,&#39;user3&#39;]},yAxis: {},series: [{name: &#39;用户权限&#39;,type: &#39;bar&#39;,data: [10,8,5,1,3]}]}app.setOption(data)注意：容器必须具备高度和宽度（这里的容器的id为app），要么html指定，要么在初始化时指定一个</description>
+    </item>
+    
+    <item>
+      <title>简单使用Scoop包管理器</title>
+      <link>http://chenjunlinabc.github.io/posts/150/</link>
+      <pubDate>Fri, 20 May 2022 22:10:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/150/</guid>
+      <description>Scoop是windows平台下开源的命令行软件包管理器，类似于ubuntu的apt或者macOS的brew
+scoop仓库里面全部都是通过审核的绿色软件包（前提是不要乱用来路不明的scoop源）
+允许执行本地脚本权限
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+修改Scoop安装目录（用户级）
+$env:SCOOP=&amp;lsquo;D:\Software\Scoop&amp;rsquo; [Environment]::SetEnvironmentVariable(&amp;lsquo;SCOOP&amp;rsquo;, $env:SCOOP, &amp;lsquo;User&amp;rsquo;)
+修改Scoop安装目录（全局）
+$env:SCOOP_GLOBAL=&amp;lsquo;D:\Software\Scoop\Global&amp;rsquo; [Environment]::SetEnvironmentVariable(&amp;lsquo;SCOOP_GLOBAL&amp;rsquo;, $env:SCOOP_GLOBAL, &amp;lsquo;Machine&amp;rsquo;)
+目录介绍： apps：通过scoop安装的软件存储的目录
+buckets：管理软件的仓库目录（记录了哪些仓库有哪些软件）
+chache：软件安装包目录
+persit：存储用户数据，与软件分离
+shims；软链接
+安装scoop
+iwr -useb get.scoop.sh | iex
+或者
+iex (new-object net.webclient).downloadstring(&amp;lsquo;https://get.scoop.sh&amp;rsquo;)
+安装软件
+scoop install sudo
+查看环境存在的问题
+scoop checkup
+将一些scoop环境必须的软件安装一下
+搜索软件
+scoop search git
+安装软件
+scoop install git
+查看软件信息
+scoop info git
+查看已经安装的软件
+scoop list
+卸载软件（-p删除配置）
+scoop uninstall git -p
+更新软件
+scoop update git
+更新全部已安装软件
+scoop update *</description>
+    </item>
+    
+    <item>
+      <title>简单使用Corepack-包管理器的管理器</title>
+      <link>http://chenjunlinabc.github.io/posts/149/</link>
+      <pubDate>Fri, 13 May 2022 00:09:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/149/</guid>
+      <description>Corepack（管理yarn和pnpm的包管理器的管理器）
+corepack是nodejs官方内置的CLI，nodejs16.9.0版本及其以上版本默认携带corepack一起分发（不需要额外安装corepack，16.9.0版本之下的需要手动安装或者更新nodejs版本）
+corepack的特点就是不需要安装yarn和pnpm（yarn和pnpm将通过corepack来进行管理安装以及使用），而且还可以限制项目使用特定的包管理器版本（避免一个项目用多个包管理器，而且包管理器的版本还不同的情况）
+手动安装
+npm install -g corepack如果全局已经安装了yarn或者pnpm的话，需要先卸载
+npm uninstall -g yarn pnpm启用corepack
+corepack enable限制包管理器版本
+package.json
+&amp;quot;packageManager&amp;quot;: &amp;quot;yarn@1.22.19&amp;quot;表示该项目只能使用yarn包管理器的1.22.19版本，使用其他版本或者使用pnpm包管理器的话，会报错，例如Usage Error: This project is configured to use yarn
+默认无法限制npm，需要通过corepack enable npm来手动限制，移除限制通过corepack disable npm来处理
+修改packageManager的值后，yarn install，会自动安装指定版本
+安装包管理器（会根据package.json下的packageManager来下载指定版本的包管理器）
+yarn install指定一个新的包管理器
+corepack prepare pnpm@7.13.5 --activate使用本地包管理器（会将本地包管理器存储到一个压缩包里，方便离线使用）
+获取
+corepack prepare --all -o=D:/demo/test.tgz启动压缩包内的包
+corepack hydrate D:/demo/test.tgz或者获取完成后立刻使用
+corepack hydrate D:/demo/test.tgz --activate </description>
+    </item>
+    
     <item>
       <title>简单了解a11y无障碍</title>
-      <link>https://blog.cjlio.com/posts/144/</link>
+      <link>http://chenjunlinabc.github.io/posts/144/</link>
       <pubDate>Sat, 09 Apr 2022 13:01:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/144/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/144/</guid>
       <description>a11y全称为Accessibility，A到y之间有11个字母，因此叫a11y，Accessibility中文翻译为可访问性，也就是无障碍
 让网站具备无障碍性，可以让一些视觉障碍人士访问该网站，而且就算是其他人士使用，也会因a11y而受益（不因网络慢，css文件丢失而无法正常浏览页面内容）
 在mdn上有句话：The Web is fundamentally designed to work for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. When the Web meets this goal, it is accessible to people with a diverse range of hearing, movement, sight, and cognitive ability.
@@ -33,11 +115,103 @@ mdn对于障碍人士可访问性优化提供了建议：
     </item>
     
     <item>
+      <title>browserslist的简单配置</title>
+      <link>http://chenjunlinabc.github.io/posts/140/</link>
+      <pubDate>Sat, 12 Mar 2022 10:00:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/140/</guid>
+      <description>browserslist是查询浏览器列表的工具，browserslisp的配置可写在package.json中，也可以单独写在.browserslistrc配置⽂件中
+browserslist的配置文件会被Autoprefixer，Babel，postcss-preset-env，eslint-plugin-compat，stylelint-no-unsupported-browser-features，postcss-normalize，obsolete-webpack-plugin工具读取，并且对配置的目标浏览器做适配工作
+npx browserslist可查看根据条件输出的浏览器列表
+查看全球用户份额大于0.2%的浏览器
+npx browserslist &amp;ldquo;&amp;gt; 0.2%&amp;rdquo;
+查询Chrome最新1个版本
+npx browserslist &amp;ldquo;last 1 Chrome versions&amp;rdquo;
+查看browserslist的默认配置
+npx browserslist &amp;ldquo;defaults&amp;rdquo;
+browserslist的默认配置为&amp;gt; 0.5% and last 2 versions adn Firefox ESR and not dead
+not dead的意思是不输出官方不再维护的浏览器（例如ie10），dead是不维护，not是不输出
+and就是和，or是或者
+browserslist的配置
+package.json（browserslist官方推荐用这个）
+&amp;quot;browserslist&amp;quot;: [&#39;&amp;gt; 0.2%&#39;,&#39;last 1 Chrome versions&#39;&#39;not dead&#39;]或者写成
+&amp;quot;browserslist&amp;quot;: [&#39;&amp;gt; 0.2% and last 1 Chrome versions and not dead&#39;,].browserslistrc
+&amp;gt; 0.2% and last 1 Chrome versions and not deadbrowserslist数据的优先级：当前项目的package.</description>
+    </item>
+    
+    <item>
+      <title>简单使用Express-Web应用框架</title>
+      <link>http://chenjunlinabc.github.io/posts/138/</link>
+      <pubDate>Mon, 28 Feb 2022 18:04:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/138/</guid>
+      <description>Express是基于nodejs的web应用框架（同时也是node的第三库），同时也是很多web应用框架的底层库
+安装
+npm install express &amp;ndash;save
+或者安装express-generator脚手架
+npm install -g express-generator
+脚手架：
+初始化项目（demo是项目名）
+express demo
+安装依赖
+npm install
+运行
+npm start
+如果不使用脚手架（main.js）
+const express = require(&amp;quot;express&amp;quot;)const app = express()app.get(&#39;/&#39;,function(req,res){ res.end(&amp;quot;hallo world!&amp;quot;)})app.listen(3000)运行
+node main.js
+或者（监视nodejs应用中的任何更改并自动重启服务）
+nodemon main.js
+访问localhost:3000
+静态文件管理（必须通过/src才能访问src文件夹的静态文件）
+app.use(&amp;rsquo;/src&amp;rsquo;,express.static(&amp;lsquo;src&amp;rsquo;))
+解决跨域问题（依赖于cors模块）
+app.use(require(&amp;lsquo;cors&amp;rsquo;)())
+Express连接MongoDB（mongoose）
+npm install mongoose
+const mongoose = require(&#39;mongoose&#39;)mongoose.connect(&#39;mongodb://localhost:27014/test&#39;,{useNewUrlParser: true})const testdb = mongoose.model(&#39;testdb&#39;,new mongoose.Schema({_id: Number,title: String}))/*testdb.inserMany([{_id: 1, title: &amp;quot;abc&amp;quot;},{_id: 2, title: &amp;quot;xyz&amp;quot;}{_id: 3, title: &amp;quot;abcxyz&amp;quot;}])*/app.</description>
+    </item>
+    
+    <item>
+      <title>简单使用Hugo搭建网站</title>
+      <link>http://chenjunlinabc.github.io/posts/137/</link>
+      <pubDate>Tue, 22 Feb 2022 05:19:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/137/</guid>
+      <description>Hugo是基于Go语言开发的静态网站生成器，特点就是快
+安装
+二进制文件安装（由官方编译完成的二进制文件来安装，推荐使用，用源码容易出现问题）
+https://github.com/gohugoio/hugo/releases
+源码安装
+git clone https://github.com/gohugoio/hugo.git
+cd hugo
+go install
+检查是否安装完成 hugo -v，如果需要支持SASS/SCSS，请添加&amp;ndash;tags extended参数，不过在这之前需要CGO的依赖（或者使用hugo_extended版本）
+如果没安装CGO，请先安装CGO，这里使用的是mingw64，CGO_ENABLED环境变量为1
+生成站点
+hugo new site ./www
+创建文章（默认自动生成md文件到content文件夹中，可选择目录）
+hugo new post/hallo.md
+如果没有显示文章的话，请将文章的draft字段改为false，因为这个是草稿，草稿是不会显示在页面上的
+安装主题
+git clone https://github.com/miiiku/hugo-theme-kagome.git ./themes/kagome
+修改config.toml文件
+baseURL = &amp;lsquo;https://blog.cjlio.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
+启动Hugo服务器
+hugo server
+访问http://localhost:1313
+如果报错，you need the extended version to build SCSS/SASS的话，请使用extended版本
+部署到github pages
+hugo &amp;ndash;baseUrl=&amp;ldquo;http://chenjunlinabc.github.io/&amp;quot;
+如果该命令执行成功，会将静态页面生成到public文件夹中，只需要push该文件夹到github上就好了</description>
+    </item>
+    
+    <item>
       <title>简单了解RESTful设计规范</title>
-      <link>https://blog.cjlio.com/posts/136/</link>
+      <link>http://chenjunlinabc.github.io/posts/136/</link>
       <pubDate>Wed, 16 Feb 2022 21:50:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/136/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/136/</guid>
       <description>RESTful是指满足REST的约束条件和原则的应用或者设计，REST全称Representational State Transfer（表现层状态转移），REST出现在2000年Roy Fielding的博士论文中（Roy Fielding是HTTP规范的主要编写者之一），RESTful是目前最流行的API设计规范
 资源(Resources)：REST是基于资源的，不同的资源使用不同且唯一的URI(统一资源标识符（Uniform Resource Identifier），URI格式例如：/img/hallo.jpg，可表示一个资源的路径和资源名称，URI实质上就是URL加URN)表示，获取资源通过访问URI得到，这个资源可以是任何东西（例如txt，exe，iso，mp3，mp4等等）
 表示层(Representation)：表示层指是将资源具体内容以某种方式展现出来的，例如hallo.mp3，那么就会用mp3的格式来展现这个文件的内容
@@ -57,11 +231,51 @@ HTTP请求方式（不同的操作使用不同的请求方式，例如获取资�
     </item>
     
     <item>
+      <title>beego应用框架的简单使用</title>
+      <link>http://chenjunlinabc.github.io/posts/134/</link>
+      <pubDate>Sat, 12 Feb 2022 16:50:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/134/</guid>
+      <description>beego是一个基于go语言开发的http框架，beego可用于开发web，api，后端服务等等应用，beego架构为mvc模型，支持RESTful api规范设计，支持热更新
+安装
+go get github.com/beego/beego
+go get github.com/beego/bee
+检查是否安装完成
+bee version
+beego项目可使用bee指令来创建和管理
+创建第一个web应用
+bee new hallo
+beego是基于mvc模型的，因此其构建出来的项目文件也是标准mvc模型文件结构，其中main.go是入口文件
+执行go mod tidy，生成go.sum
+启动项目（bee run指令会自动编译部署）
+bee run
+访问http://127.0.0.1:8080/
+其他常用beeg指令
+创建api应用
+bee api apitest
+打包应用命令（将项目打包压缩）
+bee pack
+自动生成代码
+bee generate
+controller控制器
+简单接收一下get请求的参数
+controllers/default.go，在func (c *MainController) Get() 函数中修改
+name := c.GetString(&amp;quot;name&amp;quot;)c.Data[&amp;quot;Website&amp;quot;] = name访问http://127.0.0.1:8080/?name=hallo，views\index.tpl的模板中的{{.Website}}被设置为hallo
+在controllers/default.go看到，其定义了一个MainController结构体，该结构体继承了beego.Controller的全部方法（其中方法包括Get，Post等等方法）
+Model模型
+在bee new中并没有Model实例演示，但是bee api有，而且controller控制器可完成一些简单逻辑，只有当逻辑需要复用时才抽象成Model模型
+View视图
+在controllers/default.go看到c.TplName = &amp;ldquo;index.tpl&amp;rdquo;，这个语句就是设置模板文件，该模板支持tpl和html文件，beego使用了golang默认的模板引擎
+在views/index.tpl中可以看到这个
+&amp;lt;div class=&amp;quot;author&amp;quot;&amp;gt;Official website:&amp;lt;a href=&amp;quot;http://{{.Website}}&amp;quot;&amp;gt;{{.Website}}&amp;lt;/a&amp;gt; /Contact me:&amp;lt;a class=&amp;quot;email&amp;quot; href=&amp;quot;mailto:{{.</description>
+    </item>
+    
+    <item>
       <title>简单使用ESbuild打包工具</title>
-      <link>https://blog.cjlio.com/posts/132/</link>
+      <link>http://chenjunlinabc.github.io/posts/132/</link>
       <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/132/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/132/</guid>
       <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包，支持TypeScript和jsx
 安装
 npm install esbuild
@@ -73,16 +287,57 @@ yarn add esbuild
 &amp;ldquo;build&amp;rdquo;: &amp;ldquo;esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle&amp;rdquo;
 npm run build
 例子（app.jsx）
-import React from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; const App = () =&amp;gt; { return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; ) } ReactDOM.render( &amp;lt;App /&amp;gt;, document.getElementById(&amp;quot;app&amp;quot;) ) index.html
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 我本地打包只花64ms就打包好了</description>
+import React from &#39;react&#39;import ReactDOM from &#39;react-dom&#39;const App = () =&amp;gt; {return (&amp;lt;div&amp;gt;&amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;)}ReactDOM.render(&amp;lt;App /&amp;gt;,document.getElementById(&amp;quot;app&amp;quot;))index.html
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;我本地打包只花64ms就打包好了</description>
+    </item>
+    
+    <item>
+      <title>简单使用GitHub Actions来实现CI/CD</title>
+      <link>http://chenjunlinabc.github.io/posts/131/</link>
+      <pubDate>Tue, 01 Feb 2022 18:00:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/131/</guid>
+      <description>CI：持续集成 (Continuous Integration) CD：持续交付 (Continuous Delivery) CD：持续部署 (Continuous Deployment)
+GitHub Actions是GitHub提供的持续集成服务
+GitHub Actions官方文档：https://docs.github.com/en/actions
+workflow：工作流程，指一次持续集成的流程，由一个job或者多个job组成 Events：事件，触发流程的钩子（在github中事件为检测仓库特定活动的钩子，例如pull，当事件被触发则自动执行工作流程） Job：任务，任务是工作流程的主体 Steps：步骤，每个Job可以包含一个或多个Step Actions: 行为，每个Step包含一个或多个Action Runners: 执行环境，工作流程运行时的服务端，每一个执行环境可以运行一个任务
+workflow工作流程通过编写workflow文件来描述，workflow文件要使用YAML语言编写，github支持多个workflow（当github发现.github/workflows/目录下有.yml文件时就会执行该文件）
+在仓库的.github/workflows/目录下创建test.yml，其中要配置字段
+name：workflow名称，如果省略默认为当前workflow的文件名
+on：指定触发workflow的条件，一般为事件触发（比如说push）
+jobs：每一项任务都需要定义个job_id，job中的name为该任务的描述，needs为指定当前任务的运行顺序（依赖关系），runs-on为指定运行时需要的虚拟机环境（这个字段必须填）
+目前github支持的虚拟机操作系统有ubuntu，windows，macOS，而且github提供的虚拟机是免费使用的
+这里举个例子（github官方的）
+name: GitHub Actions Demoon: [push]jobs:Explore-GitHub-Actions:runs-on: ubuntu-lateststeps:- run: echo &amp;quot; The job was automatically triggered by a ${{ github.event_name }} event.&amp;quot;- run: echo &amp;quot; This job is now running on a ${{ runner.os }} server hosted by GitHub!</description>
+    </item>
+    
+    <item>
+      <title>简单使用TailwindCSS</title>
+      <link>http://chenjunlinabc.github.io/posts/130/</link>
+      <pubDate>Thu, 27 Jan 2022 12:00:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/130/</guid>
+      <description>TailwindCSS是一个CSS框架，我个人理解这东西就是根据class来生成css（按需），而不是像bootstrap那样，TailwindCSS是原子化的
+安装
+npm install tailwindcss
+初始化tailwind.config.js
+npx tailwindcss init
+在tailwind.config.js中content属性，表示着项目的html或者js文件
+content: [&#39;./src/**/*.{html,js}&#39;],如果没有配置content属性，会警告
+warn - The content option in your Tailwind CSS configuration is missing or empty. warn - Configure your content sources or your generated CSS will be missing styles. warn - https://tailwindcss.com/docs/content-configuration
+创建一个css文件配置tailwind三大组件（base，components.utilities）
+@tailwind base;@tailwind components;@tailwind utilities;如果使用的是webpacker或者postcss-import，不能使用@tailwind指令，需要
+@import &amp;quot;tailwindcss/base&amp;quot;;@import &amp;quot;tailwindcss/components&amp;quot;;@import &amp;quot;tailwindcss/utilities&amp;quot;;也可以将css导入到js中
+import &amp;quot;tailwindcss/tailwind.css&amp;quot;tailwind编译
+npx tailwindcss -i ./src/index.css -o ./dist/main.css</description>
     </item>
     
     <item>
       <title>简单使用vuex状态管理库</title>
-      <link>https://blog.cjlio.com/posts/123/</link>
+      <link>http://chenjunlinabc.github.io/posts/123/</link>
       <pubDate>Mon, 13 Dec 2021 06:19:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/123/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/123/</guid>
       <description>vuex是一个专门为vuejs应用程序的设计的状态管理
 集中式存储管理应用的所有组件的状态
 多组件状态共享，不同的组件改变同一个状态
@@ -97,24 +352,179 @@ import Vuex from &amp;ldquo;vuex&amp;rdquo;
 new Vuex.store()
 将vuex实例挂载在vue对象上
 index.js
-Vue.use(Vuex) const store = new Vue.Store({ state: { count: 0 } }) export default store main.js
-new Vue({ store // 将store对象添加到vue实例上 }) 可以通过this.$store.state.count获取到状态（官方推荐将获取装态的操作放到computed中）
+Vue.use(Vuex)const store = new Vuex.Store({state: {count: 0}})export default storemain.js
+new Vue({store // 将store对象添加到vue实例上})可以通过this.$store.state.count获取到状态（官方推荐将获取装态的操作放到computed中）
 使用解构获取状态： import { mapState } from &amp;lsquo;vuex&amp;rsquo; export default { mounted() { console.log(this.count) }, computed: { &amp;hellip;mapState([&amp;lsquo;count&amp;rsquo;]) } }
 Getter
-getters: { getCount(state) { return state.</description>
+getters: {getCount(state) {return state.</description>
+    </item>
+    
+    <item>
+      <title>简单了解CSRF攻击和XSS攻击</title>
+      <link>http://chenjunlinabc.github.io/posts/99/</link>
+      <pubDate>Sun, 12 Sep 2021 17:00:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/99/</guid>
+      <description>CSRF
+CSRF：跨站点请求伪造(Cross—Site Request Forgery)
+CSRF实质上就是盗用身份，来实现发送恶意请求
+在访问某个“可信”站点，生成Cookie，再打开某个恶意网站，而这个恶意网站带有CSRF攻击的脚本，然后通过引诱用户触发该脚本，就会向那个可信站点发送恶意请求
+例如：
+&amp;lt;img src =&amp;quot;http://xxx.xxx/test?xxx=666&amp;quot;&amp;gt;只要访问就会发生该恶意请求，也可以是某超链接或者按钮等等
+而解决方法就是保证请求来源自当前站点，例如Referer字段，这个字段记录来源站点的地址，通过判断Referer字段上的域名，来判断是否是当前网站自己的请求
+这个方法有个缺点就是由浏览器提供，不能保证浏览器自己有没有安全漏洞，不然还是能够伪造Referer字段，而且如果用户设置不提供Referer字段，那也会默认导致认为是CSRF攻击
+还有一个方法就是通过添加token来处理，请求地址使用一串令牌（加密），来确保是当前站点发送请求，因为哪怕是伪造请求，也不知道令牌是什么，而且还搭配XMLHttpRequest来请求，确保请求信息不被Referer字段收录
+JavaScript简单实现方法
+let referer = document.location.href;if(referer != null &amp;amp;&amp;amp; referer.startsWith(&amp;quot;https://cjlio.com&amp;quot;)){console.log(&amp;quot;验证成功!!!&amp;quot;)}else{console.log(&amp;quot;验证失败!!!&amp;quot;)}防御措施：token身份验证，页面来源验证（referer）等等
+XSS：跨站脚本攻击（Cross Site Scripting），因为避免和层叠样式表混淆，因此叫XSS
+XSS攻击原理就是在页面插入恶意脚本，当页面被访问了，那么这个恶意脚本被执行，从而达到恶意攻击用户的目的
+例如：在某个页面评论上加&amp;lt;script&amp;gt;alert(&amp;lsquo;hack&amp;rsquo;)&amp;lt;/script&amp;gt;，那么如果没有做过xss攻击防御的站点，其他用户访问到这个页面，那么就会执行该程序
+做那些标签防御，都可以闭合绕过，都是无用功，例如：通过属性值来输出
+也用通过过滤&amp;lt;script&amp;gt;标签的，但是可以通过大小写绕过（html不区分大小写）
+简单的防御方法：
+通过严格的过滤白名单来过滤，限制输入值的类型
+html实体编码转义，htmlspecialchars()或者htmlentities()
+X-XSS-Protection
+xss和csrf的区别：csrf是利用网站的自动执行的接口，依赖于用户已经登录页面（Cookie），而且xss是在页面插入js，来恶意执行js脚本的内容
+同源策略（Same-origin Policy）：只有协议，域名，端口号都相同才满足同源，否则就是跨域
+同源策略是浏览器提供的安全策略，限制某个脚本的加载范围（隔离潜在恶意脚本的安全机制）
+可以限制脚本无法读取Cookie，LocalStorage和IndexDB，无法操作dom（无法获取dom），请求不能发送等等
+跨域通信的方式：jsonp，hash，postmessage，websocket，cors
+同域可以使用ajax，cors（支持同源通信，也是支持跨域），websocket（不受同源策略限制）进行通信
+内容安全策略（Content Security Policy）：可以一定程度上免疫或者削弱XSS攻击
+内容安全策略实质上就是告诉浏览器，什么东西可以加载执行，什么东西不能加载执行，内容安全策略的实现和操作都由浏览器完成，只需要提供配置就好
+要开启CSP需要服务器返回Content-Security-Policy头部
+html也可以配置该策略，例如：
+&amp;lt;meta http-equiv=&amp;quot;Content-Security-Policy&amp;quot; content=&amp;quot;default-src &#39;self&#39;; img-src https://*;&amp;quot;&amp;gt;其中img-src对应的指定图像或者图标的有效来源
+常用的有img-src，font-src，script-src，style-src等等
+CSRF
+X-Frame-Options：DENY/SAMEORIGIN
+可以利用Cookie的SameSite属性，这个属性有3个值，分别是Strict，Lax，None，主要用的就是Strict属性值
+Strict：完全禁止第三方Cookie，只有当目前网页的url和请求目标一致才会发生Cookie
+中间人攻击可以通过开启https来进行大部分的攻击免疫（https中间人攻击还是存在的）</description>
+    </item>
+    
+    <item>
+      <title>简单使用Nginx</title>
+      <link>http://chenjunlinabc.github.io/posts/85/</link>
+      <pubDate>Wed, 18 Aug 2021 12:50:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/85/</guid>
+      <description>Nginx是目前web服务器占比第一（在https://w3techs.com 中可以看到Nginx占比33.1%）
+Nginx支持静态资源提供服务，支持高并发，热部署，反向代理，缓存，负载均衡等功能，Nginx使用BSD许可证开源（允许修改Nginx源码来重新发布一个商业用途的（例如Tengine））
+Nginx由Nginx二进制可执行文件，Nginx.conf，access.log，error.log组成
+Nginx和Nginx plus的区别：Nginx开源，免费，Nginx plus闭源，不免费
+Nginx编译安装
+Mainline version版本是提供最新的功能，Stable version版本是目前的稳定版本，Legacy versions版本是过去的版本
+下载Nginx
+wget http://nginx.org/download/nginx-1.22.0.tar.gz
+解压Nginx压缩包
+tar -xzf nginx-1.22.0.tar.gz
+其中auto目录有4个子目录（分别为cc（用于编译），lib（lib库），os（操作系统的判断），types（类型判断）），conf目录是Nginx配置目录，html目录是Nginx默认静态文件
+conf目录是Nginx配置文件目录（例如nginx.conf），src目录是Nginx源代码目录
+进入nginx目录然后进行编译
+查看编译时支持的参数
+./configure &amp;ndash;help | more
+使用默认参数编译
+./configure &amp;ndash;prefix=/home/nginx
+编译完成的中间文件存会放在objs文件夹下
+ngx_module.c是要编译进Nginx的模块，如果需要安装第三方模块需要在其修改
+make编译
+make install安装
+进入/home/nginx，可以看到已经安装完成
+安装
+编译安装
+apt install -y gcc gcc-c++ pcre pcre-devel openssl openssl-devel zlib zlib-devel
+wget http://nginx.org/download/nginx-1.22.0.tar.gz
+tar -zxvf nginx-1.18.0.tar.gz
+cd nginx-1.18.0
+make &amp;amp;&amp;amp;make install
+一键安装（不推荐）
+apt install nginx
+检查是否安装完毕
+nginx -v
+nginx配置文件nginx.conf解读，一般在/etc/nginx下
+user root; # nginx运行用户worker_processes auto; # nginx进程数，一般会设置和CPU核数一致error_log /www/wwwlogs/nginx_error.</description>
+    </item>
+    
+    <item>
+      <title>简单认识HTTP协议</title>
+      <link>http://chenjunlinabc.github.io/posts/77/</link>
+      <pubDate>Sun, 08 Aug 2021 17:02:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/77/</guid>
+      <description>HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的
+HTTP是基于TCP/IP协议来传输数据的
+访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应
+浏览器和web服务器之间通信的架构叫B/S结构（Browser Server），使用的协议是HTTP（https协议其实就是HTTP的基础上，添加了SSL
+http是一种协议，制定了客户端与服务端信息数据的传递的规则
+从传递文本，到传递图片，音频，视频
+HTTP/0.9：于1990年问世，只能用于简单文字的交换，只有GET命令 HTTP/1.0：被正式列为www传输的标准，纳入RFC1945，增加status code和header，支持多字符集，权限，缓存等功能 HTTP/1.1：在1.0的基础上加上了连接方式的规约，持久连接，pipeline，host头 HTTP/2.0：HTTP2.0更安全，性能更好，二进制传输（2之前是字符串传输）
+http协议规定了会话是由客户端发起，服务端响应的
+客户端常见请求方式有GET，POST
+OSI七层模型，http协议是最上层的应用层
+应用层，表示层，会话层，传输层，网络层，数据链路层，物理层
+数据发送是从应用层到物理层（数据封装）
+数据接收是从物理层到应用层（数据解包）
+应用层就是为终端提供服务的，例如http，ftp等等
+表示层为数据提供压缩，加密等等功能
+会话层就是通过会话标识来确定是于哪个应用在通讯
+传输层就是定义了数据传输的协议和端口
+网络层就是加工数据，为数据添加一些信息，这一层的数据叫做包
+数据链路层就是定义了在单个链路上如何传输数据，网络中每台设备都有一个唯一的网络标识（MAC地址），这一层的数据叫做帧
+物理层就是物理设备的标准
+TCP/IP五层模型：应用层，传输层，网络层，数据链路层和物理层
+路由寻址：ip，mac，dhcp服务器
+先通过ip实现跨网端通信（如果是本地则直接传输给目标机器，不是则传输给出口路由器，一直到目标路由），然后通过MAC找到目标机器，目标机器获取到数据再根据网络模型向上处理
+DNS
+DNS域名系统是一个记录IP和域名映射的，域名服务器是分布式的，全世界一共有13台根域名服务器，当域名服务器只要自己解析不了，就会交给根域名服务器处理
+解析过程：
+机器通过访问本地域名服务器（一般是本地运营商提供，默认解析服务器）查询
+本地域名服务器检查缓存，没有就是向根域名服务器的其中一台发起查询请求
+根域名服务器根据要查询的结构找到对应的顶级域名服务器（管理全部注册在上面的二级域名服务器）信息发送会本地域名服务器
+本地域名服务器向顶级域名服务器发起查询
+顶级域名服务器根据域名结构查找到对应的二级域名服务器
+反复迭代最终查找到域名和 IP 的对应关系
+如果直接设置个公共域名服务器（例如：114，8之类的）能大大提升解析速度
+DNS解析的记录类型
+A记录
+直接将域名解析为IP
+CNAME记录
+给域名起个cname别名，例如访问了xxx会转发到aaa的域名上
+NS记录
+域名解析服务器记录，一般用来指定不同子域名对应到不同的解析服务器
+MX 记录
+电子邮箱服务，将指向邮件服务器地址
+CDN加速过程：
+用户访问域名地址
+因为域名被cdn接管了，域名解析只能获取到CNAME
+CDN通过CNAME来将地址代理到cdn服务器上，而不是源站
+通过CNAME获取到最近的cdn服务器的Ip地址，然后访问到cdn缓存服务器
+cdn缓存服务器再根据策略来判断是否存在该资源缓存，是否要向源站请求数据，再将数据返回给用户
+HTTPS协议
+通过http通信，经过SSL/TLS来建立安全信道，加密数据，http默认端口为80，https为443
+https就是在http协议基础上加了ssl协议
+一般服务端需要通过ssl证书来证明自己身份，ssl证书不可逆向，不可伪造，一旦发现伪造或者ssl证书不正确，浏览器一般都会拦截提示
+某些需要极其安全的需要客户端也是要证明身份，例如银行网站
+SSL协议：保证数据发送到正确目标，数据加密防止数据中途被拦截获取，保证数据完整性，数据不被串改
+HTTP方法：定义了对资源的操作，例如GET，POST等等
+前端中的HTTP
+先进行DNS解析-建立TCP连接（3次握手）-发送HTTP请求获取相关内容-浏览器构建DOM树和CSS树，然后生成渲染树。这个一个渐进式过程，浏览器引擎会力求最快将内容呈现给用户-关闭TCP连接（4次握手）
+http常见状态码
+1xx 信息 2xx 成功 3xx 重定向 4xx 客户端错误 5xx 服务器错误</description>
     </item>
     
     <item>
       <title>简单利用backdrop-filter属性实现效果</title>
-      <link>https://blog.cjlio.com/posts/65/</link>
+      <link>http://chenjunlinabc.github.io/posts/65/</link>
       <pubDate>Fri, 06 Aug 2021 10:18:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/65/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/65/</guid>
       <description>backdrop-filter是css原生的属性
 backdrop-filter的一些方法（用法和filter一样）
 blur：模糊 brightness：亮度 contrast：对比度 invert：反相 opacity：透明度 saturate：饱和度 drop-shadow：投影 grayscale：灰度 hue-rotate：色调变化 sepia：褐色
 简单实现一个毛玻璃背景效果，例如：
-&amp;lt;style&amp;gt; *{ margin: 0; padding: 0; } #app{ width: 100%; height: 50rem; background-image: url(&amp;quot;1.jpg&amp;quot;); } #test{ position: absolute; top: 0; left: 0; right: 0; bottom: 0; backdrop-filter: blur(10px); } .text{ padding-top: 100px; text-align: center; } &amp;lt;/style&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;div id=&amp;quot;test&amp;quot;&amp;gt; &amp;lt;p class=&amp;quot;text&amp;quot;&amp;gt; hallo word &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; backdrop-filter和filter区别：
+&amp;lt;style&amp;gt;*{margin: 0;padding: 0;}#app{width: 100%;height: 50rem;background-image: url(&amp;quot;1.jpg&amp;quot;);}#test{position: absolute;top: 0;left: 0;right: 0;bottom: 0;backdrop-filter: blur(10px);}.text{padding-top: 100px;text-align: center;}&amp;lt;/style&amp;gt;&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;div id=&amp;quot;test&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;text&amp;quot;&amp;gt;hallo word&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;backdrop-filter和filter区别：
 filter是作用于当前元素（效果体现在本身，而不是背景），而且后代也会继承该属性
 backdrop-filter是作用于当前元素背后的所有元素，不会影响自己
 backdrop-filter兼容性没有filter优秀（目前低版本浏览器和IE，火狐都不支持该属性）</description>
@@ -122,25 +532,25 @@ backdrop-filter兼容性没有filter优秀（目前低版本浏览器和IE，火
     
     <item>
       <title>JavaScript知识扩展</title>
-      <link>https://blog.cjlio.com/posts/61/</link>
+      <link>http://chenjunlinabc.github.io/posts/61/</link>
       <pubDate>Sun, 18 Jul 2021 22:35:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/61/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/61/</guid>
       <description>函数被调用时，浏览器会传递两个参数，this和arguments
 this就是函数的上下文对象，而arguments是一个数组对象（也就是可以通过索引来操作数据），函数调用时传递的参数会在arguments中保存
 callee属性对应着当前的函数
 例如：
-function abc(){ console.log(arguments.length); console.log(arguments[0]); console.log(arguments.callee); console.log(this) } abc(&#39;hallo&#39;); BOM对象 (Browser Object Model) 是指浏览器对象模型
+function abc(){console.log(arguments.length);console.log(arguments[0]);console.log(arguments.callee);console.log(this)}abc(&#39;hallo&#39;);BOM对象 (Browser Object Model) 是指浏览器对象模型
 该对象提供了浏览器行为和浏览器属性方法
 windows表示整个浏览器的窗口，同时也是JavaScript最顶层的对象，其他bom对象都是其的属性
 navigator包含了当前浏览器的全部信息
-console.log(window.navigator) 可以看到输出了很多属性，如userAgent，language等等
+console.log(window.navigator)可以看到输出了很多属性，如userAgent，language等等
 location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
-console.log(window.location) const urlData = &amp;quot;https://cjlio.com/; window.location.href = urlData; 这个也可以实现跳转
-window.location.assign(&amp;quot;https://cjlio.com&amp;quot;) 这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
-window.location.replace(&amp;quot;https://cjlio.com&amp;quot;) reload方法可以重载页面，加上true参数将强制更新
-window.location.reload(true) history表示浏览器的历史记录
-console.log(window.history) length表示本次访问网站的数量
+console.log(window.location)const urlData = &amp;quot;https://cjlio.com/;window.location.href = urlData;这个也可以实现跳转
+window.location.assign(&amp;quot;https://cjlio.com&amp;quot;)这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
+window.location.replace(&amp;quot;https://cjlio.com&amp;quot;)reload方法可以重载页面，加上true参数将强制更新
+window.location.reload(true)history表示浏览器的历史记录
+console.log(window.history)length表示本次访问网站的数量
 同时也提供了几个方法
 back()返回上个页面
 window.history.back()
@@ -150,7 +560,7 @@ window.history.forward()
 go()，前进或者后退指定次数，正数为前进，负数为后退
 window.history.go(-1)
 screen代表用户的屏幕的信息, 获取显示器的相关信息
-console.log(window.screen) call 和 apply
+console.log(window.screen)call 和 apply
 addEventListen()绑定事件函数
 removeEventListen()移除事件函数
 鼠标按下时onmousedown
@@ -166,10 +576,10 @@ document.execCommand(&amp;lsquo;paste&amp;rsquo;) // 粘贴</description>
     
     <item>
       <title>简单了解MVC，MVP和MVVM之间的不同与联系</title>
-      <link>https://blog.cjlio.com/posts/56/</link>
+      <link>http://chenjunlinabc.github.io/posts/56/</link>
       <pubDate>Fri, 09 Jul 2021 22:50:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/56/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/56/</guid>
       <description>MVC（Model-View-Controller）分别为View（视图，用户界面），Model（模型，数据保存），Controller（控制器，逻辑）
 视图层发指令（Dom事件）给控制器，控制器完成逻辑处理，请求模型改变状态，模型将最新的数据发送给视图，得到反馈，各个之间通信是单向的
 也可以Controller接受指令，要求模型改变状态，模型将最新的数据发送给视图
@@ -181,10 +591,10 @@ MVVM（Model-View-ViewModel）实质上就是MVC的改进版，和MVP模式基�
     
     <item>
       <title>css的一些知识扩展</title>
-      <link>https://blog.cjlio.com/posts/44/</link>
+      <link>http://chenjunlinabc.github.io/posts/44/</link>
       <pubDate>Wed, 23 Jun 2021 09:16:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/44/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/44/</guid>
       <description>box-sizing 盒类型
 该属性是告诉浏览器是以什么盒模型展示的
 IE用的是border-box
@@ -222,6 +632,206 @@ all为横跨所有列
 media 媒体查询
 媒体查询常用于响应式布局，为不同屏幕设置不同的样式
 @media(max-width:768px){} // 当屏幕最大宽度只有768px时应用其下的设置</description>
+    </item>
+    
+    <item>
+      <title>Yarn包管理工具的简单使用</title>
+      <link>http://chenjunlinabc.github.io/posts/38/</link>
+      <pubDate>Wed, 16 Jun 2021 22:55:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/38/</guid>
+      <description>Yarn 是一款新的 JavaScript 包管理工具，和npm对比就是速度快，保持一致性，安全
+速度快是因为yarn是并行执行任务，而不是npm那样排队列执行package，而且yarn还可以提供缓存，如果安装过一次package，使用yarn再次安装就会从缓存中获取，而不用再下载一次
+保持一致性：yarn提供了一个lockfile文件来记录要安装的package的版本号，锁定其版本不会出现错误，会生成yarn.lock文件来记录其package的版本号，就连依赖包的版本号都会被记录
+安全：yarn会在每个package被执行时校验其完整性
+实质上yarn本身还是从npm中获取的CLI客户端，还是一样可以获取和发布包
+windows不允许禁止运行脚本解决方法，管理员打开powershell
+set-ExecutionPolicy RemoteSigned
+安装yarn（全局）
+npm install yarn -g
+查看全部yarn命令
+yarn help
+检查是否安装成功以及查看版本号
+yarn &amp;ndash;version
+同样也是可以选择升级到yarn2
+yarn版本在v1.22之上 yarn set version berry
+yarn版本在v1.22之下 yarn policies set-version berry
+初始化
+yarn init
+安装一个包（安装package.json里的包依赖，并且将依赖树写入到yarn.lock）
+yarn install
+或者
+yarn
+添加一个包到依赖中
+yarn add 包名@版本号
+如果没有写明版本号，默认安装的是最新的，支持一次性填加多个包，多个包用空格分开
+添加一个包到不同的依赖类别中
+开发环境 yarn add 包名 &amp;ndash;dev
+生产环境 yarn add 包名 &amp;ndash;peer
+全局依赖环境 yarn global add 包名
+更新包到指定版本
+yarn upgrade 包名@版本号
+更新包到最新版本
+yarn upgrade &amp;ndash;latest 包名</description>
+    </item>
+    
+    <item>
+      <title>wsl2-windows子系统简单配置</title>
+      <link>http://chenjunlinabc.github.io/posts/35/</link>
+      <pubDate>Wed, 16 Jun 2021 17:43:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/35/</guid>
+      <description>wsl全称Windows Subsystem for Linux
+打开启动或关闭windows功能，选择虚拟机平台，安装完毕功能，重启
+打开Windows Power Shell，输入
+启用 wsl
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+启用虚拟机功能（请务必确保已经开启了虚拟机平台功能）
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+下载并且安装Linux内核更新包 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+wsl.exe &amp;ndash;install或者wsl -l -v检查是否安装正常
+切换wsl2为默认
+wsl &amp;ndash;set-default-version 2
+Linux子系统切换为wsl
+wsl &amp;ndash;set-version Ubuntu 2 // Ubuntu为子系统名，2为wsl版本，可以输入wsl -l -v查看
+报错 Installing, this may take a few minutes&amp;hellip;
+解决方法：打开启动或关闭windows功能，选择Linux的Windows子系统，就好了
+开启wsl2不需要开启预览版本！！！
+推荐个Visual Studio Code插件
+Remote - WSL
+可以免密登录Linux子系统，操作Linux子系统里面的数据
+重启wsl
+win+r+services.msc
+找到Lxssmanager服务，重新启动
+安装运行Linux系统所需要的功能（默认情况下安装ubuntu）
+wsl &amp;ndash;install
+查看可用的Linux发行版
+wsl &amp;ndash;list &amp;ndash;online
+或者</description>
+    </item>
+    
+    <item>
+      <title>Python的一些神器的简单用法</title>
+      <link>http://chenjunlinabc.github.io/posts/27/</link>
+      <pubDate>Wed, 16 Jun 2021 14:39:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/27/</guid>
+      <description>Virtualenv是一个能创建隔绝的独立的Python虚拟环境工具。它能够建立多个相互独立，互不影响的Python工作环境
+用来创建一套独立于系统Python环境的虚拟环境，在虚拟环境下，使用pip安装的依赖都会安装到当前的虚拟环境中，对系统的python环境没有影响
+当开发多个Python程序时当，程序1要使用3.6环境，但是程序2要使用3.8环境时，Virtualenv可以完美解决这个问题
+Windows pip install virtualenvwrapper-win
+使用pip安装Virtualenv
+pip3 install virtualenv
+然后创建一个Virtualenv虚拟环境
+virtualenv webpy #webpy为虚拟环境目录名，目录名自定义
+virtualenv -p python环境路径 虚拟环境名 #创建指定Python环境路径的虚拟环境
+virtualenv &amp;ndash;no-site-packages 虚拟环境名 #创建一个干净的Python虚拟环境，系统Python环境的所有第三方包不会复制过来
+virtualenv &amp;ndash;no-site-packages &amp;ndash;python=版本名 虚拟环境名 #创建一个指定python版本的虚拟环境
+workon # 输出所有虚拟环境名 Windows
+workon 虚拟环境名 # 进入虚拟环境 Windows
+source 文件夹路径 # 激活当前virtualenv并进入虚拟环境
+或者进入虚拟环境目录的bin目录，输入source activate
+Windows是在虚拟环境目录下的Scripts目录，输入activate
+deactivate # 退出当前环境
+在虚拟环境下，使用pip安装的所有第三方包都会安装到当前的虚拟环境中，不会对系统的Python环境进行&amp;quot;污染&amp;quot;
+想要删除某一个虚拟环境时，只需要将虚拟环境的目录删除
+pip使用国内源
+清华：https://pypi.tuna.tsinghua.edu.cn/simple 豆瓣：http://pypi.douban.com/simple/ 中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+临时使用 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas
+linux下
+配置永久使用
+cd ~ # 进入用户目录 mkdir .pip # 新建一个隐藏文件夹 touch pip.</description>
+    </item>
+    
+    <item>
+      <title>Docker容器的简单使用</title>
+      <link>http://chenjunlinabc.github.io/posts/18/</link>
+      <pubDate>Wed, 16 Jun 2021 09:34:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/18/</guid>
+      <description>docker是一个应用容器，可以将应用以及该应用的依赖打包到一个可以移植的容器中，应用在这个容器中运行
+可以进行转移，修改，版本管理等操作，不用担心应用转移到别的服务器会出现依赖问题
+将容器文件转移到别的服务器上，不会影响到容器，一次配置，可以在多个服务器上使用相同的环境
+在以前，根本不可能实现或者保障一个服务器是运行多个应用，直到虚拟机的出现，虚拟机可以让空闲的服务器部署新的应用，但是虚拟机依赖于操作系统，操作系统又会占用CPU和内存，以及存储，而且虚拟机的移植性差启动缓慢，直到容器的出现
+运行在相同的宿主机的容器是共享一个操作系统的，而且容器具备启动快，移植性强的特点（不用担心本地运行好好的，到生产环境就出一堆问题）
+docker的多数项目和工具是使用golang编写的
+Docker容器技术高度依赖于Linux内核，不管是在windwos或者Mac OS上都不是真正的容器化（只有在Linux系统上才能实现无虚拟化的真正容器化），都是在虚拟化Linux之后，在Linux虚拟机的基础上实现的
+Docker三大件：镜像，容器，仓库
+镜像被用来创建容器（而且镜像文件是复用，只可读的）
+容器是镜像文件的实例，容器与容器之间是隔离的，容器可被启动，查看，暂停，退出，重启，删除
+仓库是集中存储镜像文件的地方，Docker官方仓库：https://hub.docker.com/
+Docker官网文档：https://docs.docker.com/
+Docker是基于C/S架构（Client-Server）的系统，Docker的守护进程（Docker Daemon）运行在服务端上，客户端通过Docker Client和守护进程建立通信，守护进程可以接收客户端发送的指令并且可以管理服务端的容器
+Docker Engine（引擎）会执行客户端发送的指令，来执行Docker内部的工作，每一项工作以Job的形式存在（一个job表示一个工作任务）
+如果job（工作任务）需要镜像时，会从Docker Registry中下载获取镜像（如果本地存在则从本地获取，如果没有再从远程仓库获取）
+当Docker容器需要创建网络环境时，通过Network driver创建并且配置Docker容器网络环境（通过网桥来暴露对外的端口和ip）
+如果需要限制Docker容器运行资源或者执行用户指令时，通过Exec driver完成
+网络的配置以及Exec driver的实现都是通过Libcontainer来实现的，Libcontainer是用来管理容器的包，该包基于go语言开发的，像创建容器，删除容器等等都可通过Libcontainer完成
+安装docker（环境为ubuntu20.04）
+如果之前安装过docker，需要先卸载
+sudo apt remove docker docker-engine docker.io containerd runc
+docker官方推荐使用docker的存储库来安装或者升级，而不是通过脚本或者通过下载deb软件的方式来安装
+安装依赖
+sudo apt install ca-certificates curl gnupg lsb-release
+配置docker官方的GPG密钥
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+配置稳定Docker CE源
+sudo add-apt-repository &amp;ldquo;deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(lsb_release -cs) stable&amp;rdquo;
+安装docker引擎
+sudo apt install docker-ce docker-ce-cli containerd.</description>
+    </item>
+    
+    <item>
+      <title>linux系统的日常使用</title>
+      <link>http://chenjunlinabc.github.io/posts/8/</link>
+      <pubDate>Wed, 16 Jun 2021 09:12:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/8/</guid>
+      <description>linux发行版有很多，这里使用的是Ubuntu
+个人喜欢使用无界面版本（ubuntu-20.04-live-server-amd64）
+有关于树莓派的看这个
+修改为国内源
+nano /etc/apt/sources.list
+替换内容为
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse# 预发布软件源，不建议启用# deb https://mirrors.</description>
+    </item>
+    
+    <item>
+      <title>简单使用Vim编辑器</title>
+      <link>http://chenjunlinabc.github.io/posts/3/</link>
+      <pubDate>Sun, 28 Mar 2021 12:00:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/3/</guid>
+      <description>Vim是从vi发展出来的一个文本编辑器。提供代码补完、编译及错误跳转等功能
+vim的五种模式（正常模式，插入模式，命令行模式，可视化模式，替换模式）
+启动vim默认就是在正常模式中，在该模式中按i进入插入模式，按:进入命令行模式，在插入模式或者命令行模式中按Esc进入普通模式
+普通模式不能输入文本，只能进行现有内容的处理（移动复制删除等等）
+正常模式：Esc或Ctrl+[进入 插入模式：按i键进入（a和o都可以） 命令行模式：在正常模式下按:进入 可视化模式：按v或者V，ctrl-V（或者ctrl-Q）进入 替换模式：在正常模式下按r进入
+v 进入字符可视化模式 V 进入行可视化模式 Ctrl+v 进入块可视化模式
+可视模式是用来选取一段文本，光标移到段首，在普通模式下按 v 进入可视模式，然后把光标移到段末
+移动光标
+h：光标左移 j：光标下移 k：光标上移 l：光标右移
+^或者0：移动到行首（命令行模式） $：移动到行尾（命令行模式）,可搭配数字来组合，例如2$就是2表示要移动的行数
+移动光标也可以搭配数字来进行组合，例如：
+3+h：光标左移3个字符
+vim hallo.js
+在vim界面新建文件
+:open hallo.js
+在vim界面打开一个新窗口新建文件
+:split file
+切换到上一个文件
+:bp
+切换到下一个文件
+:bn
+查看vim文件列表
+:args
+打开远程文件
+:e \hallo abc.txt
+/text：按n健查找下一个，按N健查找上一个
+?text：按n健查找上一个，按N健查找下一个
+:wq：保存并且退出，加!表示强制
+:q!：强制退出并且放弃所有更改
+:e!：放弃修改，并且重新打开文件</description>
     </item>
     
   </channel>

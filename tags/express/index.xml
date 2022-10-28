@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Express on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/express/</link>
+    <link>http://chenjunlinabc.github.io/tags/express/</link>
     <description>Recent content in Express on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 28 Feb 2022 18:04:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/express/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Feb 2022 18:04:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/express/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Express-Web应用框架</title>
-      <link>https://blog.cjlio.com/posts/138/</link>
+      <link>http://chenjunlinabc.github.io/posts/138/</link>
       <pubDate>Mon, 28 Feb 2022 18:04:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/138/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/138/</guid>
       <description>Express是基于nodejs的web应用框架（同时也是node的第三库），同时也是很多web应用框架的底层库
 安装
 npm install express &amp;ndash;save
@@ -30,7 +30,7 @@ npm install
 运行
 npm start
 如果不使用脚手架（main.js）
-const express = require(&amp;quot;express&amp;quot;) const app = express() app.get(&#39;/&#39;,function(req,res){ res.end(&amp;quot;hallo world!&amp;quot;) }) app.listen(3000) 运行
+const express = require(&amp;quot;express&amp;quot;)const app = express()app.get(&#39;/&#39;,function(req,res){ res.end(&amp;quot;hallo world!&amp;quot;)})app.listen(3000)运行
 node main.js
 或者（监视nodejs应用中的任何更改并自动重启服务）
 nodemon main.js
@@ -41,7 +41,7 @@ app.use(&amp;rsquo;/src&amp;rsquo;,express.static(&amp;lsquo;src&amp;rsquo;))
 app.use(require(&amp;lsquo;cors&amp;rsquo;)())
 Express连接MongoDB（mongoose）
 npm install mongoose
-const mongoose = require(&#39;mongoose&#39;) mongoose.connect(&#39;mongodb://localhost:27014/test&#39;,{useNewUrlParser: true}) const testdb = mongoose.model(&#39;testdb&#39;,new mongoose.Schema({ _id: Number, title: String })) /*testdb.inserMany([ {_id: 1, title: &amp;quot;abc&amp;quot;}, {_id: 2, title: &amp;quot;xyz&amp;quot;} {_id: 3, title: &amp;quot;abcxyz&amp;quot;} ])*/ app.</description>
+const mongoose = require(&#39;mongoose&#39;)mongoose.connect(&#39;mongodb://localhost:27014/test&#39;,{useNewUrlParser: true})const testdb = mongoose.model(&#39;testdb&#39;,new mongoose.Schema({_id: Number,title: String}))/*testdb.inserMany([{_id: 1, title: &amp;quot;abc&amp;quot;},{_id: 2, title: &amp;quot;xyz&amp;quot;}{_id: 3, title: &amp;quot;abcxyz&amp;quot;}])*/app.</description>
     </item>
     
   </channel>

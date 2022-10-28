@@ -1,4 +1,4 @@
-<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>JavaScript | 小陈的个人博客</title><meta name=keywords content><meta name=description content="小陈的个人博客"><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/tags/javascript/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css rel="preload stylesheet" as=style><link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://blog.cjlio.com/tags/javascript/index.xml><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="JavaScript"><meta property="og:description" content="小陈的个人博客"><meta property="og:type" content="website"><meta property="og:url" content="https://blog.cjlio.com/tags/javascript/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="JavaScript"><meta name=twitter:description content="小陈的个人博客"></head><body class=list id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/tags/>Tags</a></div><h1>JavaScript</h1></header><article class="post-entry tag-entry"><header class=entry-header><h2>简单使用ESbuild打包工具</h2></header><div class=entry-content><p>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包，支持TypeScript和jsx
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>JavaScript | 小陈的个人博客</title><meta name=keywords content><meta name=description content="小陈的个人博客"><meta name=author content="Me"><link rel=canonical href=http://chenjunlinabc.github.io/tags/javascript/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style><link rel=icon href=http://chenjunlinabc.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://chenjunlinabc.github.io/favicon.ico><link rel=icon type=image/png sizes=32x32 href=http://chenjunlinabc.github.io/favicon.ico><link rel=apple-touch-icon href=http://chenjunlinabc.github.io/favicon.ico><link rel=mask-icon href=http://chenjunlinabc.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=http://chenjunlinabc.github.io/tags/javascript/index.xml><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="JavaScript"><meta property="og:description" content="小陈的个人博客"><meta property="og:type" content="website"><meta property="og:url" content="http://chenjunlinabc.github.io/tags/javascript/"><meta property="og:image" content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="JavaScript"><meta name=twitter:description content="小陈的个人博客"></head><body class=list id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=http://chenjunlinabc.github.io/ accesskey=h title="小陈的个人博客 (Alt + H)"><img src=http://chenjunlinabc.github.io/favicon.ico alt aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://chenjunlinabc.github.io/ title=首页><span>首页</span></a></li><li><a href=http://chenjunlinabc.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=http://chenjunlinabc.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=http://chenjunlinabc.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=http://chenjunlinabc.github.io/links/ title=链接><span>链接</span></a></li><li><a href=http://chenjunlinabc.github.io/about/ title=关于><span>关于</span></a></li><li><a href=http://chenjunlinabc.github.io/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://chenjunlinabc.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://chenjunlinabc.github.io/tags/>Tags</a></div><h1>JavaScript</h1></header><article class="post-entry tag-entry"><header class=entry-header><h2>简单使用ESbuild打包工具</h2></header><div class=entry-content><p>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包，支持TypeScript和jsx
 安装
 npm install esbuild
 或者
@@ -9,22 +9,52 @@ yarn add esbuild
 “build”: “esbuild app.jsx –outfile=build/index.js –bundle”
 npm run build
 例子（app.jsx）
-import React from 'react' import ReactDOM from 'react-dom' const App = () => { return ( &lt;div> &lt;h1>Hallo, Esbuild!&lt;/h1> &lt;/div> ) } ReactDOM.render( &lt;App />, document.getElementById("app") ) index.html
-&lt;div id="app">&lt;/div> &lt;script src="./build/index.js">&lt;/script> 我本地打包只花64ms就打包好了</p></div><footer class=entry-footer><span title='2022-02-07 13:37:00 +0000 UTC'>2022-02-07</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to 简单使用ESbuild打包工具" href=https://blog.cjlio.com/posts/132/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>JavaScript知识扩展</h2></header><div class=entry-content><p>函数被调用时，浏览器会传递两个参数，this和arguments
+import React from 'react'
+import ReactDOM from 'react-dom'
+const App = () => {
+return (
+&lt;div>
+&lt;h1>Hallo, Esbuild!&lt;/h1>
+&lt;/div>
+)
+}
+ReactDOM.render(
+&lt;App />,
+document.getElementById("app")
+)
+index.html
+&lt;div id="app">&lt;/div>
+&lt;script src="./build/index.js">&lt;/script>
+我本地打包只花64ms就打包好了</p></div><footer class=entry-footer><span title='2022-02-07 13:37:00 +0000 UTC'>2022-02-07</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to 简单使用ESbuild打包工具" href=http://chenjunlinabc.github.io/posts/132/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>JavaScript知识扩展</h2></header><div class=entry-content><p>函数被调用时，浏览器会传递两个参数，this和arguments
 this就是函数的上下文对象，而arguments是一个数组对象（也就是可以通过索引来操作数据），函数调用时传递的参数会在arguments中保存
 callee属性对应着当前的函数
 例如：
-function abc(){ console.log(arguments.length); console.log(arguments[0]); console.log(arguments.callee); console.log(this) } abc('hallo'); BOM对象 (Browser Object Model) 是指浏览器对象模型
+function abc(){
+console.log(arguments.length);
+console.log(arguments[0]);
+console.log(arguments.callee);
+console.log(this)
+}
+abc('hallo');
+BOM对象 (Browser Object Model) 是指浏览器对象模型
 该对象提供了浏览器行为和浏览器属性方法
 windows表示整个浏览器的窗口，同时也是JavaScript最顶层的对象，其他bom对象都是其的属性
 navigator包含了当前浏览器的全部信息
-console.log(window.navigator) 可以看到输出了很多属性，如userAgent，language等等
+console.log(window.navigator)
+可以看到输出了很多属性，如userAgent，language等等
 location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
-console.log(window.location) const urlData = "https://cjlio.com/; window.location.href = urlData; 这个也可以实现跳转
-window.location.assign("https://cjlio.com") 这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
-window.location.replace("https://cjlio.com") reload方法可以重载页面，加上true参数将强制更新
-window.location.reload(true) history表示浏览器的历史记录
-console.log(window.history) length表示本次访问网站的数量
+console.log(window.location)
+const urlData = "https://cjlio.com/;
+window.location.href = urlData;
+这个也可以实现跳转
+window.location.assign("https://cjlio.com")
+这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
+window.location.replace("https://cjlio.com")
+reload方法可以重载页面，加上true参数将强制更新
+window.location.reload(true)
+history表示浏览器的历史记录
+console.log(window.history)
+length表示本次访问网站的数量
 同时也提供了几个方法
 back()返回上个页面
 window.history.back()
@@ -34,7 +64,8 @@ window.history.forward()
 go()，前进或者后退指定次数，正数为前进，负数为后退
 window.history.go(-1)
 screen代表用户的屏幕的信息, 获取显示器的相关信息
-console.log(window.screen) call 和 apply
+console.log(window.screen)
+call 和 apply
 addEventListen()绑定事件函数
 removeEventListen()移除事件函数
 鼠标按下时onmousedown
@@ -45,14 +76,18 @@ null定义并赋值了, 只是值为null
 document.execCommand可以操作剪贴板
 document.execCommand(‘copy’) // 复制
 document.execCommand(‘cut’) // 剪切
-document.execCommand(‘paste’) // 粘贴...</p></div><footer class=entry-footer><span title='2021-07-18 22:35:00 +0000 UTC'>2021-07-18</span>&nbsp;·&nbsp;11 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to JavaScript知识扩展" href=https://blog.cjlio.com/posts/61/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>ES6学习笔记</h2></header><div class=entry-content><p>ECMAScript
+document.execCommand(‘paste’) // 粘贴...</p></div><footer class=entry-footer><span title='2021-07-18 22:35:00 +0000 UTC'>2021-07-18</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to JavaScript知识扩展" href=http://chenjunlinabc.github.io/posts/61/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>ES6学习笔记</h2></header><div class=entry-content><p>ECMAScript
 JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
 ECMAScript是规范，JavaScript是实现
 ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
 变量
 let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
 例如：
-if(true){ let a = 666; } console.log(a); // Uncaught ReferenceError: a is not defined 注意：
+if(true){
+let a = 666;
+}
+console.log(a); // Uncaught ReferenceError: a is not defined
+注意：
 使用var声明的变量不具备块级作用域有效的特性
 使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
 const声明一个只读的常量，一声明，常量的值将不能改变
@@ -66,7 +101,13 @@ npm install -g babel-cli
 安装转换包
 npm install –save-dev babel-preset-es2015 babel-cli
 新建.babelrc文件，写入：
-{ "presets":[ "es2015" ], "plugins":[] } babel main.js -o src/main.js
+{
+"presets":[
+"es2015"
+],
+"plugins":[]
+}
+babel main.js -o src/main.js
 然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
 变量声明方式
 let，声明一个变量
@@ -77,11 +118,25 @@ const实质就是为了保证该变量始终不变而设计的，使用const声�
 变量解构
 ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
 let [a,b,c] = [1,2,3]
-会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined...</p></div><footer class=entry-footer><span title='2021-07-09 22:51:00 +0000 UTC'>2021-07-09</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to ES6学习笔记" href=https://blog.cjlio.com/posts/57/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Ajax学习笔记</h2></header><div class=entry-content><p>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
+会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined...</p></div><footer class=entry-footer><span title='2021-07-09 22:51:00 +0000 UTC'>2021-07-09</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to ES6学习笔记" href=http://chenjunlinabc.github.io/posts/57/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Ajax学习笔记</h2></header><div class=entry-content><p>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
 关于XMLHttpRequest对象（构造函数）的用法：https://cjlio.com/archives/14.html
 ajax需要网站环境下生效，需要web服务器，nodemon
 app.js
-// 导入express const express = require("express"); // 导入path const patg = require("path"); // 创建web服务器 const app = express(); // 静态资源访问服务 app.use(express.static(path.join(__dirname,"public"))); app.get("/hallo",(req, res) = >{ res.send("hallo"); }); // 监听端口 app.listen(3000); console.log("服务器启动成功") nodemon app.js
+// 导入express
+const express = require("express");
+// 导入path
+const patg = require("path");
+// 创建web服务器
+const app = express();
+// 静态资源访问服务
+app.use(express.static(path.join(__dirname,"public")));
+app.get("/hallo",(req, res) = >{
+res.send("hallo");
+});
+// 监听端口
+app.listen(3000);
+console.log("服务器启动成功")
+nodemon app.js
 ajax运行原理
 ajax代理浏览器发送请求和接收响应，达到局部更新页面数据的效果
 创建ajax对象
@@ -91,12 +146,19 @@ hallo.open(“GET”,“https://httpbin.org/get")
 发送请求
 hallo.send();
 获取服务端给予客户端的响应数据，因为请求和获取数据的速度取决于网络速度，应该设置onload事件，当加载完毕了再获取数据
-hallo.onload = function(){ console.log(hallo.responseText) } 服务端大部分情况下用json对象作为响应数据的格式，通过拼接json数据和html，将拼接的结果显示在页面中
+hallo.onload = function(){
+console.log(hallo.responseText)
+}
+服务端大部分情况下用json对象作为响应数据的格式，通过拼接json数据和html，将拼接的结果显示在页面中
 在http请求与响应的过程中，请求参数或者响应内容，如果是对象类型，最后都会转换为对象字符串进行传输，例如：
-app.get("/hallo",(req, res) = >{ res.send({"name" : "root"}); }); json字符串转换为json对象
-var responseText = JSON.parse(hallo.responseText); console....</p></div><footer class=entry-footer><span title='2021-07-03 15:30:00 +0000 UTC'>2021-07-03</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Ajax学习笔记" href=https://blog.cjlio.com/posts/54/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>JavaScript基础学习笔记</h2></header><div class=entry-content><p>插入js
+app.get("/hallo",(req, res) = >{
+res.send({"name" : "root"});
+});
+json字符串转换为json对象
+var responseText = JSON.parse(hallo.responseText);
+console....</p></div><footer class=entry-footer><span title='2021-07-03 15:30:00 +0000 UTC'>2021-07-03</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Ajax学习笔记" href=http://chenjunlinabc.github.io/posts/54/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>JavaScript基础学习笔记</h2></header><div class=entry-content><p>插入js
 在html页面使用js
-引用js文件</p></div><footer class=entry-footer><span title='2021-06-24 07:57:00 +0000 UTC'>2021-06-24</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to JavaScript基础学习笔记" href=https://blog.cjlio.com/posts/46/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://blog.cjlio.com/tags/javascript/page/2/>Next »</a></nav></footer></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+引用js文件</p></div><footer class=entry-footer><span title='2021-06-24 07:57:00 +0000 UTC'>2021-06-24</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to JavaScript基础学习笔记" href=http://chenjunlinabc.github.io/posts/46/></a></article><footer class=page-footer><nav class=pagination><a class=next href=http://chenjunlinabc.github.io/tags/javascript/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2022 <a href=http://chenjunlinabc.github.io/>小陈的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

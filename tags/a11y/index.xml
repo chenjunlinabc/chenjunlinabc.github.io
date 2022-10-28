@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>a11y on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/a11y/</link>
+    <link>http://chenjunlinabc.github.io/tags/a11y/</link>
     <description>Recent content in a11y on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 09 Apr 2022 13:01:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/a11y/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Apr 2022 13:01:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/a11y/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单了解a11y无障碍</title>
-      <link>https://blog.cjlio.com/posts/144/</link>
+      <link>http://chenjunlinabc.github.io/posts/144/</link>
       <pubDate>Sat, 09 Apr 2022 13:01:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/144/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/144/</guid>
       <description>a11y全称为Accessibility，A到y之间有11个字母，因此叫a11y，Accessibility中文翻译为可访问性，也就是无障碍
 让网站具备无障碍性，可以让一些视觉障碍人士访问该网站，而且就算是其他人士使用，也会因a11y而受益（不因网络慢，css文件丢失而无法正常浏览页面内容）
 在mdn上有句话：The Web is fundamentally designed to work for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. When the Web meets this goal, it is accessible to people with a diverse range of hearing, movement, sight, and cognitive ability.

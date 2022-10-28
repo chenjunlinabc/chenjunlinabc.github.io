@@ -5,80 +5,149 @@ npm install -g @nestjs/cli
 nest new demo
 选择使用包管理器（支持npm，yarn，pnpm）
 创建完成后可以看到src目录，是典型的MVC架构
-app.controller.ts（应用路由控制器） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件） app.service.ts（应用服务文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap(）））
+app.controller.ts（应用路由控制器，例如Get()方法，该路由控制器将从应用服务文件中获取数据，并且将数据返回到页面上） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件，nest模块化，一个nest项目最少有一个模块，通过controllers()方法接收一个模块组(数组形式)，） app.service.ts（应用服务文件，数据来源于该文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap()）
 从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的
 启动项目
 npm run start
 访问http://localhost:3000/，如果看到Hello World!表示启动成功
 nestjs cli支持对mvc模块的生成
-创建控制器 nest g controller 名称
-创建服务 nest g service 名称
-创建模块 nest g module 名称
-创建异常过滤器 nest g filter 名称
-创建拦截器 nest g interceptor 名称
-创建中间件 nest g middleware 名称
-创建管道 nest g pipe 名称
-创建守卫 nest g gu 名称
-控制器（controller）
-controller负责接收请求和处理响应"><meta name=author content="Me"><link rel=canonical href=https://blog.cjlio.com/posts/139/><link crossorigin=anonymous href=/assets/css/stylesheet.0b739a2e2c5e5656e4bcd5f0b2268d063addaf81d89ec3987d6af8f04decdc97.css rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://blog.cjlio.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://blog.cjlio.com/favicon.ico><link rel=apple-touch-icon href=https://blog.cjlio.com/favicon.ico><link rel=mask-icon href=https://blog.cjlio.com/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="Nestjs学习笔记"><meta property="og:description" content="NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程
+新建nest项目 nest new demo
+打包nest项目 nets build
+运行nest项目 nest start
+查看nest当前项目的一些信息 nest info
+创建控制器 nest g controller 名称 或者 nest g co 名称
+创建服务 nest g service 名称 或者 nest g s 名称
+创建模块 nest g module 名称 或者 nest g mo 名称
+创建异常过滤器 nest g filter 名称"><meta name=author content="Me"><link rel=canonical href=http://chenjunlinabc.github.io/posts/139/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=http://chenjunlinabc.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://chenjunlinabc.github.io/favicon.ico><link rel=icon type=image/png sizes=32x32 href=http://chenjunlinabc.github.io/favicon.ico><link rel=apple-touch-icon href=http://chenjunlinabc.github.io/favicon.ico><link rel=mask-icon href=http://chenjunlinabc.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="Nestjs学习笔记"><meta property="og:description" content="NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程
 安装
 npm install -g @nestjs/cli
 创建demo项目
 nest new demo
 选择使用包管理器（支持npm，yarn，pnpm）
 创建完成后可以看到src目录，是典型的MVC架构
-app.controller.ts（应用路由控制器） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件） app.service.ts（应用服务文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap(）））
+app.controller.ts（应用路由控制器，例如Get()方法，该路由控制器将从应用服务文件中获取数据，并且将数据返回到页面上） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件，nest模块化，一个nest项目最少有一个模块，通过controllers()方法接收一个模块组(数组形式)，） app.service.ts（应用服务文件，数据来源于该文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap()）
 从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的
 启动项目
 npm run start
 访问http://localhost:3000/，如果看到Hello World!表示启动成功
 nestjs cli支持对mvc模块的生成
-创建控制器 nest g controller 名称
-创建服务 nest g service 名称
-创建模块 nest g module 名称
-创建异常过滤器 nest g filter 名称
-创建拦截器 nest g interceptor 名称
-创建中间件 nest g middleware 名称
-创建管道 nest g pipe 名称
-创建守卫 nest g gu 名称
-控制器（controller）
-controller负责接收请求和处理响应"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.cjlio.com/posts/139/"><meta property="og:image" content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-03-05T14:00:00+00:00"><meta property="article:modified_time" content="2022-03-05T14:00:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Nestjs学习笔记"><meta name=twitter:description content="NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程
+新建nest项目 nest new demo
+打包nest项目 nets build
+运行nest项目 nest start
+查看nest当前项目的一些信息 nest info
+创建控制器 nest g controller 名称 或者 nest g co 名称
+创建服务 nest g service 名称 或者 nest g s 名称
+创建模块 nest g module 名称 或者 nest g mo 名称
+创建异常过滤器 nest g filter 名称"><meta property="og:type" content="article"><meta property="og:url" content="http://chenjunlinabc.github.io/posts/139/"><meta property="og:image" content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-03-05T14:00:00+00:00"><meta property="article:modified_time" content="2022-03-05T14:00:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Nestjs学习笔记"><meta name=twitter:description content="NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程
 安装
 npm install -g @nestjs/cli
 创建demo项目
 nest new demo
 选择使用包管理器（支持npm，yarn，pnpm）
 创建完成后可以看到src目录，是典型的MVC架构
-app.controller.ts（应用路由控制器） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件） app.service.ts（应用服务文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap(）））
+app.controller.ts（应用路由控制器，例如Get()方法，该路由控制器将从应用服务文件中获取数据，并且将数据返回到页面上） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件，nest模块化，一个nest项目最少有一个模块，通过controllers()方法接收一个模块组(数组形式)，） app.service.ts（应用服务文件，数据来源于该文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap()）
 从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的
 启动项目
 npm run start
 访问http://localhost:3000/，如果看到Hello World!表示启动成功
 nestjs cli支持对mvc模块的生成
-创建控制器 nest g controller 名称
-创建服务 nest g service 名称
-创建模块 nest g module 名称
-创建异常过滤器 nest g filter 名称
-创建拦截器 nest g interceptor 名称
-创建中间件 nest g middleware 名称
-创建管道 nest g pipe 名称
-创建守卫 nest g gu 名称
-控制器（controller）
-controller负责接收请求和处理响应"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://blog.cjlio.com/posts/"},{"@type":"ListItem","position":3,"name":"Nestjs学习笔记","item":"https://blog.cjlio.com/posts/139/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Nestjs学习笔记","name":"Nestjs学习笔记","description":"NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程\n安装\nnpm install -g @nestjs/cli\n创建demo项目\nnest new demo\n选择使用包管理器（支持npm，yarn，pnpm）\n创建完成后可以看到src目录，是典型的MVC架构\napp.controller.ts（应用路由控制器） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件） app.service.ts（应用服务文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap(）））\n从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的\n启动项目\nnpm run start\n访问http://localhost:3000/，如果看到Hello World!表示启动成功\nnestjs cli支持对mvc模块的生成\n创建控制器 nest g controller 名称\n创建服务 nest g service 名称\n创建模块 nest g module 名称\n创建异常过滤器 nest g filter 名称\n创建拦截器 nest g interceptor 名称\n创建中间件 nest g middleware 名称\n创建管道 nest g pipe 名称\n创建守卫 nest g gu 名称\n控制器（controller）\ncontroller负责接收请求和处理响应","keywords":["NestJS"],"articleBody":"NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程\n安装\nnpm install -g @nestjs/cli\n创建demo项目\nnest new demo\n选择使用包管理器（支持npm，yarn，pnpm）\n创建完成后可以看到src目录，是典型的MVC架构\napp.controller.ts（应用路由控制器） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件） app.service.ts（应用服务文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap(）））\n从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的\n启动项目\nnpm run start\n访问http://localhost:3000/，如果看到Hello World!表示启动成功\nnestjs cli支持对mvc模块的生成\n创建控制器 nest g controller 名称\n创建服务 nest g service 名称\n创建模块 nest g module 名称\n创建异常过滤器 nest g filter 名称\n创建拦截器 nest g interceptor 名称\n创建中间件 nest g middleware 名称\n创建管道 nest g pipe 名称\n创建守卫 nest g gu 名称\n控制器（controller）\ncontroller负责接收请求和处理响应\n","wordCount":"68","inLanguage":"en","datePublished":"2022-03-05T14:00:00Z","dateModified":"2022-03-05T14:00:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.cjlio.com/posts/139/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://blog.cjlio.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://blog.cjlio.com accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://blog.cjlio.com/favicon.ico alt=logo aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://blog.cjlio.com/ title=首页><span>首页</span></a></li><li><a href=https://blog.cjlio.com/categories/ title=分类><span>分类</span></a></li><li><a href=https://blog.cjlio.com/archives/ title=归档><span>归档</span></a></li><li><a href=https://blog.cjlio.com/tags/ title=标签><span>标签</span></a></li><li><a href=https://blog.cjlio.com/links/ title=链接><span>链接</span></a></li><li><a href=https://blog.cjlio.com/about/ title=关于><span>关于</span></a></li><li><a href=https://blog.cjlio.com/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://blog.cjlio.com>Home</a>&nbsp;»&nbsp;<a href=https://blog.cjlio.com/posts/>Posts</a></div><h1 class=post-title>Nestjs学习笔记</h1><div class=post-meta><span title='2022-03-05 14:00:00 +0000 UTC'>2022-03-05</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/Nestjs%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程</p><p>安装</p><p>npm install -g @nestjs/cli</p><p>创建demo项目</p><p>nest new demo</p><p>选择使用包管理器（支持npm，yarn，pnpm）</p><p>创建完成后可以看到src目录，是典型的MVC架构</p><p>app.controller.ts（应用路由控制器）
+新建nest项目 nest new demo
+打包nest项目 nets build
+运行nest项目 nest start
+查看nest当前项目的一些信息 nest info
+创建控制器 nest g controller 名称 或者 nest g co 名称
+创建服务 nest g service 名称 或者 nest g s 名称
+创建模块 nest g module 名称 或者 nest g mo 名称
+创建异常过滤器 nest g filter 名称"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://chenjunlinabc.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Nestjs学习笔记","item":"http://chenjunlinabc.github.io/posts/139/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Nestjs学习笔记","name":"Nestjs学习笔记","description":"NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程\n安装\nnpm install -g @nestjs/cli\n创建demo项目\nnest new demo\n选择使用包管理器（支持npm，yarn，pnpm）\n创建完成后可以看到src目录，是典型的MVC架构\napp.controller.ts（应用路由控制器，例如Get()方法，该路由控制器将从应用服务文件中获取数据，并且将数据返回到页面上） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件，nest模块化，一个nest项目最少有一个模块，通过controllers()方法接收一个模块组(数组形式)，） app.service.ts（应用服务文件，数据来源于该文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap()）\n从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的\n启动项目\nnpm run start\n访问http://localhost:3000/，如果看到Hello World!表示启动成功\nnestjs cli支持对mvc模块的生成\n新建nest项目 nest new demo\n打包nest项目 nets build\n运行nest项目 nest start\n查看nest当前项目的一些信息 nest info\n创建控制器 nest g controller 名称 或者 nest g co 名称\n创建服务 nest g service 名称 或者 nest g s 名称\n创建模块 nest g module 名称 或者 nest g mo 名称\n创建异常过滤器 nest g filter 名称","keywords":["NestJS"],"articleBody":"NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程\n安装\nnpm install -g @nestjs/cli\n创建demo项目\nnest new demo\n选择使用包管理器（支持npm，yarn，pnpm）\n创建完成后可以看到src目录，是典型的MVC架构\napp.controller.ts（应用路由控制器，例如Get()方法，该路由控制器将从应用服务文件中获取数据，并且将数据返回到页面上） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件，nest模块化，一个nest项目最少有一个模块，通过controllers()方法接收一个模块组(数组形式)，） app.service.ts（应用服务文件，数据来源于该文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap()）\n从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的\n启动项目\nnpm run start\n访问http://localhost:3000/，如果看到Hello World!表示启动成功\nnestjs cli支持对mvc模块的生成\n新建nest项目 nest new demo\n打包nest项目 nets build\n运行nest项目 nest start\n查看nest当前项目的一些信息 nest info\n创建控制器 nest g controller 名称 或者 nest g co 名称\n创建服务 nest g service 名称 或者 nest g s 名称\n创建模块 nest g module 名称 或者 nest g mo 名称\n创建异常过滤器 nest g filter 名称\n创建拦截器 nest g interceptor 名称\n创建中间件 nest g middleware 名称\n创建管道 nest g pipe 名称\n创建守卫 nest g gu 名称\n创建具备完整CRUD功能的模块 nest g res 名称\nSwagger是一个用于生成，描述，调试RESTfulAPI的web服务框架，nest提供了模块来调用该框架\n安装Swagger\nnpm install –save @nestjs/swagger swagger-ui-express\n导入Swagger\nmain.ts\nimport { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';\r在bootstrap(){}内部\nconst options = new DocumentBuilder()\r.setTitle('api test')\r.setDescription('api test app')\r.setVersion('1.0')\r.addTag('cats')\r.build();\rconst document = SwaggerModule.createDocument(app, options);\rSwaggerModule.setup('test', app, document);\r127.0.0.1:3000/test\n因为Swagger提供的是默认api测试，如果想对其他的controller进行测试，直接在controller文件中使用@Apitags装饰器\ntest.controller.ts\n导入\nimport { Apitags } from '@nestjs/swagger';\r@Apitags('test测试')\r返回127.0.0.1:3000/test，可以看到除了默认的外，还有一个test测试的栏目\nApiOperation添加api的注解\n导入\nimport { Apitags, ApiOperation } from '@nestjs/swagger';\r在想要设置的@Post()下，添加@ApiOperation({sumnary:‘这是注解’})\n添加传参数据约束\n从tets.controller.ts中可以看到，create()方法中存在一个类型约束，该约束默认是空的，约束文件一般在dto文件夹下，名称为create-test.dto.ts\nimport { ApiOperation } from '@nestjs/swagger';\rexport class CreateTestDto{\r@ApiOperation({description:'这是用户名'})\rreadonly name: string\r@ApiOperation({description:'这是年龄'})\rage: number\r@ApiOperation({description:'这是密码',default:'123456'})\rpassword: string\r}\r传参必须存在这三个，而且必须符合类型检查，其中readonly表示不可更改，会对目标做一个只读属性的功能，default对应着传参默认值\nmongoose是mongodb对象建模工具\n安装mongoose\nnpm install –save @nestjs/mongoose mongoose\n导入\napp.module.ts\nimport { MongooseModule } from '@nestjs/mongoose';\r连接mongodb\n@Module({\rimports: [MongooseModule.forRoot('mongodb://localhost:27017/test')],\r})\rmongodb模型注入\n定义scheme\ntest/schemas/test.schema.ts\nimport { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';\rimport { Document } from 'mongoose';\rexport type TestDocument = Test \u0026 Document;\r@Schema()\rexport classTest extends Document {\r@Prop({required: true type:String})\rname: string;\r@Prop()\rage: number;\r@Prop({required: true,select: false})\rpassword: string;\r}\rexport const TestSchema = SchemaFactory.createForClass(Test);\r使用scheme\ntest.service.ts\n导入需要的模块\nimport { Injectable } from '@nestjs/common';\rimport { InjectModel } from '@nestjs/mongoose';\rimport { InjectModel } from '@nestjs/mongoose';\rimport { TestDocument } from './schemas/test.schema';\r在TestService()内部设置\nconstructor(@InjectModel('Test.name') private testModel: Model) {}\rasync create(createTestDto: CreateTestDto){\rawait const createdTest = new this.testModel(createTestDto);\rreturn createdTest; // 增\r}\rasync findAll():{\rreturn await this.testModel.find().exec() // 查\r}\rasync findOne(id: string){\rreturn await this.testModel.findByid('id').exec() // 根据id查找\r}\rasync update (id: string, updateTestDto: UpdateTestDto){\rreturn await this.testModel.findByidAndUpdate(id,updateTestDto,{new: true}).exec() // 更改\r}\rasync remove(id: string){\rreturn await this.testModel.findByidAndRemove(id) // 删除\r}\rtest.module.ts\n导入\nimport { MongooseModule } from '@nestjs/mongoose';\rimport { Test, TestSchema} from './schemas/Test.schema';\r在@Module修饰器内部的imports下添加MongooseModule.forFeature([{ name: Test.name, schema: TestSchema }])\n","wordCount":"357","inLanguage":"en","datePublished":"2022-03-05T14:00:00Z","dateModified":"2022-03-05T14:00:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://chenjunlinabc.github.io/posts/139/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"http://chenjunlinabc.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=http://chenjunlinabc.github.io/ accesskey=h title="小陈的个人博客 (Alt + H)"><img src=http://chenjunlinabc.github.io/favicon.ico alt aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://chenjunlinabc.github.io/ title=首页><span>首页</span></a></li><li><a href=http://chenjunlinabc.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=http://chenjunlinabc.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=http://chenjunlinabc.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=http://chenjunlinabc.github.io/links/ title=链接><span>链接</span></a></li><li><a href=http://chenjunlinabc.github.io/about/ title=关于><span>关于</span></a></li><li><a href=http://chenjunlinabc.github.io/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://chenjunlinabc.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://chenjunlinabc.github.io/posts/>Posts</a></div><h1 class=post-title>Nestjs学习笔记</h1><div class=post-meta><span title='2022-03-05 14:00:00 +0000 UTC'>2022-03-05</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/Nestjs%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程</p><p>安装</p><p>npm install -g @nestjs/cli</p><p>创建demo项目</p><p>nest new demo</p><p>选择使用包管理器（支持npm，yarn，pnpm）</p><p>创建完成后可以看到src目录，是典型的MVC架构</p><p>app.controller.ts（应用路由控制器，例如Get()方法，该路由控制器将从应用服务文件中获取数据，并且将数据返回到页面上）
 app.controller.spec.ts（应用控制器单元测试）
-app.module.ts（应用模块文件）
-app.service.ts（应用服务文件）
-main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap(）））</p><p>从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的</p><p>启动项目</p><p>npm run start</p><p>访问http://localhost:3000/，如果看到Hello World!表示启动成功</p><p>nestjs cli支持对mvc模块的生成</p><p>创建控制器
-nest g controller 名称</p><p>创建服务
-nest g service 名称</p><p>创建模块
-nest g module 名称</p><p>创建异常过滤器
+app.module.ts（应用模块文件，nest模块化，一个nest项目最少有一个模块，通过controllers()方法接收一个模块组(数组形式)，）
+app.service.ts（应用服务文件，数据来源于该文件）
+main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap()）</p><p>从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的</p><p>启动项目</p><p>npm run start</p><p>访问http://localhost:3000/，如果看到Hello World!表示启动成功</p><p>nestjs cli支持对mvc模块的生成</p><p>新建nest项目
+nest new demo</p><p>打包nest项目
+nets build</p><p>运行nest项目
+nest start</p><p>查看nest当前项目的一些信息
+nest info</p><p>创建控制器
+nest g controller 名称
+或者
+nest g co 名称</p><p>创建服务
+nest g service 名称
+或者
+nest g s 名称</p><p>创建模块
+nest g module 名称
+或者
+nest g mo 名称</p><p>创建异常过滤器
 nest g filter 名称</p><p>创建拦截器
 nest g interceptor 名称</p><p>创建中间件
 nest g middleware 名称</p><p>创建管道
 nest g pipe 名称</p><p>创建守卫
-nest g gu 名称</p><hr><p>控制器（controller）</p><p>controller负责接收请求和处理响应</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://blog.cjlio.com/tags/nestjs/>NestJS</a></li></ul><nav class=paginav><a class=prev href=https://blog.cjlio.com/posts/140/><span class=title>« Prev</span><br><span>browserslist的简单配置</span></a>
-<a class=next href=https://blog.cjlio.com/posts/138/><span class=title>Next »</span><br><span>简单使用Express-Web应用框架</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=https://blog.cjlio.com>小陈的个人博客</a></span>
+nest g gu 名称</p><p>创建具备完整CRUD功能的模块
+nest g res 名称</p><hr><p>Swagger是一个用于生成，描述，调试RESTfulAPI的web服务框架，nest提供了模块来调用该框架</p><p>安装Swagger</p><p>npm install &ndash;save @nestjs/swagger swagger-ui-express</p><p>导入Swagger</p><p>main.ts</p><pre><code>import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+</code></pre><p>在bootstrap(){}内部</p><pre><code>const options = new DocumentBuilder()
+    .setTitle('api test')
+    .setDescription('api test app')
+    .setVersion('1.0')
+    .addTag('cats')
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('test', app, document);
+</code></pre><p>127.0.0.1:3000/test</p><p>因为Swagger提供的是默认api测试，如果想对其他的controller进行测试，直接在controller文件中使用@Apitags装饰器</p><p>test.controller.ts</p><p>导入</p><pre><code>import { Apitags } from '@nestjs/swagger';
+@Apitags('test测试')
+</code></pre><p>返回127.0.0.1:3000/test，可以看到除了默认的外，还有一个test测试的栏目</p><p>ApiOperation添加api的注解</p><p>导入</p><pre><code>import { Apitags, ApiOperation } from '@nestjs/swagger';
+</code></pre><p>在想要设置的@Post()下，添加@ApiOperation({sumnary:&lsquo;这是注解&rsquo;})</p><p>添加传参数据约束</p><p>从tets.controller.ts中可以看到，create()方法中存在一个类型约束，该约束默认是空的，约束文件一般在dto文件夹下，名称为create-test.dto.ts</p><pre><code>import { ApiOperation } from '@nestjs/swagger';
+export class CreateTestDto{
+    @ApiOperation({description:'这是用户名'})
+    readonly name: string
+    @ApiOperation({description:'这是年龄'})
+    age: number
+    @ApiOperation({description:'这是密码',default:'123456'})
+    password: string
+}
+</code></pre><p>传参必须存在这三个，而且必须符合类型检查，其中readonly表示不可更改，会对目标做一个只读属性的功能，default对应着传参默认值</p><hr><p>mongoose是mongodb对象建模工具</p><p>安装mongoose</p><p>npm install &ndash;save @nestjs/mongoose mongoose</p><p>导入</p><p>app.module.ts</p><pre><code>import { MongooseModule } from '@nestjs/mongoose';
+</code></pre><p>连接mongodb</p><pre><code>@Module({
+    imports: [MongooseModule.forRoot('mongodb://localhost:27017/test')],
+})
+</code></pre><p>mongodb模型注入</p><p>定义scheme</p><p>test/schemas/test.schema.ts</p><pre><code>import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
+export type TestDocument = Test &amp; Document;
+@Schema()
+export classTest extends Document {
+      @Prop({required: true type:String})
+      name: string;
+      @Prop()
+      age: number;
+      @Prop({required: true,select: false})
+      password: string;
+}
+export const TestSchema = SchemaFactory.createForClass(Test);
+</code></pre><p>使用scheme</p><p>test.service.ts</p><p>导入需要的模块</p><pre><code>import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { InjectModel } from '@nestjs/mongoose';
+import { TestDocument } from './schemas/test.schema';
+</code></pre><p>在TestService()内部设置</p><pre><code>constructor(@InjectModel('Test.name') private testModel: Model&lt;TestDocument&gt;) {}
+
+
+async create(createTestDto: CreateTestDto){
+    await const createdTest = new this.testModel(createTestDto);
+    return createdTest; // 增
+  }
+
+  async findAll():{
+        return await this.testModel.find().exec() // 查
+  }
+  async findOne(id: string){
+       return await this.testModel.findByid('id').exec() // 根据id查找
+  }
+  async update (id: string, updateTestDto: UpdateTestDto){
+        return await this.testModel.findByidAndUpdate(id,updateTestDto,{new: true}).exec() // 更改
+  }
+  async remove(id: string){
+      return await this.testModel.findByidAndRemove(id) // 删除
+ }
+</code></pre><p>test.module.ts</p><p>导入</p><pre><code>import { MongooseModule } from '@nestjs/mongoose';
+import { Test, TestSchema} from './schemas/Test.schema';
+</code></pre><p>在@Module修饰器内部的imports下添加MongooseModule.forFeature([{ name: Test.name, schema: TestSchema }])</p><hr></div><footer class=post-footer><ul class=post-tags><li><a href=http://chenjunlinabc.github.io/tags/nestjs/>NestJS</a></li></ul><nav class=paginav><a class=prev href=http://chenjunlinabc.github.io/posts/140/><span class=title>« Prev</span><br><span>browserslist的简单配置</span></a>
+<a class=next href=http://chenjunlinabc.github.io/posts/138/><span class=title>Next »</span><br><span>简单使用Express-Web应用框架</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=http://chenjunlinabc.github.io/>小陈的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

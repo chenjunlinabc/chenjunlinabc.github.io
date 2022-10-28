@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>shell on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/shell/</link>
+    <link>http://chenjunlinabc.github.io/tags/shell/</link>
     <description>Recent content in shell on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 23 Nov 2021 00:01:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Nov 2021 00:01:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>shell脚本学习笔记</title>
-      <link>https://blog.cjlio.com/posts/120/</link>
+      <link>http://chenjunlinabc.github.io/posts/120/</link>
       <pubDate>Tue, 23 Nov 2021 00:01:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/120/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/120/</guid>
       <description>shell中文意思为壳，shell可以接受使用者的指令，来调用服务，shell的种类很多，而比较常见是Bash，头部声明#!/bin/bash，表示bash是解释脚本的程序
 例如：
-#!/bin/bash echo &amp;quot;hallo word&amp;quot; 执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）
+#!/bin/bashecho &amp;quot;hallo word&amp;quot;执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）
 bash hallo.sh
 也可以直接执行
 ./hallo.sh
@@ -44,7 +44,7 @@ echo &amp;ldquo;hallo word&amp;rdquo;; echo &amp;ldquo;要执行的shell脚本�
 获取当前脚本shell进程的ID：$$
 获取后台运行的最后一个进程的ID：$!
 配合函数使用（参数也可以通过函数来传递）
-function abc(){ echo &amp;quot;参数1: $1&amp;quot; echo &amp;quot;被执行的脚本为: $0&amp;quot; } abc hallo .</description>
+function abc(){echo &amp;quot;参数1: $1&amp;quot;echo &amp;quot;被执行的脚本为: $0&amp;quot;}abc hallo.</description>
     </item>
     
   </channel>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ant Design on 小陈的个人博客</title>
-    <link>https://blog.cjlio.com/tags/ant-design/</link>
+    <link>http://chenjunlinabc.github.io/tags/ant-design/</link>
     <description>Recent content in Ant Design on 小陈的个人博客</description>
     <image>
-      <url>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://blog.cjlio.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 10 Aug 2021 23:03:00 +0000</lastBuildDate><atom:link href="https://blog.cjlio.com/tags/ant-design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Aug 2021 23:03:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/ant-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Ant Design组件库</title>
-      <link>https://blog.cjlio.com/posts/82/</link>
+      <link>http://chenjunlinabc.github.io/posts/82/</link>
       <pubDate>Tue, 10 Aug 2021 23:03:00 +0000</pubDate>
       
-      <guid>https://blog.cjlio.com/posts/82/</guid>
+      <guid>http://chenjunlinabc.github.io/posts/82/</guid>
       <description>Ant Design是蚂蚁金服技术沉淀出一套基于React的组件库和前端框架
 官网：https://ant.design/index-cn
 使用create-react-app初始项目
@@ -32,7 +32,7 @@ yarn add antd
 yarn create react-app antd-demo-ts &amp;ndash;template typescript
 Antd的样式使用了less作为开发语言
 第一个实例demo
-import &#39;antd/dist/antd.css&#39;; import { DatePicker, Space } from &#39;antd&#39;; ReactDOM.render( &amp;lt;Space direction=&amp;quot;vertical&amp;quot;&amp;gt; &amp;lt;DatePicker/&amp;gt; &amp;lt;/Space&amp;gt;, document.getElementById(&#39;root&#39;), ); </description>
+import &#39;antd/dist/antd.css&#39;;import { DatePicker, Space } from &#39;antd&#39;;ReactDOM.render(&amp;lt;Space direction=&amp;quot;vertical&amp;quot;&amp;gt;&amp;lt;DatePicker/&amp;gt;&amp;lt;/Space&amp;gt;,document.getElementById(&#39;root&#39;),); </description>
     </item>
     
   </channel>
