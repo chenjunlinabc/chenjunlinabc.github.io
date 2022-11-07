@@ -10,7 +10,21 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Jun 2022 00:12:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Oct 2022 01:21:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用PWA技术</title>
+      <link>http://chenjunlinabc.github.io/posts/154/</link>
+      <pubDate>Fri, 28 Oct 2022 01:21:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/154/</guid>
+      <description>PWA，Progressive Web App（渐进式web应用），PWA技术可以将web应用具备接近原生应用的特性和用户体验，无需额外安装，支持离线缓存，消息推送等功能
+PWA由Service Worker，Promise，fetch，cache Api，Notification Api等技术组成
+Service Worker：服务工作线程，独立于主线程，常驻内存，代理网络请求，依赖HTTPS通信
+注册Service Worker
+navigator.serviceWorker.register(&#39;./sw.js&#39;,{scope: &#39;/&#39;}).then(registration =&amp;gt; {console.log(registration)},error =&amp;gt; {console.error(error)})window.onload = function() {document.body.append(&#39;PWA!&#39;)}sw.js
+const cachename = &#39;v1&#39;self.addEventListener(&#39;install&#39;, function (event) {console.log(&#39;install&#39;,event)// 安装新的Service Worker脚本时触发，只有Service Worker脚本不同，会认为是不同的Service Worker版本event.waitUntil(new Promise(resolve =&amp;gt;{setTimeout(resolve, 1000) // 安装新的Service Worker脚本后等待1秒后激活该脚本}))// event.waitUntil(self.skipWaiting) // 强制停止老的Service Worker，激活启动新的Service Worker，只要有更新就激活新的event.waitUntil(caches.open(name).then(cache =&amp;gt;{cache.addAll([&#39;/&#39;,&#39;./1.img&#39;])})) // 开启cache api缓存系统})self.</description>
+    </item>
+    
     <item>
       <title>ECharts数据可视化图表库简单使用</title>
       <link>http://chenjunlinabc.github.io/posts/153/</link>
@@ -405,6 +419,55 @@ Strict：完全禁止第三方Cookie，只有当目前网页的url和请求目�
     </item>
     
     <item>
+      <title>简单使用Vite-前端构建工具</title>
+      <link>http://chenjunlinabc.github.io/posts/87/</link>
+      <pubDate>Wed, 18 Aug 2021 14:20:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/87/</guid>
+      <description>Vite是由 Vue.js 的作者尤雨溪开发完成的一款前端项目构建工具，使用原生ESM文件，支持热重载
+Vite在法语中的意思为快速的
+基于原生 import 的，使用浏览器来解析import，服务端按需编译返回，支持热更新模块
+依赖于Rollup打包，虽然vite设计初衷是为了vue3.x的，但是也是支持其他框架（例如react）
+对于TypeScrip的支持程度相当好，只需要在script元素加lang=&amp;ldquo;ts&amp;quot;就可以使用ts了
+至于less，sass/scss之类的css预处理器以及css原生支持也是很好，Vite支持css样式直接引入（import &amp;lsquo;./app.css&amp;rsquo;）
+sass/scss使用（前提已经安装了sass）
+在style元素中加lang=&amp;ldquo;scss&amp;quot;就可以使用sass了
+json也是可以直接引入，例如：import data from &amp;lsquo;./data.json&amp;rsquo;
+另外对于JSX也是支持的，用.jsx表示jsx，例如：import App from &amp;lsquo;./App.jsx&amp;rsquo;
+vite有一套开发服务功能，基于原生es模块，ESM+HMR，而且还有一套项目构建指令，用rollup打包
+打包：指的是使用工具来抓取和处理源码模块，并且合成可以在浏览器上运行的文件（浏览器本身并不提供模块管理的机制，多模块需要很多的script标签，很繁琐臃肿，而打包就很好的解决了这个问题）
+常见的打包工具例如：webpack，rollup，parcel，gulp
+注意：当冷启动服务的时候，必须要先抓取并且构建应用（当应用越来越大，模块越来越多的时候，会导致服务启动缓慢），才能提供服务，而且进行模块更新的话，也会导致重建应用缓慢
+传统打包，是将多个模块打包成单一的文件，而esm打包，是根据http请求，来获取相应的route，再根据route来获取module（避免一开始就获取全部module）
+vite将模块分为依赖和源码，依赖指的是开发时不会发生改变的，vite将使用esbuild预构建依赖，而且将以原生ESM方式让浏览器接管打包源码
+构建Vite项目
+npm create vite
+或者
+yarn create vite
+然后初始化一下
+npm install
+或者
+yarn
+启动服务器
+vite
+或者
+npm run dev，yarn dev
+本地预览
+vite preview
+打包
+vite build
+react
+npm create vite
+选择react，如果需要ts，也可以选择ts
+npm install
+Vite是一个构建工具的高阶封装（生产环境打包用Rollup来构建），开发环境无需要打包编译（利用现代浏览器的原生ESM来进行导入模块，模块加载的工作由浏览器完成，实现冷启动），支持动态模块热重载（HMR），开发环境的编译通过Esbuild来完成
+Vite生产环境构建（也就是Rollup）是根据browserslist来做浏览器兼容性的，需要通过修改vite.config.ts下的build.target来指定构建目标，Vite最低支持es2015，也就是es6，需要es5以及更多浏览器可能无法正常运行或者通过@vitejs/plugin-legacy插件来获取支持（注意：使用该插件也不能让vue3支持ie11，只有vue2支持ie11）
+安装@vitejs/plugin-legacy
+yarn add @vitejs/plugin-legacy -d配置vite.config.ts
+import legacy from &#39;@vitejs/plugin-legacy&#39;.</description>
+    </item>
+    
+    <item>
       <title>简单使用Nginx</title>
       <link>http://chenjunlinabc.github.io/posts/85/</link>
       <pubDate>Wed, 18 Aug 2021 12:50:00 +0000</pubDate>
@@ -711,6 +774,121 @@ wsl &amp;ndash;list &amp;ndash;online
     </item>
     
     <item>
+      <title>Nginx服务器的一些简单配置</title>
+      <link>http://chenjunlinabc.github.io/posts/34/</link>
+      <pubDate>Wed, 16 Jun 2021 15:52:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/34/</guid>
+      <description>配置ssl证书
+前提是已经申请到ssl证书,并且开放443端口
+编辑nginx.conf
+将443那几行的注释去掉（#）,并且修改
+ssl_certificate &amp;ldquo;crt证书的绝对路径&amp;rdquo;; ssl_certificate_key&amp;quot;key证书的绝对路径&amp;quot;;
+如果想访问网站就301重定向到https，那么添加这几行
+server{listen 80;server_name cjlio.com;rewrite ^(.*) https://$host$1 permanent;}# 当使用80端口访问网站时，将301永久重定向到https://cjlio.com，达到全站https的效果
+然后刷新一下配置nginx -s
+nginx反向代理配置
+将客户端请求转发给内部网络的其他目标服务端，并且将从其他服务端的结果返回到客户端，代理服务端和目标服务端，在外部看起来像是一个整体，只是将请求转发给其他服务端处理，从而达到减轻目标服务端的压力的效果
+配置nginx.conf
+location / {proxy_pass https://test.cjlio.com; # 反向代理服务器地址proxy_connect_timeout 200; # 设置连接超时proxy_read_timeout 200; # 设置读响应超时}重启Nginx服务：service nginx restart
+请求当前服务器时，当前服务器将请求转发给地址为 https://test.cjlio.com 的服务器处理
+gzip压缩
+gzip on;gzip_comp_level 1; gzip_min_length 10;gzip_http_version 1.1;gzip_types text/html text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;解释：
+gzip on // gzip开启，关闭是off</description>
+    </item>
+    
+    <item>
+      <title>Linux环境下简单搭建Minecraft服务器（java版）</title>
+      <link>http://chenjunlinabc.github.io/posts/33/</link>
+      <pubDate>Wed, 16 Jun 2021 15:46:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/33/</guid>
+      <description>服务器可以使用国内的，保证延迟低，服务器配置一定要高一点，不然很容易Killed
+安装java
+dnf install java-openjdk
+检测java是否安装成功
+java -version
+新建一个目录
+mkdir hallomc
+cd hallomc
+下载第三方mc服务器
+wget -c https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/553/downloads/paper-1.16.5-553.jar
+这是1.16.5的版本，服务器版本和客户端版本要一致
+历史版本https://papermc.io/legacy
+运行mc服务器
+java -Xmx1024M -Xms512M -jar paper-1.16.5-553.jar
+Xmx 代表服务器启动所占的最大运行内存，Xms代表服务器正常运行的最大内存
+一般来说第一次运行都是运行不了，因为没有同意协议
+进入mc目录下，nano eula.txt，把eula=false改成eula=true，然后再运行mc服务器
+24小时运行mc服务端
+一般来说退出ssh登录，就会终止运行mc服务端，可以通过简单建立个“虚拟终端”，来24小时运行
+dnf install screen # 安装screen
+screen -S mcserver # 创建一个新“终端”，名称自定义
+screen -R mcserver # 进入这个新“终端”
+如果想退出，可以使用ctrl+a+d
+可以使用screen -ls 命令来查看所有“终端”
+关闭正版验证
+在服务端目录，找到server.properties文件
+修改这个文件，把onlinemode 改为 false
+MCSManager面板
+wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash</description>
+    </item>
+    
+    <item>
+      <title>JavaScript的一些基础知识扩展</title>
+      <link>http://chenjunlinabc.github.io/posts/32/</link>
+      <pubDate>Wed, 16 Jun 2021 15:12:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/32/</guid>
+      <description>JavaScript的变量具有动态性的特性，就决定了变量只是用于保存该特定的值的名字
+JavaScript中有两种，基本类型值和引用类型值
+基本数据类型有数字(Number)，字符串(String)，布尔值(Boolean)，null，undefined，（es6中加入了个symbol）,BigInt(ES2020)
+基本类型是按值访问，可以直接操作保存在变量中的值
+基本类型值是简单的数据段，而引用类型是指由多个值组成的对象
+因为基本类型是按值访问的，所以可以操控保存在变量的值
+引用类型的值是保存在内存中的对象，JavaScript不允许直接访问内存中的位置
+操控对象，其实就是在操控对象的引用，而不是对象本身
+JavaScript的逻辑运算
+JavaScript的任何数据类型都能转换为布尔类型
+&amp;lt; 小于 &amp;gt; 大于 &amp;lt;= 小于或者等于 &amp;gt;= 大于或者等于 == 没错，这个才是等于，=这个是用来赋值的 != 不等于 === 绝对等于（值和数据类型相等） !== 不绝对等于（值和数据类型其中有一个或者都不相等）
+&amp;amp;&amp;amp; 必须都要符合要求
+|| 只有一个符合要求
+! 真为假，假为真（当判断为true时返回false，判断为false时返回true）
+逻辑运算的结果为布尔值
+类型判断
+数据类型有undefined，null，boolean，number，string，object，symbol，BigInt（ES2020）
+undefined，该变量没有被赋值
+null，该变量的值为空的对象指针
+boolean，该变量的值为布尔值
+string，该变量的值为字符串
+number，该变量的值为数值
+object，该变量为对象或者null
+Symbol，生成一个全局独一无二的值
+tyoeof操作符会返回该变量的值或者该值是什么数据类型
+注意：null值表示一个空对象指针，所以使用typeof操作符检测null时会返回object，typeof个函数，会返回function
+typeof判断null之类的不合适，在这种情况可以使用instanceof
+instanceof会检查构造函数的prototype属性是否在某个实例的原型链上
+例如：
+var abc = new testa() if(Object.getPrototypeOf(abc) === testa.prototype){}
+instanceof判断null
+null instanceof Object // false
+返回布尔值,例如
+var arr = [1,1,2,3,4,5]; console.log(arr instanceof Array); // 返回true</description>
+    </item>
+    
+    <item>
+      <title>node.js包管理工具npm的简单使用</title>
+      <link>http://chenjunlinabc.github.io/posts/31/</link>
+      <pubDate>Wed, 16 Jun 2021 15:05:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/31/</guid>
+      <description>npm是Node.js的默认包管理工具
+安装npm：安装node.js(一般来说安装nodejs都会安装npm的)
+npm -v 查看npm版本号 node -v 查看node版本号 npm install nmp@latest -g 更新最新nmp，-g全局，没有加-g就是本地安装，或者在@后面加版本号来更新到指定版本的npm npm init -y 初始化 npm i 要安装的依赖 先检查有没有这个东西，有的话就下载下来 npm uninstall 要删除的依赖的名称 npm i 要安装的依赖@版本号 安装指定版本的依赖 npm update 依赖名称 安装最新的依赖或者更新npm npm init -y 使用默认的参数，去掉-y就是手动配置 npm run 对象名 执行脚本,引用package.json中的scripts对象，在对象中添加脚本 npm adduser 注册npm账号 npm publish 发布npm包 npm install 一键安装package.json文件里的所有依赖 npm install &amp;ndash;dependencies 只安装package.json里的dependencies的文件 npm install &amp;ndash;devDependencies 只安装package.json里的devDependencies文件 会自动将package.json中的模块安装到node-modules文件夹
+升级插件 npm-check-updates使用 npm install -g npm-check-updates 安装npm-check-updates插件 ncu 查看package.json中依赖的最新版本 ncu -u 更新依赖到最新版本 ncu -a 更新全部依赖到最新版本 npm update</description>
+    </item>
+    
+    <item>
       <title>Python的一些神器的简单用法</title>
       <link>http://chenjunlinabc.github.io/posts/27/</link>
       <pubDate>Wed, 16 Jun 2021 14:39:00 +0000</pubDate>
@@ -741,6 +919,71 @@ pip使用国内源
 linux下
 配置永久使用
 cd ~ # 进入用户目录 mkdir .pip # 新建一个隐藏文件夹 touch pip.</description>
+    </item>
+    
+    <item>
+      <title>简单搭建一个hexo博客</title>
+      <link>http://chenjunlinabc.github.io/posts/26/</link>
+      <pubDate>Wed, 16 Jun 2021 14:36:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/26/</guid>
+      <description>hexo+github可以实现免费搭建一个博客网站，就是维护起来有点麻烦
+apt install npm
+npm install hexo-cli -g
+hexo init blog
+cd blog
+npm install
+hexo server
+使用NexT
+apt install git
+git clone https://github.com/theme-next/hexo-theme-next.git
+把hexo-theme-next文件夹放到hexo根目录的themes文件夹下
+启动主题
+打开hexo目录下的_config.yml文件，这个文件为站点配置文件
+找到theme，修改值为hexo-theme-next
+调试模式
+hexo s &amp;ndash;debug 查看是否输出有错误，方便修改错误信息
+选择主题
+打开主题的根目录的_config.yml文件，这个文件是主题配置文件
+找到scheme，需要启动的在前面去掉#注释即可，不需要就加注释#
+设置 语言
+打开站点配置文件，修改language为需要的语言zh-CN
+修改菜单
+打开主题配置文件，找到menu，需要用到的菜单就去掉#，不需要就加#
+home 主页 archives 归档页 categories 分类页 tags 标签页 about 关于页面 commonweal公益 404
+修改对应的语言翻译
+主题目录下languages/zh-CN.yml
+设定菜单项的图标，可以使用的是Font Awesome 图标
+设置 侧栏
+打开主题配置文件
+修改sidebar.position的值
+left - 靠左放置 right - 靠右放置
+设置 头像</description>
+    </item>
+    
+    <item>
+      <title>css常见布局</title>
+      <link>http://chenjunlinabc.github.io/posts/24/</link>
+      <pubDate>Wed, 16 Jun 2021 13:23:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/24/</guid>
+      <description>居中布局
+分水平居中和垂直居中，水平+垂直居中
+水平居中：当前元素在父级元素容器中，水平方向是居中显示的
+inline-block+text-algin
+#app{text-align: center;// 父元素，文本内容居中对齐}.child{display: inline-block;// 子元素，行内块级元素}优点：浏览器兼容性好（css2）
+缺点：text-align具有继承性，会导致子元素的文本也是居中的
+table+margin
+.child{display: table; // 也可以为blockmargin: 0 auto;// 子元素，margin外边距，上下为0，左右为auto（浏览器自动分配）}优点：只需要对子元素设置，就可以实现效果
+缺点：如果子元素脱离正常流，将会导致margin属性的值无效化
+absolute+transform
+#app{position: relative; // 父元素相对定位}.child{position: absolute; // 子元素绝对定位，如果父元素没有定位，那么该元素是相对于页面定位，父元素定位了，那么该元素是相对于父元素的left: 50%; // 相对于父元素左边50% transform: translateX(-50%); // 子元素水平平移-50%（左负数，右正数）}优点：父元素是否脱离正常流，也是不影响子元素的水平居中效果
+缺点：transform属性是css3的新属性，浏览器兼容性比较差
+垂直居中：当前元素在父级元素容器中，垂直方向是居中显示的
+table-cell+vertical-algin
+#app{// 父元素display: table-cell;vertical-align: middle; // 设置文本的垂直方向对齐方式}优点：浏览器兼容性好
+缺点：vertical-align属性具有继承性
+absolute+transform</description>
     </item>
     
     <item>
@@ -779,6 +1022,66 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg &amp;ndash;de
 sudo add-apt-repository &amp;ldquo;deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(lsb_release -cs) stable&amp;rdquo;
 安装docker引擎
 sudo apt install docker-ce docker-ce-cli containerd.</description>
+    </item>
+    
+    <item>
+      <title>简单理解区块链的基本原理</title>
+      <link>http://chenjunlinabc.github.io/posts/15/</link>
+      <pubDate>Wed, 16 Jun 2021 09:27:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/15/</guid>
+      <description>注意：不推荐去玩比特币以及类似的加密货币，那个玩意说涨就涨，说跌就跌，比特币实质上就是一串数字，没有实物，没有信用背书，当这个巨大泡沫破裂之时，大部分人绝对不可能及时套现跑路，了解比特币下的技术可以，但是绝对不能接触或者玩比特币以及类似的加密货币
+1个比特币相当于100000000聪,聪(Satoshi)是比特币目前最小的单位，是为了纪念比特币的创建者中本聪(Satoshi Nakamoto)
+在中国唯一值得信赖的加密货币是数字人民币，有国家在做信用背书，是有法偿能力的法定货币，和现金等值
+区块链技术诞生于比特币，而比特币的诞生又来源于一位叫中本聪的一篇文章（比特币：一种点对点的电子现金系统）
+区块链的一个特点就是去中心化，中心化指的是数据中心化，例如支付宝和微信，那些支付的数据全部集中在数据库中，确保交易用户的余额一增一减
+而区块链技术就是把数据全部公开，区块链中的每一个节点都可以获得一份完整的区块链，而且全部都是相同的数据，如果篡改了其中一份数据，那么这份数据会和其他节点的数据对比，如果不相同，那么这份数据是不被其他节点承认的
+而需要伪造一个区块链需要拥有超过全网51%的（节点）算力
+区块链是一个个区块组成的有序链表，区块中记录着一系列信息，每个区块都指向前一个区块，每个区块都有一个哈希标识（又被称为区块哈希），区块链的不可篡改的特性就是由哈希算法提供的（哈希是单向的，哈希算法可以将一段数据计算出一个哈希值，而哈希值不能反推出加密前的数据，只能暴力穷举）
+如果两份数据的哈希值相同，那么这两个哈希值的数据就是相同的，只要改动了原始数据任意的数据，那怕只修改一个字节，都会改变哈希值
+常见的哈希算法
+MD5：128位，16字节
+SHA-1：160位，20字节
+SHA-256：256位，32子节
+SHA-512：512位，64子节
+RipeMD160：160位，20子节
+哈希函数：Hash(原始数据) = 摘要数据（哈希值）
+比特币使用的哈希算法有两种，一种是双重SHA-256（将数据进行两次SHA-256计算），另一种就是先将数据进行SHA-256计算，再将处理过的数据再进行一次RipeMD160计算
+区块的头部有一个Merkle Hash字段，记录了该区块的全部交易的哈希树（全部交易的数据通过哈希算法处理为一个汇总的哈希值）
+例如：当一个区块中有好几个交易，然后将一对一对的交易数据做差异哈希算法（dhash），得到两个哈希值，将这两个哈希值拼起来，计算出下一层的哈希值，一层一层计算，最后的得到的哈希值就是Merkle Hash
+那么如果每一层是单数，那么将每一层的最后的一个数据复制一份，最后计算出最终值
+区块本身使用Merkle Hash来表示，而区块本身的哈希值是没有记录在区块头部的，需要通过计算区块头部的数据得到
+区块头部的Prev Hash记录了上一个区块的哈希值（不是Merkle Hash，而是区块本身的哈希值），可以通过Prev Hash来追踪到上一个区块，每个区块的Prev Hash都会指向自己的上一个区块，一直反复下去，一直到区块链的第一个区块（创世区块，该区块没有上一个区块）
+从对Merkle Hash的计算方法和对区块头部来追踪到上一个区块的方法得出，只要篡改其中任意一个交易的数据（哪怕是一字节的改动）都会让Merkle Hash验证失败，那么这个区块就是无效的，只能重新计算Merkle Hash，然后这个区块本身的哈希值就改变，因此下一个区块指向该区块的链接也断了
+篡改一个区块，需要重新计算这个区块的本身的哈希值，然后将下一个的所有区块全部计算并且伪造，才能篡改整个区块链，难度极高，因为区块链是不断增长的，修改的难度也会越来越难，而挖矿实质上就是重新计算区块头部的哈希值，直到于哈希值匹配，挖矿本身的要求就已经很高了，更不用说篡改整个区块链了
+比特币交易中使用了一种名叫点对点交易，就是用户对用户，这个交易的特点就是去中心化，整个交易全部依赖于数学加密
+用到一个叫公钥和私钥，地址的概念，公钥是可以根据私钥计算出来的，而私钥就不能通过公钥计算出来，因此私钥很重要，不能泄露
+地址的计算方法
+Hash(Hash(fun(私钥))) = 地址
+而需要不通过泄露私钥的情况下，表明拥有某个私钥，需要用到签名，先将交易信息进行哈希计算，然后签名计算，sign(&amp;lsquo;交易信息的哈希值&amp;rsquo;,&amp;lsquo;私钥&amp;rsquo;)，最后得到一个签名值
+而进行付款时，会向区块链的节点进行广播，广播信息包括，交易信息和签名值，而验证签名信息的确是某个私钥的，验证过程例如：
+verify(&amp;lsquo;签名值&amp;rsquo;,&amp;lsquo;付款方地址&amp;rsquo;)，获得的值为交易的哈希值
+if(verify(&amp;lsquo;签名值&amp;rsquo;,&amp;lsquo;付款方地址&amp;rsquo;) == hash(&amp;rsquo;{交易信息}&amp;rsquo;))
+如果当某一个节点验证通过，那么该节点也会进行再一次的广播
+交易信息中没有包含任何个人的信息，因此区块链具有匿名性
+而比特币的交易是根据私钥来验证的，只要不泄露私钥，那么比特币的账户是安全的，私钥破解，私钥的个数有2的256次方，相当于人类可观测宇宙的原子数，根据当前计算机的计算速度，根本不可能碰撞出来，除非倒霉到碰撞第一次就匹配到了
+挖矿：将交易记录，交易的时间，以及序号等等数据进行哈希打包的节点就是矿工节点，而完成哈希打包任务，并且认为其有效的，就会获得比特币奖励
+一段时间内只能一个矿工节点成功记账，并且被证明为有效的，这个时间一般为10分钟，奖励比特币的机制为每4年减半
+而且需要进行POW工作量证明竞争来获得记账权（也就是传说中的挖矿，因为要进行大量的计算，因此挖矿需要大量的算力，竞争该记账权是具有一定随机性的）
+其他节点复制记账结果（也会获得比特币奖励）
+POW工作量证明
+Hash(上一个Hash值,交易记录集,随机数)= 哈希值
+而比特币中有个机制，哈希值要小于某个目标值，因此需要不断修改随机数的值，比特币因为矿工节点越来越多，挖取比特币的难度也会越来越难，难度越难，那么目标值就越小
+交易记录集：收集广播中还没有被记录账本的交易，交易的有效性验证，添加给自己转账的交易（挖矿奖励）
+目前比特币的共识机制：优先选择工作量最大的区块链，最长的区块链，因此矿工会延长计算，已确保自己是工作量是最大最长的
+如果两条链被广播到其他节点，因为网络具有不确定性，有可能某个节点会先收到某个链，在这个链上挖矿，从而导致链出现分叉，如果两个链都同时收到，那么会优先选择工作量最大的区块链，另一个链为备用链保存
+解决分叉：如果当前链的上一级链更长的话，优先选择，而短一点的链会被抛弃
+分叉分为硬分叉和软分叉
+硬分叉：区块链发生永久性改变，在新共识发布后，那些没有更新的节点无法验证已经升级的节点的所产生的区块，改变挖矿难度
+软分叉：区块链发生改变，但是不会像硬分叉那样影响没有更新的节点，旧节点会兼容新节点，但是新节点不兼容旧节点而已
+解决分叉的方法就是所有矿工都遵从同样的机制（升级机制，保证机制为最新），而且那些没有遵从的就会发生分叉
+最经典的例子就是拜占庭将军问题
+主要讲的是：拜占庭帝国去攻击一个敌人，派了10支军队，要将这个敌人打败需要至少6支军队，而且必须在分散包围状态下同时攻击，需要依靠通信兵来进行传递信息，但是不清楚这些通信兵或者将军中是否有叛徒，而这些叛徒可能会传递假消息来导致进攻失败，而拜占庭将军们需要在这种分布式下进行传递消息</description>
     </item>
     
     <item>

@@ -1,11 +1,212 @@
 <!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>JavaScript基础学习笔记 | 小陈的个人博客</title><meta name=keywords content="JavaScript"><meta name=description content="插入js
-在html页面使用js
-引用js文件"><meta name=author content="Me"><link rel=canonical href=http://chenjunlinabc.github.io/posts/46/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+在html页面使用js 引用js文件 注释
+// 单行注释
+/* 多行注释
+*/
+变量
+var home // 声明一个变量使用var
+home = &ldquo;hallo&rdquo; // 使用=来把字符串hallo赋值到home变量
+变量命名要求： 必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字
+建议每一行语句结束使用;来表示结束当前语句，主要是给人看
+var num = 123 // 整数
+num = &ldquo;123&rdquo; // 字符串
+num = 1.23 // 浮点数（小数）
+num = true // 布尔值（真，假或者对，错的意思，true是真，false为假）
+num = 1+1 // 可以进行运算，也可以连接两个字符串
+num = &ldquo;hallo&rdquo; + &ldquo;javascript&rdquo;
+var nums = 1
+nums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2
+nums&ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0"><meta name=author content="Me"><link rel=canonical href=http://chenjunlinabc.github.io/posts/46/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=http://chenjunlinabc.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://chenjunlinabc.github.io/favicon.ico><link rel=icon type=image/png sizes=32x32 href=http://chenjunlinabc.github.io/favicon.ico><link rel=apple-touch-icon href=http://chenjunlinabc.github.io/favicon.ico><link rel=mask-icon href=http://chenjunlinabc.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="JavaScript基础学习笔记"><meta property="og:description" content="插入js
-在html页面使用js
-引用js文件"><meta property="og:type" content="article"><meta property="og:url" content="http://chenjunlinabc.github.io/posts/46/"><meta property="og:image" content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-06-24T07:57:00+00:00"><meta property="article:modified_time" content="2021-06-24T07:57:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="JavaScript基础学习笔记"><meta name=twitter:description content="插入js
-在html页面使用js
-引用js文件"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://chenjunlinabc.github.io/posts/"},{"@type":"ListItem","position":2,"name":"JavaScript基础学习笔记","item":"http://chenjunlinabc.github.io/posts/46/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JavaScript基础学习笔记","name":"JavaScript基础学习笔记","description":"插入js\n在html页面使用js\n引用js文件","keywords":["JavaScript"],"articleBody":"插入js\n在html页面使用js\n引用js文件\n","wordCount":"3","inLanguage":"en","datePublished":"2021-06-24T07:57:00Z","dateModified":"2021-06-24T07:57:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://chenjunlinabc.github.io/posts/46/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"http://chenjunlinabc.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=http://chenjunlinabc.github.io/ accesskey=h title="小陈的个人博客 (Alt + H)"><img src=http://chenjunlinabc.github.io/favicon.ico alt aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://chenjunlinabc.github.io/ title=首页><span>首页</span></a></li><li><a href=http://chenjunlinabc.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=http://chenjunlinabc.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=http://chenjunlinabc.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=http://chenjunlinabc.github.io/links/ title=链接><span>链接</span></a></li><li><a href=http://chenjunlinabc.github.io/about/ title=关于><span>关于</span></a></li><li><a href=http://chenjunlinabc.github.io/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://chenjunlinabc.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://chenjunlinabc.github.io/posts/>Posts</a></div><h1 class=post-title>JavaScript基础学习笔记</h1><div class=post-meta><span title='2021-06-24 07:57:00 +0000 UTC'>2021-06-24</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/JavaScript%e5%9f%ba%e7%a1%80%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>插入js</p><p>在html页面使用js</p><p>引用js文件</p></div><footer class=post-footer><ul class=post-tags><li><a href=http://chenjunlinabc.github.io/tags/javascript/>JavaScript</a></li></ul><nav class=paginav><a class=prev href=http://chenjunlinabc.github.io/posts/47/><span class=title>« Prev</span><br><span>webpack学习笔记</span></a>
+在html页面使用js 引用js文件 注释
+// 单行注释
+/* 多行注释
+*/
+变量
+var home // 声明一个变量使用var
+home = &ldquo;hallo&rdquo; // 使用=来把字符串hallo赋值到home变量
+变量命名要求： 必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字
+建议每一行语句结束使用;来表示结束当前语句，主要是给人看
+var num = 123 // 整数
+num = &ldquo;123&rdquo; // 字符串
+num = 1.23 // 浮点数（小数）
+num = true // 布尔值（真，假或者对，错的意思，true是真，false为假）
+num = 1+1 // 可以进行运算，也可以连接两个字符串
+num = &ldquo;hallo&rdquo; + &ldquo;javascript&rdquo;
+var nums = 1
+nums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2
+nums&ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0"><meta property="og:type" content="article"><meta property="og:url" content="http://chenjunlinabc.github.io/posts/46/"><meta property="og:image" content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-06-24T07:57:00+00:00"><meta property="article:modified_time" content="2021-06-24T07:57:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="JavaScript基础学习笔记"><meta name=twitter:description content="插入js
+在html页面使用js 引用js文件 注释
+// 单行注释
+/* 多行注释
+*/
+变量
+var home // 声明一个变量使用var
+home = &ldquo;hallo&rdquo; // 使用=来把字符串hallo赋值到home变量
+变量命名要求： 必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字
+建议每一行语句结束使用;来表示结束当前语句，主要是给人看
+var num = 123 // 整数
+num = &ldquo;123&rdquo; // 字符串
+num = 1.23 // 浮点数（小数）
+num = true // 布尔值（真，假或者对，错的意思，true是真，false为假）
+num = 1+1 // 可以进行运算，也可以连接两个字符串
+num = &ldquo;hallo&rdquo; + &ldquo;javascript&rdquo;
+var nums = 1
+nums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2
+nums&ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://chenjunlinabc.github.io/posts/"},{"@type":"ListItem","position":2,"name":"JavaScript基础学习笔记","item":"http://chenjunlinabc.github.io/posts/46/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JavaScript基础学习笔记","name":"JavaScript基础学习笔记","description":"插入js\n在html页面使用js 引用js文件 注释\n// 单行注释\n/* 多行注释\n*/\n变量\nvar home // 声明一个变量使用var\nhome = \u0026ldquo;hallo\u0026rdquo; // 使用=来把字符串hallo赋值到home变量\n变量命名要求： 必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字\n建议每一行语句结束使用;来表示结束当前语句，主要是给人看\nvar num = 123 // 整数\nnum = \u0026ldquo;123\u0026rdquo; // 字符串\nnum = 1.23 // 浮点数（小数）\nnum = true // 布尔值（真，假或者对，错的意思，true是真，false为假）\nnum = 1+1 // 可以进行运算，也可以连接两个字符串\nnum = \u0026ldquo;hallo\u0026rdquo; + \u0026ldquo;javascript\u0026rdquo;\nvar nums = 1\nnums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2\nnums\u0026ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0","keywords":["JavaScript"],"articleBody":"插入js\n在html页面使用js 引用js文件 注释\n// 单行注释\n/* 多行注释\n*/\n变量\nvar home // 声明一个变量使用var\nhome = “hallo” // 使用=来把字符串hallo赋值到home变量\n变量命名要求： 必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字\n建议每一行语句结束使用;来表示结束当前语句，主要是给人看\nvar num = 123 // 整数\nnum = “123” // 字符串\nnum = 1.23 // 浮点数（小数）\nnum = true // 布尔值（真，假或者对，错的意思，true是真，false为假）\nnum = 1+1 // 可以进行运算，也可以连接两个字符串\nnum = “hallo” + “javascript”\nvar nums = 1\nnums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2\nnums– // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0\n\u003c 小于 \u003e 大于 \u003c= 小于或者等于 \u003e= 大于或者等于 == 没错，这个才是等于，=这个是用来赋值的 != 不等于\n比较的结果一定是布尔值，要么true。要么false\n\u0026\u0026 和，与的意思，必须是两个条件都符合，才会返回true，否则返回false\n|| 或者的意思，只要符合其中的一个条件就返回true，否则返回false\nnum = 1\na = !(num\u003e2)\n//这个返回true，因为num不大于2，所以是false，但是!()可以把真看成假，把假看成真\n操作符之间的优先级（高到低）:\n算术操作符 → 比较操作符 → 逻辑操作符 → “=“赋值符号\n同级的运算是按从左到右次序进行,多层括号由里向外。\nnum = 1\nnum = numa + 1 \u003e 2 \u0026\u0026 numa * 2 \u003c 2\n// (numa +1)\u003e2 (numa *2) \u003c2 所以num 的值为false\nvar array = new Array() // 定义数值\narray[0] = “hi” array[1] = ‘hallo’\n数值从0开始，数值是值的整合，每一个数值的值都有一个索引号\narray = new Array(5) //定义数值，创建8个值\n创建的新数组是空数组，没有值，输出会显示undefined\narray = new Array(1,2,3,4,5,6) // 定义数组，同时赋值\narray = new Array[1,2,3,4,5,6] // 定义数组，同时直接输入个数组\narray[99] = 66 //使用一个新的索引，为数值添加一个新的元素\ndocument.write(array[1]) //输出array数组，索引号为1的值\narray.length = 6 // 获取数组array的长度，并且修改数值的长度\nalert(array.length) // 输出6\nvar Array = [[0,1],[2,3]] // 定义一个二维数组\narray[0][1] = 5 // 把第0行的第1列的元素赋值为5\nif(条件)｛\r程序块\r｝\r条件必须为true（真）时才会执行程序块，为假（false）时忽略跳过或者执行else的内容，又或者执行else if的内容\n会被认为是false（假）的有：false，0，“”，NaN，null，undefined\nreturn //终止\nvar code = 'hallo'\rif (code == 'hallo'){\rdocument.write('hallo')\r}else if(code == 'no'){\rdocument.write('no')\r}else{\rdocument.write('go')\r}\rswitch(变量){\rcase值: // 当等于或者符合某个值时，执行case下的程序块\rbreak\rdefault:\r// 当都不等于或者不符合上面给出的某个值时，执行default下的程序块，就比如if的else一样\rbreak\r}\rcode = 3\rswitch(code){\rcase 1:\rdocument.write('1')\rbreak\rcase 2:\rdocument.write('2')\rbreak\rcase 3:\rdocument.write('3')\rbreak\rdefault:\rbreak\r}\rfor(初始值;条件;更改初始值){\r// 必须条件符合才执行程序块，当条件不符合时，跳出for循环\r}\rfor(code=1;code\u003c=3;code++){\rdocument.write(code)\r}\rwhile(条件){\r// 当条件为真时，执行该程序块，如果条件一直为真时，会一直执行下去，所以一定要保证条件结果可能为假\r}\rwhile (code \u003c= 10){\rdocument.write('code')\rcode++\r}\rcode = 1\rdo{\rdocument.write(code)\rcode++\r}\rwhile (code \u003c= 5)\rfor (code = 1;code\u003c=10;code++){\rif(code == 2){\rcontinue\r}\rif(code == 3){\rbreak\r}\rdocument.write(code)\r}\rfunction 函数名(传参，不强制必须要传参){\r// 当执行该函数时，执行程序块\r}\r函数名(传参，不强制必须要传参)//触发函数\r在函数内部定义的变量，只作用于该函数内部，并不影响函数外部定义的变量\n在函数内部定义的变量就叫局部变量，在函数外部定义的变量叫全局变量\n在函数内部可以获取函数外部的变量，在函数外部，不能获取到函数外部的变量\n注意的是：只作用于该函数内部，不影响其他函数内部\n;(functiom(){\r//....\r// 为了避免污染全局变量，可以使用这种方法\r})()\rfunction code(a,b){\rnum = a+b\ralert(num)\rreturn num\r}\rcode(1,2)\r事件\nonclick是鼠标点击事件，当点击鼠标时，执行被调用程序块\nonmouseover是鼠标经过事件，当鼠标移到一个对象上，就触发onmouseover事件，并执行被调用的程序块\nonmouseout是鼠标移开事件，当鼠标移开当前对象时，触发该事件，并执行被调用程序块\nonfocus是光标聚焦事件，例如光标移到文本框内时，就是焦点在文本框内上，触发该事件，并执行被调用程序块\nonblur是失焦事件，和光标聚焦事件相反\nonselect是内容选中事件，当文本框或者文本域中的文字被选中时触发该事件，并执行被调用程序块\nonchange是文本框内容改变事件，当通过修改例如文本框的内容时触发该事件，并执行被调用程序块\nonload是加载事件，当页面加载完成后触发该事件，并执行被调用程序块\nonunload是卸载事件，当退出页面或者页面刷新等等操作时触发该事件，并执行被调用程序块\n对象\nvar name = new Array() // 定义个数组对象\nname.length // 使用array对象的length属性来获取数组的长度，这是获取到对象的属性的例子\nDate 对象\nvar go_date = new Date(); // 假如是2012年1月2日\ndocument.write(go_date); // 输出go_date的值，不同浏览器，时间格式有差异\ngetFullYear(); // 返回年份时间\nsetFullYear(); // 设置年份时间\ndocument.write(go_date.getFullYear()); //输出go_date的年份，输出2012\ngo_date.setFullYear(2022); // 设置go_date的年份，go_date的年份已经设置为2022\ndocument.write(go_date.getFullYear()); // 这个时候输出go_date的年份，输出结果为2022\ngetDay(); // 返回星期，0到6的整数，0表示星期天\ndocument.write(go_date.getDay()) // 输出数字，可以通过数组来返回相对于的星期\ngetTime(); // 返回时间，单位毫秒，返回 1970 年 1 月 1 日至今的毫秒数 setTime(); // 设置时间\nlength返回字符串长度 var str_01 = “hello JavaScript”; var str_02 = str_01.length;\ntoUpperCase()把字符串小写字母转换为大写字母 var str_03 = str_01.toUpperCase();\ncharAt()返回指定位置的字符串 document.write(str_01.charAt(0));\nindexOf()返回指定字符串中首次出现的位置\ndocument.write(str_01.indexOf(‘h’);\nwindows对象\nalert(); // 弹窗，只能确定\nconfirm(); // 弹窗，可以确定，也可以取消，返回是布尔值\nprompt(); // 弹窗，可以输入内容（传入内容）\nsetTimeout(函数,时间); // 定时器，时间是毫秒，1000毫秒=1秒，当时间到了就触发函数，只会触发一次\nsetInterval(函数,时间); // 每一到指定的时间就触发一次函数，可以触发n次\nclearInterval(清除定时器);\nDOM\ndocument.getElementById(); // id选择器 document.getElementsByTagName(); // 标签选择器 document.getElementsByClassName(); // 类名选择器\ndocument.createElement(); // 创建dom document.body.appendChild();\naddEventListener(); //添加点击事件\ninnerText(); // 添加文本\nES6模块化\nexport语法\nexport default默认导出\nexport abc需要使用import { abc } form ‘./test.js’的方式导入\nbabel编译功能\nnpm install –save-dev babel-core babel-preset-es2015 babel-preset-latest\nnpm install –global babel-cli\n.babelrc文件\n{\r'presets': ['es2015','latest'],\r'plugins': []\r}\rwebpack\nnpm install webpack babel-loader –save-dev\nwebpack.config.js配置文件\nrollup打包工具\nnpm install rollup rollup-plugin-node-resolve rollup-plugin-babel babel-plugin-external-helpers babel-preset-latest babel-core –save-dev\nrollup.config.js配置文件\nimport babel form 'rollup-plugin-babel'\rimport resolve form 'rollup-plugin-node-resolve'\rexport default{\rentry: 'src/index.js',\rformat: 'umd',\rplugins: [\rresolve(),\rbabel({\rexclud: 'node_modules/**'\r})\r],\rdest: 'build/bundle.js'\r}\rrollup -c rollup.config.js\nAMD模块化标准，nodejs模块化标准（CommonJS），ES6模块化标准，兼容模块化UMD\nclass实质上是构造函数的语法糖，构建器constructor就是构造函数，不过class的方法是在类内部创建的，而构造函数是通过扩展原型的方式（prototype），让实例具备该方法\n构造函数等于构造函数的原型的构造器（prototype.constructor）\n实例.__proto__等于构造函数的原型\n构造函数继承（同时也是class继承的原理）\nAbc.prototype = new Xyz()\n这样Abc构造函数就可以继承Xyz构造函数的属性和方法\npromise\n原型\n异步\n虚拟DOM\nMVVM\n组件化\nhybrid\n","wordCount":"524","inLanguage":"en","datePublished":"2021-06-24T07:57:00Z","dateModified":"2021-06-24T07:57:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://chenjunlinabc.github.io/posts/46/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"http://chenjunlinabc.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=http://chenjunlinabc.github.io/ accesskey=h title="小陈的个人博客 (Alt + H)"><img src=http://chenjunlinabc.github.io/favicon.ico alt aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://chenjunlinabc.github.io/ title=首页><span>首页</span></a></li><li><a href=http://chenjunlinabc.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=http://chenjunlinabc.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=http://chenjunlinabc.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=http://chenjunlinabc.github.io/links/ title=链接><span>链接</span></a></li><li><a href=http://chenjunlinabc.github.io/about/ title=关于><span>关于</span></a></li><li><a href=http://chenjunlinabc.github.io/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://chenjunlinabc.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://chenjunlinabc.github.io/posts/>Posts</a></div><h1 class=post-title>JavaScript基础学习笔记</h1><div class=post-meta><span title='2021-06-24 07:57:00 +0000 UTC'>2021-06-24</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://blog.cjlio.com/posts/JavaScript%e5%9f%ba%e7%a1%80%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>插入js</p><p>在html页面使用js</p><p>引用js文件</p><p>注释</p><p>// 单行注释</p><p>/*
+多行注释</p><p>*/</p><p>变量</p><p>var home // 声明一个变量使用var</p><p>home = &ldquo;hallo&rdquo; // 使用=来把字符串hallo赋值到home变量</p><p>变量命名要求：
+必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字</p><p>建议每一行语句结束使用;来表示结束当前语句，主要是给人看</p><p>var num = 123 // 整数</p><p>num = &ldquo;123&rdquo; // 字符串</p><p>num = 1.23 // 浮点数（小数）</p><p>num = true // 布尔值（真，假或者对，错的意思，true是真，false为假）</p><p>num = 1+1 // 可以进行运算，也可以连接两个字符串</p><p>num = &ldquo;hallo&rdquo; + &ldquo;javascript&rdquo;</p><p>var nums = 1</p><p>nums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2</p><p>nums&ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0</p><p>&lt; 小于
+> 大于
+&lt;= 小于或者等于
+>= 大于或者等于
+== 没错，这个才是等于，=这个是用来赋值的
+!= 不等于</p><p>比较的结果一定是布尔值，要么true。要么false</p><p>&& 和，与的意思，必须是两个条件都符合，才会返回true，否则返回false</p><p>|| 或者的意思，只要符合其中的一个条件就返回true，否则返回false</p><p>num = 1</p><p>a = !(num>2)</p><p>//这个返回true，因为num不大于2，所以是false，但是!()可以把真看成假，把假看成真</p><p>操作符之间的优先级（高到低）:</p><p>算术操作符 → 比较操作符 → 逻辑操作符 → &ldquo;=&ldquo;赋值符号</p><p>同级的运算是按从左到右次序进行,多层括号由里向外。</p><p>num = 1</p><p>num = numa + 1 > 2 && numa * 2 &lt; 2</p><p>// (numa +1)>2 (numa *2) &lt;2 所以num 的值为false</p><p>var array = new Array() // 定义数值</p><p>array[0] = &ldquo;hi&rdquo;
+array[1] = &lsquo;hallo&rsquo;</p><p>数值从0开始，数值是值的整合，每一个数值的值都有一个索引号</p><p>array = new Array(5) //定义数值，创建8个值</p><p>创建的新数组是空数组，没有值，输出会显示undefined</p><p>array = new Array(1,2,3,4,5,6) // 定义数组，同时赋值</p><p>array = new Array[1,2,3,4,5,6] // 定义数组，同时直接输入个数组</p><p>array[99] = 66 //使用一个新的索引，为数值添加一个新的元素</p><p>document.write(array[1]) //输出array数组，索引号为1的值</p><p>array.length = 6 // 获取数组array的长度，并且修改数值的长度</p><p>alert(array.length) // 输出6</p><p>var Array = [[0,1],[2,3]] // 定义一个二维数组</p><p>array[0][1] = 5 // 把第0行的第1列的元素赋值为5</p><pre><code>if(条件)｛
+    程序块
+｝
+</code></pre><p>条件必须为true（真）时才会执行程序块，为假（false）时忽略跳过或者执行else的内容，又或者执行else if的内容</p><p>会被认为是false（假）的有：false，0，“”，NaN，null，undefined</p><p>return //终止</p><pre><code>var code = 'hallo'
+
+if (code == 'hallo'){
+document.write('hallo')
+}else if(code == 'no'){
+    document.write('no')
+}else{
+    document.write('go')
+}
+
+
+
+
+switch(变量){
+    case值: 
+         	// 当等于或者符合某个值时，执行case下的程序块
+    break
+
+    default:
+    // 当都不等于或者不符合上面给出的某个值时，执行default下的程序块，就比如if的else一样
+    break
+}
+
+
+
+code = 3
+switch(code){
+    case 1:
+    document.write('1')
+    break
+    case 2:
+    document.write('2')
+    break
+    case 3:
+    document.write('3')
+    break
+
+    default:
+    break
+}
+
+for(初始值;条件;更改初始值){
+    // 必须条件符合才执行程序块，当条件不符合时，跳出for循环
+}
+
+
+for(code=1;code&lt;=3;code++){
+    document.write(code)
+}
+
+
+
+while(条件){
+    // 当条件为真时，执行该程序块，如果条件一直为真时，会一直执行下去，所以一定要保证条件结果可能为假
+}
+
+
+while (code &lt;= 10){
+    document.write('code')
+    code++
+}
+
+
+
+code = 1
+do{
+    document.write(code)
+
+    code++
+}
+
+while (code &lt;= 5)
+
+
+
+
+
+for (code = 1;code&lt;=10;code++){
+
+    if(code == 2){
+        continue
+    }
+
+    if(code == 3){
+        break
+    }
+
+
+    document.write(code)
+}
+
+
+
+function 函数名(传参，不强制必须要传参){
+    // 当执行该函数时，执行程序块
+}
+
+函数名(传参，不强制必须要传参)//触发函数
+</code></pre><p>在函数内部定义的变量，只作用于该函数内部，并不影响函数外部定义的变量</p><p>在函数内部定义的变量就叫局部变量，在函数外部定义的变量叫全局变量</p><p>在函数内部可以获取函数外部的变量，在函数外部，不能获取到函数外部的变量</p><p>注意的是：只作用于该函数内部，不影响其他函数内部</p><pre><code>;(functiom(){
+    //....
+
+
+    // 为了避免污染全局变量，可以使用这种方法
+})()
+
+
+
+
+
+
+function code(a,b){
+    num = a+b
+    alert(num)
+    return num
+}
+
+code(1,2)
+</code></pre><p>事件</p><p>onclick是鼠标点击事件，当点击鼠标时，执行被调用程序块</p><p>onmouseover是鼠标经过事件，当鼠标移到一个对象上，就触发onmouseover事件，并执行被调用的程序块</p><p>onmouseout是鼠标移开事件，当鼠标移开当前对象时，触发该事件，并执行被调用程序块</p><p>onfocus是光标聚焦事件，例如光标移到文本框内时，就是焦点在文本框内上，触发该事件，并执行被调用程序块</p><p>onblur是失焦事件，和光标聚焦事件相反</p><p>onselect是内容选中事件，当文本框或者文本域中的文字被选中时触发该事件，并执行被调用程序块</p><p>onchange是文本框内容改变事件，当通过修改例如文本框的内容时触发该事件，并执行被调用程序块</p><p>onload是加载事件，当页面加载完成后触发该事件，并执行被调用程序块</p><p>onunload是卸载事件，当退出页面或者页面刷新等等操作时触发该事件，并执行被调用程序块</p><p>对象</p><p>var name = new Array() // 定义个数组对象</p><p>name.length // 使用array对象的length属性来获取数组的长度，这是获取到对象的属性的例子</p><p>Date 对象</p><p>var go_date = new Date(); // 假如是2012年1月2日</p><p>document.write(go_date); // 输出go_date的值，不同浏览器，时间格式有差异</p><p>getFullYear(); // 返回年份时间</p><p>setFullYear(); // 设置年份时间</p><p>document.write(go_date.getFullYear()); //输出go_date的年份，输出2012</p><p>go_date.setFullYear(2022); // 设置go_date的年份，go_date的年份已经设置为2022</p><p>document.write(go_date.getFullYear()); // 这个时候输出go_date的年份，输出结果为2022</p><p>getDay(); // 返回星期，0到6的整数，0表示星期天</p><p>document.write(go_date.getDay()) // 输出数字，可以通过数组来返回相对于的星期</p><p>getTime(); // 返回时间，单位毫秒，返回 1970 年 1 月 1 日至今的毫秒数
+setTime(); // 设置时间</p><p>length返回字符串长度
+var str_01 = &ldquo;hello JavaScript&rdquo;;
+var str_02 = str_01.length;</p><p>toUpperCase()把字符串小写字母转换为大写字母
+var str_03 = str_01.toUpperCase();</p><p>charAt()返回指定位置的字符串
+document.write(str_01.charAt(0));</p><p>indexOf()返回指定字符串中首次出现的位置</p><p>document.write(str_01.indexOf(&lsquo;h&rsquo;);</p><p>windows对象</p><p>alert(); // 弹窗，只能确定</p><p>confirm(); // 弹窗，可以确定，也可以取消，返回是布尔值</p><p>prompt(); // 弹窗，可以输入内容（传入内容）</p><p>setTimeout(函数,时间); // 定时器，时间是毫秒，1000毫秒=1秒，当时间到了就触发函数，只会触发一次</p><p>setInterval(函数,时间); // 每一到指定的时间就触发一次函数，可以触发n次</p><p>clearInterval(清除定时器);</p><p>DOM</p><p>document.getElementById(); // id选择器
+document.getElementsByTagName(); // 标签选择器
+document.getElementsByClassName(); // 类名选择器</p><p>document.createElement(); // 创建dom
+document.body.appendChild();</p><p>addEventListener(); //添加点击事件</p><p>innerText(); // 添加文本</p><hr><p>ES6模块化</p><p>export语法</p><p>export default默认导出</p><p>export abc需要使用import { abc } form &lsquo;./test.js&rsquo;的方式导入</p><p>babel编译功能</p><p>npm install &ndash;save-dev babel-core babel-preset-es2015 babel-preset-latest</p><p>npm install &ndash;global babel-cli</p><p>.babelrc文件</p><pre><code>{
+    'presets': ['es2015','latest'],
+    'plugins': []
+}
+</code></pre><p>webpack</p><p>npm install webpack babel-loader &ndash;save-dev</p><p>webpack.config.js配置文件</p><p>rollup打包工具</p><p>npm install rollup rollup-plugin-node-resolve rollup-plugin-babel babel-plugin-external-helpers babel-preset-latest babel-core &ndash;save-dev</p><p>rollup.config.js配置文件</p><pre><code>import babel form 'rollup-plugin-babel'
+import resolve form 'rollup-plugin-node-resolve'
+export default{
+    entry: 'src/index.js',
+    format: 'umd',
+    plugins: [
+        resolve(),
+        babel({
+            exclud: 'node_modules/**'
+        })
+    ],
+    dest: 'build/bundle.js'
+}
+</code></pre><p>rollup -c rollup.config.js</p><p>AMD模块化标准，nodejs模块化标准（CommonJS），ES6模块化标准，兼容模块化UMD</p><p>class实质上是构造函数的语法糖，构建器constructor就是构造函数，不过class的方法是在类内部创建的，而构造函数是通过扩展原型的方式（prototype），让实例具备该方法</p><p>构造函数等于构造函数的原型的构造器（prototype.constructor）</p><p>实例.__proto__等于构造函数的原型</p><p>构造函数继承（同时也是class继承的原理）</p><p>Abc.prototype = new Xyz()</p><p>这样Abc构造函数就可以继承Xyz构造函数的属性和方法</p><p>promise</p><hr><p>原型</p><p>异步</p><p>虚拟DOM</p><p>MVVM</p><p>组件化</p><p>hybrid</p></div><footer class=post-footer><ul class=post-tags><li><a href=http://chenjunlinabc.github.io/tags/javascript/>JavaScript</a></li></ul><nav class=paginav><a class=prev href=http://chenjunlinabc.github.io/posts/47/><span class=title>« Prev</span><br><span>webpack学习笔记</span></a>
 <a class=next href=http://chenjunlinabc.github.io/posts/45/><span class=title>Next »</span><br><span>Grid布局学习笔记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2022 <a href=http://chenjunlinabc.github.io/>小陈的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

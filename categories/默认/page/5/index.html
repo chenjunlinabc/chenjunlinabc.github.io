@@ -133,46 +133,40 @@ chenjunlin
 表格
 xxx xxx yyy yyy yyy yyy :-表示左对齐，-:表示右对齐，:-:表示居中对齐
 转义
-*</p></div><footer class=entry-footer><span title='2021-08-18 16:50:00 +0000 UTC'>2021-08-18</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Markdown基础语法笔记" href=http://chenjunlinabc.github.io/posts/88/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>简单使用Vite-前端构建工具</h2></header><div class=entry-content><p>Vite是由 Vue.js 的作者尤雨溪开发完成的一款前端项目构建工具，使用原生ESM文件，支持热重载
-Vite在法语中的意思为快速的（尤大是真喜欢法语啊）
-基于原生 import 的，使用浏览器来解析import，服务端按需编译返回，支持热更新模块
-依赖于Rollup打包，虽然vite设计初衷是为了vue3.x的，但是也是支持其他框架（例如react）
-对于TypeScrip的支持程度相当好，只需要在script元素加lang=“ts"就可以使用ts了
-至于less，sass/scss之类的css预处理器以及css原生支持也是很好，Vite支持css样式直接引入（import ‘./app.css’）
-sass/scss使用（前提已经安装了sass）
-在style元素中加lang=“scss"就可以使用sass了
-json也是可以直接引入，例如：import data from ‘./data.json’
-另外对于JSX也是支持的，用.jsx表示jsx，例如：import App from ‘./App.jsx’
-vite有一套开发服务功能，基于原生es模块，ESM+HMR，而且还有一套项目构建指令，用rollup打包
-打包：指的是使用工具来抓取和处理源码模块，并且合成可以在浏览器上运行的文件（浏览器本身并不提供模块管理的机制，多模块需要很多的script标签，很繁琐臃肿，而打包就很好的解决了这个问题）
-常见的打包工具例如：webpack，rollup，parcel，gulp
-注意：当冷启动服务的时候，必须要先抓取并且构建应用（当应用越来越大，模块越来越多的时候，会导致服务启动缓慢），才能提供服务，而且进行模块更新的话，也会导致重建应用缓慢
-传统打包，是将多个模块打包成单一的文件，而esm打包，是根据http请求，来获取相应的route，再根据route来获取module（避免一开始就获取全部module）
-vite将模块分为依赖和源码，依赖指的是开发时不会发生改变的，vite将使用esbuild预构建依赖，而且将以原生ESM方式让浏览器接管打包源码
-构建Vite项目
-npm init vite-app demo
-或者
-yarn create vite-app demo
-然后初始化一下
-npm install
-或者
-yarn
-启动服务器
-vite
-或者
-npm run dev，yarn dev
-本地预览
-vite preview
-打包
-vite build
-react
-npm init vite-app –template react
-npm install
-Vite是一个构建工具的高阶封装（生产环境打包用Rollup来构建），开发环境无需要打包编译（利用现代浏览器的原生ESM来进行导入模块，模块加载的工作由浏览器完成，实现冷启动），支持动态模块热重载（HMR），开发环境的编译通过Esbuild来完成
-Vite生产环境构建（也就是Rollup）是根据browserslist来做浏览器兼容性的，需要通过修改vite.config.ts下的build.target来指定构建目标，Vite最低支持es2015，也就是es6，需要es5以及更多浏览器可能无法正常运行或者通过@vitejs/plugin-legacy插件来获取支持（注意：使用该插件也不能让vue3支持ie11，只有vue2支持ie11）
-安装@vitejs/plugin-legacy
-yarn add @vitejs/plugin-legacy -d
-配置vite....</p></div><footer class=entry-footer><span title='2021-08-18 14:20:00 +0000 UTC'>2021-08-18</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to 简单使用Vite-前端构建工具" href=http://chenjunlinabc.github.io/posts/87/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=http://chenjunlinabc.github.io/categories/%E9%BB%98%E8%AE%A4/page/4/>«&nbsp;Prev&nbsp;</a>
+*</p></div><footer class=entry-footer><span title='2021-08-18 16:50:00 +0000 UTC'>2021-08-18</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Markdown基础语法笔记" href=http://chenjunlinabc.github.io/posts/88/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>SVN版本控制系统学习笔记</h2></header><div class=entry-content><p>SVN全名Subversion，即版本控制系统
+和Git不同，Git是分布式，而SVN是集中式
+在commit没有冲突的时候，会合并
+而存在冲突那么就需要先手动处理冲突再commit
+源代码库：源代码统一存放的地方
+获取：到源代码库获取一份源代码
+提交：已经修改了源代码，想提交到源代码库
+更新：更新同步和源代码库一样的源代码
+安装SVN
+dnf install subversion
+创建版本库
+cd /svn/demo
+svnadmin create /svn/demo
+其中conf/svnserve.conf文件是svn服务配置文件
+anon-access = read auth-access = write password-db = passwd authz-db = authz realm = /svn/demo
+passwd文件为账号密码文件
+格式为：账号=密码，例如：abc = root
+authz为权限控制文件
+格式为：账号=rw（r读，w写），例如：abc=rw
+启动版本库
+svnserve -d -r /svn/demo –listen-port 3690
+–listen-port是指定svn监听端口，默认是3690，-r是指定版本库
+停止svn服务
+killall svnserve
+检出：从版本库中创建副本，在其修改，再提交到版本库中
+例如：
+svn checkout svn:xxx/demo –username=root
+因为root有读写权限，因此将会在本地获取到demo的副本
+更新：更新副本，将其同步到版本库最新版本，如果不是当前最新版本，当前本地的副本将无效
+svn update
+默认是更新到最新版本，也可以指定更新到哪个版本
+svn update -r 2 demo
+提交
+svn commit -m “hello svn”...</p></div><footer class=entry-footer><span title='2021-08-11 15:00:00 +0000 UTC'>2021-08-11</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to SVN版本控制系统学习笔记" href=http://chenjunlinabc.github.io/posts/84/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=http://chenjunlinabc.github.io/categories/%E9%BB%98%E8%AE%A4/page/4/>«&nbsp;Prev&nbsp;</a>
 <a class=next href=http://chenjunlinabc.github.io/categories/%E9%BB%98%E8%AE%A4/page/6/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2022 <a href=http://chenjunlinabc.github.io/>小陈的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

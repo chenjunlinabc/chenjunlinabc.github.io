@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PWA on 小陈的个人博客</title>
+    <link>http://chenjunlinabc.github.io/tags/pwa/</link>
+    <description>Recent content in PWA on 小陈的个人博客</description>
+    <image>
+      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 28 Oct 2022 01:21:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/pwa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用PWA技术</title>
+      <link>http://chenjunlinabc.github.io/posts/154/</link>
+      <pubDate>Fri, 28 Oct 2022 01:21:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/154/</guid>
+      <description>PWA，Progressive Web App（渐进式web应用），PWA技术可以将web应用具备接近原生应用的特性和用户体验，无需额外安装，支持离线缓存，消息推送等功能
+PWA由Service Worker，Promise，fetch，cache Api，Notification Api等技术组成
+Service Worker：服务工作线程，独立于主线程，常驻内存，代理网络请求，依赖HTTPS通信
+注册Service Worker
+navigator.serviceWorker.register(&#39;./sw.js&#39;,{scope: &#39;/&#39;}).then(registration =&amp;gt; {console.log(registration)},error =&amp;gt; {console.error(error)})window.onload = function() {document.body.append(&#39;PWA!&#39;)}sw.js
+const cachename = &#39;v1&#39;self.addEventListener(&#39;install&#39;, function (event) {console.log(&#39;install&#39;,event)// 安装新的Service Worker脚本时触发，只有Service Worker脚本不同，会认为是不同的Service Worker版本event.waitUntil(new Promise(resolve =&amp;gt;{setTimeout(resolve, 1000) // 安装新的Service Worker脚本后等待1秒后激活该脚本}))// event.waitUntil(self.skipWaiting) // 强制停止老的Service Worker，激活启动新的Service Worker，只要有更新就激活新的event.waitUntil(caches.open(name).then(cache =&amp;gt;{cache.addAll([&#39;/&#39;,&#39;./1.img&#39;])})) // 开启cache api缓存系统})self.</description>
+    </item>
+    
+  </channel>
+</rss>

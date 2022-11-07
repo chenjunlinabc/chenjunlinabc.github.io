@@ -98,7 +98,8 @@ dash Anaconda3-2019.10-Linux-x86_64.sh
 根据提示安装，如果还是系统自带的python
 sudo gedit ~/.bashrc
 export PATH=&amp;quot;/home/pc/anaconda3/bin:$PATH&amp;quot;
-# pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3
+pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3
+注意：如果使用anaconda3，请设置Path环境变量，/Anaconda3，/Anaconda3/Scripts，/Anaconda3brary/bin，这3个路径都需要设置
 Windows和mac 到官网下载安装包，直接下一步安装
 mac安装了Homebrew，可以使用brew install python3
 Windows设置环境变量，PATH 安装路径

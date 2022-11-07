@@ -150,8 +150,24 @@ var responseText = JSON.parse(hallo.responseText);console.</description>
       
       <guid>http://chenjunlinabc.github.io/posts/46/</guid>
       <description>插入js
-在html页面使用js
-引用js文件</description>
+在html页面使用js 引用js文件 注释
+// 单行注释
+/* 多行注释
+*/
+变量
+var home // 声明一个变量使用var
+home = &amp;ldquo;hallo&amp;rdquo; // 使用=来把字符串hallo赋值到home变量
+变量命名要求： 必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字
+建议每一行语句结束使用;来表示结束当前语句，主要是给人看
+var num = 123 // 整数
+num = &amp;ldquo;123&amp;rdquo; // 字符串
+num = 1.23 // 浮点数（小数）
+num = true // 布尔值（真，假或者对，错的意思，true是真，false为假）
+num = 1+1 // 可以进行运算，也可以连接两个字符串
+num = &amp;ldquo;hallo&amp;rdquo; + &amp;ldquo;javascript&amp;rdquo;
+var nums = 1
+nums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2
+nums&amp;ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0</description>
     </item>
     
     <item>
@@ -199,7 +215,7 @@ var arr = [1,1,2,3,4,5]; console.log(arr instanceof Array); // 返回true</descr
     <item>
       <title>JavaScript-IntersectionObserver构造函数笔记</title>
       <link>http://chenjunlinabc.github.io/posts/16/</link>
-      <pubDate>Wed, 16 Jun 2021 09:29:56 +0000</pubDate>
+      <pubDate>Wed, 16 Jun 2021 09:29:00 +0000</pubDate>
       
       <guid>http://chenjunlinabc.github.io/posts/16/</guid>
       <description>IntersectionObserver是浏览器本身提供的构造函数，因此可能有一些老版本浏览器没有效果

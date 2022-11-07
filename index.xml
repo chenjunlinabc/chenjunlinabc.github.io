@@ -10,7 +10,212 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Jun 2022 00:12:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 14:00:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WebSocket学习笔记</title>
+      <link>http://chenjunlinabc.github.io/posts/158/</link>
+      <pubDate>Sat, 05 Nov 2022 14:00:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/158/</guid>
+      <description>HTTP协议实质上就是半双工信道，无法同时发送数据和接收数据，而且HTTP连接必须是客户端发起，由服务器来进行处理响应
+WebSocket是全双工信道，而且还支持服务端主动发送数据给客户端，是服务器推送技术（还是需要客户端发起连接）
+WebSocket协议是应用层协议，而且是建立在TCP协议上，端口也是使用443和80，握手使用HTTP协议，浏览器不会限制WebSocket的同源
+WebSocket客户端配置
+WebSocket构造函数，用来创建WebSocket实例
+const ws = new WebSocket(&amp;lsquo;ws://127.0.0.1&amp;rsquo;)
+WebSocket.readyState实例具备4种状态，该属性是只读的，用来表示连接WebSocket服务端的状态，分别是：0（正在连接），1（连接完成并且可以通信），2（连接正在关闭），3（连接已经关闭或者连接失败）
+WebSocket.onopen是指定连接成功后执行的回调函数
+WebSocket.onerror是指定连接失败后执行的回调函数
+WebSocket.onclose是指定连接关闭后执行的回调函数
+WebSocket.onmessage是指定从服务器获取信息时执行的回调函数
+可以指定WebSocket.binaryType来指定传输的数据类型，数据类型有2种，分别是blob和arraybuffer
+客户端配置例如：
+const ws = new WebSocket(&#39;ws://localhost:8080&#39;)ws.onopen = () =&amp;gt;{console.log(&amp;quot;连接中&amp;quot;)ws.send(&#39;hallo word&#39;) // 向服务端发送数据}ws.onerror = () =&amp;gt;{console.log(&#39;连接失败&#39;)}ws.onmessage = (evt) =&amp;gt;{console.log(&#39;连接成功，正在获取数据&#39;)if(typeof evt.data === String){console.log(&#39;hallo&#39;+evt.data)}else if(evt.data instanceof ArrayBuffer){let data = evt.dataconsole.log(&#39;数据：&#39;+data)}ws.close() // 手动关闭连接}ws.onclose = () =&amp;gt;{console.log(&#39;连接已关闭&#39;)}还有WebSocket.bufferedAmount属性，也是只读，用于返回WebSocket..send没有发送到服务端的数据的字节数，为0表示全部数据已传输完毕
+WebSocket.url属性可以返回WebSocket实例的URL绝对路径，只读</description>
+    </item>
+    
+    <item>
+      <title>简单使用Element Plus组件库</title>
+      <link>http://chenjunlinabc.github.io/posts/157/</link>
+      <pubDate>Thu, 03 Nov 2022 17:40:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/157/</guid>
+      <description>Element Plus是基于vue3开发的组件库，而Element使用vue2开发的组件库
+安装Element Plus
+npm install element-plus &amp;ndash;save
+或者
+yarn add element-plus
+导入Element Plus
+import ElementPlus from &#39;element-plus&#39;import &#39;element-plus/dist/index.css&#39;按需导入
+安装插件
+npm install -D unplugin-vue-components unplugin-auto-import
+如果是使用Vite则配置vite.config.ts文件
+导入并且启用插件
+import AutoImport from &#39;unplugin-auto-import/vite&#39;import Components from &#39;unplugin-vue-components/vite&#39;...plugins: [AutoImport({resolvers: [ElementPlusResolver()],}),Components({resolvers: [ElementPlusResolver()],}),],这个组件库还支持module导入的方式手动按需使用，例如：
+&amp;lt;template&amp;gt;&amp;lt;el-button&amp;gt;I am ElButton&amp;lt;/el-button&amp;gt;&amp;lt;/template&amp;gt;&amp;lt;script&amp;gt;import { ElButton } from &#39;element-plus&#39;export default {components: { ElButton },}&amp;lt;/script&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>计算机网络学习笔记</title>
+      <link>http://chenjunlinabc.github.io/posts/156/</link>
+      <pubDate>Tue, 01 Nov 2022 12:00:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/156/</guid>
+      <description>计算机网络是通用，可编程的硬件组成的，并且这些设备可互连，并且可以传输不同类型的数据
+计算机网络不是只有软件概念，还有硬件设备，例如：网卡，网线，路由器等等
+网络作用范围：广域网（WAN），城域网（MAN），局域网（LAN）
+计算机网络发展历史
+ARPANET（1969年，美国国防部创建的单个网络）
+三层结构互联网（现代互联网雏形，当时主要用于连接美国学校，实验室的计算机，主干网，地区网，校园网）
+多层次ISP互联网（ISP指网络服务提供商（Internet Service Provider），常见网络服务提供商有中国移动，中国电信，中国联通等等）
+多层次ISP互联网，分主干ISP（主要跨国通信），地区ISP（主要局部地区通信，例如广东移动，北京电信等等）
+中国创建了多个公共互联网，例如：中国电信互联网（CHINANET），中国移动互联网（CMNET），中国联通互联网（UNINET），中国教育与科研计算机网（CERNET），中国科学技术网（CSTNET）等等
+计算机网络层次结构（确保数据通信顺通，识别目标计算机的状态，数据是否存在错误）
+层次结构大概分3个，网络应用，数据通信，物理网络
+层次细分的话，有七层，也就是OSI七层模型（OSI国际标准定义的），而且每个层都是独立的（不干预其他层），只完成不同的工作
+OSI七层模型：应用层（为计算机提供服务），表示层（数据处理），会话层（管理通信会话），传输层（管理通信连接），网络层（数据路由），数据链路层（管理节点之间的数据通信，例如传输数据到另一个局域网），物理层（计算机物理设备）
+OSI七层模型并没有成为广泛使用的标准，而是采用TCP/IP四层模型
+TCP/IP四层模型：应用层（对于OSI七层模型的应用，表示，会话，HTTP协议），传输层（OSI七层模型的传输层，TCP/UDP协议），（OSI七层模型的网络层，IP/ICMP协议）网络层，（数据链路层和物理层，ARP/RARP协议）网络接口层
+计算机网络性能指标
+bps=bit/s，1秒多少比特位，比特率
+时延：发送时延（数据bit除以bps），排队时延（数据等待被网络设备处理的时间），处理时延（数据到达目标机器后处理需要的时间），传输时延（传输路径除以bps）
+总时延 = 发送时延+排队时延+传输时延+处理时延
+往返时间RTT（Route-Trip Time）：数据报文在通信中来回一次的时间（可通过ping命令来查看RTT）
+物理层（连接不同的物理设备，传输比特流）
+物理层传输介质：双绞线（又分屏蔽和无屏蔽，区别就是增加了一层屏蔽层），同轴电缆，光纤（通过光传输，光纤内部是具有高折射率的纤芯，能折射光）
+电缆使用铜作为传输介质，光纤通过光来作为传输介质
+铜线中的电信号传播速度大约为2.3*10^8m/s
+光纤中光信号的传播速度是2.0*10^8m/s
+因此实质上电缆的传播速度比光纤快，因为光纤是利用光的反射来传输到远方的，实质光走的距离更长
+但是电缆的铜在远距离的情况下，会导致衰减（主要有2个原因导致，介质损耗（通过电磁波传导，会在介质中产生电场的电荷规则排序，这会消耗能量）和导线损耗），需要通过中继器来延续信号
+因此在跨市，跨城，跨省，跨国使用都是光纤（光纤的带宽比电缆好，也是一个原因），但是短距离，得益于电缆的传播速度，会更好，因此局域网内部大多使用电缆来传输（因为解析光信号，还需要个光信号调制调解器，计算机无法直接使用光纤传输的数据）
+比特流：通过高低电平来表示比特流，来传输数据
+信道（往一个方向传输信息的媒体，一个通信电路最少要有一个发送信道和接收信道）
+信道的分类：单工通信信道（只能往一个方向通信的信道，没有反馈的信道，例如电视机的电视闭路线），半双工通信信道（可以发送和接收信息，但是不能同时发送，同时接收），全双工通信信道（可以同时发送，同时接收）
+物理层会实现信道分用复用技术（提升信道的利用率）
+频分复用，时分复用，波分复用，码分复用
+数据链路层（封装成帧，透明传输，差错监测）
+数据帧：数据链路层中数据的基本单位，数据发送方会在网络层的一段数据的前后添加特定标记，而这一段数据就是数据帧，数据接收方根据特定标记来识别数据帧，是数据链路层内部数据处理成帧
+数据帧也分MAC帧（没有帧尾，因为MAC帧之间是96比特时间，帧头也是没有的，而是让物理层给MAC帧添加8bts的前导码），PPP帧（有帧头和帧尾，帧头到帧尾就是这个帧的长度）
+封装成帧：数据链路层会将网络层交付的数据报文添加帧头和帧尾，让其成为帧
+帧头和帧尾都是特定的控制字符（比特流），帧头（SOH）：00000001，帧尾（EOT）:00000100
+透明传输：数据链路层对网络层提供的数据没有限制（控制字符在帧数据中，但是不会去当成数据去处理，就好像帧头和帧尾不存在一样）
+字节填充（对数据内部的数据填充ESC转义字符），比特填充（零比特填充法：在每5个连续的1后面插入比特0）
+数据链路层规定了帧的数据的长度限制，就是最大传输单元MTU（Maximun Transfer Unit）
+以太网的MTU（MAC帧）是1500字节
+路径MTU：由链路中MTU的最小值决定
+差错监测：因为物理层只负责传输比特流，没有控制出错的功能，因此数据链路层提供了差错监测的功能
+奇偶校验码：在发送的每个字节后加上一位，让字节中为1的数可以是奇数或者偶数，通过奇偶校验来确定数据是否出错，具体可以看https://cjlio.com/archives/77.html这篇文章，讲TCP的可靠性那里
+奇偶校验码的缺点就是如果发生2位的出错，就无法校验出来错误
+循环冗余校验码CRC（根据传输或者保存的数据来产生固定位数的校验码，校验码再附加到数据的后面）
+模二除法：通过异或来表示0或者1，例如00就是0，01就是1，异为1，或为0
+选择用于校验的多项式，并且在数据后面添加多个0，添加多个0的数据，通过模二除法来除以校验的多项式的位串，得到的余数将填充到原来数据的添加多个0的位置，来得到可校验的位串
+假设校验的多项式为X3+X2+1，那么就是原数据后面添加3个0（添加多少个0取决多项式的最高阶，二进制位的最高位也取决于最高阶（最高幂次）二进制位数等于最高阶+1，这里就是表示的二进制位为4位的二进制数），二进制位串位计算就是1x3+1x2+0x1+1x0，就是1101
+例如原数据为1010110，CRC校验码计算就是1010110000除以1101，得到的余数0001就是CRC校验码，在将原来填充0的位置填充CRC，就是10101100001，这个比特流就是要传输的数据
+接收数据进行校验通过，传输的数据除以位串，来得到余数，根据余数来进行判断校验（余数为0则表示数据正确）
+数据链路层只检测数据的错误，不会进行数据的纠错，数据错了，数据链路层将会丢弃错误的数据或者重新传输数据
+MAC地址（物理地址，硬件地址，每个设备都有唯一的MAC地址，用48个比特位来表示，使用16进制）
+MAC地址表：映射MAC地址到硬件接口上
+以太网协议是数据链路层的协议，以太网协议是局域网技术，以太网协议用于完成相邻设备的数据帧传输
+网络层（数据路由，数据在网络传输的路径，跨局域网，跨节点）
+路由器的顶层是网络层，没有使用到传输层和应用层
+网络层的ip协议，子网划分
+虚拟互连网络（物理网络复杂，使用IP协议时，将无需关心物理网络的差异）
+网络层利用IP协议来将使用IP协议的计算机连接起来，就好像这些计算机只需要连接一个虚拟互连网络一样，无需关心底层经过了哪些网关，路由器，ISP等等，将专注于数据的转发工作
+IP协议
+IP地址（v4只有32位，v6有128位），ipv4使用点分十进制表示，使用4组从0到255的数字表示ip地址，ipv6使用冒分十六进制，用8组4位的16进制表示ipv6地址</description>
+    </item>
+    
+    <item>
+      <title>计算机组成原理学习笔记</title>
+      <link>http://chenjunlinabc.github.io/posts/155/</link>
+      <pubDate>Tue, 01 Nov 2022 02:00:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/155/</guid>
+      <description>计算机发展历史
+1946-1957，电子管计算机，1957-1964，晶体管计算机，1964-1980，集成电路计算机，1980-至今，超大规模集成电路计算机
+电子管计算机：二战时期，英国为了破译德国的无线电密文，而发明了电子管计算机，最出名的电子管计算机莫过于埃尼阿克（ENIAC），埃尼阿克是美国军方为了计算弹道而诞生的，埃尼阿克长30多米，高2.4米，宽6米，拥有18000多个电子管，70000个电阻，10000个电容，1500个续电，6000多个开关，运行耗电150千瓦，重30吨，占地1500平方英寸（140平方米），造价48万美元，运算速度每秒5000次
+电子管计算机特点：集成度低，占空间大，功耗高，操作复杂（更换程序需要接线）
+晶体管计算机：诞生原因是因为贝尔实验室发明晶体管，1956年诺贝尔物理奖授予贝尔实验室发明晶体管的科学家，第一台晶体管计算机TX-0诞生于MIT的林肯实验室，当时的最强晶体管计算机PDP-1具备4k内存，每秒可执行20万条指令，具备512x512显示器（也是世界第一个显示器，也因为这个计算机携带了显示器的原因，而诞生了世界第一款电子游戏，太空战争）
+晶体管计算机特点：对于电子管计算机来说，集成度高，空间占据小，功耗比电子管低，运行速度快
+集成电路计算机：诞生原因是因为德州仪器的工程师发明了集成电路（IC），操作系统也因为集成电路计算机的出现而诞生，当时为了解决IBM的2款集成电路计算机（7094和1401）所编写的程序无法相互兼容，IBM而推出了System/360（操作系统雏形）
+超大规模集成电路计算机：芯片集成超大规模的集成电路
+微型计算机发展历史：因为集成电路计算机的诞生，计算机逐渐从庞然大物变成小型，乃至微型，1971到1973年，500khz频率的微型计算机（8位），1973到1978年，高于1mhz的微型计算机（8位），1978到1985年，500mhz的微型计算机（16位），1985到2000年，高于1ghz的微型计算机（32位），2000年到至今，高于2ghz的微型计算机（64位）
+摩尔定律：当价格不变的情况下，集成电路的性能，会每18至24个月提升一倍
+后来因为集成电路太密集，热损耗也越来越高，无法解决，摩尔定律也因此失效
+因为摩尔定律的失效，单核已到瓶颈，转而搞多核CPU，2005年，英特尔发布了奔腾系列的双核CPU，AMD也发布了速龙系列的双核CPU，2006年，英特尔发布酷睿四核CPU，至今AMD的服务器级霄龙处理器CPU可以高达64核，而且基准频率（单核频率）可以达到2Ghz以上
+计算机的分类
+超级计算机：功能最强，运算最快，存储容量最大的计算机，用于天气预报，海洋监测，生物制药，科学计算，航天等等需要超大运算的领域，衡量超级计算机的单位是TFlop/s（每秒一万亿次浮点计算）
+著名的超级计算机有Summit，神威太湖之光，天河一号，天河二号，Sierra
+天河二号位于广州大学城的中山大学校区的国家超级计算机广州中心
+大型计算机：又被称为大型机，大型机面向大型商业公司，维护成本高，硬件不易扩展，IBM占据大型机的大片市场，IBM为IOE中的I（计算机提供商）
+迷你计算机（服务器）：目前已替代大型机，为企业主要计算顶梁柱
+工作站：高端微型计算机，面向需要强性能的专业工作者（例如图形，视频）
+微型计算机（个人计算机）：又分为台式计算机，笔记本计算机，一体化计算机
+计算机体系和结构
+冯诺依曼体系：将指令和数据一起存储的计算机设计概念结构，使用通用电路设计，而不是使用专用电路，将指令存储，再将指令编译成通用电路可理解的程序
+冯诺依曼体系要求具备存储器，控制器，运算器，输入/输出设备
+冯诺依曼体系要求能将程序和数据发送给计算机（输入），能长期存储程序，数据，计算过程，计算结果的功能（存储器），具备算术，逻辑处理和数据传送等数据处理功能（运算器和控制器），并且能将处理结果反馈给用户（输出）
+冯诺依曼瓶颈：CPU和存储器速率之间无法调和，导致CPU空转等待数据传输
+现代计算机都是基于冯诺依曼体系的（解决冯诺依曼瓶颈），存储器和运算器，以及控制器整合在一起（就是CPU），CPU内部的存储器更高速（寄存器）
+计算机层次和编程语言
+程序编译和程序解析（计算机无法理解人类语言），需要进行语言（高级语言对低级语言）的转换
+高级语言生成低级语言的过程叫程序编译，而生成的工具叫编译器
+常见的编译型语言有C，C++，Golang
+高级语言作为输入，低级语言接收输入，从而达到高转低的目的，这个过程叫程序解析，而这个低级语言接收的工具叫解析器，解析器必须是用低级语言编写的
+常见的解析型语言有Python，PHP
+java是编译+解析语言，因为它会将源程序编译成JVM字节码，JVM虚拟机再将JVM字节码再解析成机器码，java的跨平台就是因为JVM虚拟机解析器
+计算机的层次：硬件逻辑层，微程序机器层，传统机器层，操作系统层，汇编语言层，高级语言层，应用层
+硬件逻辑层：由门电路和触发器等逻辑电路组成
+微程序机器层：由微指令组成的微程序直接交给硬件执行
+传统机器层：CPU指令集，不同架构CPU使用不同的CPU指令集
+这3层都为机器硬件层，一个指令就是一个微程序，也是一组微指令
+操作系统层：向上提供操作界面，向下对应指令系统，管理硬件（例如分配内存空间）
+汇编语言层：汇编语言可以直接编译成机器语言，完成翻译的工具叫汇编器
+高级语言层：高级语言
+应用层：应用软件
+计算机的计算单位
+容量单位
+在物理层次，用高低电平来记录信息（低电平为0，高电平为1，一个0/1的位被叫为bit（比特位））
+1字节（Byte）等于8bit
+1Kb（千字位）等于1024字节（Byte）
+1mb（兆字节）等于1025kb（千字节）
+1Gb（吉字节）等于1024mb（兆字节）
+1tb（太字节）等于1024gb（吉字节）
+1pb（拍字节）等于1024tb（太字节）
+1eb（艾字节）等于1024pb（拍字节）
+1024是2的10次方
+对于硬盘制造商来说，使用10进制，也就是硬盘制造商认为1000G才是1tb
+因此实质硬盘容量为购买标注的容量（例如240G）乘以1000的3次方，再除于1024的3次方，得到的数就是实质硬盘的容量
+原因是硬盘制造商为了记录硬盘的扇区，使用人类可理解的10进制，而不是2进制
+速度单位
+网络速度
+网络传输数据的单位为Mbps
+因此100M宽带就是指100Mbit/s，每秒传输100Mbps
+100Mbit换算字节就是100/8，也就是12.5MB，因此100m宽带峰值每秒可以传输12.5mb
+CPU速度（CPU的时钟频率，Hz）
+Hz是每秒中的周期性变动重复次数的计量
+例如 3.30 GHz的CPU，就是3.3*1000^3Hz，也就是每秒可以达到33亿次的高低电平变化
+计算机的字符和编码集
+字符编码集的历史
+ASCII码：ASCII码包含95个可打印字符和33个不可打印的字符（例如控制字符），用7个bits表示一个ASCII码（95+33就是128，也就是2的7次方）
+因为ASCII码无法满足需求（例如π），而推出了Extended ASCII码，由原来的7个bits变成8个bits，也就是支持256个字符</description>
+    </item>
+    
+    <item>
+      <title>简单使用PWA技术</title>
+      <link>http://chenjunlinabc.github.io/posts/154/</link>
+      <pubDate>Fri, 28 Oct 2022 01:21:00 +0000</pubDate>
+      
+      <guid>http://chenjunlinabc.github.io/posts/154/</guid>
+      <description>PWA，Progressive Web App（渐进式web应用），PWA技术可以将web应用具备接近原生应用的特性和用户体验，无需额外安装，支持离线缓存，消息推送等功能
+PWA由Service Worker，Promise，fetch，cache Api，Notification Api等技术组成
+Service Worker：服务工作线程，独立于主线程，常驻内存，代理网络请求，依赖HTTPS通信
+注册Service Worker
+navigator.serviceWorker.register(&#39;./sw.js&#39;,{scope: &#39;/&#39;}).then(registration =&amp;gt; {console.log(registration)},error =&amp;gt; {console.error(error)})window.onload = function() {document.body.append(&#39;PWA!&#39;)}sw.js
+const cachename = &#39;v1&#39;self.addEventListener(&#39;install&#39;, function (event) {console.log(&#39;install&#39;,event)// 安装新的Service Worker脚本时触发，只有Service Worker脚本不同，会认为是不同的Service Worker版本event.waitUntil(new Promise(resolve =&amp;gt;{setTimeout(resolve, 1000) // 安装新的Service Worker脚本后等待1秒后激活该脚本}))// event.waitUntil(self.skipWaiting) // 强制停止老的Service Worker，激活启动新的Service Worker，只要有更新就激活新的event.waitUntil(caches.open(name).then(cache =&amp;gt;{cache.addAll([&#39;/&#39;,&#39;./1.img&#39;])})) // 开启cache api缓存系统})self.</description>
+    </item>
+    
     <item>
       <title>ECharts数据可视化图表库简单使用</title>
       <link>http://chenjunlinabc.github.io/posts/153/</link>
@@ -239,7 +444,7 @@ pm2 flush</description>
 这是本人的个人博客，分享一些本人学习过程中写的笔记
 如果文章出现错误或者不正确的地方，欢迎在文章下提出，进行纠正，笔记会根据学习进度来进行更新或者修改
 本站未注明转载的文章均为原创，转载请标明来源
-本站是主站（cjlio.com）备份站点
+本站点基于hugo构建
 免责声明
 本站内容仅供学习和参阅使用，本网站内容仅代表作者本人的观点，内容仅供阅读，如有任何问题，欢迎随时留言或者联系站长（QQ：3066887865，email：a@cjlio.com），将会在第一时间为您做相关处理
 自述：
@@ -250,6 +455,7 @@ APP&amp;amp;小程序：Flutter，Taro
 最喜欢的游戏：CSGO，塞尔达传说：旷野之息
 看完的小说：全职法师，雪鹰领主，吞噬星空，星辰变，牧龙师
 目前在看小说：完美世界
+Github提交活跃：
 联系方式：
 邮箱：a#cjlio.com （#是啥不用多说了吧？@）
 QQ：3066887865（请勿骚扰）
@@ -1059,7 +1265,10 @@ weex compile 目录或者文件 打包文件存放的目录或者文件 -m
       <pubDate>Thu, 07 Oct 2021 09:00:00 +0000</pubDate>
       
       <guid>http://chenjunlinabc.github.io/posts/115/</guid>
-      <description>操作系统实质上是一个很复杂的控制软件，可以管理应用，资源管理，管理外设等等
+      <description>操作系统是管理计算机硬件和软件资源，并且提供用户交互的软件系统
+常见操作系统有Windows，Linux，Android
+操作系统具备管理计算机资源的功能，具备抽象计算机资源的能力，能和用户进行交互
+操作系统实质上是一个很复杂的控制软件，可以管理应用，资源管理，管理外设等等
 操作系统的架构的层次是在硬件之上，应用之下
 OS Kernel：可并发（同时存在多个运行的应用）。可共享，可虚拟，可异步
 微内核：尽可能将内核功能移植到用户空间，缺点就是性能低
@@ -1115,10 +1324,7 @@ CPU需要逻辑地址上的内存内容（ALU），内存管理单元（MMU）�
 运行和就绪可互相转换，运行状态就是CPU指令在读取运行进程中的程序段，而就绪就是该进程在等待调用
 运行可切换到阻塞状态
 阻塞就是进程在等待信号（依赖的资源没有就位），阻塞状态结束后会切换到就绪状态
-进程状态的切换可理解为接力赛跑，运行状态就是正在跑的运动员，而就绪状态就是在等待接力棒的运动员，而阻塞状态就是运动员需要补充休息，暂时不跑了
-进程发生阻塞时，该进程将放弃CPU使用权，CPU会执行下一个就绪状态的进程
-中断和中断向量
-当程序发生中断（CPU暂时中断当前正在运行的程序），CPU转去处理其他的程序（也可能是处理内存的数据），当CPU处理完毕，CPU可恢复到之前被暂时中断当前正在运行的程序的状态，这个过程叫中断</description>
+进程状态的切换可理解为接力赛跑，运行状态就是正在跑的运动员，而就绪状态就是在等待接力棒的运动员，而阻塞状态就是运动员需要补充休息，暂时不跑了</description>
     </item>
     
     <item>
@@ -1765,7 +1971,7 @@ xxx xxx yyy yyy yyy yyy :-表示左对齐，-:表示右对齐，:-:表示居中�
       
       <guid>http://chenjunlinabc.github.io/posts/87/</guid>
       <description>Vite是由 Vue.js 的作者尤雨溪开发完成的一款前端项目构建工具，使用原生ESM文件，支持热重载
-Vite在法语中的意思为快速的（尤大是真喜欢法语啊）
+Vite在法语中的意思为快速的
 基于原生 import 的，使用浏览器来解析import，服务端按需编译返回，支持热更新模块
 依赖于Rollup打包，虽然vite设计初衷是为了vue3.x的，但是也是支持其他框架（例如react）
 对于TypeScrip的支持程度相当好，只需要在script元素加lang=&amp;ldquo;ts&amp;quot;就可以使用ts了
@@ -1781,9 +1987,9 @@ vite有一套开发服务功能，基于原生es模块，ESM+HMR，而且还有�
 传统打包，是将多个模块打包成单一的文件，而esm打包，是根据http请求，来获取相应的route，再根据route来获取module（避免一开始就获取全部module）
 vite将模块分为依赖和源码，依赖指的是开发时不会发生改变的，vite将使用esbuild预构建依赖，而且将以原生ESM方式让浏览器接管打包源码
 构建Vite项目
-npm init vite-app demo
+npm create vite
 或者
-yarn create vite-app demo
+yarn create vite
 然后初始化一下
 npm install
 或者
@@ -1797,12 +2003,14 @@ vite preview
 打包
 vite build
 react
-npm init vite-app &amp;ndash;template react
+npm create vite
+选择react，如果需要ts，也可以选择ts
 npm install
 Vite是一个构建工具的高阶封装（生产环境打包用Rollup来构建），开发环境无需要打包编译（利用现代浏览器的原生ESM来进行导入模块，模块加载的工作由浏览器完成，实现冷启动），支持动态模块热重载（HMR），开发环境的编译通过Esbuild来完成
 Vite生产环境构建（也就是Rollup）是根据browserslist来做浏览器兼容性的，需要通过修改vite.config.ts下的build.target来指定构建目标，Vite最低支持es2015，也就是es6，需要es5以及更多浏览器可能无法正常运行或者通过@vitejs/plugin-legacy插件来获取支持（注意：使用该插件也不能让vue3支持ie11，只有vue2支持ie11）
 安装@vitejs/plugin-legacy
-yarn add @vitejs/plugin-legacy -d配置vite.</description>
+yarn add @vitejs/plugin-legacy -d配置vite.config.ts
+import legacy from &#39;@vitejs/plugin-legacy&#39;.</description>
     </item>
     
     <item>
@@ -2782,8 +2990,24 @@ import $ from &amp;ldquo;jquery&amp;rdquo; // 导入jQuery，只需要src当前j
       
       <guid>http://chenjunlinabc.github.io/posts/46/</guid>
       <description>插入js
-在html页面使用js
-引用js文件</description>
+在html页面使用js 引用js文件 注释
+// 单行注释
+/* 多行注释
+*/
+变量
+var home // 声明一个变量使用var
+home = &amp;ldquo;hallo&amp;rdquo; // 使用=来把字符串hallo赋值到home变量
+变量命名要求： 必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字
+建议每一行语句结束使用;来表示结束当前语句，主要是给人看
+var num = 123 // 整数
+num = &amp;ldquo;123&amp;rdquo; // 字符串
+num = 1.23 // 浮点数（小数）
+num = true // 布尔值（真，假或者对，错的意思，true是真，false为假）
+num = 1+1 // 可以进行运算，也可以连接两个字符串
+num = &amp;ldquo;hallo&amp;rdquo; + &amp;ldquo;javascript&amp;rdquo;
+var nums = 1
+nums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2
+nums&amp;ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0</description>
     </item>
     
     <item>
@@ -3151,7 +3375,8 @@ dash Anaconda3-2019.10-Linux-x86_64.sh
 根据提示安装，如果还是系统自带的python
 sudo gedit ~/.bashrc
 export PATH=&amp;quot;/home/pc/anaconda3/bin:$PATH&amp;quot;
-# pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3
+pc为系统的用户名，请修改成自己的系统用户名，请勿在root用户下安装anaconda3
+注意：如果使用anaconda3，请设置Path环境变量，/Anaconda3，/Anaconda3/Scripts，/Anaconda3brary/bin，这3个路径都需要设置
 Windows和mac 到官网下载安装包，直接下一步安装
 mac安装了Homebrew，可以使用brew install python3
 Windows设置环境变量，PATH 安装路径
@@ -3425,13 +3650,14 @@ UPDATE xxx SET status=1 WHERE id = 4;</description>
     </item>
     
     <item>
-      <title>java基础学习笔记</title>
+      <title>JAVA基础学习笔记</title>
       <link>http://chenjunlinabc.github.io/posts/19/</link>
       <pubDate>Wed, 16 Jun 2021 09:35:00 +0000</pubDate>
       
       <guid>http://chenjunlinabc.github.io/posts/19/</guid>
       <description>java基于java虚拟机（Java Virtual Machine，JVM）和java应用编程接口（Application Programming Interface，API）构成
 java的跨平台得益于java虚拟机，只需要编译一次java程序，就可以在不同系统的java虚拟机上运行
+java编译成字节流，java虚拟机通过解析这些字节流来做的跨平台，编译完成得到的字节流可以在不同平台的java虚拟机上跑
 java分为Java SE、Java EE 和 Java ME。
 类的命名：必须是英文开头，后可字母，数字和下划线
 一般为大写字母开头
@@ -3503,7 +3729,7 @@ sudo apt install docker-ce docker-ce-cli containerd.</description>
     <item>
       <title>XML学习笔记</title>
       <link>http://chenjunlinabc.github.io/posts/17/</link>
-      <pubDate>Wed, 16 Jun 2021 09:32:49 +0000</pubDate>
+      <pubDate>Wed, 16 Jun 2021 09:32:00 +0000</pubDate>
       
       <guid>http://chenjunlinabc.github.io/posts/17/</guid>
       <description>xml中文全称为可扩展标记语言（Extensible Markup Language）
@@ -3548,7 +3774,7 @@ FIXED // 表示这个固定的属性默认值，不能将该属性的值设置�
     <item>
       <title>JavaScript-IntersectionObserver构造函数笔记</title>
       <link>http://chenjunlinabc.github.io/posts/16/</link>
-      <pubDate>Wed, 16 Jun 2021 09:29:56 +0000</pubDate>
+      <pubDate>Wed, 16 Jun 2021 09:29:00 +0000</pubDate>
       
       <guid>http://chenjunlinabc.github.io/posts/16/</guid>
       <description>IntersectionObserver是浏览器本身提供的构造函数，因此可能有一些老版本浏览器没有效果
