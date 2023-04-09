@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mock.js on 小陈的个人博客</title>
+    <link>https://xiaochenabc123.github.io/tags/mock.js/</link>
+    <description>Recent content in Mock.js on 小陈的个人博客</description>
+    <image>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Nov 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/mock.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用Mock.js模拟数据生成器</title>
+      <link>https://xiaochenabc123.github.io/posts/160/</link>
+      <pubDate>Wed, 09 Nov 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/160/</guid>
+      <description>Mock.js是模拟数据生成器，不需要后端来提供接口数据来进行开发，Mock可以根据数据模板生成随机数据，并且拦截Ajax请求返回模拟数据
+安装
+npm install mockjs
+导入
+import Mock from &#39;mockjs&#39;通过传入数据模板对象生成数据
+const data = Mock.mock({&#39;list|10&#39;: [{&amp;quot;id|+1&amp;quot;: 1,&amp;quot;name&amp;quot;: &amp;quot;@cname&amp;quot;,&amp;quot;age|18-25&amp;quot;: 25}]})console.log(data)配置响应数据（当匹配url的ajax请求时，会根据数据模板生成模拟数据，并且作为响应返回，这里通过axios发送get请求）
+const Data = Mock.mock(&#39;/api/name&#39;,&#39;get&#39;,{code: 200,data: {&#39;list|10&#39;: [{&amp;quot;id|+1&amp;quot;: 1,&amp;quot;name&amp;quot;: &amp;quot;@cname&amp;quot;,&amp;quot;age|18-25&amp;quot;: 25}]}})axios.get(&#39;/api/name&#39;).then(res =&amp;gt; {console.log(res.data)})也可以传入第二个参数，表示匹配的请求是哪个请求方法的
+记录数据模板
+const Data = Mock.mock(&#39;/api/name&#39;,(options) =&amp;gt; {return {code: 200,options}})axios({method: &#39;get&#39;, url: &#39;/api/name&#39; , data: {&#39;name&#39;:&#39;chenjunlin&#39;}}).</description>
+    </item>
+    
+  </channel>
+</rss>

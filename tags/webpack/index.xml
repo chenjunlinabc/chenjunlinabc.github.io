@@ -2,28 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>webpack on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/webpack/</link>
+    <link>https://xiaochenabc123.github.io/tags/webpack/</link>
     <description>Recent content in webpack on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 24 Jun 2021 10:11:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jun 2021 10:11:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>webpack学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/47/</link>
+      <link>https://xiaochenabc123.github.io/posts/47/</link>
       <pubDate>Thu, 24 Jun 2021 10:11:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/47/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/47/</guid>
       <description>webpack作为模块加载和打包神器
 安装node就有npm了，用npm安装webpack
-npm i webpack -g 安装全局的webpack
+npm i webpack webpack-cli -g 安装全局的webpack
 到项目目录下，npm init -y 初始化模块
-npm i webpack -D 安装项目局部的webpack，-D是&amp;ndash;save-dev的意思
+npm i webpack webpack-cli -D 安装项目局部的webpack，-D是&amp;ndash;save-dev的意思，推荐使用
 webpack 入口文件名 最后输出到哪个文件的文件名，例如：
-webpack A.js B.js
+npx webpack A.js B.js
 那么就会编译A.js，输出到B.js
 webpack只能处理JavaScript，处理其他类型的文件，需要安装几个包
 npm install css-loader style-loader
@@ -31,11 +32,10 @@ npm install css-loader style-loader
 那么修改A.js
 require(&amp;quot;!style-loader!css-loader!./abc.css&amp;quot;); document.write(require(&amp;quot;./C.js&amp;quot;));
 再打包一次
-webpack A.js B.js
+npx webpack A.js B.js
 会出现一个C.js
 配置webpack.config.js
-module.exports = {entry: &#39;入口文件的路径&#39;,output: {path:__dirname,filename: &#39;最后输出到哪个文件的文件名&#39;},module: {rules: [{test: &#39;处理什么格式的文件&#39;,use:[{loader: &#39;依赖包&#39;}]}]}};模块化
-import $ from &amp;ldquo;jquery&amp;rdquo; // 导入jQuery，只需要src当前js文件就可以导入jQuery依赖</description>
+module.exports = {entry: &#39;入口文件的路径&#39;,output: {path:__dirname,filename: &#39;最后输出到哪个文件的文件名&#39;},module: {rules: [{test: &#39;处理什么格式的文件&#39;,use:[{loader: &#39;依赖包&#39;}]}]}};模块化</description>
     </item>
     
   </channel>

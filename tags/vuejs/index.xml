@@ -2,24 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>vuejs on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/vuejs/</link>
+    <link>https://xiaochenabc123.github.io/tags/vuejs/</link>
     <description>Recent content in vuejs on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 05 Jun 2022 21:36:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/vuejs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Jun 2022 21:36:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/vuejs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nuxt.js学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/152/</link>
+      <link>https://xiaochenabc123.github.io/posts/152/</link>
       <pubDate>Sun, 05 Jun 2022 21:36:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/152/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/152/</guid>
       <description>nuxt是一个基于vue的应用框架，用于创建服务端渲染应用，使用vite作为打包器，使用webpack作为构建工具
 创建项目
-yarn create nuxt-app nuxtTest
+yarn create nuxt-app test
 需要做一些选择，例如：选择TypeScript，选择Yarn，选择UI框架等等
 安装依赖
 yarn
@@ -33,10 +34,10 @@ yarn start
     
     <item>
       <title>vuejs底层原理学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/147/</link>
+      <link>https://xiaochenabc123.github.io/posts/147/</link>
       <pubDate>Tue, 26 Apr 2022 20:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/147/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/147/</guid>
       <description>组件的渲染，更新
 组件的渲染：通过组件的模板创建vnode，渲染vnode，生成DOM
 vue应用的初始化
@@ -47,10 +48,10 @@ ensureRenderer()用于创建一个惰性渲染器对象（延时创建，这样�
     
     <item>
       <title>Pinia---vuejs的轻量级状态管理库</title>
-      <link>http://chenjunlinabc.github.io/posts/124/</link>
+      <link>https://xiaochenabc123.github.io/posts/124/</link>
       <pubDate>Sun, 26 Dec 2021 20:22:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/124/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/124/</guid>
       <description>Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3
 Pinia作者也是vuex核心之一
 安装pinia
@@ -65,10 +66,10 @@ import { defineStore } from &#39;pinia&#39;export const useDataStore = defineSt
     
     <item>
       <title>简单使用vuex状态管理库</title>
-      <link>http://chenjunlinabc.github.io/posts/123/</link>
+      <link>https://xiaochenabc123.github.io/posts/123/</link>
       <pubDate>Mon, 13 Dec 2021 06:19:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/123/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/123/</guid>
       <description>vuex是一个专门为vuejs应用程序的设计的状态管理
 集中式存储管理应用的所有组件的状态
 多组件状态共享，不同的组件改变同一个状态
@@ -92,10 +93,10 @@ getters: {getCount(state) {return state.</description>
     
     <item>
       <title>深入学习vuejs</title>
-      <link>http://chenjunlinabc.github.io/posts/75/</link>
+      <link>https://xiaochenabc123.github.io/posts/75/</link>
       <pubDate>Sat, 07 Aug 2021 23:25:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/75/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/75/</guid>
       <description>Vue CLI是vue官方脚手架，可以快速创建vue项目
 安装vue-cli3
 npm install -g @vue/cli
@@ -123,10 +124,10 @@ module.exports = defineConfig({transpileDependencies: true,lintOnSave: false}
     
     <item>
       <title>深入学习vue组件</title>
-      <link>http://chenjunlinabc.github.io/posts/53/</link>
+      <link>https://xiaochenabc123.github.io/posts/53/</link>
       <pubDate>Sat, 03 Jul 2021 11:16:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/53/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/53/</guid>
       <description>组件注册
 .component()接收2个参数，其中第一个参数是组件名（数据类型是字符串）
 组件名命名：
@@ -149,10 +150,10 @@ const hallo = Vue.createApp({component: {props:{abc: String,xyz: Boolean,},
     
     <item>
       <title>vuejs基础学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/23/</link>
+      <link>https://xiaochenabc123.github.io/posts/23/</link>
       <pubDate>Wed, 16 Jun 2021 10:13:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/23/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/23/</guid>
       <description>vuejs的核心层就是只关心视图层的，本笔记使用的是最新版本的vue3
 vue全家桶：Vue+VueRouter+Vuex
 vue名字来源于法语（中文翻译为视图），可以看出其对视图层的重视
@@ -166,7 +167,7 @@ bundler版本：该版本不是完整版，min
 vuejs模板支持所有JavaScript表达式
 vuejs本身是用声明式渲染把数据渲染到html dom中，渲染格式为{{&amp;hellip;}}，例如：
 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;p&amp;gt;{{ hallovuejs }}&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {hallovuejs: &amp;quot;hallo vuejs!&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;vue本身携带了一些指令，主要特征就是带有v-前缀，用来渲染html dom上的一些行为，例如：
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://cjlio.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://xiaochenabc123.qq.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
 而vue还提供了可以绑定事件的v-on属性，例如：
 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;button v-on:click=&amp;quot;go&amp;quot;&amp;gt;{{ main }}&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {main: &amp;quot;hallo&amp;quot;}},methods: {go: function(){console.</description>
     </item>

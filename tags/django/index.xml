@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>django on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/django/</link>
+    <link>https://xiaochenabc123.github.io/tags/django/</link>
     <description>Recent content in django on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 22 Oct 2021 18:50:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Oct 2021 18:50:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Django学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/118/</link>
+      <link>https://xiaochenabc123.github.io/posts/118/</link>
       <pubDate>Fri, 22 Oct 2021 18:50:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/118/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/118/</guid>
       <description>django是一个基于Python编写的Web框架
 Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
 安装django

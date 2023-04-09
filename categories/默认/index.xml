@@ -2,42 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>默认 on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/categories/%E9%BB%98%E8%AE%A4/</link>
+    <link>https://xiaochenabc123.github.io/categories/%E9%BB%98%E8%AE%A4/</link>
     <description>Recent content in 默认 on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 26 Dec 2021 20:22:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/categories/%E9%BB%98%E8%AE%A4/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Pinia---vuejs的轻量级状态管理库</title>
-      <link>http://chenjunlinabc.github.io/posts/124/</link>
-      <pubDate>Sun, 26 Dec 2021 20:22:00 +0000</pubDate>
-      
-      <guid>http://chenjunlinabc.github.io/posts/124/</guid>
-      <description>Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3
-Pinia作者也是vuex核心之一
-安装pinia
-npm install pinia@next
-或者
-yarn add pinia@next
-导入pinia并且挂载为vue插件(在Vite脚手架下)
-src/main.js
-import { createApp } from &#39;vue&#39;import App from &#39;./App.vue&#39;const app = createApp(App)import { createPinia } from &#39;pinia&#39;app.use(createPinia())app.mount(&#39;#app&#39;)src/stores/main.js（pinia通过defineStore函数来创建state，并且接收一个id来标识state）
-import { defineStore } from &#39;pinia&#39;export const useDataStore = defineStore(&#39;data&#39;, {state: () =&amp;gt; {return { count: 666 }},//state: () =&amp;gt; {//name: chen//},getters:{ // getters计算属性doubleCount(state){return state.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 06 Dec 2021 02:32:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/categories/%E9%BB%98%E8%AE%A4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单了解RSS</title>
-      <link>http://chenjunlinabc.github.io/posts/122/</link>
+      <link>https://xiaochenabc123.github.io/posts/122/</link>
       <pubDate>Mon, 06 Dec 2021 02:32:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/122/</guid>
-      <description>RSS指 Really Simple Syndication（简易信息聚合），RSS定义了方法来获取网站的标题以及内容，而且RSS可以被自动更新，RSS使用了XML进行编写（xml笔记：https://cjlio.com/archives/17.html）
+      <guid>https://xiaochenabc123.github.io/posts/122/</guid>
+      <description>RSS指 Really Simple Syndication（简易信息聚合），RSS定义了方法来获取网站的标题以及内容，而且RSS可以被自动更新，RSS使用了XML进行编写（xml笔记：https://xiaochenabc123.qq.com/archives/17.html）
 一个RSS例子：
-&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt;&amp;lt;rss version=&amp;quot;2.0&amp;quot;&amp;gt;&amp;lt;channel&amp;gt;&amp;lt;title&amp;gt;小陈的辣鸡屋&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://cjlio.com/&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;cjlio.com&amp;lt;/description&amp;gt;&amp;lt;item&amp;gt;&amp;lt;title&amp;gt;简单了解设计模式&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://cjlio.com/archives/121.html&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;&amp;lt;![CDATA[设计模式实质就是一套可以通用，复用的设计方案，设计模式是针对面向对象的，在面向对象出来之前，程序是面向过程的，设计模式就是软件设计的工具面向过程：逻辑化过程，以逻辑实现面向对象：思考有哪些对象，...]]&amp;gt;&amp;lt;/description&amp;gt;&amp;lt;content:encoded xml:lang=&amp;quot;zh-CN&amp;quot;&amp;gt;xxxxxxx&amp;lt;/content:encoded&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;/channel&amp;gt;&amp;lt;/rss&amp;gt;可以看到是RSS频道的标题，是该频道的超链接，是该频道的描述，是定义该频道的某篇文章的，其中又有，分别表示文章标题，文章的超链接，文章的描述，其中还有表示文章的内容
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt;&amp;lt;rss version=&amp;quot;2.0&amp;quot;&amp;gt;&amp;lt;channel&amp;gt;&amp;lt;title&amp;gt;小陈的辣鸡屋&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://xiaochenabc123.qq.com/&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;xiaochenabc123.qq.com&amp;lt;/description&amp;gt;&amp;lt;item&amp;gt;&amp;lt;title&amp;gt;简单了解设计模式&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://xiaochenabc123.qq.com/archives/121.html&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;&amp;lt;![CDATA[设计模式实质就是一套可以通用，复用的设计方案，设计模式是针对面向对象的，在面向对象出来之前，程序是面向过程的，设计模式就是软件设计的工具面向过程：逻辑化过程，以逻辑实现面向对象：思考有哪些对象，...]]&amp;gt;&amp;lt;/description&amp;gt;&amp;lt;content:encoded xml:lang=&amp;quot;zh-CN&amp;quot;&amp;gt;xxxxxxx&amp;lt;/content:encoded&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;/channel&amp;gt;&amp;lt;/rss&amp;gt;可以看到是RSS频道的标题，是该频道的超链接，是该频道的描述，是定义该频道的某篇文章的，其中又有，分别表示文章标题，文章的超链接，文章的描述，其中还有表示文章的内容
 RSS注释和HTML的注释一样，
 注意：RSS是基于XML编写，所以全部元素都要有闭合标签，大小写敏感，属性值要带引号
 channel元素除了上面那几个外，还有，， ，等等
@@ -47,10 +30,10 @@ RSS阅读器可以更好读取RSSfeed</description>
     
     <item>
       <title>简单了解设计模式</title>
-      <link>http://chenjunlinabc.github.io/posts/121/</link>
+      <link>https://xiaochenabc123.github.io/posts/121/</link>
       <pubDate>Tue, 30 Nov 2021 15:08:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/121/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/121/</guid>
       <description>设计模式实质就是一套可以通用，复用的设计方案，设计模式是针对面向对象的，在面向对象出来之前，程序是面向过程的，设计模式就是软件设计的工具
 面向过程：逻辑化过程，以逻辑实现
 面向对象：思考有哪些对象，对象都有什么行为，行为的逻辑化
@@ -71,10 +54,10 @@ RSS阅读器可以更好读取RSSfeed</description>
     
     <item>
       <title>shell脚本学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/120/</link>
+      <link>https://xiaochenabc123.github.io/posts/120/</link>
       <pubDate>Tue, 23 Nov 2021 00:01:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/120/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/120/</guid>
       <description>shell中文意思为壳，shell可以接受使用者的指令，来调用服务，shell的种类很多，而比较常见是Bash，头部声明#!/bin/bash，表示bash是解释脚本的程序
 例如：
 #!/bin/bashecho &amp;quot;hallo word&amp;quot;执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）
@@ -106,46 +89,11 @@ function abc(){echo &amp;quot;参数1: $1&amp;quot;echo &amp;quot;被执行的
     </item>
     
     <item>
-      <title>简单使用Rollup模块打包工具</title>
-      <link>http://chenjunlinabc.github.io/posts/119/</link>
-      <pubDate>Wed, 10 Nov 2021 16:22:00 +0000</pubDate>
-      
-      <guid>http://chenjunlinabc.github.io/posts/119/</guid>
-      <description>根据Rollup官方文档的介绍：Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大块复杂的代码，例如 library 或应用程序。
-Rollup和webpack那种偏向于应用打包不同，Rollup更专注于类库打包，像vue，react都是通过rollup打包的
-注意：webpack支持HMR（热模块更新），而Rollup并不支持，因此在应用打包的时候还是选择webpack比较好，但是如果只是打包类库之类的，并且还是基于ES6模块开发的，那么就可以考虑选择rollup了，因为rollup在Tree-shaking和ES6模块有着算法优势。因为Rollup对模块化是使用新标准，例如 CommonJS，而不是老旧解决方案
-提示：webpack已经支持Tree-shaking，并且在babel-loader的情况下也支持es6 module的打包
-安装rollup
-npm install rollup -g
-打包
-rollup src/demo.js -f cjs -o dist/bundle.js
-注意：-f是&amp;ndash;format的缩写，表示生成代码的格式，例如amd，cjs，esm，umd
-如果想监听文件是否改动，可以使用-w参数，当文件发送改动的时候，重新打包
-配置文件（rollup.config.js）
-export default {input: [&amp;quot;./src/demo.js&amp;quot;],output: {file: &amp;quot;./dist/bundle.js&amp;quot;,format: &amp;quot;cjs&amp;quot;,name: &amp;quot;experience&amp;quot;,},}执行命令
-rollup -c
-Rollup常用插件
-@rollup/plugin-babel
-@rollup/plugin-json
-@rollup/plugin-alias
-@rollup/plugin-commonjs
-@rollup/plugin-node-resolve
-@rollup/plugin-typescript
-@rollup/plugin-image
-rollup-plugin-terser
-rollup-plugin-postcss
-rollup-plugin-serve
-rollup-plugin-livereload
-rollup-plugin-copy
-rollup-plugin-visualizer</description>
-    </item>
-    
-    <item>
       <title>Django学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/118/</link>
+      <link>https://xiaochenabc123.github.io/posts/118/</link>
       <pubDate>Fri, 22 Oct 2021 18:50:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/118/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/118/</guid>
       <description>django是一个基于Python编写的Web框架
 Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
 安装django
@@ -182,10 +130,10 @@ tests.py # 应用测试的配置文化</description>
     
     <item>
       <title>Web.py学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/117/</link>
+      <link>https://xiaochenabc123.github.io/posts/117/</link>
       <pubDate>Mon, 18 Oct 2021 12:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/117/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/117/</guid>
       <description>web.py是一个轻量级Python web框架，是由已故著名计算机黑客Aaron Swartz设计开发（如果你看过互联网之子这个电影，你应该对这位大佬很熟悉）
 安装web.py
 pip install web.py
@@ -197,10 +145,10 @@ import weburls = (&amp;quot;/(.*)&amp;quot;,&amp;quot;hallo&amp;quot;)app = 
     
     <item>
       <title>weex跨平台框架学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/116/</link>
+      <link>https://xiaochenabc123.github.io/posts/116/</link>
       <pubDate>Sun, 10 Oct 2021 14:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/116/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/116/</guid>
       <description>weex是阿里巴巴在Qcon大会上宣布开源的一套跨平台移动开发工具
 支持ES6，跨平台，体积小，性能优异，编写规范
 官网：http://emas.weex.io/zh/
@@ -228,10 +176,10 @@ weex compile 目录或者文件 打包文件存放的目录或者文件 -m
     
     <item>
       <title>简单使用mocha测试框架</title>
-      <link>http://chenjunlinabc.github.io/posts/114/</link>
+      <link>https://xiaochenabc123.github.io/posts/114/</link>
       <pubDate>Sun, 03 Oct 2021 12:55:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/114/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/114/</guid>
       <description>mocha是JavaScript测试框架
 安装
 npm install &amp;ndash;global mocha
@@ -260,10 +208,10 @@ npm install babel-core babel-preset-es2015 &amp;ndash;save-dev
     
     <item>
       <title>简单使用istanbul代码覆盖率工具</title>
-      <link>http://chenjunlinabc.github.io/posts/113/</link>
+      <link>https://xiaochenabc123.github.io/posts/113/</link>
       <pubDate>Thu, 30 Sep 2021 12:22:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/113/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/113/</guid>
       <description>代码覆盖率：是否所有代码都被执行或者调用
 每一行，每个函数，每个语句块，每个if分支是否都被执行或者被调用
 istanbul是JavaScript的覆盖率工具（类似工具还有NYC）（可搭配mocha使用）
@@ -279,10 +227,10 @@ istanbul check-coverage &amp;ndash;statement 60 &amp;ndash;branch -5 &amp;ndash;
     
     <item>
       <title>简单使用Lerna多包管理工具</title>
-      <link>http://chenjunlinabc.github.io/posts/112/</link>
+      <link>https://xiaochenabc123.github.io/posts/112/</link>
       <pubDate>Sun, 26 Sep 2021 12:50:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/112/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/112/</guid>
       <description>Lerna是一个基于git和npm来管理多个包工作流的工具（monorepo），解决多个包之间的依赖问题，像React，Vue，Babel都在使用lerna管理多包
 安装Lerna
 npm install &amp;ndash;global lerna
@@ -312,10 +260,10 @@ lerna有两个管理模式，分别是固定模式（默认模式）和独立模
     
     <item>
       <title>简单使用ESlint代码风格校验工具</title>
-      <link>http://chenjunlinabc.github.io/posts/111/</link>
+      <link>https://xiaochenabc123.github.io/posts/111/</link>
       <pubDate>Thu, 23 Sep 2021 10:06:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/111/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/111/</guid>
       <description>ESlint是用来校验JavaScript代码风格格式的工具，目的是确保每个人的代码风格统一，按照统一的规范编写（规范化、标准化是前端工程化的特点）
 安装ESlint
 npm install eslint &amp;ndash;save-dev
@@ -337,10 +285,10 @@ npm run lint
     
     <item>
       <title>Umi框架学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/110/</link>
+      <link>https://xiaochenabc123.github.io/posts/110/</link>
       <pubDate>Mon, 20 Sep 2021 21:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/110/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/110/</guid>
       <description>Umi是一款前端应用框架
 官方文档：https://umijs.org/zh-CN/docs
 根据官方文档要求，node版本&amp;gt;=10.13
@@ -364,10 +312,10 @@ exact表示是否严格匹配，就是path和组件路径是否要完全对应�
     
     <item>
       <title>简单了解并且使用npm script</title>
-      <link>http://chenjunlinabc.github.io/posts/109/</link>
+      <link>https://xiaochenabc123.github.io/posts/109/</link>
       <pubDate>Mon, 20 Sep 2021 14:30:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/109/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/109/</guid>
       <description>npm script是package.json中可以定义的脚本命令，可以用来实现自动化构建，例如：
 &amp;quot;scripts&amp;quot;: {&amp;quot;dev&amp;quot;: &amp;quot;node hallo.js&amp;quot;}npm run dev // 等于执行node hallo.js
 查看当前项目的全部npm脚本
@@ -389,10 +337,10 @@ console.log(process.env.npm_package_name)
     
     <item>
       <title>Node.js学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/108/</link>
+      <link>https://xiaochenabc123.github.io/posts/108/</link>
       <pubDate>Mon, 20 Sep 2021 10:50:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/108/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/108/</guid>
       <description>nodejs是基于Google的V8引擎，使JavaScript不再只能运行与浏览器中了
 npm是跟随nodejs的包管理工具，可以用来更新包，安装包，编写包等等功能
 nodejs也提供了完整的http服务功能（http模块是用c++写的，性能可靠）
@@ -417,10 +365,10 @@ const fs = require(&amp;quot;fs&amp;quot;)fs.readFile(&amp;quot;data.txt&amp;qu
     
     <item>
       <title>数据结构学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/106/</link>
+      <link>https://xiaochenabc123.github.io/posts/106/</link>
       <pubDate>Fri, 17 Sep 2021 01:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/106/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/106/</guid>
       <description>数据结构其实就是带结构的数据元素的集合，结构是数据元素之间的关系
 数据结构（数组，字符串，队列，栈，链表，集合，哈希表（散列表），树（二叉树），图）
 集合：结构中的元素除了同属于一个集合外，没有别的关系
@@ -437,12 +385,12 @@ const fs = require(&amp;quot;fs&amp;quot;)fs.readFile(&amp;quot;data.txt&amp;qu
     
     <item>
       <title>NodeJS常用工具的简单使用</title>
-      <link>http://chenjunlinabc.github.io/posts/105/</link>
+      <link>https://xiaochenabc123.github.io/posts/105/</link>
       <pubDate>Thu, 16 Sep 2021 21:55:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/105/</guid>
-      <description>npm在这里https://cjlio.com/archives/31.html
-Yarn在这里https://cjlio.com/archives/38.html
+      <guid>https://xiaochenabc123.github.io/posts/105/</guid>
+      <description>npm在这里https://xiaochenabc123.qq.com/archives/31.html
+Yarn在这里https://xiaochenabc123.qq.com/archives/38.html
 nvm全名node.js version management
 用来nodejs多版本管理，可以切换和安装不同版本的nodejs
 安装nvm之前记得把安装过的nodejs都卸载了
@@ -483,10 +431,10 @@ n rm 14.17.3</description>
     
     <item>
       <title>Angular学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/101/</link>
+      <link>https://xiaochenabc123.github.io/posts/101/</link>
       <pubDate>Mon, 13 Sep 2021 12:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/101/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/101/</guid>
       <description>Angular是三大前端框架之一（Angular在国内的热度低，但是在国外热度还是很高的，主要是因为Angular到Angular2的断崖式升级）
 Angular和Vue的区别就是，Angular具备完整的MVVM框架功能（功能高度集成），提供一套完整的解决方案，而Vue是轻量级MVVM框架（渐进式，还需要vue-router之类的扩展功能），Angular和Vue并没有谁好谁坏之分，各有风格
 注意：Angular是AngularJS的重写，AngularJS使用JavaScript编写完成，而Angular采用TypeScript编写完成
@@ -498,10 +446,10 @@ npm install -g angular-cli
     
     <item>
       <title>Koa框架学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/100/</link>
+      <link>https://xiaochenabc123.github.io/posts/100/</link>
       <pubDate>Sun, 12 Sep 2021 18:30:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/100/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/100/</guid>
       <description>koa是web应用框架，是Express原班人马打造的，致力于成为一个更小、更富有表现力、更健壮的 Web 框架
 个人推荐：个人开发推荐用koa，团队开发推荐用egg
 egg是在koa的基础上进行封装，并且提供了一些，并且添加了约束，更利于工程化的开发
@@ -515,10 +463,10 @@ const Koa = require(&#39;koa&#39;)const app = new Koa()app.use(async(ctx)=&amp
     
     <item>
       <title>简单使用Jest-JavaScript测试工具</title>
-      <link>http://chenjunlinabc.github.io/posts/95/</link>
+      <link>https://xiaochenabc123.github.io/posts/95/</link>
       <pubDate>Mon, 06 Sep 2021 23:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/95/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/95/</guid>
       <description>Jest是Facebook开源的一套JavaScript测试框架
 安装
 在项目中安装
@@ -545,10 +493,10 @@ toBeGreaterThanOrEqual(6) //判断结果是否大于等于6</description>
     
     <item>
       <title>Taro脚手架学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/92/</link>
+      <link>https://xiaochenabc123.github.io/posts/92/</link>
       <pubDate>Tue, 31 Aug 2021 12:15:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/92/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/92/</guid>
       <description>Taro是京东凹凸实验室推出的一个脚手架，设计目的是多端统一开发解决方案，一次开发，多端运行
 Taro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持
 Taro官方文档：https://taro-docs.jd.com/taro/docs/README
@@ -568,16 +516,16 @@ yarn dev:weapp
 创建完毕会在dist目录下生成小程序程序
 作为一个可以使用react开发的脚手架，React Hooks和jsx也是支持的
 Taro组件化（Taro可以使用react开发，因此也具备react的组件化功能）
-import Taro, { useState } from &#39;@tarojs/taro&#39;import { View, Text } from &#39;@tarojs/components&#39;import &#39;./index.less&#39;function Main(){const [count ,setUserName] = useState(&amp;quot;hallo word&amp;quot;)return ( &amp;lt;View&amp;gt;&amp;lt;Text&amp;gt;{count}&amp;lt;/Text&amp;gt;&amp;lt;/View&amp;gt;)}export default Main子组件
-import { View, Text } from &#39;@tarojs/components&#39;function Data(){return ( &amp;lt;View&amp;gt;&amp;lt;Text&amp;gt;hallo word&amp;lt;/Text&amp;gt;&amp;lt;/View&amp;gt;)}export default Data导入</description>
+import Taro, { useState } from &#39;@tarojs/taro&#39; import { View, Text } from &#39;@tarojs/components&#39; import &#39;./index.less&#39; function Main(){ const [count ,setUserName] = useState(&amp;quot;hallo word&amp;quot;) return ( &amp;lt;View&amp;gt; &amp;lt;Text&amp;gt;{count}&amp;lt;/Text&amp;gt; &amp;lt;/View&amp;gt; ) } export default Main 子组件
+import { View, Text } from &#39;@tarojs/components&#39; function Data(){ return ( &amp;lt;View&amp;gt;&amp;lt;Text&amp;gt;hallo word&amp;lt;/Text&amp;gt;&amp;lt;/View&amp;gt; ) } export default Data 导入</description>
     </item>
     
     <item>
       <title>简单利用Electron框架开发桌面端应用</title>
-      <link>http://chenjunlinabc.github.io/posts/91/</link>
+      <link>https://xiaochenabc123.github.io/posts/91/</link>
       <pubDate>Wed, 25 Aug 2021 12:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/91/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/91/</guid>
       <description>Electron是由github开发的开源框架，允许开发者使用web技术构建跨平台的桌面应用
 GUI由Chromium提供，底层通过Nodejs提供，Native API提供桌面端和跨平台的原生功能
 Visual Studio Code和Atom都是使用Electron开发的，可以说技术很成熟
@@ -603,10 +551,10 @@ npm init &amp;ndash;yes</description>
     
     <item>
       <title>React Hooks学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/90/</link>
+      <link>https://xiaochenabc123.github.io/posts/90/</link>
       <pubDate>Fri, 20 Aug 2021 23:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/90/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/90/</guid>
       <description>React Hooks提供了新特性来给纯函数组件可以管理状态
 学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态
 而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷
@@ -621,10 +569,10 @@ import React, { useState } from &#39;react&#39;function Hi(){const [ count , s
     
     <item>
       <title>Markdown基础语法笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/88/</link>
+      <link>https://xiaochenabc123.github.io/posts/88/</link>
       <pubDate>Wed, 18 Aug 2021 16:50:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/88/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/88/</guid>
       <description>Markdown是一个标记语言，常用于编写文档
 标题
 一级标题 二级标题 三级标题 四级标题 五级标题 六级标题 分别对别h1到h6
@@ -656,10 +604,10 @@ xxx xxx yyy yyy yyy yyy :-表示左对齐，-:表示右对齐，:-:表示居中�
     
     <item>
       <title>SVN版本控制系统学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/84/</link>
+      <link>https://xiaochenabc123.github.io/posts/84/</link>
       <pubDate>Wed, 11 Aug 2021 15:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/84/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/84/</guid>
       <description>SVN全名Subversion，即版本控制系统
 和Git不同，Git是分布式，而SVN是集中式
 在commit没有冲突的时候，会合并
@@ -698,10 +646,10 @@ svn commit -m &amp;ldquo;hello svn&amp;rdquo;</description>
     
     <item>
       <title>Axios网络请求库学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/83/</link>
+      <link>https://xiaochenabc123.github.io/posts/83/</link>
       <pubDate>Wed, 11 Aug 2021 12:15:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/83/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/83/</guid>
       <description>Axios是一个基于promise的http网络请求库，可以用于浏览器和nodejs，在nodejs中使用http模块，而在浏览器使用XMLHttpRequests
 支持promise api，支持拦截请求和响应，转换请求数据和响应数据，取消请求，自动转换json数据，支持防御XSRF攻击
 安装
@@ -715,10 +663,10 @@ let data = {home: &amp;quot;hallo&amp;quot;,main: &amp;quot;abc&amp;quot;}le
     
     <item>
       <title>简单使用Ant Design组件库</title>
-      <link>http://chenjunlinabc.github.io/posts/82/</link>
+      <link>https://xiaochenabc123.github.io/posts/82/</link>
       <pubDate>Tue, 10 Aug 2021 23:03:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/82/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/82/</guid>
       <description>Ant Design是蚂蚁金服技术沉淀出一套基于React的组件库和前端框架
 官网：https://ant.design/index-cn
 使用create-react-app初始项目
@@ -739,10 +687,10 @@ import &#39;antd/dist/antd.css&#39;;import { DatePicker, Space } from &#39;antd
     
     <item>
       <title>Svelte学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/80/</link>
+      <link>https://xiaochenabc123.github.io/posts/80/</link>
       <pubDate>Mon, 09 Aug 2021 22:50:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/80/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/80/</guid>
       <description>Svelte的核心思想在于通过静态编译减少框架运行时的代码量
 Svelte风格和vue相似，模板用{}来表示
 Svelte的特点就是没有虚拟DOM（像Vue和React都是用虚拟DOM的）
@@ -759,10 +707,10 @@ function aClick() {count += 1}...&amp;lt;button on:click={aClick}&amp;gt;{co
     
     <item>
       <title>Mobx学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/78/</link>
+      <link>https://xiaochenabc123.github.io/posts/78/</link>
       <pubDate>Sun, 08 Aug 2021 21:35:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/78/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/78/</guid>
       <description>Mobx是一个状态管理库（状态管理实质上就是在管理数据变化）
 Mobx通过透明的函数响应式编程使得状态管理变得简单和可扩展
 Mobx状态管理是基于观察者模式的（Mobx6.0移除了修饰器）
@@ -780,10 +728,10 @@ const store = makeObservable({ count: 666, get double(){return this.coun
     
     <item>
       <title>CSS预处理器-Sass学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/51/</link>
+      <link>https://xiaochenabc123.github.io/posts/51/</link>
       <pubDate>Fri, 02 Jul 2021 08:44:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/51/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/51/</guid>
       <description>sass是一门css扩展语言，css预处理器
 sass是基于ruby语言开发，在前端中可以使用npm安装
 npm install node-sass或者npm install node-sass &amp;ndash;save-dev
@@ -822,10 +770,10 @@ $right: right;#app{margin-#{$right}: 50px;}运算
     
     <item>
       <title>CSS预处理器-Less学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/50/</link>
+      <link>https://xiaochenabc123.github.io/posts/50/</link>
       <pubDate>Thu, 01 Jul 2021 15:31:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/50/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/50/</guid>
       <description>less是一门css扩展语言，是css预处理器，扩展了css的动态特性，在css语法基础上引入了变量，混合，运算和函数等功能
 常见的css预处理器有sass，less，stylus
 less开发手册：https://less.bootcss.com/
@@ -864,10 +812,10 @@ less嵌套
     
     <item>
       <title>数据结构与算法学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/49/</link>
+      <link>https://xiaochenabc123.github.io/posts/49/</link>
       <pubDate>Tue, 29 Jun 2021 15:52:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/49/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/49/</guid>
       <description>根据于小甲鱼大佬的数据结构与算法教程而 ~~ 写 ~~ 抄的笔记
 什么是数据结构？
 数据结构是一门研究非数值计算的程序设计问题中的操作对象，以及它们之间的关系和操作等相关问题的学科。
@@ -930,10 +878,10 @@ less嵌套
     
     <item>
       <title>JavaScript基础学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/46/</link>
+      <link>https://xiaochenabc123.github.io/posts/46/</link>
       <pubDate>Thu, 24 Jun 2021 07:57:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/46/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/46/</guid>
       <description>插入js
 在html页面使用js 引用js文件 注释
 // 单行注释
@@ -957,10 +905,10 @@ nums&amp;ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-
     
     <item>
       <title>Grid布局学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/45/</link>
+      <link>https://xiaochenabc123.github.io/posts/45/</link>
       <pubDate>Wed, 23 Jun 2021 10:29:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/45/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/45/</guid>
       <description>grid 布局
 grid布局和flex布局类似，不过grid是最强大的css布局方式
 grid布局是网格布局
@@ -984,10 +932,10 @@ grid-row-gap: 10px; // 行间距（行与行的距离）</description>
     
     <item>
       <title>一些常用的进制转换方法</title>
-      <link>http://chenjunlinabc.github.io/posts/43/</link>
+      <link>https://xiaochenabc123.github.io/posts/43/</link>
       <pubDate>Sun, 20 Jun 2021 20:07:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/43/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/43/</guid>
       <description>除2取余，逆序排列
 十进制（整数）转二进制一般使用&amp;quot;除2取余，逆序排列&amp;quot;法：
 1.先使用2整除2进制，得到商和余数
@@ -1003,10 +951,10 @@ grid-row-gap: 10px; // 行间距（行与行的距离）</description>
     
     <item>
       <title>记录一次MIME类型错误</title>
-      <link>http://chenjunlinabc.github.io/posts/39/</link>
+      <link>https://xiaochenabc123.github.io/posts/39/</link>
       <pubDate>Thu, 17 Jun 2021 08:25:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/39/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/39/</guid>
       <description>打开网页，发现css没有加载出来，f12一看，content-type: text/plain;，把这个css当文本输出了，浏览器请求到这种类型的文件都不会对其进行处理，而且应该是text/css才对
 先了解一下浏览器是如何处理这些数据的，是怎么区分的
 数据通过http传输协议获取到，然后由web服务器的content-type向浏览器进行指示数据的类型，而mime.types就是用来定义数据文件的类型，用什么格式来进行网页编码（charset=utf-8）
@@ -1019,10 +967,10 @@ grid-row-gap: 10px; // 行间距（行与行的距离）</description>
     
     <item>
       <title>配置树莓派笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/29/</link>
+      <link>https://xiaochenabc123.github.io/posts/29/</link>
       <pubDate>Wed, 16 Jun 2021 14:48:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/29/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/29/</guid>
       <description>（树莓派系统）Raspbian是基于Debian GNU/Linux的免费操作系统，所以可以使用debian的操作方法来配置系统和使用系统
 现改名为Raspberry Pi OS
 工具：读卡器，16g内存卡，micro usb充电器，树莓派，一台pc
@@ -1045,10 +993,10 @@ sudo raspi-config
     
     <item>
       <title>JavaScript-XMLHttpRequest对象笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/14/</link>
+      <link>https://xiaochenabc123.github.io/posts/14/</link>
       <pubDate>Wed, 16 Jun 2021 09:25:49 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/14/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/14/</guid>
       <description>ajax请求是异步的，因此可以通过回调函数来处理响应
 实现ajax请求大多是使用XMLHttpRequest对象，该对象用于与服务器交互，可以在不刷新页面的情况下请求url，获取数据，从而达到更新页面内容的目的
 初始化XMLHttpRequest()构造函数，可以获得一个XMLHttpReques实例，例如：
@@ -1075,10 +1023,10 @@ onloadstart：开始获取数据 onprogress：数据正在传输中 onabort：�
     
     <item>
       <title>jQuery-ajax()方法笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/13/</link>
+      <link>https://xiaochenabc123.github.io/posts/13/</link>
       <pubDate>Wed, 16 Jun 2021 09:24:37 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/13/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/13/</guid>
       <description>ajax()是jQuery中定义的一个方法，该方法用于执行ajax请求，例如：
 $(document).ready(function(){$(&amp;quot;button&amp;quot;).click(function(){$.ajax({type: &amp;quot;GET&amp;quot;,url: &amp;quot;https://httpbin.org/get&amp;quot;,success: function(getdata){console.log(getdata)}})})});参数
 url：指定发送请求的URL，默认是当前页面
@@ -1109,10 +1057,10 @@ xhr：用于重写或者增强XMLHttpRequest对象的函数</description>
     
     <item>
       <title>原生js实现瀑布流布局</title>
-      <link>http://chenjunlinabc.github.io/posts/10/</link>
+      <link>https://xiaochenabc123.github.io/posts/10/</link>
       <pubDate>Wed, 16 Jun 2021 09:14:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/10/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/10/</guid>
       <description>瀑布流的特点就是容器等宽不等高，计算其高度，选择最矮的一个容器的下面将插入第二行的第一个容器，以此类推，因此容器需要设置为绝对定位
 首先需要确定一行有多少列，列数 = 页面的宽度 / 容器的宽度
 获取页面的宽度：window.innerWidth或者document.documentElement.clientWidth或者document.body.clientWidth
@@ -1131,10 +1079,10 @@ var data = document.getElementsByClassName(&#39;imgs&#39;);function datamain(){
     
     <item>
       <title>简单解决文本溢出问题</title>
-      <link>http://chenjunlinabc.github.io/posts/6/</link>
+      <link>https://xiaochenabc123.github.io/posts/6/</link>
       <pubDate>Wed, 16 Jun 2021 08:40:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/6/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/6/</guid>
       <description>当文本宽度超过容器的宽度那么将导致溢出
 使用text-overflow属性会修剪文本导致文本显示不全
 这里使用的方法是word-break: break-all+white-space: pre-wrap
@@ -1151,10 +1099,10 @@ pre-line：保留空格（可能不完整），保留换行
     
     <item>
       <title>IndexedDB浏览器数据库学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/5/</link>
+      <link>https://xiaochenabc123.github.io/posts/5/</link>
       <pubDate>Tue, 15 Jun 2021 19:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/5/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/5/</guid>
       <description>IndexedDB是浏览器提供的本地数据库，允许存储数据，采用键值对存储，允许异步请求，允许索引请求，IndexedDB理论上存储空间没有限制
 打开（新建）indexedDB：
 indexedDB.open()，该方法有俩个值，第一个是数据库名（没有该数据库那么就新建），第二个值为数据库的版本，一般来说默认为1（必须是大于0的自然数），例如：
@@ -1173,10 +1121,10 @@ var datadb = window.indexedDB.open(&amp;quot;data&amp;quot;,1);var db;var objd
     
     <item>
       <title>简单了解SEO</title>
-      <link>http://chenjunlinabc.github.io/posts/2/</link>
+      <link>https://xiaochenabc123.github.io/posts/2/</link>
       <pubDate>Sat, 20 Mar 2021 11:50:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/2/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/2/</guid>
       <description>SEO：搜索引擎优化（Search Engine Optimization），是利用搜索引擎的规则来提升网站在该搜索引擎的排名（免费，高回报）
 robots.txt就是robots协议，用来告诉网络蜘蛛，这个网站什么内容是不应该获取的，那些内容可以获取，例如：淘宝就屏蔽了百度的爬虫
 robots.txt文件应该放在网站根目录下
@@ -1207,10 +1155,10 @@ HTML标签优化
     
     <item>
       <title>欢迎使用 Typecho</title>
-      <link>http://chenjunlinabc.github.io/posts/1/</link>
+      <link>https://xiaochenabc123.github.io/posts/1/</link>
       <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/1/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/1/</guid>
       <description>如果您看到这篇文章,表示您的 blog 已经安装成功.</description>
     </item>
     

@@ -2,24 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>RSS on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/rss/</link>
+    <link>https://xiaochenabc123.github.io/tags/rss/</link>
     <description>Recent content in RSS on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 06 Dec 2021 02:32:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Dec 2021 02:32:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单了解RSS</title>
-      <link>http://chenjunlinabc.github.io/posts/122/</link>
+      <link>https://xiaochenabc123.github.io/posts/122/</link>
       <pubDate>Mon, 06 Dec 2021 02:32:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/122/</guid>
-      <description>RSS指 Really Simple Syndication（简易信息聚合），RSS定义了方法来获取网站的标题以及内容，而且RSS可以被自动更新，RSS使用了XML进行编写（xml笔记：https://cjlio.com/archives/17.html）
+      <guid>https://xiaochenabc123.github.io/posts/122/</guid>
+      <description>RSS指 Really Simple Syndication（简易信息聚合），RSS定义了方法来获取网站的标题以及内容，而且RSS可以被自动更新，RSS使用了XML进行编写（xml笔记：https://xiaochenabc123.qq.com/archives/17.html）
 一个RSS例子：
-&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt;&amp;lt;rss version=&amp;quot;2.0&amp;quot;&amp;gt;&amp;lt;channel&amp;gt;&amp;lt;title&amp;gt;小陈的辣鸡屋&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://cjlio.com/&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;cjlio.com&amp;lt;/description&amp;gt;&amp;lt;item&amp;gt;&amp;lt;title&amp;gt;简单了解设计模式&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://cjlio.com/archives/121.html&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;&amp;lt;![CDATA[设计模式实质就是一套可以通用，复用的设计方案，设计模式是针对面向对象的，在面向对象出来之前，程序是面向过程的，设计模式就是软件设计的工具面向过程：逻辑化过程，以逻辑实现面向对象：思考有哪些对象，...]]&amp;gt;&amp;lt;/description&amp;gt;&amp;lt;content:encoded xml:lang=&amp;quot;zh-CN&amp;quot;&amp;gt;xxxxxxx&amp;lt;/content:encoded&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;/channel&amp;gt;&amp;lt;/rss&amp;gt;可以看到是RSS频道的标题，是该频道的超链接，是该频道的描述，是定义该频道的某篇文章的，其中又有，分别表示文章标题，文章的超链接，文章的描述，其中还有表示文章的内容
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt;&amp;lt;rss version=&amp;quot;2.0&amp;quot;&amp;gt;&amp;lt;channel&amp;gt;&amp;lt;title&amp;gt;小陈的辣鸡屋&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://xiaochenabc123.qq.com/&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;xiaochenabc123.qq.com&amp;lt;/description&amp;gt;&amp;lt;item&amp;gt;&amp;lt;title&amp;gt;简单了解设计模式&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://xiaochenabc123.qq.com/archives/121.html&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;&amp;lt;![CDATA[设计模式实质就是一套可以通用，复用的设计方案，设计模式是针对面向对象的，在面向对象出来之前，程序是面向过程的，设计模式就是软件设计的工具面向过程：逻辑化过程，以逻辑实现面向对象：思考有哪些对象，...]]&amp;gt;&amp;lt;/description&amp;gt;&amp;lt;content:encoded xml:lang=&amp;quot;zh-CN&amp;quot;&amp;gt;xxxxxxx&amp;lt;/content:encoded&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;/channel&amp;gt;&amp;lt;/rss&amp;gt;可以看到是RSS频道的标题，是该频道的超链接，是该频道的描述，是定义该频道的某篇文章的，其中又有，分别表示文章标题，文章的超链接，文章的描述，其中还有表示文章的内容
 RSS注释和HTML的注释一样，
 注意：RSS是基于XML编写，所以全部元素都要有闭合标签，大小写敏感，属性值要带引号
 channel元素除了上面那几个外，还有，， ，等等

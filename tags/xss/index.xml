@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>XSS on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/xss/</link>
+    <link>https://xiaochenabc123.github.io/tags/xss/</link>
     <description>Recent content in XSS on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Sep 2021 17:00:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/xss/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Sep 2021 17:00:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/xss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单了解CSRF攻击和XSS攻击</title>
-      <link>http://chenjunlinabc.github.io/posts/99/</link>
+      <link>https://xiaochenabc123.github.io/posts/99/</link>
       <pubDate>Sun, 12 Sep 2021 17:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/99/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/99/</guid>
       <description>CSRF
 CSRF：跨站点请求伪造(Cross—Site Request Forgery)
 CSRF实质上就是盗用身份，来实现发送恶意请求
@@ -27,7 +28,7 @@ CSRF实质上就是盗用身份，来实现发送恶意请求
 这个方法有个缺点就是由浏览器提供，不能保证浏览器自己有没有安全漏洞，不然还是能够伪造Referer字段，而且如果用户设置不提供Referer字段，那也会默认导致认为是CSRF攻击
 还有一个方法就是通过添加token来处理，请求地址使用一串令牌（加密），来确保是当前站点发送请求，因为哪怕是伪造请求，也不知道令牌是什么，而且还搭配XMLHttpRequest来请求，确保请求信息不被Referer字段收录
 JavaScript简单实现方法
-let referer = document.location.href;if(referer != null &amp;amp;&amp;amp; referer.startsWith(&amp;quot;https://cjlio.com&amp;quot;)){console.log(&amp;quot;验证成功!!!&amp;quot;)}else{console.log(&amp;quot;验证失败!!!&amp;quot;)}防御措施：token身份验证，页面来源验证（referer）等等
+let referer = document.location.href;if(referer != null &amp;amp;&amp;amp; referer.startsWith(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)){console.log(&amp;quot;验证成功!!!&amp;quot;)}else{console.log(&amp;quot;验证失败!!!&amp;quot;)}防御措施：token身份验证，页面来源验证（referer）等等
 XSS：跨站脚本攻击（Cross Site Scripting），因为避免和层叠样式表混淆，因此叫XSS
 XSS攻击原理就是在页面插入恶意脚本，当页面被访问了，那么这个恶意脚本被执行，从而达到恶意攻击用户的目的
 例如：在某个页面评论上加&amp;lt;script&amp;gt;alert(&amp;lsquo;hack&amp;rsquo;)&amp;lt;/script&amp;gt;，那么如果没有做过xss攻击防御的站点，其他用户访问到这个页面，那么就会执行该程序

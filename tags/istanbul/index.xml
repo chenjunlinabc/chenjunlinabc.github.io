@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>istanbul on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/istanbul/</link>
+    <link>https://xiaochenabc123.github.io/tags/istanbul/</link>
     <description>Recent content in istanbul on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 30 Sep 2021 12:22:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/istanbul/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 12:22:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/istanbul/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用istanbul代码覆盖率工具</title>
-      <link>http://chenjunlinabc.github.io/posts/113/</link>
+      <link>https://xiaochenabc123.github.io/posts/113/</link>
       <pubDate>Thu, 30 Sep 2021 12:22:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/113/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/113/</guid>
       <description>代码覆盖率：是否所有代码都被执行或者调用
 每一行，每个函数，每个语句块，每个if分支是否都被执行或者被调用
 istanbul是JavaScript的覆盖率工具（类似工具还有NYC）（可搭配mocha使用）

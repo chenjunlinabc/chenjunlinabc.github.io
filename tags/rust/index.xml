@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Rust on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/rust/</link>
+    <link>https://xiaochenabc123.github.io/tags/rust/</link>
     <description>Recent content in Rust on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 28 Mar 2022 13:22:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Mar 2022 13:22:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/142/</link>
+      <link>https://xiaochenabc123.github.io/posts/142/</link>
       <pubDate>Mon, 28 Mar 2022 13:22:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/142/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/142/</guid>
       <description>Rust由非盈利组织Mozilla基金会开发，像著名的Mozilla Firefox浏览器和MDN Web Docs都出自该基金会
 安装
 官方推荐使用Rustup来安装（Rustup是rust的安装器和版本管理工具）

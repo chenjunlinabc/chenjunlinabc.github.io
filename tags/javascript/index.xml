@@ -2,42 +2,92 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>JavaScript on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/javascript/</link>
+    <link>https://xiaochenabc123.github.io/tags/javascript/</link>
     <description>Recent content in JavaScript on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 07 Feb 2022 13:37:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Nov 2022 07:00:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deno js运行时环境学习笔记</title>
+      <link>https://xiaochenabc123.github.io/posts/161/</link>
+      <pubDate>Fri, 11 Nov 2022 07:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/161/</guid>
+      <description>Deno是基于V8引擎，使用Rust构建的JavaScript &amp;amp; TypeScript 运行时环境，天生支持TypeScript，并且有安全模式（默认情况下无法获取网络，文件系统，环境变量等权限，当然也可以开放），Deno的作者是Nodejs之父Ryan Dahl，构建的原因是解决Nodejs的缺陷，例如模块的安全性（Node运行时的权限很高，缺乏模块的安全运行），Deno的模块化选择了ESMoule标准，而且具备浏览器的api，例如window全局变量，支持onload，onunload等事件函数，支持fetch，Web Workers等标准，异步操作返回采用Promise，支持await
+Deno不使用node_modules与package.json的包管理机制，而是采用下载编译的机制，并且存在缓存，模块更新通过更新缓存来完成
+Deno有个特殊的功能，就是可以从网络上导入模块
+安装
+Linux
+curl -fsSL https://deno.land/install.sh | sh
+或者
+windows
+iwr https://deno.land/install.ps1 -useb | iex
+也可以通过scoop安装
+scoop install deno
+作为Rust构建的，当然也支持Cargo包管理器安装
+cargo install deno &amp;ndash;locked
+或者通过单一的可执行文件来安装（我采用这个方式，再配置一下Path环境变量就是可以了，windows选择deno-x86_64-pc-windows-msvc）
+https://github.com/denoland/deno/releases
+检查是否安装完成
+deno &amp;ndash;version
+第一个例子
+import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
+deno run .\index.ts
+它会向你询问进行网络请求，是否允许，可通过&amp;ndash;allow-net默认运行，例如：deno run &amp;ndash;allow-net .\index.ts
+第三方库通过https://deno.land/x查找
+权限
+&amp;ndash;allow-env，允许访问环境变量，可指定环境变量列表，通过逗号分隔
+&amp;ndash;allow-hrtime，允许高分辨率时间测量
+&amp;ndash;allow-net，允许网络访问，可指定网络地址列表，通过逗号分隔
+&amp;ndash;allow-ffi，允许加载动态库，动态库不是安全运行的
+&amp;ndash;allow-read，允许读取，可指定读取文件列表或者目录，使用逗号分隔
+&amp;ndash;allow-run，允许运行子进程，这个子进程不是安全运行的，可指定子进程列表，通过逗号分隔
+&amp;ndash;allow-write，允许写入，可指定写入文件列表或者目录，使用逗号分隔
+-A 或者 &amp;ndash;allow-all 允许全部权限
+VsCode插件deno
+deno内置工具
+安装模块</description>
+    </item>
+    
     <item>
       <title>简单使用ESbuild打包工具</title>
-      <link>http://chenjunlinabc.github.io/posts/132/</link>
+      <link>https://xiaochenabc123.github.io/posts/132/</link>
       <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/132/</guid>
-      <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包，支持TypeScript和jsx
+      <guid>https://xiaochenabc123.github.io/posts/132/</guid>
+      <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包（viet在开发环境下使用这个），支持TypeScript和jsx（tsx），css
+ESbuild支持ES6模块，cjs模块，对ES6+语法支持性好，可以直接打包css文件，json文件，ts文件
+注意：esbuild并不对ts文件进行类型检查工作
 安装
 npm install esbuild
 或者
 yarn add esbuild
 打包
 .\node_modules.bin\esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle
+或者
+npx esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle
 或者package.json
 &amp;ldquo;build&amp;rdquo;: &amp;ldquo;esbuild app.jsx &amp;ndash;outfile=build/index.js &amp;ndash;bundle&amp;rdquo;
 npm run build
+或者
+yarn build
 例子（app.jsx）
 import React from &#39;react&#39;import ReactDOM from &#39;react-dom&#39;const App = () =&amp;gt; {return (&amp;lt;div&amp;gt;&amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;)}ReactDOM.render(&amp;lt;App /&amp;gt;,document.getElementById(&amp;quot;app&amp;quot;))index.html
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;我本地打包只花64ms就打包好了</description>
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;我本地打包只花64ms就打包好了
+使用source map功能</description>
     </item>
     
     <item>
       <title>JavaScript知识扩展</title>
-      <link>http://chenjunlinabc.github.io/posts/61/</link>
+      <link>https://xiaochenabc123.github.io/posts/61/</link>
       <pubDate>Sun, 18 Jul 2021 22:35:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/61/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/61/</guid>
       <description>函数被调用时，浏览器会传递两个参数，this和arguments
 this就是函数的上下文对象，而arguments是一个数组对象（也就是可以通过索引来操作数据），函数调用时传递的参数会在arguments中保存
 callee属性对应着当前的函数
@@ -48,9 +98,9 @@ windows表示整个浏览器的窗口，同时也是JavaScript最顶层的对象
 navigator包含了当前浏览器的全部信息
 console.log(window.navigator)可以看到输出了很多属性，如userAgent，language等等
 location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
-console.log(window.location)const urlData = &amp;quot;https://cjlio.com/;window.location.href = urlData;这个也可以实现跳转
-window.location.assign(&amp;quot;https://cjlio.com&amp;quot;)这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
-window.location.replace(&amp;quot;https://cjlio.com&amp;quot;)reload方法可以重载页面，加上true参数将强制更新
+console.log(window.location)const urlData = &amp;quot;https://xiaochenabc123.qq.com/;window.location.href = urlData;这个也可以实现跳转
+window.location.assign(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
+window.location.replace(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)reload方法可以重载页面，加上true参数将强制更新
 window.location.reload(true)history表示浏览器的历史记录
 console.log(window.history)length表示本次访问网站的数量
 同时也提供了几个方法
@@ -78,10 +128,10 @@ document.execCommand(&amp;lsquo;paste&amp;rsquo;) // 粘贴</description>
     
     <item>
       <title>ES6学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/57/</link>
+      <link>https://xiaochenabc123.github.io/posts/57/</link>
       <pubDate>Fri, 09 Jul 2021 22:51:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/57/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/57/</guid>
       <description>ECMAScript
 JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
 ECMAScript是规范，JavaScript是实现
@@ -119,12 +169,12 @@ let [a,b,c] = [1,2,3]
     
     <item>
       <title>Ajax学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/54/</link>
+      <link>https://xiaochenabc123.github.io/posts/54/</link>
       <pubDate>Sat, 03 Jul 2021 15:30:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/54/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/54/</guid>
       <description>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
-关于XMLHttpRequest对象（构造函数）的用法：https://cjlio.com/archives/14.html
+关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.qq.com/archives/14.html
 ajax需要网站环境下生效，需要web服务器，nodemon
 app.js
 // 导入expressconst express = require(&amp;quot;express&amp;quot;);// 导入pathconst patg = require(&amp;quot;path&amp;quot;);// 创建web服务器const app = express();// 静态资源访问服务app.use(express.static(path.join(__dirname,&amp;quot;public&amp;quot;)));app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{res.send(&amp;quot;hallo&amp;quot;);});// 监听端口app.listen(3000);console.log(&amp;quot;服务器启动成功&amp;quot;)nodemon app.js
@@ -145,10 +195,10 @@ var responseText = JSON.parse(hallo.responseText);console.</description>
     
     <item>
       <title>JavaScript基础学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/46/</link>
+      <link>https://xiaochenabc123.github.io/posts/46/</link>
       <pubDate>Thu, 24 Jun 2021 07:57:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/46/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/46/</guid>
       <description>插入js
 在html页面使用js 引用js文件 注释
 // 单行注释
@@ -172,10 +222,10 @@ nums&amp;ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-
     
     <item>
       <title>JavaScript的一些基础知识扩展</title>
-      <link>http://chenjunlinabc.github.io/posts/32/</link>
+      <link>https://xiaochenabc123.github.io/posts/32/</link>
       <pubDate>Wed, 16 Jun 2021 15:12:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/32/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/32/</guid>
       <description>JavaScript的变量具有动态性的特性，就决定了变量只是用于保存该特定的值的名字
 JavaScript中有两种，基本类型值和引用类型值
 基本数据类型有数字(Number)，字符串(String)，布尔值(Boolean)，null，undefined，（es6中加入了个symbol）,BigInt(ES2020)
@@ -186,7 +236,8 @@ JavaScript中有两种，基本类型值和引用类型值
 操控对象，其实就是在操控对象的引用，而不是对象本身
 JavaScript的逻辑运算
 JavaScript的任何数据类型都能转换为布尔类型
-&amp;lt; 小于 &amp;gt; 大于 &amp;lt;= 小于或者等于 &amp;gt;= 大于或者等于 == 没错，这个才是等于，=这个是用来赋值的 != 不等于 === 绝对等于（值和数据类型相等） !== 不绝对等于（值和数据类型其中有一个或者都不相等）
+&amp;lt; 小于
+大于 &amp;lt;= 小于或者等于 = 大于或者等于 == 没错，这个才是等于，=这个是用来赋值的 != 不等于 === 绝对等于（值和数据类型相等） !== 不绝对等于（值和数据类型其中有一个或者都不相等）
 &amp;amp;&amp;amp; 必须都要符合要求
 || 只有一个符合要求
 ! 真为假，假为真（当判断为true时返回false，判断为false时返回true）
@@ -214,10 +265,10 @@ var arr = [1,1,2,3,4,5]; console.log(arr instanceof Array); // 返回true</descr
     
     <item>
       <title>JavaScript-IntersectionObserver构造函数笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/16/</link>
+      <link>https://xiaochenabc123.github.io/posts/16/</link>
       <pubDate>Wed, 16 Jun 2021 09:29:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/16/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/16/</guid>
       <description>IntersectionObserver是浏览器本身提供的构造函数，因此可能有一些老版本浏览器没有效果
 该构造函数提供了一种异步的监测目标对象和祖先对象或者视口相交的方法
 var observe = new IntersectionObserver(callback, options)
@@ -245,10 +296,10 @@ const lazyload = new IntersectionObserver((target)=&amp;gt;{// 实例化target
     
     <item>
       <title>JavaScript-XMLHttpRequest对象笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/14/</link>
+      <link>https://xiaochenabc123.github.io/posts/14/</link>
       <pubDate>Wed, 16 Jun 2021 09:25:49 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/14/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/14/</guid>
       <description>ajax请求是异步的，因此可以通过回调函数来处理响应
 实现ajax请求大多是使用XMLHttpRequest对象，该对象用于与服务器交互，可以在不刷新页面的情况下请求url，获取数据，从而达到更新页面内容的目的
 初始化XMLHttpRequest()构造函数，可以获得一个XMLHttpReques实例，例如：
@@ -275,10 +326,10 @@ onloadstart：开始获取数据 onprogress：数据正在传输中 onabort：�
     
     <item>
       <title>jQuery-ajax()方法笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/13/</link>
+      <link>https://xiaochenabc123.github.io/posts/13/</link>
       <pubDate>Wed, 16 Jun 2021 09:24:37 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/13/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/13/</guid>
       <description>ajax()是jQuery中定义的一个方法，该方法用于执行ajax请求，例如：
 $(document).ready(function(){$(&amp;quot;button&amp;quot;).click(function(){$.ajax({type: &amp;quot;GET&amp;quot;,url: &amp;quot;https://httpbin.org/get&amp;quot;,success: function(getdata){console.log(getdata)}})})});参数
 url：指定发送请求的URL，默认是当前页面
@@ -309,10 +360,10 @@ xhr：用于重写或者增强XMLHttpRequest对象的函数</description>
     
     <item>
       <title>原生js实现瀑布流布局</title>
-      <link>http://chenjunlinabc.github.io/posts/10/</link>
+      <link>https://xiaochenabc123.github.io/posts/10/</link>
       <pubDate>Wed, 16 Jun 2021 09:14:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/10/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/10/</guid>
       <description>瀑布流的特点就是容器等宽不等高，计算其高度，选择最矮的一个容器的下面将插入第二行的第一个容器，以此类推，因此容器需要设置为绝对定位
 首先需要确定一行有多少列，列数 = 页面的宽度 / 容器的宽度
 获取页面的宽度：window.innerWidth或者document.documentElement.clientWidth或者document.body.clientWidth
@@ -331,10 +382,10 @@ var data = document.getElementsByClassName(&#39;imgs&#39;);function datamain(){
     
     <item>
       <title>IndexedDB浏览器数据库学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/5/</link>
+      <link>https://xiaochenabc123.github.io/posts/5/</link>
       <pubDate>Tue, 15 Jun 2021 19:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/5/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/5/</guid>
       <description>IndexedDB是浏览器提供的本地数据库，允许存储数据，采用键值对存储，允许异步请求，允许索引请求，IndexedDB理论上存储空间没有限制
 打开（新建）indexedDB：
 indexedDB.open()，该方法有俩个值，第一个是数据库名（没有该数据库那么就新建），第二个值为数据库的版本，一般来说默认为1（必须是大于0的自然数），例如：

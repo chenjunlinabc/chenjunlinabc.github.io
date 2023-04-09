@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>计算机网络 on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <link>https://xiaochenabc123.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
     <description>Recent content in 计算机网络 on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 01 Nov 2022 12:00:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Nov 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>计算机网络学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/156/</link>
+      <link>https://xiaochenabc123.github.io/posts/156/</link>
       <pubDate>Tue, 01 Nov 2022 12:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/156/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/156/</guid>
       <description>计算机网络是通用，可编程的硬件组成的，并且这些设备可互连，并且可以传输不同类型的数据
 计算机网络不是只有软件概念，还有硬件设备，例如：网卡，网线，路由器等等
 网络作用范围：广域网（WAN），城域网（MAN），局域网（LAN）
@@ -61,7 +62,7 @@ bps=bit/s，1秒多少比特位，比特率
 以太网的MTU（MAC帧）是1500字节
 路径MTU：由链路中MTU的最小值决定
 差错监测：因为物理层只负责传输比特流，没有控制出错的功能，因此数据链路层提供了差错监测的功能
-奇偶校验码：在发送的每个字节后加上一位，让字节中为1的数可以是奇数或者偶数，通过奇偶校验来确定数据是否出错，具体可以看https://cjlio.com/archives/77.html这篇文章，讲TCP的可靠性那里
+奇偶校验码：在发送的每个字节后加上一位，让字节中为1的数可以是奇数或者偶数，通过奇偶校验来确定数据是否出错，具体可以看https://xiaochenabc123.qq.com/archives/77.html这篇文章，讲TCP的可靠性那里
 奇偶校验码的缺点就是如果发生2位的出错，就无法校验出来错误
 循环冗余校验码CRC（根据传输或者保存的数据来产生固定位数的校验码，校验码再附加到数据的后面）
 模二除法：通过异或来表示0或者1，例如00就是0，01就是1，异为1，或为0

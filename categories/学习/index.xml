@@ -2,22 +2,156 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>学习 on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/categories/%E5%AD%A6%E4%B9%A0/</link>
+    <link>https://xiaochenabc123.github.io/categories/%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content in 学习 on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 05 Nov 2022 14:00:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 11:49:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>汇编基础学习笔记</title>
+      <link>https://xiaochenabc123.github.io/posts/162/</link>
+      <pubDate>Sun, 20 Nov 2022 11:49:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/162/</guid>
+      <description>x86架构通用寄存器（32位的x86架构和64位的x86_64架构）
+x86_64架构由amd公司推出，因此又叫amd64架构，64位架构是基于32位架构扩展的
+32位架构的x86处理器具备8个32位的通用寄存器，可通过名称来引用这8个寄存器，分别为EAX，ECX，EDX，EBX，ESP，EBP，ESI，EDI
+EAX的低16位可以被单独使用，引用名称叫AX（高位是左边位，低位是右边位），AX又可以被分为高8位的AH和低8位的AL
+实质上EAX，ECX，EDX，EBX都可以被拆开使用，ECX的低16位叫CX，CX又可以被分为高8位的CH和低8位的CL
+EDC的低16位叫DX，DX又可以被分为高8位的DH和低8位的DL，EBX的低16为叫BX，BX又可以被分为高8位的BH和低8位的BL
+ESP，EBP，ESI，EDI的低16位也可以被单独使用，但是没有8位的，这低16位名称分别是SP，BP，SI，DI
+EAX寄存器被乘法和除法指令自动调用，因此又叫累加寄存器
+ECX被LOOP（循环）指令调用为循环计数器
+ESP被用于寻址栈上的数据，ESP始终指向栈顶，因此又叫栈指针寄存器
+ESI和EDI又叫变址寄存器，变址寄存器引用的是内存地址，ESI指向内存源地址，EDI指向目的地址
+EBP叫帧指针寄存器，被用来引用栈上的函数参数和局部变量
+除了通用寄存器还有EFLAGS标志寄存器，EIP指针寄存器（这个非常重要，因为其引用的是下一条要被指向的指令的地址，注意：并不能直接通过名称来说调用，只能通过CALL之类的间接修改）等等
+64位架构（通用寄存器为16个，并且是64位的，而且每个都可以低8位，16位，32位单独使用）
+EAX，ECX，EDX，EBX，ESP，EBP，ESI，EDI的64位是R开头的，其他和32位架构是一样的，64位架构的内存地址也是64位的
+x86汇编指令（通常是由一个操作码（opcode）和0到多个的操作数（operand）组成）
+整数加减指令（ADD指令（有2个操作数，分别是目的操作数和源操作数，ADD指向将这2个操作数的值相加，将结果存放在源操作数中，源操作数可以是寄存器，内存，目的操作数要满足可写条件，因此也可以是寄存器，内存，但是不能同为内存））和SUB指令（和ADD指令一样，但是是将结果存放在目的操作数中））
+ADD指令：ADD EAX,32 （将EAX寄存器的值加上32，并且将结果存放回EAX寄存器中）
+SUB指令：SUB ESP,32 （将ESP寄存器的值减去32，并且将值存放回EAX寄存器中）
+数据传输指令（x86架构有多个数据传输指令，这里是MOV指令）
+MOV指令用于寄存器之间和寄存器和内存之间传输数据使用，MOV指令将源操作数复制到目的操作数中，例如MOV EDX, 666 （将数值666存储在EDX寄存器中）
+x86架构内存寻址：displacement（位移，可以在指令中直接得到内存的偏移量，也就是位移，这个位移表示距离操作数的直接偏移量），base（基址，内存地址存储在通用寄存器中），index（索引，注意ESP寄存器不能用于索引），scale（比例因子，用于索引相乘，是固定值，可取值1，2，4，8）
+内存最复杂的地址计算公式：base+（index*scale）+displacement
+base和index，displacement都可以随意组合，也可以不存在，如果不使用index，就不需要使用scale了，scale只为index服务，index和scale被用于寻找数组地址和多维数组
+入栈和出栈指令（PUSH和POP指令）
+PUSH指令只有一个操作数，就是需要入栈的源操作数，这个指令可以将ESP寄存器向下移动一个位，并且将源操作数复制到ESP寄存器指向的内存处，例如：PUSH EAX
+POP指令也是只有一个操作数，就是用来接收数据的目的操作数，POP指向会将ESP寄存器指向的内存处的值复制到目的操作数中，并且将ESP寄存器向上移动一个位置，例如：POP EAX
+分支跳转指令（JMP指令）
+JMP指令只有一个操作数，这个操作数可以是内存，寄存器或者立即数，通过这个操作数来给出需要跳转的目的地址，例如 JMP EAX
+过程调用指令（CALL指令）
+高级语言的函数在汇编叫过程，CALL指令只有一个操作数，是过程的起始地址，例如 CALL EAX
+分支跳转指令和过程调用指令的区别是，分支跳转指令不会记录返回地址，这个返回地址是CALL指令之后的下一条指令的地址，CALL指令会将返回地址入栈，然后跳转到目的地址执行
+子过程执行完成通过RET指令返回，RET指令会在栈上弹出返回地址，并且跳转到该返回地址上继续执行
+内存分页机制
+线性地址
+在内存分页模式中，应用使用的地址就叫线性地址，由MMU(menorymanagement unit)基于页表来映射转换为物理地址
+在内存分页模式未出现之前，应用是直接访问物理内存的，应用具备读写全部物理内存的权限，因此可能会覆盖其他应用的数据，而80386架构出现，出现了保护模式，使用内存分页来通过特权级和进程地址空间来进行隔离
+进程地址空间隔离是通过进程独立性页表来完成的，每个进程实现的地址空间是不同的，避免影响到其他进程
+80386两级页表
+80386架构的线性地址为32位，因此可寻4GB大小的内存空间（4096），地址总线也是32位，因此也是只能寻找4gb大小的物理内存，而且分页机制也将每个物理内存的页面的大小设为4096字节
+一个页面大小为4096字节，地址总线为32位，因此一个页面可存储1024个物理页面地址，80386页表的第一页面是目录页面，物理内存地址存储在CR3寄存器中，可通过该目录页面来查找第二页面的1024个物理页面地址
+MMU将32位的线性地址，低12位是页内偏移，然后的低10位是页表的索引，最后的高10位是页面目录索引，页内偏移的取值范围为0到4095，页表索引和页面目录索引的取值范围为0到1023
+80386线性地址转换到物理地址的过程：先从CR3寄存器中获取页目录的物理地址，然后选择一个页表，在到页表索引中，找到页面的物理地址，最后通过页内偏移量来得到实质上的物理地址
+PAE三级页表
+80386架构的每个进程可使用4gb的线性地址空间，但是操作系统会将4gb的地址空间划分成用户空间和内核空间，为了解决内存空间不够使用，英特尔公司推出了物理地址扩展技术（PAE，PhysicalAddressExtension）
+PAE将地址总线扩展到36位，因此可寻找64gb的物理内存，但是线性地址依然是32位的，为了解决32位线性地址支持36位的物理地址映射，MMU页表映射机制进行了调整，一个页面只能存储512个地址
+PAE的32位线性地址是，高2位是页目录指针索引，后面9位是页目录索引，再后9位是页表索引，最后12位是页内偏移
+x64四级页表
+因为PAE技术并没有扩展线性空间，32位的地址宽度不够使用了，AMD公司基于x86架构扩展而出的x64架构，x64架构的寄存器宽度是64位的，但是线性地址只使用了48位，但是也足够了，因为可以寻高达256TB的内存空间地址，具体可寻多少物理内存空间，取决于地址总线的宽度
+x64架构，在PAE的基础上扩展了页表为4级，而且每个页面的大小是4096字节，高9位是页目录指针表，后9位是页目录指针，再后9位是页目录，然后9位是页表。最后12位是页内偏移量
+虚拟内存
+进程是以内存页面为单位向操作系统申请内存的，现代操作系统中会对申请的内存空间进行记录，并不会马上分配，而是等到该进程真正访问该内存空间是才会分配物理页面并且进行映射，然后恢复中断程序，如果进程访问了没有映射的内存空间，会被操作系统进行page fault处理，操作系统通过page failt handle进行检查内存空间分配记录
+物理空间不够分配时，操作系统可以将少使用的物理页面写入到磁盘交换分区（Swap分区）中，将空出来的页面给需要的进程使用，注意：当在磁盘交换分区中内存页面被访问了，也会触发page fault处理，操作系统通过page failt handle来将磁盘交换分区的内存页面加载回内存中</description>
+    </item>
+    
+    <item>
+      <title>Deno js运行时环境学习笔记</title>
+      <link>https://xiaochenabc123.github.io/posts/161/</link>
+      <pubDate>Fri, 11 Nov 2022 07:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/161/</guid>
+      <description>Deno是基于V8引擎，使用Rust构建的JavaScript &amp;amp; TypeScript 运行时环境，天生支持TypeScript，并且有安全模式（默认情况下无法获取网络，文件系统，环境变量等权限，当然也可以开放），Deno的作者是Nodejs之父Ryan Dahl，构建的原因是解决Nodejs的缺陷，例如模块的安全性（Node运行时的权限很高，缺乏模块的安全运行），Deno的模块化选择了ESMoule标准，而且具备浏览器的api，例如window全局变量，支持onload，onunload等事件函数，支持fetch，Web Workers等标准，异步操作返回采用Promise，支持await
+Deno不使用node_modules与package.json的包管理机制，而是采用下载编译的机制，并且存在缓存，模块更新通过更新缓存来完成
+Deno有个特殊的功能，就是可以从网络上导入模块
+安装
+Linux
+curl -fsSL https://deno.land/install.sh | sh
+或者
+windows
+iwr https://deno.land/install.ps1 -useb | iex
+也可以通过scoop安装
+scoop install deno
+作为Rust构建的，当然也支持Cargo包管理器安装
+cargo install deno &amp;ndash;locked
+或者通过单一的可执行文件来安装（我采用这个方式，再配置一下Path环境变量就是可以了，windows选择deno-x86_64-pc-windows-msvc）
+https://github.com/denoland/deno/releases
+检查是否安装完成
+deno &amp;ndash;version
+第一个例子
+import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
+deno run .\index.ts
+它会向你询问进行网络请求，是否允许，可通过&amp;ndash;allow-net默认运行，例如：deno run &amp;ndash;allow-net .\index.ts
+第三方库通过https://deno.land/x查找
+权限
+&amp;ndash;allow-env，允许访问环境变量，可指定环境变量列表，通过逗号分隔
+&amp;ndash;allow-hrtime，允许高分辨率时间测量
+&amp;ndash;allow-net，允许网络访问，可指定网络地址列表，通过逗号分隔
+&amp;ndash;allow-ffi，允许加载动态库，动态库不是安全运行的
+&amp;ndash;allow-read，允许读取，可指定读取文件列表或者目录，使用逗号分隔
+&amp;ndash;allow-run，允许运行子进程，这个子进程不是安全运行的，可指定子进程列表，通过逗号分隔
+&amp;ndash;allow-write，允许写入，可指定写入文件列表或者目录，使用逗号分隔
+-A 或者 &amp;ndash;allow-all 允许全部权限
+VsCode插件deno
+deno内置工具
+安装模块</description>
+    </item>
+    
+    <item>
+      <title>计算机图形学学习笔记</title>
+      <link>https://xiaochenabc123.github.io/posts/159/</link>
+      <pubDate>Tue, 08 Nov 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/159/</guid>
+      <description>计算机图形学(Computer Graphics，CG)是研究图形表达，生成，处理与显示的学科
+通过数学算法将二维，三维图形转换成计算机显示器的栅格，例如向量，行列式，矩阵算法等等
+图形学历史
+1950年，MIT诞生第一个图形显示器（用于Whirlwind（旋风）电子管计算机显示图形），CRT显示器
+Whirlwind电子管计算机设计之初是美国空军训练飞行员，半自动地面防空系统（SAGE）
+应用CRT和光笔
+1958年，双人网球
+1960年，William Fetter（威廉﹒费特），创造‘计算机图形学’名词，计算机图形学先驱
+1961年，史帝夫﹒罗素（Steve Russell），spacewar游戏
+1962年，皮埃尔·贝塞尔（Pierre Bézier），贝塞尔曲线（Bézier curve），绘制曲线
+1962年，伊凡·苏泽兰（Ivan Sutherland），Sketchpad绘图应用，计算机图形学之父
+1963年，Force, Mass and Motion，https://techchannel.att.com/play-video.cfm/2012/8/20/AT&amp;amp;T-Archives-Force-Mass-Motion
+1968年，Ivan Sutherland创造“达摩克里斯之剑”头盔显示器
+1968年，Arthur Appel 提出光线投射算法
+1973年，Bui Tuong Phong，发明phong shading（Phong着色法）
+1974年，Speed Race游戏，第一款赛车游戏
+1977年，3D core Graphics System，图形学标准
+1980年，NEC µPD7220 GPU，支持1024*1024的显示，普及民用
+1996年，Krishnamurthy与Levoy提出法线贴图（Normal Mapping）
+1995年，Directx 1.0
+1997年，OpenGL 1.1
+1999年，Nvidia，Gefprce 256 GPU</description>
+    </item>
+    
     <item>
       <title>WebSocket学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/158/</link>
+      <link>https://xiaochenabc123.github.io/posts/158/</link>
       <pubDate>Sat, 05 Nov 2022 14:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/158/</guid>
-      <description>HTTP协议实质上就是半双工信道，无法同时发送数据和接收数据，而且HTTP连接必须是客户端发起，由服务器来进行处理响应
+      <guid>https://xiaochenabc123.github.io/posts/158/</guid>
+      <description>HTTP1.1协议实质上就是半双工信道，无法同时发送数据和接收数据，而且HTTP连接必须是客户端发起，由服务器来进行处理响应，只有HTTP2.0才是全双工信道（不需要等待响应，就可以发送第二个报文）
 WebSocket是全双工信道，而且还支持服务端主动发送数据给客户端，是服务器推送技术（还是需要客户端发起连接）
 WebSocket协议是应用层协议，而且是建立在TCP协议上，端口也是使用443和80，握手使用HTTP协议，浏览器不会限制WebSocket的同源
 WebSocket客户端配置
@@ -36,10 +170,10 @@ WebSocket.url属性可以返回WebSocket实例的URL绝对路径，只读</descr
     
     <item>
       <title>简单使用Element Plus组件库</title>
-      <link>http://chenjunlinabc.github.io/posts/157/</link>
+      <link>https://xiaochenabc123.github.io/posts/157/</link>
       <pubDate>Thu, 03 Nov 2022 17:40:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/157/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/157/</guid>
       <description>Element Plus是基于vue3开发的组件库，而Element使用vue2开发的组件库
 安装Element Plus
 npm install element-plus &amp;ndash;save
@@ -57,10 +191,10 @@ import AutoImport from &#39;unplugin-auto-import/vite&#39;import Components fro
     
     <item>
       <title>计算机网络学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/156/</link>
+      <link>https://xiaochenabc123.github.io/posts/156/</link>
       <pubDate>Tue, 01 Nov 2022 12:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/156/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/156/</guid>
       <description>计算机网络是通用，可编程的硬件组成的，并且这些设备可互连，并且可以传输不同类型的数据
 计算机网络不是只有软件概念，还有硬件设备，例如：网卡，网线，路由器等等
 网络作用范围：广域网（WAN），城域网（MAN），局域网（LAN）
@@ -105,7 +239,7 @@ bps=bit/s，1秒多少比特位，比特率
 以太网的MTU（MAC帧）是1500字节
 路径MTU：由链路中MTU的最小值决定
 差错监测：因为物理层只负责传输比特流，没有控制出错的功能，因此数据链路层提供了差错监测的功能
-奇偶校验码：在发送的每个字节后加上一位，让字节中为1的数可以是奇数或者偶数，通过奇偶校验来确定数据是否出错，具体可以看https://cjlio.com/archives/77.html这篇文章，讲TCP的可靠性那里
+奇偶校验码：在发送的每个字节后加上一位，让字节中为1的数可以是奇数或者偶数，通过奇偶校验来确定数据是否出错，具体可以看https://xiaochenabc123.qq.com/archives/77.html这篇文章，讲TCP的可靠性那里
 奇偶校验码的缺点就是如果发生2位的出错，就无法校验出来错误
 循环冗余校验码CRC（根据传输或者保存的数据来产生固定位数的校验码，校验码再附加到数据的后面）
 模二除法：通过异或来表示0或者1，例如00就是0，01就是1，异为1，或为0
@@ -128,10 +262,10 @@ IP地址（v4只有32位，v6有128位），ipv4使用点分十进制表示，�
     
     <item>
       <title>计算机组成原理学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/155/</link>
+      <link>https://xiaochenabc123.github.io/posts/155/</link>
       <pubDate>Tue, 01 Nov 2022 02:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/155/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/155/</guid>
       <description>计算机发展历史
 1946-1957，电子管计算机，1957-1964，晶体管计算机，1964-1980，集成电路计算机，1980-至今，超大规模集成电路计算机
 电子管计算机：二战时期，英国为了破译德国的无线电密文，而发明了电子管计算机，最出名的电子管计算机莫过于埃尼阿克（ENIAC），埃尼阿克是美国军方为了计算弹道而诞生的，埃尼阿克长30多米，高2.4米，宽6米，拥有18000多个电子管，70000个电阻，10000个电容，1500个续电，6000多个开关，运行耗电150千瓦，重30吨，占地1500平方英寸（140平方米），造价48万美元，运算速度每秒5000次
@@ -204,13 +338,13 @@ ASCII码：ASCII码包含95个可打印字符和33个不可打印的字符（例
     
     <item>
       <title>Nuxt.js学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/152/</link>
+      <link>https://xiaochenabc123.github.io/posts/152/</link>
       <pubDate>Sun, 05 Jun 2022 21:36:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/152/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/152/</guid>
       <description>nuxt是一个基于vue的应用框架，用于创建服务端渲染应用，使用vite作为打包器，使用webpack作为构建工具
 创建项目
-yarn create nuxt-app nuxtTest
+yarn create nuxt-app test
 需要做一些选择，例如：选择TypeScript，选择Yarn，选择UI框架等等
 安装依赖
 yarn
@@ -224,10 +358,10 @@ yarn start
     
     <item>
       <title>编译原理学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/148/</link>
+      <link>https://xiaochenabc123.github.io/posts/148/</link>
       <pubDate>Sun, 08 May 2022 03:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/148/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/148/</guid>
       <description>编译就是翻译，将机器语言翻译成另一个机器语言（例如高级语言翻译成低级语言（例如汇编），低级语言翻译成机器语言（二进制））
 编译让计算机理解高级语言并且执行，编译让计算机更理解人，编译提供了人类新的思考方式
 编译的翻译只能作用于形式语言
@@ -265,10 +399,10 @@ let: Keyword a: Variable =: Operator 1: Integer
     
     <item>
       <title>vuejs底层原理学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/147/</link>
+      <link>https://xiaochenabc123.github.io/posts/147/</link>
       <pubDate>Tue, 26 Apr 2022 20:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/147/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/147/</guid>
       <description>组件的渲染，更新
 组件的渲染：通过组件的模板创建vnode，渲染vnode，生成DOM
 vue应用的初始化
@@ -279,10 +413,10 @@ ensureRenderer()用于创建一个惰性渲染器对象（延时创建，这样�
     
     <item>
       <title>web安全学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/145/</link>
+      <link>https://xiaochenabc123.github.io/posts/145/</link>
       <pubDate>Wed, 13 Apr 2022 13:50:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/145/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/145/</guid>
       <description>常见web工具：
 burpsuite：通过代理渗透，可重放HTTP请求，来分析HTTP响应
 curl：通过url方式传输数据，可用于抓取页面（执行请求），监控网络等等
@@ -322,10 +456,10 @@ echo hallo,word &amp;gt; hallo.txt:a.txtecho hallo &amp;gt; hallo.</description
     
     <item>
       <title>Rust学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/142/</link>
+      <link>https://xiaochenabc123.github.io/posts/142/</link>
       <pubDate>Mon, 28 Mar 2022 13:22:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/142/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/142/</guid>
       <description>Rust由非盈利组织Mozilla基金会开发，像著名的Mozilla Firefox浏览器和MDN Web Docs都出自该基金会
 安装
 官方推荐使用Rustup来安装（Rustup是rust的安装器和版本管理工具）
@@ -356,10 +490,10 @@ rust依赖可通过https://crates.io/查找
     
     <item>
       <title>Flutter框架学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/141/</link>
+      <link>https://xiaochenabc123.github.io/posts/141/</link>
       <pubDate>Tue, 22 Mar 2022 12:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/141/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/141/</guid>
       <description>Flutter是谷歌开源的跨平台UI框架，可以快速在iOS和Android上构建高质量的原生用户界面，可在Windows，Linux，Android，Web，iOS，Mac等6大平台上开发应用
 闲鱼和Now直播，美团，快手都使用了Flutter
 获取Flutter
@@ -400,10 +534,10 @@ void main() =&amp;gt; runApp(MyApp());class MyApp extends StatelessWidget{@ove
     
     <item>
       <title>Nestjs学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/139/</link>
+      <link>https://xiaochenabc123.github.io/posts/139/</link>
       <pubDate>Sat, 05 Mar 2022 14:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/139/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/139/</guid>
       <description>NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程
 安装
 npm install -g @nestjs/cli
@@ -429,10 +563,10 @@ nestjs cli支持对mvc模块的生成
     
     <item>
       <title>Gin框架学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/135/</link>
+      <link>https://xiaochenabc123.github.io/posts/135/</link>
       <pubDate>Tue, 15 Feb 2022 17:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/135/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/135/</guid>
       <description>Gin是一个基于go语言编写的web框架，因为Gin的路由库基于httprouter开发的，性能非常好，支持Restful api规范
 安装
 go get -u github.com/gin-gonic/gin
@@ -452,10 +586,10 @@ index.html main.go</description>
     
     <item>
       <title>PostCSS学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/129/</link>
+      <link>https://xiaochenabc123.github.io/posts/129/</link>
       <pubDate>Sun, 23 Jan 2022 13:55:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/129/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/129/</guid>
       <description>PostCSS是一个用JS插件转换为css的插件工具（注意：PostCSS不是css预处理器，PostCSS本身是个平台，可以通过一些插件达到css预处理器的效果）
 PostCSS is a tool for transforming CSS with JS plugins. These plugins can support variables and mixins, transpile future CSS syntax, inline images, and more.
 插件查询：https://www.postcss.parts/
@@ -473,11 +607,11 @@ npm install autoprefixer &amp;ndash;save-dev</description>
     
     <item>
       <title>Golang进阶扩展笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/128/</link>
+      <link>https://xiaochenabc123.github.io/posts/128/</link>
       <pubDate>Sun, 16 Jan 2022 09:08:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/128/</guid>
-      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://cjlio.com/archives/96.html
+      <guid>https://xiaochenabc123.github.io/posts/128/</guid>
+      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.qq.com/archives/96.html
 并发
 go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
 内核态：程序执行操作系统层级的程序时
@@ -519,10 +653,10 @@ sync/atomic包将原子操作封装成了Go的函数，sync/atomic包提供了�
     
     <item>
       <title>Kubernetes学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/127/</link>
+      <link>https://xiaochenabc123.github.io/posts/127/</link>
       <pubDate>Mon, 10 Jan 2022 12:31:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/127/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/127/</guid>
       <description>Kubernetes（k8s，8是指k到s之间有8个字母），是谷歌在2014年发布并且开源的容器化集群管理系统（已在谷歌生产环境中工作15年），支持自动化部署，应用容器化管理，大规模升级或回滚，应用扩展等等
 k8s的特性：
 自动部署与滚动更新：自动化部署应用容器，k8s采取滚动式更新，可以根据应用的情况进行一次或者批量更新（判断该应用添加是否正常使用），也可以进行历史版本回滚
@@ -563,29 +697,29 @@ apt install -y kubelet kubeadm kubectl</description>
     
     <item>
       <title>python爬虫学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/125/</link>
+      <link>https://xiaochenabc123.github.io/posts/125/</link>
       <pubDate>Fri, 31 Dec 2021 01:05:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/125/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/125/</guid>
       <description>urllib，xpath，jsonpath，beautiful，requests，selenium，Scrapy
 python库内置的HTTP请求库 urllib.request 请求模块 urllib.error 异常处理模块 urllib.parse url解析模块 urllib.robotparsef robots.txt解析模块
 urllib.request提供了最基本的http请求方法，主要带有处理授权验证，重定向，浏览器Cookies功能
-模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
-使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(type(response))
+模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
+使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(type(response))
 HTTPResposne类型对象
-通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;) print(response.status) print(response.getheaders())
+通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(response.status) print(response.getheaders())
 post发送一个请求，只需要把参数data以bytes类型传入 import urllib.parse import urllib.request data = bytes(urllib.parse.urlencode({&amp;lsquo;hallo&amp;rsquo;:&amp;lsquo;python&amp;rsquo;}),encoding=&amp;lsquo;utf-8&amp;rsquo;) response = urllib.request.urlopen(&amp;lsquo;http://httpbin.org/post&#39;.data = data) print(response.read())
-timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://cjlio.com/&#39;,timeout=1)
+timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;,timeout=1)
 这里设置超时时间为1秒，如果超了1秒，服务器依然没有响应就抛出URLError异常，可以结合try和except
-import urllib.parseimport urllib.requesturl = &amp;quot;https://cjlio.com/&amp;quot;headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
+import urllib.parseimport urllib.requesturl = &amp;quot;https://xiaochenabc123.qq.com/&amp;quot;headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
     </item>
     
     <item>
       <title>操作系统学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/115/</link>
+      <link>https://xiaochenabc123.github.io/posts/115/</link>
       <pubDate>Thu, 07 Oct 2021 09:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/115/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/115/</guid>
       <description>操作系统是管理计算机硬件和软件资源，并且提供用户交互的软件系统
 常见操作系统有Windows，Linux，Android
 操作系统具备管理计算机资源的功能，具备抽象计算机资源的能力，能和用户进行交互
@@ -650,10 +784,10 @@ CPU需要逻辑地址上的内存内容（ALU），内存管理单元（MMU）�
     
     <item>
       <title>Redis学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/97/</link>
+      <link>https://xiaochenabc123.github.io/posts/97/</link>
       <pubDate>Fri, 10 Sep 2021 21:10:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/97/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/97/</guid>
       <description>Redis是NoSQL数据库（Not Only SQL）家族的代表之一，其特点就是基于内存运行，支持分布式，key-value存储
 Redis具备速度快，支持多种数据结构，可持久化，支持主从复制，具备高可用，分布式等特点
 可以将内存中的数据存储到磁盘中，重启的时候再加载使用，保证数据的持久性，支持备份恢复，常用于缓存数据库（辅助持久化数据库）
@@ -702,10 +836,10 @@ daemonize yes</description>
     
     <item>
       <title>Golang学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/96/</link>
+      <link>https://xiaochenabc123.github.io/posts/96/</link>
       <pubDate>Thu, 09 Sep 2021 01:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/96/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/96/</guid>
       <description>Golang又叫go语言，golang是它的全称，是由Google开发的一种静态强类型，编译型，并发型，并具有垃圾回收功能的编程语言
 go语言确保达到静态编译语言的安全和性能的同时，又达到动态语言的开发维护效率
 Go语言天生支持并发，提供自动垃圾回收机制
@@ -747,10 +881,10 @@ var abc xyz string = &amp;ldquo;hallo&amp;rdquo;,&amp;ldquo;word&amp;rdquo;</des
     
     <item>
       <title>React进阶学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/94/</link>
+      <link>https://xiaochenabc123.github.io/posts/94/</link>
       <pubDate>Fri, 03 Sep 2021 12:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/94/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/94/</guid>
       <description>react16是Facebook在2017年发布的react版本，几乎对react底层进行重写，但是对外API不变，因此可以无缝转移到react16
 render返回类型
 除了只能返回单个元素外，react16支持返回字符串和数组（由react元素组成）
@@ -782,14 +916,16 @@ let markdown =&amp;quot;**这是加粗的文字**\n\n&amp;quot; +&amp;quot;*�
     
     <item>
       <title>Taro框架学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/92/</link>
+      <link>https://xiaochenabc123.github.io/posts/92/</link>
       <pubDate>Tue, 31 Aug 2021 12:15:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/92/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/92/</guid>
       <description>Taro是京东凹凸实验室推出的一个框架，设计目的是多端统一开发解决方案，一次开发，多端运行
 Taro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持
 Taro官方文档：https://taro-docs.jd.com/taro/docs/README
+Taro官方组件库：https://taro-ui.jd.com/
 Taro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等
+Taro 1.2支持将已有的微信小程序进行转换，只需要在项目根目录运行taro convert命令就可以在将现有的小程序项目转换到taroConvert目录下，转换成jsx代码，并且可以直接使用这个代码来进行taro build来编译成taro支持的平台应用
 安装Taro框架
 npm install -g @tarojs/cli
 或者
@@ -814,10 +950,10 @@ import Taro, { useState } from &#39;@tarojs/taro&#39;import { View, Text } from
     
     <item>
       <title>算法学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/79/</link>
+      <link>https://xiaochenabc123.github.io/posts/79/</link>
       <pubDate>Mon, 09 Aug 2021 20:36:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/79/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/79/</guid>
       <description>虽然学过java和Python，但是还是JavaScript比较熟练，因此算法学习全部用JavaScript来写
 算法不会被程序语言所限制，也不会一个实现只有一个算法
 常见数据结构（数组，列表，映射，堆栈，队列，哈希表，树，图）
@@ -838,10 +974,10 @@ let arr = function(nums) {if(nums == null || nums.length == 0){return 0}let 
     
     <item>
       <title>MongoDB学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/76/</link>
+      <link>https://xiaochenabc123.github.io/posts/76/</link>
       <pubDate>Sun, 08 Aug 2021 14:20:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/76/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/76/</guid>
       <description>MongoDB是一个以键值对存储数据的数据库（基于json描述数据，实质上是一个叫BSON的数据格式，BSON是基于二进制字节流，json基于文本）
 MongoDB是No SQL家族的成员之一，No SQL一般指的是非关系型数据库（Not only SQL）
 关系型数据库和Excel表格类似，表与表之间存在着复杂的关联关系，例如MySQL，sql server
@@ -891,10 +1027,10 @@ db.createCollection(&amp;ldquo;test&amp;rdquo;, { capped : true, autoIndexId : t
     
     <item>
       <title>NextJS学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/74/</link>
+      <link>https://xiaochenabc123.github.io/posts/74/</link>
       <pubDate>Sat, 07 Aug 2021 23:26:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/74/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/74/</guid>
       <description>NextJS是一个用于生产环境的react框架，可以提供服务器端渲染等等功能
 服务端渲染（ssr）：后端调用数据库获取数据后，将数据和页面元素进行组合成完整的DOM结构，再返回给浏览器，提供给用户浏览
 SPA：
@@ -928,10 +1064,10 @@ import Link from &amp;quot;next/link&amp;quot;&amp;lt;Link href=&amp;quot;/&amp
     
     <item>
       <title>深入学习vuejs</title>
-      <link>http://chenjunlinabc.github.io/posts/75/</link>
+      <link>https://xiaochenabc123.github.io/posts/75/</link>
       <pubDate>Sat, 07 Aug 2021 23:25:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/75/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/75/</guid>
       <description>Vue CLI是vue官方脚手架，可以快速创建vue项目
 安装vue-cli3
 npm install -g @vue/cli
@@ -959,10 +1095,10 @@ module.exports = defineConfig({transpileDependencies: true,lintOnSave: false}
     
     <item>
       <title>gulp学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/73/</link>
+      <link>https://xiaochenabc123.github.io/posts/73/</link>
       <pubDate>Fri, 06 Aug 2021 20:52:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/73/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/73/</guid>
       <description>gulp.js是一个基于流(stream)的自动化构建工具，是开源的JavaScript自动化工具，基于node.js和npm的构建工具，可以处理压缩代码，合并代码，压缩图片，编译less等等任务
 全局安装gulp
 npm install &amp;ndash;global gulp-cli
@@ -995,10 +1131,10 @@ gulp test</description>
     
     <item>
       <title>深入学习React</title>
-      <link>http://chenjunlinabc.github.io/posts/63/</link>
+      <link>https://xiaochenabc123.github.io/posts/63/</link>
       <pubDate>Sun, 25 Jul 2021 12:00:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/63/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/63/</guid>
       <description>setState()
 注意：如果调用多次setState()，但是还是只触发一次重新渲染（性能优化，如果每更新一次状态就渲染一次的话，很影响性能）
 setState()是异步更新数据的，因此setState()不要依赖于前面的setState()，因为其不会立刻更新数据
@@ -1029,19 +1165,20 @@ state只存储和组件渲染相关的数据，例如列表数据，而不用来
     
     <item>
       <title>TypeScript学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/58/</link>
+      <link>https://xiaochenabc123.github.io/posts/58/</link>
       <pubDate>Sun, 18 Jul 2021 15:50:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/58/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/58/</guid>
       <description>TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
 TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
 TypeScript实质上就是JavaScript的扩展，JavaScript超集
-TypeScript本身并不能在浏览器运行，需要进行编译成JavaScript
+TypeScript具备类型检查，静态类型，JSnext属性和方法，以及还在提案阶段的语法（例如装饰器）
+TypeScript本身并不能在浏览器运行，需要进行编译成JavaScript（tsc编译）
 全局安装typescript
 yarn global add typescript
 或者
 npm install -g typescript
-安装ts-node
+安装ts-node（node不能直接运行ts文件，需要安装ts-node包）
 npm install -g ts-node
 ts-node运行（不需要编译成js文件，直接运行ts）
 ts-node hallo.ts
@@ -1050,13 +1187,14 @@ tsc -v
 使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
 创建tsconfig.json
 npx tsc &amp;ndash;init
-编译阶段去除注释：找到removeComments，设置为true
 执行（不加任何参数，这样才能使用tsconfig.json配置文件，tsc默认对当前根目录的ts文件进行编译）
 tsc
+或者指定编译的文件
+tsc ./src/index.ts
+tsc ./src/index.ts -t es6 -m cjs
+注意：cjs标准只能存在一个顶级导出（mudule.exports）,如果存在其他exports的话会被忽略，因此要么不用mudule.exports，要么只使用一个mudule.exports
 编译指定ts文件（在compilerOptions同级）
 &amp;ldquo;include&amp;rdquo;:[&amp;quot;./test1.ts&amp;quot;] // 指定编译哪个ts文件 &amp;ldquo;excclude&amp;rdquo;:[&amp;quot;./test.ts&amp;quot;] // 指定不编译哪个ts文件
-其他配置
-rootDir（指定输入目录） outDir（指定输出目录） allowJs（是否处理js文件） checkjs（是否检查js文件的语法）
 编译TypeScript文件
 tsc hallo.ts
 变量声明
@@ -1067,18 +1205,15 @@ boolean，string，number，array，null，undefined，object，tuple，enum，v
 boolean布尔值，例如：
 let hallo: boolean = true
 number数值，例如：
-let hallo: number = 123;
-二进制和八进制，十进制，十六进制都可以用number类型来表示
-string字符串
-let hallo: string = hallo;</description>
+let hallo: number = 123;</description>
     </item>
     
     <item>
       <title>ES6学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/57/</link>
+      <link>https://xiaochenabc123.github.io/posts/57/</link>
       <pubDate>Fri, 09 Jul 2021 22:51:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/57/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/57/</guid>
       <description>ECMAScript
 JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
 ECMAScript是规范，JavaScript是实现
@@ -1116,10 +1251,10 @@ let [a,b,c] = [1,2,3]
     
     <item>
       <title>React学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/55/</link>
+      <link>https://xiaochenabc123.github.io/posts/55/</link>
       <pubDate>Fri, 09 Jul 2021 22:23:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/55/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/55/</guid>
       <description>React是构造用户界面的JavaScript库，就是负责视图层的，只负责视图的渲染，其特点是声明式，组件化
 安装react
 npm i react react-dom
@@ -1144,12 +1279,12 @@ npm start或者yarn start
     
     <item>
       <title>Ajax学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/54/</link>
+      <link>https://xiaochenabc123.github.io/posts/54/</link>
       <pubDate>Sat, 03 Jul 2021 15:30:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/54/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/54/</guid>
       <description>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
-关于XMLHttpRequest对象（构造函数）的用法：https://cjlio.com/archives/14.html
+关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.qq.com/archives/14.html
 ajax需要网站环境下生效，需要web服务器，nodemon
 app.js
 // 导入expressconst express = require(&amp;quot;express&amp;quot;);// 导入pathconst patg = require(&amp;quot;path&amp;quot;);// 创建web服务器const app = express();// 静态资源访问服务app.use(express.static(path.join(__dirname,&amp;quot;public&amp;quot;)));app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{res.send(&amp;quot;hallo&amp;quot;);});// 监听端口app.listen(3000);console.log(&amp;quot;服务器启动成功&amp;quot;)nodemon app.js
@@ -1170,10 +1305,10 @@ var responseText = JSON.parse(hallo.responseText);console.</description>
     
     <item>
       <title>深入学习vue组件</title>
-      <link>http://chenjunlinabc.github.io/posts/53/</link>
+      <link>https://xiaochenabc123.github.io/posts/53/</link>
       <pubDate>Sat, 03 Jul 2021 11:16:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/53/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/53/</guid>
       <description>组件注册
 .component()接收2个参数，其中第一个参数是组件名（数据类型是字符串）
 组件名命名：
@@ -1196,10 +1331,10 @@ const hallo = Vue.createApp({component: {props:{abc: String,xyz: Boolean,},
     
     <item>
       <title>正则表达式学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/52/</link>
+      <link>https://xiaochenabc123.github.io/posts/52/</link>
       <pubDate>Fri, 02 Jul 2021 18:12:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/52/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/52/</guid>
       <description>正则表达式（Regular Expression）是用于匹配字符串中字符组合的模式，在JavaScript中，正则表达式也是对象
 JavaScript创建正则表达式
 使用RegExp对象创建
@@ -1239,12 +1374,16 @@ var hallo = /a*/;</description>
     
     <item>
       <title>微信小程序学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/48/</link>
+      <link>https://xiaochenabc123.github.io/posts/48/</link>
       <pubDate>Sun, 27 Jun 2021 12:34:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/48/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/48/</guid>
       <description>小程序实质上就是一个基于web基础的应用程序（网页）（但是不支持浏览器的api，小程序的api全部由微信提供，高度依赖微信，因此只能在微信中运行）
-微信小程序要求进行ICP备案，才能发布小程序
+微信之父张小龙是这样描述小程序的：
+小程序是一种不需要下载安装就可以使用的应用，它实现了应用触手可及的梦想。
+用户扫一扫或者搜一下即可打开应用，也体现了用完即走的理念。
+用户不用关心是否安装太多应用的问题，应用将无处不在，随时可用，但又无需安装卸载
+微信小程序的接口服务器要求进行ICP备案，并且经过审核，才能发布小程序
 微信小程序开发文档
 https://developers.weixin.qq.com/miniprogram/dev/framework/
 开发工具：微信开发者工具
@@ -1289,26 +1428,22 @@ wxml
 WXML：从html中衍生而来一种专门在小程序页面中使用的语言，组合了基础组件，事件系统，构造出页面的结构
 view元素是表示块级，和div类似
 scroll-view元素是表示可滚动页面区域
-text元素是表示行内文本，和span类似
-image元素是表示图片，和img类似
-swiper元素是用来搞轮播图
-属性
-&amp;lt;view 属性=&amp;ldquo;属性值&amp;rdquo;&amp;gt;</description>
+text元素是表示行内文本，和span类似</description>
     </item>
     
     <item>
       <title>webpack学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/47/</link>
+      <link>https://xiaochenabc123.github.io/posts/47/</link>
       <pubDate>Thu, 24 Jun 2021 10:11:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/47/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/47/</guid>
       <description>webpack作为模块加载和打包神器
 安装node就有npm了，用npm安装webpack
-npm i webpack -g 安装全局的webpack
+npm i webpack webpack-cli -g 安装全局的webpack
 到项目目录下，npm init -y 初始化模块
-npm i webpack -D 安装项目局部的webpack，-D是&amp;ndash;save-dev的意思
+npm i webpack webpack-cli -D 安装项目局部的webpack，-D是&amp;ndash;save-dev的意思，推荐使用
 webpack 入口文件名 最后输出到哪个文件的文件名，例如：
-webpack A.js B.js
+npx webpack A.js B.js
 那么就会编译A.js，输出到B.js
 webpack只能处理JavaScript，处理其他类型的文件，需要安装几个包
 npm install css-loader style-loader
@@ -1316,19 +1451,18 @@ npm install css-loader style-loader
 那么修改A.js
 require(&amp;quot;!style-loader!css-loader!./abc.css&amp;quot;); document.write(require(&amp;quot;./C.js&amp;quot;));
 再打包一次
-webpack A.js B.js
+npx webpack A.js B.js
 会出现一个C.js
 配置webpack.config.js
-module.exports = {entry: &#39;入口文件的路径&#39;,output: {path:__dirname,filename: &#39;最后输出到哪个文件的文件名&#39;},module: {rules: [{test: &#39;处理什么格式的文件&#39;,use:[{loader: &#39;依赖包&#39;}]}]}};模块化
-import $ from &amp;ldquo;jquery&amp;rdquo; // 导入jQuery，只需要src当前js文件就可以导入jQuery依赖</description>
+module.exports = {entry: &#39;入口文件的路径&#39;,output: {path:__dirname,filename: &#39;最后输出到哪个文件的文件名&#39;},module: {rules: [{test: &#39;处理什么格式的文件&#39;,use:[{loader: &#39;依赖包&#39;}]}]}};模块化</description>
     </item>
     
     <item>
       <title>Git版本管理系统学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/30/</link>
+      <link>https://xiaochenabc123.github.io/posts/30/</link>
       <pubDate>Wed, 16 Jun 2021 14:51:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/30/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/30/</guid>
       <description>git安装
 Windows和mac
 到git官网下载对应的安装文件，进行安装，下一步
@@ -1336,8 +1470,8 @@ Linux
 sudo apt install git-all 或者 sudo dnf install git-all
 也可以用源代码编译（Git是开源的，是Linux之父的作品） https://github.com/git/git/releases
 方便git管理，记录每一个修改了Git仓库的人，设置用户名和邮箱
-git config &amp;ndash;global user.name &amp;ldquo;chenjunlin&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;a@cjlio.com&amp;rdquo;
-ssh-keygen -t rsa -C &amp;ldquo;a@cjlio.com&amp;rdquo; # 生成ssh密钥
+git config &amp;ndash;global user.name &amp;ldquo;chenjunlin&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;a@xiaochenabc123.qq.com&amp;rdquo;
+ssh-keygen -t rsa -C &amp;ldquo;a@xiaochenabc123.qq.com&amp;rdquo; # 生成ssh密钥
 mkdir learngit #创建一个空目录
 cd learngit # cd到目录
 pwd #显示当前目录路径
@@ -1353,10 +1487,10 @@ git reset &amp;ndash;hard HEAD^ #回退上一个版本，上上一个版本就�
     
     <item>
       <title>python基础语法笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/28/</link>
+      <link>https://xiaochenabc123.github.io/posts/28/</link>
       <pubDate>Wed, 16 Jun 2021 14:40:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/28/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/28/</guid>
       <description>安装python
 推荐安装anaconda3（linux）
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh
@@ -1401,10 +1535,10 @@ python可以处理整型任意大小的整数，也可以使用二进制代表�
     
     <item>
       <title>vuejs基础学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/23/</link>
+      <link>https://xiaochenabc123.github.io/posts/23/</link>
       <pubDate>Wed, 16 Jun 2021 10:13:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/23/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/23/</guid>
       <description>vuejs的核心层就是只关心视图层的，本笔记使用的是最新版本的vue3
 vue全家桶：Vue+VueRouter+Vuex
 vue名字来源于法语（中文翻译为视图），可以看出其对视图层的重视
@@ -1418,21 +1552,21 @@ bundler版本：该版本不是完整版，min
 vuejs模板支持所有JavaScript表达式
 vuejs本身是用声明式渲染把数据渲染到html dom中，渲染格式为{{&amp;hellip;}}，例如：
 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;p&amp;gt;{{ hallovuejs }}&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {hallovuejs: &amp;quot;hallo vuejs!&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;vue本身携带了一些指令，主要特征就是带有v-前缀，用来渲染html dom上的一些行为，例如：
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://cjlio.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://xiaochenabc123.qq.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
 而vue还提供了可以绑定事件的v-on属性，例如：
 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;button v-on:click=&amp;quot;go&amp;quot;&amp;gt;{{ main }}&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {main: &amp;quot;hallo&amp;quot;}},methods: {go: function(){console.</description>
     </item>
     
     <item>
       <title>HTML全局属性笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/22/</link>
+      <link>https://xiaochenabc123.github.io/posts/22/</link>
       <pubDate>Wed, 16 Jun 2021 09:38:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/22/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/22/</guid>
       <description>属性
 accesskey
 定义快捷键获取焦点，例如
-&amp;lt;a href=&amp;quot;https://cjlio.com&amp;quot; accesskey=&amp;quot;q&amp;quot;&amp;gt;GO\&amp;lt;/a&amp;gt;按ait+q，就会跳到指定的网页上
+&amp;lt;a href=&amp;quot;https://xiaochenabc123.qq.com&amp;quot; accesskey=&amp;quot;q&amp;quot;&amp;gt;GO\&amp;lt;/a&amp;gt;按ait+q，就会跳到指定的网页上
 class
 定义元素的类，开头必须是字母，多个类使用空格隔开，例如
 &amp;lt;div class = &amp;quot;a1 a2 a3&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;id
@@ -1443,7 +1577,7 @@ class
 定义元素的行内样式，例如
 &amp;lt;div style=&amp;quot;color : #fff&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;tabindex
 指定tab键的焦点控制，例如
-&amp;lt;a href=&amp;quot;https://cjlio.com&amp;quot; tabindex=&amp;quot;1&amp;quot;&amp;gt;GO&amp;lt;/a&amp;gt;使用键盘的tab键盘，触发（不会跳转到网页，只是焦点）
+&amp;lt;a href=&amp;quot;https://xiaochenabc123.qq.com&amp;quot; tabindex=&amp;quot;1&amp;quot;&amp;gt;GO&amp;lt;/a&amp;gt;使用键盘的tab键盘，触发（不会跳转到网页，只是焦点）
 contenteditable
 指定元素是否为可以编辑的，例如
 &amp;lt;div contenteditable=&amp;quot;true&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;dir
@@ -1465,10 +1599,10 @@ draggable
     
     <item>
       <title>jQuery基础学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/21/</link>
+      <link>https://xiaochenabc123.github.io/posts/21/</link>
       <pubDate>Wed, 16 Jun 2021 09:38:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/21/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/21/</guid>
       <description>##第一个jQuery程序
 $(&amp;lsquo;div&amp;rsquo;).html(&amp;ldquo;hello.world&amp;rdquo;);
 ##DOM对象和jQuery对象互转化
@@ -1494,23 +1628,23 @@ $(&amp;rsquo;*&amp;rsquo;)
 层次选择器
 $(&amp;lsquo;div .main&amp;rsquo;)
 属性选择器
-$(&amp;ldquo;a[href=&amp;ldquo;https://cjlio.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
+$(&amp;ldquo;a[href=&amp;ldquo;https://xiaochenabc123.qq.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
 可以使用前缀或者后缀来选择 $(&amp;ldquo;div[name^=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes开头的 $(&amp;ldquo;div[name$=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes结尾的
 组合选择器
 $(&amp;ldquo;div[class=divs]&amp;rdquo;)
 组合选择器其实就是用多个选择器组合起来
 多项选择器
-$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://cjlio.com&amp;rdquo;)
+$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://xiaochenabc123.qq.com&amp;rdquo;)
 多项选择器就是将多个选择器用逗号组合起来
 层级选择器 $(&amp;ldquo;ul.nev li.active&amp;rdquo;)</description>
     </item>
     
     <item>
       <title>MySQL学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/20/</link>
+      <link>https://xiaochenabc123.github.io/posts/20/</link>
       <pubDate>Wed, 16 Jun 2021 09:37:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/20/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/20/</guid>
       <description>推荐使用mariaDB
 操作数据库
 创建数据库
@@ -1542,10 +1676,10 @@ UPDATE xxx SET status=1 WHERE id = 4;</description>
     
     <item>
       <title>JAVA基础学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/19/</link>
+      <link>https://xiaochenabc123.github.io/posts/19/</link>
       <pubDate>Wed, 16 Jun 2021 09:35:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/19/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/19/</guid>
       <description>java基于java虚拟机（Java Virtual Machine，JVM）和java应用编程接口（Application Programming Interface，API）构成
 java的跨平台得益于java虚拟机，只需要编译一次java程序，就可以在不同系统的java虚拟机上运行
 java编译成字节流，java虚拟机通过解析这些字节流来做的跨平台，编译完成得到的字节流可以在不同平台的java虚拟机上跑
@@ -1581,10 +1715,10 @@ int x = i; // 变量x的值为i，因为i的值为100，所以x的值为i
     
     <item>
       <title>XML学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/17/</link>
+      <link>https://xiaochenabc123.github.io/posts/17/</link>
       <pubDate>Wed, 16 Jun 2021 09:32:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/17/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/17/</guid>
       <description>xml中文全称为可扩展标记语言（Extensible Markup Language）
 xml和html类似，但是xml是用来传输和存储数据的，xml大小写敏感，xml的标记是自定义的
 xml声明，该声明位在xml文档的第一行，结尾
@@ -1626,10 +1760,10 @@ FIXED // 表示这个固定的属性默认值，不能将该属性的值设置�
     
     <item>
       <title>JavaScript-IntersectionObserver构造函数笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/16/</link>
+      <link>https://xiaochenabc123.github.io/posts/16/</link>
       <pubDate>Wed, 16 Jun 2021 09:29:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/16/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/16/</guid>
       <description>IntersectionObserver是浏览器本身提供的构造函数，因此可能有一些老版本浏览器没有效果
 该构造函数提供了一种异步的监测目标对象和祖先对象或者视口相交的方法
 var observe = new IntersectionObserver(callback, options)
@@ -1657,10 +1791,10 @@ const lazyload = new IntersectionObserver((target)=&amp;gt;{// 实例化target
     
     <item>
       <title>html5学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/12/</link>
+      <link>https://xiaochenabc123.github.io/posts/12/</link>
       <pubDate>Wed, 16 Jun 2021 09:22:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/12/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/12/</guid>
       <description>HTML5是HTML标准的第5代标准，主要目的是语义化并且提供多媒体的嵌入
 HTML是什么？HTML全称为HyperTextMarkupLanguage，中文叫超文本标记语言，简称HTML
 而HTML5是一个标准，指的是第五代HTML标准
@@ -1707,10 +1841,10 @@ html标签大多都是成对出现的，分开始标签和结束标签，结束�
     
     <item>
       <title>css3学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/11/</link>
+      <link>https://xiaochenabc123.github.io/posts/11/</link>
       <pubDate>Wed, 16 Jun 2021 09:21:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/11/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/11/</guid>
       <description>盒子模型
 盒模型在css中是用来封装html元素的，因为本质上来看像个盒子一样，所以叫盒模型或者盒子模型，术语叫box model
 外边距（margin）：一般用于控制同辈元素之间的间距

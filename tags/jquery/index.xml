@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>jQuery on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/jquery/</link>
+    <link>https://xiaochenabc123.github.io/tags/jquery/</link>
     <description>Recent content in jQuery on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jun 2021 09:38:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 09:38:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>jQuery基础学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/21/</link>
+      <link>https://xiaochenabc123.github.io/posts/21/</link>
       <pubDate>Wed, 16 Jun 2021 09:38:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/21/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/21/</guid>
       <description>##第一个jQuery程序
 $(&amp;lsquo;div&amp;rsquo;).html(&amp;ldquo;hello.world&amp;rdquo;);
 ##DOM对象和jQuery对象互转化
@@ -42,23 +43,23 @@ $(&amp;rsquo;*&amp;rsquo;)
 层次选择器
 $(&amp;lsquo;div .main&amp;rsquo;)
 属性选择器
-$(&amp;ldquo;a[href=&amp;ldquo;https://cjlio.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
+$(&amp;ldquo;a[href=&amp;ldquo;https://xiaochenabc123.qq.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
 可以使用前缀或者后缀来选择 $(&amp;ldquo;div[name^=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes开头的 $(&amp;ldquo;div[name$=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes结尾的
 组合选择器
 $(&amp;ldquo;div[class=divs]&amp;rdquo;)
 组合选择器其实就是用多个选择器组合起来
 多项选择器
-$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://cjlio.com&amp;rdquo;)
+$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://xiaochenabc123.qq.com&amp;rdquo;)
 多项选择器就是将多个选择器用逗号组合起来
 层级选择器 $(&amp;ldquo;ul.nev li.active&amp;rdquo;)</description>
     </item>
     
     <item>
       <title>jQuery-ajax()方法笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/13/</link>
+      <link>https://xiaochenabc123.github.io/posts/13/</link>
       <pubDate>Wed, 16 Jun 2021 09:24:37 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/13/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/13/</guid>
       <description>ajax()是jQuery中定义的一个方法，该方法用于执行ajax请求，例如：
 $(document).ready(function(){$(&amp;quot;button&amp;quot;).click(function(){$.ajax({type: &amp;quot;GET&amp;quot;,url: &amp;quot;https://httpbin.org/get&amp;quot;,success: function(getdata){console.log(getdata)}})})});参数
 url：指定发送请求的URL，默认是当前页面

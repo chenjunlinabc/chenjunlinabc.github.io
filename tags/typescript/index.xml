@@ -2,30 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>TypeScript on 小陈的个人博客</title>
-    <link>http://chenjunlinabc.github.io/tags/typescript/</link>
+    <link>https://xiaochenabc123.github.io/tags/typescript/</link>
     <description>Recent content in TypeScript on 小陈的个人博客</description>
     <image>
-      <url>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 18 Jul 2021 15:50:00 +0000</lastBuildDate><atom:link href="http://chenjunlinabc.github.io/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Jul 2021 15:50:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TypeScript学习笔记</title>
-      <link>http://chenjunlinabc.github.io/posts/58/</link>
+      <link>https://xiaochenabc123.github.io/posts/58/</link>
       <pubDate>Sun, 18 Jul 2021 15:50:00 +0000</pubDate>
       
-      <guid>http://chenjunlinabc.github.io/posts/58/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/58/</guid>
       <description>TypeScript设计目标是开发大型项目，编译成纯JavaScript，让其可以运行在任何浏览器上
 TypeScript可以增强IDE的交互和反馈，主流IDE都支持TypeScript
 TypeScript实质上就是JavaScript的扩展，JavaScript超集
-TypeScript本身并不能在浏览器运行，需要进行编译成JavaScript
+TypeScript具备类型检查，静态类型，JSnext属性和方法，以及还在提案阶段的语法（例如装饰器）
+TypeScript本身并不能在浏览器运行，需要进行编译成JavaScript（tsc编译）
 全局安装typescript
 yarn global add typescript
 或者
 npm install -g typescript
-安装ts-node
+安装ts-node（node不能直接运行ts文件，需要安装ts-node包）
 npm install -g ts-node
 ts-node运行（不需要编译成js文件，直接运行ts）
 ts-node hallo.ts
@@ -34,13 +36,14 @@ tsc -v
 使用TypeScript编写的文件统一以.ts为后缀，用ts写React，统一以.tsx为后缀
 创建tsconfig.json
 npx tsc &amp;ndash;init
-编译阶段去除注释：找到removeComments，设置为true
 执行（不加任何参数，这样才能使用tsconfig.json配置文件，tsc默认对当前根目录的ts文件进行编译）
 tsc
+或者指定编译的文件
+tsc ./src/index.ts
+tsc ./src/index.ts -t es6 -m cjs
+注意：cjs标准只能存在一个顶级导出（mudule.exports）,如果存在其他exports的话会被忽略，因此要么不用mudule.exports，要么只使用一个mudule.exports
 编译指定ts文件（在compilerOptions同级）
 &amp;ldquo;include&amp;rdquo;:[&amp;quot;./test1.ts&amp;quot;] // 指定编译哪个ts文件 &amp;ldquo;excclude&amp;rdquo;:[&amp;quot;./test.ts&amp;quot;] // 指定不编译哪个ts文件
-其他配置
-rootDir（指定输入目录） outDir（指定输出目录） allowJs（是否处理js文件） checkjs（是否检查js文件的语法）
 编译TypeScript文件
 tsc hallo.ts
 变量声明
@@ -51,10 +54,7 @@ boolean，string，number，array，null，undefined，object，tuple，enum，v
 boolean布尔值，例如：
 let hallo: boolean = true
 number数值，例如：
-let hallo: number = 123;
-二进制和八进制，十进制，十六进制都可以用number类型来表示
-string字符串
-let hallo: string = hallo;</description>
+let hallo: number = 123;</description>
     </item>
     
   </channel>

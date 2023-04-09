@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>计算机图形学 on 小陈的个人博客</title>
+    <link>https://xiaochenabc123.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</link>
+    <description>Recent content in 计算机图形学 on 小陈的个人博客</description>
+    <image>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Nov 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机图形学学习笔记</title>
+      <link>https://xiaochenabc123.github.io/posts/159/</link>
+      <pubDate>Tue, 08 Nov 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/159/</guid>
+      <description>计算机图形学(Computer Graphics，CG)是研究图形表达，生成，处理与显示的学科
+通过数学算法将二维，三维图形转换成计算机显示器的栅格，例如向量，行列式，矩阵算法等等
+图形学历史
+1950年，MIT诞生第一个图形显示器（用于Whirlwind（旋风）电子管计算机显示图形），CRT显示器
+Whirlwind电子管计算机设计之初是美国空军训练飞行员，半自动地面防空系统（SAGE）
+应用CRT和光笔
+1958年，双人网球
+1960年，William Fetter（威廉﹒费特），创造‘计算机图形学’名词，计算机图形学先驱
+1961年，史帝夫﹒罗素（Steve Russell），spacewar游戏
+1962年，皮埃尔·贝塞尔（Pierre Bézier），贝塞尔曲线（Bézier curve），绘制曲线
+1962年，伊凡·苏泽兰（Ivan Sutherland），Sketchpad绘图应用，计算机图形学之父
+1963年，Force, Mass and Motion，https://techchannel.att.com/play-video.cfm/2012/8/20/AT&amp;amp;T-Archives-Force-Mass-Motion
+1968年，Ivan Sutherland创造“达摩克里斯之剑”头盔显示器
+1968年，Arthur Appel 提出光线投射算法
+1973年，Bui Tuong Phong，发明phong shading（Phong着色法）
+1974年，Speed Race游戏，第一款赛车游戏
+1977年，3D core Graphics System，图形学标准
+1980年，NEC µPD7220 GPU，支持1024*1024的显示，普及民用
+1996年，Krishnamurthy与Levoy提出法线贴图（Normal Mapping）
+1995年，Directx 1.0
+1997年，OpenGL 1.1
+1999年，Nvidia，Gefprce 256 GPU</description>
+    </item>
+    
+  </channel>
+</rss>
