@@ -21,14 +21,14 @@
       <description>urllib，xpath，jsonpath，beautiful，requests，selenium，Scrapy
 python库内置的HTTP请求库 urllib.request 请求模块 urllib.error 异常处理模块 urllib.parse url解析模块 urllib.robotparsef robots.txt解析模块
 urllib.request提供了最基本的http请求方法，主要带有处理授权验证，重定向，浏览器Cookies功能
-模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
-使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(type(response))
+模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
+使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;) print(type(response))
 HTTPResposne类型对象
-通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(response.status) print(response.getheaders())
+通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;) print(response.status) print(response.getheaders())
 post发送一个请求，只需要把参数data以bytes类型传入 import urllib.parse import urllib.request data = bytes(urllib.parse.urlencode({&amp;lsquo;hallo&amp;rsquo;:&amp;lsquo;python&amp;rsquo;}),encoding=&amp;lsquo;utf-8&amp;rsquo;) response = urllib.request.urlopen(&amp;lsquo;http://httpbin.org/post&#39;.data = data) print(response.read())
-timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;,timeout=1)
+timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;,timeout=1)
 这里设置超时时间为1秒，如果超了1秒，服务器依然没有响应就抛出URLError异常，可以结合try和except
-import urllib.parseimport urllib.requesturl = &amp;quot;https://xiaochenabc123.qq.com/&amp;quot;headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
+import urllib.parseimport urllib.requesturl = &amp;quot;https://xiaochenabc123.test.com/&amp;quot;headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
     </item>
     
     <item>

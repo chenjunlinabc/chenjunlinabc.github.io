@@ -36,7 +36,7 @@ https://github.com/denoland/deno/releases
 检查是否安装完成
 deno &amp;ndash;version
 第一个例子
-import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
+import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.test.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
 deno run .\index.ts
 它会向你询问进行网络请求，是否允许，可通过&amp;ndash;allow-net默认运行，例如：deno run &amp;ndash;allow-net .\index.ts
 第三方库通过https://deno.land/x查找
@@ -98,9 +98,9 @@ windows表示整个浏览器的窗口，同时也是JavaScript最顶层的对象
 navigator包含了当前浏览器的全部信息
 console.log(window.navigator)可以看到输出了很多属性，如userAgent，language等等
 location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
-console.log(window.location)const urlData = &amp;quot;https://xiaochenabc123.qq.com/;window.location.href = urlData;这个也可以实现跳转
-window.location.assign(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
-window.location.replace(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)reload方法可以重载页面，加上true参数将强制更新
+console.log(window.location)const urlData = &amp;quot;https://xiaochenabc123.test.com/;window.location.href = urlData;这个也可以实现跳转
+window.location.assign(&amp;quot;https://xiaochenabc123.test.com&amp;quot;)这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
+window.location.replace(&amp;quot;https://xiaochenabc123.test.com&amp;quot;)reload方法可以重载页面，加上true参数将强制更新
 window.location.reload(true)history表示浏览器的历史记录
 console.log(window.history)length表示本次访问网站的数量
 同时也提供了几个方法
@@ -174,7 +174,7 @@ let [a,b,c] = [1,2,3]
       
       <guid>https://xiaochenabc123.github.io/posts/54/</guid>
       <description>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
-关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.qq.com/archives/14.html
+关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.test.com/archives/14.html
 ajax需要网站环境下生效，需要web服务器，nodemon
 app.js
 // 导入expressconst express = require(&amp;quot;express&amp;quot;);// 导入pathconst patg = require(&amp;quot;path&amp;quot;);// 创建web服务器const app = express();// 静态资源访问服务app.use(express.static(path.join(__dirname,&amp;quot;public&amp;quot;)));app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{res.send(&amp;quot;hallo&amp;quot;);});// 监听端口app.listen(3000);console.log(&amp;quot;服务器启动成功&amp;quot;)nodemon app.js

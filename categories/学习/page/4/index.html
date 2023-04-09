@@ -23,7 +23,7 @@ module.exports = {
 plugins: [插件1,插件2]
 };
 Autopreﬁxer（自动添加浏览器前缀）
-npm install autoprefixer –save-dev...</p></div><footer class=entry-footer><span title='2022-01-23 13:55:00 +0000 UTC'>2022-01-23</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to PostCSS学习笔记" href=https://xiaochenabc123.github.io/posts/129/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Golang进阶扩展笔记</h2></header><div class=entry-content><p>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.qq.com/archives/96.html
+npm install autoprefixer –save-dev...</p></div><footer class=entry-footer><span title='2022-01-23 13:55:00 +0000 UTC'>2022-01-23</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to PostCSS学习笔记" href=https://xiaochenabc123.github.io/posts/129/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Golang进阶扩展笔记</h2></header><div class=entry-content><p>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.test.com/archives/96.html
 并发
 go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
 内核态：程序执行操作系统层级的程序时
@@ -98,16 +98,16 @@ gpg –keyserver keyserver.ubuntu.com –recv-keys 836F4BEB gpg –export –arm
 apt install -y kubelet kubeadm kubectl...</p></div><footer class=entry-footer><span title='2022-01-10 12:31:00 +0000 UTC'>2022-01-10</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Kubernetes学习笔记" href=https://xiaochenabc123.github.io/posts/127/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>python爬虫学习笔记</h2></header><div class=entry-content><p>urllib，xpath，jsonpath，beautiful，requests，selenium，Scrapy
 python库内置的HTTP请求库 urllib.request 请求模块 urllib.error 异常处理模块 urllib.parse url解析模块 urllib.robotparsef robots.txt解析模块
 urllib.request提供了最基本的http请求方法，主要带有处理授权验证，重定向，浏览器Cookies功能
-模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(‘https://xiaochenabc123.qq.com/') print(response.read().decode(‘utf-8’))
-使用type()方法 import urllib.requst response = urllib.request.urlopen(‘https://xiaochenabc123.qq.com/') print(type(response))
+模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(‘https://xiaochenabc123.test.com/') print(response.read().decode(‘utf-8’))
+使用type()方法 import urllib.requst response = urllib.request.urlopen(‘https://xiaochenabc123.test.com/') print(type(response))
 HTTPResposne类型对象
-通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(‘https://xiaochenabc123.qq.com/') print(response.status) print(response.getheaders())
+通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(‘https://xiaochenabc123.test.com/') print(response.status) print(response.getheaders())
 post发送一个请求，只需要把参数data以bytes类型传入 import urllib.parse import urllib.request data = bytes(urllib.parse.urlencode({‘hallo’:‘python’}),encoding=‘utf-8’) response = urllib.request.urlopen(‘http://httpbin.org/post'.data = data) print(response.read())
-timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(‘https://xiaochenabc123.qq.com/',timeout=1)
+timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(‘https://xiaochenabc123.test.com/',timeout=1)
 这里设置超时时间为1秒，如果超了1秒，服务器依然没有响应就抛出URLError异常，可以结合try和except
 import urllib.parse
 import urllib.request
-url = "https://xiaochenabc123.qq.com/"
+url = "https://xiaochenabc123.test.com/"
 headers = {
 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537....</p></div><footer class=entry-footer><span title='2021-12-31 01:05:00 +0000 UTC'>2021-12-31</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to python爬虫学习笔记" href=https://xiaochenabc123.github.io/posts/125/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>操作系统学习笔记</h2></header><div class=entry-content><p>操作系统是管理计算机硬件和软件资源，并且提供用户交互的软件系统
 常见操作系统有Windows，Linux，Android

@@ -178,7 +178,7 @@ html标签大多都是成对出现的，分开始标签和结束标签，结束�
 </code></pre><p>type新的属性值有：</p><p>email：邮箱地址</p><p>url：网址</p><p>number：数字</p><p>color：拾色器</p><p>time：时，分</p><p>week：周</p><p>month：月</p><p>date：年，月，日</p><p>datetime-local：年，月，日，时，分，秒</p><p>range：滑块</p><p>form的一些属性</p><p>autocomplete：该属性可以实现自动输入功能，浏览器基于之前输入并且提交过的值，属性值有on和off</p><p>novalidate：该属性是是否关闭校验，搭配表单控件食用更佳</p><p>input的一些属性</p><p>autofocus：自动获取焦点</p><p>placeholder：提示信息（占位符）</p><p>required：必填项</p><p>list：带本地数据缓存列表的自动输入，例如</p><pre><code>&lt;form&gt;
     &lt;input type=&quot;url&quot; list=&quot;url_list&quot; name=&quot;link&quot;/&gt;
     &lt;datalist id=&quot;url_list&quot;&gt;
-        &lt;option label=&quot;blog&quot; value=&quot;https://xiaochenabc123.qq.com&quot; /&gt;
+        &lt;option label=&quot;blog&quot; value=&quot;https://xiaochenabc123.test.com&quot; /&gt;
         &lt;option label=&quot;baidu&quot; value=&quot;https://www.baidu.com&quot; /&gt;
         &lt;option label=&quot;github&quot; value=&quot;https://www.github.com&quot; /&gt;
     &lt;/datalist&gt;
@@ -328,9 +328,9 @@ img.onload=function(){
 }
 </code></pre><p>图片设置宽度高度</p><pre><code>ctx.drawImage(img,100,100,200,200);  // 图片对象，x，y，宽度，高度
 </code></pre><p>将图片绘制到矩形区域内的指定位置</p><pre><code>ctx.drawImage(img,100,100,200,200,0,0,300,300);  // 图片对象，图片绘制到矩形的位置xy，图片的高度和宽度，图片矩形的位置，图片矩形的高度和宽度
-</code></pre><p>解决图片比例不正常：</p><p>要满足：绘制的图片宽度：绘制的图片高度等于原始图片宽度：原始高度</p><p>那么就是说绘制的图片宽度等于绘制的图片高度乘以原始图片宽度除以原始高度，依此类推，保证绘制的图片宽高比例和原来图片的比例宽高一致</p><hr><p>iframe框架</p><p>用于在网页中显示网页</p><pre><code>&lt;iframe src=&quot;https://xiaochenabc123.qq.com&quot;&gt;&lt;/iframe&gt;
+</code></pre><p>解决图片比例不正常：</p><p>要满足：绘制的图片宽度：绘制的图片高度等于原始图片宽度：原始高度</p><p>那么就是说绘制的图片宽度等于绘制的图片高度乘以原始图片宽度除以原始高度，依此类推，保证绘制的图片宽高比例和原来图片的比例宽高一致</p><hr><p>iframe框架</p><p>用于在网页中显示网页</p><pre><code>&lt;iframe src=&quot;https://xiaochenabc123.test.com&quot;&gt;&lt;/iframe&gt;
 </code></pre><p>可以设置高度和宽度</p><p>frameborder=&ldquo;0&rdquo; // 可以移除边框</p><p>可以设置target属性来做目标</p><p>target属性：浏览器会在指定文件中寻找对应的name，并且寻找到对应name的href属性</p><pre><code>&lt;iframe src=&quot;index.html&quot; name=&quot;iframe_a&quot;&gt;&lt;/iframe&gt;
-&lt;a href=&quot;https://xiaochenabc123.qq.com&quot; target=&quot;iframe_a&quot;&gt;hallo&lt;/a&gt;
+&lt;a href=&quot;https://xiaochenabc123.test.com&quot; target=&quot;iframe_a&quot;&gt;hallo&lt;/a&gt;
 </code></pre><hr><p>defer属性规定了执行延迟，当页面加载完毕就执行，不用再担心DOM元素获取不了，例如：</p><pre><code>&lt;script type=&quot;text/javascript&quot; defer=&quot;defer&quot;&gt;
     console.log(&quot;hallo word&quot;)
 &lt;/script&gt;

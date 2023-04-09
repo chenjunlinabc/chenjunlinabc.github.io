@@ -17,7 +17,7 @@ https://github.com/denoland/deno/releases
 deno –version
 第一个例子
 import DFetch from "https://deno.land/x/dfetch/mod.ts"
-DFetch.get("https://xiaochenabc123.qq.com").then((response) => {
+DFetch.get("https://xiaochenabc123.test.com").then((response) => {
 console.log(response)
 })
 运行
@@ -88,12 +88,12 @@ console.log(window.navigator)
 可以看到输出了很多属性，如userAgent，language等等
 location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
 console.log(window.location)
-const urlData = "https://xiaochenabc123.qq.com/;
+const urlData = "https://xiaochenabc123.test.com/;
 window.location.href = urlData;
 这个也可以实现跳转
-window.location.assign("https://xiaochenabc123.qq.com")
+window.location.assign("https://xiaochenabc123.test.com")
 这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
-window.location.replace("https://xiaochenabc123.qq.com")
+window.location.replace("https://xiaochenabc123.test.com")
 reload方法可以重载页面，加上true参数将强制更新
 window.location.reload(true)
 history表示浏览器的历史记录
@@ -163,7 +163,7 @@ const实质就是为了保证该变量始终不变而设计的，使用const声�
 ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
 let [a,b,c] = [1,2,3]
 会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined...</p></div><footer class=entry-footer><span title='2021-07-09 22:51:00 +0000 UTC'>2021-07-09</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to ES6学习笔记" href=https://xiaochenabc123.github.io/posts/57/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Ajax学习笔记</h2></header><div class=entry-content><p>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
-关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.qq.com/archives/14.html
+关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.test.com/archives/14.html
 ajax需要网站环境下生效，需要web服务器，nodemon
 app.js
 // 导入express

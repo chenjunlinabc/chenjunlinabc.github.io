@@ -36,7 +36,7 @@ hugo new post/hallo.md
 安装主题
 git clone https://github.com/miiiku/hugo-theme-kagome.git ./themes/kagome
 修改config.toml文件
-baseURL = &amp;lsquo;https://blog.xiaochenabc123.qq.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
+baseURL = &amp;lsquo;https://blog.xiaochenabc123.test.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
 启动Hugo服务器
 hugo server
 访问http://localhost:1313

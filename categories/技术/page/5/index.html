@@ -148,12 +148,12 @@ console.log(window.navigator)
 可以看到输出了很多属性，如userAgent，language等等
 location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
 console.log(window.location)
-const urlData = "https://xiaochenabc123.qq.com/;
+const urlData = "https://xiaochenabc123.test.com/;
 window.location.href = urlData;
 这个也可以实现跳转
-window.location.assign("https://xiaochenabc123.qq.com")
+window.location.assign("https://xiaochenabc123.test.com")
 这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
-window.location.replace("https://xiaochenabc123.qq.com")
+window.location.replace("https://xiaochenabc123.test.com")
 reload方法可以重载页面，加上true参数将强制更新
 window.location.reload(true)
 history表示浏览器的历史记录

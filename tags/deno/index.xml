@@ -36,7 +36,7 @@ https://github.com/denoland/deno/releases
 检查是否安装完成
 deno &amp;ndash;version
 第一个例子
-import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
+import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.test.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
 deno run .\index.ts
 它会向你询问进行网络请求，是否允许，可通过&amp;ndash;allow-net默认运行，例如：deno run &amp;ndash;allow-net .\index.ts
 第三方库通过https://deno.land/x查找

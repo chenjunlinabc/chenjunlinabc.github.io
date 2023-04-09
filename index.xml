@@ -97,7 +97,7 @@ https://github.com/denoland/deno/releases
 检查是否安装完成
 deno &amp;ndash;version
 第一个例子
-import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
+import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.test.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
 deno run .\index.ts
 它会向你询问进行网络请求，是否允许，可通过&amp;ndash;allow-net默认运行，例如：deno run &amp;ndash;allow-net .\index.ts
 第三方库通过https://deno.land/x查找
@@ -256,7 +256,7 @@ bps=bit/s，1秒多少比特位，比特率
 以太网的MTU（MAC帧）是1500字节
 路径MTU：由链路中MTU的最小值决定
 差错监测：因为物理层只负责传输比特流，没有控制出错的功能，因此数据链路层提供了差错监测的功能
-奇偶校验码：在发送的每个字节后加上一位，让字节中为1的数可以是奇数或者偶数，通过奇偶校验来确定数据是否出错，具体可以看https://xiaochenabc123.qq.com/archives/77.html这篇文章，讲TCP的可靠性那里
+奇偶校验码：在发送的每个字节后加上一位，让字节中为1的数可以是奇数或者偶数，通过奇偶校验来确定数据是否出错，具体可以看https://xiaochenabc123.test.com/archives/77.html这篇文章，讲TCP的可靠性那里
 奇偶校验码的缺点就是如果发生2位的出错，就无法校验出来错误
 循环冗余校验码CRC（根据传输或者保存的数据来产生固定位数的校验码，校验码再附加到数据的后面）
 模二除法：通过异或来表示0或者1，例如00就是0，01就是1，异为1，或为0
@@ -530,7 +530,7 @@ ensureRenderer()用于创建一个惰性渲染器对象（延时创建，这样�
       <pubDate>Tue, 19 Apr 2022 21:11:29 +0800</pubDate>
       
       <guid>https://xiaochenabc123.github.io/links/</guid>
-      <description>保罗的小宇宙 临轩 狱杰的屋敷 猕猴の那年记忆 一叶三秋 新漫猫 提莫酱的博客 zshMVP 清墨的橘 流星Aday的博客 隔壁小胡的博客 Citrons博客 若志随笔 星云馆 螓首蛾眉 阅读・阅己 北熙宝宝 Sanakeyの小站 百里飞洋の博客 itsNekoDeng</description>
+      <description>保罗的小宇宙 临轩 狱杰的屋敷 猕猴の那年记忆 一叶三秋 新漫猫 提莫酱的博客 zshMVP 清墨的橘 流星Aday的博客 隔壁小胡的博客 Citrons博客 若志随笔 星云馆 螓首蛾眉 阅读・阅己 北熙宝宝 Sanakeyの小站 百里飞洋の博客 itsNekoDeng 喵二の小博客日语笔记</description>
     </item>
     
     <item>
@@ -597,32 +597,21 @@ pm2 flush</description>
 本站未注明转载的文章均为原创，转载请标明来源
 本站点基于hugo构建
 免责声明
-本站内容仅供学习和参阅使用，本网站内容仅代表作者本人的观点，内容仅供阅读，如有任何问题，欢迎随时留言或者联系站长（QQ：3066887865，email：a@xiaochenabc123.qq.com），将会在第一时间为您做相关处理
+本站内容仅供学习和参阅使用，本网站内容仅代表作者本人的观点，内容仅供阅读，如有任何问题，欢迎随时留言或者联系站长（email：xiaochenabc123@qq.com），将会在第一时间为您做相关处理
 自述：
 2002年出生，星座：摩羯座
-偏好语言：JavaScript(TypeScript)，Golang，Python
+偏好语言：JavaScript(TypeScript)，Golang，Python，Rust
 APP&amp;amp;小程序：Flutter，Taro
 家里蹲公司的一名干饭攻城狮
-最喜欢的游戏：CSGO，塞尔达传说：旷野之息
+最喜欢的游戏：CSGO，塞尔达传说：旷野之息，王者荣耀
 看完的小说：全职法师，雪鹰领主，吞噬星空，星辰变，牧龙师
 目前在看小说：完美世界
 Github提交活跃：
 联系方式：
-邮箱：a#xiaochenabc123.qq.com （#是啥不用多说了吧？@）
-QQ：3066887865（请勿骚扰）
-QQ群：61141438
-wakatime统计：https://wakatime.com/@chenjunlinabc
-GitHub：https://github.com/chenjunlinabc
-Gitee：https://gitee.com/chenjunlinabc
-Twitter：https://twitter.com/chenjunlina
-B站: https://space.bilibili.com/373156565
-steam：https://steamcommunity.com/profiles/76561198966883228/
-备用站点：https://blog.xiaochenabc123.qq.com
-设备：
-主力机：ThinkBook 14p Gen 2
-配置详情： CPU：AMD Ryzen 5 5600H 内存：16G DDR4 3200MHz（双通道，板载） 显卡：AMD Radeon(TM) Graphics（2GB） 硬盘：西部数据 SN770黑盘 1TB 网卡：Intel(R) Wi-Fi 6 AX200 160MHz 操作系统：Windows 11专业工作站版 键盘：ikbc C87(茶轴) / MSI GK50Z PLXEL 60度灰（红轴）
-鼠标： 雷蛇 蝰蛇标准版 白色 6400DPI
-手机： Redmi k40 游戏增强版（12+258）</description>
+邮箱：xiaochenabc123@qq.com
+GitHub：https://github.com/xiaochenabc123
+书籍：
+GO语言学习笔记，数学之美，深入浅出Docker，GO语言核心编程，JavaScript高级程序设计，深入浅出Nodejs，React进阶之路，Redis实战，深入浅出React和Redux，深入理解TypeScript，前端技术架构与工程，labuladong的算法小抄，算法图解，Python3网络爬虫开发实战，前端架构：从入门到微前端，前端开发核心知识进阶：从夯实基础到突破瓶颈，Vue.js设计与实现，MongoDB进阶与实战:微服务整合、性能优化、架构管理，Angular开发入门与实战，React设计原理</description>
     </item>
     
     
@@ -879,7 +868,7 @@ hugo new post/hallo.md
 安装主题
 git clone https://github.com/miiiku/hugo-theme-kagome.git ./themes/kagome
 修改config.toml文件
-baseURL = &amp;lsquo;https://blog.xiaochenabc123.qq.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
+baseURL = &amp;lsquo;https://blog.xiaochenabc123.test.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
 启动Hugo服务器
 hugo server
 访问http://localhost:1313
@@ -906,7 +895,7 @@ RESTful设计规范的六个规范：
 4.可缓存（Cache），允许服务端响应可被缓存或者不可缓存（必须明确是否可缓存），如果响应可缓存，客户端可以根据有效缓存时间，来复用响应，减少前后端交互
 5.分层系统，不允许跨层访问（访问不相邻的层）
 6.按需编码（可选，可理解为按需扩展客户端功能），允许服务端提供一些脚本来扩展客户端功能（例如JavaScript）
-api接口统一域名（推荐使用api.xiaochenabc123.qq.com这样的格式）
+api接口统一域名（推荐使用api.xiaochenabc123.test.com这样的格式）
 URI（不使用大写，使用中杆-，资源名字是复数名词，资源实体集合，不能出现动词）
 HTTP请求方式（不同的操作使用不同的请求方式，例如获取资源使用get，post新建资源等等）
 如果资源庞大，可通过get参数的形式获取（例如分页），API的版本号应该放在URI中，更改资源，应该修改资源版本号，原有的URI应该保持继续可用
@@ -1073,7 +1062,7 @@ npm install autoprefixer &amp;ndash;save-dev</description>
       <pubDate>Sun, 16 Jan 2022 09:08:00 +0000</pubDate>
       
       <guid>https://xiaochenabc123.github.io/posts/128/</guid>
-      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.qq.com/archives/96.html
+      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.test.com/archives/96.html
 并发
 go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
 内核态：程序执行操作系统层级的程序时
@@ -1166,14 +1155,14 @@ apt install -y kubelet kubeadm kubectl</description>
       <description>urllib，xpath，jsonpath，beautiful，requests，selenium，Scrapy
 python库内置的HTTP请求库 urllib.request 请求模块 urllib.error 异常处理模块 urllib.parse url解析模块 urllib.robotparsef robots.txt解析模块
 urllib.request提供了最基本的http请求方法，主要带有处理授权验证，重定向，浏览器Cookies功能
-模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
-使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(type(response))
+模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
+使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;) print(type(response))
 HTTPResposne类型对象
-通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(response.status) print(response.getheaders())
+通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;) print(response.status) print(response.getheaders())
 post发送一个请求，只需要把参数data以bytes类型传入 import urllib.parse import urllib.request data = bytes(urllib.parse.urlencode({&amp;lsquo;hallo&amp;rsquo;:&amp;lsquo;python&amp;rsquo;}),encoding=&amp;lsquo;utf-8&amp;rsquo;) response = urllib.request.urlopen(&amp;lsquo;http://httpbin.org/post&#39;.data = data) print(response.read())
-timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;,timeout=1)
+timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;,timeout=1)
 这里设置超时时间为1秒，如果超了1秒，服务器依然没有响应就抛出URLError异常，可以结合try和except
-import urllib.parseimport urllib.requesturl = &amp;quot;https://xiaochenabc123.qq.com/&amp;quot;headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
+import urllib.parseimport urllib.requesturl = &amp;quot;https://xiaochenabc123.test.com/&amp;quot;headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
     </item>
     
     <item>
@@ -1227,9 +1216,9 @@ getters: {getCount(state) {return state.</description>
       <pubDate>Mon, 06 Dec 2021 02:32:00 +0000</pubDate>
       
       <guid>https://xiaochenabc123.github.io/posts/122/</guid>
-      <description>RSS指 Really Simple Syndication（简易信息聚合），RSS定义了方法来获取网站的标题以及内容，而且RSS可以被自动更新，RSS使用了XML进行编写（xml笔记：https://xiaochenabc123.qq.com/archives/17.html）
+      <description>RSS指 Really Simple Syndication（简易信息聚合），RSS定义了方法来获取网站的标题以及内容，而且RSS可以被自动更新，RSS使用了XML进行编写（xml笔记：https://xiaochenabc123.test.com/archives/17.html）
 一个RSS例子：
-&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt;&amp;lt;rss version=&amp;quot;2.0&amp;quot;&amp;gt;&amp;lt;channel&amp;gt;&amp;lt;title&amp;gt;小陈的辣鸡屋&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://xiaochenabc123.qq.com/&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;xiaochenabc123.qq.com&amp;lt;/description&amp;gt;&amp;lt;item&amp;gt;&amp;lt;title&amp;gt;简单了解设计模式&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://xiaochenabc123.qq.com/archives/121.html&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;&amp;lt;![CDATA[设计模式实质就是一套可以通用，复用的设计方案，设计模式是针对面向对象的，在面向对象出来之前，程序是面向过程的，设计模式就是软件设计的工具面向过程：逻辑化过程，以逻辑实现面向对象：思考有哪些对象，...]]&amp;gt;&amp;lt;/description&amp;gt;&amp;lt;content:encoded xml:lang=&amp;quot;zh-CN&amp;quot;&amp;gt;xxxxxxx&amp;lt;/content:encoded&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;/channel&amp;gt;&amp;lt;/rss&amp;gt;可以看到是RSS频道的标题，是该频道的超链接，是该频道的描述，是定义该频道的某篇文章的，其中又有，分别表示文章标题，文章的超链接，文章的描述，其中还有表示文章的内容
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt;&amp;lt;rss version=&amp;quot;2.0&amp;quot;&amp;gt;&amp;lt;channel&amp;gt;&amp;lt;title&amp;gt;小陈的辣鸡屋&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://xiaochenabc123.test.com/&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;xiaochenabc123.test.com&amp;lt;/description&amp;gt;&amp;lt;item&amp;gt;&amp;lt;title&amp;gt;简单了解设计模式&amp;lt;/title&amp;gt;&amp;lt;link&amp;gt;https://xiaochenabc123.test.com/archives/121.html&amp;lt;/link&amp;gt;&amp;lt;description&amp;gt;&amp;lt;![CDATA[设计模式实质就是一套可以通用，复用的设计方案，设计模式是针对面向对象的，在面向对象出来之前，程序是面向过程的，设计模式就是软件设计的工具面向过程：逻辑化过程，以逻辑实现面向对象：思考有哪些对象，...]]&amp;gt;&amp;lt;/description&amp;gt;&amp;lt;content:encoded xml:lang=&amp;quot;zh-CN&amp;quot;&amp;gt;xxxxxxx&amp;lt;/content:encoded&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;/channel&amp;gt;&amp;lt;/rss&amp;gt;可以看到是RSS频道的标题，是该频道的超链接，是该频道的描述，是定义该频道的某篇文章的，其中又有，分别表示文章标题，文章的超链接，文章的描述，其中还有表示文章的内容
 RSS注释和HTML的注释一样，
 注意：RSS是基于XML编写，所以全部元素都要有闭合标签，大小写敏感，属性值要带引号
 channel元素除了上面那几个外，还有，， ，等等
@@ -1693,8 +1682,8 @@ const fs = require(&amp;quot;fs&amp;quot;)fs.readFile(&amp;quot;data.txt&amp;qu
       <pubDate>Thu, 16 Sep 2021 21:55:00 +0000</pubDate>
       
       <guid>https://xiaochenabc123.github.io/posts/105/</guid>
-      <description>npm在这里https://xiaochenabc123.qq.com/archives/31.html
-Yarn在这里https://xiaochenabc123.qq.com/archives/38.html
+      <description>npm在这里https://xiaochenabc123.test.com/archives/31.html
+Yarn在这里https://xiaochenabc123.test.com/archives/38.html
 nvm全名node.js version management
 用来nodejs多版本管理，可以切换和安装不同版本的nodejs
 安装nvm之前记得把安装过的nodejs都卸载了
@@ -1781,7 +1770,7 @@ CSRF实质上就是盗用身份，来实现发送恶意请求
 这个方法有个缺点就是由浏览器提供，不能保证浏览器自己有没有安全漏洞，不然还是能够伪造Referer字段，而且如果用户设置不提供Referer字段，那也会默认导致认为是CSRF攻击
 还有一个方法就是通过添加token来处理，请求地址使用一串令牌（加密），来确保是当前站点发送请求，因为哪怕是伪造请求，也不知道令牌是什么，而且还搭配XMLHttpRequest来请求，确保请求信息不被Referer字段收录
 JavaScript简单实现方法
-let referer = document.location.href;if(referer != null &amp;amp;&amp;amp; referer.startsWith(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)){console.log(&amp;quot;验证成功!!!&amp;quot;)}else{console.log(&amp;quot;验证失败!!!&amp;quot;)}防御措施：token身份验证，页面来源验证（referer）等等
+let referer = document.location.href;if(referer != null &amp;amp;&amp;amp; referer.startsWith(&amp;quot;https://xiaochenabc123.test.com&amp;quot;)){console.log(&amp;quot;验证成功!!!&amp;quot;)}else{console.log(&amp;quot;验证失败!!!&amp;quot;)}防御措施：token身份验证，页面来源验证（referer）等等
 XSS：跨站脚本攻击（Cross Site Scripting），因为避免和层叠样式表混淆，因此叫XSS
 XSS攻击原理就是在页面插入恶意脚本，当页面被访问了，那么这个恶意脚本被执行，从而达到恶意攻击用户的目的
 例如：在某个页面评论上加&amp;lt;script&amp;gt;alert(&amp;lsquo;hack&amp;rsquo;)&amp;lt;/script&amp;gt;，那么如果没有做过xss攻击防御的站点，其他用户访问到这个页面，那么就会执行该程序
@@ -2690,9 +2679,9 @@ windows表示整个浏览器的窗口，同时也是JavaScript最顶层的对象
 navigator包含了当前浏览器的全部信息
 console.log(window.navigator)可以看到输出了很多属性，如userAgent，language等等
 location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
-console.log(window.location)const urlData = &amp;quot;https://xiaochenabc123.qq.com/;window.location.href = urlData;这个也可以实现跳转
-window.location.assign(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
-window.location.replace(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)reload方法可以重载页面，加上true参数将强制更新
+console.log(window.location)const urlData = &amp;quot;https://xiaochenabc123.test.com/;window.location.href = urlData;这个也可以实现跳转
+window.location.assign(&amp;quot;https://xiaochenabc123.test.com&amp;quot;)这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
+window.location.replace(&amp;quot;https://xiaochenabc123.test.com&amp;quot;)reload方法可以重载页面，加上true参数将强制更新
 window.location.reload(true)history表示浏览器的历史记录
 console.log(window.history)length表示本次访问网站的数量
 同时也提供了几个方法
@@ -2854,7 +2843,7 @@ npm start或者yarn start
       
       <guid>https://xiaochenabc123.github.io/posts/54/</guid>
       <description>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
-关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.qq.com/archives/14.html
+关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.test.com/archives/14.html
 ajax需要网站环境下生效，需要web服务器，nodemon
 app.js
 // 导入expressconst express = require(&amp;quot;express&amp;quot;);// 导入pathconst patg = require(&amp;quot;path&amp;quot;);// 创建web服务器const app = express();// 静态资源访问服务app.use(express.static(path.join(__dirname,&amp;quot;public&amp;quot;)));app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{res.send(&amp;quot;hallo&amp;quot;);});// 监听端口app.listen(3000);console.log(&amp;quot;服务器启动成功&amp;quot;)nodemon app.js
@@ -3399,13 +3388,13 @@ wsl &amp;ndash;list &amp;ndash;online
 将443那几行的注释去掉（#）,并且修改
 ssl_certificate &amp;ldquo;crt证书的绝对路径&amp;rdquo;; ssl_certificate_key&amp;quot;key证书的绝对路径&amp;quot;;
 如果想访问网站就301重定向到https，那么添加这几行
-server{listen 80;server_name xiaochenabc123.qq.com;rewrite ^(.*) https://$host$1 permanent;}# 当使用80端口访问网站时，将301永久重定向到https://xiaochenabc123.qq.com，达到全站https的效果
+server{listen 80;server_name xiaochenabc123.test.com;rewrite ^(.*) https://$host$1 permanent;}# 当使用80端口访问网站时，将301永久重定向到https://xiaochenabc123.test.com，达到全站https的效果
 然后刷新一下配置nginx -s
 nginx反向代理配置
 将客户端请求转发给内部网络的其他目标服务端，并且将从其他服务端的结果返回到客户端，代理服务端和目标服务端，在外部看起来像是一个整体，只是将请求转发给其他服务端处理，从而达到减轻目标服务端的压力的效果
 配置nginx.conf
-location / {proxy_pass https://test.xiaochenabc123.qq.com; # 反向代理服务器地址proxy_connect_timeout 200; # 设置连接超时proxy_read_timeout 200; # 设置读响应超时}重启Nginx服务：service nginx restart
-请求当前服务器时，当前服务器将请求转发给地址为 https://test.xiaochenabc123.qq.com 的服务器处理
+location / {proxy_pass https://test.xiaochenabc123.test.com; # 反向代理服务器地址proxy_connect_timeout 200; # 设置连接超时proxy_read_timeout 200; # 设置读响应超时}重启Nginx服务：service nginx restart
+请求当前服务器时，当前服务器将请求转发给地址为 https://test.xiaochenabc123.test.com 的服务器处理
 gzip压缩
 gzip on;gzip_comp_level 1; gzip_min_length 10;gzip_http_version 1.1;gzip_types text/html text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;解释：
 gzip on // gzip开启，关闭是off</description>
@@ -3516,8 +3505,8 @@ Linux
 sudo apt install git-all 或者 sudo dnf install git-all
 也可以用源代码编译（Git是开源的，是Linux之父的作品） https://github.com/git/git/releases
 方便git管理，记录每一个修改了Git仓库的人，设置用户名和邮箱
-git config &amp;ndash;global user.name &amp;ldquo;chenjunlin&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;a@xiaochenabc123.qq.com&amp;rdquo;
-ssh-keygen -t rsa -C &amp;ldquo;a@xiaochenabc123.qq.com&amp;rdquo; # 生成ssh密钥
+git config &amp;ndash;global user.name &amp;ldquo;chenjunlin&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;a@xiaochenabc123.test.com&amp;rdquo;
+ssh-keygen -t rsa -C &amp;ldquo;a@xiaochenabc123.test.com&amp;rdquo; # 生成ssh密钥
 mkdir learngit #创建一个空目录
 cd learngit # cd到目录
 pwd #显示当前目录路径
@@ -3722,7 +3711,7 @@ bundler版本：该版本不是完整版，min
 vuejs模板支持所有JavaScript表达式
 vuejs本身是用声明式渲染把数据渲染到html dom中，渲染格式为{{&amp;hellip;}}，例如：
 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;p&amp;gt;{{ hallovuejs }}&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {hallovuejs: &amp;quot;hallo vuejs!&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;vue本身携带了一些指令，主要特征就是带有v-前缀，用来渲染html dom上的一些行为，例如：
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://xiaochenabc123.qq.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://xiaochenabc123.test.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
 而vue还提供了可以绑定事件的v-on属性，例如：
 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;button v-on:click=&amp;quot;go&amp;quot;&amp;gt;{{ main }}&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {main: &amp;quot;hallo&amp;quot;}},methods: {go: function(){console.</description>
     </item>
@@ -3736,7 +3725,7 @@ vuejs本身是用声明式渲染把数据渲染到html dom中，渲染格式为{
       <description>属性
 accesskey
 定义快捷键获取焦点，例如
-&amp;lt;a href=&amp;quot;https://xiaochenabc123.qq.com&amp;quot; accesskey=&amp;quot;q&amp;quot;&amp;gt;GO\&amp;lt;/a&amp;gt;按ait+q，就会跳到指定的网页上
+&amp;lt;a href=&amp;quot;https://xiaochenabc123.test.com&amp;quot; accesskey=&amp;quot;q&amp;quot;&amp;gt;GO\&amp;lt;/a&amp;gt;按ait+q，就会跳到指定的网页上
 class
 定义元素的类，开头必须是字母，多个类使用空格隔开，例如
 &amp;lt;div class = &amp;quot;a1 a2 a3&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;id
@@ -3747,7 +3736,7 @@ class
 定义元素的行内样式，例如
 &amp;lt;div style=&amp;quot;color : #fff&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;tabindex
 指定tab键的焦点控制，例如
-&amp;lt;a href=&amp;quot;https://xiaochenabc123.qq.com&amp;quot; tabindex=&amp;quot;1&amp;quot;&amp;gt;GO&amp;lt;/a&amp;gt;使用键盘的tab键盘，触发（不会跳转到网页，只是焦点）
+&amp;lt;a href=&amp;quot;https://xiaochenabc123.test.com&amp;quot; tabindex=&amp;quot;1&amp;quot;&amp;gt;GO&amp;lt;/a&amp;gt;使用键盘的tab键盘，触发（不会跳转到网页，只是焦点）
 contenteditable
 指定元素是否为可以编辑的，例如
 &amp;lt;div contenteditable=&amp;quot;true&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;dir
@@ -3798,13 +3787,13 @@ $(&amp;rsquo;*&amp;rsquo;)
 层次选择器
 $(&amp;lsquo;div .main&amp;rsquo;)
 属性选择器
-$(&amp;ldquo;a[href=&amp;ldquo;https://xiaochenabc123.qq.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
+$(&amp;ldquo;a[href=&amp;ldquo;https://xiaochenabc123.test.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
 可以使用前缀或者后缀来选择 $(&amp;ldquo;div[name^=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes开头的 $(&amp;ldquo;div[name$=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes结尾的
 组合选择器
 $(&amp;ldquo;div[class=divs]&amp;rdquo;)
 组合选择器其实就是用多个选择器组合起来
 多项选择器
-$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://xiaochenabc123.qq.com&amp;rdquo;)
+$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://xiaochenabc123.test.com&amp;rdquo;)
 多项选择器就是将多个选择器用逗号组合起来
 层级选择器 $(&amp;ldquo;ul.nev li.active&amp;rdquo;)</description>
     </item>
@@ -4363,15 +4352,6 @@ HTML标签优化
 尽量避免使用iframe标签，搜索引擎不会抓取iframe标签的内容
 重要信息请勿使用js输出，爬虫不会抓取js的内容
 给图片加alt信息，重要信息请放头部，有部分搜索引擎爬虫会限制抓取的长度</description>
-    </item>
-    
-    <item>
-      <title>欢迎使用 Typecho</title>
-      <link>https://xiaochenabc123.github.io/posts/1/</link>
-      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/1/</guid>
-      <description>如果您看到这篇文章,表示您的 blog 已经安装成功.</description>
     </item>
     
     

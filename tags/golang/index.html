@@ -16,7 +16,7 @@ hugo new post/hallo.md
 安装主题
 git clone https://github.com/miiiku/hugo-theme-kagome.git ./themes/kagome
 修改config.toml文件
-baseURL = ‘https://blog.xiaochenabc123.qq.com’ languageCode = ‘zh-CN’ title = ‘小陈的博客’ theme = “kagome”
+baseURL = ‘https://blog.xiaochenabc123.test.com’ languageCode = ‘zh-CN’ title = ‘小陈的博客’ theme = “kagome”
 启动Hugo服务器
 hugo server
 访问http://localhost:1313
@@ -128,7 +128,7 @@ index.html
 &lt;div id="app">&lt;/div>
 &lt;script src="./build/index.js">&lt;/script>
 我本地打包只花64ms就打包好了
-使用source map功能...</p></div><footer class=entry-footer><span title='2022-02-07 13:37:00 +0000 UTC'>2022-02-07</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to 简单使用ESbuild打包工具" href=https://xiaochenabc123.github.io/posts/132/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Golang进阶扩展笔记</h2></header><div class=entry-content><p>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.qq.com/archives/96.html
+使用source map功能...</p></div><footer class=entry-footer><span title='2022-02-07 13:37:00 +0000 UTC'>2022-02-07</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to 简单使用ESbuild打包工具" href=https://xiaochenabc123.github.io/posts/132/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Golang进阶扩展笔记</h2></header><div class=entry-content><p>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.test.com/archives/96.html
 并发
 go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
 内核态：程序执行操作系统层级的程序时

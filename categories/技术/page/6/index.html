@@ -100,21 +100,21 @@ ssl_certificate “crt证书的绝对路径”; ssl_certificate_key"key证书的
 如果想访问网站就301重定向到https，那么添加这几行
 server{
 listen 80;
-server_name xiaochenabc123.qq.com;
+server_name xiaochenabc123.test.com;
 rewrite ^(.*) https://$host$1 permanent;
 }
-# 当使用80端口访问网站时，将301永久重定向到https://xiaochenabc123.qq.com，达到全站https的效果
+# 当使用80端口访问网站时，将301永久重定向到https://xiaochenabc123.test.com，达到全站https的效果
 然后刷新一下配置nginx -s
 nginx反向代理配置
 将客户端请求转发给内部网络的其他目标服务端，并且将从其他服务端的结果返回到客户端，代理服务端和目标服务端，在外部看起来像是一个整体，只是将请求转发给其他服务端处理，从而达到减轻目标服务端的压力的效果
 配置nginx.conf
 location / {
-proxy_pass https://test.xiaochenabc123.qq.com; # 反向代理服务器地址
+proxy_pass https://test.xiaochenabc123.test.com; # 反向代理服务器地址
 proxy_connect_timeout 200; # 设置连接超时
 proxy_read_timeout 200; # 设置读响应超时
 }
 重启Nginx服务：service nginx restart
-请求当前服务器时，当前服务器将请求转发给地址为 https://test.xiaochenabc123.qq.com 的服务器处理
+请求当前服务器时，当前服务器将请求转发给地址为 https://test.xiaochenabc123.test.com 的服务器处理
 gzip压缩
 gzip on;
 gzip_comp_level 1; gzip_min_length 10;

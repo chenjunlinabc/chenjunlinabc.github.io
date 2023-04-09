@@ -63,7 +63,7 @@ CSRF实质上就是盗用身份，来实现发送恶意请求
 还有一个方法就是通过添加token来处理，请求地址使用一串令牌（加密），来确保是当前站点发送请求，因为哪怕是伪造请求，也不知道令牌是什么，而且还搭配XMLHttpRequest来请求，确保请求信息不被Referer字段收录
 JavaScript简单实现方法
 let referer = document.location.href;
-if(referer != null && referer.startsWith("https://xiaochenabc123.qq.com")){
+if(referer != null && referer.startsWith("https://xiaochenabc123.test.com")){
 console.log("验证成功!!!")
 }else{
 console.log("验证失败!!!")

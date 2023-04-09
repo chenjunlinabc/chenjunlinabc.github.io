@@ -138,7 +138,7 @@ ReactDOM.render(&lt;Hello /&gt;,document.getElementById(&quot;app&quot;))
     console.log(&quot;被点击了&quot;)
   }
   render(){
-    return (&lt;a onClick={this.mainClick} href=&quot;https://xiaochenabc123.qq.com&quot;&gt;hallo,react&lt;/a&gt;)
+    return (&lt;a onClick={this.mainClick} href=&quot;https://xiaochenabc123.test.com&quot;&gt;hallo,react&lt;/a&gt;)
   }
 }
 </code></pre><p>状态组件（状态即数据的更新）</p><p>函数组件为无状态组件，类组件为有状态组件</p><p>如果数据不需要变化就用函数组件，否则就类组件</p><p>状态（state）是组件内部的私有数据，只能在组件内部使用，state的值是一个对象，表示组件可以存在多个数据</p><p>第一种存储state方法</p><pre><code>  constructor(){

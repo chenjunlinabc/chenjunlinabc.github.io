@@ -167,7 +167,7 @@ bundler版本：该版本不是完整版，min
 vuejs模板支持所有JavaScript表达式
 vuejs本身是用声明式渲染把数据渲染到html dom中，渲染格式为{{&amp;hellip;}}，例如：
 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;p&amp;gt;{{ hallovuejs }}&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {hallovuejs: &amp;quot;hallo vuejs!&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;vue本身携带了一些指令，主要特征就是带有v-前缀，用来渲染html dom上的一些行为，例如：
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://xiaochenabc123.qq.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://xiaochenabc123.test.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
 而vue还提供了可以绑定事件的v-on属性，例如：
 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;button v-on:click=&amp;quot;go&amp;quot;&amp;gt;{{ main }}&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {main: &amp;quot;hallo&amp;quot;}},methods: {go: function(){console.</description>
     </item>

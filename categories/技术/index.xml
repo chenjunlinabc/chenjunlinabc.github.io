@@ -228,7 +228,7 @@ hugo new post/hallo.md
 安装主题
 git clone https://github.com/miiiku/hugo-theme-kagome.git ./themes/kagome
 修改config.toml文件
-baseURL = &amp;lsquo;https://blog.xiaochenabc123.qq.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
+baseURL = &amp;lsquo;https://blog.xiaochenabc123.test.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
 启动Hugo服务器
 hugo server
 访问http://localhost:1313
@@ -255,7 +255,7 @@ RESTful设计规范的六个规范：
 4.可缓存（Cache），允许服务端响应可被缓存或者不可缓存（必须明确是否可缓存），如果响应可缓存，客户端可以根据有效缓存时间，来复用响应，减少前后端交互
 5.分层系统，不允许跨层访问（访问不相邻的层）
 6.按需编码（可选，可理解为按需扩展客户端功能），允许服务端提供一些脚本来扩展客户端功能（例如JavaScript）
-api接口统一域名（推荐使用api.xiaochenabc123.qq.com这样的格式）
+api接口统一域名（推荐使用api.xiaochenabc123.test.com这样的格式）
 URI（不使用大写，使用中杆-，资源名字是复数名词，资源实体集合，不能出现动词）
 HTTP请求方式（不同的操作使用不同的请求方式，例如获取资源使用get，post新建资源等等）
 如果资源庞大，可通过get参数的形式获取（例如分页），API的版本号应该放在URI中，更改资源，应该修改资源版本号，原有的URI应该保持继续可用
@@ -460,7 +460,7 @@ CSRF实质上就是盗用身份，来实现发送恶意请求
 这个方法有个缺点就是由浏览器提供，不能保证浏览器自己有没有安全漏洞，不然还是能够伪造Referer字段，而且如果用户设置不提供Referer字段，那也会默认导致认为是CSRF攻击
 还有一个方法就是通过添加token来处理，请求地址使用一串令牌（加密），来确保是当前站点发送请求，因为哪怕是伪造请求，也不知道令牌是什么，而且还搭配XMLHttpRequest来请求，确保请求信息不被Referer字段收录
 JavaScript简单实现方法
-let referer = document.location.href;if(referer != null &amp;amp;&amp;amp; referer.startsWith(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)){console.log(&amp;quot;验证成功!!!&amp;quot;)}else{console.log(&amp;quot;验证失败!!!&amp;quot;)}防御措施：token身份验证，页面来源验证（referer）等等
+let referer = document.location.href;if(referer != null &amp;amp;&amp;amp; referer.startsWith(&amp;quot;https://xiaochenabc123.test.com&amp;quot;)){console.log(&amp;quot;验证成功!!!&amp;quot;)}else{console.log(&amp;quot;验证失败!!!&amp;quot;)}防御措施：token身份验证，页面来源验证（referer）等等
 XSS：跨站脚本攻击（Cross Site Scripting），因为避免和层叠样式表混淆，因此叫XSS
 XSS攻击原理就是在页面插入恶意脚本，当页面被访问了，那么这个恶意脚本被执行，从而达到恶意攻击用户的目的
 例如：在某个页面评论上加&amp;lt;script&amp;gt;alert(&amp;lsquo;hack&amp;rsquo;)&amp;lt;/script&amp;gt;，那么如果没有做过xss攻击防御的站点，其他用户访问到这个页面，那么就会执行该程序
@@ -723,9 +723,9 @@ windows表示整个浏览器的窗口，同时也是JavaScript最顶层的对象
 navigator包含了当前浏览器的全部信息
 console.log(window.navigator)可以看到输出了很多属性，如userAgent，language等等
 location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
-console.log(window.location)const urlData = &amp;quot;https://xiaochenabc123.qq.com/;window.location.href = urlData;这个也可以实现跳转
-window.location.assign(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
-window.location.replace(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;)reload方法可以重载页面，加上true参数将强制更新
+console.log(window.location)const urlData = &amp;quot;https://xiaochenabc123.test.com/;window.location.href = urlData;这个也可以实现跳转
+window.location.assign(&amp;quot;https://xiaochenabc123.test.com&amp;quot;)这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
+window.location.replace(&amp;quot;https://xiaochenabc123.test.com&amp;quot;)reload方法可以重载页面，加上true参数将强制更新
 window.location.reload(true)history表示浏览器的历史记录
 console.log(window.history)length表示本次访问网站的数量
 同时也提供了几个方法
@@ -899,13 +899,13 @@ wsl &amp;ndash;list &amp;ndash;online
 将443那几行的注释去掉（#）,并且修改
 ssl_certificate &amp;ldquo;crt证书的绝对路径&amp;rdquo;; ssl_certificate_key&amp;quot;key证书的绝对路径&amp;quot;;
 如果想访问网站就301重定向到https，那么添加这几行
-server{listen 80;server_name xiaochenabc123.qq.com;rewrite ^(.*) https://$host$1 permanent;}# 当使用80端口访问网站时，将301永久重定向到https://xiaochenabc123.qq.com，达到全站https的效果
+server{listen 80;server_name xiaochenabc123.test.com;rewrite ^(.*) https://$host$1 permanent;}# 当使用80端口访问网站时，将301永久重定向到https://xiaochenabc123.test.com，达到全站https的效果
 然后刷新一下配置nginx -s
 nginx反向代理配置
 将客户端请求转发给内部网络的其他目标服务端，并且将从其他服务端的结果返回到客户端，代理服务端和目标服务端，在外部看起来像是一个整体，只是将请求转发给其他服务端处理，从而达到减轻目标服务端的压力的效果
 配置nginx.conf
-location / {proxy_pass https://test.xiaochenabc123.qq.com; # 反向代理服务器地址proxy_connect_timeout 200; # 设置连接超时proxy_read_timeout 200; # 设置读响应超时}重启Nginx服务：service nginx restart
-请求当前服务器时，当前服务器将请求转发给地址为 https://test.xiaochenabc123.qq.com 的服务器处理
+location / {proxy_pass https://test.xiaochenabc123.test.com; # 反向代理服务器地址proxy_connect_timeout 200; # 设置连接超时proxy_read_timeout 200; # 设置读响应超时}重启Nginx服务：service nginx restart
+请求当前服务器时，当前服务器将请求转发给地址为 https://test.xiaochenabc123.test.com 的服务器处理
 gzip压缩
 gzip on;gzip_comp_level 1; gzip_min_length 10;gzip_http_version 1.1;gzip_types text/html text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;解释：
 gzip on // gzip开启，关闭是off</description>

@@ -43,13 +43,13 @@ $(&amp;rsquo;*&amp;rsquo;)
 层次选择器
 $(&amp;lsquo;div .main&amp;rsquo;)
 属性选择器
-$(&amp;ldquo;a[href=&amp;ldquo;https://xiaochenabc123.qq.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
+$(&amp;ldquo;a[href=&amp;ldquo;https://xiaochenabc123.test.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
 可以使用前缀或者后缀来选择 $(&amp;ldquo;div[name^=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes开头的 $(&amp;ldquo;div[name$=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes结尾的
 组合选择器
 $(&amp;ldquo;div[class=divs]&amp;rdquo;)
 组合选择器其实就是用多个选择器组合起来
 多项选择器
-$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://xiaochenabc123.qq.com&amp;rdquo;)
+$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://xiaochenabc123.test.com&amp;rdquo;)
 多项选择器就是将多个选择器用逗号组合起来
 层级选择器 $(&amp;ldquo;ul.nev li.active&amp;rdquo;)</description>
     </item>

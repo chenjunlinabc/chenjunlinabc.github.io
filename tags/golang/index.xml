@@ -36,7 +36,7 @@ hugo new post/hallo.md
 安装主题
 git clone https://github.com/miiiku/hugo-theme-kagome.git ./themes/kagome
 修改config.toml文件
-baseURL = &amp;lsquo;https://blog.xiaochenabc123.qq.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
+baseURL = &amp;lsquo;https://blog.xiaochenabc123.test.com&amp;rsquo; languageCode = &amp;lsquo;zh-CN&amp;rsquo; title = &amp;lsquo;小陈的博客&amp;rsquo; theme = &amp;ldquo;kagome&amp;rdquo;
 启动Hugo服务器
 hugo server
 访问http://localhost:1313
@@ -143,7 +143,7 @@ import React from &#39;react&#39;import ReactDOM from &#39;react-dom&#39;const
       <pubDate>Sun, 16 Jan 2022 09:08:00 +0000</pubDate>
       
       <guid>https://xiaochenabc123.github.io/posts/128/</guid>
-      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.qq.com/archives/96.html
+      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.test.com/archives/96.html
 并发
 go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
 内核态：程序执行操作系统层级的程序时

@@ -97,7 +97,7 @@ https://github.com/denoland/deno/releases
 检查是否安装完成
 deno &amp;ndash;version
 第一个例子
-import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.qq.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
+import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.test.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
 deno run .\index.ts
 它会向你询问进行网络请求，是否允许，可通过&amp;ndash;allow-net默认运行，例如：deno run &amp;ndash;allow-net .\index.ts
 第三方库通过https://deno.land/x查找
@@ -239,7 +239,7 @@ bps=bit/s，1秒多少比特位，比特率
 以太网的MTU（MAC帧）是1500字节
 路径MTU：由链路中MTU的最小值决定
 差错监测：因为物理层只负责传输比特流，没有控制出错的功能，因此数据链路层提供了差错监测的功能
-奇偶校验码：在发送的每个字节后加上一位，让字节中为1的数可以是奇数或者偶数，通过奇偶校验来确定数据是否出错，具体可以看https://xiaochenabc123.qq.com/archives/77.html这篇文章，讲TCP的可靠性那里
+奇偶校验码：在发送的每个字节后加上一位，让字节中为1的数可以是奇数或者偶数，通过奇偶校验来确定数据是否出错，具体可以看https://xiaochenabc123.test.com/archives/77.html这篇文章，讲TCP的可靠性那里
 奇偶校验码的缺点就是如果发生2位的出错，就无法校验出来错误
 循环冗余校验码CRC（根据传输或者保存的数据来产生固定位数的校验码，校验码再附加到数据的后面）
 模二除法：通过异或来表示0或者1，例如00就是0，01就是1，异为1，或为0
@@ -611,7 +611,7 @@ npm install autoprefixer &amp;ndash;save-dev</description>
       <pubDate>Sun, 16 Jan 2022 09:08:00 +0000</pubDate>
       
       <guid>https://xiaochenabc123.github.io/posts/128/</guid>
-      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.qq.com/archives/96.html
+      <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.test.com/archives/96.html
 并发
 go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
 内核态：程序执行操作系统层级的程序时
@@ -704,14 +704,14 @@ apt install -y kubelet kubeadm kubectl</description>
       <description>urllib，xpath，jsonpath，beautiful，requests，selenium，Scrapy
 python库内置的HTTP请求库 urllib.request 请求模块 urllib.error 异常处理模块 urllib.parse url解析模块 urllib.robotparsef robots.txt解析模块
 urllib.request提供了最基本的http请求方法，主要带有处理授权验证，重定向，浏览器Cookies功能
-模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
-使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(type(response))
+模拟浏览器发送get请求，就需要使用request对象，在该对象添加http头 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;) print(response.read().decode(&amp;lsquo;utf-8&amp;rsquo;))
+使用type()方法 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;) print(type(response))
 HTTPResposne类型对象
-通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;) print(response.status) print(response.getheaders())
+通过status属性获取返回的状态码 import urllib.requst response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;) print(response.status) print(response.getheaders())
 post发送一个请求，只需要把参数data以bytes类型传入 import urllib.parse import urllib.request data = bytes(urllib.parse.urlencode({&amp;lsquo;hallo&amp;rsquo;:&amp;lsquo;python&amp;rsquo;}),encoding=&amp;lsquo;utf-8&amp;rsquo;) response = urllib.request.urlopen(&amp;lsquo;http://httpbin.org/post&#39;.data = data) print(response.read())
-timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.qq.com/&#39;,timeout=1)
+timeout参数用于设置超时时间，单位为秒 import urllib.request response = urllib.request.urlopen(&amp;lsquo;https://xiaochenabc123.test.com/&#39;,timeout=1)
 这里设置超时时间为1秒，如果超了1秒，服务器依然没有响应就抛出URLError异常，可以结合try和except
-import urllib.parseimport urllib.requesturl = &amp;quot;https://xiaochenabc123.qq.com/&amp;quot;headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
+import urllib.parseimport urllib.requesturl = &amp;quot;https://xiaochenabc123.test.com/&amp;quot;headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.</description>
     </item>
     
     <item>
@@ -1284,7 +1284,7 @@ npm start或者yarn start
       
       <guid>https://xiaochenabc123.github.io/posts/54/</guid>
       <description>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
-关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.qq.com/archives/14.html
+关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.test.com/archives/14.html
 ajax需要网站环境下生效，需要web服务器，nodemon
 app.js
 // 导入expressconst express = require(&amp;quot;express&amp;quot;);// 导入pathconst patg = require(&amp;quot;path&amp;quot;);// 创建web服务器const app = express();// 静态资源访问服务app.use(express.static(path.join(__dirname,&amp;quot;public&amp;quot;)));app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{res.send(&amp;quot;hallo&amp;quot;);});// 监听端口app.listen(3000);console.log(&amp;quot;服务器启动成功&amp;quot;)nodemon app.js
@@ -1470,8 +1470,8 @@ Linux
 sudo apt install git-all 或者 sudo dnf install git-all
 也可以用源代码编译（Git是开源的，是Linux之父的作品） https://github.com/git/git/releases
 方便git管理，记录每一个修改了Git仓库的人，设置用户名和邮箱
-git config &amp;ndash;global user.name &amp;ldquo;chenjunlin&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;a@xiaochenabc123.qq.com&amp;rdquo;
-ssh-keygen -t rsa -C &amp;ldquo;a@xiaochenabc123.qq.com&amp;rdquo; # 生成ssh密钥
+git config &amp;ndash;global user.name &amp;ldquo;chenjunlin&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;a@xiaochenabc123.test.com&amp;rdquo;
+ssh-keygen -t rsa -C &amp;ldquo;a@xiaochenabc123.test.com&amp;rdquo; # 生成ssh密钥
 mkdir learngit #创建一个空目录
 cd learngit # cd到目录
 pwd #显示当前目录路径
@@ -1552,7 +1552,7 @@ bundler版本：该版本不是完整版，min
 vuejs模板支持所有JavaScript表达式
 vuejs本身是用声明式渲染把数据渲染到html dom中，渲染格式为{{&amp;hellip;}}，例如：
 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;p&amp;gt;{{ hallovuejs }}&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {hallovuejs: &amp;quot;hallo vuejs!&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;vue本身携带了一些指令，主要特征就是带有v-前缀，用来渲染html dom上的一些行为，例如：
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://xiaochenabc123.qq.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;{{ main }}&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {url:&amp;quot;https://xiaochenabc123.test.com&amp;quot;,main: &amp;quot;小陈的辣鸡屋&amp;quot;}}}Vue.createApp(hallo).mount(&amp;quot;#app&amp;quot;)&amp;lt;/script&amp;gt;这个v-bind:href，就是将a标签的href属性绑定，v-bind可以绑定任何属性，例如class属性等等，因此可以在视图层留下一些接口指令，让vuejs来响应式渲染出视图
 而vue还提供了可以绑定事件的v-on属性，例如：
 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;button v-on:click=&amp;quot;go&amp;quot;&amp;gt;{{ main }}&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;const hallo ={data() {return {main: &amp;quot;hallo&amp;quot;}},methods: {go: function(){console.</description>
     </item>
@@ -1566,7 +1566,7 @@ vuejs本身是用声明式渲染把数据渲染到html dom中，渲染格式为{
       <description>属性
 accesskey
 定义快捷键获取焦点，例如
-&amp;lt;a href=&amp;quot;https://xiaochenabc123.qq.com&amp;quot; accesskey=&amp;quot;q&amp;quot;&amp;gt;GO\&amp;lt;/a&amp;gt;按ait+q，就会跳到指定的网页上
+&amp;lt;a href=&amp;quot;https://xiaochenabc123.test.com&amp;quot; accesskey=&amp;quot;q&amp;quot;&amp;gt;GO\&amp;lt;/a&amp;gt;按ait+q，就会跳到指定的网页上
 class
 定义元素的类，开头必须是字母，多个类使用空格隔开，例如
 &amp;lt;div class = &amp;quot;a1 a2 a3&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;id
@@ -1577,7 +1577,7 @@ class
 定义元素的行内样式，例如
 &amp;lt;div style=&amp;quot;color : #fff&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;tabindex
 指定tab键的焦点控制，例如
-&amp;lt;a href=&amp;quot;https://xiaochenabc123.qq.com&amp;quot; tabindex=&amp;quot;1&amp;quot;&amp;gt;GO&amp;lt;/a&amp;gt;使用键盘的tab键盘，触发（不会跳转到网页，只是焦点）
+&amp;lt;a href=&amp;quot;https://xiaochenabc123.test.com&amp;quot; tabindex=&amp;quot;1&amp;quot;&amp;gt;GO&amp;lt;/a&amp;gt;使用键盘的tab键盘，触发（不会跳转到网页，只是焦点）
 contenteditable
 指定元素是否为可以编辑的，例如
 &amp;lt;div contenteditable=&amp;quot;true&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;dir
@@ -1628,13 +1628,13 @@ $(&amp;rsquo;*&amp;rsquo;)
 层次选择器
 $(&amp;lsquo;div .main&amp;rsquo;)
 属性选择器
-$(&amp;ldquo;a[href=&amp;ldquo;https://xiaochenabc123.qq.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
+$(&amp;ldquo;a[href=&amp;ldquo;https://xiaochenabc123.test.com&amp;rdquo;]&amp;rdquo;) // 选择带href属性的a元素
 可以使用前缀或者后缀来选择 $(&amp;ldquo;div[name^=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes开头的 $(&amp;ldquo;div[name$=&amp;ldquo;yes&amp;rdquo;]&amp;rdquo;) // 选择div标签的neme属性值为yes结尾的
 组合选择器
 $(&amp;ldquo;div[class=divs]&amp;rdquo;)
 组合选择器其实就是用多个选择器组合起来
 多项选择器
-$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://xiaochenabc123.qq.com&amp;rdquo;)
+$(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://xiaochenabc123.test.com&amp;rdquo;)
 多项选择器就是将多个选择器用逗号组合起来
 层级选择器 $(&amp;ldquo;ul.nev li.active&amp;rdquo;)</description>
     </item>
