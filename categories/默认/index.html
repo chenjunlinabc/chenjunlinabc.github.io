@@ -68,38 +68,7 @@ echo "参数1: $1"
 echo "被执行的脚本为: $0"
 }
 abc hallo
-....</p></div><footer class=entry-footer><span title='2021-11-23 00:01:00 +0000 UTC'>2021-11-23</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to shell脚本学习笔记" href=https://xiaochenabc123.github.io/posts/120/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Django学习笔记</h2></header><div class=entry-content><p>django是一个基于Python编写的Web框架
-Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
-安装django
-pip install django
-检查是否安装成功
-django-admin
-django常用命令
-startproject #创建django项目
-startapp #创建django应用
-check #检查校验项目完整性
-runserver #本地运行django项目
-shell # 进入django项目的shell环境（Python）
-test # 执行django实例测试
-makemigrations # 创建模型变更的迁移文件
-migrate # 执行迁移文件
-dumpdata # 数据库数据导出
-loaddata # 文件数据导入数据库
-创建第一个项目
-django-admin startproject django_demo
-settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，init.py是Django项目的包初始化文件
-wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）
-运行django项目
-python .\manage.py runserver 0.0.0.0:8000
-访问127.0.0.1:8000
-django应用
-django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包
-django项目下可以包含一组配置和n个django应用
-创建django应用
-python .\manage.py startapp django_app
-admin.py #定义admin模块管理的配置文件
-apps.py # 声明应用的配置文件
-tests.py # 应用测试的配置文化...</p></div><footer class=entry-footer><span title='2021-10-22 18:50:00 +0000 UTC'>2021-10-22</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Django学习笔记" href=https://xiaochenabc123.github.io/posts/118/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Web.py学习笔记</h2></header><div class=entry-content><p>web.py是一个轻量级Python web框架，是由已故著名计算机黑客Aaron Swartz设计开发（如果你看过互联网之子这个电影，你应该对这位大佬很熟悉）
+....</p></div><footer class=entry-footer><span title='2021-11-23 00:01:00 +0000 UTC'>2021-11-23</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to shell脚本学习笔记" href=https://xiaochenabc123.github.io/posts/120/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Web.py学习笔记</h2></header><div class=entry-content><p>web.py是一个轻量级Python web框架，是由已故著名计算机黑客Aaron Swartz设计开发（如果你看过互联网之子这个电影，你应该对这位大佬很熟悉）
 安装web.py
 pip install web.py
 导入模块
@@ -115,7 +84,29 @@ def GET(self,name):
 return "&lt;h1>hallo web.py&lt;/h1>"
 if __name__=="__main__":
 app.run()
-可以看到页面内容是return返回的，也可以open读取html文件，来返回回去，都是可以的</p></div><footer class=entry-footer><span title='2021-10-18 12:00:00 +0000 UTC'>2021-10-18</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Web.py学习笔记" href=https://xiaochenabc123.github.io/posts/117/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://xiaochenabc123.github.io/categories/%E9%BB%98%E8%AE%A4/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2023 <a href=https://xiaochenabc123.github.io/>小陈的个人博客</a></span>
+可以看到页面内容是return返回的，也可以open读取html文件，来返回回去，都是可以的</p></div><footer class=entry-footer><span title='2021-10-18 12:00:00 +0000 UTC'>2021-10-18</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Web.py学习笔记" href=https://xiaochenabc123.github.io/posts/117/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>weex跨平台框架学习笔记</h2></header><div class=entry-content><p>weex是阿里巴巴在Qcon大会上宣布开源的一套跨平台移动开发工具
+支持ES6，跨平台，体积小，性能优异，编写规范
+官网：http://emas.weex.io/zh/
+weex调试工具：weexplayground（可以用来测试，要同局域网下）
+安装
+npm install -g weex-toolkit
+检查weex
+weex -v
+初始化项目
+weex init demo
+npm install
+或者
+weex create demo
+运行
+npm run dev
+npm run server
+编译js bundle
+weex compile 目录或者文件 打包文件存放的目录或者文件
+压缩编译
+weex compile 目录或者文件 打包文件存放的目录或者文件 -m
+注意：Weex目前只支持像素值，不支持相对单位(em、rem)，也不支持百分比，默认设计标准为750px，当真实像素不是750px的时候，会自动将设计标准映射到真实的尺寸中，这个映射比率叫scale，计算公式为：当前屏幕尺寸/750
+不支持层 z-index，具体层级叠加根据编写顺序显示，不支持使用border创建三角形
+运行流程：weex生成js bundle，然后通过网络等等方式将js bundle传递到客户端，在客户端中，weexSDK会在用户打开一个weex页面的时候执行对应的js bundle，然后命令发送到native端进行处理</p></div><footer class=entry-footer><span title='2021-10-10 14:00:00 +0000 UTC'>2021-10-10</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to weex跨平台框架学习笔记" href=https://xiaochenabc123.github.io/posts/116/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://xiaochenabc123.github.io/categories/%E9%BB%98%E8%AE%A4/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2023 <a href=https://xiaochenabc123.github.io/>小陈的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

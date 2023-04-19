@@ -116,23 +116,6 @@ deno内置工具
     </item>
     
     <item>
-      <title>简单使用Mock.js模拟数据生成器</title>
-      <link>https://xiaochenabc123.github.io/posts/160/</link>
-      <pubDate>Wed, 09 Nov 2022 12:00:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/160/</guid>
-      <description>Mock.js是模拟数据生成器，不需要后端来提供接口数据来进行开发，Mock可以根据数据模板生成随机数据，并且拦截Ajax请求返回模拟数据
-安装
-npm install mockjs
-导入
-import Mock from &#39;mockjs&#39;通过传入数据模板对象生成数据
-const data = Mock.mock({&#39;list|10&#39;: [{&amp;quot;id|+1&amp;quot;: 1,&amp;quot;name&amp;quot;: &amp;quot;@cname&amp;quot;,&amp;quot;age|18-25&amp;quot;: 25}]})console.log(data)配置响应数据（当匹配url的ajax请求时，会根据数据模板生成模拟数据，并且作为响应返回，这里通过axios发送get请求）
-const Data = Mock.mock(&#39;/api/name&#39;,&#39;get&#39;,{code: 200,data: {&#39;list|10&#39;: [{&amp;quot;id|+1&amp;quot;: 1,&amp;quot;name&amp;quot;: &amp;quot;@cname&amp;quot;,&amp;quot;age|18-25&amp;quot;: 25}]}})axios.get(&#39;/api/name&#39;).then(res =&amp;gt; {console.log(res.data)})也可以传入第二个参数，表示匹配的请求是哪个请求方法的
-记录数据模板
-const Data = Mock.mock(&#39;/api/name&#39;,(options) =&amp;gt; {return {code: 200,options}})axios({method: &#39;get&#39;, url: &#39;/api/name&#39; , data: {&#39;name&#39;:&#39;chenjunlin&#39;}}).</description>
-    </item>
-    
-    <item>
       <title>计算机图形学学习笔记</title>
       <link>https://xiaochenabc123.github.io/posts/159/</link>
       <pubDate>Tue, 08 Nov 2022 12:00:00 +0000</pubDate>
@@ -597,7 +580,7 @@ pm2 flush</description>
 本站未注明转载的文章均为原创，转载请标明来源
 本站点基于hugo构建
 免责声明
-本站内容仅供学习和参阅使用，本网站内容仅代表作者本人的观点，内容仅供阅读，如有任何问题，欢迎随时留言或者联系站长（email：xiaochenabc123@qq.com），将会在第一时间为您做相关处理
+本站内容仅供学习和参阅使用，本网站内容仅代表作者本人的观点，内容仅供阅读，如有任何问题，欢迎联系站长（email：xiaochenabc123@qq.com），将会在第一时间为您做相关处理
 自述：
 2002年出生，星座：摩羯座
 偏好语言：JavaScript(TypeScript)，Golang，Python，Rust
@@ -606,7 +589,6 @@ APP&amp;amp;小程序：Flutter，Taro
 最喜欢的游戏：CSGO，塞尔达传说：旷野之息，王者荣耀
 看完的小说：全职法师，雪鹰领主，吞噬星空，星辰变，牧龙师
 目前在看小说：完美世界
-Github提交活跃：
 联系方式：
 邮箱：xiaochenabc123@qq.com
 GitHub：https://github.com/xiaochenabc123
@@ -780,35 +762,6 @@ package.json（browserslist官方推荐用这个）
 &amp;quot;browserslist&amp;quot;: [&#39;&amp;gt; 0.2%&#39;,&#39;last 1 Chrome versions&#39;&#39;not dead&#39;]或者写成
 &amp;quot;browserslist&amp;quot;: [&#39;&amp;gt; 0.2% and last 1 Chrome versions and not dead&#39;,].browserslistrc
 &amp;gt; 0.2% and last 1 Chrome versions and not deadbrowserslist数据的优先级：当前项目的package.</description>
-    </item>
-    
-    <item>
-      <title>Nestjs学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/139/</link>
-      <pubDate>Sat, 05 Mar 2022 14:00:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/139/</guid>
-      <description>NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程
-安装
-npm install -g @nestjs/cli
-创建demo项目
-nest new demo
-选择使用包管理器（支持npm，yarn，pnpm）
-创建完成后可以看到src目录，是典型的MVC架构
-app.controller.ts（应用路由控制器，例如Get()方法，该路由控制器将从应用服务文件中获取数据，并且将数据返回到页面上） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件，nest模块化，一个nest项目最少有一个模块，通过controllers()方法接收一个模块组(数组形式)，） app.service.ts（应用服务文件，数据来源于该文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap()）
-从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的
-启动项目
-npm run start
-访问http://localhost:3000/，如果看到Hello World!表示启动成功
-nestjs cli支持对mvc模块的生成
-新建nest项目 nest new demo
-打包nest项目 nets build
-运行nest项目 nest start
-查看nest当前项目的一些信息 nest info
-创建控制器 nest g controller 名称 或者 nest g co 名称
-创建服务 nest g service 名称 或者 nest g s 名称
-创建模块 nest g module 名称 或者 nest g mo 名称
-创建异常过滤器 nest g filter 名称</description>
     </item>
     
     <item>
@@ -1103,50 +1056,6 @@ sync/atomic包将原子操作封装成了Go的函数，sync/atomic包提供了�
     </item>
     
     <item>
-      <title>Kubernetes学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/127/</link>
-      <pubDate>Mon, 10 Jan 2022 12:31:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/127/</guid>
-      <description>Kubernetes（k8s，8是指k到s之间有8个字母），是谷歌在2014年发布并且开源的容器化集群管理系统（已在谷歌生产环境中工作15年），支持自动化部署，应用容器化管理，大规模升级或回滚，应用扩展等等
-k8s的特性：
-自动部署与滚动更新：自动化部署应用容器，k8s采取滚动式更新，可以根据应用的情况进行一次或者批量更新（判断该应用添加是否正常使用），也可以进行历史版本回滚
-自我修复：当某个容器发生故障，会自动重新启动失败的容器，当某个节点（Pod）出现故障进行容器的替换或者重新部署，并且关闭没有通过检查的容器（不进行处理请求，保证服务不中断），直到容器恢复正常
-弹性伸缩：通过命令，UI界面，CPU等资源使用情况，自动对应用容器进行扩容或者缩容，保证在高峰期的高可用性，降低运行成本
-服务发现和负载均衡：k8s为容器对外提供了统一访问入口（api server），并且关联全部容器（负载均衡）
-密钥与配置管理：允许在不重新构建容器（不需要重新集群，热更新）的情况下更新应用程序配置，可以存储和管理密钥，令牌等敏感信息，不需要暴露这些敏感信息（部署和更新密钥）
-存储编排：支持挂载外部存储（网络存储服务，云存储服务）（本地当然是支持），自动完成存储系统的挂载以及应用，保证数据持久化
-批处理：支持一次性任务，定时任务
-k8s的集群架构分为2个组件，分别为master（主控节点）和node（工作节点）
-master组件：api server（集群统一人口，restful），scheduler（节点调度，调度node节点应用部署），controller-manager（处理集群中后台任务，一个资源对应一个控制器，资源控制），etcd（存储系统，用来存储集群的相关数据）
-node组件：kubelet（node节点代理，管理k8s容器），kube-proxy（负责网络代理，负载均衡等操作）
-Pod：k8s管理系统中最小部署单位，一个或者多个容器的集合（共享同一个网络），容器重启将结束该pod的生命（生命周期短）
-Service
-Volume
-Namespace
-Controller：控制器（确保预期pod的数量），状态应用部署（无状态（没有任何限制约定），有状态（有限制条件，依赖需要））负责一次性任务，定时任务，守护进程等等，确保所有node运行同一个pod
-Service Ingress：对外接口（定义pod的访问规则）
-RBAC：安全机制，权限管理
-Helm：包管理器，快速下载，安装软件
-k8s集群搭建
-单master集群：单个master节点，管理多个node节点
-多master集群（高可用集群）：多个master节点，管理多个node节点，中间存在着负载均衡的过程
-kubeadm
-kubeadm是k8s部署工具，用于快速部署k8s集群
-官方文档：https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
-kubeadm安装
-安装必备软件
-apt install -y apt-transport-https ca-certificates curl
-添加k8s国内源
-sudo tee /etc/apt/sources.list.d/kubernetes.list &amp;laquo;-&amp;lsquo;EOF&amp;rsquo; deb https://mirrors.tencent.com/kubernetes/apt/ kubernetes-xenial main EOF
-添加签名
-gpg &amp;ndash;keyserver keyserver.ubuntu.com &amp;ndash;recv-keys 836F4BEB gpg &amp;ndash;export &amp;ndash;armor 836F4BEB | sudo apt-key add - apt update
-836F4BEB这个为NO_PUBKEY的后8位
-安装三件套
-apt install -y kubelet kubeadm kubectl</description>
-    </item>
-    
-    <item>
       <title>python爬虫学习笔记</title>
       <link>https://xiaochenabc123.github.io/posts/125/</link>
       <pubDate>Fri, 31 Dec 2021 01:05:00 +0000</pubDate>
@@ -1311,46 +1220,6 @@ rollup src/demo.js -f cjs -o dist/bundle.js
 使用UMD格式需要指明一个name属性，用来挂载模块到全局环境中
 rollup src/demo.js -f umd -o dist/bundle.js &amp;ndash;name hallo
 在global下声明一个名为hallo的对象，用来挂载全部的export模块</description>
-    </item>
-    
-    <item>
-      <title>Django学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/118/</link>
-      <pubDate>Fri, 22 Oct 2021 18:50:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/118/</guid>
-      <description>django是一个基于Python编写的Web框架
-Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
-安装django
-pip install django
-检查是否安装成功
-django-admin
-django常用命令
-startproject #创建django项目
-startapp #创建django应用
-check #检查校验项目完整性
-runserver #本地运行django项目
-shell # 进入django项目的shell环境（Python）
-test # 执行django实例测试
-makemigrations # 创建模型变更的迁移文件
-migrate # 执行迁移文件
-dumpdata # 数据库数据导出
-loaddata # 文件数据导入数据库
-创建第一个项目
-django-admin startproject django_demo
-settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，init.py是Django项目的包初始化文件
-wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）
-运行django项目
-python .\manage.py runserver 0.0.0.0:8000
-访问127.0.0.1:8000
-django应用
-django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包
-django项目下可以包含一组配置和n个django应用
-创建django应用
-python .\manage.py startapp django_app
-admin.py #定义admin模块管理的配置文件
-apps.py # 声明应用的配置文件
-tests.py # 应用测试的配置文化</description>
     </item>
     
     <item>
@@ -1626,34 +1495,6 @@ npm script可以使用npm内部变量，例如：
 console.log(process.env.npm_package_name)
 脚本错误抛出
 &amp;quot;scripts&amp;quot;: {&amp;quot;test&amp;quot;: &amp;quot;echo \&amp;quot;Error: no test specified\&amp;quot; &amp;amp;&amp;amp; exit 1&amp;quot;}传递参数</description>
-    </item>
-    
-    <item>
-      <title>Node.js学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/108/</link>
-      <pubDate>Mon, 20 Sep 2021 10:50:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/108/</guid>
-      <description>nodejs是基于Google的V8引擎，使JavaScript不再只能运行与浏览器中了
-npm是跟随nodejs的包管理工具，可以用来更新包，安装包，编写包等等功能
-nodejs也提供了完整的http服务功能（http模块是用c++写的，性能可靠）
-const http = require(&amp;quot;http&amp;quot;)http.createServer(function (_request, response) {response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;})response.end(&amp;quot;hallo nodejs&amp;quot;)}).listen(8888)console.log(&#39;Server running at http://127.0.0.1:8888/&#39;)如果在http://127.0.0.1:8888/看到了hallo nodejs，那么就说明运行成功了
-nodejs的模块分为全局模块，系统模块，自定义模块
-全局模块（不需要引入，可以直接使用）
-例如process.env和process.argv
-获取系统环境变量
-console.log(process.env)node自定义参数（process.argv）
-let num1 = parseInt(process.argv[2])let num2 = parseInt(process.argv[3])console.log(num1+num2)node hallo.js 6 3
-可以看到输出了9，说明参数被传递进去了
-系统模块（需要引用，不需要安装，nodejs已经封装好的预制的系统模块）
-获取目录
-const path = require(&amp;quot;path&amp;quot;)console.log(path.dirname(&amp;quot;/hallo/index/main.js&amp;quot;))获取文件名
-console.log(path.basename(&amp;quot;/hallo/index/main.js&amp;quot;))获取文件扩展名
-console.log(path.extname(&amp;quot;/hallo/index/main.js&amp;quot;))功能扩展
-console.log(path.resolve(&amp;quot;/hallo/index/main.js&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;index.js&amp;quot;))获取文件的绝对路径
-console.log(path.resolve(__dirname,&amp;quot;index.js&amp;quot;))文件读写模块（fs）
-读
-const fs = require(&amp;quot;fs&amp;quot;)fs.readFile(&amp;quot;data.txt&amp;quot;,(err,data)=&amp;gt;{if(err){console.log(err)}else{console.log(data.toString())}})写</description>
     </item>
     
     <item>
@@ -2054,24 +1895,6 @@ npm init &amp;ndash;yes</description>
     </item>
     
     <item>
-      <title>React Hooks学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/90/</link>
-      <pubDate>Fri, 20 Aug 2021 23:00:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/90/</guid>
-      <description>React Hooks提供了新特性来给纯函数组件可以管理状态
-学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态
-而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷
-React Hooks的出现，是因为类组件会继承React.Component父类，而React.Component父类拥有大量的方法和属性，在开发一些小型组件时，完全没有必要用到这么多的方法和属性，就好吧杀鸡用屠龙刀一样，可以但是没有必要，而纯函数组件就不存在这些方法和属性，可谓是轻量级
-例如：
-class组件：
-class Hi extends React.Component{constructor(props) {super(props)this.state = { count:0 }}render(){console.log(this.state.count)return(&amp;lt;div&amp;gt;&amp;lt;p&amp;gt;数据：{this.state.count}&amp;lt;/p&amp;gt;&amp;lt;button onClick={this.addGo.bind(this)}&amp;gt;GO&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;)}addGo(){this.setState({count:this.state.count+1})}}那么函数组件+React Hooks怎么实现状态更新呢？
-而function组件想更新状态可以通过React Hooks来实现，例如：
-例如：
-import React, { useState } from &#39;react&#39;function Hi(){const [ count , setCount ] = useState(0)return (&amp;lt;div&amp;gt;&amp;lt;p&amp;gt; 数据：{count} &amp;lt;/p&amp;gt;&amp;lt;button onClick={()=&amp;gt;{setCount(count+1)}}&amp;gt;GO&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;)}没错就是这么简单，看起来函数组件+React Hooks更简洁，更容易理解</description>
-    </item>
-    
-    <item>
       <title>Markdown基础语法笔记</title>
       <link>https://xiaochenabc123.github.io/posts/88/</link>
       <pubDate>Wed, 18 Aug 2021 16:50:00 +0000</pubDate>
@@ -2281,23 +2104,6 @@ svn update
 svn update -r 2 demo
 提交
 svn commit -m &amp;ldquo;hello svn&amp;rdquo;</description>
-    </item>
-    
-    <item>
-      <title>Axios网络请求库学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/83/</link>
-      <pubDate>Wed, 11 Aug 2021 12:15:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/83/</guid>
-      <description>Axios是一个基于promise的http网络请求库，可以用于浏览器和nodejs，在nodejs中使用http模块，而在浏览器使用XMLHttpRequests
-支持promise api，支持拦截请求和响应，转换请求数据和响应数据，取消请求，自动转换json数据，支持防御XSRF攻击
-安装
-yarn add axios
-实例demo
-import axios from &amp;quot;axios&amp;quot;;axios.get(&amp;quot;https://httpbin.org/get&amp;quot;, {params: {name: &amp;quot;root&amp;quot;}}).then(function (response) {console.log(response);}).catch(function (error) {console.log(error);});axios.post(&amp;quot;https://httpbin.org/post&amp;quot;, {name: &amp;quot;root&amp;quot;,pass: &amp;quot;root&amp;quot;}).then(function (response) {console.log(response);}).catch(function (error) {console.log(error);});可以看到页面已经发送了get和post请求，.then和.catch分别表示请求成功和请求失败时调用的函数，也可以用箭头函数，其中response参数为请求的数据，error为错误信息
-还可以写成这样
-axios({method: &#39;post&#39;,url: &#39;https://httpbin.org/post&#39;,data: {name: &amp;quot;root&amp;quot;,pass: &amp;quot;root&amp;quot;}});FormData方式
-let data = {home: &amp;quot;hallo&amp;quot;,main: &amp;quot;abc&amp;quot;}let formData = new FormData()for(let key in data){formData.</description>
     </item>
     
     <item>
@@ -2753,47 +2559,6 @@ let hallo: number = 123;</description>
     </item>
     
     <item>
-      <title>ES6学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/57/</link>
-      <pubDate>Fri, 09 Jul 2021 22:51:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/57/</guid>
-      <description>ECMAScript
-JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
-ECMAScript是规范，JavaScript是实现
-ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
-变量
-let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
-例如：
-if(true){let a = 666;}console.log(a); // Uncaught ReferenceError: a is not defined注意：
-使用var声明的变量不具备块级作用域有效的特性
-使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
-const声明一个只读的常量，一声明，常量的值将不能改变
-const abc =123;
-const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区
-ES6的作用域：
-全局作用域 函数作用域 块级作用域
-因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel
-安装babel
-npm install -g babel-cli
-安装转换包
-npm install &amp;ndash;save-dev babel-preset-es2015 babel-cli
-新建.babelrc文件，写入：
-{&amp;quot;presets&amp;quot;:[&amp;quot;es2015&amp;quot;],&amp;quot;plugins&amp;quot;:[]}babel main.js -o src/main.js
-然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
-变量声明方式
-let，声明一个变量
-const，声明一个常量
-在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用
-let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量
-const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误
-变量解构
-ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
-let [a,b,c] = [1,2,3]
-会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined</description>
-    </item>
-    
-    <item>
       <title>简单了解MVC，MVP和MVVM之间的不同与联系</title>
       <link>https://xiaochenabc123.github.io/posts/56/</link>
       <pubDate>Fri, 09 Jul 2021 22:50:00 +0000</pubDate>
@@ -3167,33 +2932,6 @@ module.exports = {entry: &#39;入口文件的路径&#39;,output: {path:__dirn
     </item>
     
     <item>
-      <title>JavaScript基础学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/46/</link>
-      <pubDate>Thu, 24 Jun 2021 07:57:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/46/</guid>
-      <description>插入js
-在html页面使用js 引用js文件 注释
-// 单行注释
-/* 多行注释
-*/
-变量
-var home // 声明一个变量使用var
-home = &amp;ldquo;hallo&amp;rdquo; // 使用=来把字符串hallo赋值到home变量
-变量命名要求： 必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字
-建议每一行语句结束使用;来表示结束当前语句，主要是给人看
-var num = 123 // 整数
-num = &amp;ldquo;123&amp;rdquo; // 字符串
-num = 1.23 // 浮点数（小数）
-num = true // 布尔值（真，假或者对，错的意思，true是真，false为假）
-num = 1+1 // 可以进行运算，也可以连接两个字符串
-num = &amp;ldquo;hallo&amp;rdquo; + &amp;ldquo;javascript&amp;rdquo;
-var nums = 1
-nums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2
-nums&amp;ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0</description>
-    </item>
-    
-    <item>
       <title>Grid布局学习笔记</title>
       <link>https://xiaochenabc123.github.io/posts/45/</link>
       <pubDate>Wed, 23 Jun 2021 10:29:00 +0000</pubDate>
@@ -3435,49 +3173,6 @@ screen -R mcserver # 进入这个新“终端”
 修改这个文件，把onlinemode 改为 false
 MCSManager面板
 wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash</description>
-    </item>
-    
-    <item>
-      <title>JavaScript的一些基础知识扩展</title>
-      <link>https://xiaochenabc123.github.io/posts/32/</link>
-      <pubDate>Wed, 16 Jun 2021 15:12:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/32/</guid>
-      <description>JavaScript的变量具有动态性的特性，就决定了变量只是用于保存该特定的值的名字
-JavaScript中有两种，基本类型值和引用类型值
-基本数据类型有数字(Number)，字符串(String)，布尔值(Boolean)，null，undefined，（es6中加入了个symbol）,BigInt(ES2020)
-基本类型是按值访问，可以直接操作保存在变量中的值
-基本类型值是简单的数据段，而引用类型是指由多个值组成的对象
-因为基本类型是按值访问的，所以可以操控保存在变量的值
-引用类型的值是保存在内存中的对象，JavaScript不允许直接访问内存中的位置
-操控对象，其实就是在操控对象的引用，而不是对象本身
-JavaScript的逻辑运算
-JavaScript的任何数据类型都能转换为布尔类型
-&amp;lt; 小于
-大于 &amp;lt;= 小于或者等于 = 大于或者等于 == 没错，这个才是等于，=这个是用来赋值的 != 不等于 === 绝对等于（值和数据类型相等） !== 不绝对等于（值和数据类型其中有一个或者都不相等）
-&amp;amp;&amp;amp; 必须都要符合要求
-|| 只有一个符合要求
-! 真为假，假为真（当判断为true时返回false，判断为false时返回true）
-逻辑运算的结果为布尔值
-类型判断
-数据类型有undefined，null，boolean，number，string，object，symbol，BigInt（ES2020）
-undefined，该变量没有被赋值
-null，该变量的值为空的对象指针
-boolean，该变量的值为布尔值
-string，该变量的值为字符串
-number，该变量的值为数值
-object，该变量为对象或者null
-Symbol，生成一个全局独一无二的值
-tyoeof操作符会返回该变量的值或者该值是什么数据类型
-注意：null值表示一个空对象指针，所以使用typeof操作符检测null时会返回object，typeof个函数，会返回function
-typeof判断null之类的不合适，在这种情况可以使用instanceof
-instanceof会检查构造函数的prototype属性是否在某个实例的原型链上
-例如：
-var abc = new testa() if(Object.getPrototypeOf(abc) === testa.prototype){}
-instanceof判断null
-null instanceof Object // false
-返回布尔值,例如
-var arr = [1,1,2,3,4,5]; console.log(arr instanceof Array); // 返回true</description>
     </item>
     
     <item>
@@ -3796,41 +3491,6 @@ $(&amp;ldquo;div[class=divs]&amp;rdquo;)
 $(&amp;ldquo;div[class=divs],a[href=&amp;ldquo;https://xiaochenabc123.test.com&amp;rdquo;)
 多项选择器就是将多个选择器用逗号组合起来
 层级选择器 $(&amp;ldquo;ul.nev li.active&amp;rdquo;)</description>
-    </item>
-    
-    <item>
-      <title>MySQL学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/20/</link>
-      <pubDate>Wed, 16 Jun 2021 09:37:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/20/</guid>
-      <description>推荐使用mariaDB
-操作数据库
-创建数据库
-CREATE DATABASE xxx;
-删除数据库
-DROP DATABASE xxx;
-查看所有数据库
-SHOW DATABASES;
-查看指定数据库
-SHOW xxx;
-打开指定数据库
-USE xxx;
-查看指定数据库的详细信息
-SHOW CREATE DATABASE xxx;
-修改指定数据库的字符集
-ALTER DATABASE xxx CHARACTER SET gbk COLLATE gbk_bin;
-数据表的校对规则，与于指定数据集如何排序
-COLLATE=utf8_bin
-指定字符集
-CHARSET=utf8
-查看当前mysql所支持的字符集
-SHOW CHARACTER SET;
-新建数据表
-CREATE TABLE xxx(id int(4),email char(20),status int(2),code varchar(10)​ );
-添加数据
-INSERT INTO xxx VALUES(1,&amp;quot;hallo&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;xxx&amp;quot;);修改数据(根据条件)
-UPDATE xxx SET status=1 WHERE id = 4;</description>
     </item>
     
     <item>
@@ -4352,6 +4012,105 @@ HTML标签优化
 尽量避免使用iframe标签，搜索引擎不会抓取iframe标签的内容
 重要信息请勿使用js输出，爬虫不会抓取js的内容
 给图片加alt信息，重要信息请放头部，有部分搜索引擎爬虫会限制抓取的长度</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/axios%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/axios%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/django%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/es6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/es6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/javascript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/javascript%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/javascript%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/javascript%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%89%A9%E5%B1%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/kubernetes%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/kubernetes%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/nestjs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/nestjs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/react-hooks%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/react-hooks%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiaochenabc123.github.io/posts/%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8mock.js%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaochenabc123.github.io/posts/%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8mock.js%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8/</guid>
+      <description></description>
     </item>
     
     

@@ -65,7 +65,7 @@ edition = "2021"
 [dependencies]
 hyper = "0.14.20" # 来自https://crates.io/
 # hyper = { git = "https://github.com/hyperium/hyper" } # 来自第三方社区
-# hyper = { path = "....</p></div><footer class=entry-footer><span title='2022-03-28 13:22:00 +0000 UTC'>2022-03-28</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Rust学习笔记" href=https://xiaochenabc123.github.io/posts/142/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Flutter框架学习笔记</h2></header><div class=entry-content><p>Flutter是谷歌开源的跨平台UI框架，可以快速在iOS和Android上构建高质量的原生用户界面，可在Windows，Linux，Android，Web，iOS，Mac等6大平台上开发应用
+# hyper = { path = "....</p></div><footer class=entry-footer><span title='2022-03-28 13:22:00 +0000 UTC'>2022-03-28</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Rust学习笔记" href=https://xiaochenabc123.github.io/posts/142/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Flutter框架学习笔记</h2></header><div class=entry-content><p>Flutter是谷歌开源的跨平台UI框架，可以快速在iOS和Android上构建高质量的原生用户界面，可在Windows，Linux，Android，Web，iOS，Mac等6大平台上开发应用
 闲鱼和Now直播，美团，快手都使用了Flutter
 获取Flutter
 https://storage.flutter-io.cn/flutter_infra_release/releases/stable/windows/flutter_windows_2.10.3-stable.zip
@@ -107,27 +107,7 @@ Widget build(BuildContext context){
 return MaterialApp(
 title: "hallo word", // app的title
 theme: ThemeData(
-primarySwatch: Colors....</p></div><footer class=entry-footer><span title='2022-03-22 12:00:00 +0000 UTC'>2022-03-22</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Flutter框架学习笔记" href=https://xiaochenabc123.github.io/posts/141/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Nestjs学习笔记</h2></header><div class=entry-content><p>NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程
-安装
-npm install -g @nestjs/cli
-创建demo项目
-nest new demo
-选择使用包管理器（支持npm，yarn，pnpm）
-创建完成后可以看到src目录，是典型的MVC架构
-app.controller.ts（应用路由控制器，例如Get()方法，该路由控制器将从应用服务文件中获取数据，并且将数据返回到页面上） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件，nest模块化，一个nest项目最少有一个模块，通过controllers()方法接收一个模块组(数组形式)，） app.service.ts（应用服务文件，数据来源于该文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap()）
-从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的
-启动项目
-npm run start
-访问http://localhost:3000/，如果看到Hello World!表示启动成功
-nestjs cli支持对mvc模块的生成
-新建nest项目 nest new demo
-打包nest项目 nets build
-运行nest项目 nest start
-查看nest当前项目的一些信息 nest info
-创建控制器 nest g controller 名称 或者 nest g co 名称
-创建服务 nest g service 名称 或者 nest g s 名称
-创建模块 nest g module 名称 或者 nest g mo 名称
-创建异常过滤器 nest g filter 名称...</p></div><footer class=entry-footer><span title='2022-03-05 14:00:00 +0000 UTC'>2022-03-05</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Nestjs学习笔记" href=https://xiaochenabc123.github.io/posts/139/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Gin框架学习笔记</h2></header><div class=entry-content><p>Gin是一个基于go语言编写的web框架，因为Gin的路由库基于httprouter开发的，性能非常好，支持Restful api规范
+primarySwatch: Colors....</p></div><footer class=entry-footer><span title='2022-03-22 12:00:00 +0000 UTC'>2022-03-22</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Flutter框架学习笔记" href=https://xiaochenabc123.github.io/posts/141/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Gin框架学习笔记</h2></header><div class=entry-content><p>Gin是一个基于go语言编写的web框架，因为Gin的路由库基于httprouter开发的，性能非常好，支持Restful api规范
 安装
 go get -u github.com/gin-gonic/gin
 第一个demo
@@ -161,7 +141,32 @@ r.Run()
 如果没有传递参数将会输出DefaultQuery的默认参数test
 传递参数后 127.0.0.1:6666/test?name=word
 POST请求
-index.html main.go...</p></div><footer class=entry-footer><span title='2022-02-15 17:00:00 +0000 UTC'>2022-02-15</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Gin框架学习笔记" href=https://xiaochenabc123.github.io/posts/135/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://xiaochenabc123.github.io/categories/%E5%AD%A6%E4%B9%A0/page/2/>«&nbsp;Prev&nbsp;</a>
+index.html main.go...</p></div><footer class=entry-footer><span title='2022-02-15 17:00:00 +0000 UTC'>2022-02-15</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Gin框架学习笔记" href=https://xiaochenabc123.github.io/posts/135/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>PostCSS学习笔记</h2></header><div class=entry-content><p>PostCSS是一个用JS插件转换为css的插件工具（注意：PostCSS不是css预处理器，PostCSS本身是个平台，可以通过一些插件达到css预处理器的效果）
+PostCSS is a tool for transforming CSS with JS plugins. These plugins can support variables and mixins, transpile future CSS syntax, inline images, and more.
+插件查询：https://www.postcss.parts/
+常用插件：https://github.com/postcss/postcss/blob/main/docs/plugins.md
+安装
+npm install postcss postcss-loader
+或者安装到项目中
+npm install postcss postcss-loader –save-dev
+PostCSS不单独使用，可搭配Gulp或者webpack使用（这里使用的是webpack）
+webpack.config.js
+module.exports = {
+module: {
+rules: [
+{
+test: /\.css$/,
+use: ["style-loader", "css-loader", "postcss-loader"]
+}
+]
+}
+};
+postcss.config.js
+module.exports = {
+plugins: [插件1,插件2]
+};
+Autopreﬁxer（自动添加浏览器前缀）
+npm install autoprefixer –save-dev...</p></div><footer class=entry-footer><span title='2022-01-23 13:55:00 +0000 UTC'>2022-01-23</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to PostCSS学习笔记" href=https://xiaochenabc123.github.io/posts/129/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://xiaochenabc123.github.io/categories/%E5%AD%A6%E4%B9%A0/page/2/>«&nbsp;Prev&nbsp;</a>
 <a class=next href=https://xiaochenabc123.github.io/categories/%E5%AD%A6%E4%B9%A0/page/4/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2023 <a href=https://xiaochenabc123.github.io/>小陈的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

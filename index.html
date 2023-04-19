@@ -87,45 +87,7 @@ deno run .\index.ts
 -A 或者 –allow-all 允许全部权限
 VsCode插件deno
 deno内置工具
-安装模块...</p></div><footer class=entry-footer><span title='2022-11-11 07:00:00 +0000 UTC'>2022-11-11</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Deno js运行时环境学习笔记" href=https://xiaochenabc123.github.io/posts/161/></a></article><article class=post-entry><header class=entry-header><h2>简单使用Mock.js模拟数据生成器</h2></header><div class=entry-content><p>Mock.js是模拟数据生成器，不需要后端来提供接口数据来进行开发，Mock可以根据数据模板生成随机数据，并且拦截Ajax请求返回模拟数据
-安装
-npm install mockjs
-导入
-import Mock from 'mockjs'
-通过传入数据模板对象生成数据
-const data = Mock.mock({
-'list|10': [{
-"id|+1": 1,
-"name": "@cname",
-"age|18-25": 25
-}]
-})
-console.log(data)
-配置响应数据（当匹配url的ajax请求时，会根据数据模板生成模拟数据，并且作为响应返回，这里通过axios发送get请求）
-const Data = Mock.mock('/api/name','get',{
-code: 200,
-data: {
-'list|10': [{
-"id|+1": 1,
-"name": "@cname",
-"age|18-25": 25
-}]
-}
-})
-axios.get('/api/name').then(
-res => {
-console.log(res.data)
-}
-)
-也可以传入第二个参数，表示匹配的请求是哪个请求方法的
-记录数据模板
-const Data = Mock.mock('/api/name',(options) => {
-return {
-code: 200,
-options
-}
-})
-axios({method: 'get', url: '/api/name' , data: {'name':'chenjunlin'}})....</p></div><footer class=entry-footer><span title='2022-11-09 12:00:00 +0000 UTC'>2022-11-09</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to 简单使用Mock.js模拟数据生成器" href=https://xiaochenabc123.github.io/posts/160/></a></article><article class=post-entry><header class=entry-header><h2>计算机图形学学习笔记</h2></header><div class=entry-content><p>计算机图形学(Computer Graphics，CG)是研究图形表达，生成，处理与显示的学科
+安装模块...</p></div><footer class=entry-footer><span title='2022-11-11 07:00:00 +0000 UTC'>2022-11-11</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Deno js运行时环境学习笔记" href=https://xiaochenabc123.github.io/posts/161/></a></article><article class=post-entry><header class=entry-header><h2>计算机图形学学习笔记</h2></header><div class=entry-content><p>计算机图形学(Computer Graphics，CG)是研究图形表达，生成，处理与显示的学科
 通过数学算法将二维，三维图形转换成计算机显示器的栅格，例如向量，行列式，矩阵算法等等
 图形学历史
 1950年，MIT诞生第一个图形显示器（用于Whirlwind（旋风）电子管计算机显示图形），CRT显示器
@@ -181,7 +143,40 @@ ws.onclose = () =>{
 console.log('连接已关闭')
 }
 还有WebSocket.bufferedAmount属性，也是只读，用于返回WebSocket..send没有发送到服务端的数据的字节数，为0表示全部数据已传输完毕
-WebSocket.url属性可以返回WebSocket实例的URL绝对路径，只读...</p></div><footer class=entry-footer><span title='2022-11-05 14:00:00 +0000 UTC'>2022-11-05</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to WebSocket学习笔记" href=https://xiaochenabc123.github.io/posts/158/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://xiaochenabc123.github.io/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2023 <a href=https://xiaochenabc123.github.io/>小陈的个人博客</a></span>
+WebSocket.url属性可以返回WebSocket实例的URL绝对路径，只读...</p></div><footer class=entry-footer><span title='2022-11-05 14:00:00 +0000 UTC'>2022-11-05</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to WebSocket学习笔记" href=https://xiaochenabc123.github.io/posts/158/></a></article><article class=post-entry><header class=entry-header><h2>简单使用Element Plus组件库</h2></header><div class=entry-content><p>Element Plus是基于vue3开发的组件库，而Element使用vue2开发的组件库
+安装Element Plus
+npm install element-plus –save
+或者
+yarn add element-plus
+导入Element Plus
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+按需导入
+安装插件
+npm install -D unplugin-vue-components unplugin-auto-import
+如果是使用Vite则配置vite.config.ts文件
+导入并且启用插件
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+...
+plugins: [
+AutoImport({
+resolvers: [ElementPlusResolver()],
+}),
+Components({
+resolvers: [ElementPlusResolver()],
+}),
+],
+这个组件库还支持module导入的方式手动按需使用，例如：
+&lt;template>
+&lt;el-button>I am ElButton&lt;/el-button>
+&lt;/template>
+&lt;script>
+import { ElButton } from 'element-plus'
+export default {
+components: { ElButton },
+}
+&lt;/script></p></div><footer class=entry-footer><span title='2022-11-03 17:40:00 +0000 UTC'>2022-11-03</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to 简单使用Element Plus组件库" href=https://xiaochenabc123.github.io/posts/157/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://xiaochenabc123.github.io/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2023 <a href=https://xiaochenabc123.github.io/>小陈的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

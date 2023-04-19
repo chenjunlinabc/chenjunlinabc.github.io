@@ -89,46 +89,6 @@ function abc(){echo &amp;quot;参数1: $1&amp;quot;echo &amp;quot;被执行的
     </item>
     
     <item>
-      <title>Django学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/118/</link>
-      <pubDate>Fri, 22 Oct 2021 18:50:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/118/</guid>
-      <description>django是一个基于Python编写的Web框架
-Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
-安装django
-pip install django
-检查是否安装成功
-django-admin
-django常用命令
-startproject #创建django项目
-startapp #创建django应用
-check #检查校验项目完整性
-runserver #本地运行django项目
-shell # 进入django项目的shell环境（Python）
-test # 执行django实例测试
-makemigrations # 创建模型变更的迁移文件
-migrate # 执行迁移文件
-dumpdata # 数据库数据导出
-loaddata # 文件数据导入数据库
-创建第一个项目
-django-admin startproject django_demo
-settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，init.py是Django项目的包初始化文件
-wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）
-运行django项目
-python .\manage.py runserver 0.0.0.0:8000
-访问127.0.0.1:8000
-django应用
-django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包
-django项目下可以包含一组配置和n个django应用
-创建django应用
-python .\manage.py startapp django_app
-admin.py #定义admin模块管理的配置文件
-apps.py # 声明应用的配置文件
-tests.py # 应用测试的配置文化</description>
-    </item>
-    
-    <item>
       <title>Web.py学习笔记</title>
       <link>https://xiaochenabc123.github.io/posts/117/</link>
       <pubDate>Mon, 18 Oct 2021 12:00:00 +0000</pubDate>
@@ -336,34 +296,6 @@ console.log(process.env.npm_package_name)
     </item>
     
     <item>
-      <title>Node.js学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/108/</link>
-      <pubDate>Mon, 20 Sep 2021 10:50:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/108/</guid>
-      <description>nodejs是基于Google的V8引擎，使JavaScript不再只能运行与浏览器中了
-npm是跟随nodejs的包管理工具，可以用来更新包，安装包，编写包等等功能
-nodejs也提供了完整的http服务功能（http模块是用c++写的，性能可靠）
-const http = require(&amp;quot;http&amp;quot;)http.createServer(function (_request, response) {response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;})response.end(&amp;quot;hallo nodejs&amp;quot;)}).listen(8888)console.log(&#39;Server running at http://127.0.0.1:8888/&#39;)如果在http://127.0.0.1:8888/看到了hallo nodejs，那么就说明运行成功了
-nodejs的模块分为全局模块，系统模块，自定义模块
-全局模块（不需要引入，可以直接使用）
-例如process.env和process.argv
-获取系统环境变量
-console.log(process.env)node自定义参数（process.argv）
-let num1 = parseInt(process.argv[2])let num2 = parseInt(process.argv[3])console.log(num1+num2)node hallo.js 6 3
-可以看到输出了9，说明参数被传递进去了
-系统模块（需要引用，不需要安装，nodejs已经封装好的预制的系统模块）
-获取目录
-const path = require(&amp;quot;path&amp;quot;)console.log(path.dirname(&amp;quot;/hallo/index/main.js&amp;quot;))获取文件名
-console.log(path.basename(&amp;quot;/hallo/index/main.js&amp;quot;))获取文件扩展名
-console.log(path.extname(&amp;quot;/hallo/index/main.js&amp;quot;))功能扩展
-console.log(path.resolve(&amp;quot;/hallo/index/main.js&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;index.js&amp;quot;))获取文件的绝对路径
-console.log(path.resolve(__dirname,&amp;quot;index.js&amp;quot;))文件读写模块（fs）
-读
-const fs = require(&amp;quot;fs&amp;quot;)fs.readFile(&amp;quot;data.txt&amp;quot;,(err,data)=&amp;gt;{if(err){console.log(err)}else{console.log(data.toString())}})写</description>
-    </item>
-    
-    <item>
       <title>数据结构学习笔记</title>
       <link>https://xiaochenabc123.github.io/posts/106/</link>
       <pubDate>Fri, 17 Sep 2021 01:00:00 +0000</pubDate>
@@ -550,24 +482,6 @@ npm init &amp;ndash;yes</description>
     </item>
     
     <item>
-      <title>React Hooks学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/90/</link>
-      <pubDate>Fri, 20 Aug 2021 23:00:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/90/</guid>
-      <description>React Hooks提供了新特性来给纯函数组件可以管理状态
-学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态
-而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷
-React Hooks的出现，是因为类组件会继承React.Component父类，而React.Component父类拥有大量的方法和属性，在开发一些小型组件时，完全没有必要用到这么多的方法和属性，就好吧杀鸡用屠龙刀一样，可以但是没有必要，而纯函数组件就不存在这些方法和属性，可谓是轻量级
-例如：
-class组件：
-class Hi extends React.Component{constructor(props) {super(props)this.state = { count:0 }}render(){console.log(this.state.count)return(&amp;lt;div&amp;gt;&amp;lt;p&amp;gt;数据：{this.state.count}&amp;lt;/p&amp;gt;&amp;lt;button onClick={this.addGo.bind(this)}&amp;gt;GO&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;)}addGo(){this.setState({count:this.state.count+1})}}那么函数组件+React Hooks怎么实现状态更新呢？
-而function组件想更新状态可以通过React Hooks来实现，例如：
-例如：
-import React, { useState } from &#39;react&#39;function Hi(){const [ count , setCount ] = useState(0)return (&amp;lt;div&amp;gt;&amp;lt;p&amp;gt; 数据：{count} &amp;lt;/p&amp;gt;&amp;lt;button onClick={()=&amp;gt;{setCount(count+1)}}&amp;gt;GO&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;)}没错就是这么简单，看起来函数组件+React Hooks更简洁，更容易理解</description>
-    </item>
-    
-    <item>
       <title>Markdown基础语法笔记</title>
       <link>https://xiaochenabc123.github.io/posts/88/</link>
       <pubDate>Wed, 18 Aug 2021 16:50:00 +0000</pubDate>
@@ -642,23 +556,6 @@ svn update
 svn update -r 2 demo
 提交
 svn commit -m &amp;ldquo;hello svn&amp;rdquo;</description>
-    </item>
-    
-    <item>
-      <title>Axios网络请求库学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/83/</link>
-      <pubDate>Wed, 11 Aug 2021 12:15:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/83/</guid>
-      <description>Axios是一个基于promise的http网络请求库，可以用于浏览器和nodejs，在nodejs中使用http模块，而在浏览器使用XMLHttpRequests
-支持promise api，支持拦截请求和响应，转换请求数据和响应数据，取消请求，自动转换json数据，支持防御XSRF攻击
-安装
-yarn add axios
-实例demo
-import axios from &amp;quot;axios&amp;quot;;axios.get(&amp;quot;https://httpbin.org/get&amp;quot;, {params: {name: &amp;quot;root&amp;quot;}}).then(function (response) {console.log(response);}).catch(function (error) {console.log(error);});axios.post(&amp;quot;https://httpbin.org/post&amp;quot;, {name: &amp;quot;root&amp;quot;,pass: &amp;quot;root&amp;quot;}).then(function (response) {console.log(response);}).catch(function (error) {console.log(error);});可以看到页面已经发送了get和post请求，.then和.catch分别表示请求成功和请求失败时调用的函数，也可以用箭头函数，其中response参数为请求的数据，error为错误信息
-还可以写成这样
-axios({method: &#39;post&#39;,url: &#39;https://httpbin.org/post&#39;,data: {name: &amp;quot;root&amp;quot;,pass: &amp;quot;root&amp;quot;}});FormData方式
-let data = {home: &amp;quot;hallo&amp;quot;,main: &amp;quot;abc&amp;quot;}let formData = new FormData()for(let key in data){formData.</description>
     </item>
     
     <item>
@@ -874,33 +771,6 @@ less嵌套
 用常数1取代运行时间中的所有加法常数
 在修改后的运行次数函数中，只保留最高阶项
 如果最高阶项存在且不是1，则去除于这个项相乘的常数</description>
-    </item>
-    
-    <item>
-      <title>JavaScript基础学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/46/</link>
-      <pubDate>Thu, 24 Jun 2021 07:57:00 +0000</pubDate>
-      
-      <guid>https://xiaochenabc123.github.io/posts/46/</guid>
-      <description>插入js
-在html页面使用js 引用js文件 注释
-// 单行注释
-/* 多行注释
-*/
-变量
-var home // 声明一个变量使用var
-home = &amp;ldquo;hallo&amp;rdquo; // 使用=来把字符串hallo赋值到home变量
-变量命名要求： 必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字
-建议每一行语句结束使用;来表示结束当前语句，主要是给人看
-var num = 123 // 整数
-num = &amp;ldquo;123&amp;rdquo; // 字符串
-num = 1.23 // 浮点数（小数）
-num = true // 布尔值（真，假或者对，错的意思，true是真，false为假）
-num = 1+1 // 可以进行运算，也可以连接两个字符串
-num = &amp;ldquo;hallo&amp;rdquo; + &amp;ldquo;javascript&amp;rdquo;
-var nums = 1
-nums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2
-nums&amp;ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0</description>
     </item>
     
     <item>

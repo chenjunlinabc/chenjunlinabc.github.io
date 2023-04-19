@@ -1,12 +1,14 @@
-<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Taro脚手架学习笔记 | 小陈的个人博客</title><meta name=keywords content="Taro"><meta name=description content="Taro是京东凹凸实验室推出的一个脚手架，设计目的是多端统一开发解决方案，一次开发，多端运行
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Taro框架学习笔记 | 小陈的个人博客</title><meta name=keywords content="Taro"><meta name=description content="Taro是京东凹凸实验室推出的一个框架，设计目的是多端统一开发解决方案，一次开发，多端运行
 Taro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持
 Taro官方文档：https://taro-docs.jd.com/taro/docs/README
+Taro官方组件库：https://taro-ui.jd.com/
 Taro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等
-安装Taro脚手架
+Taro 1.2支持将已有的微信小程序进行转换，只需要在项目根目录运行taro convert命令就可以在将现有的小程序项目转换到taroConvert目录下，转换成jsx代码，并且可以直接使用这个代码来进行taro build来编译成taro支持的平台应用
+安装Taro框架
 npm install -g @tarojs/cli
 或者
 yarn global add @tarojs/cli
-升级脚手架工具
+升级框架
 taro update self
 创建项目
 taro init hallo
@@ -15,19 +17,24 @@ yarn dev:h5
 创建微信小程序项目
 yarn dev:weapp
 创建完毕会在dist目录下生成小程序程序
-作为一个可以使用react开发的脚手架，React Hooks和jsx也是支持的
+支付宝小程序 yarn dev:alipay
+百度小程序 yarn dev:swan
+ReactNative yarn dev:rn
+编译完成的端源码在dist目录下
+作为一个可以使用react规范开发的框架，React Hooks和jsx也是支持的
 Taro组件化（Taro可以使用react开发，因此也具备react的组件化功能）
-import Taro, { useState } from '@tarojs/taro' import { View, Text } from '@tarojs/components' import './index.less' function Main(){ const [count ,setUserName] = useState(&#34;hallo word&#34;) return ( <View> <Text>{count}</Text> </View> ) } export default Main 子组件
-import { View, Text } from '@tarojs/components' function Data(){ return ( <View><Text>hallo word</Text></View> ) } export default Data 导入"><meta name=author content="Me"><link rel=canonical href=https://xiaochenabc123.github.io/posts/92/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://xiaochenabc123.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://xiaochenabc123.github.io/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://xiaochenabc123.github.io/favicon.ico><link rel=apple-touch-icon href=https://xiaochenabc123.github.io/favicon.ico><link rel=mask-icon href=https://xiaochenabc123.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="Taro脚手架学习笔记"><meta property="og:description" content="Taro是京东凹凸实验室推出的一个脚手架，设计目的是多端统一开发解决方案，一次开发，多端运行
+import Taro, { useState } from '@tarojs/taro'import { View, Text } from '@tarojs/components'import './index.less'function Main(){const [count ,setUserName] = useState(&#34;hallo word&#34;)return ( <View><Text>{count}</Text></View>)}export default Main子组件"><meta name=author content="Me"><link rel=canonical href=https://xiaochenabc123.github.io/posts/92/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://xiaochenabc123.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://xiaochenabc123.github.io/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://xiaochenabc123.github.io/favicon.ico><link rel=apple-touch-icon href=https://xiaochenabc123.github.io/favicon.ico><link rel=mask-icon href=https://xiaochenabc123.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="Taro框架学习笔记"><meta property="og:description" content="Taro是京东凹凸实验室推出的一个框架，设计目的是多端统一开发解决方案，一次开发，多端运行
 Taro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持
 Taro官方文档：https://taro-docs.jd.com/taro/docs/README
+Taro官方组件库：https://taro-ui.jd.com/
 Taro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等
-安装Taro脚手架
+Taro 1.2支持将已有的微信小程序进行转换，只需要在项目根目录运行taro convert命令就可以在将现有的小程序项目转换到taroConvert目录下，转换成jsx代码，并且可以直接使用这个代码来进行taro build来编译成taro支持的平台应用
+安装Taro框架
 npm install -g @tarojs/cli
 或者
 yarn global add @tarojs/cli
-升级脚手架工具
+升级框架
 taro update self
 创建项目
 taro init hallo
@@ -36,18 +43,23 @@ yarn dev:h5
 创建微信小程序项目
 yarn dev:weapp
 创建完毕会在dist目录下生成小程序程序
-作为一个可以使用react开发的脚手架，React Hooks和jsx也是支持的
+支付宝小程序 yarn dev:alipay
+百度小程序 yarn dev:swan
+ReactNative yarn dev:rn
+编译完成的端源码在dist目录下
+作为一个可以使用react规范开发的框架，React Hooks和jsx也是支持的
 Taro组件化（Taro可以使用react开发，因此也具备react的组件化功能）
-import Taro, { useState } from '@tarojs/taro' import { View, Text } from '@tarojs/components' import './index.less' function Main(){ const [count ,setUserName] = useState(&#34;hallo word&#34;) return ( <View> <Text>{count}</Text> </View> ) } export default Main 子组件
-import { View, Text } from '@tarojs/components' function Data(){ return ( <View><Text>hallo word</Text></View> ) } export default Data 导入"><meta property="og:type" content="article"><meta property="og:url" content="https://xiaochenabc123.github.io/posts/92/"><meta property="og:image" content="https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-08-31T12:15:00+00:00"><meta property="article:modified_time" content="2021-08-31T12:15:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Taro脚手架学习笔记"><meta name=twitter:description content="Taro是京东凹凸实验室推出的一个脚手架，设计目的是多端统一开发解决方案，一次开发，多端运行
+import Taro, { useState } from '@tarojs/taro'import { View, Text } from '@tarojs/components'import './index.less'function Main(){const [count ,setUserName] = useState(&#34;hallo word&#34;)return ( <View><Text>{count}</Text></View>)}export default Main子组件"><meta property="og:type" content="article"><meta property="og:url" content="https://xiaochenabc123.github.io/posts/92/"><meta property="og:image" content="https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-08-31T12:15:00+00:00"><meta property="article:modified_time" content="2021-08-31T12:15:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Taro框架学习笔记"><meta name=twitter:description content="Taro是京东凹凸实验室推出的一个框架，设计目的是多端统一开发解决方案，一次开发，多端运行
 Taro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持
 Taro官方文档：https://taro-docs.jd.com/taro/docs/README
+Taro官方组件库：https://taro-ui.jd.com/
 Taro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等
-安装Taro脚手架
+Taro 1.2支持将已有的微信小程序进行转换，只需要在项目根目录运行taro convert命令就可以在将现有的小程序项目转换到taroConvert目录下，转换成jsx代码，并且可以直接使用这个代码来进行taro build来编译成taro支持的平台应用
+安装Taro框架
 npm install -g @tarojs/cli
 或者
 yarn global add @tarojs/cli
-升级脚手架工具
+升级框架
 taro update self
 创建项目
 taro init hallo
@@ -56,10 +68,16 @@ yarn dev:h5
 创建微信小程序项目
 yarn dev:weapp
 创建完毕会在dist目录下生成小程序程序
-作为一个可以使用react开发的脚手架，React Hooks和jsx也是支持的
+支付宝小程序 yarn dev:alipay
+百度小程序 yarn dev:swan
+ReactNative yarn dev:rn
+编译完成的端源码在dist目录下
+作为一个可以使用react规范开发的框架，React Hooks和jsx也是支持的
 Taro组件化（Taro可以使用react开发，因此也具备react的组件化功能）
-import Taro, { useState } from '@tarojs/taro' import { View, Text } from '@tarojs/components' import './index.less' function Main(){ const [count ,setUserName] = useState(&#34;hallo word&#34;) return ( <View> <Text>{count}</Text> </View> ) } export default Main 子组件
-import { View, Text } from '@tarojs/components' function Data(){ return ( <View><Text>hallo word</Text></View> ) } export default Data 导入"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://xiaochenabc123.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Taro脚手架学习笔记","item":"https://xiaochenabc123.github.io/posts/92/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Taro脚手架学习笔记","name":"Taro脚手架学习笔记","description":"Taro是京东凹凸实验室推出的一个脚手架，设计目的是多端统一开发解决方案，一次开发，多端运行\nTaro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持\nTaro官方文档：https://taro-docs.jd.com/taro/docs/README\nTaro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等\n安装Taro脚手架\nnpm install -g @tarojs/cli\n或者\nyarn global add @tarojs/cli\n升级脚手架工具\ntaro update self\n创建项目\ntaro init hallo\n创建h5项目\nyarn dev:h5\n创建微信小程序项目\nyarn dev:weapp\n创建完毕会在dist目录下生成小程序程序\n作为一个可以使用react开发的脚手架，React Hooks和jsx也是支持的\nTaro组件化（Taro可以使用react开发，因此也具备react的组件化功能）\nimport Taro, { useState } from '@tarojs/taro' import { View, Text } from '@tarojs/components' import './index.less' function Main(){ const [count ,setUserName] = useState(\u0026quot;hallo word\u0026quot;) return ( \u0026lt;View\u0026gt; \u0026lt;Text\u0026gt;{count}\u0026lt;/Text\u0026gt; \u0026lt;/View\u0026gt; ) } export default Main 子组件\nimport { View, Text } from '@tarojs/components' function Data(){ return ( \u0026lt;View\u0026gt;\u0026lt;Text\u0026gt;hallo word\u0026lt;/Text\u0026gt;\u0026lt;/View\u0026gt; ) } export default Data 导入","keywords":["Taro"],"articleBody":"Taro是京东凹凸实验室推出的一个脚手架，设计目的是多端统一开发解决方案，一次开发，多端运行\nTaro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持\nTaro官方文档：https://taro-docs.jd.com/taro/docs/README\nTaro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等\n安装Taro脚手架\nnpm install -g @tarojs/cli\n或者\nyarn global add @tarojs/cli\n升级脚手架工具\ntaro update self\n创建项目\ntaro init hallo\n创建h5项目\nyarn dev:h5\n创建微信小程序项目\nyarn dev:weapp\n创建完毕会在dist目录下生成小程序程序\n作为一个可以使用react开发的脚手架，React Hooks和jsx也是支持的\nTaro组件化（Taro可以使用react开发，因此也具备react的组件化功能）\nimport Taro, { useState } from '@tarojs/taro' import { View, Text } from '@tarojs/components' import './index.less' function Main(){ const [count ,setUserName] = useState(\"hallo word\") return ( {count} ) } export default Main 子组件\nimport { View, Text } from '@tarojs/components' function Data(){ return ( hallo word ) } export default Data 导入\nimport Data from ‘./data.jsx’\n直接在父组件中使用就好\n父组件传递参数给子组件\n学过react都知道，父组件传递参数给子组件要通过props接收，因此子组件要加props参数\nfunction Data(props){ return ( {props.count} ) } export default Data Taro路由（通过app.jsx的pages，谁在第一个数组的值，那么该就是默认打开的首页）\npages: [ 'pages/main/main', 'pages/data/data' ], 注意，不需要导入页面，Taro可以自动化完成\nTaro 提供了6个路由api，分别是\nnavigateTo：记录上级页面，可以返回上级页面\nredirectTo：不记录上级页面\nswitchTab：Tab之间进行切换\nnavigateBack：返回上一级页面\ngetCurrentPages：获取当前页面信息（页面栈），注意h5不支持\nrelaunch：销毁所有页面（关闭）\n路由配合页面之间传递参数\n发送参数\n例如：\nimport Taro ,{useState} from '@tarojs/taro' import {View , Text ,Button} from '@tarojs/components' function Main(){ const [data,setData] = useState(\"hallo\") const UrlIndex=()=\u003e{ Taro.navigateTo({url:'/pages/index/index'+data}) } return ( hallo word GO ) } export default Main 只需要在Index.jsx下接收就可，例如：\nimport Taro, { useState ,useEffect } from '@tarojs/taro' ... const [data,setData] = useState('') useEffect(()=\u003e{ setData(this.$router.params.data) },[]) ... {data} 多参数传递也是可以\nconst [data,setData] = useState(\"hallo\") const [name,setName] = useState(\"root\") const [pass,setPass] = useState(\"123\") const UrlIndex=()=\u003e{ Taro.navigateTo({url:'/pages/index/index?data='+data+'\u0026name='+name+'\u0026pass='+pass}) } 接收多参数\nconst [data,setData] = useState('') const [name,setName] = useState('') const [pass,setPass] = useState('') useEffect(()=\u003e{ setData(this.$router.params.data) setName(this.$router.params.name) setPass(this.$router.params.pass) },[]) ... {data} {name} {pass} 导入静态资源\nimport Taro ,{useState ,useEffect}from '@tarojs/taro' import {View , Text ,Button, Image} from '@tarojs/components' import {imgdata,cssdata} from '../../data' // 导入方法（函数） import logo from '../../img/1.jpg' // 导入静态资源 useEffect(()=\u003e{ imgdata() cssdata() },[]) ... 或者\n请求远程端口\nconst testData= ()=\u003e{ Taro.request({ url:'https://xxx.xxx/xxx' }).then(mainData=\u003e{ console.log(mainData.data) }) } url是目标接口，then()是请求完毕获取到的数据\n","wordCount":"267","inLanguage":"en","datePublished":"2021-08-31T12:15:00Z","dateModified":"2021-08-31T12:15:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xiaochenabc123.github.io/posts/92/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://xiaochenabc123.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://xiaochenabc123.github.io/ accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://xiaochenabc123.github.io/favicon.ico alt aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://xiaochenabc123.github.io/ title=首页><span>首页</span></a></li><li><a href=https://xiaochenabc123.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://xiaochenabc123.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=https://xiaochenabc123.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=https://xiaochenabc123.github.io/links/ title=链接><span>链接</span></a></li><li><a href=https://xiaochenabc123.github.io/about/ title=关于><span>关于</span></a></li><li><a href=https://xiaochenabc123.github.io/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://xiaochenabc123.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://xiaochenabc123.github.io/posts/>Posts</a></div><h1 class=post-title>Taro脚手架学习笔记</h1><div class=post-meta><span title='2021-08-31 12:15:00 +0000 UTC'>2021-08-31</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://xiaochenabc123.github.io/posts/Taro%e8%84%9a%e6%89%8b%e6%9e%b6%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>Taro是京东凹凸实验室推出的一个脚手架，设计目的是多端统一开发解决方案，一次开发，多端运行</p><p>Taro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持</p><p>Taro官方文档：https://taro-docs.jd.com/taro/docs/README</p><p>Taro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等</p><p>安装Taro脚手架</p><p>npm install -g @tarojs/cli</p><p>或者</p><p>yarn global add @tarojs/cli</p><p>升级脚手架工具</p><p>taro update self</p><p>创建项目</p><p>taro init hallo</p><p>创建h5项目</p><p>yarn dev:h5</p><p>创建微信小程序项目</p><p>yarn dev:weapp</p><p>创建完毕会在dist目录下生成小程序程序</p><p>作为一个可以使用react开发的脚手架，React Hooks和jsx也是支持的</p><p>Taro组件化（Taro可以使用react开发，因此也具备react的组件化功能）</p><pre><code>import Taro, {  useState } from '@tarojs/taro'
+import Taro, { useState } from '@tarojs/taro'import { View, Text } from '@tarojs/components'import './index.less'function Main(){const [count ,setUserName] = useState(&#34;hallo word&#34;)return ( <View><Text>{count}</Text></View>)}export default Main子组件"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://xiaochenabc123.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Taro框架学习笔记","item":"https://xiaochenabc123.github.io/posts/92/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Taro框架学习笔记","name":"Taro框架学习笔记","description":"Taro是京东凹凸实验室推出的一个框架，设计目的是多端统一开发解决方案，一次开发，多端运行\nTaro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持\nTaro官方文档：https://taro-docs.jd.com/taro/docs/README\nTaro官方组件库：https://taro-ui.jd.com/\nTaro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等\nTaro 1.2支持将已有的微信小程序进行转换，只需要在项目根目录运行taro convert命令就可以在将现有的小程序项目转换到taroConvert目录下，转换成jsx代码，并且可以直接使用这个代码来进行taro build来编译成taro支持的平台应用\n安装Taro框架\nnpm install -g @tarojs/cli\n或者\nyarn global add @tarojs/cli\n升级框架\ntaro update self\n创建项目\ntaro init hallo\n创建h5项目\nyarn dev:h5\n创建微信小程序项目\nyarn dev:weapp\n创建完毕会在dist目录下生成小程序程序\n支付宝小程序 yarn dev:alipay\n百度小程序 yarn dev:swan\nReactNative yarn dev:rn\n编译完成的端源码在dist目录下\n作为一个可以使用react规范开发的框架，React Hooks和jsx也是支持的\nTaro组件化（Taro可以使用react开发，因此也具备react的组件化功能）\nimport Taro, { useState } from '@tarojs/taro'\rimport { View, Text } from '@tarojs/components'\rimport './index.less'\rfunction Main(){\rconst [count ,setUserName] = useState(\u0026quot;hallo word\u0026quot;)\rreturn ( \u0026lt;View\u0026gt;\r\u0026lt;Text\u0026gt;{count}\u0026lt;/Text\u0026gt;\r\u0026lt;/View\u0026gt;\r)\r}\rexport default Main\r子组件","keywords":["Taro"],"articleBody":"Taro是京东凹凸实验室推出的一个框架，设计目的是多端统一开发解决方案，一次开发，多端运行\nTaro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持\nTaro官方文档：https://taro-docs.jd.com/taro/docs/README\nTaro官方组件库：https://taro-ui.jd.com/\nTaro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等\nTaro 1.2支持将已有的微信小程序进行转换，只需要在项目根目录运行taro convert命令就可以在将现有的小程序项目转换到taroConvert目录下，转换成jsx代码，并且可以直接使用这个代码来进行taro build来编译成taro支持的平台应用\n安装Taro框架\nnpm install -g @tarojs/cli\n或者\nyarn global add @tarojs/cli\n升级框架\ntaro update self\n创建项目\ntaro init hallo\n创建h5项目\nyarn dev:h5\n创建微信小程序项目\nyarn dev:weapp\n创建完毕会在dist目录下生成小程序程序\n支付宝小程序 yarn dev:alipay\n百度小程序 yarn dev:swan\nReactNative yarn dev:rn\n编译完成的端源码在dist目录下\n作为一个可以使用react规范开发的框架，React Hooks和jsx也是支持的\nTaro组件化（Taro可以使用react开发，因此也具备react的组件化功能）\nimport Taro, { useState } from '@tarojs/taro'\rimport { View, Text } from '@tarojs/components'\rimport './index.less'\rfunction Main(){\rconst [count ,setUserName] = useState(\"hallo word\")\rreturn ( {count}\r)\r}\rexport default Main\r子组件\nimport { View, Text } from '@tarojs/components'\rfunction Data(){\rreturn ( hallo word\r)\r}\rexport default Data\r如果使用类组件的话，需要导入Component基础类，并且类组件需要继承该基础类，例如：\nimport Taro, { Component } from '@tarojs/taro'\rclass Data extends Component{\rconfig = {\rnavigationBarTitleText: 'hallo word'\r}\rrender(){\rreturn ( hallo word\r)\r}\r}\rexport default Data\r导入\nimport Data from ‘./data.jsx’\n直接在父组件中使用就好\n父组件传递参数给子组件\n学过react都知道，父组件传递参数给子组件要通过props接收，因此子组件要加props参数\nfunction Data(props){\rreturn ( {props.count}\r)\r}\rexport default Data\rTaro路由（通过app.jsx的pages，谁在第一个数组的值，那么该就是默认打开的首页）\ntaro路由是自带的，只需要在app.js入口文件配置config.pages（pages是数组），就可以使用taro的api来访问路由，例如：\npages: [\r'pages/main/main',\r'pages/data/data'\r],\r注意，不需要导入页面，Taro可以自动化完成\nTaro 提供了6个路由api，分别是\nnavigateTo：记录上级页面，可以返回上级页面\nredirectTo：不记录上级页面\nswitchTab：Tab之间进行切换\nnavigateBack：返回上一级页面\ngetCurrentPages：获取当前页面信息（页面栈），注意h5不支持\nrelaunch：销毁所有页面（关闭）\n注意：微信小程序存在五层页面限制，要合理使用navigateTo和redirectTo\n路由配合页面之间传递参数\n发送参数\n例如：\nimport Taro ,{useState} from '@tarojs/taro'\rimport {View , Text ,Button} from '@tarojs/components'\rfunction Main(){\rconst [data,setData] = useState(\"hallo\")\rconst UrlIndex=()=\u003e{\rTaro.navigateTo({url:'/pages/index/index'+data})\r}\rreturn (\rhallo word\rGO\r)\r}\rexport default Main\r只需要在Index.jsx下接收就可，例如：\nimport Taro, { useState ,useEffect } from '@tarojs/taro'\r...\rconst [data,setData] = useState('')\ruseEffect(()=\u003e{\rsetData(this.$router.params.data)\r},[])\r...\r{data}\r多参数传递也是可以\nconst [data,setData] = useState(\"hallo\")\rconst [name,setName] = useState(\"root\")\rconst [pass,setPass] = useState(\"123\")\rconst UrlIndex=()=\u003e{\rTaro.navigateTo({url:'/pages/index/index?data='+data+'\u0026name='+name+'\u0026pass='+pass})\r}\r接收多参数\nconst [data,setData] = useState('')\rconst [name,setName] = useState('')\rconst [pass,setPass] = useState('')\ruseEffect(()=\u003e{\rsetData(this.$router.params.data)\rsetName(this.$router.params.name)\rsetPass(this.$router.params.pass)\r},[])\r...\r{data}\r{name}\r{pass}\r导入静态资源\nimport Taro ,{useState ,useEffect}from '@tarojs/taro'\rimport {View , Text ,Button, Image} from '@tarojs/components'\rimport {imgdata,cssdata} from '../../data' // 导入方法（函数）\rimport logo from '../../img/1.jpg' // 导入静态资源\ruseEffect(()=\u003e{\rimgdata()\rcssdata()\r},[])\r...\r或者\n请求远程端口\nconst testData= ()=\u003e{\rTaro.request({\rurl:'https://xxx.xxx/xxx'\r}).then(mainData=\u003e{\rconsole.log(mainData.data)\r})\r}\rurl是目标接口，then()是请求完毕获取到的数据\n生命周期与state\nTaro支持react的生命周期，另外Taro还为小程序补充了一些react不存在的生命周期，方便Taro开发小程序时使用\n组件的生命周期\nclass Test extends Component{\rconstructor (props) {\r// constructor会在组件挂载（组件渲染到Taro虚拟DOM之前）之前被执行\rsuper(props)\rthis.state = {\rdata: 'admin'\r}\r}\rcomponentWillMount (){\rconsole.log('第一次渲染之前执行') // 组件被装载渲染之前执行\r}\rcomponentDidMount(){\rconsole.log('第一次渲染之后执行') // 组件被装载渲染之后执行\rthis.setState({ data: 'root' }) // 修改state状态，需要通过setState方法来修改，而不是直接修改\r}\rcomponentWillUnmount(){\rconsole.log('组件被销毁或者被卸载时执行')\r}\rcomponentWillUpdate(){\rconsole.log('state数据更新前执行') // 当组件接收到新的state或者props，该钩子会在渲染之前执行，其中也可以接收2个参数，nextProps, nextState\r}\rcomponentDidUpdate(){\rconsole.log('state数据更新后执行') // 当发送更新时执行。第一次渲染不会被触发\r}\rshouldComponentUpdate(nextProps, nextState){\r// 表示该组件不受state状态或者props影响，通过返回值来表示是否在每次state状态更新时重新渲染，默认返回true\r// 该钩子函数接收2个参数，分别是nextProps, nextState，分别表示最新的props和state\rconsole.log(nextProps, nextState)\rreturn false\r}\rcomponentWillReceiveProps(nextProps){\rconsole.log('Props参数发生改变之前执行') // 当已被装载渲染的组件接收到新的props属性之前执行，nextProps参数表示最新的props属性\r}\rgetSnapshotBeforeUpdate(){\rconsole.log('在最近一次渲染之前执行') // 可用来组件渲染之前捕获数据\r}\rrender(){\rreturn(\rhallo word {this.state.data}\r)\r}\r}\rTaro Props（父子组件通信）\n子组件\nexport default class DataTest extends Component{\rrender(){\rlet {data} = this.props\rreturn(\rhallo {data}\r)\r}\r}\r父组件\nimport DataTest from './datatest'\rexport default class Test extends Component{\rconstructor (props) {\rsuper(props)\rthis.state = {\rdata: 'admin'\r}\r}\rrender(){\rlet {data} = this.state.data\rreturn(\rhallo word\r)\r}\r}\rprops默认值\nDataTest.defaultProps = {\rdata: 'user'\r}\r注意：当props为undefined时，才将读取defaultProps的值作为props\n条件渲染\n三元表达式\n{\rtrue?hallo wrod","wordCount":"621","inLanguage":"en","datePublished":"2021-08-31T12:15:00Z","dateModified":"2021-08-31T12:15:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xiaochenabc123.github.io/posts/92/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://xiaochenabc123.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://xiaochenabc123.github.io/ accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://xiaochenabc123.github.io/favicon.ico alt aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://xiaochenabc123.github.io/ title=首页><span>首页</span></a></li><li><a href=https://xiaochenabc123.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://xiaochenabc123.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=https://xiaochenabc123.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=https://xiaochenabc123.github.io/links/ title=链接><span>链接</span></a></li><li><a href=https://xiaochenabc123.github.io/about/ title=关于><span>关于</span></a></li><li><a href=https://xiaochenabc123.github.io/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://xiaochenabc123.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://xiaochenabc123.github.io/posts/>Posts</a></div><h1 class=post-title>Taro框架学习笔记</h1><div class=post-meta><span title='2021-08-31 12:15:00 +0000 UTC'>2021-08-31</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://xiaochenabc123.github.io//posts/Taro%e6%a1%86%e6%9e%b6%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>Taro是京东凹凸实验室推出的一个框架，设计目的是多端统一开发解决方案，一次开发，多端运行</p><p>Taro可以使用React/Vue等前端框架开发的，当然typescript肯定是支持</p><p>Taro官方文档：https://taro-docs.jd.com/taro/docs/README</p><p>Taro官方组件库：https://taro-ui.jd.com/</p><p>Taro支持微信小程序，百度小程序，支付宝小程序，字节小程序，QQ轻应用，ReactNatvie等等</p><p>Taro 1.2支持将已有的微信小程序进行转换，只需要在项目根目录运行taro convert命令就可以在将现有的小程序项目转换到taroConvert目录下，转换成jsx代码，并且可以直接使用这个代码来进行taro build来编译成taro支持的平台应用</p><p>安装Taro框架</p><p>npm install -g @tarojs/cli</p><p>或者</p><p>yarn global add @tarojs/cli</p><p>升级框架</p><p>taro update self</p><p>创建项目</p><p>taro init hallo</p><p>创建h5项目</p><p>yarn dev:h5</p><p>创建微信小程序项目</p><p>yarn dev:weapp</p><p>创建完毕会在dist目录下生成小程序程序</p><p>支付宝小程序
+yarn dev:alipay</p><p>百度小程序
+yarn dev:swan</p><p>ReactNative
+yarn dev:rn</p><p>编译完成的端源码在dist目录下</p><p>作为一个可以使用react规范开发的框架，React Hooks和jsx也是支持的</p><p>Taro组件化（Taro可以使用react开发，因此也具备react的组件化功能）</p><pre><code>import Taro, {  useState } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.less'
 function Main(){
@@ -78,17 +96,29 @@ function Data(){
     )
 }
 export default Data
+</code></pre><p>如果使用类组件的话，需要导入Component基础类，并且类组件需要继承该基础类，例如：</p><pre><code>import Taro, { Component } from '@tarojs/taro'
+class Data extends Component{
+    config = {
+        navigationBarTitleText: 'hallo word'
+    }
+    render(){
+        return ( 
+            &lt;View&gt;&lt;Text&gt;hallo word&lt;/Text&gt;&lt;/View&gt;
+        )
+    }
+}
+export default Data
 </code></pre><p>导入</p><p>import Data from &lsquo;./data.jsx&rsquo;</p><p>直接在父组件中使用就好</p><p>父组件传递参数给子组件</p><p></p><p>学过react都知道，父组件传递参数给子组件要通过props接收，因此子组件要加props参数</p><pre><code>function Data(props){
     return ( 
         &lt;View&gt;&lt;Text&gt;{props.count}&lt;/Text&gt;&lt;/View&gt;
     )
 }
 export default Data
-</code></pre><p>Taro路由（通过app.jsx的pages，谁在第一个数组的值，那么该就是默认打开的首页）</p><pre><code>pages: [
+</code></pre><p>Taro路由（通过app.jsx的pages，谁在第一个数组的值，那么该就是默认打开的首页）</p><p>taro路由是自带的，只需要在app.js入口文件配置config.pages（pages是数组），就可以使用taro的api来访问路由，例如：</p><pre><code>pages: [
     'pages/main/main',
     'pages/data/data'
 ],
-</code></pre><p>注意，不需要导入页面，Taro可以自动化完成</p><p>Taro 提供了6个路由api，分别是</p><p>navigateTo：记录上级页面，可以返回上级页面</p><p>redirectTo：不记录上级页面</p><p>switchTab：Tab之间进行切换</p><p>navigateBack：返回上一级页面</p><p>getCurrentPages：获取当前页面信息（页面栈），注意h5不支持</p><p>relaunch：销毁所有页面（关闭）</p><p>路由配合页面之间传递参数</p><p>发送参数</p><p>例如：</p><pre><code>import Taro ,{useState} from '@tarojs/taro'
+</code></pre><p>注意，不需要导入页面，Taro可以自动化完成</p><p>Taro 提供了6个路由api，分别是</p><p>navigateTo：记录上级页面，可以返回上级页面</p><p>redirectTo：不记录上级页面</p><p>switchTab：Tab之间进行切换</p><p>navigateBack：返回上一级页面</p><p>getCurrentPages：获取当前页面信息（页面栈），注意h5不支持</p><p>relaunch：销毁所有页面（关闭）</p><p>注意：微信小程序存在五层页面限制，要合理使用navigateTo和redirectTo</p><p>路由配合页面之间传递参数</p><p>发送参数</p><p>例如：</p><pre><code>import Taro ,{useState} from '@tarojs/taro'
 import {View , Text ,Button} from '@tarojs/components'
 function Main(){
     const [data,setData] = useState(&quot;hallo&quot;)
@@ -147,8 +177,171 @@ useEffect(()=&gt;{
         console.log(mainData.data)
     })
 }
-</code></pre><p>url是目标接口，then()是请求完毕获取到的数据</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://xiaochenabc123.github.io/tags/taro/>Taro</a></li></ul><nav class=paginav><a class=prev href=https://xiaochenabc123.github.io/posts/92/><span class=title>« Prev</span><br><span>Taro框架学习笔记</span></a>
-<a class=next href=https://xiaochenabc123.github.io/posts/91/><span class=title>Next »</span><br><span>简单利用Electron框架开发桌面端应用</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://xiaochenabc123.github.io/>小陈的个人博客</a></span>
+</code></pre><p>url是目标接口，then()是请求完毕获取到的数据</p><hr><p>生命周期与state</p><p>Taro支持react的生命周期，另外Taro还为小程序补充了一些react不存在的生命周期，方便Taro开发小程序时使用</p><p>组件的生命周期</p><pre><code>class Test extends Component{
+    constructor (props) {
+        // constructor会在组件挂载（组件渲染到Taro虚拟DOM之前）之前被执行
+        super(props)
+        this.state = {
+            data: 'admin'
+        }
+    }
+
+    componentWillMount (){
+        console.log('第一次渲染之前执行') // 组件被装载渲染之前执行
+    }
+    componentDidMount(){
+        console.log('第一次渲染之后执行') // 组件被装载渲染之后执行
+        this.setState({ data: 'root' }) // 修改state状态，需要通过setState方法来修改，而不是直接修改
+    }
+    componentWillUnmount(){
+        console.log('组件被销毁或者被卸载时执行')
+    }
+    componentWillUpdate(){
+        console.log('state数据更新前执行') // 当组件接收到新的state或者props，该钩子会在渲染之前执行，其中也可以接收2个参数，nextProps, nextState
+    }
+    componentDidUpdate(){
+        console.log('state数据更新后执行') // 当发送更新时执行。第一次渲染不会被触发
+    }
+    shouldComponentUpdate(nextProps, nextState){
+        // 表示该组件不受state状态或者props影响，通过返回值来表示是否在每次state状态更新时重新渲染，默认返回true
+        // 该钩子函数接收2个参数，分别是nextProps, nextState，分别表示最新的props和state
+        console.log(nextProps, nextState)
+        return false
+    }
+    componentWillReceiveProps(nextProps){
+        console.log('Props参数发生改变之前执行') // 当已被装载渲染的组件接收到新的props属性之前执行，nextProps参数表示最新的props属性
+    }
+    getSnapshotBeforeUpdate(){
+        console.log('在最近一次渲染之前执行') // 可用来组件渲染之前捕获数据
+    }
+    render(){
+        return(
+           &lt;View&gt;
+              &lt;Text&gt;hallo word {this.state.data}&lt;/Text&gt;
+           &lt;/View&gt;
+        )
+    }
+}
+</code></pre><hr><p>Taro Props（父子组件通信）</p><p>子组件</p><pre><code>export default class DataTest extends Component{
+    render(){
+        let {data} = this.props
+        return(
+           &lt;View&gt;
+              hallo {data}
+           &lt;/View&gt;
+        )
+    }
+}
+</code></pre><p>父组件</p><pre><code>import DataTest from './datatest'
+export default class Test extends Component{
+    constructor (props) {
+        super(props)
+        this.state = {
+            data: 'admin'
+        }
+    }
+    render(){
+        let {data} = this.state.data
+        return(
+           &lt;View&gt;
+              &lt;Text&gt;hallo word&lt;/Text&gt;
+               &lt;DataTest data={data}/&gt;
+           &lt;/View&gt;
+        )
+    }
+}
+</code></pre><p>props默认值</p><pre><code> DataTest.defaultProps = {
+      data: 'user'
+ }
+</code></pre><p>注意：当props为undefined时，才将读取defaultProps的值作为props</p><hr><p>条件渲染</p><p>三元表达式</p><pre><code> {
+      true?&lt;div&gt;hallo wrod&lt;/div:&lt;div&gt;hhh&lt;/div&gt;
+ }
+</code></pre><p>短路表达式</p><pre><code> {
+      !true||&lt;div&gt;hallo wrod&lt;/div&gt;
+ }
+</code></pre><hr><p>列表渲染</p><pre><code> state = {
+      list: [
+           {id:1,name:'root'},
+           {id:2,name:'abc'},
+           {id:3,name:'test'}
+      ]
+ }
+ ...
+ let {list} = this.state
+ ...
+ {
+      list.map((item, index) =&gt;{
+           return(&lt;div key={index}&gt;{item.name}&lt;/div&gt;)
+      })
+ }
+</code></pre><hr><p>children传入组件</p><pre><code>export default class Test extends Component{
+    render(){
+        return(
+           &lt;View&gt;
+               {
+                   this.props.texts
+               }
+               {
+                   this.props.children
+               }
+           &lt;/View&gt;
+        )
+    }
+}
+</code></pre><p>调用的时候，直接在父组件使用就可以</p><pre><code>return(
+    &lt;View&gt;
+        &lt;Test texts={&lt;div&gt;hallo wrod&lt;/div&gt;}&gt;&lt;/Test&gt;
+        &lt;Test&gt;hallo 123&lt;/Test&gt;
+        &lt;Test&gt;hallo 666&lt;/Test&gt;
+    &lt;/View&gt;
+)
+</code></pre><p>注意：不要对this.props.children进行任何操作，taro在小程序实现这个功能是利用了插槽Slot功能，而且this.props.children不能使用defaultProps进行设置默认，也不能拆分成变量进行使用，但是允许通过props自定义属性的方式传入组件</p><hr><p>事件处理</p><pre><code>state = {
+    name: 'root'
+}
+test(){
+    console.log(this.state.name)
+}
+render(){
+    return(
+        &lt;View&gt;
+            &lt;Button onClick={this.test.bind(this)&gt;&lt;/Button&gt;
+        &lt;/View&gt;
+    )
+}
+</code></pre><p>taro事件函数有个默认参数，event，它指向该事件的具体，可通过event.stopPagenation()来阻止当前事件的事件冒泡</p><p>注意：taro的全部事件需要用on开头（而且组件传入参数是函数，这个函数也必须是on开头命名的），是为了小程序（因为小程序会认为是字符串），如果不做小程序可以忽略</p><hr><p>taro判断当前环境是h5还是小程序（只限制开发环境，生产环境是无效的）</p><pre><code>const ish5 = process.env.TARO_ENV == 'h5'
+if(ish5){
+    require('./h5.less')
+}else{
+    require('./noh5.less')
+}
+</code></pre><p>布局推荐使用flex布局</p><hr><p>在taro应用typescript</p><p>为非ts项目安装ts依赖</p><p>npm install typescript &ndash;save</p><p>还需要配置tsconfig.json</p><pre><code>{
+    &quot;compilerOptions&quot;: {
+        &quot;target&quot;: &quot;es2017&quot;,
+        &quot;module&quot;: &quot;commonjs&quot;,
+        &quot;removeComments&quot;: false,
+        &quot;preserveConstEnums&quot;: true,
+        &quot;moduleResolution&quot;: &quot;node&quot;,
+        &quot;experimentalDecorators&quot;: true,
+        &quot;jsxFactory&quot;: &quot;Taro.createElement&quot;,
+        &quot;noImplicitAny&quot;: false,
+        &quot;allowSyntheticDefaultImports&quot;: true,
+        &quot;outDir&quot;: &quot;lib&quot;,
+        &quot;noUnusedLocals&quot;: true,
+        &quot;noUnusedParameters&quot;: true,
+        &quot;strictNullChecks&quot;: true,
+        &quot;sourceMap&quot;: true,
+        &quot;baseUrl&quot;: &quot;.&quot;,
+        &quot;rootDir&quot;: &quot;.&quot;,
+        &quot;jsx&quot;: &quot;preserve&quot;,
+        &quot;typeRoots&quot;: [
+          &quot;node_modules/@types&quot;,
+          &quot;global.d.ts&quot;
+        ]
+    },
+    &quot;compileOnSave&quot;: false
+}
+</code></pre><p>如果是新建项目，可以在初始化时指定需要使用typescript</p><p>编译ts文件完成，也是放到dist目录下</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://xiaochenabc123.github.io/tags/taro/>Taro</a></li></ul><nav class=paginav><a class=prev href=https://xiaochenabc123.github.io/posts/94/><span class=title>« Prev</span><br><span>React进阶学习笔记</span></a>
+<a class=next href=https://xiaochenabc123.github.io/posts/92/><span class=title>Next »</span><br><span>Taro脚手架学习笔记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://xiaochenabc123.github.io/>小陈的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

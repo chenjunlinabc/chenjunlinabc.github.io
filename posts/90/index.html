@@ -1,154 +1,0 @@
-<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>React Hooks学习笔记 | 小陈的个人博客</title><meta name=keywords content="React"><meta name=description content="React Hooks提供了新特性来给纯函数组件可以管理状态
-学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态
-而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷
-React Hooks的出现，是因为类组件会继承React.Component父类，而React.Component父类拥有大量的方法和属性，在开发一些小型组件时，完全没有必要用到这么多的方法和属性，就好吧杀鸡用屠龙刀一样，可以但是没有必要，而纯函数组件就不存在这些方法和属性，可谓是轻量级
-例如：
-class组件：
-class Hi extends React.Component{constructor(props) {super(props)this.state = { count:0 }}render(){console.log(this.state.count)return(<div><p>数据：{this.state.count}</p><button onClick={this.addGo.bind(this)}>GO</button></div>)}addGo(){this.setState({count:this.state.count+1})}}那么函数组件+React Hooks怎么实现状态更新呢？
-而function组件想更新状态可以通过React Hooks来实现，例如：
-例如：
-import React, { useState } from 'react'function Hi(){const [ count , setCount ] = useState(0)return (<div><p> 数据：{count} </p><button onClick={()=>{setCount(count+1)}}>GO</button></div>)}没错就是这么简单，看起来函数组件+React Hooks更简洁，更容易理解"><meta name=author content="Me"><link rel=canonical href=https://xiaochenabc123.github.io/posts/90/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://xiaochenabc123.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://xiaochenabc123.github.io/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://xiaochenabc123.github.io/favicon.ico><link rel=apple-touch-icon href=https://xiaochenabc123.github.io/favicon.ico><link rel=mask-icon href=https://xiaochenabc123.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="React Hooks学习笔记"><meta property="og:description" content="React Hooks提供了新特性来给纯函数组件可以管理状态
-学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态
-而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷
-React Hooks的出现，是因为类组件会继承React.Component父类，而React.Component父类拥有大量的方法和属性，在开发一些小型组件时，完全没有必要用到这么多的方法和属性，就好吧杀鸡用屠龙刀一样，可以但是没有必要，而纯函数组件就不存在这些方法和属性，可谓是轻量级
-例如：
-class组件：
-class Hi extends React.Component{constructor(props) {super(props)this.state = { count:0 }}render(){console.log(this.state.count)return(<div><p>数据：{this.state.count}</p><button onClick={this.addGo.bind(this)}>GO</button></div>)}addGo(){this.setState({count:this.state.count+1})}}那么函数组件+React Hooks怎么实现状态更新呢？
-而function组件想更新状态可以通过React Hooks来实现，例如：
-例如：
-import React, { useState } from 'react'function Hi(){const [ count , setCount ] = useState(0)return (<div><p> 数据：{count} </p><button onClick={()=>{setCount(count+1)}}>GO</button></div>)}没错就是这么简单，看起来函数组件+React Hooks更简洁，更容易理解"><meta property="og:type" content="article"><meta property="og:url" content="https://xiaochenabc123.github.io/posts/90/"><meta property="og:image" content="https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-08-20T23:00:00+00:00"><meta property="article:modified_time" content="2021-08-20T23:00:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="React Hooks学习笔记"><meta name=twitter:description content="React Hooks提供了新特性来给纯函数组件可以管理状态
-学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态
-而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷
-React Hooks的出现，是因为类组件会继承React.Component父类，而React.Component父类拥有大量的方法和属性，在开发一些小型组件时，完全没有必要用到这么多的方法和属性，就好吧杀鸡用屠龙刀一样，可以但是没有必要，而纯函数组件就不存在这些方法和属性，可谓是轻量级
-例如：
-class组件：
-class Hi extends React.Component{constructor(props) {super(props)this.state = { count:0 }}render(){console.log(this.state.count)return(<div><p>数据：{this.state.count}</p><button onClick={this.addGo.bind(this)}>GO</button></div>)}addGo(){this.setState({count:this.state.count+1})}}那么函数组件+React Hooks怎么实现状态更新呢？
-而function组件想更新状态可以通过React Hooks来实现，例如：
-例如：
-import React, { useState } from 'react'function Hi(){const [ count , setCount ] = useState(0)return (<div><p> 数据：{count} </p><button onClick={()=>{setCount(count+1)}}>GO</button></div>)}没错就是这么简单，看起来函数组件+React Hooks更简洁，更容易理解"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://xiaochenabc123.github.io/posts/"},{"@type":"ListItem","position":2,"name":"React Hooks学习笔记","item":"https://xiaochenabc123.github.io/posts/90/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"React Hooks学习笔记","name":"React Hooks学习笔记","description":"React Hooks提供了新特性来给纯函数组件可以管理状态\n学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态\n而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷\nReact Hooks的出现，是因为类组件会继承React.Component父类，而React.Component父类拥有大量的方法和属性，在开发一些小型组件时，完全没有必要用到这么多的方法和属性，就好吧杀鸡用屠龙刀一样，可以但是没有必要，而纯函数组件就不存在这些方法和属性，可谓是轻量级\n例如：\nclass组件：\nclass Hi extends React.Component{\rconstructor(props) {\rsuper(props)\rthis.state = { count:0 }\r}\rrender(){\rconsole.log(this.state.count)\rreturn(\r\u0026lt;div\u0026gt;\r\u0026lt;p\u0026gt;数据：{this.state.count}\u0026lt;/p\u0026gt;\r\u0026lt;button onClick={this.addGo.bind(this)}\u0026gt;GO\u0026lt;/button\u0026gt;\r\u0026lt;/div\u0026gt;\r)\r}\raddGo(){\rthis.setState({count:this.state.count+1})\r}\r}\r那么函数组件+React Hooks怎么实现状态更新呢？\n而function组件想更新状态可以通过React Hooks来实现，例如：\n例如：\nimport React, { useState } from 'react'\rfunction Hi(){\rconst [ count , setCount ] = useState(0)\rreturn (\r\u0026lt;div\u0026gt;\r\u0026lt;p\u0026gt; 数据：{count} \u0026lt;/p\u0026gt;\r\u0026lt;button onClick={()=\u0026gt;{setCount(count+1)}}\u0026gt;GO\u0026lt;/button\u0026gt;\r\u0026lt;/div\u0026gt;\r)\r}\r没错就是这么简单，看起来函数组件+React Hooks更简洁，更容易理解","keywords":["React"],"articleBody":"React Hooks提供了新特性来给纯函数组件可以管理状态\n学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态\n而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷\nReact Hooks的出现，是因为类组件会继承React.Component父类，而React.Component父类拥有大量的方法和属性，在开发一些小型组件时，完全没有必要用到这么多的方法和属性，就好吧杀鸡用屠龙刀一样，可以但是没有必要，而纯函数组件就不存在这些方法和属性，可谓是轻量级\n例如：\nclass组件：\nclass Hi extends React.Component{\rconstructor(props) {\rsuper(props)\rthis.state = { count:0 }\r}\rrender(){\rconsole.log(this.state.count)\rreturn(\r数据：{this.state.count}\nGO\r)\r}\raddGo(){\rthis.setState({count:this.state.count+1})\r}\r}\r那么函数组件+React Hooks怎么实现状态更新呢？\n而function组件想更新状态可以通过React Hooks来实现，例如：\n例如：\nimport React, { useState } from 'react'\rfunction Hi(){\rconst [ count , setCount ] = useState(0)\rreturn (\r数据：{count} {setCount(count+1)}}\u003eGO\r)\r}\r没错就是这么简单，看起来函数组件+React Hooks更简洁，更容易理解\nuseState是一个hook函数，是react原生自带的\nuseState提供了声明状态，读取状态，修改状态的方法\nconst [ count , setCount ] = useState(0)\n意思就是声明状态变量为count，count状态的初始值设置为0\n{setCount(count+1)}}\u003eGO\n而这个就是改变状态，调用setCount()函数来实现，该函数接受的参数是已经修改过的新状态，react就会进行重新渲染组件\n但是有一个坏处就是，如果存在多个状态，又没有key表示，如何知道状态是对于哪个useState呢？\n实质上是通过useState出现顺序来确定，如果对应的顺序不对就会报错，因此React Hooks不能出现于条件判断或者定时器之类会影响顺序的语句中\n状态有，生命周期也有\n例如：\nimport React, { useState , useEffect } from 'react'\rfunction Hi(){\rconst [ count , setCount ] = useState(0)\ruseEffect(()=\u003e{\rconsole.log(\"data:\"+count)\r})\rreturn (\r数据：{count} {setCount(count+1)}}\u003eGO\r)\r}\rexport default Hi;\r可以看到在第一次渲染和更新渲染都会执行一次，而在这里useEffect()的参数是一个匿名指针函数，函数里面是打印输出一句话，从这句话可以看出在第一次渲染的时候和更新的时候都会触发\nuseEffect()相当于componentDidMonut和componentDidUpdate\n而且useEffect()中定义的函数是异步执行的，而componentDidMonut和componentDidUpdate是同步执行，各有优点缺点\n实现类似componentWillUnmount生命周期钩子（组件销毁之前执行）的功能\n注意：useEffect会出现副作用，当每次的状态发生变化时候，useEffect都会进行解除绑定\n通过useEffect第二个参数，该参数是一个数组，该数组可以存放大量于状态相对应的变量，也可以了解为监控状态，而当传入空数组[]的时候，那么就是当组件被销毁才进行解除绑定，也就是说实现了componentWillUnmount的功能\nfunction Data() {\ruseEffect(()=\u003e{\rconsole.log('hallo')\rreturn ()=\u003e{\rconsole.log('goodbye')\r}\r},[])\rreturn (data);\r}\r父子组件传值useContext\n使用类组件的时候，父子组件之间传值是通过props进行的，但是函数组件并没有constructor构造函数，也因此没有props\n通过createContext函数创建useContext\nimport React, { useState , createContext, useContext } from 'react'\rconst CountContext = createContext()\r...\rconst [ count , setCount ] = useState(0);\r...\r导入createContext函数，得到一个组件，并且通过该组件来传递或者使用状态\n接收状态\nconst count = useContext(CountContext) return ({count})\nRedux有3大核心概念：Action和Reducer和Store\n这个Redcuer是一个纯函数，这个函数可以接收两个参数，一个是状态，另一个是控制状态的判断参数，例如：\nfunction demoReducer(state, action) {\rswitch(action.type) {\rcase 'a':\rreturn state + 1\rcase 'b':\rreturn state - 1\rdefault: return state\r}\r}\ruseReducer是用于增强Redcuer来实现类似redux的功能，例如：\nimport React, { useReducer } from 'react'\rfunction demoReducer(){\rconst [ count , dispatch ] =useReducer((state,action)=\u003e{\rswitch(action){\rcase 'a':\rreturn state+1\rcase 'b':\rreturn state-1\rdefault:\rreturn state\r}\r},0)\rreturn (\r{count}\rdispatch('a')}\u003e加\rdispatch('b')}\u003e减\r)\r}\rexport default demoReducer\ruseMemo优化hooks性能\nuseMemo用于解决无用渲染，函数组件不具备shouldCompnentUpdate生命周期钩子，因此不能通过该组件来决定组件是否更新，每一次调用函数组件都会执行组件内部的全部逻辑\nimport React , {useState,useMemo} from 'react'\r...\rconst [name, setName] = useState('root')\rconst data = useMemo(()=\u003e{\rreturn {\rname\r}\r},[name])\ruseMemo第一个参数是()=\u003evalue，第二个参数是监听指定的值是否发生改变\n上面会根据name来判断一下，如果name值没有发生改变，那么就不会进行render，而是重复用之前的value，只要发生改变才会重新计算value\nuseRef可以获取jsx的dom元素，可以用于控制dom，也可以用来存储变量\n获取dom元素\nimport React, { useRef } from 'react'\rfunction Demo(){\rconst inputData = useRef(null)\rconst onDataClick=()=\u003e{ inputData.current.value=\"hallo，word\"\rconsole.log(inputData) }\rreturn (\r显示\r)\r}\rexport default Demo\ruseRef存储变量\nconst [text, setText] = useState('goodbye')\rconst textRef = useRef()\ruseEffect(()=\u003e{\rtextRef.current = text;\rconsole.log(textRef.current)\r})\r...\r{setText(e.target.value)}} /\u003e\r每次状态发生改变，都会在同时保存到useRef中\n自定义Hooks函数\n","wordCount":"336","inLanguage":"en","datePublished":"2021-08-20T23:00:00Z","dateModified":"2021-08-20T23:00:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xiaochenabc123.github.io/posts/90/"},"publisher":{"@type":"Organization","name":"小陈的个人博客","logo":{"@type":"ImageObject","url":"https://xiaochenabc123.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://xiaochenabc123.github.io/ accesskey=h title="小陈的个人博客 (Alt + H)"><img src=https://xiaochenabc123.github.io/favicon.ico alt aria-label=logo height=35>小陈的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://xiaochenabc123.github.io/ title=首页><span>首页</span></a></li><li><a href=https://xiaochenabc123.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://xiaochenabc123.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=https://xiaochenabc123.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=https://xiaochenabc123.github.io/links/ title=链接><span>链接</span></a></li><li><a href=https://xiaochenabc123.github.io/about/ title=关于><span>关于</span></a></li><li><a href=https://xiaochenabc123.github.io/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://xiaochenabc123.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://xiaochenabc123.github.io/posts/>Posts</a></div><h1 class=post-title>React Hooks学习笔记</h1><div class=post-meta><span title='2021-08-20 23:00:00 +0000 UTC'>2021-08-20</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://xiaochenabc123.github.io/posts/React-Hooks%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>React Hooks提供了新特性来给纯函数组件可以管理状态</p><p>学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态</p><p>而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷</p><p>React Hooks的出现，是因为类组件会继承React.Component父类，而React.Component父类拥有大量的方法和属性，在开发一些小型组件时，完全没有必要用到这么多的方法和属性，就好吧杀鸡用屠龙刀一样，可以但是没有必要，而纯函数组件就不存在这些方法和属性，可谓是轻量级</p><p>例如：</p><p>class组件：</p><pre><code>class Hi extends React.Component{
-    constructor(props) {
-        super(props)
-        this.state = { count:0 }
-    }
-    render(){
-        console.log(this.state.count)
-        return(
-            &lt;div&gt;
-                &lt;p&gt;数据：{this.state.count}&lt;/p&gt;
-                 &lt;button onClick={this.addGo.bind(this)}&gt;GO&lt;/button&gt;
-            &lt;/div&gt;
-        )
-    }
-    addGo(){
-        this.setState({count:this.state.count+1})
-    }
-}
-</code></pre><p>那么函数组件+React Hooks怎么实现状态更新呢？</p><p>而function组件想更新状态可以通过React Hooks来实现，例如：</p><p>例如：</p><pre><code>import React, { useState } from 'react'
-function Hi(){
-    const [ count , setCount ] = useState(0)
-    return (
-        &lt;div&gt;
-            &lt;p&gt; 数据：{count} &lt;/p&gt;
-            &lt;button onClick={()=&gt;{setCount(count+1)}}&gt;GO&lt;/button&gt;
-        &lt;/div&gt;
-    )
-}
-</code></pre><p>没错就是这么简单，看起来函数组件+React Hooks更简洁，更容易理解</p><p>useState是一个hook函数，是react原生自带的</p><p>useState提供了声明状态，读取状态，修改状态的方法</p><p>const [ count , setCount ] = useState(0)</p><p>意思就是声明状态变量为count，count状态的初始值设置为0</p><p>&lt;button onClick={()=>{setCount(count+1)}}>GO</p><p>而这个就是改变状态，调用setCount()函数来实现，该函数接受的参数是已经修改过的新状态，react就会进行重新渲染组件</p><p>但是有一个坏处就是，如果存在多个状态，又没有key表示，如何知道状态是对于哪个useState呢？</p><p>实质上是通过useState出现顺序来确定，如果对应的顺序不对就会报错，因此React Hooks不能出现于条件判断或者定时器之类会影响顺序的语句中</p><hr><p>状态有，生命周期也有</p><p>例如：</p><pre><code>import React, { useState , useEffect } from 'react'
-function Hi(){
-    const [ count , setCount ] = useState(0)
-    useEffect(()=&gt;{
-        console.log(&quot;data:&quot;+count)
-    })
-    return (
-        &lt;div&gt;
-            &lt;p&gt; 数据：{count} &lt;/p&gt;
-            &lt;button onClick={()=&gt;{setCount(count+1)}}&gt;GO&lt;/button&gt;
-        &lt;/div&gt;
-    )
-}
-export default Hi;
-</code></pre><p>可以看到在第一次渲染和更新渲染都会执行一次，而在这里useEffect()的参数是一个匿名指针函数，函数里面是打印输出一句话，从这句话可以看出在第一次渲染的时候和更新的时候都会触发</p><p>useEffect()相当于componentDidMonut和componentDidUpdate</p><p>而且useEffect()中定义的函数是异步执行的，而componentDidMonut和componentDidUpdate是同步执行，各有优点缺点</p><hr><p>实现类似componentWillUnmount生命周期钩子（组件销毁之前执行）的功能</p><p>注意：useEffect会出现副作用，当每次的状态发生变化时候，useEffect都会进行解除绑定</p><p>通过useEffect第二个参数，该参数是一个数组，该数组可以存放大量于状态相对应的变量，也可以了解为监控状态，而当传入空数组[]的时候，那么就是当组件被销毁才进行解除绑定，也就是说实现了componentWillUnmount的功能</p><pre><code>function Data() {
-    useEffect(()=&gt;{
-        console.log('hallo')
-        return ()=&gt;{
-            console.log('goodbye')
-        }
-    },[])
-    return (&lt;div&gt;data&lt;/dv&gt;);
-}
-</code></pre><p>父子组件传值useContext</p><p>使用类组件的时候，父子组件之间传值是通过props进行的，但是函数组件并没有constructor构造函数，也因此没有props</p><p>通过createContext函数创建useContext</p><pre><code>import React, { useState , createContext, useContext } from 'react'
-const CountContext = createContext()
-...
-const [ count , setCount ] = useState(0);
-...
-&lt;CountContext.Provider value={count}&gt;
-&lt;/CountContext.Provider&gt;
-</code></pre><p>导入createContext函数，得到一个组件，并且通过该组件来传递或者使用状态</p><p>接收状态</p><p>const count = useContext(CountContext)
-return ({count})</p><hr><p>Redux有3大核心概念：Action和Reducer和Store</p><p>这个Redcuer是一个纯函数，这个函数可以接收两个参数，一个是状态，另一个是控制状态的判断参数，例如：</p><pre><code>function demoReducer(state, action) {
-    switch(action.type) {
-        case 'a':
-            return state + 1
-        case 'b':
-            return state - 1
-        default: 
-            return state
-    }
-}
-</code></pre><p>useReducer是用于增强Redcuer来实现类似redux的功能，例如：</p><pre><code>import React, { useReducer } from 'react'
-function demoReducer(){
-    const [ count , dispatch ] =useReducer((state,action)=&gt;{
-        switch(action){
-            case 'a':
-                return state+1
-            case 'b':
-                return state-1
-            default:
-                return state
-        }
-    },0)
-    return (
-       &lt;div&gt;
-           &lt;h2&gt;{count}&lt;/h2&gt;
-           &lt;button onClick={()=&gt;dispatch('a')}&gt;加&lt;/button&gt;
-           &lt;button onClick={()=&gt;dispatch('b')}&gt;减&lt;/button&gt;
-       &lt;/div&gt;
-    )
-}
-export default demoReducer
-</code></pre><hr><p>useMemo优化hooks性能</p><p>useMemo用于解决无用渲染，函数组件不具备shouldCompnentUpdate生命周期钩子，因此不能通过该组件来决定组件是否更新，每一次调用函数组件都会执行组件内部的全部逻辑</p><pre><code>import React , {useState,useMemo} from 'react'
-...
-const [name, setName] = useState('root')
-const data = useMemo(()=&gt;{
-    return {
-        name
-    }
-},[name])
-</code></pre><p>useMemo第一个参数是()=>value，第二个参数是监听指定的值是否发生改变</p><p>上面会根据name来判断一下，如果name值没有发生改变，那么就不会进行render，而是重复用之前的value，只要发生改变才会重新计算value</p><p>useRef可以获取jsx的dom元素，可以用于控制dom，也可以用来存储变量</p><p>获取dom元素</p><pre><code>import React, { useRef } from 'react'
-function Demo(){
-    const inputData = useRef(null)
-    const onDataClick=()=&gt;{ 
-        inputData.current.value=&quot;hallo，word&quot;
-        console.log(inputData) 
-    }
-    return (
-        &lt;div&gt;
-            &lt;input ref={inputData} type=&quot;text&quot;/&gt;
-            &lt;button onClick = {onDataClick}&gt;显示&lt;/button&gt;
-        &lt;/div&gt;
-    )
-}
-export default Demo
-</code></pre><p>useRef存储变量</p><pre><code>    const [text, setText] = useState('goodbye')
-    const textRef = useRef()
-    useEffect(()=&gt;{
-        textRef.current = text;
-        console.log(textRef.current)
-    })
-    ...
-    &lt;input value={text} onChange={(e)=&gt;{setText(e.target.value)}} /&gt;
-</code></pre><p>每次状态发生改变，都会在同时保存到useRef中</p><hr><p>自定义Hooks函数</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://xiaochenabc123.github.io/tags/react/>React</a></li></ul><nav class=paginav><a class=prev href=https://xiaochenabc123.github.io/posts/91/><span class=title>« Prev</span><br><span>简单利用Electron框架开发桌面端应用</span></a>
-<a class=next href=https://xiaochenabc123.github.io/posts/88/><span class=title>Next »</span><br><span>Markdown基础语法笔记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://xiaochenabc123.github.io/>小陈的个人博客</a></span>
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
