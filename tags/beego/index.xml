@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>beego on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/beego/</link>
+    <link>https://chenjunlinabc.github.io/tags/beego/</link>
     <description>Recent content in beego on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 12 Feb 2022 16:50:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/beego/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Feb 2022 16:50:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/beego/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>beego应用框架的简单使用</title>
-      <link>https://xiaochenabc123.github.io/posts/134/</link>
+      <link>https://chenjunlinabc.github.io/posts/134/</link>
       <pubDate>Sat, 12 Feb 2022 16:50:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/134/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/134/</guid>
       <description>beego是一个基于go语言开发的http框架，beego可用于开发web，api，后端服务等等应用，beego架构为mvc模型，支持RESTful api规范设计，支持热更新
 安装
 go get github.com/beego/beego
@@ -42,14 +42,14 @@ bee generate
 controller控制器
 简单接收一下get请求的参数
 controllers/default.go，在func (c *MainController) Get() 函数中修改
-name := c.GetString(&amp;quot;name&amp;quot;)c.Data[&amp;quot;Website&amp;quot;] = name访问http://127.0.0.1:8080/?name=hallo，views\index.tpl的模板中的{{.Website}}被设置为hallo
+name := c.GetString(&amp;quot;name&amp;quot;) c.Data[&amp;quot;Website&amp;quot;] = name 访问http://127.0.0.1:8080/?name=hallo，views\index.tpl的模板中的{{.Website}}被设置为hallo
 在controllers/default.go看到，其定义了一个MainController结构体，该结构体继承了beego.Controller的全部方法（其中方法包括Get，Post等等方法）
 Model模型
 在bee new中并没有Model实例演示，但是bee api有，而且controller控制器可完成一些简单逻辑，只有当逻辑需要复用时才抽象成Model模型
 View视图
 在controllers/default.go看到c.TplName = &amp;ldquo;index.tpl&amp;rdquo;，这个语句就是设置模板文件，该模板支持tpl和html文件，beego使用了golang默认的模板引擎
 在views/index.tpl中可以看到这个
-&amp;lt;div class=&amp;quot;author&amp;quot;&amp;gt;Official website:&amp;lt;a href=&amp;quot;http://{{.Website}}&amp;quot;&amp;gt;{{.Website}}&amp;lt;/a&amp;gt; /Contact me:&amp;lt;a class=&amp;quot;email&amp;quot; href=&amp;quot;mailto:{{.</description>
+&amp;lt;div class=&amp;quot;author&amp;quot;&amp;gt; Official website: &amp;lt;a href=&amp;quot;http://{{.Website}}&amp;quot;&amp;gt;{{.Website}}&amp;lt;/a&amp;gt; / Contact me: &amp;lt;a class=&amp;quot;email&amp;quot; href=&amp;quot;mailto:{{.</description>
     </item>
     
   </channel>

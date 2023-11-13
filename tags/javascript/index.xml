@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>JavaScript on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/javascript/</link>
+    <link>https://chenjunlinabc.github.io/tags/javascript/</link>
     <description>Recent content in JavaScript on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 11 Nov 2022 07:00:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Nov 2022 07:00:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deno js运行时环境学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/161/</link>
+      <link>https://chenjunlinabc.github.io/posts/161/</link>
       <pubDate>Fri, 11 Nov 2022 07:00:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/161/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/161/</guid>
       <description>Deno是基于V8引擎，使用Rust构建的JavaScript &amp;amp; TypeScript 运行时环境，天生支持TypeScript，并且有安全模式（默认情况下无法获取网络，文件系统，环境变量等权限，当然也可以开放），Deno的作者是Nodejs之父Ryan Dahl，构建的原因是解决Nodejs的缺陷，例如模块的安全性（Node运行时的权限很高，缺乏模块的安全运行），Deno的模块化选择了ESMoule标准，而且具备浏览器的api，例如window全局变量，支持onload，onunload等事件函数，支持fetch，Web Workers等标准，异步操作返回采用Promise，支持await
 Deno不使用node_modules与package.json的包管理机制，而是采用下载编译的机制，并且存在缓存，模块更新通过更新缓存来完成
 Deno有个特殊的功能，就是可以从网络上导入模块
@@ -36,7 +36,7 @@ https://github.com/denoland/deno/releases
 检查是否安装完成
 deno &amp;ndash;version
 第一个例子
-import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot;DFetch.get(&amp;quot;https://xiaochenabc123.test.com&amp;quot;).then((response) =&amp;gt; {console.log(response)})运行
+import DFetch from &amp;quot;https://deno.land/x/dfetch/mod.ts&amp;quot; DFetch.get(&amp;quot;https://xiaochenabc123.test.com&amp;quot;).then((response) =&amp;gt; { console.log(response) }) 运行
 deno run .\index.ts
 它会向你询问进行网络请求，是否允许，可通过&amp;ndash;allow-net默认运行，例如：deno run &amp;ndash;allow-net .\index.ts
 第三方库通过https://deno.land/x查找
@@ -56,10 +56,10 @@ deno内置工具
     
     <item>
       <title>简单使用ESbuild打包工具</title>
-      <link>https://xiaochenabc123.github.io/posts/132/</link>
+      <link>https://chenjunlinabc.github.io/posts/132/</link>
       <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/132/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/132/</guid>
       <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包（viet在开发环境下使用这个），支持TypeScript和jsx（tsx），css
 ESbuild支持ES6模块，cjs模块，对ES6+语法支持性好，可以直接打包css文件，json文件，ts文件
 注意：esbuild并不对ts文件进行类型检查工作
@@ -77,32 +77,32 @@ npm run build
 或者
 yarn build
 例子（app.jsx）
-import React from &#39;react&#39;import ReactDOM from &#39;react-dom&#39;const App = () =&amp;gt; {return (&amp;lt;div&amp;gt;&amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;)}ReactDOM.render(&amp;lt;App /&amp;gt;,document.getElementById(&amp;quot;app&amp;quot;))index.html
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;我本地打包只花64ms就打包好了
+import React from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; const App = () =&amp;gt; { return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; ) } ReactDOM.render( &amp;lt;App /&amp;gt;, document.getElementById(&amp;quot;app&amp;quot;) ) index.html
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 我本地打包只花64ms就打包好了
 使用source map功能</description>
     </item>
     
     <item>
       <title>JavaScript知识扩展</title>
-      <link>https://xiaochenabc123.github.io/posts/61/</link>
+      <link>https://chenjunlinabc.github.io/posts/61/</link>
       <pubDate>Sun, 18 Jul 2021 22:35:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/61/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/61/</guid>
       <description>函数被调用时，浏览器会传递两个参数，this和arguments
 this就是函数的上下文对象，而arguments是一个数组对象（也就是可以通过索引来操作数据），函数调用时传递的参数会在arguments中保存
 callee属性对应着当前的函数
 例如：
-function abc(){console.log(arguments.length);console.log(arguments[0]);console.log(arguments.callee);console.log(this)}abc(&#39;hallo&#39;);BOM对象 (Browser Object Model) 是指浏览器对象模型
+function abc(){ console.log(arguments.length); console.log(arguments[0]); console.log(arguments.callee); console.log(this) } abc(&#39;hallo&#39;); BOM对象 (Browser Object Model) 是指浏览器对象模型
 该对象提供了浏览器行为和浏览器属性方法
 windows表示整个浏览器的窗口，同时也是JavaScript最顶层的对象，其他bom对象都是其的属性
 navigator包含了当前浏览器的全部信息
-console.log(window.navigator)可以看到输出了很多属性，如userAgent，language等等
+console.log(window.navigator) 可以看到输出了很多属性，如userAgent，language等等
 location表示当前浏览器地址信息，可以用来跳转到指定地址，获取当前页面的地址等等，例如：
-console.log(window.location)const urlData = &amp;quot;https://xiaochenabc123.test.com/;window.location.href = urlData;这个也可以实现跳转
-window.location.assign(&amp;quot;https://xiaochenabc123.test.com&amp;quot;)这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
-window.location.replace(&amp;quot;https://xiaochenabc123.test.com&amp;quot;)reload方法可以重载页面，加上true参数将强制更新
-window.location.reload(true)history表示浏览器的历史记录
-console.log(window.history)length表示本次访问网站的数量
+console.log(window.location) const urlData = &amp;quot;https://xiaochenabc123.test.com/; window.location.href = urlData; 这个也可以实现跳转
+window.location.assign(&amp;quot;https://xiaochenabc123.test.com&amp;quot;) 这个也可以实现跳转，不过这个不会生成历史记录，是直接用这个页面来替换当前页面
+window.location.replace(&amp;quot;https://xiaochenabc123.test.com&amp;quot;) reload方法可以重载页面，加上true参数将强制更新
+window.location.reload(true) history表示浏览器的历史记录
+console.log(window.history) length表示本次访问网站的数量
 同时也提供了几个方法
 back()返回上个页面
 window.history.back()
@@ -112,7 +112,7 @@ window.history.forward()
 go()，前进或者后退指定次数，正数为前进，负数为后退
 window.history.go(-1)
 screen代表用户的屏幕的信息, 获取显示器的相关信息
-console.log(window.screen)call 和 apply
+console.log(window.screen) call 和 apply
 addEventListen()绑定事件函数
 removeEventListen()移除事件函数
 鼠标按下时onmousedown
@@ -128,15 +128,15 @@ document.execCommand(&amp;lsquo;paste&amp;rsquo;) // 粘贴</description>
     
     <item>
       <title>Ajax学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/54/</link>
+      <link>https://chenjunlinabc.github.io/posts/54/</link>
       <pubDate>Sat, 03 Jul 2021 15:30:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/54/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/54/</guid>
       <description>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
 关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.test.com/archives/14.html
 ajax需要网站环境下生效，需要web服务器，nodemon
 app.js
-// 导入expressconst express = require(&amp;quot;express&amp;quot;);// 导入pathconst patg = require(&amp;quot;path&amp;quot;);// 创建web服务器const app = express();// 静态资源访问服务app.use(express.static(path.join(__dirname,&amp;quot;public&amp;quot;)));app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{res.send(&amp;quot;hallo&amp;quot;);});// 监听端口app.listen(3000);console.log(&amp;quot;服务器启动成功&amp;quot;)nodemon app.js
+// 导入express const express = require(&amp;quot;express&amp;quot;); // 导入path const patg = require(&amp;quot;path&amp;quot;); // 创建web服务器 const app = express(); // 静态资源访问服务 app.use(express.static(path.join(__dirname,&amp;quot;public&amp;quot;))); app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{ res.send(&amp;quot;hallo&amp;quot;); }); // 监听端口 app.listen(3000); console.log(&amp;quot;服务器启动成功&amp;quot;) nodemon app.js
 ajax运行原理
 ajax代理浏览器发送请求和接收响应，达到局部更新页面数据的效果
 创建ajax对象
@@ -146,18 +146,18 @@ hallo.open(&amp;ldquo;GET&amp;rdquo;,&amp;ldquo;https://httpbin.org/get&amp;quot
 发送请求
 hallo.send();
 获取服务端给予客户端的响应数据，因为请求和获取数据的速度取决于网络速度，应该设置onload事件，当加载完毕了再获取数据
-hallo.onload = function(){console.log(hallo.responseText)}服务端大部分情况下用json对象作为响应数据的格式，通过拼接json数据和html，将拼接的结果显示在页面中
+hallo.onload = function(){ console.log(hallo.responseText) } 服务端大部分情况下用json对象作为响应数据的格式，通过拼接json数据和html，将拼接的结果显示在页面中
 在http请求与响应的过程中，请求参数或者响应内容，如果是对象类型，最后都会转换为对象字符串进行传输，例如：
-app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{res.send({&amp;quot;name&amp;quot; : &amp;quot;root&amp;quot;});});json字符串转换为json对象
-var responseText = JSON.parse(hallo.responseText);console.</description>
+app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{ res.send({&amp;quot;name&amp;quot; : &amp;quot;root&amp;quot;}); }); json字符串转换为json对象
+var responseText = JSON.parse(hallo.responseText); console.</description>
     </item>
     
     <item>
       <title>JavaScript-IntersectionObserver构造函数笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/16/</link>
+      <link>https://chenjunlinabc.github.io/posts/16/</link>
       <pubDate>Wed, 16 Jun 2021 09:29:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/16/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/16/</guid>
       <description>IntersectionObserver是浏览器本身提供的构造函数，因此可能有一些老版本浏览器没有效果
 该构造函数提供了一种异步的监测目标对象和祖先对象或者视口相交的方法
 var observe = new IntersectionObserver(callback, options)
@@ -180,19 +180,19 @@ target：返回观测的目标对象，是dom对象
 time：返回一个记录了从观测开始到交叉被触发时间的的时间戳，单位为毫秒
 如果是搞懒加载，那么intersectionRatio和isIntersecting是关键点
 例如：
-const lazyload = new IntersectionObserver((target)=&amp;gt;{// 实例化target.forEach((item) =&amp;gt;{if (item.intersectionRatio){// 当目标可视item.target.src = item.target.alt; // 进行属性值覆盖lazyload.unobserve(item.target) // 停止观测}})},{rootMargin: &amp;quot;100px&amp;quot; // 提前100px}); const imgs = document.querySelectorAll(&amp;quot;img[alt]&amp;quot;); // 选择带有alt属性的img元素imgs.forEach((item) =&amp;gt; {lazyload.observe(item)// 开始观测}); </description>
+const lazyload = new IntersectionObserver((target)=&amp;gt;{ // 实例化 target.forEach((item) =&amp;gt;{ if (item.intersectionRatio){ // 当目标可视 item.target.src = item.target.alt; // 进行属性值覆盖 lazyload.unobserve(item.target) // 停止观测 } }) },{ rootMargin: &amp;quot;100px&amp;quot; // 提前100px }); const imgs = document.querySelectorAll(&amp;quot;img[alt]&amp;quot;); // 选择带有alt属性的img元素 imgs.forEach((item) =&amp;gt; { lazyload.observe(item) // 开始观测 }); </description>
     </item>
     
     <item>
       <title>JavaScript-XMLHttpRequest对象笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/14/</link>
+      <link>https://chenjunlinabc.github.io/posts/14/</link>
       <pubDate>Wed, 16 Jun 2021 09:25:49 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/14/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/14/</guid>
       <description>ajax请求是异步的，因此可以通过回调函数来处理响应
 实现ajax请求大多是使用XMLHttpRequest对象，该对象用于与服务器交互，可以在不刷新页面的情况下请求url，获取数据，从而达到更新页面内容的目的
 初始化XMLHttpRequest()构造函数，可以获得一个XMLHttpReques实例，例如：
-var xmlhttp = new XMLHttpRequest()xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState == 4 &amp;amp;&amp;amp; xmlhttp.status == 200){document.getElementById(&amp;quot;app&amp;quot;).innerHTML = xmlhttp.responseText}}console.log(xmlhttp.readyState) // 0xmlhttp.open(&amp;quot;GET&amp;quot;,&amp;quot;https://httpbin.org/get&amp;quot;,true)console.log(xmlhttp.readyState) // 1xmlhttp.onprogress =function(){console.log(xmlhttp.readyState) // 3}xmlhttp.onload = function(){console.log(xmlhttp.readyState) // 4}xmlhttp.send();XMLHttpReques实例的属性
+var xmlhttp = new XMLHttpRequest() xmlhttp.onreadystatechange = function(){ if(xmlhttp.readyState == 4 &amp;amp;&amp;amp; xmlhttp.status == 200){ document.getElementById(&amp;quot;app&amp;quot;).innerHTML = xmlhttp.responseText } } console.log(xmlhttp.readyState) // 0 xmlhttp.open(&amp;quot;GET&amp;quot;,&amp;quot;https://httpbin.org/get&amp;quot;,true) console.log(xmlhttp.readyState) // 1 xmlhttp.onprogress =function(){ console.log(xmlhttp.readyState) // 3 } xmlhttp.onload = function(){ console.log(xmlhttp.readyState) // 4 } xmlhttp.send(); XMLHttpReques实例的属性
 XMLHttpRequest.readyState：该属性会返回一个XMLHttpRequest的状态，状态有5种，例如：
 状态0：已被实例化，但是未调用open()方法 状态1：open()方法已被调用（连接） 状态2：send()方法已被调用（请求） 状态3：请求处理中 状态4：请求完毕，且响应已就绪
 XMLHttpReques.onreadystatechange：该属性对应了一个回调函数，当XMLHttpRequest.readyState属性发生改变时，该回调函数就会被调用，例子如上面所示
@@ -215,12 +215,12 @@ onloadstart：开始获取数据 onprogress：数据正在传输中 onabort：�
     
     <item>
       <title>jQuery-ajax()方法笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/13/</link>
+      <link>https://chenjunlinabc.github.io/posts/13/</link>
       <pubDate>Wed, 16 Jun 2021 09:24:37 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/13/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/13/</guid>
       <description>ajax()是jQuery中定义的一个方法，该方法用于执行ajax请求，例如：
-$(document).ready(function(){$(&amp;quot;button&amp;quot;).click(function(){$.ajax({type: &amp;quot;GET&amp;quot;,url: &amp;quot;https://httpbin.org/get&amp;quot;,success: function(getdata){console.log(getdata)}})})});参数
+$(document).ready(function(){ $(&amp;quot;button&amp;quot;).click(function(){ $.ajax({ type: &amp;quot;GET&amp;quot;, url: &amp;quot;https://httpbin.org/get&amp;quot;, success: function(getdata){ console.log(getdata) } }) }) }); 参数
 url：指定发送请求的URL，默认是当前页面
 type：指定请求方式（GET或者POST）
 success：当请求成功时执行的函数
@@ -249,10 +249,10 @@ xhr：用于重写或者增强XMLHttpRequest对象的函数</description>
     
     <item>
       <title>原生js实现瀑布流布局</title>
-      <link>https://xiaochenabc123.github.io/posts/10/</link>
+      <link>https://chenjunlinabc.github.io/posts/10/</link>
       <pubDate>Wed, 16 Jun 2021 09:14:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/10/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/10/</guid>
       <description>瀑布流的特点就是容器等宽不等高，计算其高度，选择最矮的一个容器的下面将插入第二行的第一个容器，以此类推，因此容器需要设置为绝对定位
 首先需要确定一行有多少列，列数 = 页面的宽度 / 容器的宽度
 获取页面的宽度：window.innerWidth或者document.documentElement.clientWidth或者document.body.clientWidth
@@ -266,29 +266,29 @@ xhr：用于重写或者增强XMLHttpRequest对象的函数</description>
 因为已经设置了下一行的容器，因此还需要重新获取一下当前容器的高度，当前容器高度 = 当前容器高度+间隙 +拼接过来的容器的高度
 为了体验更好，可以将上面操作封装到一个函数中，当网页加载完毕加执行（window.onload），当页面宽度高度发送变化时也执行(window.onresize)
 例如：
-var data = document.getElementsByClassName(&#39;imgs&#39;);function datamain(){var datawidtha = window.innerWidth;var datawidthb = Math.floor(data[0].offsetWidth);var dataab = Math.floor(datawidtha/datawidthb);var ints = Math.floor((datawidtha - dataab*datawidthb)/(dataab+1))var arr = [];for(var i=0;i&amp;lt;data.length;i++){if(i&amp;lt;dataab){data[i].style.top = 0;data[i].style.left = (datawidthb+ints) * i + &amp;quot;px&amp;quot;;arr.push(data[i].offsetHeight);}else{var datamin = arr[0];var index = 0;for(var a = 0; a&amp;lt;arr.</description>
+var data = document.getElementsByClassName(&#39;imgs&#39;); function datamain(){ var datawidtha = window.innerWidth; var datawidthb = Math.floor(data[0].offsetWidth); var dataab = Math.floor(datawidtha/datawidthb); var ints = Math.floor((datawidtha - dataab*datawidthb)/(dataab+1)) var arr = []; for(var i=0;i&amp;lt;data.length;i++){ if(i&amp;lt;dataab){ data[i].style.top = 0; data[i].style.left = (datawidthb+ints) * i + &amp;quot;px&amp;quot;; arr.push(data[i].offsetHeight); }else{ var datamin = arr[0]; var index = 0; for(var a = 0; a&amp;lt;arr.</description>
     </item>
     
     <item>
       <title>IndexedDB浏览器数据库学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/5/</link>
+      <link>https://chenjunlinabc.github.io/posts/5/</link>
       <pubDate>Tue, 15 Jun 2021 19:00:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/5/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/5/</guid>
       <description>IndexedDB是浏览器提供的本地数据库，允许存储数据，采用键值对存储，允许异步请求，允许索引请求，IndexedDB理论上存储空间没有限制
 打开（新建）indexedDB：
 indexedDB.open()，该方法有俩个值，第一个是数据库名（没有该数据库那么就新建），第二个值为数据库的版本，一般来说默认为1（必须是大于0的自然数），例如：
-var datadb = window.indexedDB.open(&amp;quot;data&amp;quot;,1);datadb.onerror = function(){console.log(&amp;quot;数据库打开失败&amp;quot;)}datadb.onsuccess = function(){console.log(&amp;quot;数据库打开成功&amp;quot;);}datadb.onupgradeneeded = function(event){ console.log(&amp;quot;数据库版本升级&amp;quot;);}onerror事件表示打开数据库失败
+var datadb = window.indexedDB.open(&amp;quot;data&amp;quot;,1); datadb.onerror = function(){ console.log(&amp;quot;数据库打开失败&amp;quot;) } datadb.onsuccess = function(){ console.log(&amp;quot;数据库打开成功&amp;quot;); } datadb.onupgradeneeded = function(event){ console.log(&amp;quot;数据库版本升级&amp;quot;); } onerror事件表示打开数据库失败
 onsuccess事件表示打开数据库成功
 onupgradeneeded事件表示数据库升级（当数据库版本低于指定的数据库版本）（另外，新建数据库，操作新的数据库也可以在该事件中处理）
 新建数据对象（数据表）
-datadb.onupgradeneeded = function(event) {console.log(&amp;quot;数据库升级&amp;quot;);var objdb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{keyPath: &amp;quot;id&amp;quot;});}表名为abc，主键为id，主键默认为索引
+datadb.onupgradeneeded = function(event) { console.log(&amp;quot;数据库升级&amp;quot;); var objdb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{keyPath: &amp;quot;id&amp;quot;}); } 表名为abc，主键为id，主键默认为索引
 判断是否存在该表
-if(!event.target.result.objectStoreNames.contains(&#39;abc&#39;)){var objdb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{keyPath: &amp;quot;id&amp;quot;});}递增属性(可以用于作为主键)
-var maindb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{autoIncrement: true});唯一属性
-objdb.createIndex(&amp;quot;id&amp;quot;,&amp;quot;id&amp;quot;,{unique: false})createIndex()，三个参数分别是索引名称，索引的属性，配置对象，用来新建索引
+if(!event.target.result.objectStoreNames.contains(&#39;abc&#39;)){ var objdb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{keyPath: &amp;quot;id&amp;quot;}); } 递增属性(可以用于作为主键)
+var maindb = event.target.result.createObjectStore(&amp;quot;abc&amp;quot;,{autoIncrement: true}); 唯一属性
+objdb.createIndex(&amp;quot;id&amp;quot;,&amp;quot;id&amp;quot;,{unique: false}) createIndex()，三个参数分别是索引名称，索引的属性，配置对象，用来新建索引
 添加数据
-var datadb = window.indexedDB.open(&amp;quot;data&amp;quot;,1);var db;var objdb;datadb.onupgradeneeded = function(event) {console.log(&amp;quot;数据库升级&amp;quot;);db = event.</description>
+var datadb = window.indexedDB.open(&amp;quot;data&amp;quot;,1); var db; var objdb; datadb.onupgradeneeded = function(event) { console.log(&amp;quot;数据库升级&amp;quot;); db = event.</description>
     </item>
     
   </channel>

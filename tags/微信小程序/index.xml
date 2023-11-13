@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>微信小程序 on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+    <link>https://chenjunlinabc.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
     <description>Recent content in 微信小程序 on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 27 Jun 2021 12:34:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Jun 2021 12:34:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>微信小程序学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/48/</link>
+      <link>https://chenjunlinabc.github.io/posts/48/</link>
       <pubDate>Sun, 27 Jun 2021 12:34:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/48/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/48/</guid>
       <description>小程序实质上就是一个基于web基础的应用程序（网页）（但是不支持浏览器的api，小程序的api全部由微信提供，高度依赖微信，因此只能在微信中运行）
 微信之父张小龙是这样描述小程序的：
 小程序是一种不需要下载安装就可以使用的应用，它实现了应用触手可及的梦想。
@@ -48,8 +48,8 @@ index.js页面逻辑
 app.json定义了页面和基本配置，采用json格式，必须包含pages属性，说明小程序有哪些页面
 app.json文件结构
 pages是用来定义页面的，是一个数组，每一个项都是代表一个页面，例如：
-&amp;quot;pages&amp;quot;:[&amp;quot;pages/index/index&amp;quot;,&amp;quot;pages/demo/demo&amp;quot;],window属性是设置小程序的窗口样式，例如：
-&amp;quot;window&amp;quot;:{&amp;quot;backgroundTextStyle&amp;quot;:&amp;quot;light&amp;quot;,&amp;quot;navigationBarBackgroundColor&amp;quot;: &amp;quot;#fff&amp;quot;, // 导航栏背景颜色&amp;quot;navigationBarTitleText&amp;quot;: &amp;quot;Weixin&amp;quot;, // 导航栏文本&amp;quot;navigationBarTextStyle&amp;quot;:&amp;quot;black&amp;quot; // 导航栏文本颜色},从上面可以看出是一个三层结构，页面是放在pages目录下的，而demo和index都是代表这个页面叫什么
+&amp;quot;pages&amp;quot;:[ &amp;quot;pages/index/index&amp;quot;, &amp;quot;pages/demo/demo&amp;quot; ], window属性是设置小程序的窗口样式，例如：
+&amp;quot;window&amp;quot;:{ &amp;quot;backgroundTextStyle&amp;quot;:&amp;quot;light&amp;quot;, &amp;quot;navigationBarBackgroundColor&amp;quot;: &amp;quot;#fff&amp;quot;, // 导航栏背景颜色 &amp;quot;navigationBarTitleText&amp;quot;: &amp;quot;Weixin&amp;quot;, // 导航栏文本 &amp;quot;navigationBarTextStyle&amp;quot;:&amp;quot;black&amp;quot; // 导航栏文本颜色 }, 从上面可以看出是一个三层结构，页面是放在pages目录下的，而demo和index都是代表这个页面叫什么
 demo.js，Page()是小程序提供的一个函数，用来初始化页面，参数是一个对象，用来配置当前页面的属性
 demo.wxml，该文件是用来描述页面的，和html类似
 pages文件夹：存放小程序页面，每个页面代表为一个文件夹，文件夹名称为页面名称，在这个页面文件夹下的全部文件都是描述这个页面的

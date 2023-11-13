@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Lerna on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/lerna/</link>
+    <link>https://chenjunlinabc.github.io/tags/lerna/</link>
     <description>Recent content in Lerna on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 26 Sep 2021 12:50:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/lerna/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 12:50:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/lerna/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Lerna多包管理工具</title>
-      <link>https://xiaochenabc123.github.io/posts/112/</link>
+      <link>https://chenjunlinabc.github.io/posts/112/</link>
       <pubDate>Sun, 26 Sep 2021 12:50:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/112/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/112/</guid>
       <description>Lerna是一个基于git和npm来管理多个包工作流的工具（monorepo），解决多个包之间的依赖问题，像React，Vue，Babel都在使用lerna管理多包
 安装Lerna
 npm install &amp;ndash;global lerna

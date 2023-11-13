@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>html on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/html/</link>
+    <link>https://chenjunlinabc.github.io/tags/html/</link>
     <description>Recent content in html on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jun 2021 09:38:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 09:38:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTML全局属性笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/22/</link>
+      <link>https://chenjunlinabc.github.io/posts/22/</link>
       <pubDate>Wed, 16 Jun 2021 09:38:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/22/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/22/</guid>
       <description>属性
 accesskey
 定义快捷键获取焦点，例如
-&amp;lt;a href=&amp;quot;https://xiaochenabc123.test.com&amp;quot; accesskey=&amp;quot;q&amp;quot;&amp;gt;GO\&amp;lt;/a&amp;gt;按ait+q，就会跳到指定的网页上
+&amp;lt;a href=&amp;quot;https://xiaochenabc123.test.com&amp;quot; accesskey=&amp;quot;q&amp;quot;&amp;gt;GO\&amp;lt;/a&amp;gt; 按ait+q，就会跳到指定的网页上
 class
 定义元素的类，开头必须是字母，多个类使用空格隔开，例如
-&amp;lt;div class = &amp;quot;a1 a2 a3&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;id
+&amp;lt;div class = &amp;quot;a1 a2 a3&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; id
 定义一个id，id为唯一性，不能重复，例如
-&amp;lt;div id = &amp;quot;a1&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;lang
+&amp;lt;div id = &amp;quot;a1&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; lang
 定义网页或者元素的语言，例如
-&amp;lt;div lang = &amp;quot;fr&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;style
+&amp;lt;div lang = &amp;quot;fr&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; style
 定义元素的行内样式，例如
-&amp;lt;div style=&amp;quot;color : #fff&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;tabindex
+&amp;lt;div style=&amp;quot;color : #fff&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt; tabindex
 指定tab键的焦点控制，例如
-&amp;lt;a href=&amp;quot;https://xiaochenabc123.test.com&amp;quot; tabindex=&amp;quot;1&amp;quot;&amp;gt;GO&amp;lt;/a&amp;gt;使用键盘的tab键盘，触发（不会跳转到网页，只是焦点）
+&amp;lt;a href=&amp;quot;https://xiaochenabc123.test.com&amp;quot; tabindex=&amp;quot;1&amp;quot;&amp;gt;GO&amp;lt;/a&amp;gt; 使用键盘的tab键盘，触发（不会跳转到网页，只是焦点）
 contenteditable
 指定元素是否为可以编辑的，例如
-&amp;lt;div contenteditable=&amp;quot;true&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;dir
+&amp;lt;div contenteditable=&amp;quot;true&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt; dir
 指定元素内文本的方向，例如
-&amp;lt;div dir = &amp;quot;rtl&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;ltr默认值，从左到右
+&amp;lt;div dir = &amp;quot;rtl&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt; ltr默认值，从左到右
 rtl，从右到左
 title
 指定元素的信息，一般为鼠标移动到元素是停留一段时间，显示信息，例如
-&amp;lt;div title = &amp;quot;hi&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;data-xxx
+&amp;lt;div title = &amp;quot;hi&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt; data-xxx
 用于存储一些自定义属性，data-后面必须有一个字符，不包括大写
 JavaScript可以通过getAttribute获取到
 draggable
 指定元素是否可以拖动，默认情况下，只有图片和链接可以拖动
 有3个可选值，true/false/auto，在JavaScript中可以配合拖动事件，例如
-&amp;lt;div draggable = &amp;quot;true&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;hidden
+&amp;lt;div draggable = &amp;quot;true&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt; hidden
 指定元素是否隐藏，有两个可选值，hidden/true，例如
-&amp;lt;div hidden = &amp;quot;hidden&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt;contextmenu</description>
+&amp;lt;div hidden = &amp;quot;hidden&amp;quot;&amp;gt;hi&amp;lt;/div&amp;gt; contextmenu</description>
     </item>
     
     <item>
       <title>html5学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/12/</link>
+      <link>https://chenjunlinabc.github.io/posts/12/</link>
       <pubDate>Wed, 16 Jun 2021 09:22:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/12/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/12/</guid>
       <description>HTML5是HTML标准的第5代标准，主要目的是语义化并且提供多媒体的嵌入
 HTML是什么？HTML全称为HyperTextMarkupLanguage，中文叫超文本标记语言，简称HTML
 而HTML5是一个标准，指的是第五代HTML标准
@@ -91,15 +91,15 @@ html语义
 要注意可以改变样式的标签不一定是有居于语义的
 在没有出现语义元素前，几乎都是使用div或者span，加类加id
 没有语义的元素最适合当容器使用了
-常用的非语义元素有&amp;lt;div&amp;gt;和&amp;lt;span&amp;gt;常用的语义元素有&amp;lt;header&amp;gt;和&amp;lt;footer&amp;gt;&amp;lt;header&amp;gt;：页眉，一般包括网站logo，主导航，搜索框等；&amp;lt;nav&amp;gt;：导航，链接；&amp;lt;main&amp;gt;：定义文章的主要内容，一个页面只能使用一次；&amp;lt;article&amp;gt;：定义一份独立的内容，脱离其他内容或者其他部分，独立于文档的其余部分；&amp;lt;section&amp;gt;：定义内容的节（段）；&amp;lt;footer&amp;gt;：页脚，一般包含版权信息或者链接等；&amp;lt;aside&amp;gt;：侧边栏，一般作为附属信息，例如导航索引，广告等；meta viewport
+常用的非语义元素有&amp;lt;div&amp;gt;和&amp;lt;span&amp;gt; 常用的语义元素有&amp;lt;header&amp;gt;和&amp;lt;footer&amp;gt; &amp;lt;header&amp;gt;：页眉，一般包括网站logo，主导航，搜索框等； &amp;lt;nav&amp;gt;：导航，链接； &amp;lt;main&amp;gt;：定义文章的主要内容，一个页面只能使用一次； &amp;lt;article&amp;gt;：定义一份独立的内容，脱离其他内容或者其他部分，独立于文档的其余部分； &amp;lt;section&amp;gt;：定义内容的节（段）； &amp;lt;footer&amp;gt;：页脚，一般包含版权信息或者链接等； &amp;lt;aside&amp;gt;：侧边栏，一般作为附属信息，例如导航索引，广告等； meta viewport
 viewport 是指 web 页面上的可见区域
-&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;device-width指设备的理想宽度,不同的设备 device-width 是不一样的
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; device-width指设备的理想宽度,不同的设备 device-width 是不一样的
 nitial-scale=1.0 是指默认缩放大小是1，也就是默认不缩放
 maximum-scale=1.0 是指最大缩放大小是1
 标签使用&amp;lt;和&amp;gt;括起来，例如&amp;lt;div&amp;gt;
 html标签大多都是成对出现的，分开始标签和结束标签，结束标签比开始标签多了个/
 例如： html不区分大小写。所以&amp;lt;DIV&amp;gt;和&amp;lt;div&amp;gt;作用一样。建议使用小写
-&amp;lt;!DOCTYPE html&amp;gt;声明这是一个html5文件，声明位于&amp;lt;html&amp;gt;前面&amp;lt;html&amp;gt; 标识HTML文档的开始&amp;lt;head&amp;gt;表明一些和html文档有关的信息，例如title&amp;lt;body&amp;gt;html文档的主体&amp;lt;!</description>
+&amp;lt;!DOCTYPE html&amp;gt;声明这是一个html5文件，声明位于&amp;lt;html&amp;gt;前面 &amp;lt;html&amp;gt; 标识HTML文档的开始 &amp;lt;head&amp;gt;表明一些和html文档有关的信息，例如title &amp;lt;body&amp;gt;html文档的主体 &amp;lt;!</description>
     </item>
     
   </channel>

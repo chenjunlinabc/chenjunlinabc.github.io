@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>PostCSS on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/postcss/</link>
+    <link>https://chenjunlinabc.github.io/tags/postcss/</link>
     <description>Recent content in PostCSS on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 23 Jan 2022 13:55:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/postcss/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 13:55:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/postcss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PostCSS学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/129/</link>
+      <link>https://chenjunlinabc.github.io/posts/129/</link>
       <pubDate>Sun, 23 Jan 2022 13:55:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/129/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/129/</guid>
       <description>PostCSS是一个用JS插件转换为css的插件工具（注意：PostCSS不是css预处理器，PostCSS本身是个平台，可以通过一些插件达到css预处理器的效果）
 PostCSS is a tool for transforming CSS with JS plugins. These plugins can support variables and mixins, transpile future CSS syntax, inline images, and more.
 插件查询：https://www.postcss.parts/
@@ -28,8 +28,8 @@ npm install postcss postcss-loader
 npm install postcss postcss-loader &amp;ndash;save-dev
 PostCSS不单独使用，可搭配Gulp或者webpack使用（这里使用的是webpack）
 webpack.config.js
-module.exports = {module: {rules: [{test: /\.css$/,use: [&amp;quot;style-loader&amp;quot;, &amp;quot;css-loader&amp;quot;, &amp;quot;postcss-loader&amp;quot;]}]}};postcss.config.js
-module.exports = {plugins: [插件1,插件2]};Autopreﬁxer（自动添加浏览器前缀）
+module.exports = { module: { rules: [ { test: /\.css$/, use: [&amp;quot;style-loader&amp;quot;, &amp;quot;css-loader&amp;quot;, &amp;quot;postcss-loader&amp;quot;] } ] } }; postcss.config.js
+module.exports = { plugins: [插件1,插件2] }; Autopreﬁxer（自动添加浏览器前缀）
 npm install autoprefixer &amp;ndash;save-dev</description>
     </item>
     

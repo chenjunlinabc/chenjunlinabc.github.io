@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>编译原理 on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
+    <link>https://chenjunlinabc.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
     <description>Recent content in 编译原理 on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 May 2022 03:00:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 May 2022 03:00:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>编译原理学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/148/</link>
+      <link>https://chenjunlinabc.github.io/posts/148/</link>
       <pubDate>Sun, 08 May 2022 03:00:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/148/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/148/</guid>
       <description>编译就是翻译，将机器语言翻译成另一个机器语言（例如高级语言翻译成低级语言（例如汇编），低级语言翻译成机器语言（二进制））
 编译让计算机理解高级语言并且执行，编译让计算机更理解人，编译提供了人类新的思考方式
 编译的翻译只能作用于形式语言

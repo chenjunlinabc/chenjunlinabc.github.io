@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>http on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/http/</link>
+    <link>https://chenjunlinabc.github.io/tags/http/</link>
     <description>Recent content in http on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Aug 2021 17:02:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Aug 2021 17:02:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单认识HTTP协议</title>
-      <link>https://xiaochenabc123.github.io/posts/77/</link>
+      <link>https://chenjunlinabc.github.io/posts/77/</link>
       <pubDate>Sun, 08 Aug 2021 17:02:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/77/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/77/</guid>
       <description>HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的
 HTTP是基于TCP/IP协议来传输数据的
 访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应

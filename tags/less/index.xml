@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Less on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/less/</link>
+    <link>https://chenjunlinabc.github.io/tags/less/</link>
     <description>Recent content in Less on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 01 Jul 2021 15:31:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/less/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jul 2021 15:31:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/less/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSS预处理器-Less学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/50/</link>
+      <link>https://chenjunlinabc.github.io/posts/50/</link>
       <pubDate>Thu, 01 Jul 2021 15:31:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/50/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/50/</guid>
       <description>less是一门css扩展语言，是css预处理器，扩展了css的动态特性，在css语法基础上引入了变量，混合，运算和函数等功能
 常见的css预处理器有sass，less，stylus
 less开发手册：https://less.bootcss.com/
@@ -40,7 +40,7 @@ hallo.less
 不能以数字开头
 大小写敏感
 例如：
-@color: #ccc;#app{background-color: @color;}less编译
+@color: #ccc; #app{ background-color: @color; } less编译
 less提供了一个解析器，通过解析器，编译成css文件
 例如：
 npm
@@ -50,8 +50,8 @@ lessc style.less style.css
 vsc插件：Easy LESS（修改保存就自动编译成css文件）
 less嵌套
 子元素嵌套到父元素上（后代选择器）
-#app{width: 100px;div{width: 60px;}}伪类或者伪元素选择之类的，需要加&amp;amp;连接起来，不加则认为是后代
-#app{width: 100px;a{color: #000;&amp;amp;:hover{color: @color;}&amp;amp;::before{width: 30px;}} }less运算</description>
+#app{ width: 100px; div{ width: 60px; } } 伪类或者伪元素选择之类的，需要加&amp;amp;连接起来，不加则认为是后代
+#app{ width: 100px; a{ color: #000; &amp;amp;:hover{ color: @color; } &amp;amp;::before{ width: 30px; } } } less运算</description>
     </item>
     
   </channel>

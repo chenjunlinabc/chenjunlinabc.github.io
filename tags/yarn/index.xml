@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Yarn on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/yarn/</link>
+    <link>https://chenjunlinabc.github.io/tags/yarn/</link>
     <description>Recent content in Yarn on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jun 2021 22:55:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/yarn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 22:55:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/yarn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Yarn包管理工具的简单使用</title>
-      <link>https://xiaochenabc123.github.io/posts/38/</link>
+      <link>https://chenjunlinabc.github.io/posts/38/</link>
       <pubDate>Wed, 16 Jun 2021 22:55:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/38/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/38/</guid>
       <description>Yarn 是一款新的 JavaScript 包管理工具，和npm对比就是速度快，保持一致性，安全
 速度快是因为yarn是并行执行任务，而不是npm那样排队列执行package，而且yarn还可以提供缓存，如果安装过一次package，使用yarn再次安装就会从缓存中获取，而不用再下载一次
 保持一致性：yarn提供了一个lockfile文件来记录要安装的package的版本号，锁定其版本不会出现错误，会生成yarn.lock文件来记录其package的版本号，就连依赖包的版本号都会被记录

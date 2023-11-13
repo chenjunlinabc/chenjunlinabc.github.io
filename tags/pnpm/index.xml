@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>pnpm on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/pnpm/</link>
+    <link>https://chenjunlinabc.github.io/tags/pnpm/</link>
     <description>Recent content in pnpm on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 Sep 2021 21:55:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/pnpm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Sep 2021 21:55:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/pnpm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NodeJS常用工具的简单使用</title>
-      <link>https://xiaochenabc123.github.io/posts/105/</link>
+      <link>https://chenjunlinabc.github.io/posts/105/</link>
       <pubDate>Thu, 16 Sep 2021 21:55:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/105/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/105/</guid>
       <description>npm在这里https://xiaochenabc123.test.com/archives/31.html
 Yarn在这里https://xiaochenabc123.test.com/archives/38.html
 nvm全名node.js version management

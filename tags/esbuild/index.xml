@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>esbuild on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/esbuild/</link>
+    <link>https://chenjunlinabc.github.io/tags/esbuild/</link>
     <description>Recent content in esbuild on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 07 Feb 2022 13:37:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/esbuild/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Feb 2022 13:37:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/esbuild/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用ESbuild打包工具</title>
-      <link>https://xiaochenabc123.github.io/posts/132/</link>
+      <link>https://chenjunlinabc.github.io/posts/132/</link>
       <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/132/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/132/</guid>
       <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包（viet在开发环境下使用这个），支持TypeScript和jsx（tsx），css
 ESbuild支持ES6模块，cjs模块，对ES6+语法支持性好，可以直接打包css文件，json文件，ts文件
 注意：esbuild并不对ts文件进行类型检查工作
@@ -35,8 +35,8 @@ npm run build
 或者
 yarn build
 例子（app.jsx）
-import React from &#39;react&#39;import ReactDOM from &#39;react-dom&#39;const App = () =&amp;gt; {return (&amp;lt;div&amp;gt;&amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;)}ReactDOM.render(&amp;lt;App /&amp;gt;,document.getElementById(&amp;quot;app&amp;quot;))index.html
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;我本地打包只花64ms就打包好了
+import React from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; const App = () =&amp;gt; { return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; ) } ReactDOM.render( &amp;lt;App /&amp;gt;, document.getElementById(&amp;quot;app&amp;quot;) ) index.html
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 我本地打包只花64ms就打包好了
 使用source map功能</description>
     </item>
     

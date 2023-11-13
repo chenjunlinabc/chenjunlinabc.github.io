@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>React on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/react/</link>
+    <link>https://chenjunlinabc.github.io/tags/react/</link>
     <description>Recent content in React on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Sep 2021 12:00:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Sep 2021 12:00:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>React进阶学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/94/</link>
+      <link>https://chenjunlinabc.github.io/posts/94/</link>
       <pubDate>Fri, 03 Sep 2021 12:00:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/94/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/94/</guid>
       <description>react16是Facebook在2017年发布的react版本，几乎对react底层进行重写，但是对外API不变，因此可以无缝转移到react16
 render返回类型
 除了只能返回单个元素外，react16支持返回字符串和数组（由react元素组成）
 例如：
-render(){return[&amp;lt;div&amp;gt;hallo&amp;lt;/div&amp;gt;,&amp;lt;div&amp;gt;word&amp;lt;/div&amp;gt;]}或者
-render(){return &amp;quot;hallo word&amp;quot;}错误处理
+render(){ return[ &amp;lt;div&amp;gt;hallo&amp;lt;/div&amp;gt;, &amp;lt;div&amp;gt;word&amp;lt;/div&amp;gt; ] } 或者
+render(){ return &amp;quot;hallo word&amp;quot; } 错误处理
 react16引入了新的错误处理机制，当组件发生错误，将会将其从组件树中卸载，避免引起整个应用的崩溃
 当然也提供了更友好的处理方式，叫错误边界，这个会捕获子组件的错误，并且输出错误日志和出错提示，例如：
-componentDidCatch(error, info){console.log(error,info)}Portals
+componentDidCatch(error, info){ console.log(error,info) } Portals
 React16的Portals特性可以将组件渲染到当前组件树以外的DOM树上，例如弹框
 ReactDOM.createPortal(child, container)
 第一个参数是可以被渲染的react节点，第二个参数是dom元素，react节点将会被挂载到该DOM元素上
@@ -44,15 +44,15 @@ yarn add react-markdown
 导入
 import ReactMarkdown from &amp;lsquo;react-markdown&amp;rsquo;
 测试
-let markdown =&amp;quot;**这是加粗的文字**\n\n&amp;quot; +&amp;quot;*这是倾斜的文字*`\n\n&amp;quot; +&amp;quot;***这是斜体加粗的文字***\n\n&amp;quot; +&amp;quot;~~这是加删除线的文字~~ \n\n&amp;quot; +&amp;quot;`console.log(111)` \n\n&amp;quot; +&amp;quot;``` var a=11; ```&amp;quot;;&amp;lt;ReactMarkdown source={markdown} escapeHtml={false} children={markdown}/&amp;gt;</description>
+let markdown = &amp;quot;**这是加粗的文字**\n\n&amp;quot; + &amp;quot;*这是倾斜的文字*`\n\n&amp;quot; + &amp;quot;***这是斜体加粗的文字***\n\n&amp;quot; + &amp;quot;~~这是加删除线的文字~~ \n\n&amp;quot; + &amp;quot;`console.log(111)` \n\n&amp;quot; + &amp;quot;``` var a=11; ```&amp;quot;; &amp;lt;ReactMarkdown source={markdown} escapeHtml={false} children={markdown}/&amp;gt; </description>
     </item>
     
     <item>
       <title>简单使用Ant Design组件库</title>
-      <link>https://xiaochenabc123.github.io/posts/82/</link>
+      <link>https://chenjunlinabc.github.io/posts/82/</link>
       <pubDate>Tue, 10 Aug 2021 23:03:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/82/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/82/</guid>
       <description>Ant Design是蚂蚁金服技术沉淀出一套基于React的组件库和前端框架
 官网：https://ant.design/index-cn
 使用create-react-app初始项目
@@ -68,15 +68,15 @@ yarn add antd
 yarn create react-app antd-demo-ts &amp;ndash;template typescript
 Antd的样式使用了less作为开发语言
 第一个实例demo
-import &#39;antd/dist/antd.css&#39;;import { DatePicker, Space } from &#39;antd&#39;;ReactDOM.render(&amp;lt;Space direction=&amp;quot;vertical&amp;quot;&amp;gt;&amp;lt;DatePicker/&amp;gt;&amp;lt;/Space&amp;gt;,document.getElementById(&#39;root&#39;),); </description>
+import &#39;antd/dist/antd.css&#39;; import { DatePicker, Space } from &#39;antd&#39;; ReactDOM.render( &amp;lt;Space direction=&amp;quot;vertical&amp;quot;&amp;gt; &amp;lt;DatePicker/&amp;gt; &amp;lt;/Space&amp;gt;, document.getElementById(&#39;root&#39;), ); </description>
     </item>
     
     <item>
       <title>NextJS学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/74/</link>
+      <link>https://chenjunlinabc.github.io/posts/74/</link>
       <pubDate>Sat, 07 Aug 2021 23:26:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/74/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/74/</guid>
       <description>NextJS是一个用于生产环境的react框架，可以提供服务器端渲染等等功能
 服务端渲染（ssr）：后端调用数据库获取数据后，将数据和页面元素进行组合成完整的DOM结构，再返回给浏览器，提供给用户浏览
 SPA：
@@ -91,7 +91,7 @@ yarn init
 在scripts下加添加
 &amp;ldquo;dev&amp;rdquo; : &amp;ldquo;next&amp;rdquo;, &amp;ldquo;build&amp;rdquo;: &amp;ldquo;next build&amp;rdquo;, &amp;ldquo;start&amp;rdquo;: &amp;ldquo;next start&amp;rdquo;
 创建个js文件
-function Hallo(){return(&amp;lt;div&amp;gt;hallo next.js&amp;lt;/div&amp;gt;)}export default Halloyarn dev调试
+function Hallo(){ return( &amp;lt;div&amp;gt;hallo next.js&amp;lt;/div&amp;gt; ) } export default Hallo yarn dev调试
 如果浏览器输出正确则配置成功
 通过create-next-app脚手架创建项目
 npm install create-next-app -g
@@ -105,29 +105,29 @@ yarn create-next-app demo
 yarn dev
 访问http://localhost:3000/，正常显示网页则配置正常
 编程式跳转
-import Link from &amp;quot;next/link&amp;quot;&amp;lt;Link href=&amp;quot;/&amp;quot;&amp;gt;&amp;lt;a&amp;gt;返回&amp;lt;/a&amp;gt;&amp;lt;/Link&amp;gt;Link不支持直接加兄弟标签，起码要有一个父级标签</description>
+import Link from &amp;quot;next/link&amp;quot; &amp;lt;Link href=&amp;quot;/&amp;quot;&amp;gt;&amp;lt;a&amp;gt;返回&amp;lt;/a&amp;gt;&amp;lt;/Link&amp;gt; Link不支持直接加兄弟标签，起码要有一个父级标签</description>
     </item>
     
     <item>
       <title>深入学习React</title>
-      <link>https://xiaochenabc123.github.io/posts/63/</link>
+      <link>https://chenjunlinabc.github.io/posts/63/</link>
       <pubDate>Sun, 25 Jul 2021 12:00:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/63/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/63/</guid>
       <description>setState()
 注意：如果调用多次setState()，但是还是只触发一次重新渲染（性能优化，如果每更新一次状态就渲染一次的话，很影响性能）
 setState()是异步更新数据的，因此setState()不要依赖于前面的setState()，因为其不会立刻更新数据
 如果当前setState()依赖于前面的setState()，解决方法：
-this.setState((state, props) =&amp;gt;{return{count: state.count + 1}})console.log(this.state.count)this.setState((state, props) =&amp;gt;{return{count: state.count + 1}})console.log(this.state.count)state和props参数分别获取到最新的state和最新的props，通过回调函数返回值，保证每次都获取到最新的state和props
+this.setState((state, props) =&amp;gt;{ return{ count: state.count + 1 } }) console.log(this.state.count) this.setState((state, props) =&amp;gt;{ return{ count: state.count + 1 } }) console.log(this.state.count) state和props参数分别获取到最新的state和最新的props，通过回调函数返回值，保证每次都获取到最新的state和props
 如果想在状态更新后（页面完成重新渲染）立刻执行某个操作，那么可以使用setState()的第二个参数，这个参数是一个回调函数
 例如：
-this.setState((state, props) =&amp;gt;{return{count: state.count + 1}},() =&amp;gt; {console.log(this.state.count)})可以看出 console.log(this.state.count)会在状态更新后被执行，因此可以获取到更新后的count值
+this.setState((state, props) =&amp;gt;{ return{ count: state.count + 1 } },() =&amp;gt; { console.log(this.state.count) }) 可以看出 console.log(this.state.count)会在状态更新后被执行，因此可以获取到更新后的count值
 因此setState()一定会改变状态，但是不会立刻更新，而是当页面渲染完毕了（状态更新完毕之后）才会更新
 jsx语法的转化
 jsx实质上还是createElement()方法的语法糖（简化），因为jsx语法最后还是会编译（@babel/preset-react插件）成createElement()方法
 而createElement()方法也会被转换为js对象（ReactElement），用来描述页面上显示的内容，因此不管是jsx还是createElement()最后都会转换为js对象（ReactElement），ReactElement然后通过虚拟DOM实现DOM创建和更新
 例如：
-const Abc = (&amp;lt;div&amp;gt;hallo&amp;lt;/div&amp;gt;)console.log(Abc)可以看到输出返回的是一个js对象
+const Abc = ( &amp;lt;div&amp;gt;hallo&amp;lt;/div&amp;gt; ) console.log(Abc) 可以看到输出返回的是一个js对象
 React.createElement()接收3个参数，type（表示标签或者组件），config（对象，表示组件的所有属性），children（对象，表示组件之间的嵌套关系）
 组件更新机制
 setState()的作用：修改state，更新组件
@@ -144,10 +144,10 @@ state只存储和组件渲染相关的数据，例如列表数据，而不用来
     
     <item>
       <title>React学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/55/</link>
+      <link>https://chenjunlinabc.github.io/posts/55/</link>
       <pubDate>Fri, 09 Jul 2021 22:23:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/55/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/55/</guid>
       <description>React是构造用户界面的JavaScript库，就是负责视图层的，只负责视图的渲染，其特点是声明式，组件化
 安装react
 npm i react react-dom
@@ -157,12 +157,12 @@ react-dom包提供DOM相关的功能
 通常还需要导入babel来解析jsx（注意：在浏览器使用babel编译jsx效率很低，babel内嵌了对于jsx的支持），babel可以将es6语法转化为es5，方便运行在不支持es6的浏览器上
 也可以通过引入src文件的方式引入cdn文件或者本地文件
 第一个例子
-&amp;lt;script type=&amp;quot;text/babel&amp;quot;&amp;gt;ReactDOM.render(&amp;lt;h1&amp;gt;hallo,react!!!&amp;lt;/h1&amp;gt;,document.getElementById(&amp;quot;app&amp;quot;));&amp;lt;/script&amp;gt;使用babel解析jsx，react官方推荐使用jsx，因为使用jsx渲染dom简单明了
+&amp;lt;script type=&amp;quot;text/babel&amp;quot;&amp;gt; ReactDOM.render( &amp;lt;h1&amp;gt;hallo,react!!!&amp;lt;/h1&amp;gt;, document.getElementById(&amp;quot;app&amp;quot;) ); &amp;lt;/script&amp;gt; 使用babel解析jsx，react官方推荐使用jsx，因为使用jsx渲染dom简单明了
 jsx是一种JavaScript语法扩展，例如：
-const hallo = &amp;lt;h1&amp;gt;hallo&amp;lt;/h1&amp;gt;;像上面这种就是jsx，jsx本身是一个表达式，经过编译（例如babel）后jsx表达式会转换成JavaScript对象（注意：jsx不是标准的ECMAScript语法，是语法的扩展，不进行编译处理，直接使用是会报错的）
+const hallo = &amp;lt;h1&amp;gt;hallo&amp;lt;/h1&amp;gt;; 像上面这种就是jsx，jsx本身是一个表达式，经过编译（例如babel）后jsx表达式会转换成JavaScript对象（注意：jsx不是标准的ECMAScript语法，是语法的扩展，不进行编译处理，直接使用是会报错的）
 在jsx中插入JavaScript表达式，用大括号包含起来，例如：
-function hallo(yes){return yes.name;}const yes = {name: &amp;quot;react&amp;quot;};const hallo = &amp;lt;h1&amp;gt;hallo,{hallo(yes)}&amp;lt;/h1&amp;gt;;ReactDOM.render(hallo,document.getElementById(&amp;quot;app&amp;quot;));当然react并没有强制要求必须使用jsx，例如：
-const hallo = React.createElement(&amp;quot;h1&amp;quot;,{class: &amp;quot;main&amp;quot;},React.createElement(&amp;quot;p&amp;quot;,null,&amp;quot;hallo word!!!&amp;quot;))/* 上面提供了三个参数，分别是元素名称，元素属性，元素的子节点 */ReactDOM.render(hallo,document.getElementById(&amp;quot;app&amp;quot;))/* 上面提供了个两个参数，分别是要渲染的react元素，挂载点*/react脚手架
+function hallo(yes){ return yes.name; } const yes = { name: &amp;quot;react&amp;quot; }; const hallo = &amp;lt;h1&amp;gt;hallo,{hallo(yes)}&amp;lt;/h1&amp;gt;; ReactDOM.render( hallo, document.getElementById(&amp;quot;app&amp;quot;) ); 当然react并没有强制要求必须使用jsx，例如：
+const hallo = React.createElement(&amp;quot;h1&amp;quot;,{class: &amp;quot;main&amp;quot;},React.createElement(&amp;quot;p&amp;quot;,null,&amp;quot;hallo word!!!&amp;quot;)) /* 上面提供了三个参数，分别是元素名称，元素属性，元素的子节点 */ ReactDOM.render(hallo,document.getElementById(&amp;quot;app&amp;quot;)) /* 上面提供了个两个参数，分别是要渲染的react元素，挂载点*/ react脚手架
 初始化项目
 npx create-react-app app
 启动项目（在项目根目录执行）

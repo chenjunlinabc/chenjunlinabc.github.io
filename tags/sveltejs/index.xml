@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Sveltejs on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/sveltejs/</link>
+    <link>https://chenjunlinabc.github.io/tags/sveltejs/</link>
     <description>Recent content in Sveltejs on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 09 Aug 2021 22:50:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/sveltejs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Aug 2021 22:50:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/sveltejs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Svelte学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/80/</link>
+      <link>https://chenjunlinabc.github.io/posts/80/</link>
       <pubDate>Mon, 09 Aug 2021 22:50:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/80/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/80/</guid>
       <description>Svelte的核心思想在于通过静态编译减少框架运行时的代码量
 Svelte风格和vue相似，模板用{}来表示
 Svelte的特点就是没有虚拟DOM（像Vue和React都是用虚拟DOM的）
@@ -26,10 +26,10 @@ npx degit sveltejs/template demo
 yarn
 yarn dev
 修改src\App.svelte和src\main.js
-&amp;lt;script&amp;gt;let name = &#39;world&#39;&amp;lt;/script&amp;gt;&amp;lt;h1&amp;gt;Hello {name}!&amp;lt;/h1&amp;gt;导入组件
-import Hallo from &#39;./hallo.svelte&#39;...&amp;lt;Hallo/&amp;gt;如果想将HTML渲染到组件中可以使用 let string = &amp;lt;div&amp;gt;hallo word&amp;lt;/div&amp;gt; {@html string}
+&amp;lt;script&amp;gt; let name = &#39;world&#39; &amp;lt;/script&amp;gt; &amp;lt;h1&amp;gt;Hello {name}!&amp;lt;/h1&amp;gt; 导入组件
+import Hallo from &#39;./hallo.svelte&#39; ... &amp;lt;Hallo/&amp;gt; 如果想将HTML渲染到组件中可以使用 let string = &amp;lt;div&amp;gt;hallo word&amp;lt;/div&amp;gt; {@html string}
 事件响应
-function aClick() {count += 1}...&amp;lt;button on:click={aClick}&amp;gt;{count}&amp;lt;/button&amp;gt; </description>
+function aClick() { count += 1 } ... &amp;lt;button on:click={aClick}&amp;gt;{count}&amp;lt;/button&amp;gt; </description>
     </item>
     
   </channel>

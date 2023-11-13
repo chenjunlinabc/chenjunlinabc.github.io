@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Umi on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/umi/</link>
+    <link>https://chenjunlinabc.github.io/tags/umi/</link>
     <description>Recent content in Umi on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 Sep 2021 21:00:00 +0000</lastBuildDate><atom:link href="https://xiaochenabc123.github.io/tags/umi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 21:00:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/umi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Umi框架学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/110/</link>
+      <link>https://chenjunlinabc.github.io/posts/110/</link>
       <pubDate>Mon, 20 Sep 2021 21:00:00 +0000</pubDate>
       
-      <guid>https://xiaochenabc123.github.io/posts/110/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/110/</guid>
       <description>Umi是一款前端应用框架
 官方文档：https://umijs.org/zh-CN/docs
 根据官方文档要求，node版本&amp;gt;=10.13
@@ -29,11 +29,11 @@ yarn start
 构建项目（默认生成到./dist）
 yarn build
 路由（src\.umi\core\routes.ts）
-&amp;quot;routes&amp;quot;: [{&amp;quot;path&amp;quot;: &amp;quot;/&amp;quot;,&amp;quot;component&amp;quot;: require(&#39;@/pages/index&#39;).default,&amp;quot;exact&amp;quot;: true},{&amp;quot;path&amp;quot;: &amp;quot;/admin&amp;quot;,&amp;quot;component&amp;quot;: require(&#39;@/pages/admin&#39;).default,&amp;quot;exact&amp;quot;: true}]组件文件放在src\pages下
+&amp;quot;routes&amp;quot;: [ { &amp;quot;path&amp;quot;: &amp;quot;/&amp;quot;, &amp;quot;component&amp;quot;: require(&#39;@/pages/index&#39;).default, &amp;quot;exact&amp;quot;: true },{ &amp;quot;path&amp;quot;: &amp;quot;/admin&amp;quot;, &amp;quot;component&amp;quot;: require(&#39;@/pages/admin&#39;).default, &amp;quot;exact&amp;quot;: true } ] 组件文件放在src\pages下
 path是路径，component是组件路径，绝对和相对都可以用，也可以有require(&amp;rsquo;@/pages/xxx&amp;rsquo;)的方式
 exact表示是否严格匹配，就是path和组件路径是否要完全对应，默认为开启，如果设置为false，表示模糊匹配
 子组件
-&amp;quot;routes&amp;quot;: [{&amp;quot;path&amp;quot;: &amp;quot;/&amp;quot;,&amp;quot;redirect&amp;quot;: &#39;/admin&#39;,},{&amp;quot;path&amp;quot;: &amp;quot;/admin&amp;quot;,&amp;quot;component&amp;quot;: require(&#39;@/pages/admin&#39;).default,routes: [{ path: &#39;/admin/archives&#39;, redirect: &#39;/&#39; },{ path: &#39;/admin/category&#39;, component: &#39;category&#39; },]}]redirect是跳转路由，当访问/的时候，跳转到/admin
+&amp;quot;routes&amp;quot;: [ { &amp;quot;path&amp;quot;: &amp;quot;/&amp;quot;, &amp;quot;redirect&amp;quot;: &#39;/admin&#39;, },{ &amp;quot;path&amp;quot;: &amp;quot;/admin&amp;quot;, &amp;quot;component&amp;quot;: require(&#39;@/pages/admin&#39;).default, routes: [ { path: &#39;/admin/archives&#39;, redirect: &#39;/&#39; }, { path: &#39;/admin/category&#39;, component: &#39;category&#39; }, ] } ] redirect是跳转路由，当访问/的时候，跳转到/admin
 文件路由（根据目录和文件名来分析路由）
 如果没有routes路由配置，那么就会触发该文件路由，通过分析src/pages目录
 注意：用.或者_开头的文件，用d.ts结尾的文件，不是 .</description>
