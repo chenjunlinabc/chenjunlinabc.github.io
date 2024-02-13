@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Vite on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/vite/</link>
+    <link>https://xiaochenabc123.github.io/tags/vite/</link>
     <description>Recent content in Vite on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Aug 2021 14:20:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/vite/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Aug 2021 14:20:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/vite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Vite-前端构建工具</title>
-      <link>https://chenjunlinabc.github.io/posts/87/</link>
+      <link>https://xiaochenabc123.github.io/posts/87/</link>
       <pubDate>Wed, 18 Aug 2021 14:20:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/87/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/87/</guid>
       <description>Vite是由 Vue.js 的作者尤雨溪开发完成的一款前端项目构建工具，使用原生ESM文件，支持热重载
 Vite在法语中的意思为快速的
 基于原生 import 的，使用浏览器来解析import，服务端按需编译返回，支持热更新模块
@@ -57,9 +57,8 @@ npm install
 Vite是一个构建工具的高阶封装（生产环境打包用Rollup来构建），开发环境无需要打包编译（利用现代浏览器的原生ESM来进行导入模块，模块加载的工作由浏览器完成，实现冷启动），支持动态模块热重载（HMR），开发环境的编译通过Esbuild来完成
 Vite生产环境构建（也就是Rollup）是根据browserslist来做浏览器兼容性的，需要通过修改vite.config.ts下的build.target来指定构建目标，Vite最低支持es2015，也就是es6，需要es5以及更多浏览器可能无法正常运行或者通过@vitejs/plugin-legacy插件来获取支持（注意：使用该插件也不能让vue3支持ie11，只有vue2支持ie11）
 安装@vitejs/plugin-legacy
-yarn add @vitejs/plugin-legacy -d 配置vite.config.ts
-import legacy from &#39;@vitejs/plugin-legacy&#39; .</description>
+yarn add @vitejs/plugin-legacy -d配置vite.config.ts
+import legacy from &#39;@vitejs/plugin-legacy&#39;.</description>
     </item>
-    
   </channel>
 </rss>

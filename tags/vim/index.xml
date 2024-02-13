@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Vim on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/vim/</link>
+    <link>https://xiaochenabc123.github.io/tags/vim/</link>
     <description>Recent content in Vim on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 28 Mar 2021 12:00:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Mar 2021 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Vim编辑器</title>
-      <link>https://chenjunlinabc.github.io/posts/3/</link>
+      <link>https://xiaochenabc123.github.io/posts/3/</link>
       <pubDate>Sun, 28 Mar 2021 12:00:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/3/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/3/</guid>
       <description>Vim是从vi发展出来的一个文本编辑器。提供代码补完、编译及错误跳转等功能
 vim的五种模式（正常模式，插入模式，命令行模式，可视化模式，替换模式）
 启动vim默认就是在正常模式中，在该模式中按i进入插入模式，按:进入命令行模式，在插入模式或者命令行模式中按Esc进入普通模式
@@ -49,6 +49,5 @@ vim hallo.js
 :q!：强制退出并且放弃所有更改
 :e!：放弃修改，并且重新打开文件</description>
     </item>
-    
   </channel>
 </rss>

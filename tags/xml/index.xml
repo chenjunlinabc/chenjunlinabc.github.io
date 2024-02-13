@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>xml on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/xml/</link>
+    <link>https://xiaochenabc123.github.io/tags/xml/</link>
     <description>Recent content in xml on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jun 2021 09:32:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 09:32:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/xml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>XML学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/17/</link>
+      <link>https://xiaochenabc123.github.io/posts/17/</link>
       <pubDate>Wed, 16 Jun 2021 09:32:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/17/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/17/</guid>
       <description>xml中文全称为可扩展标记语言（Extensible Markup Language）
 xml和html类似，但是xml是用来传输和存储数据的，xml大小写敏感，xml的标记是自定义的
 xml声明，该声明位在xml文档的第一行，结尾
@@ -56,6 +56,5 @@ IMPLIED // 表示这个元素可以包含这个属性，也可以不包含
 FIXED // 表示这个固定的属性默认值，不能将该属性的值设置为其他值，使用该说明时还需要提供一个默认值，如果XML没有定义该属性，那么其值就被自动设置为DTD定义的默认值
 默认值 // 和FIXED一样，不同的是，这个属性的值可以改变，如果在xml文档中设置了新的值，那么新的值会覆盖DTD定义的默认值</description>
     </item>
-    
   </channel>
 </rss>

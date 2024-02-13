@@ -2,59 +2,55 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>css on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/css/</link>
+    <link>https://xiaochenabc123.github.io/tags/css/</link>
     <description>Recent content in css on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 27 Jan 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Jan 2022 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用TailwindCSS</title>
-      <link>https://chenjunlinabc.github.io/posts/130/</link>
+      <link>https://xiaochenabc123.github.io/posts/130/</link>
       <pubDate>Thu, 27 Jan 2022 12:00:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/130/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/130/</guid>
       <description>TailwindCSS是一个CSS框架，我个人理解这东西就是根据class来生成css（按需），而不是像bootstrap那样，TailwindCSS是原子化的
 安装
 npm install tailwindcss
 初始化tailwind.config.js
 npx tailwindcss init
 在tailwind.config.js中content属性，表示着项目的html或者js文件
-content: [ &#39;./src/**/*.{html,js}&#39; ], 如果没有配置content属性，会警告
+content: [&#39;./src/**/*.{html,js}&#39;],如果没有配置content属性，会警告
 warn - The content option in your Tailwind CSS configuration is missing or empty. warn - Configure your content sources or your generated CSS will be missing styles. warn - https://tailwindcss.com/docs/content-configuration
 创建一个css文件配置tailwind三大组件（base，components.utilities）
-@tailwind base; @tailwind components; @tailwind utilities; 如果使用的是webpacker或者postcss-import，不能使用@tailwind指令，需要
-@import &amp;quot;tailwindcss/base&amp;quot;; @import &amp;quot;tailwindcss/components&amp;quot;; @import &amp;quot;tailwindcss/utilities&amp;quot;; 也可以将css导入到js中
-import &amp;quot;tailwindcss/tailwind.css&amp;quot; tailwind编译
+@tailwind base;@tailwind components;@tailwind utilities;如果使用的是webpacker或者postcss-import，不能使用@tailwind指令，需要
+@import &amp;quot;tailwindcss/base&amp;quot;;@import &amp;quot;tailwindcss/components&amp;quot;;@import &amp;quot;tailwindcss/utilities&amp;quot;;也可以将css导入到js中
+import &amp;quot;tailwindcss/tailwind.css&amp;quot;tailwind编译
 npx tailwindcss -i ./src/index.css -o ./dist/main.css</description>
     </item>
-    
     <item>
       <title>简单利用backdrop-filter属性实现效果</title>
-      <link>https://chenjunlinabc.github.io/posts/65/</link>
+      <link>https://xiaochenabc123.github.io/posts/65/</link>
       <pubDate>Fri, 06 Aug 2021 10:18:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/65/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/65/</guid>
       <description>backdrop-filter是css原生的属性
 backdrop-filter的一些方法（用法和filter一样）
 blur：模糊 brightness：亮度 contrast：对比度 invert：反相 opacity：透明度 saturate：饱和度 drop-shadow：投影 grayscale：灰度 hue-rotate：色调变化 sepia：褐色
 简单实现一个毛玻璃背景效果，例如：
-&amp;lt;style&amp;gt; *{ margin: 0; padding: 0; } #app{ width: 100%; height: 50rem; background-image: url(&amp;quot;1.jpg&amp;quot;); } #test{ position: absolute; top: 0; left: 0; right: 0; bottom: 0; backdrop-filter: blur(10px); } .text{ padding-top: 100px; text-align: center; } &amp;lt;/style&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;div id=&amp;quot;test&amp;quot;&amp;gt; &amp;lt;p class=&amp;quot;text&amp;quot;&amp;gt; hallo word &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; backdrop-filter和filter区别：
+&amp;lt;style&amp;gt;*{margin: 0;padding: 0;}#app{width: 100%;height: 50rem;background-image: url(&amp;quot;1.jpg&amp;quot;);}#test{position: absolute;top: 0;left: 0;right: 0;bottom: 0;backdrop-filter: blur(10px);}.text{padding-top: 100px;text-align: center;}&amp;lt;/style&amp;gt;&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;div id=&amp;quot;test&amp;quot;&amp;gt;&amp;lt;p class=&amp;quot;text&amp;quot;&amp;gt;hallo word&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;backdrop-filter和filter区别：
 filter是作用于当前元素（效果体现在本身，而不是背景），而且后代也会继承该属性
 backdrop-filter是作用于当前元素背后的所有元素，不会影响自己
 backdrop-filter兼容性没有filter优秀（目前低版本浏览器和IE，火狐都不支持该属性）</description>
     </item>
-    
     <item>
       <title>Grid布局学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/45/</link>
+      <link>https://xiaochenabc123.github.io/posts/45/</link>
       <pubDate>Wed, 23 Jun 2021 10:29:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/45/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/45/</guid>
       <description>grid 布局
 grid布局和flex布局类似，不过grid是最强大的css布局方式
 grid布局是网格布局
@@ -75,13 +71,11 @@ grid-template-columns: [a1] 100px [a2] 100px [a3] auto; // 方括号[]内的的�
 grid-template-columns: 20% 60% 20%; // 左栏20%，中间60%，右栏20%，如果是重复的值搭配repeat使用更佳
 grid-row-gap: 10px; // 行间距（行与行的距离）</description>
     </item>
-    
     <item>
       <title>css的一些知识扩展</title>
-      <link>https://chenjunlinabc.github.io/posts/44/</link>
+      <link>https://xiaochenabc123.github.io/posts/44/</link>
       <pubDate>Wed, 23 Jun 2021 09:16:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/44/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/44/</guid>
       <description>box-sizing 盒类型
 该属性是告诉浏览器是以什么盒模型展示的
 IE用的是border-box
@@ -120,38 +114,34 @@ media 媒体查询
 媒体查询常用于响应式布局，为不同屏幕设置不同的样式
 @media(max-width:768px){} // 当屏幕最大宽度只有768px时应用其下的设置</description>
     </item>
-    
     <item>
       <title>css常见布局</title>
-      <link>https://chenjunlinabc.github.io/posts/24/</link>
+      <link>https://xiaochenabc123.github.io/posts/24/</link>
       <pubDate>Wed, 16 Jun 2021 13:23:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/24/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/24/</guid>
       <description>居中布局
 分水平居中和垂直居中，水平+垂直居中
 水平居中：当前元素在父级元素容器中，水平方向是居中显示的
 inline-block+text-algin
-#app{ text-align: center; // 父元素，文本内容居中对齐 } .child{ display: inline-block; // 子元素，行内块级元素 } 优点：浏览器兼容性好（css2）
+#app{text-align: center;// 父元素，文本内容居中对齐}.child{display: inline-block;// 子元素，行内块级元素}优点：浏览器兼容性好（css2）
 缺点：text-align具有继承性，会导致子元素的文本也是居中的
 table+margin
-.child{ display: table; // 也可以为block margin: 0 auto; // 子元素，margin外边距，上下为0，左右为auto（浏览器自动分配） } 优点：只需要对子元素设置，就可以实现效果
+.child{display: table; // 也可以为blockmargin: 0 auto;// 子元素，margin外边距，上下为0，左右为auto（浏览器自动分配）}优点：只需要对子元素设置，就可以实现效果
 缺点：如果子元素脱离正常流，将会导致margin属性的值无效化
 absolute+transform
-#app{ position: relative; // 父元素相对定位 } .child{ position: absolute; // 子元素绝对定位，如果父元素没有定位，那么该元素是相对于页面定位，父元素定位了，那么该元素是相对于父元素的 left: 50%; // 相对于父元素左边50% transform: translateX(-50%); // 子元素水平平移-50%（左负数，右正数） } 优点：父元素是否脱离正常流，也是不影响子元素的水平居中效果
+#app{position: relative; // 父元素相对定位}.child{position: absolute; // 子元素绝对定位，如果父元素没有定位，那么该元素是相对于页面定位，父元素定位了，那么该元素是相对于父元素的left: 50%; // 相对于父元素左边50% transform: translateX(-50%); // 子元素水平平移-50%（左负数，右正数）}优点：父元素是否脱离正常流，也是不影响子元素的水平居中效果
 缺点：transform属性是css3的新属性，浏览器兼容性比较差
 垂直居中：当前元素在父级元素容器中，垂直方向是居中显示的
 table-cell+vertical-algin
-#app{ // 父元素 display: table-cell; vertical-align: middle; // 设置文本的垂直方向对齐方式 } 优点：浏览器兼容性好
+#app{// 父元素display: table-cell;vertical-align: middle; // 设置文本的垂直方向对齐方式}优点：浏览器兼容性好
 缺点：vertical-align属性具有继承性
 absolute+transform</description>
     </item>
-    
     <item>
       <title>css3学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/11/</link>
+      <link>https://xiaochenabc123.github.io/posts/11/</link>
       <pubDate>Wed, 16 Jun 2021 09:21:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/11/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/11/</guid>
       <description>盒子模型
 盒模型在css中是用来封装html元素的，因为本质上来看像个盒子一样，所以叫盒模型或者盒子模型，术语叫box model
 外边距（margin）：一般用于控制同辈元素之间的间距
@@ -159,7 +149,7 @@ absolute+transform</description>
 内边距（padding）：内边框是用于控制内容的距离
 内容（content）：内容，一般为文本和图像
 例子：建立一个宽度为100px，10px的内边距，10px的外边距，10px的红色边框的盒子
-div{ width: 100px; borde: 10px solid red; padding: 10px; margin: 10px; } top，bottom，left，right分别代表了上，下，左，右
+div{width: 100px;borde: 10px solid red;padding: 10px;margin: 10px;}top，bottom，left，right分别代表了上，下，左，右
 或者padding: 上，右，下，左，只有一个数字就表示上，下，左，右都是这个数值
 有两个数值就是分别代表上下和左右，有三个数值表示上和左右和下
 这个盒子大小应该是内容的宽度+内边距+边框+外边距
@@ -188,13 +178,11 @@ display 为 inline-block、table-cells、flex
 overflow 除了 visible 以外的值 (hidden、auto、scroll)
 BFC的特性：</description>
     </item>
-    
     <item>
       <title>简单解决文本溢出问题</title>
-      <link>https://chenjunlinabc.github.io/posts/6/</link>
+      <link>https://xiaochenabc123.github.io/posts/6/</link>
       <pubDate>Wed, 16 Jun 2021 08:40:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/6/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/6/</guid>
       <description>当文本宽度超过容器的宽度那么将导致溢出
 使用text-overflow属性会修剪文本导致文本显示不全
 这里使用的方法是word-break: break-all+white-space: pre-wrap
@@ -208,6 +196,5 @@ pre-wrap：保留完整空格，保留换行符，自动换行
 pre-line：保留空格（可能不完整），保留换行
 一个提供换行规则，另一个保证换行的样式还存在（例如换行符，空格等等），而且还提供自动换行功能</description>
     </item>
-    
   </channel>
 </rss>

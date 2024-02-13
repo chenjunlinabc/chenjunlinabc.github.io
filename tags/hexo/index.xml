@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>hexo on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/hexo/</link>
+    <link>https://xiaochenabc123.github.io/tags/hexo/</link>
     <description>Recent content in hexo on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jun 2021 14:36:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 14:36:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单搭建一个hexo博客</title>
-      <link>https://chenjunlinabc.github.io/posts/26/</link>
+      <link>https://xiaochenabc123.github.io/posts/26/</link>
       <pubDate>Wed, 16 Jun 2021 14:36:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/26/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/26/</guid>
       <description>hexo+github可以实现免费搭建一个博客网站，就是维护起来有点麻烦
 apt install npm
 npm install hexo-cli -g
@@ -51,6 +51,5 @@ home 主页 archives 归档页 categories 分类页 tags 标签页 about 关于�
 left - 靠左放置 right - 靠右放置
 设置 头像</description>
     </item>
-    
   </channel>
 </rss>

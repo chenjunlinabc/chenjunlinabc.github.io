@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>区块链 on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
+    <link>https://xiaochenabc123.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
     <description>Recent content in 区块链 on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jun 2021 09:27:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 09:27:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单理解区块链的基本原理</title>
-      <link>https://chenjunlinabc.github.io/posts/15/</link>
+      <link>https://xiaochenabc123.github.io/posts/15/</link>
       <pubDate>Wed, 16 Jun 2021 09:27:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/15/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/15/</guid>
       <description>注意：不推荐去玩比特币以及类似的加密货币，那个玩意说涨就涨，说跌就跌，比特币实质上就是一串数字，没有实物，没有信用背书，当这个巨大泡沫破裂之时，大部分人绝对不可能及时套现跑路，了解比特币下的技术可以，但是绝对不能接触或者玩比特币以及类似的加密货币
 1个比特币相当于100000000聪,聪(Satoshi)是比特币目前最小的单位，是为了纪念比特币的创建者中本聪(Satoshi Nakamoto)
 在中国唯一值得信赖的加密货币是数字人民币，有国家在做信用背书，是有法偿能力的法定货币，和现金等值
@@ -71,6 +71,5 @@ Hash(上一个Hash值,交易记录集,随机数)= 哈希值
 最经典的例子就是拜占庭将军问题
 主要讲的是：拜占庭帝国去攻击一个敌人，派了10支军队，要将这个敌人打败需要至少6支军队，而且必须在分散包围状态下同时攻击，需要依靠通信兵来进行传递信息，但是不清楚这些通信兵或者将军中是否有叛徒，而这些叛徒可能会传递假消息来导致进攻失败，而拜占庭将军们需要在这种分布式下进行传递消息</description>
     </item>
-    
   </channel>
 </rss>

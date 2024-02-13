@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>算法 on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+    <link>https://xiaochenabc123.github.io/tags/%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 算法 on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 09 Aug 2021 20:36:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Aug 2021 20:36:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>算法学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/79/</link>
+      <link>https://xiaochenabc123.github.io/posts/79/</link>
       <pubDate>Mon, 09 Aug 2021 20:36:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/79/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/79/</guid>
       <description>虽然学过java和Python，但是还是JavaScript比较熟练，因此算法学习全部用JavaScript来写
 算法不会被程序语言所限制，也不会一个实现只有一个算法
 常见数据结构（数组，列表，映射，堆栈，队列，哈希表，树，图）
@@ -33,15 +33,13 @@ O(1): Constant Complexity: Constant 常数复杂度 O(log n): Logarithmic Comple
 保证有序数组中的元素是不重复的，也就是说不存在重复的元素
 有序数组中重复的肯定是挨着的，只需要遍历数组全部的元素，前面和后面进行比较，如果相同则删除后面的
 例如：
-let arr = function(nums) { if(nums == null || nums.length == 0){ return 0 } let b = 0 for(let a=0;a&amp;lt;nums.length;a++){ if(nums[b]!=nums[a]){ nums[++b] = nums[a] } } return ++b } b作为覆盖，a作为查询，当b的值不等于a查询到的值时，b++的值等于a的值，等于的时候b不改变，当不相等再等于到b上</description>
+let arr = function(nums) {if(nums == null || nums.length == 0){return 0}let b = 0for(let a=0;a&amp;lt;nums.length;a++){if(nums[b]!=nums[a]){nums[++b] = nums[a]}}return ++b}b作为覆盖，a作为查询，当b的值不等于a查询到的值时，b++的值等于a的值，等于的时候b不改变，当不相等再等于到b上</description>
     </item>
-    
     <item>
       <title>数据结构与算法学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/49/</link>
+      <link>https://xiaochenabc123.github.io/posts/49/</link>
       <pubDate>Tue, 29 Jun 2021 15:52:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/49/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/49/</guid>
       <description>根据于小甲鱼大佬的数据结构与算法教程而 ~~ 写 ~~ 抄的笔记
 什么是数据结构？
 数据结构是一门研究非数值计算的程序设计问题中的操作对象，以及它们之间的关系和操作等相关问题的学科。
@@ -101,6 +99,5 @@ let arr = function(nums) { if(nums == null || nums.length == 0){ return 0 } let 
 在修改后的运行次数函数中，只保留最高阶项
 如果最高阶项存在且不是1，则去除于这个项相乘的常数</description>
     </item>
-    
   </channel>
 </rss>

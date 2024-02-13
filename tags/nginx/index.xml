@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>nginx on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/nginx/</link>
+    <link>https://xiaochenabc123.github.io/tags/nginx/</link>
     <description>Recent content in nginx on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Aug 2021 12:50:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Aug 2021 12:50:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Nginx</title>
-      <link>https://chenjunlinabc.github.io/posts/85/</link>
+      <link>https://xiaochenabc123.github.io/posts/85/</link>
       <pubDate>Wed, 18 Aug 2021 12:50:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/85/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/85/</guid>
       <description>Nginx是目前web服务器占比第一（在https://w3techs.com 中可以看到Nginx占比33.1%）
 Nginx支持静态资源提供服务，支持高并发，热部署，反向代理，缓存，负载均衡等功能，Nginx使用BSD许可证开源（允许修改Nginx源码来重新发布一个商业用途的（例如Tengine））
 Nginx由Nginx二进制可执行文件，Nginx.conf，access.log，error.log组成
@@ -52,15 +52,13 @@ apt install nginx
 检查是否安装完毕
 nginx -v
 nginx配置文件nginx.conf解读，一般在/etc/nginx下
-user root; # nginx运行用户 worker_processes auto; # nginx进程数，一般会设置和CPU核数一致 error_log /www/wwwlogs/nginx_error.</description>
+user root; # nginx运行用户worker_processes auto; # nginx进程数，一般会设置和CPU核数一致error_log /www/wwwlogs/nginx_error.</description>
     </item>
-    
     <item>
       <title>简单使用Nginx HTTP服务器软件</title>
-      <link>https://chenjunlinabc.github.io/posts/85/</link>
+      <link>https://xiaochenabc123.github.io/posts/85/</link>
       <pubDate>Wed, 18 Aug 2021 12:50:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/85/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/85/</guid>
       <description>Nginx是目前web服务器占比第一（在https://w3techs.com 中可以看到Nginx占比33.1%）
 Nginx支持静态资源提供服务，支持高并发，热部署，反向代理，缓存，负载均衡等功能，Nginx使用BSD许可证开源（允许修改Nginx源码来重新发布一个商业用途的（例如Tengine））
 Nginx由Nginx二进制可执行文件，Nginx.conf，access.log，error.log组成
@@ -95,15 +93,13 @@ apt install nginx
 检查是否安装完毕
 nginx -v
 nginx配置文件nginx.conf解读，一般在/etc/nginx下
-user root; # nginx运行用户 worker_processes auto; # nginx进程数，一般会设置和CPU核数一致 error_log /www/wwwlogs/nginx_error.</description>
+user root; # nginx运行用户worker_processes auto; # nginx进程数，一般会设置和CPU核数一致error_log /www/wwwlogs/nginx_error.</description>
     </item>
-    
     <item>
       <title>记录一次MIME类型错误</title>
-      <link>https://chenjunlinabc.github.io/posts/39/</link>
+      <link>https://xiaochenabc123.github.io/posts/39/</link>
       <pubDate>Thu, 17 Jun 2021 08:25:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/39/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/39/</guid>
       <description>打开网页，发现css没有加载出来，f12一看，content-type: text/plain;，把这个css当文本输出了，浏览器请求到这种类型的文件都不会对其进行处理，而且应该是text/css才对
 先了解一下浏览器是如何处理这些数据的，是怎么区分的
 数据通过http传输协议获取到，然后由web服务器的content-type向浏览器进行指示数据的类型，而mime.types就是用来定义数据文件的类型，用什么格式来进行网页编码（charset=utf-8）
@@ -113,6 +109,5 @@ user root; # nginx运行用户 worker_processes auto; # nginx进程数，一般�
 第一个行指定mime.types，第二行就是默认类型
 然后重启一下nginx服务器，刷新一下网页，看到恢复成content-type: text/css了</description>
     </item>
-    
   </channel>
 </rss>

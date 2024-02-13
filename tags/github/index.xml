@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Github on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/github/</link>
+    <link>https://xiaochenabc123.github.io/tags/github/</link>
     <description>Recent content in Github on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 01 Feb 2022 18:00:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Feb 2022 18:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用GitHub Actions来实现CI/CD</title>
-      <link>https://chenjunlinabc.github.io/posts/131/</link>
+      <link>https://xiaochenabc123.github.io/posts/131/</link>
       <pubDate>Tue, 01 Feb 2022 18:00:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/131/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/131/</guid>
       <description>CI：持续集成 (Continuous Integration) CD：持续交付 (Continuous Delivery) CD：持续部署 (Continuous Deployment)
 GitHub Actions是GitHub提供的持续集成服务
 GitHub Actions官方文档：https://docs.github.com/en/actions
@@ -29,8 +29,7 @@ on：指定触发workflow的条件，一般为事件触发（比如说push）
 jobs：每一项任务都需要定义个job_id，job中的name为该任务的描述，needs为指定当前任务的运行顺序（依赖关系），runs-on为指定运行时需要的虚拟机环境（这个字段必须填）
 目前github支持的虚拟机操作系统有ubuntu，windows，macOS，而且github提供的虚拟机是免费使用的
 这里举个例子（github官方的）
-name: GitHub Actions Demo on: [push] jobs: Explore-GitHub-Actions: runs-on: ubuntu-latest steps: - run: echo &amp;quot; The job was automatically triggered by a ${{ github.event_name }} event.&amp;quot; - run: echo &amp;quot; This job is now running on a ${{ runner.os }} server hosted by GitHub!</description>
+name: GitHub Actions Demoon: [push]jobs:Explore-GitHub-Actions:runs-on: ubuntu-lateststeps:- run: echo &amp;quot; The job was automatically triggered by a ${{ github.event_name }} event.&amp;quot;- run: echo &amp;quot; This job is now running on a ${{ runner.os }} server hosted by GitHub!</description>
     </item>
-    
   </channel>
 </rss>

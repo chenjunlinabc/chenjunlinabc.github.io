@@ -2,36 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>vue on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/vue/</link>
+    <link>https://xiaochenabc123.github.io/tags/vue/</link>
     <description>Recent content in vue on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 03 Nov 2022 17:40:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Nov 2022 17:40:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Element Plus组件库</title>
-      <link>https://chenjunlinabc.github.io/posts/157/</link>
+      <link>https://xiaochenabc123.github.io/posts/157/</link>
       <pubDate>Thu, 03 Nov 2022 17:40:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/157/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/157/</guid>
       <description>Element Plus是基于vue3开发的组件库，而Element使用vue2开发的组件库
 安装Element Plus
 npm install element-plus &amp;ndash;save
 或者
 yarn add element-plus
 导入Element Plus
-import ElementPlus from &#39;element-plus&#39; import &#39;element-plus/dist/index.css&#39; 按需导入
+import ElementPlus from &#39;element-plus&#39;import &#39;element-plus/dist/index.css&#39;按需导入
 安装插件
 npm install -D unplugin-vue-components unplugin-auto-import
 如果是使用Vite则配置vite.config.ts文件
 导入并且启用插件
-import AutoImport from &#39;unplugin-auto-import/vite&#39; import Components from &#39;unplugin-vue-components/vite&#39; ... plugins: [ AutoImport({ resolvers: [ElementPlusResolver()], }), Components({ resolvers: [ElementPlusResolver()], }), ], 这个组件库还支持module导入的方式手动按需使用，例如：
-&amp;lt;template&amp;gt; &amp;lt;el-button&amp;gt;I am ElButton&amp;lt;/el-button&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import { ElButton } from &#39;element-plus&#39; export default { components: { ElButton }, } &amp;lt;/script&amp;gt; </description>
+import AutoImport from &#39;unplugin-auto-import/vite&#39;import Components from &#39;unplugin-vue-components/vite&#39;...plugins: [AutoImport({resolvers: [ElementPlusResolver()],}),Components({resolvers: [ElementPlusResolver()],}),],这个组件库还支持module导入的方式手动按需使用，例如：
+&amp;lt;template&amp;gt;&amp;lt;el-button&amp;gt;I am ElButton&amp;lt;/el-button&amp;gt;&amp;lt;/template&amp;gt;&amp;lt;script&amp;gt;import { ElButton } from &#39;element-plus&#39;export default {components: { ElButton },}&amp;lt;/script&amp;gt;</description>
     </item>
-    
   </channel>
 </rss>

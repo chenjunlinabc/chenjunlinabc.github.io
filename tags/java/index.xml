@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>java on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/java/</link>
+    <link>https://xiaochenabc123.github.io/tags/java/</link>
     <description>Recent content in java on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jun 2021 09:35:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 09:35:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JAVA基础学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/19/</link>
+      <link>https://xiaochenabc123.github.io/posts/19/</link>
       <pubDate>Wed, 16 Jun 2021 09:35:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/19/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/19/</guid>
       <description>java基于java虚拟机（Java Virtual Machine，JVM）和java应用编程接口（Application Programming Interface，API）构成
 java的跨平台得益于java虚拟机，只需要编译一次java程序，就可以在不同系统的java虚拟机上运行
 java编译成字节流，java虚拟机通过解析这些字节流来做的跨平台，编译完成得到的字节流可以在不同平台的java虚拟机上跑
@@ -38,8 +38,7 @@ java入口程序必须是静态方法，方法名也必须为main，参数必须
 多行注释
 */
 /** *
-一样是多行注释 */
-java的变量的类型和JavaScript一样，变量分两种，基本类型变量和引用类型变量 java有8种基础类型，分别是整型（4种），字符型（1种），浮点型（2种），布尔型（1种）
+一样是多行注释 * */ java的变量的类型和JavaScript一样，变量分两种，基本类型变量和引用类型变量 java有8种基础类型，分别是整型（4种），字符型（1种），浮点型（2种），布尔型（1种）
 变量必须先定义，后赋值使用，例如：
 int a = 1;
 定义为int整数类型，名称为a，初始值为1
@@ -51,6 +50,5 @@ int x = i; // 变量x的值为i，因为i的值为100，所以x的值为i
 整型类型：int，byte，short，long
 整型类型的数就是整数，整数默认为int，在数值后加上L就代表为long，例如：long abc = 123L;</description>
     </item>
-    
   </channel>
 </rss>

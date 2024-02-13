@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>vuex on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/vuex/</link>
+    <link>https://xiaochenabc123.github.io/tags/vuex/</link>
     <description>Recent content in vuex on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Dec 2021 06:19:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/vuex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Dec 2021 06:19:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/vuex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用vuex状态管理库</title>
-      <link>https://chenjunlinabc.github.io/posts/123/</link>
+      <link>https://xiaochenabc123.github.io/posts/123/</link>
       <pubDate>Mon, 13 Dec 2021 06:19:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/123/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/123/</guid>
       <description>vuex是一个专门为vuejs应用程序的设计的状态管理
 集中式存储管理应用的所有组件的状态
 多组件状态共享，不同的组件改变同一个状态
@@ -32,12 +32,11 @@ import Vuex from &amp;ldquo;vuex&amp;rdquo;
 new Vuex.store()
 将vuex实例挂载在vue对象上
 index.js
-Vue.use(Vuex) const store = new Vuex.Store({ state: { count: 0 } }) export default store main.js
-new Vue({ store // 将store对象添加到vue实例上 }) 可以通过this.$store.state.count获取到状态（官方推荐将获取装态的操作放到computed中）
+Vue.use(Vuex)const store = new Vuex.Store({state: {count: 0}})export default storemain.js
+new Vue({store // 将store对象添加到vue实例上})可以通过this.$store.state.count获取到状态（官方推荐将获取装态的操作放到computed中）
 使用解构获取状态： import { mapState } from &amp;lsquo;vuex&amp;rsquo; export default { mounted() { console.log(this.count) }, computed: { &amp;hellip;mapState([&amp;lsquo;count&amp;rsquo;]) } }
 Getter
-getters: { getCount(state) { return state.</description>
+getters: {getCount(state) {return state.</description>
     </item>
-    
   </channel>
 </rss>

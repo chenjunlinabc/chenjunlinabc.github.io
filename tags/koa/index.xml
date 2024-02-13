@@ -2,32 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>koa on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/koa/</link>
+    <link>https://xiaochenabc123.github.io/tags/koa/</link>
     <description>Recent content in koa on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Sep 2021 18:30:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/koa/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Sep 2021 18:30:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/koa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Koa框架学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/100/</link>
+      <link>https://xiaochenabc123.github.io/posts/100/</link>
       <pubDate>Sun, 12 Sep 2021 18:30:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/100/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/100/</guid>
       <description>koa是web应用框架，是Express原班人马打造的，致力于成为一个更小、更富有表现力、更健壮的 Web 框架
 个人推荐：个人开发推荐用koa，团队开发推荐用egg
 egg是在koa的基础上进行封装，并且提供了一些，并且添加了约束，更利于工程化的开发
 安装koa
 npm install koa
 新建一个app.js
-const Koa = require(&amp;quot;koa&amp;quot;) const app = new Koa() app.use(async (ctx, next) =&amp;gt; { await next() ctx.response.type = &#39;text/html&#39; ctx.response.body = &#39;&amp;lt;h1&amp;gt;hallo, koa!&amp;lt;/h1&amp;gt;&#39; }) app.listen(3000) node app.js
+const Koa = require(&amp;quot;koa&amp;quot;)const app = new Koa()app.use(async (ctx, next) =&amp;gt; {await next()ctx.response.type = &#39;text/html&#39;ctx.response.body = &#39;&amp;lt;h1&amp;gt;hallo, koa!&amp;lt;/h1&amp;gt;&#39;})app.listen(3000)node app.js
 get请求参数的接收
-const Koa = require(&#39;koa&#39;) const app = new Koa() app.use(async(ctx)=&amp;gt;{ const url =ctx.url const request =ctx.request const reqQuery = request.query const reqQuerystring = request.querystring ctx.body={ url, reqQuery, reqQuerystring } }) app.listen(3000,()=&amp;gt;{ console.log(&#39;port 3000&#39;) }) http://127.</description>
+const Koa = require(&#39;koa&#39;)const app = new Koa()app.use(async(ctx)=&amp;gt;{const url =ctx.urlconst request =ctx.requestconst reqQuery = request.queryconst reqQuerystring = request.querystringctx.body={url,reqQuery,reqQuerystring}})app.listen(3000,()=&amp;gt;{console.log(&#39;port 3000&#39;)})http://127.</description>
     </item>
-    
   </channel>
 </rss>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>RESTful on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/restful/</link>
+    <link>https://xiaochenabc123.github.io/tags/restful/</link>
     <description>Recent content in RESTful on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Feb 2022 21:50:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/restful/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Feb 2022 21:50:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/restful/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单了解RESTful设计规范</title>
-      <link>https://chenjunlinabc.github.io/posts/136/</link>
+      <link>https://xiaochenabc123.github.io/posts/136/</link>
       <pubDate>Wed, 16 Feb 2022 21:50:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/136/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/136/</guid>
       <description>RESTful是指满足REST的约束条件和原则的应用或者设计，REST全称Representational State Transfer（表现层状态转移），REST出现在2000年Roy Fielding的博士论文中（Roy Fielding是HTTP规范的主要编写者之一），RESTful是目前最流行的API设计规范
 资源(Resources)：REST是基于资源的，不同的资源使用不同且唯一的URI(统一资源标识符（Uniform Resource Identifier），URI格式例如：/img/hallo.jpg，可表示一个资源的路径和资源名称，URI实质上就是URL加URN)表示，获取资源通过访问URI得到，这个资源可以是任何东西（例如txt，exe，iso，mp3，mp4等等）
 表示层(Representation)：表示层指是将资源具体内容以某种方式展现出来的，例如hallo.mp3，那么就会用mp3的格式来展现这个文件的内容
@@ -36,6 +36,5 @@ HTTP请求方式（不同的操作使用不同的请求方式，例如获取资�
 需正确设置http状态码，根据http状态码来做出不同的响应，例如200正常返回，404文件不存在等等
 简单来说就是使用唯一接口，通过URL来访问不同的资源，通过不同的请求方式对资源做出响应</description>
     </item>
-    
   </channel>
 </rss>

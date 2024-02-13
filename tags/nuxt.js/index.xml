@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Nuxt.js on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/nuxt.js/</link>
+    <link>https://xiaochenabc123.github.io/tags/nuxt.js/</link>
     <description>Recent content in Nuxt.js on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 05 Jun 2022 21:36:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/nuxt.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Jun 2022 21:36:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/nuxt.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nuxt.js学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/152/</link>
+      <link>https://xiaochenabc123.github.io/posts/152/</link>
       <pubDate>Sun, 05 Jun 2022 21:36:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/152/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/152/</guid>
       <description>nuxt是一个基于vue的应用框架，用于创建服务端渲染应用，使用vite作为打包器，使用webpack作为构建工具
 创建项目
 yarn create nuxt-app test
@@ -31,6 +31,5 @@ yarn build
 yarn start
 启动测试环境 yarn test</description>
     </item>
-    
   </channel>
 </rss>

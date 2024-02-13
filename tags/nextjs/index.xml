@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>NextJS on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/nextjs/</link>
+    <link>https://xiaochenabc123.github.io/tags/nextjs/</link>
     <description>Recent content in NextJS on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 07 Aug 2021 23:26:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/nextjs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Aug 2021 23:26:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/nextjs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NextJS学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/74/</link>
+      <link>https://xiaochenabc123.github.io/posts/74/</link>
       <pubDate>Sat, 07 Aug 2021 23:26:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/74/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/74/</guid>
       <description>NextJS是一个用于生产环境的react框架，可以提供服务器端渲染等等功能
 服务端渲染（ssr）：后端调用数据库获取数据后，将数据和页面元素进行组合成完整的DOM结构，再返回给浏览器，提供给用户浏览
 SPA：
@@ -32,7 +32,7 @@ yarn init
 在scripts下加添加
 &amp;ldquo;dev&amp;rdquo; : &amp;ldquo;next&amp;rdquo;, &amp;ldquo;build&amp;rdquo;: &amp;ldquo;next build&amp;rdquo;, &amp;ldquo;start&amp;rdquo;: &amp;ldquo;next start&amp;rdquo;
 创建个js文件
-function Hallo(){ return( &amp;lt;div&amp;gt;hallo next.js&amp;lt;/div&amp;gt; ) } export default Hallo yarn dev调试
+function Hallo(){return(&amp;lt;div&amp;gt;hallo next.js&amp;lt;/div&amp;gt;)}export default Halloyarn dev调试
 如果浏览器输出正确则配置成功
 通过create-next-app脚手架创建项目
 npm install create-next-app -g
@@ -46,8 +46,7 @@ yarn create-next-app demo
 yarn dev
 访问http://localhost:3000/，正常显示网页则配置正常
 编程式跳转
-import Link from &amp;quot;next/link&amp;quot; &amp;lt;Link href=&amp;quot;/&amp;quot;&amp;gt;&amp;lt;a&amp;gt;返回&amp;lt;/a&amp;gt;&amp;lt;/Link&amp;gt; Link不支持直接加兄弟标签，起码要有一个父级标签</description>
+import Link from &amp;quot;next/link&amp;quot;&amp;lt;Link href=&amp;quot;/&amp;quot;&amp;gt;&amp;lt;a&amp;gt;返回&amp;lt;/a&amp;gt;&amp;lt;/Link&amp;gt;Link不支持直接加兄弟标签，起码要有一个父级标签</description>
     </item>
-    
   </channel>
 </rss>

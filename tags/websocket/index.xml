@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>WebSocket on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/websocket/</link>
+    <link>https://xiaochenabc123.github.io/tags/websocket/</link>
     <description>Recent content in WebSocket on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 05 Nov 2022 14:00:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/websocket/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 14:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/websocket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WebSocket学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/158/</link>
+      <link>https://xiaochenabc123.github.io/posts/158/</link>
       <pubDate>Sat, 05 Nov 2022 14:00:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/158/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/158/</guid>
       <description>HTTP1.1协议实质上就是半双工信道，无法同时发送数据和接收数据，而且HTTP连接必须是客户端发起，由服务器来进行处理响应，只有HTTP2.0才是全双工信道（不需要等待响应，就可以发送第二个报文）
 WebSocket是全双工信道，而且还支持服务端主动发送数据给客户端，是服务器推送技术（还是需要客户端发起连接）
 WebSocket协议是应用层协议，而且是建立在TCP协议上，端口也是使用443和80，握手使用HTTP协议，浏览器不会限制WebSocket的同源
@@ -31,9 +31,8 @@ WebSocket.onclose是指定连接关闭后执行的回调函数
 WebSocket.onmessage是指定从服务器获取信息时执行的回调函数
 可以指定WebSocket.binaryType来指定传输的数据类型，数据类型有2种，分别是blob和arraybuffer
 客户端配置例如：
-const ws = new WebSocket(&#39;ws://localhost:8080&#39;) ws.onopen = () =&amp;gt;{ console.log(&amp;quot;连接中&amp;quot;) ws.send(&#39;hallo word&#39;) // 向服务端发送数据 } ws.onerror = () =&amp;gt;{ console.log(&#39;连接失败&#39;) } ws.onmessage = (evt) =&amp;gt;{ console.log(&#39;连接成功，正在获取数据&#39;) if(typeof evt.data === String){ console.log(&#39;hallo&#39;+evt.data) }else if(evt.data instanceof ArrayBuffer){ let data = evt.data console.log(&#39;数据：&#39;+data) } ws.close() // 手动关闭连接 } ws.onclose = () =&amp;gt;{ console.log(&#39;连接已关闭&#39;) } 还有WebSocket.bufferedAmount属性，也是只读，用于返回WebSocket..send没有发送到服务端的数据的字节数，为0表示全部数据已传输完毕
+const ws = new WebSocket(&#39;ws://localhost:8080&#39;)ws.onopen = () =&amp;gt;{console.log(&amp;quot;连接中&amp;quot;)ws.send(&#39;hallo word&#39;) // 向服务端发送数据}ws.onerror = () =&amp;gt;{console.log(&#39;连接失败&#39;)}ws.onmessage = (evt) =&amp;gt;{console.log(&#39;连接成功，正在获取数据&#39;)if(typeof evt.data === String){console.log(&#39;hallo&#39;+evt.data)}else if(evt.data instanceof ArrayBuffer){let data = evt.dataconsole.log(&#39;数据：&#39;+data)}ws.close() // 手动关闭连接}ws.onclose = () =&amp;gt;{console.log(&#39;连接已关闭&#39;)}还有WebSocket.bufferedAmount属性，也是只读，用于返回WebSocket..send没有发送到服务端的数据的字节数，为0表示全部数据已传输完毕
 WebSocket.url属性可以返回WebSocket实例的URL绝对路径，只读</description>
     </item>
-    
   </channel>
 </rss>

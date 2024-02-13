@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>汇编 on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/%E6%B1%87%E7%BC%96/</link>
+    <link>https://xiaochenabc123.github.io/tags/%E6%B1%87%E7%BC%96/</link>
     <description>Recent content in 汇编 on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 20 Nov 2022 11:49:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/%E6%B1%87%E7%BC%96/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 11:49:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/%E6%B1%87%E7%BC%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>汇编基础学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/162/</link>
+      <link>https://xiaochenabc123.github.io/posts/162/</link>
       <pubDate>Sun, 20 Nov 2022 11:49:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/162/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/162/</guid>
       <description>x86架构通用寄存器（32位的x86架构和64位的x86_64架构）
 x86_64架构由amd公司推出，因此又叫amd64架构，64位架构是基于32位架构扩展的
 32位架构的x86处理器具备8个32位的通用寄存器，可通过名称来引用这8个寄存器，分别为EAX，ECX，EDX，EBX，ESP，EBP，ESI，EDI
@@ -72,6 +72,5 @@ x64架构，在PAE的基础上扩展了页表为4级，而且每个页面的大�
 进程是以内存页面为单位向操作系统申请内存的，现代操作系统中会对申请的内存空间进行记录，并不会马上分配，而是等到该进程真正访问该内存空间是才会分配物理页面并且进行映射，然后恢复中断程序，如果进程访问了没有映射的内存空间，会被操作系统进行page fault处理，操作系统通过page failt handle进行检查内存空间分配记录
 物理空间不够分配时，操作系统可以将少使用的物理页面写入到磁盘交换分区（Swap分区）中，将空出来的页面给需要的进程使用，注意：当在磁盘交换分区中内存页面被访问了，也会触发page fault处理，操作系统通过page failt handle来将磁盘交换分区的内存页面加载回内存中</description>
     </item>
-    
   </channel>
 </rss>

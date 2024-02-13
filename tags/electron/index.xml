@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Electron on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/electron/</link>
+    <link>https://xiaochenabc123.github.io/tags/electron/</link>
     <description>Recent content in Electron on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 25 Aug 2021 12:00:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/electron/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单利用Electron框架开发桌面端应用</title>
-      <link>https://chenjunlinabc.github.io/posts/91/</link>
+      <link>https://xiaochenabc123.github.io/posts/91/</link>
       <pubDate>Wed, 25 Aug 2021 12:00:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/91/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/91/</guid>
       <description>Electron是由github开发的开源框架，允许开发者使用web技术构建跨平台的桌面应用
 GUI由Chromium提供，底层通过Nodejs提供，Native API提供桌面端和跨平台的原生功能
 Visual Studio Code和Atom都是使用Electron开发的，可以说技术很成熟
@@ -37,9 +37,8 @@ var BrowserWindow = electron.BrowserWindow
 声明主窗口
 var mainWindow = null
 设置参数
-app.on(&#39;ready&#39;,()=&amp;gt;{ mainWindow = new BrowserWindow({ // 设置窗口大小 width:500, height:500, webPreferences:{ nodeIntegration: true // 是否集成node } }) mainWindow.loadFile(&#39;index.html&#39;) // 指定窗口加载那个页面 mainWindow.on(&#39;closed&#39;,()=&amp;gt;{ mainWindow = null // 监听销毁事件，事件触发关闭主窗口，设置为null }) }) 初始化
+app.on(&#39;ready&#39;,()=&amp;gt;{mainWindow = new BrowserWindow({// 设置窗口大小width:500,height:500,webPreferences:{nodeIntegration: true// 是否集成node}}) mainWindow.loadFile(&#39;index.html&#39;) // 指定窗口加载那个页面mainWindow.on(&#39;closed&#39;,()=&amp;gt;{mainWindow = null// 监听销毁事件，事件触发关闭主窗口，设置为null})})初始化
 npm init &amp;ndash;yes</description>
     </item>
-    
   </channel>
 </rss>

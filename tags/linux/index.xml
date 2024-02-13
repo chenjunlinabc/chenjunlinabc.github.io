@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/linux/</link>
+    <link>https://xiaochenabc123.github.io/tags/linux/</link>
     <description>Recent content in Linux on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jun 2021 14:48:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 14:48:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>配置树莓派笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/29/</link>
+      <link>https://xiaochenabc123.github.io/posts/29/</link>
       <pubDate>Wed, 16 Jun 2021 14:48:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/29/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/29/</guid>
       <description>（树莓派系统）Raspbian是基于Debian GNU/Linux的免费操作系统，所以可以使用debian的操作方法来配置系统和使用系统
 现改名为Raspberry Pi OS
 工具：读卡器，16g内存卡，micro usb充电器，树莓派，一台pc
@@ -28,7 +28,7 @@
 使用读卡器读取系统信息，在boot目录新建一个名为ssh的空白文件，用来打开ssh服务，ssh文件不需要存在内容 没有用那么需要手动启动ssh服务：service sshd restart
 在boot目录新建一个wpa_supplicant.conf文件
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1
-network={ ssid=&amp;quot;wifi的名字&amp;quot; psk=&amp;quot;wifi的密码&amp;quot; key_mgmt=WPA-PSK priority=1 } update_config=1，这个用来控制wifi的优先级，只有一个wifi的时候可有可无，没有影响
+network={ssid=&amp;quot;wifi的名字&amp;quot;psk=&amp;quot;wifi的密码&amp;quot;key_mgmt=WPA-PSKpriority=1}update_config=1，这个用来控制wifi的优先级，只有一个wifi的时候可有可无，没有影响
 插入内存卡，连接电源，开启树莓派
 Windows10开热点会显示连接设备的ip，wifi路由器的就去路由器后台找
 使用ssh工具，连接树莓派，默认用户名：pi，密码：raspberry 修改用户密码：sudo passwd pi pi是要修改密码的用户
@@ -37,21 +37,18 @@ vnc服务
 sudo raspi-config
 依次操作：Interfacing Options -&amp;gt; VNC -&amp;gt; Yes</description>
     </item>
-    
     <item>
       <title>linux系统的日常使用</title>
-      <link>https://chenjunlinabc.github.io/posts/8/</link>
+      <link>https://xiaochenabc123.github.io/posts/8/</link>
       <pubDate>Wed, 16 Jun 2021 09:12:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/8/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/8/</guid>
       <description>linux发行版有很多，这里使用的是Ubuntu
 个人喜欢使用无界面版本（ubuntu-20.04-live-server-amd64）
 有关于树莓派的看这个
 修改为国内源
 nano /etc/apt/sources.list
 替换内容为
-# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse # 预发布软件源，不建议启用 # deb https://mirrors.</description>
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse# 预发布软件源，不建议启用# deb https://mirrors.</description>
     </item>
-    
   </channel>
 </rss>

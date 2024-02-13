@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>mysql on 小陈的个人博客</title>
+    <link>https://xiaochenabc123.github.io/tags/mysql/</link>
+    <description>Recent content in mysql on 小陈的个人博客</description>
+    <image>
+      <title>小陈的个人博客</title>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://xiaochenabc123.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL学习笔记</title>
+      <link>https://xiaochenabc123.github.io/posts/20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://xiaochenabc123.github.io/posts/20/</guid>
+      <description>推荐使用mariaDB
+操作数据库
+创建数据库
+CREATE DATABASE xxx;
+删除数据库
+DROP DATABASE xxx;
+查看所有数据库
+SHOW DATABASES;
+查看指定数据库
+SHOW xxx;
+打开指定数据库
+USE xxx;
+查看指定数据库的详细信息
+SHOW CREATE DATABASE xxx;
+修改指定数据库的字符集
+ALTER DATABASE xxx CHARACTER SET gbk COLLATE gbk_bin;
+数据表的校对规则，与于指定数据集如何排序
+COLLATE=utf8_bin
+指定字符集
+CHARSET=utf8
+查看当前mysql所支持的字符集
+SHOW CHARACTER SET;
+新建数据表
+CREATE TABLE xxx(id int(4),email char(20),status int(2),code varchar(10)​ );
+添加数据
+INSERT INTO xxx VALUES(1,&amp;quot;hallo&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;xxx&amp;quot;);修改数据(根据条件)
+UPDATE xxx SET status=1 WHERE id = 4;</description>
+    </item>
+  </channel>
+</rss>

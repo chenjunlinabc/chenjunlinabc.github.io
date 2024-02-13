@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>golang on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/golang/</link>
+    <link>https://xiaochenabc123.github.io/tags/golang/</link>
     <description>Recent content in golang on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Feb 2022 05:19:00 +0000</lastBuildDate><atom:link href="https://chenjunlinabc.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Feb 2022 05:19:00 +0000</lastBuildDate>
+    <atom:link href="https://xiaochenabc123.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Hugo搭建网站</title>
-      <link>https://chenjunlinabc.github.io/posts/137/</link>
+      <link>https://xiaochenabc123.github.io/posts/137/</link>
       <pubDate>Tue, 22 Feb 2022 05:19:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/137/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/137/</guid>
       <description>Hugo是基于Go语言开发的静态网站生成器，特点就是快
 安装
 二进制文件安装（由官方编译完成的二进制文件来安装，推荐使用，用源码容易出现问题）
@@ -42,39 +42,35 @@ hugo server
 访问http://localhost:1313
 如果报错，you need the extended version to build SCSS/SASS的话，请使用extended版本
 部署到github pages
-hugo &amp;ndash;baseUrl=&amp;ldquo;http://chenjunlinabc.github.io/&amp;quot;
+hugo
 如果该命令执行成功，会将静态页面生成到public文件夹中，只需要push该文件夹到github上就好了</description>
     </item>
-    
     <item>
       <title>Gin框架学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/135/</link>
+      <link>https://xiaochenabc123.github.io/posts/135/</link>
       <pubDate>Tue, 15 Feb 2022 17:00:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/135/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/135/</guid>
       <description>Gin是一个基于go语言编写的web框架，因为Gin的路由库基于httprouter开发的，性能非常好，支持Restful api规范
 安装
 go get -u github.com/gin-gonic/gin
 第一个demo
-package main import &amp;quot;github.com/gin-gonic/gin&amp;quot; import &amp;quot;net/http&amp;quot; func main() { g := gin.Default() g.GET(&amp;quot;/&amp;quot;, func(c *gin.Context) { c.String(http.StatusOK, &amp;quot;hallo word&amp;quot;) }) g.Run() } go run main.go
+package mainimport &amp;quot;github.com/gin-gonic/gin&amp;quot;import &amp;quot;net/http&amp;quot;func main() {g := gin.Default()g.GET(&amp;quot;/&amp;quot;, func(c *gin.Context) {c.String(http.StatusOK, &amp;quot;hallo word&amp;quot;)})g.Run()}go run main.go
 g.Run()是将应用部署到本地服务器上，默认端口为8080，可设置端口，g.Run(&amp;quot;:2333&amp;quot;)
 路由
-r.GET(&amp;quot;/test/:name&amp;quot;, func(c *gin.Context) { name := c.Param(&amp;quot;name&amp;quot;) c.String(http.StatusOK, name) }) g.Run(&amp;quot;:6666&amp;quot;) 127.0.0.1:6666/test/xiaochen
+r.GET(&amp;quot;/test/:name&amp;quot;, func(c *gin.Context) {name := c.Param(&amp;quot;name&amp;quot;)c.String(http.StatusOK, name)})g.Run(&amp;quot;:6666&amp;quot;)127.0.0.1:6666/test/xiaochen
 可以看到Context的Param方法可以获取路由的参数
 通过url传递参数
-r.GET(&amp;quot;/test&amp;quot;, func(c *gin.Context) { name := c.DefaultQuery(&amp;quot;name&amp;quot;, &amp;quot;test&amp;quot;) c.String(http.StatusOK, fmt.Sprintf(&amp;quot;hallo %s&amp;quot;, name)) }) r.Run() 127.0.0.1:6666/test
+r.GET(&amp;quot;/test&amp;quot;, func(c *gin.Context) {name := c.DefaultQuery(&amp;quot;name&amp;quot;, &amp;quot;test&amp;quot;)c.String(http.StatusOK, fmt.Sprintf(&amp;quot;hallo %s&amp;quot;, name))})r.Run()127.0.0.1:6666/test
 如果没有传递参数将会输出DefaultQuery的默认参数test
 传递参数后 127.0.0.1:6666/test?name=word
 POST请求
 index.html main.go</description>
     </item>
-    
     <item>
       <title>beego应用框架的简单使用</title>
-      <link>https://chenjunlinabc.github.io/posts/134/</link>
+      <link>https://xiaochenabc123.github.io/posts/134/</link>
       <pubDate>Sat, 12 Feb 2022 16:50:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/134/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/134/</guid>
       <description>beego是一个基于go语言开发的http框架，beego可用于开发web，api，后端服务等等应用，beego架构为mvc模型，支持RESTful api规范设计，支持热更新
 安装
 go get github.com/beego/beego
@@ -99,22 +95,20 @@ bee generate
 controller控制器
 简单接收一下get请求的参数
 controllers/default.go，在func (c *MainController) Get() 函数中修改
-name := c.GetString(&amp;quot;name&amp;quot;) c.Data[&amp;quot;Website&amp;quot;] = name 访问http://127.0.0.1:8080/?name=hallo，views\index.tpl的模板中的{{.Website}}被设置为hallo
+name := c.GetString(&amp;quot;name&amp;quot;)c.Data[&amp;quot;Website&amp;quot;] = name访问http://127.0.0.1:8080/?name=hallo，views\index.tpl的模板中的{{.Website}}被设置为hallo
 在controllers/default.go看到，其定义了一个MainController结构体，该结构体继承了beego.Controller的全部方法（其中方法包括Get，Post等等方法）
 Model模型
 在bee new中并没有Model实例演示，但是bee api有，而且controller控制器可完成一些简单逻辑，只有当逻辑需要复用时才抽象成Model模型
 View视图
 在controllers/default.go看到c.TplName = &amp;ldquo;index.tpl&amp;rdquo;，这个语句就是设置模板文件，该模板支持tpl和html文件，beego使用了golang默认的模板引擎
 在views/index.tpl中可以看到这个
-&amp;lt;div class=&amp;quot;author&amp;quot;&amp;gt; Official website: &amp;lt;a href=&amp;quot;http://{{.Website}}&amp;quot;&amp;gt;{{.Website}}&amp;lt;/a&amp;gt; / Contact me: &amp;lt;a class=&amp;quot;email&amp;quot; href=&amp;quot;mailto:{{.</description>
+&amp;lt;div class=&amp;quot;author&amp;quot;&amp;gt;Official website:&amp;lt;a href=&amp;quot;http://{{.Website}}&amp;quot;&amp;gt;{{.Website}}&amp;lt;/a&amp;gt; /Contact me:&amp;lt;a class=&amp;quot;email&amp;quot; href=&amp;quot;mailto:{{.</description>
     </item>
-    
     <item>
       <title>简单使用ESbuild打包工具</title>
-      <link>https://chenjunlinabc.github.io/posts/132/</link>
+      <link>https://xiaochenabc123.github.io/posts/132/</link>
       <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/132/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/132/</guid>
       <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包（viet在开发环境下使用这个），支持TypeScript和jsx（tsx），css
 ESbuild支持ES6模块，cjs模块，对ES6+语法支持性好，可以直接打包css文件，json文件，ts文件
 注意：esbuild并不对ts文件进行类型检查工作
@@ -132,17 +126,15 @@ npm run build
 或者
 yarn build
 例子（app.jsx）
-import React from &#39;react&#39; import ReactDOM from &#39;react-dom&#39; const App = () =&amp;gt; { return ( &amp;lt;div&amp;gt; &amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; ) } ReactDOM.render( &amp;lt;App /&amp;gt;, document.getElementById(&amp;quot;app&amp;quot;) ) index.html
-&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 我本地打包只花64ms就打包好了
+import React from &#39;react&#39;import ReactDOM from &#39;react-dom&#39;const App = () =&amp;gt; {return (&amp;lt;div&amp;gt;&amp;lt;h1&amp;gt;Hallo, Esbuild!&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;)}ReactDOM.render(&amp;lt;App /&amp;gt;,document.getElementById(&amp;quot;app&amp;quot;))index.html
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script src=&amp;quot;./build/index.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;我本地打包只花64ms就打包好了
 使用source map功能</description>
     </item>
-    
     <item>
       <title>Golang进阶扩展笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/128/</link>
+      <link>https://xiaochenabc123.github.io/posts/128/</link>
       <pubDate>Sun, 16 Jan 2022 09:08:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/128/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/128/</guid>
       <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.test.com/archives/96.html
 并发
 go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
@@ -182,13 +174,11 @@ sync/atomic包将原子操作封装成了Go的函数，sync/atomic包提供了�
 交换（和CAS不同，交换只赋值old值，不管原来的值）：func SwapInt64(addr *int64, new int64) (old int64)
 比较并且交换（Compare And Swap 简称CAS，类似于乐观锁，只有原来的值和传入的old值一样才修改）：func CompareAndSwapInt64(addr *int64, old, new int64) (swapped bool)</description>
     </item>
-    
     <item>
       <title>Golang学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/96/</link>
+      <link>https://xiaochenabc123.github.io/posts/96/</link>
       <pubDate>Thu, 09 Sep 2021 01:00:00 +0000</pubDate>
-      
-      <guid>https://chenjunlinabc.github.io/posts/96/</guid>
+      <guid>https://xiaochenabc123.github.io/posts/96/</guid>
       <description>Golang又叫go语言，golang是它的全称，是由Google开发的一种静态强类型，编译型，并发型，并具有垃圾回收功能的编程语言
 go语言确保达到静态编译语言的安全和性能的同时，又达到动态语言的开发维护效率
 Go语言天生支持并发，提供自动垃圾回收机制
@@ -204,7 +194,7 @@ GOBIN对应着 go install安装和编译的二进制程序的安装目录
 go env
 源程序默认为UTF-8编码，;可省略
 第一个go程序
-package main import &amp;quot;fmt&amp;quot; func main(){ fmt.Println(&amp;quot;hallo golang&amp;quot;) } go run hallo.go
+package mainimport &amp;quot;fmt&amp;quot;func main(){fmt.Println(&amp;quot;hallo golang&amp;quot;)}go run hallo.go
 当然作为一个编译型语言，编译成二进制文件是支持的
 go build hallo.go
 作为一个静态强类型语言，如果学过java的话，理解还是很轻松的
@@ -227,6 +217,5 @@ var abc string = &amp;ldquo;hallo&amp;rdquo;
 定义多个变量
 var abc xyz string = &amp;ldquo;hallo&amp;rdquo;,&amp;ldquo;word&amp;rdquo;</description>
     </item>
-    
   </channel>
 </rss>
