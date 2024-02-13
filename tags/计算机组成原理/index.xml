@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>计算机组成原理 on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
+    <link>https://chenjunlinabc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
     <description>Recent content in 计算机组成原理 on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 01 Nov 2022 02:00:00 +0000</lastBuildDate>
-    <atom:link href="https://xiaochenabc123.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chenjunlinabc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>计算机组成原理学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/155/</link>
+      <link>https://chenjunlinabc.github.io/posts/155/</link>
       <pubDate>Tue, 01 Nov 2022 02:00:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/155/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/155/</guid>
       <description>计算机发展历史
 1946-1957，电子管计算机，1957-1964，晶体管计算机，1964-1980，集成电路计算机，1980-至今，超大规模集成电路计算机
 电子管计算机：二战时期，英国为了破译德国的无线电密文，而发明了电子管计算机，最出名的电子管计算机莫过于埃尼阿克（ENIAC），埃尼阿克是美国军方为了计算弹道而诞生的，埃尼阿克长30多米，高2.4米，宽6米，拥有18000多个电子管，70000个电阻，10000个电容，1500个续电，6000多个开关，运行耗电150千瓦，重30吨，占地1500平方英寸（140平方米），造价48万美元，运算速度每秒5000次

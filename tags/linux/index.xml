@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/linux/</link>
+    <link>https://chenjunlinabc.github.io/tags/linux/</link>
     <description>Recent content in Linux on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 16 Jun 2021 14:48:00 +0000</lastBuildDate>
-    <atom:link href="https://xiaochenabc123.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chenjunlinabc.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>配置树莓派笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/29/</link>
+      <link>https://chenjunlinabc.github.io/posts/29/</link>
       <pubDate>Wed, 16 Jun 2021 14:48:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/29/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/29/</guid>
       <description>（树莓派系统）Raspbian是基于Debian GNU/Linux的免费操作系统，所以可以使用debian的操作方法来配置系统和使用系统
 现改名为Raspberry Pi OS
 工具：读卡器，16g内存卡，micro usb充电器，树莓派，一台pc
@@ -39,9 +39,9 @@ sudo raspi-config
     </item>
     <item>
       <title>linux系统的日常使用</title>
-      <link>https://xiaochenabc123.github.io/posts/8/</link>
+      <link>https://chenjunlinabc.github.io/posts/8/</link>
       <pubDate>Wed, 16 Jun 2021 09:12:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/8/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/8/</guid>
       <description>linux发行版有很多，这里使用的是Ubuntu
 个人喜欢使用无界面版本（ubuntu-20.04-live-server-amd64）
 有关于树莓派的看这个

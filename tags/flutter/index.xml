@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Flutter on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/flutter/</link>
+    <link>https://chenjunlinabc.github.io/tags/flutter/</link>
     <description>Recent content in Flutter on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 22 Mar 2022 12:00:00 +0000</lastBuildDate>
-    <atom:link href="https://xiaochenabc123.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chenjunlinabc.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flutter框架学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/141/</link>
+      <link>https://chenjunlinabc.github.io/posts/141/</link>
       <pubDate>Tue, 22 Mar 2022 12:00:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/141/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/141/</guid>
       <description>Flutter是谷歌开源的跨平台UI框架，可以快速在iOS和Android上构建高质量的原生用户界面，可在Windows，Linux，Android，Web，iOS，Mac等6大平台上开发应用
 闲鱼和Now直播，美团，快手都使用了Flutter
 获取Flutter

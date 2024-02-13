@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>server on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/server/</link>
+    <link>https://chenjunlinabc.github.io/tags/server/</link>
     <description>Recent content in server on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 16 Jun 2021 15:52:00 +0000</lastBuildDate>
-    <atom:link href="https://xiaochenabc123.github.io/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chenjunlinabc.github.io/tags/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx服务器的一些简单配置</title>
-      <link>https://xiaochenabc123.github.io/posts/34/</link>
+      <link>https://chenjunlinabc.github.io/posts/34/</link>
       <pubDate>Wed, 16 Jun 2021 15:52:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/34/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/34/</guid>
       <description>配置ssl证书
 前提是已经申请到ssl证书,并且开放443端口
 编辑nginx.conf
@@ -37,9 +37,9 @@ gzip on // gzip开启，关闭是off</description>
     </item>
     <item>
       <title>Linux环境下简单搭建Minecraft服务器（java版）</title>
-      <link>https://xiaochenabc123.github.io/posts/33/</link>
+      <link>https://chenjunlinabc.github.io/posts/33/</link>
       <pubDate>Wed, 16 Jun 2021 15:46:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/33/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/33/</guid>
       <description>服务器可以使用国内的，保证延迟低，服务器配置一定要高一点，不然很容易Killed
 安装java
 dnf install java-openjdk

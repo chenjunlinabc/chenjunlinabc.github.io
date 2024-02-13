@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>golang on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/golang/</link>
+    <link>https://chenjunlinabc.github.io/tags/golang/</link>
     <description>Recent content in golang on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 22 Feb 2022 05:19:00 +0000</lastBuildDate>
-    <atom:link href="https://xiaochenabc123.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chenjunlinabc.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Hugo搭建网站</title>
-      <link>https://xiaochenabc123.github.io/posts/137/</link>
+      <link>https://chenjunlinabc.github.io/posts/137/</link>
       <pubDate>Tue, 22 Feb 2022 05:19:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/137/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/137/</guid>
       <description>Hugo是基于Go语言开发的静态网站生成器，特点就是快
 安装
 二进制文件安装（由官方编译完成的二进制文件来安装，推荐使用，用源码容易出现问题）
@@ -47,9 +47,9 @@ hugo
     </item>
     <item>
       <title>Gin框架学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/135/</link>
+      <link>https://chenjunlinabc.github.io/posts/135/</link>
       <pubDate>Tue, 15 Feb 2022 17:00:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/135/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/135/</guid>
       <description>Gin是一个基于go语言编写的web框架，因为Gin的路由库基于httprouter开发的，性能非常好，支持Restful api规范
 安装
 go get -u github.com/gin-gonic/gin
@@ -68,9 +68,9 @@ index.html main.go</description>
     </item>
     <item>
       <title>beego应用框架的简单使用</title>
-      <link>https://xiaochenabc123.github.io/posts/134/</link>
+      <link>https://chenjunlinabc.github.io/posts/134/</link>
       <pubDate>Sat, 12 Feb 2022 16:50:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/134/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/134/</guid>
       <description>beego是一个基于go语言开发的http框架，beego可用于开发web，api，后端服务等等应用，beego架构为mvc模型，支持RESTful api规范设计，支持热更新
 安装
 go get github.com/beego/beego
@@ -106,9 +106,9 @@ View视图
     </item>
     <item>
       <title>简单使用ESbuild打包工具</title>
-      <link>https://xiaochenabc123.github.io/posts/132/</link>
+      <link>https://chenjunlinabc.github.io/posts/132/</link>
       <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/132/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/132/</guid>
       <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包（viet在开发环境下使用这个），支持TypeScript和jsx（tsx），css
 ESbuild支持ES6模块，cjs模块，对ES6+语法支持性好，可以直接打包css文件，json文件，ts文件
 注意：esbuild并不对ts文件进行类型检查工作
@@ -132,9 +132,9 @@ import React from &#39;react&#39;import ReactDOM from &#39;react-dom&#39;const
     </item>
     <item>
       <title>Golang进阶扩展笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/128/</link>
+      <link>https://chenjunlinabc.github.io/posts/128/</link>
       <pubDate>Sun, 16 Jan 2022 09:08:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/128/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/128/</guid>
       <description>这篇笔记是进阶学习，如果基础没有看的的话，请去看https://xiaochenabc123.test.com/archives/96.html
 并发
 go的并发靠goroutine，goroutine由go运行时调度，线程由操作系统调度，go还提供channel来给多个goroutine之间通行，goroutine和channel是go并发模式CSP（Communicating Sequential Process，通讯顺序进程）的实现基础，goroutine的调度在用户态下完成，不涉及内核态（比如内存的分配和释放，都是用户态维护的内存池，成本远比调度OS线程要低的多，可轻松做到成千上万个goroutine）
@@ -176,9 +176,9 @@ sync/atomic包将原子操作封装成了Go的函数，sync/atomic包提供了�
     </item>
     <item>
       <title>Golang学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/96/</link>
+      <link>https://chenjunlinabc.github.io/posts/96/</link>
       <pubDate>Thu, 09 Sep 2021 01:00:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/96/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/96/</guid>
       <description>Golang又叫go语言，golang是它的全称，是由Google开发的一种静态强类型，编译型，并发型，并具有垃圾回收功能的编程语言
 go语言确保达到静态编译语言的安全和性能的同时，又达到动态语言的开发维护效率
 Go语言天生支持并发，提供自动垃圾回收机制

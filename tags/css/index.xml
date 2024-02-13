@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>css on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/css/</link>
+    <link>https://chenjunlinabc.github.io/tags/css/</link>
     <description>Recent content in css on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 27 Jan 2022 12:00:00 +0000</lastBuildDate>
-    <atom:link href="https://xiaochenabc123.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chenjunlinabc.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用TailwindCSS</title>
-      <link>https://xiaochenabc123.github.io/posts/130/</link>
+      <link>https://chenjunlinabc.github.io/posts/130/</link>
       <pubDate>Thu, 27 Jan 2022 12:00:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/130/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/130/</guid>
       <description>TailwindCSS是一个CSS框架，我个人理解这东西就是根据class来生成css（按需），而不是像bootstrap那样，TailwindCSS是原子化的
 安装
 npm install tailwindcss
@@ -34,9 +34,9 @@ npx tailwindcss -i ./src/index.css -o ./dist/main.css</description>
     </item>
     <item>
       <title>简单利用backdrop-filter属性实现效果</title>
-      <link>https://xiaochenabc123.github.io/posts/65/</link>
+      <link>https://chenjunlinabc.github.io/posts/65/</link>
       <pubDate>Fri, 06 Aug 2021 10:18:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/65/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/65/</guid>
       <description>backdrop-filter是css原生的属性
 backdrop-filter的一些方法（用法和filter一样）
 blur：模糊 brightness：亮度 contrast：对比度 invert：反相 opacity：透明度 saturate：饱和度 drop-shadow：投影 grayscale：灰度 hue-rotate：色调变化 sepia：褐色
@@ -48,9 +48,9 @@ backdrop-filter兼容性没有filter优秀（目前低版本浏览器和IE，火
     </item>
     <item>
       <title>Grid布局学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/45/</link>
+      <link>https://chenjunlinabc.github.io/posts/45/</link>
       <pubDate>Wed, 23 Jun 2021 10:29:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/45/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/45/</guid>
       <description>grid 布局
 grid布局和flex布局类似，不过grid是最强大的css布局方式
 grid布局是网格布局
@@ -73,9 +73,9 @@ grid-row-gap: 10px; // 行间距（行与行的距离）</description>
     </item>
     <item>
       <title>css的一些知识扩展</title>
-      <link>https://xiaochenabc123.github.io/posts/44/</link>
+      <link>https://chenjunlinabc.github.io/posts/44/</link>
       <pubDate>Wed, 23 Jun 2021 09:16:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/44/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/44/</guid>
       <description>box-sizing 盒类型
 该属性是告诉浏览器是以什么盒模型展示的
 IE用的是border-box
@@ -116,9 +116,9 @@ media 媒体查询
     </item>
     <item>
       <title>css常见布局</title>
-      <link>https://xiaochenabc123.github.io/posts/24/</link>
+      <link>https://chenjunlinabc.github.io/posts/24/</link>
       <pubDate>Wed, 16 Jun 2021 13:23:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/24/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/24/</guid>
       <description>居中布局
 分水平居中和垂直居中，水平+垂直居中
 水平居中：当前元素在父级元素容器中，水平方向是居中显示的
@@ -139,9 +139,9 @@ absolute+transform</description>
     </item>
     <item>
       <title>css3学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/11/</link>
+      <link>https://chenjunlinabc.github.io/posts/11/</link>
       <pubDate>Wed, 16 Jun 2021 09:21:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/11/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/11/</guid>
       <description>盒子模型
 盒模型在css中是用来封装html元素的，因为本质上来看像个盒子一样，所以叫盒模型或者盒子模型，术语叫box model
 外边距（margin）：一般用于控制同辈元素之间的间距
@@ -180,9 +180,9 @@ BFC的特性：</description>
     </item>
     <item>
       <title>简单解决文本溢出问题</title>
-      <link>https://xiaochenabc123.github.io/posts/6/</link>
+      <link>https://chenjunlinabc.github.io/posts/6/</link>
       <pubDate>Wed, 16 Jun 2021 08:40:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/6/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/6/</guid>
       <description>当文本宽度超过容器的宽度那么将导致溢出
 使用text-overflow属性会修剪文本导致文本显示不全
 这里使用的方法是word-break: break-all+white-space: pre-wrap

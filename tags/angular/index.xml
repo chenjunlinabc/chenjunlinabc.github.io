@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Angular on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/angular/</link>
+    <link>https://chenjunlinabc.github.io/tags/angular/</link>
     <description>Recent content in Angular on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 13 Sep 2021 12:00:00 +0000</lastBuildDate>
-    <atom:link href="https://xiaochenabc123.github.io/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chenjunlinabc.github.io/tags/angular/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Angular学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/101/</link>
+      <link>https://chenjunlinabc.github.io/posts/101/</link>
       <pubDate>Mon, 13 Sep 2021 12:00:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/101/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/101/</guid>
       <description>Angular是三大前端框架之一（Angular在国内的热度低，但是在国外热度还是很高的，主要是因为Angular到Angular2的断崖式升级）
 Angular和Vue的区别就是，Angular具备完整的MVVM框架功能（功能高度集成），提供一套完整的解决方案，而Vue是轻量级MVVM框架（渐进式，还需要vue-router之类的扩展功能），Angular和Vue并没有谁好谁坏之分，各有风格
 注意：Angular是AngularJS的重写，AngularJS使用JavaScript编写完成，而Angular采用TypeScript编写完成

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>MongoDB on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/mongodb/</link>
+    <link>https://chenjunlinabc.github.io/tags/mongodb/</link>
     <description>Recent content in MongoDB on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 08 Aug 2021 14:20:00 +0000</lastBuildDate>
-    <atom:link href="https://xiaochenabc123.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chenjunlinabc.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MongoDB学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/76/</link>
+      <link>https://chenjunlinabc.github.io/posts/76/</link>
       <pubDate>Sun, 08 Aug 2021 14:20:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/76/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/76/</guid>
       <description>MongoDB是一个以键值对存储数据的数据库（基于json描述数据，实质上是一个叫BSON的数据格式，BSON是基于二进制字节流，json基于文本）
 MongoDB是No SQL家族的成员之一，No SQL一般指的是非关系型数据库（Not only SQL）
 关系型数据库和Excel表格类似，表与表之间存在着复杂的关联关系，例如MySQL，sql server

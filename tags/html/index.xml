@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>html on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/html/</link>
+    <link>https://chenjunlinabc.github.io/tags/html/</link>
     <description>Recent content in html on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 16 Jun 2021 09:38:00 +0000</lastBuildDate>
-    <atom:link href="https://xiaochenabc123.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chenjunlinabc.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTML全局属性笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/22/</link>
+      <link>https://chenjunlinabc.github.io/posts/22/</link>
       <pubDate>Wed, 16 Jun 2021 09:38:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/22/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/22/</guid>
       <description>属性
 accesskey
 定义快捷键获取焦点，例如
@@ -53,9 +53,9 @@ draggable
     </item>
     <item>
       <title>html5学习笔记</title>
-      <link>https://xiaochenabc123.github.io/posts/12/</link>
+      <link>https://chenjunlinabc.github.io/posts/12/</link>
       <pubDate>Wed, 16 Jun 2021 09:22:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/12/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/12/</guid>
       <description>HTML5是HTML标准的第5代标准，主要目的是语义化并且提供多媒体的嵌入
 HTML是什么？HTML全称为HyperTextMarkupLanguage，中文叫超文本标记语言，简称HTML
 而HTML5是一个标准，指的是第五代HTML标准

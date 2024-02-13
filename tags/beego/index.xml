@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>beego on 小陈的个人博客</title>
-    <link>https://xiaochenabc123.github.io/tags/beego/</link>
+    <link>https://chenjunlinabc.github.io/tags/beego/</link>
     <description>Recent content in beego on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://xiaochenabc123.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 12 Feb 2022 16:50:00 +0000</lastBuildDate>
-    <atom:link href="https://xiaochenabc123.github.io/tags/beego/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chenjunlinabc.github.io/tags/beego/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>beego应用框架的简单使用</title>
-      <link>https://xiaochenabc123.github.io/posts/134/</link>
+      <link>https://chenjunlinabc.github.io/posts/134/</link>
       <pubDate>Sat, 12 Feb 2022 16:50:00 +0000</pubDate>
-      <guid>https://xiaochenabc123.github.io/posts/134/</guid>
+      <guid>https://chenjunlinabc.github.io/posts/134/</guid>
       <description>beego是一个基于go语言开发的http框架，beego可用于开发web，api，后端服务等等应用，beego架构为mvc模型，支持RESTful api规范设计，支持热更新
 安装
 go get github.com/beego/beego
