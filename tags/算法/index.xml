@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>算法 on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+    <link>https://99999.fun/tags/%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 算法 on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 09 Aug 2021 20:36:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>算法学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/79/</link>
+      <link>https://99999.fun/posts/79/</link>
       <pubDate>Mon, 09 Aug 2021 20:36:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/79/</guid>
+      <guid>https://99999.fun/posts/79/</guid>
       <description>虽然学过java和Python，但是还是JavaScript比较熟练，因此算法学习全部用JavaScript来写
 算法不会被程序语言所限制，也不会一个实现只有一个算法
 常见数据结构（数组，列表，映射，堆栈，队列，哈希表，树，图）
@@ -37,9 +37,9 @@ let arr = function(nums) {if(nums == null || nums.length == 0){return 0}let 
     </item>
     <item>
       <title>数据结构与算法学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/49/</link>
+      <link>https://99999.fun/posts/49/</link>
       <pubDate>Tue, 29 Jun 2021 15:52:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/49/</guid>
+      <guid>https://99999.fun/posts/49/</guid>
       <description>根据于小甲鱼大佬的数据结构与算法教程而 ~~ 写 ~~ 抄的笔记
 什么是数据结构？
 数据结构是一门研究非数值计算的程序设计问题中的操作对象，以及它们之间的关系和操作等相关问题的学科。

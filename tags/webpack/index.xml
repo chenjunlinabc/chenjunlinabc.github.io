@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>webpack on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/webpack/</link>
+    <link>https://99999.fun/tags/webpack/</link>
     <description>Recent content in webpack on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 24 Jun 2021 10:11:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>webpack学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/47/</link>
+      <link>https://99999.fun/posts/47/</link>
       <pubDate>Thu, 24 Jun 2021 10:11:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/47/</guid>
+      <guid>https://99999.fun/posts/47/</guid>
       <description>webpack作为模块加载和打包神器
 安装node就有npm了，用npm安装webpack
 npm i webpack webpack-cli -g 安装全局的webpack

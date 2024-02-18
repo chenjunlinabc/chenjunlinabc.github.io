@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Express on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/express/</link>
+    <link>https://99999.fun/tags/express/</link>
     <description>Recent content in Express on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 28 Feb 2022 18:04:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/express/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/express/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用Express-Web应用框架</title>
-      <link>https://chenjunlinabc.github.io/posts/138/</link>
+      <link>https://99999.fun/posts/138/</link>
       <pubDate>Mon, 28 Feb 2022 18:04:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/138/</guid>
+      <guid>https://99999.fun/posts/138/</guid>
       <description>Express是基于nodejs的web应用框架（同时也是node的第三库），同时也是很多web应用框架的底层库，Express是cjs模块标准的http服务框架
 安装
 npm install express &amp;ndash;save

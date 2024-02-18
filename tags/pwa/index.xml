@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>PWA on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/pwa/</link>
+    <link>https://99999.fun/tags/pwa/</link>
     <description>Recent content in PWA on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 28 Oct 2022 01:21:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/pwa/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/pwa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用PWA技术</title>
-      <link>https://chenjunlinabc.github.io/posts/154/</link>
+      <link>https://99999.fun/posts/154/</link>
       <pubDate>Fri, 28 Oct 2022 01:21:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/154/</guid>
+      <guid>https://99999.fun/posts/154/</guid>
       <description>PWA，Progressive Web App（渐进式web应用），PWA技术可以将web应用具备接近原生应用的特性和用户体验，无需额外安装，支持离线缓存，消息推送等功能
 PWA由Service Worker，Promise，fetch，cache Api，Notification Api等技术组成
 Service Worker：服务工作线程，独立于主线程，常驻内存，代理网络请求，依赖HTTPS通信

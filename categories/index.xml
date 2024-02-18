@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/categories/</link>
+    <link>https://99999.fun/categories/</link>
     <description>Recent content in Categories on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 17 Feb 2024 14:50:12 +0800</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>学习</title>
-      <link>https://chenjunlinabc.github.io/categories/%E5%AD%A6%E4%B9%A0/</link>
+      <link>https://99999.fun/categories/%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Sat, 17 Feb 2024 14:50:12 +0800</pubDate>
-      <guid>https://chenjunlinabc.github.io/categories/%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>https://99999.fun/categories/%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     <item>
       <title>技术</title>
-      <link>https://chenjunlinabc.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+      <link>https://99999.fun/categories/%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Fri, 28 Oct 2022 01:21:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/categories/%E6%8A%80%E6%9C%AF/</guid>
+      <guid>https://99999.fun/categories/%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>默认</title>
-      <link>https://chenjunlinabc.github.io/categories/%E9%BB%98%E8%AE%A4/</link>
+      <link>https://99999.fun/categories/%E9%BB%98%E8%AE%A4/</link>
       <pubDate>Mon, 06 Dec 2021 02:32:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/categories/%E9%BB%98%E8%AE%A4/</guid>
+      <guid>https://99999.fun/categories/%E9%BB%98%E8%AE%A4/</guid>
       <description></description>
     </item>
   </channel>

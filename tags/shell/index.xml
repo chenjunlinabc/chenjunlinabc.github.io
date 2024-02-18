@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>shell on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/shell/</link>
+    <link>https://99999.fun/tags/shell/</link>
     <description>Recent content in shell on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 23 Nov 2021 00:01:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>shell脚本学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/120/</link>
+      <link>https://99999.fun/posts/120/</link>
       <pubDate>Tue, 23 Nov 2021 00:01:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/120/</guid>
+      <guid>https://99999.fun/posts/120/</guid>
       <description>shell中文意思为壳，shell可以接受使用者的指令，来调用服务，shell的种类很多，而比较常见是Bash，头部声明#!/bin/bash，表示bash是解释脚本的程序
 例如：
 #!/bin/bashecho &amp;quot;hallo word&amp;quot;执行该脚本（注意：需要有可执行权限，sudo chmod +x hallo.sh）

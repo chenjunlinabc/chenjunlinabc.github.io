@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>xml on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/xml/</link>
+    <link>https://99999.fun/tags/xml/</link>
     <description>Recent content in xml on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 16 Jun 2021 09:32:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/xml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>XML学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/17/</link>
+      <link>https://99999.fun/posts/17/</link>
       <pubDate>Wed, 16 Jun 2021 09:32:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/17/</guid>
+      <guid>https://99999.fun/posts/17/</guid>
       <description>xml中文全称为可扩展标记语言（Extensible Markup Language）
 xml和html类似，但是xml是用来传输和存储数据的，xml大小写敏感，xml的标记是自定义的
 xml声明，该声明位在xml文档的第一行，结尾

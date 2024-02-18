@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/python/</link>
+    <link>https://99999.fun/tags/python/</link>
     <description>Recent content in Python on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 31 Dec 2021 01:05:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python爬虫学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/125/</link>
+      <link>https://99999.fun/posts/125/</link>
       <pubDate>Fri, 31 Dec 2021 01:05:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/125/</guid>
+      <guid>https://99999.fun/posts/125/</guid>
       <description>urllib，xpath，jsonpath，beautiful，requests，selenium，Scrapy
 python库内置的HTTP请求库 urllib.request 请求模块 urllib.error 异常处理模块 urllib.parse url解析模块 urllib.robotparsef robots.txt解析模块
 urllib.request提供了最基本的http请求方法，主要带有处理授权验证，重定向，浏览器Cookies功能
@@ -32,9 +32,9 @@ import urllib.parseimport urllib.requesturl = &amp;quot;https://xiaochenabc123
     </item>
     <item>
       <title>Web.py学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/117/</link>
+      <link>https://99999.fun/posts/117/</link>
       <pubDate>Mon, 18 Oct 2021 12:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/117/</guid>
+      <guid>https://99999.fun/posts/117/</guid>
       <description>web.py是一个轻量级Python web框架，是由已故著名计算机黑客Aaron Swartz设计开发（如果你看过互联网之子这个电影，你应该对这位大佬很熟悉）
 安装web.py
 pip install web.py
@@ -45,9 +45,9 @@ import weburls = (&amp;quot;/(.*)&amp;quot;,&amp;quot;hallo&amp;quot;)app = 
     </item>
     <item>
       <title>python基础语法笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/28/</link>
+      <link>https://99999.fun/posts/28/</link>
       <pubDate>Wed, 16 Jun 2021 14:40:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/28/</guid>
+      <guid>https://99999.fun/posts/28/</guid>
       <description>安装python
 推荐安装anaconda3（linux）
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh
@@ -91,9 +91,9 @@ python可以处理整型任意大小的整数，也可以使用二进制代表�
     </item>
     <item>
       <title>Python的一些神器的简单用法</title>
-      <link>https://chenjunlinabc.github.io/posts/27/</link>
+      <link>https://99999.fun/posts/27/</link>
       <pubDate>Wed, 16 Jun 2021 14:39:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/27/</guid>
+      <guid>https://99999.fun/posts/27/</guid>
       <description>Virtualenv是一个能创建隔绝的独立的Python虚拟环境工具。它能够建立多个相互独立，互不影响的Python工作环境
 用来创建一套独立于系统Python环境的虚拟环境，在虚拟环境下，使用pip安装的依赖都会安装到当前的虚拟环境中，对系统的python环境没有影响
 当开发多个Python程序时当，程序1要使用3.6环境，但是程序2要使用3.8环境时，Virtualenv可以完美解决这个问题

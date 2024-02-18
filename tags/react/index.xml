@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>React on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/react/</link>
+    <link>https://99999.fun/tags/react/</link>
     <description>Recent content in React on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 03 Sep 2021 12:00:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>React进阶学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/94/</link>
+      <link>https://99999.fun/posts/94/</link>
       <pubDate>Fri, 03 Sep 2021 12:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/94/</guid>
+      <guid>https://99999.fun/posts/94/</guid>
       <description>react16是Facebook在2017年发布的react版本，几乎对react底层进行重写，但是对外API不变，因此可以无缝转移到react16
 render返回类型
 除了只能返回单个元素外，react16支持返回字符串和数组（由react元素组成）
@@ -48,9 +48,9 @@ let markdown =&amp;quot;**这是加粗的文字**\n\n&amp;quot; +&amp;quot;*�
     </item>
     <item>
       <title>简单使用Ant Design组件库</title>
-      <link>https://chenjunlinabc.github.io/posts/82/</link>
+      <link>https://99999.fun/posts/82/</link>
       <pubDate>Tue, 10 Aug 2021 23:03:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/82/</guid>
+      <guid>https://99999.fun/posts/82/</guid>
       <description>Ant Design是蚂蚁金服技术沉淀出一套基于React的组件库和前端框架
 官网：https://ant.design/index-cn
 使用create-react-app初始项目
@@ -70,9 +70,9 @@ import &#39;antd/dist/antd.css&#39;;import { DatePicker, Space } from &#39;antd
     </item>
     <item>
       <title>NextJS学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/74/</link>
+      <link>https://99999.fun/posts/74/</link>
       <pubDate>Sat, 07 Aug 2021 23:26:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/74/</guid>
+      <guid>https://99999.fun/posts/74/</guid>
       <description>NextJS是一个用于生产环境的react框架，可以提供服务器端渲染等等功能
 服务端渲染（ssr）：后端调用数据库获取数据后，将数据和页面元素进行组合成完整的DOM结构，再返回给浏览器，提供给用户浏览
 SPA：
@@ -105,9 +105,9 @@ import Link from &amp;quot;next/link&amp;quot;&amp;lt;Link href=&amp;quot;/&amp
     </item>
     <item>
       <title>深入学习React</title>
-      <link>https://chenjunlinabc.github.io/posts/63/</link>
+      <link>https://99999.fun/posts/63/</link>
       <pubDate>Sun, 25 Jul 2021 12:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/63/</guid>
+      <guid>https://99999.fun/posts/63/</guid>
       <description>setState()
 注意：如果调用多次setState()，但是还是只触发一次重新渲染（性能优化，如果每更新一次状态就渲染一次的话，很影响性能）
 setState()是异步更新数据的，因此setState()不要依赖于前面的setState()，因为其不会立刻更新数据
@@ -137,9 +137,9 @@ state只存储和组件渲染相关的数据，例如列表数据，而不用来
     </item>
     <item>
       <title>React学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/55/</link>
+      <link>https://99999.fun/posts/55/</link>
       <pubDate>Fri, 09 Jul 2021 22:23:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/55/</guid>
+      <guid>https://99999.fun/posts/55/</guid>
       <description>React是构造用户界面的JavaScript库，就是负责视图层的，只负责视图的渲染，其特点是声明式，组件化
 安装react
 npm i react react-dom

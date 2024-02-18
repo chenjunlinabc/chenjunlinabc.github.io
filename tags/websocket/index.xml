@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>WebSocket on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/websocket/</link>
+    <link>https://99999.fun/tags/websocket/</link>
     <description>Recent content in WebSocket on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 05 Nov 2022 14:00:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/websocket/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/websocket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WebSocket学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/158/</link>
+      <link>https://99999.fun/posts/158/</link>
       <pubDate>Sat, 05 Nov 2022 14:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/158/</guid>
+      <guid>https://99999.fun/posts/158/</guid>
       <description>HTTP1.1协议实质上就是半双工信道，无法同时发送数据和接收数据，而且HTTP连接必须是客户端发起，由服务器来进行处理响应，只有HTTP2.0才是全双工信道（不需要等待响应，就可以发送第二个报文）
 WebSocket是全双工信道，而且还支持服务端主动发送数据给客户端，是服务器推送技术（还是需要客户端发起连接）
 WebSocket协议是应用层协议，而且是建立在TCP协议上，端口也是使用443和80，握手使用HTTP协议，浏览器不会限制WebSocket的同源

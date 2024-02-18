@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>JavaScript on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/javascript/</link>
+    <link>https://99999.fun/tags/javascript/</link>
     <description>Recent content in JavaScript on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 11 Nov 2022 07:00:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deno js运行时环境学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/161/</link>
+      <link>https://99999.fun/posts/161/</link>
       <pubDate>Fri, 11 Nov 2022 07:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/161/</guid>
+      <guid>https://99999.fun/posts/161/</guid>
       <description>Deno是基于V8引擎，使用Rust构建的JavaScript &amp;amp; TypeScript 运行时环境，天生支持TypeScript，并且有安全模式（默认情况下无法获取网络，文件系统，环境变量等权限，当然也可以开放），Deno的作者是Nodejs之父Ryan Dahl，构建的原因是解决Nodejs的缺陷，例如模块的安全性（Node运行时的权限很高，缺乏模块的安全运行），Deno的模块化选择了ESMoule标准，而且具备浏览器的api，例如window全局变量，支持onload，onunload等事件函数，支持fetch，Web Workers等标准，异步操作返回采用Promise，支持await
 Deno不使用node_modules与package.json的包管理机制，而是采用下载编译的机制，并且存在缓存，模块更新通过更新缓存来完成
 Deno有个特殊的功能，就是可以从网络上导入模块
@@ -55,9 +55,9 @@ deno内置工具
     </item>
     <item>
       <title>简单使用ESbuild打包工具</title>
-      <link>https://chenjunlinabc.github.io/posts/132/</link>
+      <link>https://99999.fun/posts/132/</link>
       <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/132/</guid>
+      <guid>https://99999.fun/posts/132/</guid>
       <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包（viet在开发环境下使用这个），支持TypeScript和jsx（tsx），css
 ESbuild支持ES6模块，cjs模块，对ES6+语法支持性好，可以直接打包css文件，json文件，ts文件
 注意：esbuild并不对ts文件进行类型检查工作
@@ -81,9 +81,9 @@ import React from &#39;react&#39;import ReactDOM from &#39;react-dom&#39;const
     </item>
     <item>
       <title>JavaScript知识扩展</title>
-      <link>https://chenjunlinabc.github.io/posts/61/</link>
+      <link>https://99999.fun/posts/61/</link>
       <pubDate>Sun, 18 Jul 2021 22:35:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/61/</guid>
+      <guid>https://99999.fun/posts/61/</guid>
       <description>函数被调用时，浏览器会传递两个参数，this和arguments
 this就是函数的上下文对象，而arguments是一个数组对象（也就是可以通过索引来操作数据），函数调用时传递的参数会在arguments中保存
 callee属性对应着当前的函数
@@ -123,9 +123,9 @@ document.execCommand(&amp;lsquo;paste&amp;rsquo;) // 粘贴</description>
     </item>
     <item>
       <title>Ajax学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/54/</link>
+      <link>https://99999.fun/posts/54/</link>
       <pubDate>Sat, 03 Jul 2021 15:30:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/54/</guid>
+      <guid>https://99999.fun/posts/54/</guid>
       <description>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
 关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.test.com/archives/14.html
 ajax需要网站环境下生效，需要web服务器，nodemon
@@ -147,9 +147,9 @@ var responseText = JSON.parse(hallo.responseText);console.</description>
     </item>
     <item>
       <title>JavaScript-IntersectionObserver构造函数笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/16/</link>
+      <link>https://99999.fun/posts/16/</link>
       <pubDate>Wed, 16 Jun 2021 09:29:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/16/</guid>
+      <guid>https://99999.fun/posts/16/</guid>
       <description>IntersectionObserver是浏览器本身提供的构造函数，因此可能有一些老版本浏览器没有效果
 该构造函数提供了一种异步的监测目标对象和祖先对象或者视口相交的方法
 var observe = new IntersectionObserver(callback, options)
@@ -176,9 +176,9 @@ const lazyload = new IntersectionObserver((target)=&amp;gt;{// 实例化target
     </item>
     <item>
       <title>JavaScript-XMLHttpRequest对象笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/14/</link>
+      <link>https://99999.fun/posts/14/</link>
       <pubDate>Wed, 16 Jun 2021 09:25:49 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/14/</guid>
+      <guid>https://99999.fun/posts/14/</guid>
       <description>ajax请求是异步的，因此可以通过回调函数来处理响应
 实现ajax请求大多是使用XMLHttpRequest对象，该对象用于与服务器交互，可以在不刷新页面的情况下请求url，获取数据，从而达到更新页面内容的目的
 初始化XMLHttpRequest()构造函数，可以获得一个XMLHttpReques实例，例如：
@@ -204,9 +204,9 @@ onloadstart：开始获取数据 onprogress：数据正在传输中 onabort：�
     </item>
     <item>
       <title>jQuery-ajax()方法笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/13/</link>
+      <link>https://99999.fun/posts/13/</link>
       <pubDate>Wed, 16 Jun 2021 09:24:37 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/13/</guid>
+      <guid>https://99999.fun/posts/13/</guid>
       <description>ajax()是jQuery中定义的一个方法，该方法用于执行ajax请求，例如：
 $(document).ready(function(){$(&amp;quot;button&amp;quot;).click(function(){$.ajax({type: &amp;quot;GET&amp;quot;,url: &amp;quot;https://httpbin.org/get&amp;quot;,success: function(getdata){console.log(getdata)}})})});参数
 url：指定发送请求的URL，默认是当前页面
@@ -236,9 +236,9 @@ xhr：用于重写或者增强XMLHttpRequest对象的函数</description>
     </item>
     <item>
       <title>原生js实现瀑布流布局</title>
-      <link>https://chenjunlinabc.github.io/posts/10/</link>
+      <link>https://99999.fun/posts/10/</link>
       <pubDate>Wed, 16 Jun 2021 09:14:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/10/</guid>
+      <guid>https://99999.fun/posts/10/</guid>
       <description>瀑布流的特点就是容器等宽不等高，计算其高度，选择最矮的一个容器的下面将插入第二行的第一个容器，以此类推，因此容器需要设置为绝对定位
 首先需要确定一行有多少列，列数 = 页面的宽度 / 容器的宽度
 获取页面的宽度：window.innerWidth或者document.documentElement.clientWidth或者document.body.clientWidth
@@ -256,9 +256,9 @@ var data = document.getElementsByClassName(&#39;imgs&#39;);function datamain(){
     </item>
     <item>
       <title>IndexedDB浏览器数据库学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/5/</link>
+      <link>https://99999.fun/posts/5/</link>
       <pubDate>Tue, 15 Jun 2021 19:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/5/</guid>
+      <guid>https://99999.fun/posts/5/</guid>
       <description>IndexedDB是浏览器提供的本地数据库，允许存储数据，采用键值对存储，允许异步请求，允许索引请求，IndexedDB理论上存储空间没有限制
 打开（新建）indexedDB：
 indexedDB.open()，该方法有俩个值，第一个是数据库名（没有该数据库那么就新建），第二个值为数据库的版本，一般来说默认为1（必须是大于0的自然数），例如：

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>技术 on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <link>https://99999.fun/categories/%E6%8A%80%E6%9C%AF/</link>
     <description>Recent content in 技术 on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 28 Oct 2022 01:21:00 +0000</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简单使用PWA技术</title>
-      <link>https://chenjunlinabc.github.io/posts/154/</link>
+      <link>https://99999.fun/posts/154/</link>
       <pubDate>Fri, 28 Oct 2022 01:21:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/154/</guid>
+      <guid>https://99999.fun/posts/154/</guid>
       <description>PWA，Progressive Web App（渐进式web应用），PWA技术可以将web应用具备接近原生应用的特性和用户体验，无需额外安装，支持离线缓存，消息推送等功能
 PWA由Service Worker，Promise，fetch，cache Api，Notification Api等技术组成
 Service Worker：服务工作线程，独立于主线程，常驻内存，代理网络请求，依赖HTTPS通信
@@ -27,9 +27,9 @@ const cachename = &#39;v1&#39;self.addEventListener(&#39;install&#39;, function
     </item>
     <item>
       <title>ECharts数据可视化图表库简单使用</title>
-      <link>https://chenjunlinabc.github.io/posts/153/</link>
+      <link>https://99999.fun/posts/153/</link>
       <pubDate>Sat, 18 Jun 2022 00:12:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/153/</guid>
+      <guid>https://99999.fun/posts/153/</guid>
       <description>ECharts是基于JavaScript的数据可视化图表库
 安装
 npm install echarts --save第一个实例
@@ -37,9 +37,9 @@ import * as echarts from &#39;echarts&#39;let app = echarts.init(document.getEl
     </item>
     <item>
       <title>简单使用Scoop包管理器</title>
-      <link>https://chenjunlinabc.github.io/posts/150/</link>
+      <link>https://99999.fun/posts/150/</link>
       <pubDate>Fri, 20 May 2022 22:10:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/150/</guid>
+      <guid>https://99999.fun/posts/150/</guid>
       <description>Scoop是windows平台下开源的命令行软件包管理器，类似于ubuntu的apt或者macOS的brew
 scoop仓库里面全部都是通过审核的绿色软件包（前提是不要乱用来路不明的scoop源）
 允许执行本地脚本权限
@@ -79,9 +79,9 @@ scoop update *</description>
     </item>
     <item>
       <title>简单使用Corepack-包管理器的管理器</title>
-      <link>https://chenjunlinabc.github.io/posts/149/</link>
+      <link>https://99999.fun/posts/149/</link>
       <pubDate>Fri, 13 May 2022 00:09:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/149/</guid>
+      <guid>https://99999.fun/posts/149/</guid>
       <description>Corepack（管理yarn和pnpm的包管理器的管理器）
 corepack是nodejs官方内置的CLI，nodejs16.9.0版本及其以上版本默认携带corepack一起分发（不需要额外安装corepack，16.9.0版本之下的需要手动安装或者更新nodejs版本）
 corepack的特点就是不需要安装yarn和pnpm（yarn和pnpm将通过corepack来进行管理安装以及使用），而且还可以限制项目使用特定的包管理器版本（避免一个项目用多个包管理器，而且包管理器的版本还不同的情况）
@@ -103,9 +103,9 @@ corepack hydrate D:/demo/test.tgz --activate </description>
     </item>
     <item>
       <title>简单了解a11y无障碍</title>
-      <link>https://chenjunlinabc.github.io/posts/144/</link>
+      <link>https://99999.fun/posts/144/</link>
       <pubDate>Sat, 09 Apr 2022 13:01:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/144/</guid>
+      <guid>https://99999.fun/posts/144/</guid>
       <description>a11y全称为Accessibility，A到y之间有11个字母，因此叫a11y，Accessibility中文翻译为可访问性，也就是无障碍
 让网站具备无障碍性，可以让一些视觉障碍人士访问该网站，而且就算是其他人士使用，也会因a11y而受益（不因网络慢，css文件丢失而无法正常浏览页面内容）
 在mdn上有句话：The Web is fundamentally designed to work for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. When the Web meets this goal, it is accessible to people with a diverse range of hearing, movement, sight, and cognitive ability.
@@ -122,9 +122,9 @@ mdn对于障碍人士可访问性优化提供了建议：
     </item>
     <item>
       <title>browserslist的简单配置</title>
-      <link>https://chenjunlinabc.github.io/posts/140/</link>
+      <link>https://99999.fun/posts/140/</link>
       <pubDate>Sat, 12 Mar 2022 10:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/140/</guid>
+      <guid>https://99999.fun/posts/140/</guid>
       <description>browserslist是查询浏览器列表的工具，browserslisp的配置可写在package.json中，也可以单独写在.browserslistrc配置⽂件中
 browserslist的配置文件会被Autoprefixer，Babel，postcss-preset-env，eslint-plugin-compat，stylelint-no-unsupported-browser-features，postcss-normalize，obsolete-webpack-plugin工具读取，并且对配置的目标浏览器做适配工作
 npx browserslist可查看根据条件输出的浏览器列表
@@ -145,9 +145,9 @@ package.json（browserslist官方推荐用这个）
     </item>
     <item>
       <title>简单使用Express-Web应用框架</title>
-      <link>https://chenjunlinabc.github.io/posts/138/</link>
+      <link>https://99999.fun/posts/138/</link>
       <pubDate>Mon, 28 Feb 2022 18:04:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/138/</guid>
+      <guid>https://99999.fun/posts/138/</guid>
       <description>Express是基于nodejs的web应用框架（同时也是node的第三库），同时也是很多web应用框架的底层库，Express是cjs模块标准的http服务框架
 安装
 npm install express &amp;ndash;save
@@ -176,9 +176,9 @@ const mongoose = require(&#39;mongoose&#39;)mongoose.connect(&#39;mongodb://loc
     </item>
     <item>
       <title>简单使用Hugo搭建网站</title>
-      <link>https://chenjunlinabc.github.io/posts/137/</link>
+      <link>https://99999.fun/posts/137/</link>
       <pubDate>Tue, 22 Feb 2022 05:19:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/137/</guid>
+      <guid>https://99999.fun/posts/137/</guid>
       <description>Hugo是基于Go语言开发的静态网站生成器，特点就是快
 安装
 二进制文件安装（由官方编译完成的二进制文件来安装，推荐使用，用源码容易出现问题）
@@ -208,9 +208,9 @@ hugo
     </item>
     <item>
       <title>简单了解RESTful设计规范</title>
-      <link>https://chenjunlinabc.github.io/posts/136/</link>
+      <link>https://99999.fun/posts/136/</link>
       <pubDate>Wed, 16 Feb 2022 21:50:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/136/</guid>
+      <guid>https://99999.fun/posts/136/</guid>
       <description>RESTful是指满足REST的约束条件和原则的应用或者设计，REST全称Representational State Transfer（表现层状态转移），REST出现在2000年Roy Fielding的博士论文中（Roy Fielding是HTTP规范的主要编写者之一），RESTful是目前最流行的API设计规范
 资源(Resources)：REST是基于资源的，不同的资源使用不同且唯一的URI(统一资源标识符（Uniform Resource Identifier），URI格式例如：/img/hallo.jpg，可表示一个资源的路径和资源名称，URI实质上就是URL加URN)表示，获取资源通过访问URI得到，这个资源可以是任何东西（例如txt，exe，iso，mp3，mp4等等）
 表示层(Representation)：表示层指是将资源具体内容以某种方式展现出来的，例如hallo.mp3，那么就会用mp3的格式来展现这个文件的内容
@@ -231,9 +231,9 @@ HTTP请求方式（不同的操作使用不同的请求方式，例如获取资�
     </item>
     <item>
       <title>beego应用框架的简单使用</title>
-      <link>https://chenjunlinabc.github.io/posts/134/</link>
+      <link>https://99999.fun/posts/134/</link>
       <pubDate>Sat, 12 Feb 2022 16:50:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/134/</guid>
+      <guid>https://99999.fun/posts/134/</guid>
       <description>beego是一个基于go语言开发的http框架，beego可用于开发web，api，后端服务等等应用，beego架构为mvc模型，支持RESTful api规范设计，支持热更新
 安装
 go get github.com/beego/beego
@@ -269,9 +269,9 @@ View视图
     </item>
     <item>
       <title>简单使用ESbuild打包工具</title>
-      <link>https://chenjunlinabc.github.io/posts/132/</link>
+      <link>https://99999.fun/posts/132/</link>
       <pubDate>Mon, 07 Feb 2022 13:37:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/132/</guid>
+      <guid>https://99999.fun/posts/132/</guid>
       <description>ESbuild打包器基于Golang开发，优点在于可多线程打包，直接编译成机器码，ESbuild提供的api可在JavaScript和golang使用，连Vite在很多场景都依赖了ESbuild打包（viet在开发环境下使用这个），支持TypeScript和jsx（tsx），css
 ESbuild支持ES6模块，cjs模块，对ES6+语法支持性好，可以直接打包css文件，json文件，ts文件
 注意：esbuild并不对ts文件进行类型检查工作
@@ -295,9 +295,9 @@ import React from &#39;react&#39;import ReactDOM from &#39;react-dom&#39;const
     </item>
     <item>
       <title>简单使用GitHub Actions来实现CI/CD</title>
-      <link>https://chenjunlinabc.github.io/posts/131/</link>
+      <link>https://99999.fun/posts/131/</link>
       <pubDate>Tue, 01 Feb 2022 18:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/131/</guid>
+      <guid>https://99999.fun/posts/131/</guid>
       <description>CI：持续集成 (Continuous Integration) CD：持续交付 (Continuous Delivery) CD：持续部署 (Continuous Deployment)
 GitHub Actions是GitHub提供的持续集成服务
 GitHub Actions官方文档：https://docs.github.com/en/actions
@@ -313,9 +313,9 @@ name: GitHub Actions Demoon: [push]jobs:Explore-GitHub-Actions:runs-on: ubun
     </item>
     <item>
       <title>简单使用TailwindCSS</title>
-      <link>https://chenjunlinabc.github.io/posts/130/</link>
+      <link>https://99999.fun/posts/130/</link>
       <pubDate>Thu, 27 Jan 2022 12:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/130/</guid>
+      <guid>https://99999.fun/posts/130/</guid>
       <description>TailwindCSS是一个CSS框架，我个人理解这东西就是根据class来生成css（按需），而不是像bootstrap那样，TailwindCSS是原子化的
 安装
 npm install tailwindcss
@@ -332,9 +332,9 @@ npx tailwindcss -i ./src/index.css -o ./dist/main.css</description>
     </item>
     <item>
       <title>Pinia---vuejs的轻量级状态管理库</title>
-      <link>https://chenjunlinabc.github.io/posts/124/</link>
+      <link>https://99999.fun/posts/124/</link>
       <pubDate>Sun, 26 Dec 2021 20:22:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/124/</guid>
+      <guid>https://99999.fun/posts/124/</guid>
       <description>Pinia是vuejs的轻量级状态管理库，Pinia支持Vue devtools浏览器扩展工具，可扩展，模块化设计，热模块更新，轻量级，支持TypeScript，支持SSR服务器端渲染，支持vue2，vue3
 Pinia作者也是vuex核心之一
 安装pinia
@@ -348,9 +348,9 @@ import { defineStore } from &#39;pinia&#39;export const useDataStore = defineSt
     </item>
     <item>
       <title>简单使用vuex状态管理库</title>
-      <link>https://chenjunlinabc.github.io/posts/123/</link>
+      <link>https://99999.fun/posts/123/</link>
       <pubDate>Mon, 13 Dec 2021 06:19:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/123/</guid>
+      <guid>https://99999.fun/posts/123/</guid>
       <description>vuex是一个专门为vuejs应用程序的设计的状态管理
 集中式存储管理应用的所有组件的状态
 多组件状态共享，不同的组件改变同一个状态
@@ -373,9 +373,9 @@ getters: {getCount(state) {return state.</description>
     </item>
     <item>
       <title>简单使用Rollup模块打包工具</title>
-      <link>https://chenjunlinabc.github.io/posts/119/</link>
+      <link>https://99999.fun/posts/119/</link>
       <pubDate>Wed, 10 Nov 2021 16:22:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/119/</guid>
+      <guid>https://99999.fun/posts/119/</guid>
       <description>根据Rollup官方文档的介绍：Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大块复杂的代码，例如 library 或应用程序。
 Rollup和webpack那种偏向于应用打包不同，Rollup更专注于类库打包，像vue，react都是通过rollup打包的
 注意：webpack支持HMR（热模块更新），而Rollup并不支持，因此在应用打包的时候还是选择webpack比较好，但是如果只是打包类库之类的，并且还是基于ES6模块开发的，那么就可以考虑选择rollup了，因为rollup在Tree-shaking和ES6模块有着算法优势。因为Rollup对模块化是使用新标准，例如 CommonJS，而不是老旧解决方案
@@ -398,9 +398,9 @@ rollup src/demo.js -f umd -o dist/bundle.js &amp;ndash;name hallo
     </item>
     <item>
       <title>简单了解CSRF攻击和XSS攻击</title>
-      <link>https://chenjunlinabc.github.io/posts/99/</link>
+      <link>https://99999.fun/posts/99/</link>
       <pubDate>Sun, 12 Sep 2021 17:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/99/</guid>
+      <guid>https://99999.fun/posts/99/</guid>
       <description>CSRF
 CSRF：跨站点请求伪造(Cross—Site Request Forgery)
 CSRF实质上就是盗用身份，来实现发送恶意请求
@@ -441,9 +441,9 @@ Strict：完全禁止第三方Cookie，只有当目前网页的url和请求目�
     </item>
     <item>
       <title>简单使用Vite-前端构建工具</title>
-      <link>https://chenjunlinabc.github.io/posts/87/</link>
+      <link>https://99999.fun/posts/87/</link>
       <pubDate>Wed, 18 Aug 2021 14:20:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/87/</guid>
+      <guid>https://99999.fun/posts/87/</guid>
       <description>Vite是由 Vue.js 的作者尤雨溪开发完成的一款前端项目构建工具，使用原生ESM文件，支持热重载
 Vite在法语中的意思为快速的
 基于原生 import 的，使用浏览器来解析import，服务端按需编译返回，支持热更新模块
@@ -488,9 +488,9 @@ import legacy from &#39;@vitejs/plugin-legacy&#39;.</description>
     </item>
     <item>
       <title>简单使用Nginx</title>
-      <link>https://chenjunlinabc.github.io/posts/85/</link>
+      <link>https://99999.fun/posts/85/</link>
       <pubDate>Wed, 18 Aug 2021 12:50:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/85/</guid>
+      <guid>https://99999.fun/posts/85/</guid>
       <description>Nginx是目前web服务器占比第一（在https://w3techs.com 中可以看到Nginx占比33.1%）
 Nginx支持静态资源提供服务，支持高并发，热部署，反向代理，缓存，负载均衡等功能，Nginx使用BSD许可证开源（允许修改Nginx源码来重新发布一个商业用途的（例如Tengine））
 Nginx由Nginx二进制可执行文件，Nginx.conf，access.log，error.log组成
@@ -529,9 +529,9 @@ user root; # nginx运行用户worker_processes auto; # nginx进程数，一般�
     </item>
     <item>
       <title>简单使用Nginx HTTP服务器软件</title>
-      <link>https://chenjunlinabc.github.io/posts/85/</link>
+      <link>https://99999.fun/posts/85/</link>
       <pubDate>Wed, 18 Aug 2021 12:50:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/85/</guid>
+      <guid>https://99999.fun/posts/85/</guid>
       <description>Nginx是目前web服务器占比第一（在https://w3techs.com 中可以看到Nginx占比33.1%）
 Nginx支持静态资源提供服务，支持高并发，热部署，反向代理，缓存，负载均衡等功能，Nginx使用BSD许可证开源（允许修改Nginx源码来重新发布一个商业用途的（例如Tengine））
 Nginx由Nginx二进制可执行文件，Nginx.conf，access.log，error.log组成
@@ -570,9 +570,9 @@ user root; # nginx运行用户worker_processes auto; # nginx进程数，一般�
     </item>
     <item>
       <title>简单认识HTTP协议</title>
-      <link>https://chenjunlinabc.github.io/posts/77/</link>
+      <link>https://99999.fun/posts/77/</link>
       <pubDate>Sun, 08 Aug 2021 17:02:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/77/</guid>
+      <guid>https://99999.fun/posts/77/</guid>
       <description>HTTP（HyperText Transfer Protocol）中文叫超文本传输协议，从中文名就知道是传输html文件或者其他超文本文件的
 HTTP是基于TCP/IP协议来传输数据的
 访问http服务器可以直接通过ip或者域名（域名其实是解析到ip的，实际上还是访问ip），通过web服务器提供的端口来进行请求或者响应
@@ -635,9 +635,9 @@ http常见状态码
     </item>
     <item>
       <title>简单利用backdrop-filter属性实现效果</title>
-      <link>https://chenjunlinabc.github.io/posts/65/</link>
+      <link>https://99999.fun/posts/65/</link>
       <pubDate>Fri, 06 Aug 2021 10:18:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/65/</guid>
+      <guid>https://99999.fun/posts/65/</guid>
       <description>backdrop-filter是css原生的属性
 backdrop-filter的一些方法（用法和filter一样）
 blur：模糊 brightness：亮度 contrast：对比度 invert：反相 opacity：透明度 saturate：饱和度 drop-shadow：投影 grayscale：灰度 hue-rotate：色调变化 sepia：褐色
@@ -649,9 +649,9 @@ backdrop-filter兼容性没有filter优秀（目前低版本浏览器和IE，火
     </item>
     <item>
       <title>JavaScript知识扩展</title>
-      <link>https://chenjunlinabc.github.io/posts/61/</link>
+      <link>https://99999.fun/posts/61/</link>
       <pubDate>Sun, 18 Jul 2021 22:35:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/61/</guid>
+      <guid>https://99999.fun/posts/61/</guid>
       <description>函数被调用时，浏览器会传递两个参数，this和arguments
 this就是函数的上下文对象，而arguments是一个数组对象（也就是可以通过索引来操作数据），函数调用时传递的参数会在arguments中保存
 callee属性对应着当前的函数
@@ -691,9 +691,9 @@ document.execCommand(&amp;lsquo;paste&amp;rsquo;) // 粘贴</description>
     </item>
     <item>
       <title>简单了解MVC，MVP和MVVM之间的不同与联系</title>
-      <link>https://chenjunlinabc.github.io/posts/56/</link>
+      <link>https://99999.fun/posts/56/</link>
       <pubDate>Fri, 09 Jul 2021 22:50:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/56/</guid>
+      <guid>https://99999.fun/posts/56/</guid>
       <description>MVC（Model-View-Controller）分别为View（视图，用户界面），Model（模型，数据保存），Controller（控制器，逻辑）
 视图层发指令（Dom事件）给控制器，控制器完成逻辑处理，请求模型改变状态，模型将最新的数据发送给视图，得到反馈，各个之间通信是单向的
 也可以Controller接受指令，要求模型改变状态，模型将最新的数据发送给视图
@@ -704,9 +704,9 @@ MVVM（Model-View-ViewModel）实质上就是MVC的改进版，和MVP模式基�
     </item>
     <item>
       <title>css的一些知识扩展</title>
-      <link>https://chenjunlinabc.github.io/posts/44/</link>
+      <link>https://99999.fun/posts/44/</link>
       <pubDate>Wed, 23 Jun 2021 09:16:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/44/</guid>
+      <guid>https://99999.fun/posts/44/</guid>
       <description>box-sizing 盒类型
 该属性是告诉浏览器是以什么盒模型展示的
 IE用的是border-box
@@ -747,9 +747,9 @@ media 媒体查询
     </item>
     <item>
       <title>Yarn包管理工具的简单使用</title>
-      <link>https://chenjunlinabc.github.io/posts/38/</link>
+      <link>https://99999.fun/posts/38/</link>
       <pubDate>Wed, 16 Jun 2021 22:55:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/38/</guid>
+      <guid>https://99999.fun/posts/38/</guid>
       <description>Yarn 是一款新的 JavaScript 包管理工具，和npm对比就是速度快，保持一致性，安全
 速度快是因为yarn是并行执行任务，而不是npm那样排队列执行package，而且yarn还可以提供缓存，如果安装过一次package，使用yarn再次安装就会从缓存中获取，而不用再下载一次
 保持一致性：yarn提供了一个lockfile文件来记录要安装的package的版本号，锁定其版本不会出现错误，会生成yarn.lock文件来记录其package的版本号，就连依赖包的版本号都会被记录
@@ -786,9 +786,9 @@ yarn upgrade &amp;ndash;latest 包名</description>
     </item>
     <item>
       <title>wsl2-windows子系统简单配置</title>
-      <link>https://chenjunlinabc.github.io/posts/35/</link>
+      <link>https://99999.fun/posts/35/</link>
       <pubDate>Wed, 16 Jun 2021 17:43:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/35/</guid>
+      <guid>https://99999.fun/posts/35/</guid>
       <description>wsl全称Windows Subsystem for Linux
 打开启动或关闭windows功能，选择虚拟机平台，安装完毕功能，重启
 打开Windows Power Shell，输入
@@ -819,9 +819,9 @@ wsl &amp;ndash;list &amp;ndash;online
     </item>
     <item>
       <title>Nginx服务器的一些简单配置</title>
-      <link>https://chenjunlinabc.github.io/posts/34/</link>
+      <link>https://99999.fun/posts/34/</link>
       <pubDate>Wed, 16 Jun 2021 15:52:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/34/</guid>
+      <guid>https://99999.fun/posts/34/</guid>
       <description>配置ssl证书
 前提是已经申请到ssl证书,并且开放443端口
 编辑nginx.conf
@@ -841,9 +841,9 @@ gzip on // gzip开启，关闭是off</description>
     </item>
     <item>
       <title>Linux环境下简单搭建Minecraft服务器（java版）</title>
-      <link>https://chenjunlinabc.github.io/posts/33/</link>
+      <link>https://99999.fun/posts/33/</link>
       <pubDate>Wed, 16 Jun 2021 15:46:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/33/</guid>
+      <guid>https://99999.fun/posts/33/</guid>
       <description>服务器可以使用国内的，保证延迟低，服务器配置一定要高一点，不然很容易Killed
 安装java
 dnf install java-openjdk
@@ -876,9 +876,9 @@ wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash</descri
     </item>
     <item>
       <title>node.js包管理工具npm的简单使用</title>
-      <link>https://chenjunlinabc.github.io/posts/31/</link>
+      <link>https://99999.fun/posts/31/</link>
       <pubDate>Wed, 16 Jun 2021 15:05:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/31/</guid>
+      <guid>https://99999.fun/posts/31/</guid>
       <description>npm是Node.js的默认包管理工具
 安装npm：安装node.js(一般来说安装nodejs都会安装npm的)
 npm -v 查看npm版本号 node -v 查看node版本号 npm install nmp@latest -g 更新最新nmp，-g全局，没有加-g就是本地安装，或者在@后面加版本号来更新到指定版本的npm npm init -y 初始化 npm i 要安装的依赖 先检查有没有这个东西，有的话就下载下来 npm uninstall 要删除的依赖的名称 npm i 要安装的依赖@版本号 安装指定版本的依赖 npm update 依赖名称 安装最新的依赖或者更新npm npm init -y 使用默认的参数，去掉-y就是手动配置 npm run 对象名 执行脚本,引用package.json中的scripts对象，在对象中添加脚本 npm adduser 注册npm账号 npm publish 发布npm包 npm install 一键安装package.json文件里的所有依赖 npm install &amp;ndash;dependencies 只安装package.json里的dependencies的文件 npm install &amp;ndash;devDependencies 只安装package.json里的devDependencies文件 会自动将package.json中的模块安装到node-modules文件夹
@@ -886,9 +886,9 @@ npm -v 查看npm版本号 node -v 查看node版本号 npm install nmp@latest -g 
     </item>
     <item>
       <title>Python的一些神器的简单用法</title>
-      <link>https://chenjunlinabc.github.io/posts/27/</link>
+      <link>https://99999.fun/posts/27/</link>
       <pubDate>Wed, 16 Jun 2021 14:39:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/27/</guid>
+      <guid>https://99999.fun/posts/27/</guid>
       <description>Virtualenv是一个能创建隔绝的独立的Python虚拟环境工具。它能够建立多个相互独立，互不影响的Python工作环境
 用来创建一套独立于系统Python环境的虚拟环境，在虚拟环境下，使用pip安装的依赖都会安装到当前的虚拟环境中，对系统的python环境没有影响
 当开发多个Python程序时当，程序1要使用3.6环境，但是程序2要使用3.8环境时，Virtualenv可以完美解决这个问题
@@ -917,9 +917,9 @@ cd ~ # 进入用户目录 mkdir .pip # 新建一个隐藏文件夹 touch pip.</d
     </item>
     <item>
       <title>简单搭建一个hexo博客</title>
-      <link>https://chenjunlinabc.github.io/posts/26/</link>
+      <link>https://99999.fun/posts/26/</link>
       <pubDate>Wed, 16 Jun 2021 14:36:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/26/</guid>
+      <guid>https://99999.fun/posts/26/</guid>
       <description>hexo+github可以实现免费搭建一个博客网站，就是维护起来有点麻烦
 apt install npm
 npm install hexo-cli -g
@@ -955,9 +955,9 @@ left - 靠左放置 right - 靠右放置
     </item>
     <item>
       <title>css常见布局</title>
-      <link>https://chenjunlinabc.github.io/posts/24/</link>
+      <link>https://99999.fun/posts/24/</link>
       <pubDate>Wed, 16 Jun 2021 13:23:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/24/</guid>
+      <guid>https://99999.fun/posts/24/</guid>
       <description>居中布局
 分水平居中和垂直居中，水平+垂直居中
 水平居中：当前元素在父级元素容器中，水平方向是居中显示的
@@ -978,9 +978,9 @@ absolute+transform</description>
     </item>
     <item>
       <title>Docker容器的简单使用</title>
-      <link>https://chenjunlinabc.github.io/posts/18/</link>
+      <link>https://99999.fun/posts/18/</link>
       <pubDate>Wed, 16 Jun 2021 09:34:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/18/</guid>
+      <guid>https://99999.fun/posts/18/</guid>
       <description>docker是一个应用容器，可以将应用以及该应用的依赖打包到一个可以移植的容器中，应用在这个容器中运行
 可以进行转移，修改，版本管理等操作，不用担心应用转移到别的服务器会出现依赖问题
 将容器文件转移到别的服务器上，不会影响到容器，一次配置，可以在多个服务器上使用相同的环境
@@ -1014,9 +1014,9 @@ sudo apt install docker-ce docker-ce-cli containerd.</description>
     </item>
     <item>
       <title>简单理解区块链的基本原理</title>
-      <link>https://chenjunlinabc.github.io/posts/15/</link>
+      <link>https://99999.fun/posts/15/</link>
       <pubDate>Wed, 16 Jun 2021 09:27:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/15/</guid>
+      <guid>https://99999.fun/posts/15/</guid>
       <description>注意：不推荐去玩比特币以及类似的加密货币，那个玩意说涨就涨，说跌就跌，比特币实质上就是一串数字，没有实物，没有信用背书，当这个巨大泡沫破裂之时，大部分人绝对不可能及时套现跑路，了解比特币下的技术可以，但是绝对不能接触或者玩比特币以及类似的加密货币
 1个比特币相当于100000000聪,聪(Satoshi)是比特币目前最小的单位，是为了纪念比特币的创建者中本聪(Satoshi Nakamoto)
 在中国唯一值得信赖的加密货币是数字人民币，有国家在做信用背书，是有法偿能力的法定货币，和现金等值
@@ -1072,9 +1072,9 @@ Hash(上一个Hash值,交易记录集,随机数)= 哈希值
     </item>
     <item>
       <title>linux系统的日常使用</title>
-      <link>https://chenjunlinabc.github.io/posts/8/</link>
+      <link>https://99999.fun/posts/8/</link>
       <pubDate>Wed, 16 Jun 2021 09:12:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/8/</guid>
+      <guid>https://99999.fun/posts/8/</guid>
       <description>linux发行版有很多，这里使用的是Ubuntu
 个人喜欢使用无界面版本（ubuntu-20.04-live-server-amd64）
 有关于树莓派的看这个
@@ -1085,9 +1085,9 @@ nano /etc/apt/sources.list
     </item>
     <item>
       <title>简单使用Vim编辑器</title>
-      <link>https://chenjunlinabc.github.io/posts/3/</link>
+      <link>https://99999.fun/posts/3/</link>
       <pubDate>Sun, 28 Mar 2021 12:00:00 +0000</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/3/</guid>
+      <guid>https://99999.fun/posts/3/</guid>
       <description>Vim是从vi发展出来的一个文本编辑器。提供代码补完、编译及错误跳转等功能
 vim的五种模式（正常模式，插入模式，命令行模式，可视化模式，替换模式）
 启动vim默认就是在正常模式中，在该模式中按i进入插入模式，按:进入命令行模式，在插入模式或者命令行模式中按Esc进入普通模式

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>C&#43;&#43; on 小陈的个人博客</title>
-    <link>https://chenjunlinabc.github.io/tags/c&#43;&#43;/</link>
+    <link>https://99999.fun/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on 小陈的个人博客</description>
     <image>
       <title>小陈的个人博客</title>
-      <url>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://chenjunlinabc.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 17 Feb 2024 14:50:12 +0800</lastBuildDate>
-    <atom:link href="https://chenjunlinabc.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://99999.fun/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43;学习笔记</title>
-      <link>https://chenjunlinabc.github.io/posts/163/</link>
+      <link>https://99999.fun/posts/163/</link>
       <pubDate>Sat, 17 Feb 2024 14:50:12 +0800</pubDate>
-      <guid>https://chenjunlinabc.github.io/posts/163/</guid>
+      <guid>https://99999.fun/posts/163/</guid>
       <description>C++的历史最早追溯到1979年，Bjarne Stroustrup创建了带类的C（即C的超集），这就是C++的雏形，直到1983年，才正式成为C++
 C++标准委员会在1998年发布了第一个国际标准C++ ISO/IEC 1488，又叫C++ 98
 2011年，C++ 11标准发布，boost库诞生，11标准之后，c++每3年发布一个版本，每一个版本保持向后兼任性的同时，还提供新功能以及改进
