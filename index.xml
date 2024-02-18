@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>小陈的个人博客</title>
+    <title>知政的个人博客</title>
     <link>https://99999.fun/</link>
-    <description>Recent content on 小陈的个人博客</description>
+    <description>Recent content on 知政的个人博客</description>
     <image>
-      <title>小陈的个人博客</title>
+      <title>知政的个人博客</title>
       <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
@@ -575,7 +575,7 @@ pm2 flush</description>
 设备：ThinkBook 14p Gen 2（Windows11操作系统，5800H处理器，16G内存，1TB硬盘）
 联系方式：
 QQ：195551690
-邮箱：chenjunlinabc123@qq.com
+Email：chenjunlinabc123@qq.com
 GitHub：https://github.com/chenjunlinabc
 在看书籍：
 GO语言学习笔记，数学之美，深入浅出Docker，GO语言核心编程，JavaScript高级程序设计，深入浅出Nodejs，React进阶之路，Redis实战，深入浅出React和Redux，深入理解TypeScript，前端技术架构与工程，labuladong的算法小抄，算法图解，Python3网络爬虫开发实战，前端架构：从入门到微前端，前端开发核心知识进阶：从夯实基础到突破瓶颈，Vue.js设计与实现，MongoDB进阶与实战:微服务整合、性能优化、架构管理，Angular开发入门与实战，React设计原理</description>
