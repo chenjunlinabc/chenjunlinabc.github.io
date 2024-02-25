@@ -487,47 +487,6 @@ yarn add @vitejs/plugin-legacy -d配置vite.config.ts
 import legacy from &#39;@vitejs/plugin-legacy&#39;.</description>
     </item>
     <item>
-      <title>简单使用Nginx</title>
-      <link>https://99999.fun/posts/85/</link>
-      <pubDate>Wed, 18 Aug 2021 12:50:00 +0000</pubDate>
-      <guid>https://99999.fun/posts/85/</guid>
-      <description>Nginx是目前web服务器占比第一（在https://w3techs.com 中可以看到Nginx占比33.1%）
-Nginx支持静态资源提供服务，支持高并发，热部署，反向代理，缓存，负载均衡等功能，Nginx使用BSD许可证开源（允许修改Nginx源码来重新发布一个商业用途的（例如Tengine））
-Nginx由Nginx二进制可执行文件，Nginx.conf，access.log，error.log组成
-Nginx和Nginx plus的区别：Nginx开源，免费，Nginx plus闭源，不免费
-Nginx编译安装
-Mainline version版本是提供最新的功能，Stable version版本是目前的稳定版本，Legacy versions版本是过去的版本
-下载Nginx
-wget http://nginx.org/download/nginx-1.22.0.tar.gz
-解压Nginx压缩包
-tar -xzf nginx-1.22.0.tar.gz
-其中auto目录有4个子目录（分别为cc（用于编译），lib（lib库），os（操作系统的判断），types（类型判断）），conf目录是Nginx配置目录，html目录是Nginx默认静态文件
-conf目录是Nginx配置文件目录（例如nginx.conf），src目录是Nginx源代码目录
-进入nginx目录然后进行编译
-查看编译时支持的参数
-./configure &amp;ndash;help | more
-使用默认参数编译
-./configure &amp;ndash;prefix=/home/nginx
-编译完成的中间文件存会放在objs文件夹下
-ngx_module.c是要编译进Nginx的模块，如果需要安装第三方模块需要在其修改
-make编译
-make install安装
-进入/home/nginx，可以看到已经安装完成
-安装
-编译安装
-apt install -y gcc gcc-c++ pcre pcre-devel openssl openssl-devel zlib zlib-devel
-wget http://nginx.org/download/nginx-1.22.0.tar.gz
-tar -zxvf nginx-1.18.0.tar.gz
-cd nginx-1.18.0
-make &amp;amp;&amp;amp;make install
-一键安装（不推荐）
-apt install nginx
-检查是否安装完毕
-nginx -v
-nginx配置文件nginx.conf解读，一般在/etc/nginx下
-user root; # nginx运行用户worker_processes auto; # nginx进程数，一般会设置和CPU核数一致error_log /www/wwwlogs/nginx_error.</description>
-    </item>
-    <item>
       <title>简单使用Nginx HTTP服务器软件</title>
       <link>https://99999.fun/posts/85/</link>
       <pubDate>Wed, 18 Aug 2021 12:50:00 +0000</pubDate>
