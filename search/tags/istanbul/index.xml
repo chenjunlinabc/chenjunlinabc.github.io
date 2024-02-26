@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Istanbul on 知政的个人博客</title>
+    <link>https://99999.fun/tags/istanbul/</link>
+    <description>Recent content in Istanbul on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 30 Sep 2021 12:22:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/istanbul/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用istanbul代码覆盖率工具</title>
+      <link>https://99999.fun/posts/113/</link>
+      <pubDate>Thu, 30 Sep 2021 12:22:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/113/</guid>
+      <description>代码覆盖率：是否所有代码都被执行或者调用
+每一行，每个函数，每个语句块，每个if分支是否都被执行或者被调用
+istanbul是JavaScript的覆盖率工具（类似工具还有NYC）（可搭配mocha使用）
+安装
+npm install -g istanbul
+测试覆盖率
+istanbul cover demo.js
+检查程序覆盖率是否达到某个值
+istanbul check-coverage &amp;ndash;statement 60 &amp;ndash;branch -5 &amp;ndash;function 100
+在执行检查测试后，会在目标文件的当前目录下生成个coverage文件夹
+在coverage/lcov-report/index.html，可以查看网页版结果</description>
+    </item>
+  </channel>
+</rss>

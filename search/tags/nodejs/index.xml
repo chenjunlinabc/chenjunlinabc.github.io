@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nodejs on 知政的个人博客</title>
+    <link>https://99999.fun/tags/nodejs/</link>
+    <description>Recent content in Nodejs on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 16 Sep 2021 21:55:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NodeJS常用工具的简单使用</title>
+      <link>https://99999.fun/posts/105/</link>
+      <pubDate>Thu, 16 Sep 2021 21:55:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/105/</guid>
+      <description>npm在这里https://xiaochenabc123.test.com/archives/31.html
+Yarn在这里https://xiaochenabc123.test.com/archives/38.html
+nvm全名node.js version management
+用来nodejs多版本管理，可以切换和安装不同版本的nodejs
+安装nvm之前记得把安装过的nodejs都卸载了
+安装完成后，安装目录下会生成一个settings.txt文件
+配置一下（如果要使用淘宝npm源的话）
+root: D:\Software\nvm path: D:\Software\nodejs arch: 64 node_mirror: https://npm.taobao.org/mirrors/node/ npm_mirror: https://npm.taobao.org/mirrors/npm/
+环境变量
+NVM_HOME设置为nvm安装目录
+NVM_SYMLINK设置为nodejs安装目录
+Path：添加%NVM_HOME%和%NVM_SYMLINK%
+注意：安装路径不能出现中文或者空格，否则报错，请使用管理员权限运行use命令，否则可能导致exit status 1:xxx
+安装指定版本nodejs
+nvm install 14.17.3
+查看可以安装的nodejs版本
+nvm ls available
+查看当前全部已经安装的nodejs版本
+nvm ls
+切换nodejs版本
+nvm use 14.17.3
+卸载nodejs
+nvm uninstall 14.17.3
+查看系统位数和node位数
+nvm arch
+另一个nodejs多版本管理工具n
+安装n
+npm install -g n
+安装最新nodejs版本
+n latest
+安装稳定版本nodejs
+n stable
+安装lts版本
+n lts
+安装指定版本的nodejs（如果已安装了这个版本，那么就会选择这个版本，这个命令可以用来安装和选择）
+n 14.17.3
+卸载指定版本
+n rm 14.17.3</description>
+    </item>
+  </channel>
+</rss>

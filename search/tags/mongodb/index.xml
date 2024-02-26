@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>MongoDB on 知政的个人博客</title>
+    <link>https://99999.fun/tags/mongodb/</link>
+    <description>Recent content in MongoDB on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 Aug 2021 14:20:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MongoDB学习笔记</title>
+      <link>https://99999.fun/posts/76/</link>
+      <pubDate>Sun, 08 Aug 2021 14:20:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/76/</guid>
+      <description>MongoDB是一个以键值对存储数据的数据库（基于json描述数据，实质上是一个叫BSON的数据格式，BSON是基于二进制字节流，json基于文本）
+MongoDB是No SQL家族的成员之一，No SQL一般指的是非关系型数据库（Not only SQL）
+关系型数据库和Excel表格类似，表与表之间存在着复杂的关联关系，例如MySQL，sql server
+而非关系型数据库不使用SQL作为查询，不需要遵循ACID（Atomicity Consistency Insolation Durability）
+基于json有个好处就是不需要额外对数据进行转换（例如sql，在调用其数据时需要进行数据的转换）
+MongoDB使用了WiredTiger存储引擎（3.2+版本开始为默认引擎），利用可用内存来缓存数据，来提供优秀的读取性能，该引擎使用WiredTiger内部缓存和文件系统缓存这俩种缓存
+WiredTiger提供了内存快照，而且每隔60秒（创建检查点）就将内存快照写入磁盘（数据持久化，而且持久化的数据还可以作为校验，确保数据在最后一个检查点是一致的，而且旧检查点可以作为有效检查点恢复因为写入新检查点时的错误而且重启导致丢失的数据）
+对于60秒内的数据丢失，WiredTiger采用了Journal机制（WAL预写日志）来提供断电保护，Journal每隔100ms刷新日志，数据被存储在Journal文件（发生断电情况，可通过Journal文件根据记录追加数据），Journal机制会保留检查点之间保留所有数据修改
+而且不用担心100ms以内的数据丢失，因为MongoDB提供了其特有的写入安全机制（Write Concern），默认使用Acknowledged安全策略，该策略在每次写入操作时确认状态，这个状态取决于内存的写入（不保证数据不丢失）
+Journaled策略要求每一次写入操作必须在journal落盘后（确保数据不丢失，吞吐和响应会有影响），该策略会确认落盘后等待30ms，将30ms内的全部写入操作统一按照顺序写入盘中
+majority副本集策略要求只有当数据被复制到绝大多数节点（包括主节点）后才应答（适合集群）
+Write Concern用法
+例如：
+db.test.insert({&amp;ldquo;name&amp;rdquo;:&amp;ldquo;hallo&amp;rdquo;},{writeConcern:{w:1}})
+w有这几个常用值，分别为0（非应答式写入），1（应答式写入），&amp;gt;1（设置副本写入节点数量），majority(表示majority副本集策略)
+而且还提供了wtimeout参数来限制节点写入时间（超过该时间，报错，只适用集群环境，单位ms）
+j参数是用来开启写入操作必须在写入journal日志后响应（Journaled策略，参数值为布尔值）
+MongoDB有三种集群部署架构，主从，副本集，分片
+一个副本集架构由一个主节点和多个副本节点组成，个主节点和多个副本节点的数据同步基于oplog，当主节点发生故障，副本节点会自动选择一个新的主节点来继续工作
+在分片架构上，数据均衡分布在每一个节点上（负载均衡），可通过增加或者减少分片来实现按需扩展，
+简单使用MongoDB数据库
+mongod.conf文件是MongoDB数据库配置文件
+启动数据库（没有该数据库则创建数据库）
+mongod &amp;ndash;dbpath D:\mongodb
+默认端口为27017
+启动服务
+net start mongodb
+连接数据库
+mongo &amp;ndash;port 27017
+切换数据库（没有该数据库就会创建）
+use demo
+查看全部数据库
+show dbs
+注意：默认数据库为test，没有创建新数据库，那么就存储在test数据库中
+删除数据库（当前数据库）
+db.dropDatabase()
+创建集合（类似于MySQL中的表）
+db.createCollection(&amp;ldquo;hallo&amp;rdquo;)
+插入数据（插入到test集合中，当该集合不存在时，将自动创建该集合）
+db.test.insert({&amp;ldquo;name&amp;rdquo;:&amp;ldquo;hallo&amp;rdquo;})
+查看当前已有集合
+show collections
+或者
+show tables
+db.createCollection(&amp;ldquo;test&amp;rdquo;, { capped : true, autoIndexId : true, size : 102400, max : 10000 } )</description>
+    </item>
+  </channel>
+</rss>

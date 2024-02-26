@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Markdown on 知政的个人博客</title>
+    <link>https://99999.fun/tags/markdown/</link>
+    <description>Recent content in Markdown on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 18 Aug 2021 16:50:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown基础语法笔记</title>
+      <link>https://99999.fun/posts/88/</link>
+      <pubDate>Wed, 18 Aug 2021 16:50:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/88/</guid>
+      <description>Markdown是一个标记语言，常用于编写文档
+标题
+一级标题 二级标题 三级标题 四级标题 五级标题 六级标题 分别对别h1到h6
+段落
+斜体文本
+斜体文本
+粗体文本
+粗体文本
+粗斜体文本
+粗斜体文本
+分割线
+删除线
+hallo
+脚注
+列表
+列表 列表 列表 1.列表
+区块
+xxx 代码
+xxx
+xxx
+链接
+chenjunlin
+图片
+表格
+xxx xxx yyy yyy yyy yyy :-表示左对齐，-:表示右对齐，:-:表示居中对齐
+转义
+*</description>
+    </item>
+  </channel>
+</rss>

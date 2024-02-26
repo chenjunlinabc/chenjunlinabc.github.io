@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Redis on 知政的个人博客</title>
+    <link>https://99999.fun/tags/redis/</link>
+    <description>Recent content in Redis on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 10 Sep 2021 21:10:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis学习笔记</title>
+      <link>https://99999.fun/posts/97/</link>
+      <pubDate>Fri, 10 Sep 2021 21:10:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/97/</guid>
+      <description>Redis是NoSQL数据库（Not Only SQL）家族的代表之一，其特点就是基于内存运行，支持分布式，key-value存储
+Redis具备速度快，支持多种数据结构，可持久化，支持主从复制，具备高可用，分布式等特点
+可以将内存中的数据存储到磁盘中，重启的时候再加载使用，保证数据的持久性，支持备份恢复，常用于缓存数据库（辅助持久化数据库）
+因为其是以内存作为存储介质，因此读写数据的效率极高，读取速度可高达110000次/s（也就说可达到10W QPS，QPS（Queries Per Second）:每秒查询率），写速度高达81000次/s
+Redis将数据存储于内存中，Redis会将数据的更新异步存储到磁盘中来持久化，Redis数据持久化有2种方式，分别是RDB（Redis DataBase）和AOF（append only file）
+Redis支持多种数据结构，例如：string（字符串），hash（哈希），list（列表），set（集合），zset(Sorted Set: 有序集合)，BitMaps（位图），HyperLogLog（超小内存唯一值计数），GEO（地理信息定位）
+Redis支持分布订阅，Lua脚本，事务，pipeline等功能，支持主从复制，确保高可用
+Redis可以用来当做缓存系统，用户访问app应用服务时，一般来说会优先从缓存中读取，如果缓存没有再到存储介质中读取，并且将该数据会在存储在缓存中，这个缓存就是Redis
+Redis安装
+编译安装（linux）
+下载redis-x.x.x.tar.gz
+解压
+tar xzf redis-x.x.x.tar.gz
+进入解压出来的文件夹中，执行make&amp;amp;&amp;amp;make install命令
+因为用的是默认配置
+进入src，./redis-server ../redis.conf
+测试客户端
+./redis-cli
+src目录下可看到6个可执行文件，作用如下：
+redis-server可执行文件用于启动redis服务器
+redis-cli可执行文件用于redis命令行客户端，用于连接redis服务器
+redis-benchmark可执行文件用于redis性能测试，基准测试
+redis-check-aof可执行文件用于修复AOF可持久化文件
+redis-check-dump可执行文件用于RDB可持久化文件的检查工作
+redis-sentinel可执行文件用于启动高可用的sentinel模式（该模式又叫哨兵）
+使用redis并不推荐使用windows，虽然微软官方提供了redis补丁，但是redis版本太低了，建议使用Linux虚拟机或者docker容器来跑
+redis有3种启动服务器方式
+默认配置启动
+redis-server
+动态参数启动
+redis-server &amp;ndash;port 6380
+配置文件启动（推荐，通过redis.conf文件来进行配置）
+redis-server configPath
+客户端连接服务（6379是redis默认端口）
+redis-cli -h 127.0.0.1 -p 6379 -a &amp;ldquo;root&amp;rdquo;
+redis.conf配置
+默认端口为6379
+port 6379
+要远程访问则设置为0.0.0.0
+bind 127.0.0.1
+logfile，redis日志名
+dir，redis工作目录（日志文件和持久化文件存储在哪个文件）
+以守护进程运行（yes为守护进程），注意如果是以守护进程运行，那么会默认将pid写入到/var/run/redis.pid
+daemonize yes</description>
+    </item>
+  </channel>
+</rss>

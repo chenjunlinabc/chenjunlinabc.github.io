@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SEO on 知政的个人博客</title>
+    <link>https://99999.fun/tags/seo/</link>
+    <description>Recent content in SEO on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 20 Mar 2021 11:50:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/seo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单了解SEO</title>
+      <link>https://99999.fun/posts/2/</link>
+      <pubDate>Sat, 20 Mar 2021 11:50:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/2/</guid>
+      <description>SEO：搜索引擎优化（Search Engine Optimization），是利用搜索引擎的规则来提升网站在该搜索引擎的排名（免费，高回报）
+robots.txt就是robots协议，用来告诉网络蜘蛛，这个网站什么内容是不应该获取的，那些内容可以获取，例如：淘宝就屏蔽了百度的爬虫
+robots.txt文件应该放在网站根目录下
+允许指定蜘蛛获取，*为通配符
+User-agent: *
+允许指定目录可以被获取
+Allow: /
+指定Sitemap文件在哪
+Sitemap: sitemap.xml
+不允许指定目录被获取（注意该方法会模糊匹配，例如/adminxxx，也是会被屏蔽）
+Disallow: /admin
+description（描述）
+keywords（关键词）
+Sitemap（通知搜索引擎，该网站有哪些可以供爬取的，常见的有xml，html）
+HTML标签优化
+语义化标签，例如header，nav，footer
+内部连接优化
+尽量不要使用JavaScript来设置链接，应该使用简单的a href
+友情链接
+友情链接就是在自己网站上放其他网站的链接，友情链接实质上并不能带来多少访问量，而且是用来增强搜索引擎的收录量爬取量
+注意：请不要在友情链接上加rel=&amp;ldquo;nofollow&amp;rdquo;，该属性会告诉搜索引擎爬虫不用抓取目标页，那么这个友情链接就是废了
+而且不要乱加友情链接，应该选择高质量，而且内容相似，更新频率高，而且还要有一定的访问量
+注意：如果没有必要就不要单向链接，爬虫跑过去，就不会回来了，一直到找到你的链接，通过该链接回来，所以没有必要不要单向链接
+尽量避免使用iframe标签，搜索引擎不会抓取iframe标签的内容
+重要信息请勿使用js输出，爬虫不会抓取js的内容
+给图片加alt信息，重要信息请放头部，有部分搜索引擎爬虫会限制抓取的长度</description>
+    </item>
+  </channel>
+</rss>

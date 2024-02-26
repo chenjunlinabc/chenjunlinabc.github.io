@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vim on 知政的个人博客</title>
+    <link>https://99999.fun/tags/vim/</link>
+    <description>Recent content in Vim on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 28 Mar 2021 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用Vim编辑器</title>
+      <link>https://99999.fun/posts/3/</link>
+      <pubDate>Sun, 28 Mar 2021 12:00:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/3/</guid>
+      <description>Vim是从vi发展出来的一个文本编辑器。提供代码补完、编译及错误跳转等功能
+vim的五种模式（正常模式，插入模式，命令行模式，可视化模式，替换模式）
+启动vim默认就是在正常模式中，在该模式中按i进入插入模式，按:进入命令行模式，在插入模式或者命令行模式中按Esc进入普通模式
+普通模式不能输入文本，只能进行现有内容的处理（移动复制删除等等）
+正常模式：Esc或Ctrl+[进入 插入模式：按i键进入（a和o都可以） 命令行模式：在正常模式下按:进入 可视化模式：按v或者V，ctrl-V（或者ctrl-Q）进入 替换模式：在正常模式下按r进入
+v 进入字符可视化模式 V 进入行可视化模式 Ctrl+v 进入块可视化模式
+可视模式是用来选取一段文本，光标移到段首，在普通模式下按 v 进入可视模式，然后把光标移到段末
+移动光标
+h：光标左移 j：光标下移 k：光标上移 l：光标右移
+^或者0：移动到行首（命令行模式） $：移动到行尾（命令行模式）,可搭配数字来组合，例如2$就是2表示要移动的行数
+移动光标也可以搭配数字来进行组合，例如：
+3+h：光标左移3个字符
+vim hallo.js
+在vim界面新建文件
+:open hallo.js
+在vim界面打开一个新窗口新建文件
+:split file
+切换到上一个文件
+:bp
+切换到下一个文件
+:bn
+查看vim文件列表
+:args
+打开远程文件
+:e \hallo abc.txt
+/text：按n健查找下一个，按N健查找上一个
+?text：按n健查找上一个，按N健查找下一个
+:wq：保存并且退出，加!表示强制
+:q!：强制退出并且放弃所有更改
+:e!：放弃修改，并且重新打开文件</description>
+    </item>
+  </channel>
+</rss>

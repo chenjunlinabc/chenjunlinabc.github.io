@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>C&#43;&#43; on 知政的个人博客</title>
+    <link>https://99999.fun/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 17 Feb 2024 14:50:12 +0800</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;学习笔记</title>
+      <link>https://99999.fun/posts/163/</link>
+      <pubDate>Sat, 17 Feb 2024 14:50:12 +0800</pubDate>
+      <guid>https://99999.fun/posts/163/</guid>
+      <description>C++的历史最早追溯到1979年，Bjarne Stroustrup创建了带类的C（即C的超集），这就是C++的雏形，直到1983年，才正式成为C++
+C++标准委员会在1998年发布了第一个国际标准C++ ISO/IEC 1488，又叫C++ 98
+2011年，C++ 11标准发布，boost库诞生，11标准之后，c++每3年发布一个版本，每一个版本保持向后兼任性的同时，还提供新功能以及改进
+C++的特点：封装能力强，高性能，低功耗（可在微型设备上运行，例如嵌入式设备）
+C++主要用于开发桌面应用程序，后台系统引擎，游戏以及游戏引擎，图像视觉和AI引擎，数据库（例如MongoDB）,嵌入式开发
+C++是编译型语言，C++程序会经过编译器生成中间的目标程序，再通过链接器，将目标程序和程序库链接到一起，最后生成可执行程序
+.cpp程序经过编译器生成汇编程序.asm，再通过汇编器生成目标程序.obj，链接器会将目标程序和其他目标程序以及一些库程序链接到一起，生成可执行文件
+Windows下直接安装Visual Studio，选择使用C++的桌面开发和通用Windows平台开发，Visual Studio扩展插件选上
+如果需要开发移动设备的开发，也可以选择使用C++的移动开发选项，还有使用C++的Linux开发，根据自己需求选择
+第一个C++程序
+#include＜iostream＞int main(){std::cout &amp;lt;&amp;lt; &amp;quot;hallo word!\n&amp;quot;;}运行以及调试程序：生成，生成解决方案，清理解决方案，编译
+C++的每一个变量是具备其数据类型的，该数据类型决定了该变量在内存的空间大小以及该内存空间的值范围，该变量能参与哪些运算，例如：
+int sum; // 定义整形int a = 1;int b = 1;sum = a + b; // 求和一些常见的类型的定义：
+#include &amp;quot;stdafx.h&amp;quot;void main(void){char a[6]=&amp;quot;qq&amp;quot;;short int a = 88;long int a = 99;int a = 99;float a = 3.</description>
+    </item>
+  </channel>
+</rss>

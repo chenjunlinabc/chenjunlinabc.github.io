@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>RESTful on 知政的个人博客</title>
+    <link>https://99999.fun/tags/restful/</link>
+    <description>Recent content in RESTful on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Feb 2022 21:50:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/restful/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单了解RESTful设计规范</title>
+      <link>https://99999.fun/posts/136/</link>
+      <pubDate>Wed, 16 Feb 2022 21:50:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/136/</guid>
+      <description>RESTful是指满足REST的约束条件和原则的应用或者设计，REST全称Representational State Transfer（表现层状态转移），REST出现在2000年Roy Fielding的博士论文中（Roy Fielding是HTTP规范的主要编写者之一），RESTful是目前最流行的API设计规范
+资源(Resources)：REST是基于资源的，不同的资源使用不同且唯一的URI(统一资源标识符（Uniform Resource Identifier），URI格式例如：/img/hallo.jpg，可表示一个资源的路径和资源名称，URI实质上就是URL加URN)表示，获取资源通过访问URI得到，这个资源可以是任何东西（例如txt，exe，iso，mp3，mp4等等）
+表示层(Representation)：表示层指是将资源具体内容以某种方式展现出来的，例如hallo.mp3，那么就会用mp3的格式来展现这个文件的内容
+状态转换(State Transfer)：如果希望客户端通过某种请求方式来让服务端表示层的资源发生改变，这就是状态转换，这请求方式分别为GET（获取资源），POST（新建资源），PUT（更新资源），DELETE（删除资源）
+RESTful设计规范的六个规范：
+1.客户端/服务端(C/S)关注点分离，客户端专注于用户的操作界面，服务端专注于数据存储
+2.无状态，要求客户端的每个请求都要拥有完成请求的全部信息，服务端不用存储任何上下文信息，会话信息存储在客户端上
+3.统一接口（Uniform Interface），要求使用具备REST规范（资源标识符，资源状态的修改，具备描述资源怎么操作处理的信息，客户端应使用超链接的方式来动态访问其他资源）的接口
+4.可缓存（Cache），允许服务端响应可被缓存或者不可缓存（必须明确是否可缓存），如果响应可缓存，客户端可以根据有效缓存时间，来复用响应，减少前后端交互
+5.分层系统，不允许跨层访问（访问不相邻的层）
+6.按需编码（可选，可理解为按需扩展客户端功能），允许服务端提供一些脚本来扩展客户端功能（例如JavaScript）
+api接口统一域名（推荐使用api.xiaochenabc123.test.com这样的格式）
+URI（不使用大写，使用中杆-，资源名字是复数名词，资源实体集合，不能出现动词）
+HTTP请求方式（不同的操作使用不同的请求方式，例如获取资源使用get，post新建资源等等）
+如果资源庞大，可通过get参数的形式获取（例如分页），API的版本号应该放在URI中，更改资源，应该修改资源版本号，原有的URI应该保持继续可用
+需正确设置http状态码，根据http状态码来做出不同的响应，例如200正常返回，404文件不存在等等
+简单来说就是使用唯一接口，通过URL来访问不同的资源，通过不同的请求方式对资源做出响应</description>
+    </item>
+  </channel>
+</rss>

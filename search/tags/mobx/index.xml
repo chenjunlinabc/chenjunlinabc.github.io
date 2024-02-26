@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mobx on 知政的个人博客</title>
+    <link>https://99999.fun/tags/mobx/</link>
+    <description>Recent content in Mobx on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 Aug 2021 21:35:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/mobx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mobx学习笔记</title>
+      <link>https://99999.fun/posts/78/</link>
+      <pubDate>Sun, 08 Aug 2021 21:35:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/78/</guid>
+      <description>Mobx是一个状态管理库（状态管理实质上就是在管理数据变化）
+Mobx通过透明的函数响应式编程使得状态管理变得简单和可扩展
+Mobx状态管理是基于观察者模式的（Mobx6.0移除了修饰器）
+安装Mobx
+npm install mobx mobx-react --save或者
+yarn add mobx mobx-react --save导入
+import {observable, autorun, computed, action, makeObservable,reaction,when} from &amp;quot;mobx&amp;quot;import {observer} from &amp;quot;mobx-react&amp;quot;注意：在严格模式中，是不允许在action之外改变状态的
+启动严格模式
+import {configure} from &#39;mobx&#39;configure({enforceActions: true})observable定义可观察的状态 action修改状态（动作） computed计算值
+数据变化可被观察，例如：
+let appdata = observable([1,2,3,4,5])console.log(appdata[1])appdata = observable({a:1,b:2,c:3})console.log(appdata.a)appdata.a += 1console.log(appdata.a)appdata = observable.box(100)console.log(appdata)响应式对象
+makeObservable（手动配置observable，action，computed）
+const store = makeObservable({ count: 666, get double(){return this.count * 2},increment(){this.</description>
+    </item>
+  </channel>
+</rss>

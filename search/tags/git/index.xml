@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Git on 知政的个人博客</title>
+    <link>https://99999.fun/tags/git/</link>
+    <description>Recent content in Git on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 01 Feb 2022 18:00:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用GitHub Actions来实现CI/CD</title>
+      <link>https://99999.fun/posts/131/</link>
+      <pubDate>Tue, 01 Feb 2022 18:00:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/131/</guid>
+      <description>CI：持续集成 (Continuous Integration) CD：持续交付 (Continuous Delivery) CD：持续部署 (Continuous Deployment)
+GitHub Actions是GitHub提供的持续集成服务
+GitHub Actions官方文档：https://docs.github.com/en/actions
+workflow：工作流程，指一次持续集成的流程，由一个job或者多个job组成 Events：事件，触发流程的钩子（在github中事件为检测仓库特定活动的钩子，例如pull，当事件被触发则自动执行工作流程） Job：任务，任务是工作流程的主体 Steps：步骤，每个Job可以包含一个或多个Step Actions: 行为，每个Step包含一个或多个Action Runners: 执行环境，工作流程运行时的服务端，每一个执行环境可以运行一个任务
+workflow工作流程通过编写workflow文件来描述，workflow文件要使用YAML语言编写，github支持多个workflow（当github发现.github/workflows/目录下有.yml文件时就会执行该文件）
+在仓库的.github/workflows/目录下创建test.yml，其中要配置字段
+name：workflow名称，如果省略默认为当前workflow的文件名
+on：指定触发workflow的条件，一般为事件触发（比如说push）
+jobs：每一项任务都需要定义个job_id，job中的name为该任务的描述，needs为指定当前任务的运行顺序（依赖关系），runs-on为指定运行时需要的虚拟机环境（这个字段必须填）
+目前github支持的虚拟机操作系统有ubuntu，windows，macOS，而且github提供的虚拟机是免费使用的
+这里举个例子（github官方的）
+name: GitHub Actions Demoon: [push]jobs:Explore-GitHub-Actions:runs-on: ubuntu-lateststeps:- run: echo &amp;quot; The job was automatically triggered by a ${{ github.event_name }} event.&amp;quot;- run: echo &amp;quot; This job is now running on a ${{ runner.os }} server hosted by GitHub!</description>
+    </item>
+    <item>
+      <title>Git版本管理系统学习笔记</title>
+      <link>https://99999.fun/posts/30/</link>
+      <pubDate>Wed, 16 Jun 2021 14:51:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/30/</guid>
+      <description>git安装
+Windows和mac
+到git官网下载对应的安装文件，进行安装，下一步
+Linux
+sudo apt install git-all 或者 sudo dnf install git-all
+也可以用源代码编译（Git是开源的，是Linux之父的作品） https://github.com/git/git/releases
+方便git管理，记录每一个修改了Git仓库的人，设置用户名和邮箱
+git config &amp;ndash;global user.name &amp;ldquo;chenjunlin&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;a@xiaochenabc123.test.com&amp;rdquo;
+ssh-keygen -t rsa -C &amp;ldquo;a@xiaochenabc123.test.com&amp;rdquo; # 生成ssh密钥
+mkdir learngit #创建一个空目录
+cd learngit # cd到目录
+pwd #显示当前目录路径
+git init #将当前的目录变成git管理仓库
+ls -ah #将所有目录（包括隐藏目录）显示出来
+git add 文件名 #将文件添加到仓库中
+git commit -m 说明 #告诉git这次添加到仓库的说明，可以是任意内容
+git status #返回仓库的当前状态
+git diff 文件名 #查看当前文件的内容
+git log #查看历史记录，加上&amp;ndash;pretty=oneline 查看commit id（版本号）
+git reset &amp;ndash;hard HEAD^ #回退上一个版本，上上一个版本就是HEAD^^，以此类推，或者使用HEAD~ 就是要回退多少个版本</description>
+    </item>
+  </channel>
+</rss>

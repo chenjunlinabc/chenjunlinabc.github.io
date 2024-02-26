@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vite on 知政的个人博客</title>
+    <link>https://99999.fun/tags/vite/</link>
+    <description>Recent content in Vite on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 18 Aug 2021 14:20:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/vite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用Vite-前端构建工具</title>
+      <link>https://99999.fun/posts/87/</link>
+      <pubDate>Wed, 18 Aug 2021 14:20:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/87/</guid>
+      <description>Vite是由 Vue.js 的作者尤雨溪开发完成的一款前端项目构建工具，使用原生ESM文件，支持热重载
+Vite在法语中的意思为快速的
+基于原生 import 的，使用浏览器来解析import，服务端按需编译返回，支持热更新模块
+依赖于Rollup打包，虽然vite设计初衷是为了vue3.x的，但是也是支持其他框架（例如react）
+对于TypeScrip的支持程度相当好，只需要在script元素加lang=&amp;ldquo;ts&amp;quot;就可以使用ts了
+至于less，sass/scss之类的css预处理器以及css原生支持也是很好，Vite支持css样式直接引入（import &amp;lsquo;./app.css&amp;rsquo;）
+sass/scss使用（前提已经安装了sass）
+在style元素中加lang=&amp;ldquo;scss&amp;quot;就可以使用sass了
+json也是可以直接引入，例如：import data from &amp;lsquo;./data.json&amp;rsquo;
+另外对于JSX也是支持的，用.jsx表示jsx，例如：import App from &amp;lsquo;./App.jsx&amp;rsquo;
+vite有一套开发服务功能，基于原生es模块，ESM+HMR，而且还有一套项目构建指令，用rollup打包
+打包：指的是使用工具来抓取和处理源码模块，并且合成可以在浏览器上运行的文件（浏览器本身并不提供模块管理的机制，多模块需要很多的script标签，很繁琐臃肿，而打包就很好的解决了这个问题）
+常见的打包工具例如：webpack，rollup，parcel，gulp
+注意：当冷启动服务的时候，必须要先抓取并且构建应用（当应用越来越大，模块越来越多的时候，会导致服务启动缓慢），才能提供服务，而且进行模块更新的话，也会导致重建应用缓慢
+传统打包，是将多个模块打包成单一的文件，而esm打包，是根据http请求，来获取相应的route，再根据route来获取module（避免一开始就获取全部module）
+vite将模块分为依赖和源码，依赖指的是开发时不会发生改变的，vite将使用esbuild预构建依赖，而且将以原生ESM方式让浏览器接管打包源码
+构建Vite项目
+npm create vite
+或者
+yarn create vite
+然后初始化一下
+npm install
+或者
+yarn
+启动服务器
+vite
+或者
+npm run dev，yarn dev
+本地预览
+vite preview
+打包
+vite build
+react
+npm create vite
+选择react，如果需要ts，也可以选择ts
+npm install
+Vite是一个构建工具的高阶封装（生产环境打包用Rollup来构建），开发环境无需要打包编译（利用现代浏览器的原生ESM来进行导入模块，模块加载的工作由浏览器完成，实现冷启动），支持动态模块热重载（HMR），开发环境的编译通过Esbuild来完成
+Vite生产环境构建（也就是Rollup）是根据browserslist来做浏览器兼容性的，需要通过修改vite.config.ts下的build.target来指定构建目标，Vite最低支持es2015，也就是es6，需要es5以及更多浏览器可能无法正常运行或者通过@vitejs/plugin-legacy插件来获取支持（注意：使用该插件也不能让vue3支持ie11，只有vue2支持ie11）
+安装@vitejs/plugin-legacy
+yarn add @vitejs/plugin-legacy -d配置vite.config.ts
+import legacy from &#39;@vitejs/plugin-legacy&#39;.</description>
+    </item>
+  </channel>
+</rss>

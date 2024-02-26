@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Web.py on 知政的个人博客</title>
+    <link>https://99999.fun/tags/web.py/</link>
+    <description>Recent content in Web.py on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 18 Oct 2021 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/web.py/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web.py学习笔记</title>
+      <link>https://99999.fun/posts/117/</link>
+      <pubDate>Mon, 18 Oct 2021 12:00:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/117/</guid>
+      <description>web.py是一个轻量级Python web框架，是由已故著名计算机黑客Aaron Swartz设计开发（如果你看过互联网之子这个电影，你应该对这位大佬很熟悉）
+安装web.py
+pip install web.py
+导入模块
+import web
+第一个例子
+import weburls = (&amp;quot;/(.*)&amp;quot;,&amp;quot;hallo&amp;quot;)app = web.application(urls,globals())class hallo:def GET(self,name):return &amp;quot;&amp;lt;h1&amp;gt;hallo web.py&amp;lt;/h1&amp;gt;&amp;quot;if __name__==&amp;quot;__main__&amp;quot;:app.run()可以看到页面内容是return返回的，也可以open读取html文件，来返回回去，都是可以的</description>
+    </item>
+  </channel>
+</rss>

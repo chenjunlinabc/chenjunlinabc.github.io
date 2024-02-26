@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hexo on 知政的个人博客</title>
+    <link>https://99999.fun/tags/hexo/</link>
+    <description>Recent content in Hexo on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Jun 2021 14:36:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单搭建一个hexo博客</title>
+      <link>https://99999.fun/posts/26/</link>
+      <pubDate>Wed, 16 Jun 2021 14:36:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/26/</guid>
+      <description>hexo+github可以实现免费搭建一个博客网站，就是维护起来有点麻烦
+apt install npm
+npm install hexo-cli -g
+hexo init blog
+cd blog
+npm install
+hexo server
+使用NexT
+apt install git
+git clone https://github.com/theme-next/hexo-theme-next.git
+把hexo-theme-next文件夹放到hexo根目录的themes文件夹下
+启动主题
+打开hexo目录下的_config.yml文件，这个文件为站点配置文件
+找到theme，修改值为hexo-theme-next
+调试模式
+hexo s &amp;ndash;debug 查看是否输出有错误，方便修改错误信息
+选择主题
+打开主题的根目录的_config.yml文件，这个文件是主题配置文件
+找到scheme，需要启动的在前面去掉#注释即可，不需要就加注释#
+设置 语言
+打开站点配置文件，修改language为需要的语言zh-CN
+修改菜单
+打开主题配置文件，找到menu，需要用到的菜单就去掉#，不需要就加#
+home 主页 archives 归档页 categories 分类页 tags 标签页 about 关于页面 commonweal公益 404
+修改对应的语言翻译
+主题目录下languages/zh-CN.yml
+设定菜单项的图标，可以使用的是Font Awesome 图标
+设置 侧栏
+打开主题配置文件
+修改sidebar.position的值
+left - 靠左放置 right - 靠右放置
+设置 头像</description>
+    </item>
+  </channel>
+</rss>

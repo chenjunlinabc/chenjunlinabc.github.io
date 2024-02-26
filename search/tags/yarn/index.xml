@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Yarn on 知政的个人博客</title>
+    <link>https://99999.fun/tags/yarn/</link>
+    <description>Recent content in Yarn on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Jun 2021 22:55:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/yarn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yarn包管理工具的简单使用</title>
+      <link>https://99999.fun/posts/38/</link>
+      <pubDate>Wed, 16 Jun 2021 22:55:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/38/</guid>
+      <description>Yarn 是一款新的 JavaScript 包管理工具，和npm对比就是速度快，保持一致性，安全
+速度快是因为yarn是并行执行任务，而不是npm那样排队列执行package，而且yarn还可以提供缓存，如果安装过一次package，使用yarn再次安装就会从缓存中获取，而不用再下载一次
+保持一致性：yarn提供了一个lockfile文件来记录要安装的package的版本号，锁定其版本不会出现错误，会生成yarn.lock文件来记录其package的版本号，就连依赖包的版本号都会被记录
+安全：yarn会在每个package被执行时校验其完整性
+实质上yarn本身还是从npm中获取的CLI客户端，还是一样可以获取和发布包
+windows不允许禁止运行脚本解决方法，管理员打开powershell
+set-ExecutionPolicy RemoteSigned
+安装yarn（全局）
+npm install yarn -g
+查看全部yarn命令
+yarn help
+检查是否安装成功以及查看版本号
+yarn &amp;ndash;version
+同样也是可以选择升级到yarn2
+yarn版本在v1.22之上 yarn set version berry
+yarn版本在v1.22之下 yarn policies set-version berry
+初始化
+yarn init
+安装一个包（安装package.json里的包依赖，并且将依赖树写入到yarn.lock）
+yarn install
+或者
+yarn
+添加一个包到依赖中
+yarn add 包名@版本号
+如果没有写明版本号，默认安装的是最新的，支持一次性填加多个包，多个包用空格分开
+添加一个包到不同的依赖类别中
+开发环境 yarn add 包名 &amp;ndash;dev
+生产环境 yarn add 包名 &amp;ndash;peer
+全局依赖环境 yarn global add 包名
+更新包到指定版本
+yarn upgrade 包名@版本号
+更新包到最新版本
+yarn upgrade &amp;ndash;latest 包名</description>
+    </item>
+  </channel>
+</rss>
