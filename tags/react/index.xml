@@ -47,6 +47,22 @@ import ReactMarkdown from &amp;lsquo;react-markdown&amp;rsquo;
 let markdown =&amp;quot;**这是加粗的文字**\n\n&amp;quot; +&amp;quot;*这是倾斜的文字*`\n\n&amp;quot; +&amp;quot;***这是斜体加粗的文字***\n\n&amp;quot; +&amp;quot;~~这是加删除线的文字~~ \n\n&amp;quot; +&amp;quot;`console.log(111)` \n\n&amp;quot; +&amp;quot;``` var a=11; ```&amp;quot;;&amp;lt;ReactMarkdown source={markdown} escapeHtml={false} children={markdown}/&amp;gt;</description>
     </item>
     <item>
+      <title>React Hooks学习笔记</title>
+      <link>https://99999.fun/posts/90/</link>
+      <pubDate>Fri, 20 Aug 2021 23:00:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/90/</guid>
+      <description>React Hooks提供了新特性来给纯函数组件可以管理状态
+学过react都知道纯函数组件没有生命周期钩子，而且还不能更新状态，只有class组件有生命周期钩子和状态
+而一个好的组件要有高独立性，高可复用性，而class组件本身就是有状态，因此要复用起来比较麻烦，而且还有个this缺陷
+React Hooks的出现，是因为类组件会继承React.Component父类，而React.Component父类拥有大量的方法和属性，在开发一些小型组件时，完全没有必要用到这么多的方法和属性，就好吧杀鸡用屠龙刀一样，可以但是没有必要，而纯函数组件就不存在这些方法和属性，可谓是轻量级
+例如：
+class组件：
+class Hi extends React.Component{constructor(props) {super(props)this.state = { count:0 }}render(){console.log(this.state.count)return(&amp;lt;div&amp;gt;&amp;lt;p&amp;gt;数据：{this.state.count}&amp;lt;/p&amp;gt;&amp;lt;button onClick={this.addGo.bind(this)}&amp;gt;GO&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;)}addGo(){this.setState({count:this.state.count+1})}}那么函数组件+React Hooks怎么实现状态更新呢？
+而function组件想更新状态可以通过React Hooks来实现，例如：
+例如：
+import React, { useState } from &#39;react&#39;function Hi(){const [ count , setCount ] = useState(0)return (&amp;lt;div&amp;gt;&amp;lt;p&amp;gt; 数据：{count} &amp;lt;/p&amp;gt;&amp;lt;button onClick={()=&amp;gt;{setCount(count+1)}}&amp;gt;GO&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;)}没错就是这么简单，看起来函数组件+React Hooks更简洁，更容易理解</description>
+    </item>
+    <item>
       <title>简单使用Ant Design组件库</title>
       <link>https://99999.fun/posts/82/</link>
       <pubDate>Tue, 10 Aug 2021 23:03:00 +0000</pubDate>

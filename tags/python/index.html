@@ -13,7 +13,38 @@ import urllib.parse
 import urllib.request
 url = "https://xiaochenabc123.test.com/"
 headers = {
-'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537....</p></div><footer class=entry-footer><span title='2021-12-31 01:05:00 +0000 UTC'>2021-12-31</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to python爬虫学习笔记" href=https://99999.fun/posts/125/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Web.py学习笔记</h2></header><div class=entry-content><p>web.py是一个轻量级Python web框架，是由已故著名计算机黑客Aaron Swartz设计开发（如果你看过互联网之子这个电影，你应该对这位大佬很熟悉）
+'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537....</p></div><footer class=entry-footer><span title='2021-12-31 01:05:00 +0000 UTC'>2021-12-31</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to python爬虫学习笔记" href=https://99999.fun/posts/125/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Django学习笔记</h2></header><div class=entry-content><p>django是一个基于Python编写的Web框架
+Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
+安装django
+pip install django
+检查是否安装成功
+django-admin
+django常用命令
+startproject #创建django项目
+startapp #创建django应用
+check #检查校验项目完整性
+runserver #本地运行django项目
+shell # 进入django项目的shell环境（Python）
+test # 执行django实例测试
+makemigrations # 创建模型变更的迁移文件
+migrate # 执行迁移文件
+dumpdata # 数据库数据导出
+loaddata # 文件数据导入数据库
+创建第一个项目
+django-admin startproject django_demo
+settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，init.py是Django项目的包初始化文件
+wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）
+运行django项目
+python .\manage.py runserver 0.0.0.0:8000
+访问127.0.0.1:8000
+django应用
+django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包
+django项目下可以包含一组配置和n个django应用
+创建django应用
+python .\manage.py startapp django_app
+admin.py #定义admin模块管理的配置文件
+apps.py # 声明应用的配置文件
+tests.py # 应用测试的配置文化...</p></div><footer class=entry-footer><span title='2021-10-22 18:50:00 +0000 UTC'>2021-10-22</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Django学习笔记" href=https://99999.fun/posts/118/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Web.py学习笔记</h2></header><div class=entry-content><p>web.py是一个轻量级Python web框架，是由已故著名计算机黑客Aaron Swartz设计开发（如果你看过互联网之子这个电影，你应该对这位大佬很熟悉）
 安装web.py
 pip install web.py
 导入模块

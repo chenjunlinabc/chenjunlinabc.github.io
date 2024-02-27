@@ -122,6 +122,45 @@ document.execCommand(&amp;lsquo;cut&amp;rsquo;) // 剪切
 document.execCommand(&amp;lsquo;paste&amp;rsquo;) // 粘贴</description>
     </item>
     <item>
+      <title>ES6学习笔记</title>
+      <link>https://99999.fun/posts/57/</link>
+      <pubDate>Fri, 09 Jul 2021 22:51:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/57/</guid>
+      <description>ECMAScript
+JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
+ECMAScript是规范，JavaScript是实现
+ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
+变量
+let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
+例如：
+if(true){let a = 666;}console.log(a); // Uncaught ReferenceError: a is not defined注意：
+使用var声明的变量不具备块级作用域有效的特性
+使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
+const声明一个只读的常量，一声明，常量的值将不能改变
+const abc =123;
+const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区
+ES6的作用域：
+全局作用域 函数作用域 块级作用域
+因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel
+安装babel
+npm install -g babel-cli
+安装转换包
+npm install &amp;ndash;save-dev babel-preset-es2015 babel-cli
+新建.babelrc文件，写入：
+{&amp;quot;presets&amp;quot;:[&amp;quot;es2015&amp;quot;],&amp;quot;plugins&amp;quot;:[]}babel main.js -o src/main.js
+然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
+变量声明方式
+let，声明一个变量
+const，声明一个常量
+在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用
+let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量
+const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误
+变量解构
+ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
+let [a,b,c] = [1,2,3]
+会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined</description>
+    </item>
+    <item>
       <title>Ajax学习笔记</title>
       <link>https://99999.fun/posts/54/</link>
       <pubDate>Sat, 03 Jul 2021 15:30:00 +0000</pubDate>
@@ -144,6 +183,71 @@ hallo.onload = function(){console.log(hallo.responseText)}服务端大部分�
 在http请求与响应的过程中，请求参数或者响应内容，如果是对象类型，最后都会转换为对象字符串进行传输，例如：
 app.get(&amp;quot;/hallo&amp;quot;,(req, res) = &amp;gt;{res.send({&amp;quot;name&amp;quot; : &amp;quot;root&amp;quot;});});json字符串转换为json对象
 var responseText = JSON.parse(hallo.responseText);console.</description>
+    </item>
+    <item>
+      <title>JavaScript基础学习笔记</title>
+      <link>https://99999.fun/posts/46/</link>
+      <pubDate>Thu, 24 Jun 2021 07:57:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/46/</guid>
+      <description>插入js
+在html页面使用js 引用js文件 注释
+// 单行注释
+/* 多行注释
+*/
+变量
+var home // 声明一个变量使用var
+home = &amp;ldquo;hallo&amp;rdquo; // 使用=来把字符串hallo赋值到home变量
+变量命名要求： 必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字
+建议每一行语句结束使用;来表示结束当前语句，主要是给人看
+var num = 123 // 整数
+num = &amp;ldquo;123&amp;rdquo; // 字符串
+num = 1.23 // 浮点数（小数）
+num = true // 布尔值（真，假或者对，错的意思，true是真，false为假）
+num = 1+1 // 可以进行运算，也可以连接两个字符串
+num = &amp;ldquo;hallo&amp;rdquo; + &amp;ldquo;javascript&amp;rdquo;
+var nums = 1
+nums++ // 和nums = nums+1意思是一样，所以这个时候nums = 1+1 =2
+nums&amp;ndash; // 和nums = nums-1意思是一样，所以这个时候nums = 1-1 = 0</description>
+    </item>
+    <item>
+      <title>JavaScript的一些基础知识扩展</title>
+      <link>https://99999.fun/posts/32/</link>
+      <pubDate>Wed, 16 Jun 2021 15:12:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/32/</guid>
+      <description>JavaScript的变量具有动态性的特性，就决定了变量只是用于保存该特定的值的名字
+JavaScript中有两种，基本类型值和引用类型值
+基本数据类型有数字(Number)，字符串(String)，布尔值(Boolean)，null，undefined，（es6中加入了个symbol）,BigInt(ES2020)
+基本类型是按值访问，可以直接操作保存在变量中的值
+基本类型值是简单的数据段，而引用类型是指由多个值组成的对象
+因为基本类型是按值访问的，所以可以操控保存在变量的值
+引用类型的值是保存在内存中的对象，JavaScript不允许直接访问内存中的位置
+操控对象，其实就是在操控对象的引用，而不是对象本身
+JavaScript的逻辑运算
+JavaScript的任何数据类型都能转换为布尔类型
+&amp;lt; 小于 &amp;gt; 大于 &amp;lt;= 小于或者等于 &amp;gt;= 大于或者等于 == 没错，这个才是等于，=这个是用来赋值的 != 不等于 === 绝对等于（值和数据类型相等） !== 不绝对等于（值和数据类型其中有一个或者都不相等）
+&amp;amp;&amp;amp; 必须都要符合要求
+|| 只有一个符合要求
+! 真为假，假为真（当判断为true时返回false，判断为false时返回true）
+逻辑运算的结果为布尔值
+类型判断
+数据类型有undefined，null，boolean，number，string，object，symbol，BigInt（ES2020）
+undefined，该变量没有被赋值
+null，该变量的值为空的对象指针
+boolean，该变量的值为布尔值
+string，该变量的值为字符串
+number，该变量的值为数值
+object，该变量为对象或者null
+Symbol，生成一个全局独一无二的值
+tyoeof操作符会返回该变量的值或者该值是什么数据类型
+注意：null值表示一个空对象指针，所以使用typeof操作符检测null时会返回object，typeof个函数，会返回function
+typeof判断null之类的不合适，在这种情况可以使用instanceof
+instanceof会检查构造函数的prototype属性是否在某个实例的原型链上
+例如：
+var abc = new testa() if(Object.getPrototypeOf(abc) === testa.prototype){}
+instanceof判断null
+null instanceof Object // false
+返回布尔值,例如
+var arr = [1,1,2,3,4,5]; console.log(arr instanceof Array); // 返回true</description>
     </item>
     <item>
       <title>JavaScript-IntersectionObserver构造函数笔记</title>

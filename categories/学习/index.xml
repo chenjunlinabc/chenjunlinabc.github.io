@@ -11,8 +11,46 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 17 Feb 2024 14:50:12 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Feb 2024 10:49:25 +0800</lastBuildDate>
     <atom:link href="https://99999.fun/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>云计算学习笔记</title>
+      <link>https://99999.fun/posts/164/</link>
+      <pubDate>Tue, 27 Feb 2024 10:49:25 +0800</pubDate>
+      <guid>https://99999.fun/posts/164/</guid>
+      <description>云服务平台：微软的Azure，开源云服务平台Open Stack，谷歌家的Google Cloud，亚马逊的AWS，国内的阿里云，京东云，华为云，腾讯云等等公有云，私有云
+云计算就是通过互联网按需访问计算资源，例如物理服务器和虚拟服务器资源，数据存储器等等，这些资源都由云服务提供商管理，云服务提供商通过这些资源，并且根据使用情况按量收费
+云计算的特点：按需使用，按量收费，弹性资源，自助服务（即开即用，无需审核），无人值守（高可用，无需监守）
+亚马逊在2006年推出S3和EC2，2008年谷歌发布Google App Engine，2009年heroku发布Paas，2010年微软推出Azure服务平台，2011年Open Stack发布开源Iaas，2014年亚马逊推出lambda（无服务器计算服务）
+云计算类似于水电服务，电力部门已经为你架构好了基础设施，无需再投资建设基础设施
+云计算按需支付按需使用，无需再使用服务器来浪费用不到的资源，多用资源，使用时间长更省钱
+云计算保证业务高可用，运维自动化，资源自动扩缩，无需人为管理
+云主机，云服务器，云端服务器
+创建云主机，指定规格
+核心数量，内存，磁盘，网络（私有地址，公有地址），操作系统，操作系统账户（密码，ssh密钥），地理位置，防火墙（安全组）
+openstack 构建私有云或者公有云
+安装openstack
+OpenStack 是一个基于Python的开源项目，安装太复杂了，将通过kolla-ansible快速部署OpenStack环境
+kolla-ansible使用ansible自动化运维工具进行OpenStack服务编排部署，kolla-ansible采用可全容器部署，全部跑在docker容器中
+OpenStack官方要求8g内存，40g磁盘
+Kolla Ansible支持Ubuntu20.04，Ubuntu22.04，Debian 11系统，支持Ubuntu，centos，Debian容器
+Kolla Ansible官方文档地址：https://docs.openstack.org/kolla-ansible/yoga/user/quickstart.html
+这里将使用Ubuntu22.04
+安装必要依赖
+sudo apt install git python3-dev libffi-dev gcc libssl-dev
+sudo apt install python3-pip
+pypi换源（适合国内朋友）
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+安装 ansible（官方要求ansible版本大于4，小于6）
+sudo apt install ansible
+或者
+sudo pip install -U &amp;lsquo;ansible&amp;gt;=4,&amp;lt;6&amp;rsquo;
+安装Kolla-ansible
+sudo pip install git+https://opendev.org/openstack/kolla-ansible@master
+创建目录
+sudo mkdir -p /etc/kolla
+复制kolla-ansible配置文件（例如globals.yml和passwords.yml，清单文件）</description>
+    </item>
     <item>
       <title>C&#43;&#43;学习笔记</title>
       <link>https://99999.fun/posts/163/</link>
@@ -528,6 +566,33 @@ flutter自带了可视化工具，Dart DevTools
 void main() =&amp;gt; runApp(MyApp());class MyApp extends StatelessWidget{@overrideWidget build(BuildContext context){return MaterialApp(title: &amp;quot;hallo word&amp;quot;, // app的titletheme: ThemeData(primarySwatch: Colors.</description>
     </item>
     <item>
+      <title>Nestjs学习笔记</title>
+      <link>https://99999.fun/posts/139/</link>
+      <pubDate>Sat, 05 Mar 2022 14:00:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/139/</guid>
+      <description>NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程
+安装
+npm install -g @nestjs/cli
+创建demo项目
+nest new demo
+选择使用包管理器（支持npm，yarn，pnpm）
+创建完成后可以看到src目录，是典型的MVC架构
+app.controller.ts（应用路由控制器，例如Get()方法，该路由控制器将从应用服务文件中获取数据，并且将数据返回到页面上） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件，nest模块化，一个nest项目最少有一个模块，通过controllers()方法接收一个模块组(数组形式)，） app.service.ts（应用服务文件，数据来源于该文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap()）
+从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的
+启动项目
+npm run start
+访问http://localhost:3000/，如果看到Hello World!表示启动成功
+nestjs cli支持对mvc模块的生成
+新建nest项目 nest new demo
+打包nest项目 nets build
+运行nest项目 nest start
+查看nest当前项目的一些信息 nest info
+创建控制器 nest g controller 名称 或者 nest g co 名称
+创建服务 nest g service 名称 或者 nest g s 名称
+创建模块 nest g module 名称 或者 nest g mo 名称
+创建异常过滤器 nest g filter 名称</description>
+    </item>
+    <item>
       <title>Gin框架学习笔记</title>
       <link>https://99999.fun/posts/135/</link>
       <pubDate>Tue, 15 Feb 2022 17:00:00 +0000</pubDate>
@@ -610,6 +675,48 @@ sync/atomic包将原子操作封装成了Go的函数，sync/atomic包提供了�
 存储（写入，避免写入过程，其他协程进行读取操作）：func StoreInt64(addr *int64, val int64)
 交换（和CAS不同，交换只赋值old值，不管原来的值）：func SwapInt64(addr *int64, new int64) (old int64)
 比较并且交换（Compare And Swap 简称CAS，类似于乐观锁，只有原来的值和传入的old值一样才修改）：func CompareAndSwapInt64(addr *int64, old, new int64) (swapped bool)</description>
+    </item>
+    <item>
+      <title>Kubernetes学习笔记</title>
+      <link>https://99999.fun/posts/127/</link>
+      <pubDate>Mon, 10 Jan 2022 12:31:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/127/</guid>
+      <description>Kubernetes（k8s，8是指k到s之间有8个字母），是谷歌在2014年发布并且开源的容器化集群管理系统（已在谷歌生产环境中工作15年），支持自动化部署，应用容器化管理，大规模升级或回滚，应用扩展等等
+k8s的特性：
+自动部署与滚动更新：自动化部署应用容器，k8s采取滚动式更新，可以根据应用的情况进行一次或者批量更新（判断该应用添加是否正常使用），也可以进行历史版本回滚
+自我修复：当某个容器发生故障，会自动重新启动失败的容器，当某个节点（Pod）出现故障进行容器的替换或者重新部署，并且关闭没有通过检查的容器（不进行处理请求，保证服务不中断），直到容器恢复正常
+弹性伸缩：通过命令，UI界面，CPU等资源使用情况，自动对应用容器进行扩容或者缩容，保证在高峰期的高可用性，降低运行成本
+服务发现和负载均衡：k8s为容器对外提供了统一访问入口（api server），并且关联全部容器（负载均衡）
+密钥与配置管理：允许在不重新构建容器（不需要重新集群，热更新）的情况下更新应用程序配置，可以存储和管理密钥，令牌等敏感信息，不需要暴露这些敏感信息（部署和更新密钥）
+存储编排：支持挂载外部存储（网络存储服务，云存储服务）（本地当然是支持），自动完成存储系统的挂载以及应用，保证数据持久化
+批处理：支持一次性任务，定时任务
+k8s的集群架构分为2个组件，分别为master（主控节点）和node（工作节点）
+master组件：api server（集群统一人口，restful），scheduler（节点调度，调度node节点应用部署），controller-manager（处理集群中后台任务，一个资源对应一个控制器，资源控制），etcd（存储系统，用来存储集群的相关数据）
+node组件：kubelet（node节点代理，管理k8s容器），kube-proxy（负责网络代理，负载均衡等操作）
+Pod：k8s管理系统中最小部署单位，一个或者多个容器的集合（共享同一个网络），容器重启将结束该pod的生命（生命周期短）
+Service
+Volume
+Namespace
+Controller：控制器（确保预期pod的数量），状态应用部署（无状态（没有任何限制约定），有状态（有限制条件，依赖需要））负责一次性任务，定时任务，守护进程等等，确保所有node运行同一个pod
+Service Ingress：对外接口（定义pod的访问规则）
+RBAC：安全机制，权限管理
+Helm：包管理器，快速下载，安装软件
+k8s集群搭建
+单master集群：单个master节点，管理多个node节点
+多master集群（高可用集群）：多个master节点，管理多个node节点，中间存在着负载均衡的过程
+kubeadm
+kubeadm是k8s部署工具，用于快速部署k8s集群
+官方文档：https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+kubeadm安装
+安装必备软件
+apt install -y apt-transport-https ca-certificates curl
+添加k8s国内源
+sudo tee /etc/apt/sources.list.d/kubernetes.list &amp;laquo;-&amp;lsquo;EOF&amp;rsquo; deb https://mirrors.tencent.com/kubernetes/apt/ kubernetes-xenial main EOF
+添加签名
+gpg &amp;ndash;keyserver keyserver.ubuntu.com &amp;ndash;recv-keys 836F4BEB gpg &amp;ndash;export &amp;ndash;armor 836F4BEB | sudo apt-key add - apt update
+836F4BEB这个为NO_PUBKEY的后8位
+安装三件套
+apt install -y kubelet kubeadm kubectl</description>
     </item>
     <item>
       <title>python爬虫学习笔记</title>
@@ -1097,6 +1204,45 @@ boolean布尔值，例如：
 let hallo: boolean = true
 number数值，例如：
 let hallo: number = 123;</description>
+    </item>
+    <item>
+      <title>ES6学习笔记</title>
+      <link>https://99999.fun/posts/57/</link>
+      <pubDate>Fri, 09 Jul 2021 22:51:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/57/</guid>
+      <description>ECMAScript
+JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
+ECMAScript是规范，JavaScript是实现
+ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
+变量
+let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
+例如：
+if(true){let a = 666;}console.log(a); // Uncaught ReferenceError: a is not defined注意：
+使用var声明的变量不具备块级作用域有效的特性
+使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
+const声明一个只读的常量，一声明，常量的值将不能改变
+const abc =123;
+const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区
+ES6的作用域：
+全局作用域 函数作用域 块级作用域
+因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel
+安装babel
+npm install -g babel-cli
+安装转换包
+npm install &amp;ndash;save-dev babel-preset-es2015 babel-cli
+新建.babelrc文件，写入：
+{&amp;quot;presets&amp;quot;:[&amp;quot;es2015&amp;quot;],&amp;quot;plugins&amp;quot;:[]}babel main.js -o src/main.js
+然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
+变量声明方式
+let，声明一个变量
+const，声明一个常量
+在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用
+let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量
+const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误
+变量解构
+ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
+let [a,b,c] = [1,2,3]
+会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined</description>
     </item>
     <item>
       <title>React学习笔记</title>

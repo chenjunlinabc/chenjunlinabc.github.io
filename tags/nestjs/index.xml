@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>NestJS on 知政的个人博客</title>
+    <link>https://99999.fun/tags/nestjs/</link>
+    <description>Recent content in NestJS on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 05 Mar 2022 14:00:00 +0000</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/nestjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nestjs学习笔记</title>
+      <link>https://99999.fun/posts/139/</link>
+      <pubDate>Sat, 05 Mar 2022 14:00:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/139/</guid>
+      <description>NestJS是一个nodejs服务端应用开发框架，基于typescript开发，http服务框架默认为Express，也支持Fastify，支持面向对象，函数式以及函数响应式编程
+安装
+npm install -g @nestjs/cli
+创建demo项目
+nest new demo
+选择使用包管理器（支持npm，yarn，pnpm）
+创建完成后可以看到src目录，是典型的MVC架构
+app.controller.ts（应用路由控制器，例如Get()方法，该路由控制器将从应用服务文件中获取数据，并且将数据返回到页面上） app.controller.spec.ts（应用控制器单元测试） app.module.ts（应用模块文件，nest模块化，一个nest项目最少有一个模块，通过controllers()方法接收一个模块组(数组形式)，） app.service.ts（应用服务文件，数据来源于该文件） main.ts（应用程序入口文件，实质上是async/await异步函数（bootstrap()）
+从main.ts入口文件可以看出，nest应用实例是基于NestFactory类（该类来源于@nestjs/core，nest核心程序）对外暴露的方法创建的
+启动项目
+npm run start
+访问http://localhost:3000/，如果看到Hello World!表示启动成功
+nestjs cli支持对mvc模块的生成
+新建nest项目 nest new demo
+打包nest项目 nets build
+运行nest项目 nest start
+查看nest当前项目的一些信息 nest info
+创建控制器 nest g controller 名称 或者 nest g co 名称
+创建服务 nest g service 名称 或者 nest g s 名称
+创建模块 nest g module 名称 或者 nest g mo 名称
+创建异常过滤器 nest g filter 名称</description>
+    </item>
+  </channel>
+</rss>

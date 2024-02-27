@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>云计算 on 知政的个人博客</title>
+    <link>https://99999.fun/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/</link>
+    <description>Recent content in 云计算 on 知政的个人博客</description>
+    <image>
+      <title>知政的个人博客</title>
+      <url>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 27 Feb 2024 10:49:25 +0800</lastBuildDate>
+    <atom:link href="https://99999.fun/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>云计算学习笔记</title>
+      <link>https://99999.fun/posts/164/</link>
+      <pubDate>Tue, 27 Feb 2024 10:49:25 +0800</pubDate>
+      <guid>https://99999.fun/posts/164/</guid>
+      <description>云服务平台：微软的Azure，开源云服务平台Open Stack，谷歌家的Google Cloud，亚马逊的AWS，国内的阿里云，京东云，华为云，腾讯云等等公有云，私有云
+云计算就是通过互联网按需访问计算资源，例如物理服务器和虚拟服务器资源，数据存储器等等，这些资源都由云服务提供商管理，云服务提供商通过这些资源，并且根据使用情况按量收费
+云计算的特点：按需使用，按量收费，弹性资源，自助服务（即开即用，无需审核），无人值守（高可用，无需监守）
+亚马逊在2006年推出S3和EC2，2008年谷歌发布Google App Engine，2009年heroku发布Paas，2010年微软推出Azure服务平台，2011年Open Stack发布开源Iaas，2014年亚马逊推出lambda（无服务器计算服务）
+云计算类似于水电服务，电力部门已经为你架构好了基础设施，无需再投资建设基础设施
+云计算按需支付按需使用，无需再使用服务器来浪费用不到的资源，多用资源，使用时间长更省钱
+云计算保证业务高可用，运维自动化，资源自动扩缩，无需人为管理
+云主机，云服务器，云端服务器
+创建云主机，指定规格
+核心数量，内存，磁盘，网络（私有地址，公有地址），操作系统，操作系统账户（密码，ssh密钥），地理位置，防火墙（安全组）
+openstack 构建私有云或者公有云
+安装openstack
+OpenStack 是一个基于Python的开源项目，安装太复杂了，将通过kolla-ansible快速部署OpenStack环境
+kolla-ansible使用ansible自动化运维工具进行OpenStack服务编排部署，kolla-ansible采用可全容器部署，全部跑在docker容器中
+OpenStack官方要求8g内存，40g磁盘
+Kolla Ansible支持Ubuntu20.04，Ubuntu22.04，Debian 11系统，支持Ubuntu，centos，Debian容器
+Kolla Ansible官方文档地址：https://docs.openstack.org/kolla-ansible/yoga/user/quickstart.html
+这里将使用Ubuntu22.04
+安装必要依赖
+sudo apt install git python3-dev libffi-dev gcc libssl-dev
+sudo apt install python3-pip
+pypi换源（适合国内朋友）
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+安装 ansible（官方要求ansible版本大于4，小于6）
+sudo apt install ansible
+或者
+sudo pip install -U &amp;lsquo;ansible&amp;gt;=4,&amp;lt;6&amp;rsquo;
+安装Kolla-ansible
+sudo pip install git+https://opendev.org/openstack/kolla-ansible@master
+创建目录
+sudo mkdir -p /etc/kolla
+复制kolla-ansible配置文件（例如globals.yml和passwords.yml，清单文件）</description>
+    </item>
+  </channel>
+</rss>

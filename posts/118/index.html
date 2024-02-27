@@ -1,0 +1,146 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Django学习笔记 | 知政的个人博客</title>
+<meta name=keywords content="Python,django"><meta name=description content="django是一个基于Python编写的Web框架
+Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
+安装django
+pip install django
+检查是否安装成功
+django-admin
+django常用命令
+startproject #创建django项目
+startapp #创建django应用
+check #检查校验项目完整性
+runserver #本地运行django项目
+shell # 进入django项目的shell环境（Python）
+test # 执行django实例测试
+makemigrations # 创建模型变更的迁移文件
+migrate # 执行迁移文件
+dumpdata # 数据库数据导出
+loaddata # 文件数据导入数据库
+创建第一个项目
+django-admin startproject django_demo
+settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，init.py是Django项目的包初始化文件
+wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）
+运行django项目
+python .\manage.py runserver 0.0.0.0:8000
+访问127.0.0.1:8000
+django应用
+django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包
+django项目下可以包含一组配置和n个django应用
+创建django应用
+python .\manage.py startapp django_app
+admin.py #定义admin模块管理的配置文件
+apps.py # 声明应用的配置文件
+tests.py # 应用测试的配置文化"><meta name=author content="Me"><link rel=canonical href=https://99999.fun/posts/118/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.4599eadb9eb2ad3d0a8d6827b41a8fda8f2f4af226b63466c09c5fddbc8706b7.css rel="preload stylesheet" as=style><link rel=icon href=https://99999.fun/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://99999.fun/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://99999.fun/favicon.ico><link rel=apple-touch-icon href=https://99999.fun/favicon.ico><link rel=mask-icon href=https://99999.fun/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://99999.fun/posts/118/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="Django学习笔记"><meta property="og:description" content="django是一个基于Python编写的Web框架
+Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
+安装django
+pip install django
+检查是否安装成功
+django-admin
+django常用命令
+startproject #创建django项目
+startapp #创建django应用
+check #检查校验项目完整性
+runserver #本地运行django项目
+shell # 进入django项目的shell环境（Python）
+test # 执行django实例测试
+makemigrations # 创建模型变更的迁移文件
+migrate # 执行迁移文件
+dumpdata # 数据库数据导出
+loaddata # 文件数据导入数据库
+创建第一个项目
+django-admin startproject django_demo
+settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，init.py是Django项目的包初始化文件
+wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）
+运行django项目
+python .\manage.py runserver 0.0.0.0:8000
+访问127.0.0.1:8000
+django应用
+django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包
+django项目下可以包含一组配置和n个django应用
+创建django应用
+python .\manage.py startapp django_app
+admin.py #定义admin模块管理的配置文件
+apps.py # 声明应用的配置文件
+tests.py # 应用测试的配置文化"><meta property="og:type" content="article"><meta property="og:url" content="https://99999.fun/posts/118/"><meta property="og:image" content="https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-10-22T18:50:00+00:00"><meta property="article:modified_time" content="2021-10-22T18:50:00+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://99999.fun/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Django学习笔记"><meta name=twitter:description content="django是一个基于Python编写的Web框架
+Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）
+安装django
+pip install django
+检查是否安装成功
+django-admin
+django常用命令
+startproject #创建django项目
+startapp #创建django应用
+check #检查校验项目完整性
+runserver #本地运行django项目
+shell # 进入django项目的shell环境（Python）
+test # 执行django实例测试
+makemigrations # 创建模型变更的迁移文件
+migrate # 执行迁移文件
+dumpdata # 数据库数据导出
+loaddata # 文件数据导入数据库
+创建第一个项目
+django-admin startproject django_demo
+settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，init.py是Django项目的包初始化文件
+wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）
+运行django项目
+python .\manage.py runserver 0.0.0.0:8000
+访问127.0.0.1:8000
+django应用
+django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包
+django项目下可以包含一组配置和n个django应用
+创建django应用
+python .\manage.py startapp django_app
+admin.py #定义admin模块管理的配置文件
+apps.py # 声明应用的配置文件
+tests.py # 应用测试的配置文化"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://99999.fun/posts/"},{"@type":"ListItem","position":2,"name":"Django学习笔记","item":"https://99999.fun/posts/118/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Django学习笔记","name":"Django学习笔记","description":"django是一个基于Python编写的Web框架\nDjango采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）\n安装django\npip install django\n检查是否安装成功\ndjango-admin\ndjango常用命令\nstartproject #创建django项目\nstartapp #创建django应用\ncheck #检查校验项目完整性\nrunserver #本地运行django项目\nshell # 进入django项目的shell环境（Python）\ntest # 执行django实例测试\nmakemigrations # 创建模型变更的迁移文件\nmigrate # 执行迁移文件\ndumpdata # 数据库数据导出\nloaddata # 文件数据导入数据库\n创建第一个项目\ndjango-admin startproject django_demo\nsettings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，init.py是Django项目的包初始化文件\nwsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）\n运行django项目\npython .\\manage.py runserver 0.0.0.0:8000\n访问127.0.0.1:8000\ndjango应用\ndjango应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包\ndjango项目下可以包含一组配置和n个django应用\n创建django应用\npython .\\manage.py startapp django_app\nadmin.py #定义admin模块管理的配置文件\napps.py # 声明应用的配置文件\ntests.py # 应用测试的配置文化","keywords":["Python","django"],"articleBody":"django是一个基于Python编写的Web框架\nDjango采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）\n安装django\npip install django\n检查是否安装成功\ndjango-admin\ndjango常用命令\nstartproject #创建django项目\nstartapp #创建django应用\ncheck #检查校验项目完整性\nrunserver #本地运行django项目\nshell # 进入django项目的shell环境（Python）\ntest # 执行django实例测试\nmakemigrations # 创建模型变更的迁移文件\nmigrate # 执行迁移文件\ndumpdata # 数据库数据导出\nloaddata # 文件数据导入数据库\n创建第一个项目\ndjango-admin startproject django_demo\nsettings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，init.py是Django项目的包初始化文件\nwsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）\n运行django项目\npython .\\manage.py runserver 0.0.0.0:8000\n访问127.0.0.1:8000\ndjango应用\ndjango应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包\ndjango项目下可以包含一组配置和n个django应用\n创建django应用\npython .\\manage.py startapp django_app\nadmin.py #定义admin模块管理的配置文件\napps.py # 声明应用的配置文件\ntests.py # 应用测试的配置文化\nmodels.py #定义应用模型配置文件\nviews.py #视图处理配置文件\nurls.py # 管理应用路由的配置文件，因为应用也可以管理路由，不过需要自己创建\ndjango应用用法：\n修改settings.py，找到INSTALLED_APP，添加\"django_app\"（用于挂载该应用），找到TEMPLATES下的DIRS，添加os.path.join(BASE_DIR, “templates”)，（用于加载模板文件），找到ALLOWED_HOSTS，修改为ALLOWED_HOSTS = [’*’]，（让外界可访问到后台站点）\ndjango视图\u0026django路由\n简单配置一个路由来获取请求的数据\nviews.py\ndef hallo(request):\rname = request.GET.get(\"name\")\rreturn HttpResponse('{}'.format(name))\r项目的urls.py（在urlpatterns数组中添加，abc为路由）\npath(\"abc/\",include(\"django_app.urls\"))\r不要忘了导入include\nfrom django.urls import path, include\r在应用下新建一个urls.py\nfrom django.urls import path, include\rimport django_app.views\rurlpatterns = [\rpath(\"hallo\",django_app.views.hallo)\r]\r上面例子中，访问/abc将触发一个应用级路由，该应用路由的返回值为该应用的views.py下的hallo函数\n另外到settings.py中添加应用\nINSTALLED_APPS数组下添加\"django_app.apps.DjangoAppConfig\"\n应用名.apps.xxxConfig\nxxxConfig可以到apps.py中找到\n访问http://127.0.0.1:8000/abc/hallo?name=admin，可以看到输出了admin\n模型层（位于视图层和数据库之间的组件）\n模型层主要目的：Python对象和数据库表之间的转换，屏蔽不同的数据库的差异，提供更多的数据库工具（备份等等）\n模型层字段定义\n数字类型：IntegerField\n文本类型：TextField\n日期类型：DataTimeField\n布尔类型：BooleanField\n自增：AutoField\n主键：primary_key属性\n在settings.py中找到DATABASES，这是用来配置模型层和数据库的配置\n另外需要到应用的models.py中定义模型\nclass demotest(models.Model):\rdemo_id = models.AutoField(primary_key=True)\rtitle = models.TextField()\rcontent = models.TextField()\rdemo_data = models.DateTimeField(auto_now=True)\rdef __str__(self):\rreturn self.title\r然后生成迁移文件，执行迁移文件，执行迁移文件后就是可以同步到数据库中\ndjango shell（交互式编程，方便测试，方便开发，继承django项目环境）\n启动django shell\npython manage.py shell\n测试一下刚才创建的模型\nfrom django_app.models import Main\rmain = Main()\rmain.title = \"test django\"\rmain.content = \"hallo word\"\rmain.save()\rdatas = Tast.objects.all()\rdata = datas[0]\rprint(data.title)\rAdmin模块（管理）\n主要用途：认证用户，显示管理模型，检查输入等等\n创建管理员用户\npython manage.py createsuperuser\n会要求输入用户名和邮箱，以及密码\n注册模型\nadmin.py\nfrom .models import datas\radmin.site.register(datas)\r返回数据库中的数据\nviews.py\nfrom django_app.models import datas\rdef data_content(request):\rdata = datas.objects.all()[0]\rtitle = data.title\rcontent = data.content\rdemo_id = data.demo_id\rdemo_data = data.demo_data\rreturn_str = \"title: %s, demo_id: %s, demo_data : %s, content: %s (title,demo_id,demo_data,content)\"\rreturn HttpResponse(return_str)\r应用路由配置\npath(\"data\",django_app.views.data)\r项目路由配置（如果已经配置转发到应用的路由，就不用再配置了）\n模板系统\n除了模板外，也可以直接上静态文件（html，css，JavaScript等等）\n在应用目录下新建一个目录，templates，在该目录下新建一个html\n当然使用模板系统更好更分别，毕竟逻辑和设计要分开\n模板基础语法\n变量：{{ data }} for循环：{% for data in datas %},{% endfor %} if判断：{% if %},{ % else % },{% endif %}\n启用模板系统 views.py\ndef index_page(request):\rall_data = datas.objects.all()\rreturn render(request, \"templates/index.html\",{\r\"datas\": all_data\r})\rpass\r应用路由配置\npath(\"index\",django_app.views.ndex_page)\r页面跳转\n","wordCount":"276","inLanguage":"en","datePublished":"2021-10-22T18:50:00Z","dateModified":"2021-10-22T18:50:00Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://99999.fun/posts/118/"},"publisher":{"@type":"Organization","name":"知政的个人博客","logo":{"@type":"ImageObject","url":"https://99999.fun/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://99999.fun/ accesskey=h title="知政的个人博客 (Alt + H)"><img src=https://99999.fun/favicon.ico alt aria-label=logo height=35>知政的个人博客</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-switch><li>|</li></ul></div></div><ul id=menu><li><a href=https://99999.fun/ title=首页><span>首页</span></a></li><li><a href=https://99999.fun/categories/ title=分类><span>分类</span></a></li><li><a href=https://99999.fun/archives/ title=归档><span>归档</span></a></li><li><a href=https://99999.fun/tags/ title=标签><span>标签</span></a></li><li><a href=https://99999.fun/links/ title=链接><span>链接</span></a></li><li><a href=https://99999.fun/about/ title=关于><span>关于</span></a></li><li><a href=https://99999.fun/search/ title="搜索 (Alt + /)" accesskey=/><span>搜索</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://99999.fun/>Home</a>&nbsp;»&nbsp;<a href=https://99999.fun/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Django学习笔记</h1><div class=post-meta><span title='2021-10-22 18:50:00 +0000 UTC'>2021-10-22</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me&nbsp;|&nbsp;<a href=https://99999.fun//posts/Django%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>django是一个基于Python编写的Web框架</p><p>Django采用了MVT的设计模式（模型，视图，模板）（mvt设计模式是基于mvc设计模式的）</p><p>安装django</p><p>pip install django</p><p>检查是否安装成功</p><p>django-admin</p><p>django常用命令</p><p>startproject #创建django项目</p><p>startapp #创建django应用</p><p>check #检查校验项目完整性</p><p>runserver #本地运行django项目</p><p>shell # 进入django项目的shell环境（Python）</p><p>test # 执行django实例测试</p><p>makemigrations # 创建模型变更的迁移文件</p><p>migrate # 执行迁移文件</p><p>dumpdata # 数据库数据导出</p><p>loaddata # 文件数据导入数据库</p><hr><p>创建第一个项目</p><p>django-admin startproject django_demo</p><p>settings.py是django项目的配置文件，urls.py是django项目的路由文件，wsgi.py是django作为wsgi应用的配置文件（wsgi，全成web server gateway interface，这个文件用来部署应用服务器），manage.py是django项目的管理文件，<strong>init</strong>.py是Django项目的包初始化文件</p><p>wsgi：Web服务器网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。（来自百度百科）</p><p>运行django项目</p><p>python .\manage.py runserver 0.0.0.0:8000</p><p>访问127.0.0.1:8000</p><hr><p>django应用</p><p>django应用和django项目的区别：django项目是基于django的web应用，可以独自运行，django应用是一个可复用（重用）的Python软件包</p><p>django项目下可以包含一组配置和n个django应用</p><p>创建django应用</p><p>python .\manage.py startapp django_app</p><p>admin.py #定义admin模块管理的配置文件</p><p>apps.py # 声明应用的配置文件</p><p>tests.py # 应用测试的配置文化</p><p>models.py #定义应用模型配置文件</p><p>views.py #视图处理配置文件</p><p>urls.py # 管理应用路由的配置文件，因为应用也可以管理路由，不过需要自己创建</p><p>django应用用法：</p><p>修改settings.py，找到INSTALLED_APP，添加"django_app"（用于挂载该应用），找到TEMPLATES下的DIRS，添加os.path.join(BASE_DIR, &ldquo;templates&rdquo;)，（用于加载模板文件），找到ALLOWED_HOSTS，修改为ALLOWED_HOSTS = [&rsquo;*&rsquo;]，（让外界可访问到后台站点）</p><hr><p>django视图&amp;django路由</p><p>简单配置一个路由来获取请求的数据</p><p>views.py</p><pre><code>def hallo(request):
+    name = request.GET.get(&quot;name&quot;)
+    return HttpResponse('{}'.format(name))
+</code></pre><p>项目的urls.py（在urlpatterns数组中添加，abc为路由）</p><pre><code>path(&quot;abc/&quot;,include(&quot;django_app.urls&quot;))
+</code></pre><p>不要忘了导入include</p><pre><code>from django.urls import path, include
+</code></pre><p>在应用下新建一个urls.py</p><pre><code>from django.urls import path, include
+import django_app.views
+urlpatterns = [
+    path(&quot;hallo&quot;,django_app.views.hallo)
+]
+</code></pre><p>上面例子中，访问/abc将触发一个应用级路由，该应用路由的返回值为该应用的views.py下的hallo函数</p><p>另外到settings.py中添加应用</p><p>INSTALLED_APPS数组下添加"django_app.apps.DjangoAppConfig"</p><p>应用名.apps.xxxConfig</p><p>xxxConfig可以到apps.py中找到</p><p>访问<a href="http://127.0.0.1:8000/abc/hallo?name=admin%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E8%BE%93%E5%87%BA%E4%BA%86admin">http://127.0.0.1:8000/abc/hallo?name=admin，可以看到输出了admin</a></p><hr><p>模型层（位于视图层和数据库之间的组件）</p><p>模型层主要目的：Python对象和数据库表之间的转换，屏蔽不同的数据库的差异，提供更多的数据库工具（备份等等）</p><p>模型层字段定义</p><p>数字类型：IntegerField</p><p>文本类型：TextField</p><p>日期类型：DataTimeField</p><p>布尔类型：BooleanField</p><p>自增：AutoField</p><p>主键：primary_key属性</p><p>在settings.py中找到DATABASES，这是用来配置模型层和数据库的配置</p><p>另外需要到应用的models.py中定义模型</p><pre><code>class demotest(models.Model):
+    demo_id = models.AutoField(primary_key=True)
+    title = models.TextField()
+    content = models.TextField()
+    demo_data = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.title
+</code></pre><p>然后生成迁移文件，执行迁移文件，执行迁移文件后就是可以同步到数据库中</p><hr><p>django shell（交互式编程，方便测试，方便开发，继承django项目环境）</p><p>启动django shell</p><p>python manage.py shell</p><p>测试一下刚才创建的模型</p><pre><code>from django_app.models import Main
+main = Main()
+main.title = &quot;test django&quot;
+main.content = &quot;hallo word&quot;
+main.save()
+datas = Tast.objects.all()
+data = datas[0]
+print(data.title)
+</code></pre><hr><p>Admin模块（管理）</p><p>主要用途：认证用户，显示管理模型，检查输入等等</p><p>创建管理员用户</p><p>python manage.py createsuperuser</p><p>会要求输入用户名和邮箱，以及密码</p><p>注册模型</p><p>admin.py</p><pre><code>from .models import datas
+admin.site.register(datas)
+</code></pre><hr><p>返回数据库中的数据</p><p>views.py</p><pre><code>from django_app.models import datas
+def data_content(request):
+    data = datas.objects.all()[0]
+    title = data.title
+    content = data.content
+    demo_id = data.demo_id
+    demo_data = data.demo_data
+    return_str = &quot;title: %s, demo_id: %s, demo_data : %s, content: %s (title,demo_id,demo_data,content)&quot;
+    return HttpResponse(return_str)
+</code></pre><p>应用路由配置</p><pre><code>path(&quot;data&quot;,django_app.views.data)
+</code></pre><p>项目路由配置（如果已经配置转发到应用的路由，就不用再配置了）</p><hr><p>模板系统</p><p>除了模板外，也可以直接上静态文件（html，css，JavaScript等等）</p><p>在应用目录下新建一个目录，templates，在该目录下新建一个html</p><p>当然使用模板系统更好更分别，毕竟逻辑和设计要分开</p><p>模板基础语法</p><p>变量：{{ data }}
+for循环：{% for data in datas %},{% endfor %}
+if判断：{% if %},{ % else % },{% endif %}</p><p>启用模板系统 views.py</p><pre><code>def index_page(request):
+    all_data = datas.objects.all()
+    return render(request, &quot;templates/index.html&quot;,{
+        &quot;datas&quot;: all_data
+    })
+    pass
+</code></pre><p>应用路由配置</p><pre><code>path(&quot;index&quot;,django_app.views.ndex_page)
+</code></pre><p>页面跳转</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://99999.fun/tags/python/>Python</a></li><li><a href=https://99999.fun/tags/django/>Django</a></li></ul><nav class=paginav><a class=prev href=https://99999.fun/posts/119/><span class=title>« Prev</span><br><span>简单使用Rollup模块打包工具</span>
+</a><a class=next href=https://99999.fun/posts/117/><span class=title>Next »</span><br><span>Web.py学习笔记</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://99999.fun/>知政的个人博客</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

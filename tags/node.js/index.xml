@@ -38,6 +38,32 @@ corepack hydrate D:/demo/test.tgz或者获取完成后立刻使用
 corepack hydrate D:/demo/test.tgz --activate </description>
     </item>
     <item>
+      <title>Node.js学习笔记</title>
+      <link>https://99999.fun/posts/108/</link>
+      <pubDate>Mon, 20 Sep 2021 10:50:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/108/</guid>
+      <description>nodejs是基于Google的V8引擎，使JavaScript不再只能运行与浏览器中了
+npm是跟随nodejs的包管理工具，可以用来更新包，安装包，编写包等等功能
+nodejs也提供了完整的http服务功能（http模块是用c++写的，性能可靠）
+const http = require(&amp;quot;http&amp;quot;)http.createServer(function (_request, response) {response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;})response.end(&amp;quot;hallo nodejs&amp;quot;)}).listen(8888)console.log(&#39;Server running at http://127.0.0.1:8888/&#39;)如果在http://127.0.0.1:8888/看到了hallo nodejs，那么就说明运行成功了
+nodejs的模块分为全局模块，系统模块，自定义模块
+全局模块（不需要引入，可以直接使用）
+例如process.env和process.argv
+获取系统环境变量
+console.log(process.env)node自定义参数（process.argv）
+let num1 = parseInt(process.argv[2])let num2 = parseInt(process.argv[3])console.log(num1+num2)node hallo.js 6 3
+可以看到输出了9，说明参数被传递进去了
+系统模块（需要引用，不需要安装，nodejs已经封装好的预制的系统模块）
+获取目录
+const path = require(&amp;quot;path&amp;quot;)console.log(path.dirname(&amp;quot;/hallo/index/main.js&amp;quot;))获取文件名
+console.log(path.basename(&amp;quot;/hallo/index/main.js&amp;quot;))获取文件扩展名
+console.log(path.extname(&amp;quot;/hallo/index/main.js&amp;quot;))功能扩展
+console.log(path.resolve(&amp;quot;/hallo/index/main.js&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;index.js&amp;quot;))获取文件的绝对路径
+console.log(path.resolve(__dirname,&amp;quot;index.js&amp;quot;))文件读写模块（fs）
+读
+const fs = require(&amp;quot;fs&amp;quot;)fs.readFile(&amp;quot;data.txt&amp;quot;,(err,data)=&amp;gt;{if(err){console.log(err)}else{console.log(data.toString())}})写</description>
+    </item>
+    <item>
       <title>node.js包管理工具npm的简单使用</title>
       <link>https://99999.fun/posts/31/</link>
       <pubDate>Wed, 16 Jun 2021 15:05:00 +0000</pubDate>

@@ -24,7 +24,50 @@ corepack prepare --all -o=D:/demo/test.tgz
 启动压缩包内的包
 corepack hydrate D:/demo/test.tgz
 或者获取完成后立刻使用
-corepack hydrate D:/demo/test.tgz --activate</p></div><footer class=entry-footer><span title='2022-05-13 00:09:00 +0000 UTC'>2022-05-13</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to 简单使用Corepack-包管理器的管理器" href=https://99999.fun/posts/149/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>node.js包管理工具npm的简单使用</h2></header><div class=entry-content><p>npm是Node.js的默认包管理工具
+corepack hydrate D:/demo/test.tgz --activate</p></div><footer class=entry-footer><span title='2022-05-13 00:09:00 +0000 UTC'>2022-05-13</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to 简单使用Corepack-包管理器的管理器" href=https://99999.fun/posts/149/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Node.js学习笔记</h2></header><div class=entry-content><p>nodejs是基于Google的V8引擎，使JavaScript不再只能运行与浏览器中了
+npm是跟随nodejs的包管理工具，可以用来更新包，安装包，编写包等等功能
+nodejs也提供了完整的http服务功能（http模块是用c++写的，性能可靠）
+const http = require("http")
+http.createServer(function (_request, response) {
+response.writeHead(200, {'Content-Type': 'text/plain'})
+response.end("hallo nodejs")
+}).listen(8888)
+console.log('Server running at http://127.0.0.1:8888/')
+如果在http://127.0.0.1:8888/看到了hallo nodejs，那么就说明运行成功了
+nodejs的模块分为全局模块，系统模块，自定义模块
+全局模块（不需要引入，可以直接使用）
+例如process.env和process.argv
+获取系统环境变量
+console.log(process.env)
+node自定义参数（process.argv）
+let num1 = parseInt(process.argv[2])
+let num2 = parseInt(process.argv[3])
+console.log(num1+num2)
+node hallo.js 6 3
+可以看到输出了9，说明参数被传递进去了
+系统模块（需要引用，不需要安装，nodejs已经封装好的预制的系统模块）
+获取目录
+const path = require("path")
+console.log(path.dirname("/hallo/index/main.js"))
+获取文件名
+console.log(path.basename("/hallo/index/main.js"))
+获取文件扩展名
+console.log(path.extname("/hallo/index/main.js"))
+功能扩展
+console.log(path.resolve("/hallo/index/main.js","../","index.js"))
+获取文件的绝对路径
+console.log(path.resolve(__dirname,"index.js"))
+文件读写模块（fs）
+读
+const fs = require("fs")
+fs.readFile("data.txt",(err,data)=>{
+if(err){
+console.log(err)
+}else{
+console.log(data.toString())
+}
+})
+写...</p></div><footer class=entry-footer><span title='2021-09-20 10:50:00 +0000 UTC'>2021-09-20</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Node.js学习笔记" href=https://99999.fun/posts/108/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>node.js包管理工具npm的简单使用</h2></header><div class=entry-content><p>npm是Node.js的默认包管理工具
 安装npm：安装node.js(一般来说安装nodejs都会安装npm的)
 npm -v 查看npm版本号 node -v 查看node版本号 npm install nmp@latest -g 更新最新nmp，-g全局，没有加-g就是本地安装，或者在@后面加版本号来更新到指定版本的npm npm init -y 初始化 npm i 要安装的依赖 先检查有没有这个东西，有的话就下载下来 npm uninstall 要删除的依赖的名称 npm i 要安装的依赖@版本号 安装指定版本的依赖 npm update 依赖名称 安装最新的依赖或者更新npm npm init -y 使用默认的参数，去掉-y就是手动配置 npm run 对象名 执行脚本,引用package.json中的scripts对象，在对象中添加脚本 npm adduser 注册npm账号 npm publish 发布npm包 npm install 一键安装package.json文件里的所有依赖 npm install –dependencies 只安装package.json里的dependencies的文件 npm install –devDependencies 只安装package.json里的devDependencies文件 会自动将package.json中的模块安装到node-modules文件夹
 升级插件 npm-check-updates使用 npm install -g npm-check-updates 安装npm-check-updates插件 ncu 查看package.json中依赖的最新版本 ncu -u 更新依赖到最新版本 ncu -a 更新全部依赖到最新版本 npm update...</p></div><footer class=entry-footer><span title='2021-06-16 15:05:00 +0000 UTC'>2021-06-16</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to node.js包管理工具npm的简单使用" href=https://99999.fun/posts/31/></a></article></main><footer class=footer><span>&copy; 2024 <a href=https://99999.fun/>知政的个人博客</a></span>

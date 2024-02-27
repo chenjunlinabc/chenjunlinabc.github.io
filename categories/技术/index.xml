@@ -11,8 +11,23 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 28 Oct 2022 01:21:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Nov 2022 12:00:00 +0000</lastBuildDate>
     <atom:link href="https://99999.fun/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用Mock.js模拟数据生成器</title>
+      <link>https://99999.fun/posts/160/</link>
+      <pubDate>Wed, 09 Nov 2022 12:00:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/160/</guid>
+      <description>Mock.js是模拟数据生成器，不需要后端来提供接口数据来进行开发，Mock可以根据数据模板生成随机数据，并且拦截Ajax请求返回模拟数据
+安装
+npm install mockjs
+导入
+import Mock from &#39;mockjs&#39;通过传入数据模板对象生成数据
+const data = Mock.mock({&#39;list|10&#39;: [{&amp;quot;id|+1&amp;quot;: 1,&amp;quot;name&amp;quot;: &amp;quot;@cname&amp;quot;,&amp;quot;age|18-25&amp;quot;: 25}]})console.log(data)配置响应数据（当匹配url的ajax请求时，会根据数据模板生成模拟数据，并且作为响应返回，这里通过axios发送get请求）
+const Data = Mock.mock(&#39;/api/name&#39;,&#39;get&#39;,{code: 200,data: {&#39;list|10&#39;: [{&amp;quot;id|+1&amp;quot;: 1,&amp;quot;name&amp;quot;: &amp;quot;@cname&amp;quot;,&amp;quot;age|18-25&amp;quot;: 25}]}})axios.get(&#39;/api/name&#39;).then(res =&amp;gt; {console.log(res.data)})也可以传入第二个参数，表示匹配的请求是哪个请求方法的
+记录数据模板
+const Data = Mock.mock(&#39;/api/name&#39;,(options) =&amp;gt; {return {code: 200,options}})axios({method: &#39;get&#39;, url: &#39;/api/name&#39; , data: {&#39;name&#39;:&#39;chenjunlin&#39;}}).</description>
+    </item>
     <item>
       <title>简单使用PWA技术</title>
       <link>https://99999.fun/posts/154/</link>
@@ -832,6 +847,46 @@ screen -R mcserver # 进入这个新“终端”
 修改这个文件，把onlinemode 改为 false
 MCSManager面板
 wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash</description>
+    </item>
+    <item>
+      <title>JavaScript的一些基础知识扩展</title>
+      <link>https://99999.fun/posts/32/</link>
+      <pubDate>Wed, 16 Jun 2021 15:12:00 +0000</pubDate>
+      <guid>https://99999.fun/posts/32/</guid>
+      <description>JavaScript的变量具有动态性的特性，就决定了变量只是用于保存该特定的值的名字
+JavaScript中有两种，基本类型值和引用类型值
+基本数据类型有数字(Number)，字符串(String)，布尔值(Boolean)，null，undefined，（es6中加入了个symbol）,BigInt(ES2020)
+基本类型是按值访问，可以直接操作保存在变量中的值
+基本类型值是简单的数据段，而引用类型是指由多个值组成的对象
+因为基本类型是按值访问的，所以可以操控保存在变量的值
+引用类型的值是保存在内存中的对象，JavaScript不允许直接访问内存中的位置
+操控对象，其实就是在操控对象的引用，而不是对象本身
+JavaScript的逻辑运算
+JavaScript的任何数据类型都能转换为布尔类型
+&amp;lt; 小于 &amp;gt; 大于 &amp;lt;= 小于或者等于 &amp;gt;= 大于或者等于 == 没错，这个才是等于，=这个是用来赋值的 != 不等于 === 绝对等于（值和数据类型相等） !== 不绝对等于（值和数据类型其中有一个或者都不相等）
+&amp;amp;&amp;amp; 必须都要符合要求
+|| 只有一个符合要求
+! 真为假，假为真（当判断为true时返回false，判断为false时返回true）
+逻辑运算的结果为布尔值
+类型判断
+数据类型有undefined，null，boolean，number，string，object，symbol，BigInt（ES2020）
+undefined，该变量没有被赋值
+null，该变量的值为空的对象指针
+boolean，该变量的值为布尔值
+string，该变量的值为字符串
+number，该变量的值为数值
+object，该变量为对象或者null
+Symbol，生成一个全局独一无二的值
+tyoeof操作符会返回该变量的值或者该值是什么数据类型
+注意：null值表示一个空对象指针，所以使用typeof操作符检测null时会返回object，typeof个函数，会返回function
+typeof判断null之类的不合适，在这种情况可以使用instanceof
+instanceof会检查构造函数的prototype属性是否在某个实例的原型链上
+例如：
+var abc = new testa() if(Object.getPrototypeOf(abc) === testa.prototype){}
+instanceof判断null
+null instanceof Object // false
+返回布尔值,例如
+var arr = [1,1,2,3,4,5]; console.log(arr instanceof Array); // 返回true</description>
     </item>
     <item>
       <title>node.js包管理工具npm的简单使用</title>

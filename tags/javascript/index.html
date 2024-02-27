@@ -121,7 +121,49 @@ null定义并赋值了, 只是值为null
 document.execCommand可以操作剪贴板
 document.execCommand(‘copy’) // 复制
 document.execCommand(‘cut’) // 剪切
-document.execCommand(‘paste’) // 粘贴...</p></div><footer class=entry-footer><span title='2021-07-18 22:35:00 +0000 UTC'>2021-07-18</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to JavaScript知识扩展" href=https://99999.fun/posts/61/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Ajax学习笔记</h2></header><div class=entry-content><p>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
+document.execCommand(‘paste’) // 粘贴...</p></div><footer class=entry-footer><span title='2021-07-18 22:35:00 +0000 UTC'>2021-07-18</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to JavaScript知识扩展" href=https://99999.fun/posts/61/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>ES6学习笔记</h2></header><div class=entry-content><p>ECMAScript
+JavaScript的创造者Netscape将其提交给标准化组织ECMA，因此JavaScript的标准是ECMAScript
+ECMAScript是规范，JavaScript是实现
+ES6又叫ECMAScript2015，因为标准委员会决定每年的6月份正式发布标准，作为当年的正式标准，使用年份来标记，不需要之前的版本号了
+变量
+let关键字声明变量，使用let声明的变量具有块级作用域有效的特性
+例如：
+if(true){
+let a = 666;
+}
+console.log(a); // Uncaught ReferenceError: a is not defined
+注意：
+使用var声明的变量不具备块级作用域有效的特性
+使用let声明的变量不存在变量提升，只能先声明后使用，具有暂时性死区特性，绑定在块级作用域，不会受外部污染或者影响，let不允许在同一个作用域中，重复声明同一个变量
+const声明一个只读的常量，一声明，常量的值将不能改变
+const abc =123;
+const一旦声明将立刻初始化，只声明不赋值是会报错的，同样不存在变量提升，存在暂时性死区
+ES6的作用域：
+全局作用域 函数作用域 块级作用域
+因为部分低版本浏览器还不支持ES6，因此有一些工具可以ES6语法转ES5的语法，例如：babel
+安装babel
+npm install -g babel-cli
+安装转换包
+npm install –save-dev babel-preset-es2015 babel-cli
+新建.babelrc文件，写入：
+{
+"presets":[
+"es2015"
+],
+"plugins":[]
+}
+babel main.js -o src/main.js
+然后就成功将ES6语法转为ES5的语法，提高浏览器兼容性
+变量声明方式
+let，声明一个变量
+const，声明一个常量
+在ES6中，var是声明全局变量的，而let声明的变量是具有块级作用域的，只能在当前语句块中访问调用
+let实质上就是为了避免污染全局的设计的，希望在某个语句结束后销毁该变量，而不会影响语句外部的变量
+const实质就是为了保证该变量始终不变而设计的，使用const声明的变量，不能进行修改，否则会抛出错误
+变量解构
+ES6允许从数组或者对象中获取值，来对变量进行赋值，这个又被称为解构，例如：
+let [a,b,c] = [1,2,3]
+会根据位置的关系来进行变量的赋值，格式一定要相同，否则可能获取undefined...</p></div><footer class=entry-footer><span title='2021-07-09 22:51:00 +0000 UTC'>2021-07-09</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to ES6学习笔记" href=https://99999.fun/posts/57/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Ajax学习笔记</h2></header><div class=entry-content><p>ajax是浏览器提供的一套方法，可以实现页面无刷新更新数据
 关于XMLHttpRequest对象（构造函数）的用法：https://xiaochenabc123.test.com/archives/14.html
 ajax需要网站环境下生效，需要web服务器，nodemon
 app.js
@@ -159,44 +201,7 @@ res.send({"name" : "root"});
 });
 json字符串转换为json对象
 var responseText = JSON.parse(hallo.responseText);
-console....</p></div><footer class=entry-footer><span title='2021-07-03 15:30:00 +0000 UTC'>2021-07-03</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Ajax学习笔记" href=https://99999.fun/posts/54/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>JavaScript-IntersectionObserver构造函数笔记</h2></header><div class=entry-content><p>IntersectionObserver是浏览器本身提供的构造函数，因此可能有一些老版本浏览器没有效果
-该构造函数提供了一种异步的监测目标对象和祖先对象或者视口相交的方法
-var observe = new IntersectionObserver(callback, options)
-例如上面，该函数可以传入两个参数，callback是当可视性发生改变时执行回调函数，options是配置对象
-使用该构造函数生成的实例中有3个观察器实例，分别是observe（开始监测），unobserve（停止监测），disconnect（关闭监测），其中observe的参数是dom对象
-当监测目标对象的可视性发生改变时调用callback参数中的回调函数
-options参数：主要是设置观测的对象和观测值，该参数中有三个键值对
-root指的是观测对象的根元素，默认是浏览器视口，值要么是根元素，要么就是观测对象的父元素
-rootMargin指的是用于扩大或者缩小视口的大小
-threshold指的是交叉的比例，主要决定什么时候触发回调函数，是数组，默认值为0
-callback参数中的回调函数一般会被调用两次，一次是当监测对象可视性满足了threshold指定的值，还有一次就是监测对象不满足threshold指定的值
-IntersectionObserverEntry对象
-该对象提供了监测对象的信息，有七个属性
-boundingClientRect：返回目标的矩形信息
-intersectionRatio：返回相交时和目标的比例值，不可视时小于等于0
-intersectionRect：返回目标和视口相交的矩形信息
-isIntersecting：返回目标当前是否可视，可视为true（返回值为布尔值）
-rootBounds：返回根元素的矩形信息，没有指定根元素则返回当前视口的矩形信息
-target：返回观测的目标对象，是dom对象
-time：返回一个记录了从观测开始到交叉被触发时间的的时间戳，单位为毫秒
-如果是搞懒加载，那么intersectionRatio和isIntersecting是关键点
-例如：
-const lazyload = new IntersectionObserver((target)=>{
-// 实例化
-target.forEach((item) =>{
-if (item.intersectionRatio){
-// 当目标可视
-item.target.src = item.target.alt; // 进行属性值覆盖
-lazyload.unobserve(item.target) // 停止观测
-}
-})
-},{
-rootMargin: "100px" // 提前100px
-}); const imgs = document.querySelectorAll("img[alt]"); // 选择带有alt属性的img元素
-imgs.forEach((item) => {
-lazyload.observe(item)
-// 开始观测
-});</p></div><footer class=entry-footer><span title='2021-06-16 09:29:00 +0000 UTC'>2021-06-16</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to JavaScript-IntersectionObserver构造函数笔记" href=https://99999.fun/posts/16/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://99999.fun/tags/javascript/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2024 <a href=https://99999.fun/>知政的个人博客</a></span>
+console....</p></div><footer class=entry-footer><span title='2021-07-03 15:30:00 +0000 UTC'>2021-07-03</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Me</footer><a class=entry-link aria-label="post link to Ajax学习笔记" href=https://99999.fun/posts/54/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://99999.fun/tags/javascript/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2024 <a href=https://99999.fun/>知政的个人博客</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
